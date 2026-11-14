@@ -1,6 +1,6 @@
 # Big Day Stories: product and engineering specification
 
-Version 1.5, 15 Nov 2026, 02:40 Astana. Owner: architect. Status: **development started** on this document (Lida, 15 Nov 01:58). The remaining questions of section 19 are accepted with their defaults and will be revisited later.
+Version 1.6, 15 Nov 2026, 02:50 Astana. Owner: architect. Status: **development started** on this document (Lida, 15 Nov 01:58). The remaining questions of section 19 are accepted with their defaults and will be revisited later.
 
 This is the single file development relies on. It merges the team ТЗ (features F1–F19), `docs/requirements.md` (ids C, F, FR, N), the research and analysis notes, and Lida's decisions of 15 Nov. Where this file and an older document disagree, `docs/decisions.md` wins first, then this file. Builders do not change contracts (section 6, 8, 9) on their own: they ask the architect.
 
@@ -306,14 +306,15 @@ Title "What's on Max's mind". Computed entirely by code from the stored question
 ### 4.13 Check-in (F10)
 
 - Available from the event date; the home screen prompts for it on every later day until saved. Takes 30 seconds.
-- Three faces: calm / a bit hard / hard. Checkboxes "What helped?" listing the techniques used in this plan (stories and ritual card) plus an own field (≤ 60 chars). **Save**.
+- Three faces: calm / a bit hard / hard. Checkboxes "What helped?" listing the techniques used in this plan (stories and ritual card) plus an own field (≤ 60 chars). When the plan recorded fewer than three techniques (chapters served from the template report none), the list is topped up from the event template: techniques that match the event's fears first, then the rest, six chips at most (K19). **Save**.
 - A second optional row "Anything that didn't work?" with the same chips.
 - Saved to the event and to the child profile: ticked techniques as `helped`, the ones ticked in the second row as `didnt_help`, the own entry as `helped`. Untouched techniques are recorded as neither and may be suggested again: an unticked box usually means "we didn't try it", not "it failed".
+- The check-in can be opened and saved again. A second save replaces the memory records of this event; it never adds a second set (K21).
 - Free for everyone (Q1).
 
 ### 4.14 Badge and next event (F10, F11)
 
-- The bravery badge for this event type, the collection of earned badges, "Skills you practised: 3" (parent skills of the read chapters).
+- The bravery badge for this event type, the collection of earned badges (one badge per event: saving the check-in again does not add another, and the badge keeps its first date, K20), "Skills you practised: 3" (parent skills of the read chapters).
 - Three suggested next events by age (5.9), button **Plan the next big day** → `/start?again=1`.
 - For Event Pack owners: "Add $39 and get the full year" (10.3).
 - Hint "Add Big Day Stories to your Home Screen so your plan stays on this phone" on iOS Safari (FR-B1).
@@ -329,6 +330,8 @@ Child profile and character; values profile; social story style toggle; text siz
 ---
 
 ## 5. Product rules (the engine)
+
+The functions that implement this section are listed in `web/lib/engine/README.md` (engine stream). That file is the reference for function names and signatures; this section stays the reference for the rules.
 
 All rules in this section are pure TypeScript in `web/lib/engine/`, covered by unit tests, with no LLM involved.
 
@@ -382,8 +385,9 @@ Chapter 1 is always open from the moment the event is created, whatever its date
 
 The story state is rebuilt by code before every LLM call from what is stored; the LLM never owns it.
 
-- `mustAddress`: topics the story still has to cover. Seeded with the fears chosen in onboarding. A question with a real topic (not `other`, not unsafe, not a sensitive one the parent kept to themselves) adds its topic.
-- A topic leaves `mustAddress` when a generated page lists it in `addresses` **and** the page text contains a word from the template's word list for that topic (A9). The question is then marked `answeredInStory`.
+- `mustAddress`: topics the story still has to cover. Seeded with the fears chosen in onboarding. A question with a real topic (not `other`, not unsafe, not a sensitive one the parent kept to themselves) adds its topic. Order: fears first, then question topics in the order asked.
+- A topic leaves `mustAddress` when a generated page lists it in `addresses` **and** the page text contains a word from the template's word list for that topic (A9). The question is then marked `answeredInStory`. Only **story pages** close a topic. An answer page never does, even when it covers the topic well: the answer is a short reply to one question, and the promise of the product is that the story itself takes the worry up (K18).
+- `askedQuestions`: the texts of the last 5 questions of category `on_topic` only. Off-topic questions are left out as noise. The text of a sensitive question never goes into the prompt of a later chapter; when the parent showed or edited the draft, only its **topic** enters `mustAddress`, so the story approaches the subject through the template's safe material and not through the child's own words (K17).
 - `usedTechniques`: ids of template techniques the generated chapters used (validated against the template's list).
 - `helpedBefore` and `avoid`: from the child's technique memory (5.7).
 - Question limit: 3 stored questions per chapter. Unsafe questions are not stored and do not count.
@@ -399,7 +403,7 @@ The story state is rebuilt by code before every LLM call from what is stored; th
 
 ### 5.7 Memory of what helped (F11)
 
-The child profile keeps `techniques[]` with `helped` or `didnt_help` per technique, written by check-ins. For a new event: techniques marked `helped` go to the prompt as "prefer", `didnt_help` as "never use"; the same lists drive the ritual card and the panel line "Last time…". The newest record wins when a technique has both outcomes.
+The child profile keeps `techniques[]` with `helped` or `didnt_help` per technique, written by check-ins. For a new event: techniques marked `helped` go to the prompt as "prefer", `didnt_help` as "never use"; the same lists drive the ritual card and the panel line "Last time…". The newest record wins when a technique has both outcomes. Records are kept per event: saving a check-in again replaces that event's records. The memory used while a plan is being written leaves out the event itself, so a plan is never steered by its own check-in.
 
 ### 5.8 Social story style (F15, FR-B2, FR-B3)
 
@@ -564,7 +568,7 @@ export interface StoryContext {
   styleMode: StyleMode;
   chapter: { index: number; total: number; beats: Beat[] };
   mustAddress: Topic[];
-  askedQuestions: { text: string; topic: Topic; chapter: number }[];   // last 5
+  askedQuestions: { text: string; topic: Topic; chapter: number }[];   // last 5, category on_topic only (5.4)
   usedTechniques: string[];
   helpedBefore: string[];
   avoid: string[];
@@ -1412,3 +1416,15 @@ Defaults chosen by the payment stream while building the paywall (10.5). They ar
 | K14 | Free trial for Gold | No trial: the charge happens on the day of purchase, and the free level (chapter 1) plays the role of the trial | A 7-day trial is a later option; decide together with the levels, because a trial changes the auto-renewal wording and the timeline |
 | K15 | Who sends the renewal reminder | Stripe's upcoming-renewal email, 30 days before a yearly renewal, switched on in the Stripe dashboard; no email of our own; nothing is sent in test mode | Before real payments: turn the switch on and decide whether we also want our own letter or an in-app notice |
 | K16 | When a cancellation takes effect | At the end of the paid period; access stays until then; no automatic refund, refunds by hand in the Stripe dashboard | Refund policy and its wording in the Terms, before real payments |
+
+### Accepted by default on 15 Nov, 02:31: engine stream, revisit later
+
+Rules the engine stream fixed where this document left room (5.4, 4.13, 4.14, 5.7). They are built as written and covered by unit tests.
+
+| # | Question | Built now (default) | To revisit |
+|---|---|---|---|
+| K17 | Which questions go into the prompts of later chapters | Only the texts of `on_topic` questions (last 5). Off-topic ones are left out; a sensitive question gives only its topic, and only if the parent did not keep it to themselves | In the LLM working session (8.8): does the story feel more personal if a shown or edited sensitive question is also quoted |
+| K18 | What closes a topic | Only a story page that names the topic and passes the word check. An answer page does not, so a topic a child asked about always comes back in the story | In a usability session: does the repetition read as care or as nagging, especially in plans of 1 or 2 chapters |
+| K19 | "What helped?" when the plan used no techniques | The list is topped up from the event template, techniques for the chosen fears first, six chips at most | When real plans exist: is an offered technique the family never met confusing; an alternative is the own field only |
+| K20 | How many badges per event | One. Saving the check-in again keeps the first badge and its date | With the badge collection design (levels, repeated events of the same type) |
+| K21 | Saving the check-in again | Replaces the memory records of that event; the latest save is the truth | If a history of edits is ever wanted for the "What works for Max" summary (17.2) |
