@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button, ButtonLink } from '@/components/ui/Button';
 import type { Workspace } from '@/lib/engine/types';
 import { announceEntitlements, paymentsApi } from '@/lib/payments/client';
@@ -17,11 +17,11 @@ export function PaidScreen({ sessionId, workspace }: { sessionId: string | null;
     sessionId ? { kind: 'verifying' } : { kind: 'error', message: 'This link has no payment in it.', retry: false },
   );
   const [attempt, setAttempt] = useState(0);
-  const started = useRef(-1);
 
   useEffect(() => {
-    if (!sessionId || started.current === attempt) return;
-    started.current = attempt;
+    // No "already started" guard: StrictMode runs the effect twice and cancels the first run,
+    // so the second run must call verify again. Verify is idempotent on the session id.
+    if (!sessionId) return;
     let alive = true;
     void (async () => {
       const r = await paymentsApi.verify(workspace, sessionId);

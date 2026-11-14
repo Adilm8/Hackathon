@@ -1,0 +1,239 @@
+'use client';
+import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import { Icon } from '@/components/icons';
+import { clock, dateLabel } from '@/lib/engine/clock';
+import type { Workspace } from '@/lib/engine/types';
+import {
+  clearSeen, demoEvent, demoModeOn, isDemoAccess, markSeen, readSeen, realTimeGroupOn, sampleAccess, timeTravelDate,
+  tourSteps, type TimeTarget, type TourSeen,
+} from '@/lib/demo/demo';
+import { setEntitlements, useEntitlements } from '@/lib/store/entitlement';
+import { useEvents } from '@/lib/store/events';
+import { useToday } from '@/lib/store/hooks';
+import { startSample } from '@/lib/store/sample';
+import { useSettings } from '@/lib/store/settings';
+import { nowMs } from '@/lib/store/time';
+
+const TIME: { id: TimeTarget; label: string }[] = [
+  { id: 'evening2', label: 'Evening 2' },
+  { id: 'day', label: 'Event day' },
+  { id: 'after', label: 'After the event' },
+  { id: 'today', label: 'Back to today' },
+];
+
+const OPEN_KEY = 'bds:sample:demo-open';
+
+/**
+ * The Demo bar (docs/SPEC.md 4.3, 5.1): a collapsible strip at the bottom of every sample screen
+ * with the six-step guided tour, time travel and the access buttons. It only moves "today" and
+ * calls the server; screens react through the same rules as for a real family.
+ * For a real family `?demo=1` shows the time group only.
+ */
+export function DemoBar({ workspace }: { workspace: Workspace }) {
+  const sample = workspace === 'sample';
+  const pathname = usePathname() ?? '';
+  const router = useRouter();
+  const events = useEvents((s) => s.events);
+  const list = useEntitlements((s) => s.list);
+  const override = useSettings((s) => s.clockOverride);
+  const setOverride = useSettings((s) => s.setClockOverride);
+  const today = useToday();
+  // The bar mounts only after the stores hydrated (Screen), so reading the browser here is safe.
+  const [open, setOpen] = useState(() => {
+    try {
+      const saved = window.localStorage.getItem(OPEN_KEY);
+      // First visit: open on wide screens; on a phone the strip with "Next step" is enough.
+      return saved === null ? window.matchMedia('(min-width: 768px)').matches : saved === '1';
+    } catch {
+      return false;
+    }
+  });
+  const [timeOnly] = useState(() => !sample && realTimeGroupOn(window.location.search));
+  const [accessOn, setAccessOn] = useState(false);
+  const [busy, setBusy] = useState<string | null>(null);
+  const [note, setNote] = useState<string | null>(null);
+
+  const onScreenId = /^\/event\/([^/]+)/.exec(pathname)?.[1];
+  const event = demoEvent(events, clock.realToday(), onScreenId ? decodeURIComponent(onScreenId) : undefined);
+
+  useEffect(() => {
+    if (!sample) return;
+    let alive = true;
+    demoModeOn().then((on) => alive && setAccessOn(on));
+    return () => {
+      alive = false;
+    };
+  }, [sample]);
+
+  // "Panel opened" and "day card seen" are not in the family data: noted per browser.
+  const here: TourSeen = { panel: /\/panel$/.test(pathname) || undefined, day: /\/day$/.test(pathname) || undefined };
+  useEffect(() => {
+    if (sample && (here.panel || here.day)) markSeen(here);
+  }, [sample, here.panel, here.day]); // eslint-disable-line react-hooks/exhaustive-deps
+  const stored = sample ? readSeen() : {};
+  const seen: TourSeen = { panel: stored.panel || here.panel, day: stored.day || here.day };
+
+  if (!sample && !timeOnly) return null;
+  if (!event) return null;
+
+  const setOpenSaved = (v: boolean) => {
+    setOpen(v);
+    try {
+      window.localStorage.setItem(OPEN_KEY, v ? '1' : '0');
+    } catch {
+      /* ignore */
+    }
+  };
+  const toggle = () => setOpenSaved(!open);
+
+  // After a jump the bar folds away, so the screen it opened is fully visible on a phone.
+  const travel = (t: TimeTarget) => {
+    setOverride(timeTravelDate(event, t));
+    setOpenSaved(false);
+  };
+
+  async function access(action: 'grant' | 'reset') {
+    setBusy(action);
+    setNote(null);
+    const r = await sampleAccess(action);
+    if (action === 'reset') {
+      clearSeen();
+      try {
+        window.localStorage.removeItem(OPEN_KEY);
+      } catch {
+        /* ignore */
+      }
+      // A fresh sample: unpaid, back to today, no answers from the last person at this phone.
+      await startSample();
+      return;
+    }
+    setBusy(null);
+    if (r) {
+      setEntitlements(r);
+      setNote('Demo access is on for 24 hours. Everything is unlocked.');
+    } else setNote('Demo access is not available right now.');
+  }
+
+  const steps = sample ? tourSteps(event, list, nowMs(), seen) : [];
+  const doneCount = steps.filter((s) => s.done).length;
+  const nextStep = steps.find((s) => !s.done);
+  const demo = isDemoAccess(workspace, list, nowMs());
+
+  return (
+    <div className="no-print sticky bottom-0 z-30 border-t-2 border-accent bg-surface text-ink shadow-pop" role="region" aria-label="Demo bar">
+      <div className="mx-auto max-w-5xl px-4 py-2">
+        <div className="flex items-center gap-2">
+          <button type="button" onClick={toggle} aria-expanded={open} className="inline-flex min-h-tap min-w-0 flex-1 items-center gap-2 text-left text-sm font-extrabold">
+            <Icon name="sparkles" size={18} />
+            <span className="whitespace-nowrap">{sample ? `Demo ${doneCount}/6` : 'Demo clock'}</span>
+            <span className="truncate font-bold text-ink-soft">
+              · {override ? `Today: ${dateLabel(today, { weekday: true })}` : 'Real today'}
+              {demo ? ' · Demo access' : ''}
+            </span>
+            <span aria-hidden className="ml-auto pl-1 text-ink-soft">{open ? '▾' : '▴'}</span>
+          </button>
+          {!open && nextStep && (
+            <Link
+              href={nextStep.href}
+              onClick={() => nextStep.time && setOverride(timeTravelDate(event, nextStep.time))}
+              className="inline-flex min-h-tap shrink-0 items-center rounded-pill bg-primary px-3 text-sm font-extrabold text-primary-ink"
+            >
+              Next step →
+            </Link>
+          )}
+        </div>
+        {!open && nextStep && <p className="truncate pb-1 text-xs text-ink-soft">Next: {nextStep.label}</p>}
+        {open && (
+          <div className="flex max-h-[55dvh] flex-col gap-3 overflow-y-auto pb-2">
+            {sample && (
+              <ol aria-label="Guided tour" className="grid gap-1 sm:grid-cols-2">
+                {steps.map((s, i) => (
+                  <li key={s.id}>
+                    <Link
+                      href={s.href}
+                      onClick={() => (s.time ? travel(s.time) : setOpenSaved(false))}
+                      className="flex min-h-tap items-center gap-2 rounded-card px-2 text-sm hover:bg-surface-2"
+                    >
+                      <span
+                        aria-hidden
+                        className={`flex size-6 shrink-0 items-center justify-center rounded-pill text-xs font-extrabold ${s.done ? 'bg-success text-white' : 'border-2 border-line text-ink-soft'}`}
+                      >
+                        {s.done ? <Icon name="check" size={14} /> : i + 1}
+                      </span>
+                      <span className={s.done ? 'text-ink-soft line-through decoration-1' : 'font-bold'}>{s.label}</span>
+                      <span className="sr-only">{s.done ? '(done)' : ''}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ol>
+            )}
+            <div role="group" aria-label="Time travel" className="flex flex-wrap items-center gap-2">
+              <span className="text-xs font-bold text-ink-soft">Skip to</span>
+              {TIME.map((t) => {
+                const target = timeTravelDate(event, t.id);
+                const active = t.id === 'today' ? !override : override === target;
+                return (
+                  <button
+                    key={t.id}
+                    type="button"
+                    aria-pressed={active}
+                    onClick={() => travel(t.id)}
+                    className={`min-h-tap rounded-pill border-2 px-3 text-sm font-bold ${active ? 'border-primary bg-primary text-primary-ink' : 'border-line bg-surface'}`}
+                  >
+                    {t.label}
+                  </button>
+                );
+              })}
+            </div>
+            {sample && (
+              <div role="group" aria-label="Access" className="flex flex-wrap items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => router.push(`/event/${encodeURIComponent(event.id)}/paywall`)}
+                  className="min-h-tap rounded-pill border-2 border-line bg-surface px-3 text-sm font-bold"
+                >
+                  Pay with the test card
+                </button>
+                {accessOn && (
+                  <>
+                    <button
+                      type="button"
+                      disabled={!!busy || demo}
+                      onClick={() => access('grant')}
+                      className="min-h-tap rounded-pill border-2 border-accent bg-accent px-3 text-sm font-bold text-accent-ink disabled:opacity-50"
+                    >
+                      {demo ? 'Demo access is on' : busy === 'grant' ? 'Unlocking…' : 'Skip payment (demo access)'}
+                    </button>
+                    <button
+                      type="button"
+                      disabled={!!busy}
+                      onClick={() => access('reset')}
+                      className="min-h-tap rounded-pill px-3 text-sm font-bold text-primary-text underline disabled:opacity-50"
+                    >
+                      {busy === 'reset' ? 'Resetting…' : 'Reset demo'}
+                    </button>
+                  </>
+                )}
+              </div>
+            )}
+            {note && <p role="status" className="text-sm font-bold">{note}</p>}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+/** "Demo access" next to "Sample data" in the header while demo access is active (4.3). */
+export function DemoAccessBadge({ workspace }: { workspace: Workspace }) {
+  const list = useEntitlements((s) => s.list);
+  if (!isDemoAccess(workspace, list, nowMs())) return null;
+  return (
+    // Below 400 px the header has no room; the Demo bar strip says "Demo access" there instead.
+    <span className="hidden whitespace-nowrap rounded-pill border border-accent px-2 py-0.5 text-xs font-bold min-[400px]:inline">
+      Demo access
+    </span>
+  );
+}

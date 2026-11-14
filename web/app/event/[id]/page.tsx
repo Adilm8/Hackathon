@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useParams, useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { Character } from '@/components/character';
+import { CalendarButtons } from '@/components/eventday/CalendarButtons';
 import { Icon, type IconName } from '@/components/icons';
 import { Button, ButtonLink } from '@/components/ui/Button';
 import { PlanNotFound } from '@/components/ui/NotFound';
@@ -63,6 +64,13 @@ function Plan({ id }: { id: string }) {
           <ChapterNode key={ch.index} ch={ch} ctx={ctx} offset={k % 2 === 1} onOpen={() => open(ch)} />
         ))}
       </ol>
+
+      {phase === 'prep' && (
+        <section aria-label="Reminders" className="flex flex-col gap-2">
+          <p className="text-sm font-bold text-ink-soft">A reminder at 7:30 pm on each story evening</p>
+          <CalendarButtons event={event} label={eventLabel(event, template)} />
+        </section>
+      )}
 
       <div className="grid gap-3 sm:grid-cols-2">
         <ButtonLink href={`/event/${id}/panel`} variant="secondary">

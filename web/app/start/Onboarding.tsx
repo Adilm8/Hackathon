@@ -11,10 +11,11 @@ import { Field, TextInput } from '@/components/ui/Field';
 import { GuideBubble } from '@/components/ui/GuideBubble';
 import { ProgressBar } from '@/components/ui/ProgressBar';
 import { Toggle } from '@/components/ui/Toggle';
+import { ValuesProfile } from '@/components/settings';
 import { PhotoPicker, type DraftPhoto } from '@/components/photos/PhotoPicker';
 import { photoKey, putPhoto } from '@/lib/photos';
 import { addDays, clock, dateLabel, diffDays } from '@/lib/engine/clock';
-import type { Character as CharacterT, ChildProfile, EventType, Pronoun, Topic, ValuesProfile } from '@/lib/engine/types';
+import type { Character as CharacterT, ChildProfile, EventType, Pronoun, Topic, ValuesProfile as ValuesProfileT } from '@/lib/engine/types';
 import { isOn } from '@/lib/flags';
 import { speakOnce } from '@/lib/speech/narrator';
 import { useChild } from '@/lib/store/child';
@@ -22,14 +23,14 @@ import { useEvents } from '@/lib/store/events';
 import { useSettings } from '@/lib/store/settings';
 import { createEvent, EVENT_TYPES, FEAR_OPTIONS, getTemplate, isQuickPrep, validateEventDate } from '@/lib/store/engine';
 import { api } from '@/lib/sync/api';
+import { startSyncNow } from '@/lib/store/boot';
 import { getWorkspace } from '@/lib/store/workspace';
 import { newId } from '@/lib/store/id';
 
 const NAME_RE = /^[\p{L}][\p{L}'’-]{0,19}$/u;
-const FAMILY_WORDS = ['Mom', 'Dad', 'Mama', 'Papa', 'Mommy', 'Daddy', 'Grandma', 'Grandpa', 'Nana', 'Stepmom', 'Stepdad', 'Aunt', 'Uncle'];
 const EVENT_CAPTION: Record<EventType, string> = {
   dentist: 'Check-up or cleaning', school: 'Preschool, kindergarten, school', flight: 'Airport and plane',
-  sibling: 'A baby is coming', haircut: 'Salon or barbershop', shot: 'Vaccine at the doctor', other: 'Something else',
+  sibling: 'A baby is coming', haircut: 'Salon or barbershop', shot: 'Vaccine at the doctor', other: 'Swimming lesson, a new nanny, a move…',
 };
 
 type StepId = 'gate' | 'name' | 'age' | 'event' | 'date' | 'fears' | 'character' | 'values';
@@ -38,12 +39,15 @@ const GROUP: Record<StepId, 1 | 2 | 3> = { gate: 1, name: 1, age: 1, event: 2, d
 interface Draft {
   name: string; pronunciation: string; age?: number; pronoun?: Pronoun;
   type?: EventType; customLabel: string; date: string; fears: Topic[]; customFear: string;
-  character: CharacterT; values: ValuesProfile; social: boolean; photos: DraftPhoto[];
+  character: CharacterT; values: ValuesProfileT; social: boolean; photos: DraftPhoto[];
 }
 
 export function Onboarding() {
   const router = useRouter();
-  const again = useSearchParams().get('again') === '1';
+  const search = useSearchParams();
+  const again = search.get('again') === '1';
+  // "Plan the next big day" on the badge screen can preselect a suggested event (4.14).
+  const suggestedType = EVENT_TYPES.find((t) => t === search.get('type'));
   const existing = useChild((s) => s.child);
   const gateOn = useSettings((s) => s.parentGateAcceptedOn);
   const acceptGate = useSettings((s) => s.acceptParentGate);
@@ -60,7 +64,7 @@ export function Onboarding() {
 
   const [d, setD] = useState<Draft>(() => ({
     name: existing?.name ?? '', pronunciation: existing?.pronunciation ?? '', age: existing?.age, pronoun: existing?.pronoun,
-    type: undefined, customLabel: '', date: '', fears: [], customFear: '',
+    type: suggestedType, customLabel: '', date: '', fears: [], customFear: '',
     character: existing?.character ?? { animal: 'bunny', color: 'blue', accessory: 'cap' },
     values: existing?.values ?? { tone: 'secular', bodyWords: 'anatomical', family: [] },
     social: existing?.styleMode === 'social',
@@ -91,7 +95,7 @@ export function Onboarding() {
     setTouched(false);
     if (step === 'gate') {
       acceptGate(today);
-      if (getWorkspace() === 'real') void api.createFamily();
+      if (getWorkspace() === 'real') void api.createFamily().then(() => startSyncNow());
     }
     if (i < steps.length - 1) setI(i + 1);
     else finish();
@@ -210,8 +214,8 @@ export function Onboarding() {
 
         {step === 'date' && (
           <>
-            <Field id="date" label="Date" error={touched ? dateErr : ''}>
-              <TextInput id="date" type="date" min={today} max={addDays(today, 60)} value={d.date} onChange={(e) => set({ date: e.target.value })} aria-invalid={touched && !!dateErr} />
+            <Field id="date" label="Date" error={touched || d.date ? dateErr : ''}>
+              <TextInput id="date" type="date" min={today} max={addDays(today, 60)} value={d.date} onChange={(e) => set({ date: e.target.value })} aria-invalid={(touched || !!d.date) && !!dateErr} />
             </Field>
             <div className="flex flex-wrap gap-2">
               {[['Today', 0], ['Tomorrow', 1], ['In 5 days', 5], ['In a week', 7]].map(([l, n]) => (
@@ -245,20 +249,7 @@ export function Onboarding() {
 
         {step === 'values' && (
           <div className="flex flex-col gap-5">
-            <Segmented label="Tone" value={d.values.tone} options={[['secular', 'Secular'], ['religious', 'Religious']]} onChange={(tone) => set({ values: { ...d.values, tone } })} />
-            <Segmented label="Words for the body" value={d.values.bodyWords} options={[['anatomical', 'Anatomical words'], ['family', 'Our family words']]} onChange={(bodyWords) => set({ values: { ...d.values, bodyWords } })} />
-            <div>
-              <p className="mb-1 text-sm font-bold">Who is at home?</p>
-              <p className="mb-2 text-xs text-ink-soft">The story mentions only the people you pick. Nobody picked: it says &quot;your grown-up&quot;.</p>
-              <div className="flex flex-wrap gap-2">
-                {FAMILY_WORDS.map((w) => {
-                  const on = d.values.family.includes(w);
-                  return (
-                    <Chip key={w} selected={on} onToggle={() => set({ values: { ...d.values, family: on ? d.values.family.filter((x) => x !== w) : [...d.values.family, w] } })}>{w}</Chip>
-                  );
-                })}
-              </div>
-            </div>
+            <ValuesProfile value={d.values} onChange={(values) => set({ values })} />
             {isOn('socialStyle') && (
               <Toggle id="social" label="Social story style" hint="Literal, first person, the same text every time. Helpful for many autistic kids." checked={d.social} onChange={(social) => set({ social })} />
             )}
@@ -269,7 +260,7 @@ export function Onboarding() {
       </div>
 
       <div className="sticky bottom-0 -mx-4 border-t border-line bg-bg px-4 py-4">
-        <Button size="l" onClick={next} aria-disabled={!valid[step]} className={!valid[step] ? 'opacity-60' : ''}>
+        <Button size="l" onClick={next}>
           {i === steps.length - 1 ? 'Make the plan' : 'Continue'}
         </Button>
       </div>
@@ -294,15 +285,3 @@ function DatePreview({ date, today }: { date: string; today: string }) {
   );
 }
 
-function Segmented<T extends string>({ label, value, options, onChange }: { label: string; value: T; options: [T, string][]; onChange: (v: T) => void }) {
-  return (
-    <div role="radiogroup" aria-label={label}>
-      <p className="mb-2 text-sm font-bold">{label}</p>
-      <div className="flex flex-wrap gap-2">
-        {options.map(([v, l]) => (
-          <Chip key={v} selected={value === v} onToggle={() => onChange(v)}>{l}</Chip>
-        ))}
-      </div>
-    </div>
-  );
-}
