@@ -1,6 +1,6 @@
 # Big Day Stories: product and engineering specification
 
-Version 1.2, 15 Nov 2026, 02:00 Astana. Owner: architect. Status: ready to build on. It includes Lida's answers of 15 Nov 01:26 and 01:42. Questions that are still open are in section 19; until she answers, the stated default is built.
+Version 1.3, 15 Nov 2026, 02:10 Astana. Owner: architect. Status: ready to build on. It includes Lida's answers of 15 Nov 01:26, 01:42 and 01:55. Questions that are still open are in section 19; until she answers, the stated default is built.
 
 This is the single file development relies on. It merges the team ТЗ (features F1–F19), `docs/requirements.md` (ids C, F, FR, N), the research and analysis notes, and Lida's decisions of 15 Nov. Where this file and an older document disagree, `docs/decisions.md` wins first, then this file. Builders do not change contracts (section 6, 8, 9) on their own: they ask the architect.
 
@@ -52,6 +52,7 @@ Contents: 1 Product · 2 Decisions · 3 Scope · 4 User flows and screens · 5 P
 | D15 | Features are grouped into named subscription levels, to be finalised later; the free level offers a couple of trial stories. **In the MVP every feature is open**; only the paywall required by the case rules stays (10.1, 17.2). |
 | D16 | Pacing of chapters and the check-in details are decided by the architect and re-checked in a working session (5.2, 4.13). |
 | D17 | Models: follow benchmarks and start from the cheaper end, though not the very cheapest (candidates named by Lida: DeepSeek 4.1 Flash, Haiku 5.5); read what is written about them, then test. Until then Gemini is used wherever possible, within its limits (8.1, 8.8). |
+| D18 | The paywall stays. The jury, and anyone opening the deployed link, must still be able to see every function quickly: solved by the jury demo mode (4.3, 5.1). |
 
 ### 2.2 Working defaults
 
@@ -199,8 +200,14 @@ Every screen has: a header with the child's name and a settings button; the "Sam
 - **Try a sample** is the jury's test profile. It creates a fresh *sample family* on the server for this browser (so jury members never see each other's clicks) and opens its plan. The seed: Max, age 4, bunny in a blue cap; family Mom and Dad; secular. One **past** event (a haircut three weeks ago with a saved check-in: "a bit hard", counting to ten helped, the cape did not; one badge) and one **upcoming** event (dentist; fears: pain and strangers; date = today + 5, so the plan has 5 chapters and chapter 1 is tonight). The past event makes the memory mechanic visible at once: the panel already says "Last time: counting to ten helped".
 - From there everything runs through the same code as a real family: same engine, same API calls, same paywall, same database tables. Nothing is hard-coded per screen.
 - The sample never touches the real family. "Exit sample" in the badge returns to the real workspace (or the landing when there is none). Sample families are deleted automatically after 7 days.
-- Chapter 1 of the sample is served from a one-hour server cache warmed at boot (12.3), so it opens instantly on a bad network. Jury questions are processed live.
-- The Demo panel (5.1) is visible in the sample workspace.
+- Every chapter of the sample and its ritual card are served from a one-hour server cache warmed at boot (12.3), so the jury's path opens instantly on a bad network and does not depend on a provider's rate limits. Jury questions, and everything after a question changes the story, are processed live.
+- **Jury demo mode.** The paywall stays exactly as a real family sees it, and the sample adds a Demo bar (5.1) that makes the whole product reachable in three minutes:
+  - a **guided tour** of six steps that tick themselves off, each a direct link: read chapter 1 → ask a question and watch the next page change → open the parent panel → unlock the full plan → jump to the event day (ritual card, PDF) → jump to after the event (check-in, badge, next event with the form filled in);
+  - **two ways through the paywall**, side by side: **Pay with the test card** (the real Stripe test checkout, card number shown with a Copy button; this is the path that proves the payment works) and **Skip payment (demo access)** (one tap, for a juror who has already seen the checkout or has no time to type a card);
+  - **time travel** (Evening 2, Event day, After the event) and **Reset demo** (back to the unpaid state and to today, so the next person at the same phone starts clean).
+- Demo access exists only for sample families and is granted by the server (9, 10.4); a real family can never receive it. While it is active the header shows "Demo access" next to "Sample data", so nobody mistakes it for a free product.
+- A real family on the deployed link goes through the true flow: the paywall shows the test-mode box with the card number, so anyone evaluating "Start for free" can also complete a purchase in seconds.
+- The landing says under the sample button: "Judging or just curious? The sample shows the whole product in 3 minutes." The README repeats the six steps.
 
 ### 4.4 Home
 
@@ -229,7 +236,7 @@ Finishing the form creates the event, builds the plan in code (5.2) and opens `/
 
 - Countdown "N sleeps until the dentist" (N = days until the event; "Tomorrow is the big day" for 1; "Today is the big day" for 0).
 - One card per chapter: number, evening date, title from the template, status **locked** (opens on its evening, or needs payment), **today**, **catch up** (its evening has passed and it is unread), **read**.
-- Buttons: **Add to calendar** (11.8), **Parent panel**, and in the sample or with `?demo=1` the **Demo: skip to…** panel.
+- Buttons: **Add to calendar** (11.8), **Parent panel**. In the sample the Demo bar (5.1) sits at the bottom of the screen.
 - Tapping a chapter that needs payment opens the paywall. Tapping a date-locked chapter shows "This chapter opens on Wednesday evening", with the "Read ahead" link when the family has access and it is the next chapter (5.2).
 - While a chapter is generating the reader shows a page skeleton (not a spinner).
 
@@ -329,7 +336,12 @@ All rules in this section are pure TypeScript in `web/lib/engine/`, covered by u
 
 - `clock.today(): ISODate` returns the local calendar date of the device as `YYYY-MM-DD`, or the override stored in `bds:settings.clockOverride`. Every component and engine function takes "today" from here; nothing else calls `new Date()` for calendar logic.
 - Date helpers work on the strings (`addDays`, `diffDays`, `weekdayLabel`), using local noon internally to avoid daylight-saving edges.
-- The Demo panel is visible in the sample workspace and when the URL carries `?demo=1` (remembered for the session). Buttons: **Evening 2** (override = date of chapter 2), **Event day** (override = event date), **After the event** (override = event date + 1), **Back to today** (remove the override). The panel moves "today" only; screens react through the same rules as for a real family. It also shows the hint "Chapters 2+ and the day card need the test payment".
+- The Demo bar is a collapsible strip at the bottom of every screen of the sample workspace. It has three groups: the guided tour (4.3), time, and access.
+  - **Time:** **Evening 2** (override = date of chapter 2), **Event day** (override = event date), **After the event** (override = event date + 1), **Back to today** (remove the override). It moves "today" only; screens react through the same rules as for a real family. Never a screen swap.
+  - **Access:** **Pay with the test card** (opens the paywall), **Skip payment (demo access)** and **Reset demo**. Skip and reset call `POST /api/sample/access`; the server refuses them for any family that is not a sample.
+  - **Tour:** progress is derived from the family's data (chapter read, question asked, panel opened, access present, check-in saved), not from a separate script, so the ticks are honest.
+- For a real family the URL parameter `?demo=1` (remembered for the session) shows the time group only, for our own testing. It never shows the access group.
+- The whole demo mode is switched by the server variable `DEMO_MODE` (`on` for the hackathon). With `off`, the sample still works but has no demo access, which is how the product would run after the hackathon.
 
 ### 5.2 Plan
 
@@ -594,7 +606,7 @@ export interface Settings {
 | Key | Content | Written by |
 |---|---|---|
 | `bds:workspace` | `'real'` or `'sample'` | landing, sample badge |
-| `bds:settings` | `Settings` (device preferences, not synced) | parent gate, settings, demo panel |
+| `bds:settings` | `Settings` (device preferences, not synced) | parent gate, settings, Demo bar |
 | `bds:child` | `ChildProfile` | onboarding, check-in, settings |
 | `bds:events` | `BigEvent[]` (chapters, questions, check-ins inside) | onboarding, reader, check-in |
 | `bds:sync` | `{ version, lastSyncedAt, dirty }` | sync module |
@@ -640,10 +652,10 @@ create table entitlements (                 -- paid access, written only by the 
   family_id               uuid not null references families(id) on delete cascade,
   plan                    text not null check (plan in ('event', 'year', 'month')),
   event_id                text,             -- for plan 'event'
-  stripe_session_id       text not null unique,
+  stripe_session_id       text not null unique,   -- 'demo:<family id>' for demo access
   stripe_customer_id      text,
   stripe_subscription_id  text,
-  status                  text not null,    -- 'active' | 'canceled' | 'expired'
+  status                  text not null,    -- 'active' | 'canceled' | 'expired' | 'demo' (sample families only)
   expires_at              timestamptz not null,
   created_at              timestamptz not null default now()
 );
@@ -925,6 +937,10 @@ Request: `{}` → `{ url }` of the Stripe customer portal for the family's subsc
 
 Active only when `STRIPE_WEBHOOK_SECRET` is set (after the deploy). Verifies the signature and handles `checkout.session.completed` (grants access even if the parent closed the tab), `customer.subscription.updated` and `customer.subscription.deleted` (renewal, cancellation).
 
+### `POST /api/sample/access`
+
+Request: `{ action: 'grant' | 'reset' }` → `{ entitlements: Entitlement[] }`. `grant` gives the sample family a `year` entitlement with status `demo`, valid 24 hours; `reset` removes every entitlement of the sample family. 403 when the session is not a sample family or `DEMO_MODE` is off. This is the only way access is created without Stripe.
+
 ### `GET /api/ics`
 
 Query `?d=<base64url JSON>` with `{ label, eventId, chapterDates: ISODate[], eventDate: ISODate }` → `text/calendar` attachment `big-day-stories.ics` (11.8). No name inside.
@@ -975,6 +991,10 @@ Prices are defined in `web/lib/payments/plans.ts` and sent to Stripe as inline `
 ### 10.4 Where access lives
 
 Access is a row in `entitlements`, written only by the server after Stripe confirms the payment. `/api/chapter` (chapters 2+) and `/api/ritual` look it up for the family in the session cookie on every call; nothing the browser stores can grant access. Event Pack rows expire after 90 days; subscription rows carry the period end and are refreshed from Stripe when they are within 3 days of expiry (and by the webhook once it is configured). Because access belongs to the family, it follows the family to another device through the restore link.
+
+### 10.4a Demo access
+
+For the jury demo mode (4.3) the server can write one more kind of row: status `demo`, plan `year`, 24 hours, only for a family of kind `sample`, only while `DEMO_MODE` is on. It is checked by the same code as a paid row, so what the jury sees after "Skip payment" is exactly what a paying family gets. Real families have no route to it.
 
 ### 10.5 Auto-renewal rules (FR-A3)
 
@@ -1089,7 +1109,7 @@ One Next.js Node service. Route handlers run on the Node runtime (not edge). One
 
 ### 12.3 Caches
 
-- Sample chapter 1: generated once at boot for the seed context and kept in memory for one hour, then refreshed in the background. A request for exactly that context is answered from the cache; until it is warm the template fallback is used. So the first screen of the jury path never waits for a model.
+- Sample content: all chapters of the seed context and its ritual card are generated in the background at boot through the normal pipeline and kept in memory for one hour, then refreshed. A request for exactly that context is answered from the cache; until an entry is warm the template fallback is used. So the jury path never waits for a model and survives provider rate limits. As soon as a question changes the context, generation is live.
 - Stripe prices and the portal configuration id: memoised in memory.
 
 ### 12.4 Rate limits and budget
@@ -1119,6 +1139,7 @@ One Next.js Node service. Route handlers run on the Node runtime (not edge). One
 | `STRIPE_WEBHOOK_SECRET` | no | enables the webhook after the deploy |
 | `ENTITLEMENT_SECRET` | yes | signs the family session cookie |
 | `ADMIN_KEY` | no | protects the usage endpoint |
+| `DEMO_MODE` | no (`on`) | jury demo mode: demo access and the guided tour for sample families |
 | `NEXT_PUBLIC_BASE_URL` | no | public URL; empty = taken from the request |
 | `ELEVENLABS_API_KEY` | later | voice (17.1) |
 
@@ -1155,7 +1176,7 @@ The service is stateless apart from two small in-memory pieces. To run several i
 
 - **Unit (Vitest)**: `plan` (all N from 1 to 5, today, tomorrow, 60 days, past date), `clock` and date helpers across month ends and daylight saving, chapter status, topics and `mustAddress`, access rules, check-in → memory, suggestions, `.ics` text, template schema for all seven files, safety filters (name, phone, email, address, both word lists), post-checks (lengths, stop phrases, 2:1 ratio).
 - **API (Vitest, mock LLM, embedded database)**: family creation and cookie, state round trip and conflict, sample seed, chapter streaming and the 402 on chapter 2, answer categories for the scripted questions, ritual, verify with a mocked Stripe client, deletion.
-- **End to end (Playwright, mock LLM)**: the sample path from the landing to the badge with the demo panel; a fresh family through onboarding, chapter 1, a question, the panel and the paywall; delete all data.
+- **End to end (Playwright, mock LLM)**: the sample path from the landing to the badge with the Demo bar, once paying with the mocked checkout and once with demo access; a fresh family through onboarding, chapter 1, a question, the panel and the paywall; delete all data.
 
 Commands: `npm test` (unit + API), `npm run e2e`, `npm run safety`, `npm run eval`. Build and tests must be green before a merge to `main`.
 
@@ -1200,7 +1221,7 @@ The stages follow `docs/roadmap.md`. Inside a stage the streams below run in par
 | D Persistence | `lib/db/*`, `lib/server/session.ts`, `lib/sync/*`, `app/api/family`, `state`, `sample`, `restore` | S0 |
 | E Payments | `lib/payments/*`, `app/api/checkout`, `verify`, `portal`, `stripe/webhook`, `components/paywall`, `/paid` | D |
 | F Visuals | `components/character/*`, scenes, icons, badges, night theme | S0 |
-| G Event day and retention | day card and PDF, check-in, badge and next event, calendar, demo panel | A, C |
+| G Event day and retention | day card and PDF, check-in, badge and next event, calendar, Demo bar with guided tour, `app/api/sample/access` | A, C, D |
 | H Extras | values profile, social style, photos, export/import, parent's voice, voice question, restore link | C, D |
 | I Quality | usability threads, safety and evaluation runs, README, final review, deploy | everything |
 
@@ -1236,10 +1257,10 @@ Done once, at 08:30 at the latest (15.2).
 
 1. Railway project → **PostgreSQL** service. Its `DATABASE_URL` is referenced by the web service.
 2. Web service from the GitHub repository, **Root Directory `web`**. Build: `npm run build`. Start: `npm start`, which runs `next start -H 0.0.0.0 -p $PORT`. Railway provides `PORT`. One replica.
-3. Variables from 12.6. `NEXT_PUBLIC_BASE_URL` may stay empty: return URLs are built from the request.
+3. Variables from 12.6, with `DEMO_MODE=on`. `NEXT_PUBLIC_BASE_URL` may stay empty: return URLs are built from the request.
 4. Health check path `/api/health`. Migrations run at start.
 5. **Generate Domain** in the service's networking settings; that URL is the production link for the submission.
-6. After the first successful run: open the link in a private window on a phone, run the sample, make a test payment, check `/api/health` and `/api/admin/usage`.
+6. After the first successful run: open the link in a private window on a phone and walk the guided tour of the sample twice, once with **Pay with the test card** and once with **Skip payment**; then create a real family through "Start for free" and pay with the test card; check `/api/health` and `/api/admin/usage`.
 7. Optional, when there is time: add the Stripe webhook endpoint `<domain>/api/stripe/webhook` in the Stripe dashboard (test mode) and put its signing secret into `STRIPE_WEBHOOK_SECRET`.
 
 The link must stay up until the end of the final: do not redeploy during the jury window (12:00–15:00) unless something is broken, and set `LLM_BUDGET_USD_PER_DAY` for that window deliberately.
@@ -1350,16 +1371,16 @@ Hard questions and questions about complex mechanics (D7).
 | K5 | Reading ahead | Decided by the architect: one chapter a night is recommended, a family with access may read one chapter ahead; re-checked in a usability session (5.2) |
 | K6 | What counts as "didn't help" | Decided by the architect: only what the parent marks; untouched techniques stay neutral (4.13) |
 | K9 | Model budget | No approval yet and nothing is spent. Strategy: benchmarks first, start from the cheaper models, test, move up only if needed; Gemini for now (D17, 8.8) |
+| K11 | Does the paywall stay in the MVP? | Yes (01:55). The paywall stays; the jury sees everything through the jury demo mode: guided tour, real test checkout and one-tap demo access for sample families only (D18, 4.3, 5.1) |
+| K2 | Jury test profile | Decided by the architect as the best solution: a fresh sample family per browser, Max with one past event and the upcoming dentist, unpaid at first, with "Pay with the test card" and "Skip payment (demo access)" side by side |
 
 ### Still open (the default is built until answered)
 
 | # | Question | Default being built | If you choose otherwise |
 |---|---|---|---|
-| K2 | What does the jury's test profile contain? | A fresh sample family per browser: Max with one past event (haircut, check-in saved) and the upcoming dentist, unpaid, so the jury sees memory at once and tries the test payment themselves | A clean Max with no history, or an already paid sample that skips the payment |
 | K4 | Second event for a Big Day Pass owner | Chapter 1 free again; then $9.99 for that event or the $39 upgrade to the year | For example a cheaper second pass |
 | K7 | Social story style and questions | The answer page appears, but the next page is not rewritten, because the text must not change on re-reading; the topic moves to the next chapter | Rewrite the next page in this mode too |
 | K8 | Premium narration and the name | When ElevenLabs is connected, the spoken name has to be sent to the voice provider. Proposal: explicit consent from the parent on first use of premium voice | Keep premium voice name-free (the character says "you") |
 | K10 | Deploy timing | Create the Railway project and PostgreSQL now, deploy the app at 08:30 at the latest | Deploy later: every hour after 09:00 removes time to fix what only production shows |
-| K11 | "Open all functionality in the MVP": does the paywall stay? | Yes. Every feature is open, and payment still unlocks chapters 2+ and the day card, because the case rules require a working paywall with a Stripe test checkout and Value & Retention is 20% of the score | Remove the paywall entirely: fails rule C4 |
 | K12 | Names of the levels | Gold, Platinum, Diamond as suggested, next to the one-time Big Day Pass; in the MVP the paywall shows Event Pack, Family Year and Monthly as in the ТЗ | Brave / Braver / Bravest, or Family / Family Plus / Family Pro |
 | K13 | Budgets | Every paid run is requested separately with an estimate. First request will come with the model shortlist: well under $1 for the two small models | |
