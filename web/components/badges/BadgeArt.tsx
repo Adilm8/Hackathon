@@ -11,6 +11,14 @@ const RIBBON: Record<EventType, string> = {
   sibling: '#9b6be8',
   haircut: '#ff8a3d',
   shot: '#2fa6c9',
+  doctor: '#3aa0e0',
+  blood_test: '#e0527a',
+  hospital: '#4fb3a9',
+  moving: '#c98a3d',
+  sleepover: '#5a5fc9',
+  babysitter: '#d46bb3',
+  swimming: '#2bb5d6',
+  party: '#f06c9b',
   other: '#6b6a7b',
 };
 
@@ -22,6 +30,14 @@ export const BADGE_LABEL: Record<EventType, string> = {
   sibling: 'Big Sibling',
   haircut: 'Cool Cut',
   shot: 'Brave Arm',
+  doctor: 'Healthy Hero',
+  blood_test: 'Super Sleeve',
+  hospital: 'Hospital Hero',
+  moving: 'New Home Explorer',
+  sleepover: 'Starry Night',
+  babysitter: 'Brave Goodbye',
+  swimming: 'Splash Star',
+  party: 'Party Star',
   other: 'Brave Heart',
 };
 

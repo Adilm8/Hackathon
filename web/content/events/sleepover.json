@@ -1,0 +1,1023 @@
+{
+  "type": "sleepover",
+  "version": 1,
+  "label": "First sleepover",
+  "countdownLabel": "the sleepover",
+  "beats": {
+    "what_happens": {
+      "title": "What happens at a sleepover",
+      "goals": [
+        "The steps: pack the bag, arrive and say hello, play, dinner, pyjamas, bedtime, breakfast, pick-up",
+        "A sleepover means sleeping one night at a friend's or family member's home",
+        "Pick-up time is set, and the grown-up comes back"
+      ],
+      "parentSkill": "Tell your child the exact pick-up time and who comes, and say it the same way each night."
+    },
+    "who_is_there": {
+      "title": "Who is at the sleepover",
+      "goals": [
+        "The host grown-ups are in charge and know what to do",
+        "The friend or cousin and maybe a pet",
+        "The child can always ask the host grown-up for help or a call home"
+      ],
+      "parentSkill": "Introduce the host grown-up by name, and agree with them how a call home works."
+    },
+    "what_i_do": {
+      "title": "What I do at the sleepover",
+      "goals": [
+        "Play, eat, brush teeth and put on pyjamas",
+        "Say what I need: a night light, the toilet, a drink of water",
+        "Use my own bedtime steps with my toy"
+      ],
+      "parentSkill": "Practise asking: 'Where is the toilet?' and 'Can I have the light on?'"
+    },
+    "if_scared": {
+      "title": "If I miss home at night",
+      "goals": [
+        "A different bed, dark room and new night sounds",
+        "Missing home is normal, and it often passes",
+        "Calm tools: the toy from home, a note in the bag, slow breaths, asking for a call"
+      ],
+      "parentSkill": "Agree an honest plan for missing home, including whether you can come early, and keep it."
+    },
+    "rehearsal": {
+      "title": "Let's practise the sleepover",
+      "goals": [
+        "Pack the sleepover bag together",
+        "Have a pretend sleepover in the living room",
+        "Say the steps once more, ending with breakfast and pick-up"
+      ],
+      "parentSkill": "Do a practice sleepover at home: different room, own bag, own bedtime steps."
+    }
+  },
+  "steps": [
+    "Pack my bag: pyjamas, toothbrush, my toy",
+    "Arrive and say hello to the host grown-ups",
+    "Play and have dinner together",
+    "Brush teeth, put on pyjamas and get ready for bed",
+    "Sleep in a different bed with my toy",
+    "Wake up and have breakfast",
+    "[[GROWNUP]] picks me up at the time we agreed"
+  ],
+  "sensory": [
+    "a different bed and a different pillow",
+    "a dark room with new shadows",
+    "new night sounds, like a fridge humming or a pet moving",
+    "different food smells",
+    "my own blanket or toy that smells like home",
+    "whispers and giggles before sleep"
+  ],
+  "honestyNotes": "A first sleepover can end early, and that is fine. Do not promise the child will not miss home. Agree honestly with your child and the host about calls and early pick-up, and keep the promise you make.",
+  "questionButtons": [
+    {
+      "id": "miss_home",
+      "text": "What if I miss home?",
+      "topic": "separation",
+      "fallbackAnswer": [
+        "Missing home is normal, and lots of kids feel it at night.",
+        "You can hug your toy, read the note in your bag, or ask the grown-up there for help."
+      ]
+    },
+    {
+      "id": "when_back",
+      "text": "When will [[GROWNUP]] come back?",
+      "topic": "separation",
+      "fallbackAnswer": [
+        "[[GROWNUP]] comes after breakfast, at the time we agreed.",
+        "We can say the time together so you remember it."
+      ]
+    },
+    {
+      "id": "call",
+      "text": "Can I call home?",
+      "topic": "safety",
+      "fallbackAnswer": [
+        "We will agree a plan for calling home before you go.",
+        "The grown-ups there know the plan too."
+      ]
+    },
+    {
+      "id": "dark",
+      "text": "What if it is dark?",
+      "topic": "sensory",
+      "fallbackAnswer": [
+        "You can ask for a night light or for the door open a little.",
+        "Your toy from home will be right there."
+      ]
+    },
+    {
+      "id": "who",
+      "text": "Who looks after me?",
+      "topic": "strangers",
+      "fallbackAnswer": [
+        "The grown-ups at your friend's home look after you all night.",
+        "You can ask them for anything you need."
+      ]
+    },
+    {
+      "id": "toilet",
+      "text": "What if I need the toilet at night?",
+      "topic": "body",
+      "fallbackAnswer": [
+        "Before bed, ask where the toilet is so you know the way.",
+        "You can wake a grown-up if you need help."
+      ]
+    },
+    {
+      "id": "food",
+      "text": "What if I don't like the food?",
+      "topic": "other",
+      "fallbackAnswer": [
+        "You can say, no thank you, politely.",
+        "There will be other things to eat, and breakfast is coming too."
+      ]
+    },
+    {
+      "id": "friend",
+      "text": "What will we do?",
+      "topic": "social",
+      "fallbackAnswer": [
+        "You might play games, watch a film, or build a blanket fort.",
+        "Then pyjamas, teeth and bed."
+      ]
+    }
+  ],
+  "techniques": [
+    {
+      "id": "comfort_toy",
+      "label": "Bringing a comfort toy",
+      "how": "Pack the toy or blanket your child sleeps with; it carries the smell of home.",
+      "topics": [
+        "separation",
+        "sensory",
+        "safety"
+      ]
+    },
+    {
+      "id": "pocket_note",
+      "label": "A note in the bag",
+      "how": "Hide a short note or drawing in the bag for bedtime, with a heart and the pick-up time.",
+      "topics": [
+        "separation",
+        "love"
+      ]
+    },
+    {
+      "id": "call_plan",
+      "label": "An agreed call plan",
+      "how": "Agree with your child and the host when a call home happens and what happens if your child wants to come home.",
+      "topics": [
+        "safety",
+        "separation"
+      ]
+    },
+    {
+      "id": "own_bedtime",
+      "label": "My own bedtime steps",
+      "how": "Tell the host your child's bedtime steps and let your child do them the same way.",
+      "topics": [
+        "unknown",
+        "safety",
+        "sensory"
+      ]
+    },
+    {
+      "id": "practice_night",
+      "label": "A practice sleepover at home",
+      "how": "Sleep in a different room at home, or at a grandparent's, before the real night.",
+      "topics": [
+        "unknown",
+        "separation"
+      ]
+    },
+    {
+      "id": "ask_sentence",
+      "label": "Practising asking for help",
+      "how": "Practise 'Can I have a drink of water?', 'Where is the toilet?' and 'Can the light stay on?'",
+      "topics": [
+        "strangers",
+        "body",
+        "social"
+      ]
+    },
+    {
+      "id": "night_light",
+      "label": "A night light",
+      "how": "Pack a small night light or ask the host to leave one on.",
+      "topics": [
+        "sensory",
+        "safety"
+      ]
+    },
+    {
+      "id": "deep_breaths",
+      "label": "Smell the flower, blow the candle",
+      "how": "Breathe in slowly through the nose like smelling a flower and out like blowing a candle.",
+      "topics": [
+        "pain",
+        "sensory",
+        "safety"
+      ]
+    }
+  ],
+  "ritual": [
+    "Pack my bag and my toy",
+    "Play, pyjamas and my bedtime steps",
+    "Breakfast, then pick-up"
+  ],
+  "phrases": {
+    "pain": [
+      "If your tummy feels funny, tell the grown-up there.",
+      "Missing home can feel like a sore heart. A hug from your toy helps."
+    ],
+    "separation": [
+      "I come after breakfast, at the time we said.",
+      "Your toy from home stays with you all night."
+    ],
+    "unknown": [
+      "First play, then dinner, then pyjamas, then bed, then breakfast, then me.",
+      "You already know the steps."
+    ],
+    "strangers": [
+      "The grown-ups there look after you all night. You can ask them anything.",
+      "Let's say their names together."
+    ],
+    "sensory": [
+      "A night light or an open door can help with the dark.",
+      "New houses have new night sounds, like humming fridges."
+    ],
+    "safety": [
+      "We have a plan for calling home, and the grown-ups know it.",
+      "You can always ask for help, even at night."
+    ],
+    "social": [
+      "You and your friend can build a blanket fort.",
+      "Lots of kids feel shy at first. It gets easier."
+    ],
+    "body": [
+      "Ask where the toilet is before bed.",
+      "You can ask for a drink of water."
+    ],
+    "love": [
+      "I love you, even when we are in different houses.",
+      "I am proud of you for trying."
+    ]
+  },
+  "topicWords": {
+    "pain": [
+      "sore",
+      "tummy",
+      "hurt",
+      "funny"
+    ],
+    "separation": [
+      "miss",
+      "missing",
+      "home",
+      "back",
+      "picks",
+      "pick-up",
+      "come",
+      "comes",
+      "after breakfast",
+      "toy from home",
+      "note"
+    ],
+    "unknown": [
+      "first",
+      "then",
+      "next",
+      "after",
+      "last",
+      "step",
+      "steps",
+      "plan"
+    ],
+    "strangers": [
+      "grown-up",
+      "grown-ups",
+      "host",
+      "hello",
+      "names",
+      "look after",
+      "looks after"
+    ],
+    "sensory": [
+      "dark",
+      "light",
+      "night light",
+      "sound",
+      "sounds",
+      "humming",
+      "shadow",
+      "shadows",
+      "smell",
+      "smells",
+      "quiet"
+    ],
+    "safety": [
+      "safe",
+      "plan",
+      "call",
+      "help",
+      "ask",
+      "door"
+    ],
+    "social": [
+      "friend",
+      "friends",
+      "play",
+      "games",
+      "fort",
+      "kids",
+      "giggle",
+      "together"
+    ],
+    "body": [
+      "toilet",
+      "water",
+      "teeth",
+      "pyjamas",
+      "tummy",
+      "body",
+      "drink",
+      "eat"
+    ],
+    "love": [
+      "love",
+      "proud",
+      "hug",
+      "heart"
+    ]
+  },
+  "backgrounds": [
+    "cosy-room",
+    "home-evening",
+    "outside"
+  ],
+  "fallbackPages": {
+    "story": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "Soon [[CHILD]] will go to a sleepover.",
+              "kind": "describe"
+            },
+            {
+              "text": "A sleepover means sleeping one night at someone else's home.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, [[CHILD]] packs a bag with pyjamas, a toothbrush and a favourite toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[GROWNUP]] takes [[CHILD]] there.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] says hello, and the fun starts with playing and dinner.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "After dinner come teeth, pyjamas and bedtime in a different bed.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] sleeps with the toy from home close by.",
+              "kind": "describe"
+            },
+            {
+              "text": "In the morning there is breakfast.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[GROWNUP]] comes back, at the time they agreed.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pick-up after breakfast, just like the plan.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "unknown",
+            "separation"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "At the sleepover there are grown-ups who live in that home.",
+              "kind": "describe"
+            },
+            {
+              "text": "They are in charge, and they look after [[CHILD]] all night.",
+              "kind": "describe"
+            },
+            {
+              "text": "They know the plan and they know [[CHILD]]'s bedtime steps.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can ask them for help, a drink of water or a night light.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "strangers"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "There is also a friend, and maybe a pet.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] and the friend might play games or build a blanket fort.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes kids feel shy at first, and then they giggle together.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is at home, and comes back after breakfast.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can remember the pick-up time.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "social",
+            "separation"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "At the sleepover, [[CHILD]] knows how to ask for things.",
+              "kind": "describe"
+            },
+            {
+              "text": "Where is the toilet, please?",
+              "kind": "coach"
+            },
+            {
+              "text": "Can I have a drink of water?",
+              "kind": "coach"
+            },
+            {
+              "text": "The grown-ups there are happy to help.",
+              "kind": "describe"
+            },
+            {
+              "text": "Before bed, [[CHILD]] brushes teeth and puts on pyjamas, the same as at home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Asking is a big kid thing to do.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "strangers"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Then [[CHILD]] does the same bedtime steps as at home.",
+              "kind": "describe"
+            },
+            {
+              "text": "First the story, then the toy, then a snuggle into the blanket.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] knows the plan for calling home.",
+              "kind": "describe"
+            },
+            {
+              "text": "If [[CHILD]] needs help at night, [[CHILD]] can ask a grown-up.",
+              "kind": "coach"
+            },
+            {
+              "text": "The grown-ups there keep [[CHILD]] safe.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "safety",
+            "unknown"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "At night the room is dark and the shadows look new.",
+              "kind": "describe"
+            },
+            {
+              "text": "There might be night sounds, like a fridge humming or a pet padding by.",
+              "kind": "describe"
+            },
+            {
+              "text": "The pillow smells different from home.",
+              "kind": "describe"
+            },
+            {
+              "text": "That can feel strange, and that is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can ask for a night light or for the door open a little.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "worried",
+          "background": "cosy-room",
+          "addresses": [
+            "sensory"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Sometimes [[CHILD]] might miss home at bedtime.",
+              "kind": "describe"
+            },
+            {
+              "text": "Lots of kids feel that, and it often passes.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can hug the toy from home and read the little note from [[GROWNUP]].",
+              "kind": "coach"
+            },
+            {
+              "text": "It has a heart on it, and the pick-up time.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves [[CHILD]] in every house.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "cosy-room",
+          "addresses": [
+            "separation",
+            "love"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "Tonight [[CHILD]] and [[GROWNUP]] have a pretend sleepover at home.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, [[CHILD]] packs the sleepover bag: pyjamas, toothbrush, toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then they build a blanket fort in the living room.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, teeth, pyjamas and bedtime steps.",
+              "kind": "describe"
+            },
+            {
+              "text": "Night light on, toy close, and snuggle down!",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Let's say the sleepover steps once more.",
+              "kind": "coach"
+            },
+            {
+              "text": "First, pack the bag and say hello.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then play and dinner.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, pyjamas, bedtime steps and sleep.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, breakfast and pick-up.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of [[CHILD]] for practising, and gives a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "cosy-room",
+          "addresses": [
+            "unknown",
+            "love"
+          ]
+        }
+      ]
+    },
+    "social": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "My name is [[CHILD]], and soon I will go to a sleepover.",
+              "kind": "describe"
+            },
+            {
+              "text": "A sleepover means I sleep one night at a friend's home.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, I pack my bag.",
+              "kind": "describe"
+            },
+            {
+              "text": "I pack my pyjamas, my toothbrush and my toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I go to my friend's home.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say hello when I arrive.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Next, we play and have dinner.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I put on my pyjamas and brush my teeth.",
+              "kind": "describe"
+            },
+            {
+              "text": "I sleep in a different bed.",
+              "kind": "describe"
+            },
+            {
+              "text": "In the morning we have breakfast.",
+              "kind": "describe"
+            },
+            {
+              "text": "After breakfast, [[GROWNUP]] comes back to pick me up.",
+              "kind": "describe"
+            },
+            {
+              "text": "The pick-up time is part of the plan.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "unknown",
+            "separation"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "At the sleepover there are grown-ups.",
+              "kind": "describe"
+            },
+            {
+              "text": "The grown-ups look after me all night.",
+              "kind": "describe"
+            },
+            {
+              "text": "They know my bedtime steps.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask the grown-ups for help.",
+              "kind": "coach"
+            },
+            {
+              "text": "They are happy to help me.",
+              "kind": "describe"
+            },
+            {
+              "text": "They know the plan for calling home.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "strangers"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "My friend is at the sleepover.",
+              "kind": "describe"
+            },
+            {
+              "text": "We can play games together.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes I may feel shy at first.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask my friend to play a game with me.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[GROWNUP]] is at home.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] comes back after breakfast.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "social",
+            "separation"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "At the sleepover, I may need things.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may need the toilet or a drink of water.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask a grown-up, where is the toilet?",
+              "kind": "coach"
+            },
+            {
+              "text": "I brush my teeth before bed.",
+              "kind": "describe"
+            },
+            {
+              "text": "I put on my pyjamas.",
+              "kind": "describe"
+            },
+            {
+              "text": "Asking for what I need is a good thing to do.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "strangers"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At bedtime, I do my bedtime steps.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, a story.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then, my toy and my blanket.",
+              "kind": "describe"
+            },
+            {
+              "text": "If I need help at night, I can ask a grown-up.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can remember our plan for calling home.",
+              "kind": "coach"
+            },
+            {
+              "text": "The grown-ups keep me safe.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "safety",
+            "unknown"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "At night the room may be dark.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may hear new sounds.",
+              "kind": "describe"
+            },
+            {
+              "text": "The pillow may smell different.",
+              "kind": "describe"
+            },
+            {
+              "text": "New things can feel strange.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask for a night light.",
+              "kind": "coach"
+            },
+            {
+              "text": "The door can stay open a little.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "worried",
+          "background": "cosy-room",
+          "addresses": [
+            "sensory"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Sometimes I may miss home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Many kids miss home at a sleepover.",
+              "kind": "describe"
+            },
+            {
+              "text": "Missing home is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can hug my toy from home.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can read my note from [[GROWNUP]].",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, even in a different house.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "separation",
+            "love"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "At home, I can practise a sleepover.",
+              "kind": "describe"
+            },
+            {
+              "text": "I pack my sleepover bag.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I sleep in a different room at home.",
+              "kind": "describe"
+            },
+            {
+              "text": "I do my bedtime steps.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can practise asking for a night light.",
+              "kind": "coach"
+            },
+            {
+              "text": "Practising helps me know what will happen.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Here are the steps of my sleepover.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, I pack my bag.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then, we play and have dinner.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, pyjamas and bed.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, breakfast and pick-up.",
+              "kind": "describe"
+            },
+            {
+              "text": "I practised all the steps, and I did a good job.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "cosy-room",
+          "addresses": [
+            "unknown"
+          ]
+        }
+      ]
+    }
+  },
+  "badge": {
+    "id": "starry_night",
+    "label": "Starry Night"
+  }
+}

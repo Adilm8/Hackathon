@@ -1,0 +1,1028 @@
+{
+  "type": "doctor",
+  "version": 1,
+  "label": "Doctor check-up",
+  "countdownLabel": "the doctor check-up",
+  "beats": {
+    "what_happens": {
+      "title": "What happens at a check-up",
+      "goals": [
+        "The steps: waiting room, nurse, scale and height, doctor, listening, looking, goodbye",
+        "A check-up is how the doctor learns that a body is growing well",
+        "Every step is a look or a listen, and each one is short"
+      ],
+      "parentSkill": "Name the steps in order and let your child tell you which one comes next."
+    },
+    "who_is_there": {
+      "title": "Who is at the doctor",
+      "goals": [
+        "A receptionist says hello, a nurse measures, the doctor checks",
+        "Their job is to help children stay healthy",
+        "The grown-up stays in the room the whole time"
+      ],
+      "parentSkill": "Talk about each helper by their job, and say that you stay in the room."
+    },
+    "what_i_do": {
+      "title": "What I do at the check-up",
+      "goals": [
+        "Stand tall on the scale, sit on the exam table, breathe in and out for the stethoscope",
+        "Open wide and say aah, keep still for a peek in the ears",
+        "Ask a question or say \"wait please\" any time"
+      ],
+      "parentSkill": "Practise 'breathe in, breathe out' and 'say aah' with a toy stethoscope or a paper tube."
+    },
+    "if_scared": {
+      "title": "If I feel worried",
+      "goals": [
+        "The stethoscope can feel cold, the paper on the table crinkles, the light is bright",
+        "A cuff on the arm squeezes tight for a few seconds, then lets go",
+        "Calm tools: slow breaths, holding a hand, holding a toy"
+      ],
+      "parentSkill": "Name the feeling and the plan together: 'You feel worried. I'm right here, and we'll go one step at a time.'"
+    },
+    "rehearsal": {
+      "title": "Let's practise the check-up",
+      "goals": [
+        "Play doctor at home with a toy, then switch roles",
+        "Practise breathing for the stethoscope and saying aah",
+        "Say the steps once more and end with going home"
+      ],
+      "parentSkill": "Let your child be the doctor first and check you, then check a toy, then switch."
+    }
+  },
+  "steps": [
+    "Say hello at the front desk and wait in the waiting room",
+    "A nurse calls our name and walks us to a room",
+    "Stand on the scale and stand tall to measure height",
+    "Sit on the exam table with the crinkly paper",
+    "The doctor listens to the heart and tummy with a stethoscope",
+    "The doctor looks in the ears, eyes and mouth with a little light",
+    "Say goodbye and go home"
+  ],
+  "sensory": [
+    "a cold stethoscope on the chest",
+    "crinkly paper on the exam table",
+    "a small bright light for ears and eyes",
+    "a flat stick that touches the tongue",
+    "a blood pressure cuff that squeezes the arm, then lets go",
+    "a clean smell like hand soap",
+    "a waiting room with toys and other families"
+  ],
+  "honestyNotes": "A check-up is mostly looking and listening. Some parts feel strange: a cold stethoscope, a cuff that squeezes, a stick on the tongue. Some check-ups include a shot; if you know there will be one, say so honestly and use the shot story as well. Never promise there will be no shot unless you are sure.",
+  "questionButtons": [
+    {
+      "id": "shot",
+      "text": "Will I get a shot?",
+      "topic": "pain",
+      "fallbackAnswer": [
+        "Most check-ups are just looking and listening.",
+        "Sometimes there is a shot too, and [[GROWNUP]] will tell you before the visit if there is one."
+      ]
+    },
+    {
+      "id": "why_go",
+      "text": "Why do I go if I am not sick?",
+      "topic": "body",
+      "fallbackAnswer": [
+        "A check-up is how the doctor sees that your body is growing strong.",
+        "Healthy kids go to the doctor too, about once a year."
+      ]
+    },
+    {
+      "id": "stethoscope",
+      "text": "What is that thing on the doctor's neck?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "It is a stethoscope. It lets the doctor hear your heart go thump-thump.",
+        "It can feel cold, and you can ask to listen to your own heart."
+      ]
+    },
+    {
+      "id": "near",
+      "text": "Will [[GROWNUP]] stay with me?",
+      "topic": "separation",
+      "fallbackAnswer": [
+        "Yes. [[GROWNUP]] stays in the room the whole time.",
+        "You can hold a hand or sit on a lap for some parts."
+      ]
+    },
+    {
+      "id": "who",
+      "text": "Who will look at me?",
+      "topic": "strangers",
+      "fallbackAnswer": [
+        "A nurse and a doctor. Their job is to help kids stay healthy.",
+        "They will tell you what they are going to do before they do it."
+      ]
+    },
+    {
+      "id": "clothes",
+      "text": "Do I take my clothes off?",
+      "topic": "body",
+      "fallbackAnswer": [
+        "Sometimes the doctor asks to take off a shirt or shoes to listen and look.",
+        "Only the doctor or nurse checks, with [[GROWNUP]] right there, and you can always ask why."
+      ]
+    },
+    {
+      "id": "squeeze",
+      "text": "What is the squeezy thing on my arm?",
+      "topic": "sensory",
+      "fallbackAnswer": [
+        "It is a cuff. It gives your arm a tight hug for a few seconds.",
+        "Then it lets go with a little whoosh."
+      ]
+    },
+    {
+      "id": "after",
+      "text": "What happens after?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "After the check-up we say goodbye and go home.",
+        "Maybe we can read a book or play together."
+      ]
+    }
+  ],
+  "techniques": [
+    {
+      "id": "hold_hand",
+      "label": "Holding a hand",
+      "how": "Stand or sit where your child can hold your hand during each part of the exam.",
+      "topics": [
+        "separation",
+        "safety",
+        "strangers"
+      ]
+    },
+    {
+      "id": "deep_breaths",
+      "label": "Smell the flower, blow the candle",
+      "how": "Breathe in slowly through the nose like smelling a flower and out like blowing a candle.",
+      "topics": [
+        "pain",
+        "sensory",
+        "safety"
+      ]
+    },
+    {
+      "id": "lap_sit",
+      "label": "Sitting on a grown-up's lap",
+      "how": "Ask if your child can sit on your lap for the ears, eyes and mouth check.",
+      "topics": [
+        "separation",
+        "safety"
+      ]
+    },
+    {
+      "id": "listen_first",
+      "label": "Listening to my own heart",
+      "how": "Ask the doctor to let your child listen to their own heart or to yours with the stethoscope first.",
+      "topics": [
+        "unknown",
+        "sensory",
+        "strangers"
+      ]
+    },
+    {
+      "id": "doctor_kit",
+      "label": "Playing doctor at home",
+      "how": "Use a toy doctor kit or a paper tube to check a toy, then let your child check you.",
+      "topics": [
+        "unknown",
+        "body",
+        "social"
+      ]
+    },
+    {
+      "id": "comfort_toy",
+      "label": "Bringing a comfort toy",
+      "how": "Let your child bring a favourite toy; the doctor can check the toy first.",
+      "topics": [
+        "separation",
+        "strangers",
+        "social"
+      ]
+    },
+    {
+      "id": "ask_why",
+      "label": "Asking 'what's next?'",
+      "how": "Teach your child to ask 'what's next?' and ask the doctor to name each step before it happens.",
+      "topics": [
+        "unknown",
+        "body",
+        "safety"
+      ]
+    },
+    {
+      "id": "count_to_ten",
+      "label": "Counting to ten",
+      "how": "Count slowly to ten together during each short part; most parts end before ten.",
+      "topics": [
+        "unknown",
+        "sensory",
+        "pain"
+      ]
+    },
+    {
+      "id": "sticker_after",
+      "label": "A sticker or a treat after",
+      "how": "Plan a small reward or a favourite activity for after the visit and talk about it in the waiting room.",
+      "topics": [
+        "social",
+        "pain"
+      ]
+    }
+  ],
+  "ritual": [
+    "Stand tall on the scale",
+    "Breathe in, breathe out for the doctor",
+    "Say goodbye and go home"
+  ],
+  "phrases": {
+    "pain": [
+      "Most of the check-up is looking and listening.",
+      "If something feels uncomfortable, tell me and we will ask the doctor to pause."
+    ],
+    "separation": [
+      "I'm staying in the room the whole time.",
+      "You can hold my hand or sit on my lap."
+    ],
+    "unknown": [
+      "First the scale, then the doctor listens, then the doctor looks, then we go home.",
+      "Let's ask the doctor what comes next."
+    ],
+    "strangers": [
+      "The doctor's job is to help kids stay healthy. Let's say hello.",
+      "The doctor will tell you each step first."
+    ],
+    "sensory": [
+      "The stethoscope can feel cold for a second.",
+      "The cuff gives your arm a tight hug, then lets go."
+    ],
+    "safety": [
+      "The doctor checks lots of kids every day and knows how to be gentle.",
+      "You can say 'wait please' and we will pause."
+    ],
+    "social": [
+      "Lots of kids go for check-ups. Look, another family is waiting too.",
+      "Your toy can have a check-up first."
+    ],
+    "body": [
+      "The doctor is checking that your body is growing strong.",
+      "Only the doctor or nurse checks you, and I am right here."
+    ],
+    "love": [
+      "I am proud of you for helping the doctor.",
+      "I love you, healthy and growing."
+    ]
+  },
+  "topicWords": {
+    "pain": [
+      "hurt",
+      "ouch",
+      "shot",
+      "sore",
+      "uncomfortable",
+      "pinch"
+    ],
+    "separation": [
+      "stay",
+      "stays",
+      "right here",
+      "with",
+      "hand",
+      "lap",
+      "close",
+      "room"
+    ],
+    "unknown": [
+      "first",
+      "then",
+      "next",
+      "after",
+      "last",
+      "step",
+      "steps",
+      "what"
+    ],
+    "strangers": [
+      "doctor",
+      "nurse",
+      "hello",
+      "helper",
+      "helpers",
+      "job"
+    ],
+    "sensory": [
+      "cold",
+      "crinkle",
+      "crinkly",
+      "light",
+      "squeeze",
+      "squeezes",
+      "tickle",
+      "sound",
+      "hear",
+      "bright",
+      "hug"
+    ],
+    "safety": [
+      "safe",
+      "gentle",
+      "careful",
+      "wait",
+      "pause",
+      "stop"
+    ],
+    "social": [
+      "kids",
+      "children",
+      "friend",
+      "toy",
+      "family",
+      "families",
+      "people"
+    ],
+    "body": [
+      "body",
+      "heart",
+      "tummy",
+      "ears",
+      "eyes",
+      "mouth",
+      "grow",
+      "growing",
+      "strong",
+      "tall",
+      "healthy"
+    ],
+    "love": [
+      "love",
+      "proud",
+      "hug"
+    ]
+  },
+  "backgrounds": [
+    "shot",
+    "outside",
+    "home-evening",
+    "cosy-room"
+  ],
+  "fallbackPages": {
+    "story": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "Soon [[CHILD]] will go to the doctor for a check-up.",
+              "kind": "describe"
+            },
+            {
+              "text": "A check-up is how the doctor sees that a body is growing well.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, [[CHILD]] and [[GROWNUP]] say hello at the front desk.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then they wait in the waiting room, where there are books and toys.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, a nurse calls [[CHILD]]'s name.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "After that, [[CHILD]] stands tall on a scale and against a measuring line.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[CHILD]] sits on a table with crinkly paper on top.",
+              "kind": "describe"
+            },
+            {
+              "text": "The doctor listens to [[CHILD]]'s heart and tummy and looks in the ears, eyes and mouth.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last of all, everyone says goodbye, and [[CHILD]] goes home.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "unknown",
+            "body"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "At the doctor's office there are a few helpers.",
+              "kind": "describe"
+            },
+            {
+              "text": "A friendly person at the front desk says hello and writes down [[CHILD]]'s name.",
+              "kind": "describe"
+            },
+            {
+              "text": "A nurse measures how tall [[CHILD]] is and how much [[CHILD]] weighs.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the doctor comes in and says hello.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say hello back, or just wave.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "strangers"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "The doctor checks lots of kids every day.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids are big and some are small, and all of them are growing.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] stays in the room the whole time.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can hold [[GROWNUP]]'s hand or sit on [[GROWNUP]]'s lap.",
+              "kind": "coach"
+            },
+            {
+              "text": "A favourite toy can come along and get a check-up too.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "shot",
+          "addresses": [
+            "separation",
+            "social"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "At the check-up, [[CHILD]] has a few jobs.",
+              "kind": "describe"
+            },
+            {
+              "text": "Stand tall like a tree on the scale.",
+              "kind": "coach"
+            },
+            {
+              "text": "When the doctor puts the stethoscope on [[CHILD]]'s chest, [[CHILD]] breathes in and out slowly.",
+              "kind": "describe"
+            },
+            {
+              "text": "The stethoscope lets the doctor hear the heart go thump-thump.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[CHILD]] opens wide and says aah, like a lion.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "shot",
+          "addresses": [
+            "body",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "When the doctor looks in the ears, [[CHILD]] keeps still for a little peek.",
+              "kind": "describe"
+            },
+            {
+              "text": "A peek takes about as long as counting to five.",
+              "kind": "describe"
+            },
+            {
+              "text": "If [[CHILD]] needs a moment, [[CHILD]] can say, wait please.",
+              "kind": "coach"
+            },
+            {
+              "text": "The doctor will pause and wait.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can also ask, what's next, and the doctor will tell.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "safety"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "Some parts of a check-up feel a bit strange.",
+              "kind": "describe"
+            },
+            {
+              "text": "The stethoscope can feel cold for a second.",
+              "kind": "describe"
+            },
+            {
+              "text": "The paper on the table crinkles when [[CHILD]] moves.",
+              "kind": "describe"
+            },
+            {
+              "text": "The little light for the ears is bright.",
+              "kind": "describe"
+            },
+            {
+              "text": "A cuff on the arm can squeeze tight, like a big hug, and then it lets go with a whoosh.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "worried",
+          "background": "shot",
+          "addresses": [
+            "sensory"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "It is okay to feel worried at the doctor.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes there is a shot at a check-up too, and [[GROWNUP]] will say so before the visit.",
+              "kind": "describe"
+            },
+            {
+              "text": "If something feels uncomfortable, [[CHILD]] can tell [[GROWNUP]] or the doctor.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can hold a hand, hug a toy, or smell the flower and blow the candle.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "shot",
+          "addresses": [
+            "separation",
+            "pain"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "Tonight [[CHILD]] and [[GROWNUP]] play doctor at home.",
+              "kind": "describe"
+            },
+            {
+              "text": "A paper tube can be a stethoscope.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, [[CHILD]] is the doctor and listens to a toy's heart.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[CHILD]] checks [[GROWNUP]]'s ears and says, open wide and say aah.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, they switch, and [[GROWNUP]] is the doctor.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "body"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Let's say the check-up steps once more.",
+              "kind": "coach"
+            },
+            {
+              "text": "First, hello and the waiting room.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the scale and standing tall.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, the doctor listens and looks.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, goodbye and home.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of [[CHILD]] for practising, and gives a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "cosy-room",
+          "addresses": [
+            "unknown",
+            "love"
+          ]
+        }
+      ]
+    },
+    "social": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "My name is [[CHILD]], and soon I will go to the doctor for a check-up.",
+              "kind": "describe"
+            },
+            {
+              "text": "A check-up helps the doctor see that my body is growing.",
+              "kind": "describe"
+            },
+            {
+              "text": "Healthy kids go to check-ups too.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, I say hello at the front desk with [[GROWNUP]].",
+              "kind": "describe"
+            },
+            {
+              "text": "Then we wait in the waiting room.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can read a book while I wait.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "unknown",
+            "body"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Next, a nurse calls my name.",
+              "kind": "describe"
+            },
+            {
+              "text": "I stand on a scale and the nurse measures how tall I am.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I sit on a table with paper on top.",
+              "kind": "describe"
+            },
+            {
+              "text": "The doctor listens and looks.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, we say goodbye and go home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Every step of the check-up is short.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "unknown"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "At the doctor's office there are helpers.",
+              "kind": "describe"
+            },
+            {
+              "text": "A nurse helps measure me.",
+              "kind": "describe"
+            },
+            {
+              "text": "The doctor checks my body.",
+              "kind": "describe"
+            },
+            {
+              "text": "Their job is to help kids stay healthy.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say hello to the doctor.",
+              "kind": "coach"
+            },
+            {
+              "text": "The doctor will tell me what is next before it happens.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "strangers"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "[[GROWNUP]] stays in the room with me the whole time.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can hold [[GROWNUP]]'s hand.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes I can sit on [[GROWNUP]]'s lap.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can bring a toy to the check-up.",
+              "kind": "coach"
+            },
+            {
+              "text": "Many kids go to the doctor every day.",
+              "kind": "describe"
+            },
+            {
+              "text": "Going to the doctor is a normal thing to do.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "separation",
+            "social"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "The doctor puts a stethoscope on my chest.",
+              "kind": "describe"
+            },
+            {
+              "text": "The stethoscope helps the doctor hear my heart.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can breathe in and out slowly when the doctor asks.",
+              "kind": "coach"
+            },
+            {
+              "text": "Then the doctor looks in my mouth.",
+              "kind": "describe"
+            },
+            {
+              "text": "I open wide and say aah.",
+              "kind": "describe"
+            },
+            {
+              "text": "The doctor looks in my ears with a little light.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "body",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Sometimes I need a moment.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say, wait please.",
+              "kind": "coach"
+            },
+            {
+              "text": "The doctor will pause.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask the doctor, what is next?",
+              "kind": "describe"
+            },
+            {
+              "text": "The doctor is gentle and careful.",
+              "kind": "describe"
+            },
+            {
+              "text": "Asking questions is a good thing to do at the doctor.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "safety"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "Some parts of a check-up can feel strange.",
+              "kind": "describe"
+            },
+            {
+              "text": "The stethoscope may feel cold.",
+              "kind": "describe"
+            },
+            {
+              "text": "The paper on the table makes a crinkle sound.",
+              "kind": "describe"
+            },
+            {
+              "text": "A cuff may squeeze my arm for a few seconds.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the cuff lets go.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths if something feels strange.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "worried",
+          "background": "shot",
+          "addresses": [
+            "sensory"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Sometimes I feel worried at the doctor.",
+              "kind": "describe"
+            },
+            {
+              "text": "Feeling worried is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes a check-up has a shot, and [[GROWNUP]] will tell me before.",
+              "kind": "describe"
+            },
+            {
+              "text": "If something feels uncomfortable, I can tell [[GROWNUP]].",
+              "kind": "coach"
+            },
+            {
+              "text": "[[GROWNUP]] is right here with me.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can hold a hand or a toy.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "separation",
+            "pain"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "At home, I can practise a check-up.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can use a toy doctor kit.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, I check my toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "I listen to its heart.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[GROWNUP]] checks me.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can practise breathing in and out and saying aah.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "body"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Here are the steps of my check-up.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, the waiting room.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then, the scale.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, the doctor listens and looks.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, we go home.",
+              "kind": "describe"
+            },
+            {
+              "text": "I practised all the steps, and I did a good job.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "cosy-room",
+          "addresses": [
+            "unknown"
+          ]
+        }
+      ]
+    }
+  },
+  "badge": {
+    "id": "healthy_hero",
+    "label": "Healthy Hero"
+  }
+}

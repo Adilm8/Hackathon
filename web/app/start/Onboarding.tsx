@@ -30,7 +30,10 @@ import { newId } from '@/lib/store/id';
 const NAME_RE = /^[\p{L}][\p{L}'’-]{0,19}$/u;
 const EVENT_CAPTION: Record<EventType, string> = {
   dentist: 'Check-up or cleaning', school: 'Preschool, kindergarten, school', flight: 'Airport and plane',
-  sibling: 'A baby is coming', haircut: 'Salon or barbershop', shot: 'Vaccine at the doctor', other: 'Swimming lesson, a new nanny, a move…',
+  sibling: 'A baby is coming', haircut: 'Salon or barbershop', shot: 'Vaccine at the doctor',
+  doctor: 'Yearly check-up', blood_test: 'Finger prick or arm', hospital: 'A night or more in hospital',
+  moving: 'A new home', sleepover: 'A night at a friend\'s or grandma\'s', babysitter: 'A new sitter or nanny',
+  swimming: 'Pool and swim teacher', party: 'A friend\'s party', other: 'Anything else: a new club, a trip…',
 };
 
 type StepId = 'gate' | 'name' | 'age' | 'event' | 'date' | 'fears' | 'character' | 'values';

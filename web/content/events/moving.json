@@ -1,0 +1,1030 @@
+{
+  "type": "moving",
+  "version": 1,
+  "label": "Moving house",
+  "countdownLabel": "moving day",
+  "beats": {
+    "what_happens": {
+      "title": "What happens when we move",
+      "goals": [
+        "The steps: pack boxes, say goodbye to the old home, the truck, the new home, unpack, first night",
+        "All our things come with us in boxes",
+        "The family moves together"
+      ],
+      "parentSkill": "Name the moving steps in order and mark moving day on a calendar together."
+    },
+    "who_is_there": {
+      "title": "Who helps us move",
+      "goals": [
+        "Movers carry heavy boxes and furniture onto a truck",
+        "The family stays together, and a grown-up says where the child will be on moving day",
+        "New neighbours and maybe new friends live near the new home"
+      ],
+      "parentSkill": "Say who will look after your child on moving day and where they will be."
+    },
+    "what_i_do": {
+      "title": "What I do when we move",
+      "goals": [
+        "Pack my own special box and draw on it",
+        "Say goodbye to my old room",
+        "Choose where my toys go in the new room"
+      ],
+      "parentSkill": "Give your child one real job: packing and labelling their own special box."
+    },
+    "if_scared": {
+      "title": "If moving feels hard",
+      "goals": [
+        "The home looks different with boxes, and new rooms smell and sound new",
+        "Missing the old home is okay, and happy and sad can come together",
+        "Calm tools: the special box, a goodbye walk, a photo of the old room, slow breaths"
+      ],
+      "parentSkill": "Let your child miss the old home out loud: 'You'll miss your room. I will too.'"
+    },
+    "rehearsal": {
+      "title": "Let's practise moving day",
+      "goals": [
+        "Pack a toy box like a mover, then unpack it in a new spot",
+        "Make a goodbye list and a hello list",
+        "Say the moving steps once more, ending with the first night in the new bed"
+      ],
+      "parentSkill": "Pack and unpack a toy box together, then make a goodbye list and a hello list."
+    }
+  },
+  "steps": [
+    "Pack our things into boxes",
+    "Pack my own special box and draw on it",
+    "Say goodbye to each room of the old home",
+    "Movers carry the boxes onto a big truck",
+    "Drive to the new home",
+    "Open my special box first and set up my room",
+    "Sleep the first night in my bed in the new home"
+  ],
+  "sensory": [
+    "echoes in an empty room",
+    "the sound of packing tape going zzzip",
+    "stacks of brown boxes everywhere",
+    "a big truck with a loud ramp",
+    "new smells and new sounds at night",
+    "my own blanket and pillow in a new room"
+  ],
+  "honestyNotes": "Moving is a big change, and feelings can be mixed for weeks. Do not promise that the child will love the new home or make friends right away. Say what stays the same: the family, the toys, the bed and the bedtime routine.",
+  "questionButtons": [
+    {
+      "id": "toys",
+      "text": "Will my toys come too?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "Yes. All your toys come in boxes on the truck.",
+        "Your special box rides with us, so you can open it first."
+      ]
+    },
+    {
+      "id": "old_home",
+      "text": "Can we visit the old home?",
+      "topic": "love",
+      "fallbackAnswer": [
+        "Someone new will live there, so we might not go inside again.",
+        "We can take photos and say goodbye to each room before we go."
+      ]
+    },
+    {
+      "id": "friends",
+      "text": "Will I have friends there?",
+      "topic": "social",
+      "fallbackAnswer": [
+        "Making new friends can take a little time.",
+        "We can say hello to neighbours and keep in touch with old friends too."
+      ]
+    },
+    {
+      "id": "my_room",
+      "text": "Will I have my own bed?",
+      "topic": "safety",
+      "fallbackAnswer": [
+        "Yes. Your bed comes with us, and your blanket and pillow too.",
+        "We will set it up on the first day."
+      ]
+    },
+    {
+      "id": "who",
+      "text": "Who are the movers?",
+      "topic": "strangers",
+      "fallbackAnswer": [
+        "Movers are strong helpers whose job is to carry boxes and furniture.",
+        "They are careful with our things."
+      ]
+    },
+    {
+      "id": "sad",
+      "text": "Why do I feel sad?",
+      "topic": "other",
+      "fallbackAnswer": [
+        "Moving can feel happy and sad at the same time.",
+        "It is okay to miss the old home, and I miss it too sometimes."
+      ]
+    },
+    {
+      "id": "where_me",
+      "text": "Where will I be on moving day?",
+      "topic": "separation",
+      "fallbackAnswer": [
+        "[[GROWNUP]] will tell you exactly where you will be and who is with you.",
+        "You will be with the family again in the new home by bedtime."
+      ]
+    },
+    {
+      "id": "new_noise",
+      "text": "What are those new sounds?",
+      "topic": "sensory",
+      "fallbackAnswer": [
+        "Every home has its own sounds, like pipes, cars or wind.",
+        "After a few nights, the new sounds start to feel normal."
+      ]
+    }
+  ],
+  "techniques": [
+    {
+      "id": "special_box",
+      "label": "Packing a special box",
+      "how": "Let your child pack and decorate one box with favourite things; carry it in the car and open it first.",
+      "topics": [
+        "unknown",
+        "separation",
+        "safety"
+      ]
+    },
+    {
+      "id": "goodbye_walk",
+      "label": "A goodbye walk",
+      "how": "Walk through each room of the old home and say goodbye out loud; take a photo of each.",
+      "topics": [
+        "love",
+        "unknown"
+      ]
+    },
+    {
+      "id": "same_bedtime",
+      "label": "Keeping bedtime the same",
+      "how": "Keep the same bedtime story, song and order on the first nights in the new home.",
+      "topics": [
+        "safety",
+        "sensory",
+        "separation"
+      ]
+    },
+    {
+      "id": "room_choice",
+      "label": "Choosing where things go",
+      "how": "Let your child decide where the bed, toys or pictures go in the new room.",
+      "topics": [
+        "unknown",
+        "body"
+      ]
+    },
+    {
+      "id": "hello_walk",
+      "label": "A hello walk",
+      "how": "Walk around the new street, find a park or a shop, and say hello to a neighbour.",
+      "topics": [
+        "social",
+        "strangers"
+      ]
+    },
+    {
+      "id": "photo_book",
+      "label": "A photo book of old and new",
+      "how": "Make a small photo book: the old home, the new home and the people in both.",
+      "topics": [
+        "love",
+        "social"
+      ]
+    },
+    {
+      "id": "night_light",
+      "label": "A night light",
+      "how": "Use a night light and the familiar blanket for the first nights to soften new sounds and shadows.",
+      "topics": [
+        "sensory",
+        "safety"
+      ]
+    },
+    {
+      "id": "deep_breaths",
+      "label": "Smell the flower, blow the candle",
+      "how": "Breathe in slowly through the nose like smelling a flower and out like blowing a candle.",
+      "topics": [
+        "pain",
+        "sensory",
+        "safety"
+      ]
+    },
+    {
+      "id": "call_old_friend",
+      "label": "Calling an old friend",
+      "how": "Plan a video call or a letter to an old friend in the first week.",
+      "topics": [
+        "social",
+        "love",
+        "separation"
+      ]
+    }
+  ],
+  "ritual": [
+    "Open my special box first",
+    "Put my blanket on my bed",
+    "Say goodnight to my new room"
+  ],
+  "phrases": {
+    "pain": [
+      "Moving can make your heart feel sore. That makes sense.",
+      "Let's have a big hug and take a slow breath."
+    ],
+    "separation": [
+      "We all move together. The family stays the same.",
+      "Here is where you will be on moving day and who is with you."
+    ],
+    "unknown": [
+      "First boxes, then the truck, then the new home, then your bed.",
+      "Your special box comes in the car with us."
+    ],
+    "strangers": [
+      "The movers' job is to carry heavy things carefully.",
+      "Let's say hello to a new neighbour."
+    ],
+    "sensory": [
+      "New homes have new sounds. They feel normal after a few nights.",
+      "Your blanket smells like home."
+    ],
+    "safety": [
+      "Your bed comes with us, and we will set it up on the first day.",
+      "Bedtime stays the same in the new home."
+    ],
+    "social": [
+      "New friends take time. We can keep old friends too.",
+      "Let's find the park near the new home."
+    ],
+    "body": [
+      "You can choose where your toys go.",
+      "Show me where you want your bed."
+    ],
+    "love": [
+      "It's okay to miss the old home. I love you here and there.",
+      "Wherever we live, we are a family."
+    ]
+  },
+  "topicWords": {
+    "pain": [
+      "sore",
+      "hurt",
+      "hard",
+      "heavy heart"
+    ],
+    "separation": [
+      "together",
+      "family",
+      "with",
+      "stay",
+      "stays",
+      "same",
+      "where",
+      "who is with"
+    ],
+    "unknown": [
+      "first",
+      "then",
+      "next",
+      "after",
+      "last",
+      "step",
+      "steps",
+      "boxes",
+      "truck",
+      "new home"
+    ],
+    "strangers": [
+      "movers",
+      "mover",
+      "neighbour",
+      "neighbours",
+      "hello",
+      "helper",
+      "helpers"
+    ],
+    "sensory": [
+      "sound",
+      "sounds",
+      "echo",
+      "echoes",
+      "smell",
+      "smells",
+      "zzzip",
+      "tape",
+      "noise",
+      "loud",
+      "quiet"
+    ],
+    "safety": [
+      "bed",
+      "blanket",
+      "safe",
+      "careful",
+      "bedtime",
+      "night light"
+    ],
+    "social": [
+      "friend",
+      "friends",
+      "neighbour",
+      "neighbours",
+      "kids",
+      "people",
+      "park",
+      "play"
+    ],
+    "body": [
+      "choose",
+      "chooses",
+      "decide",
+      "my room",
+      "own",
+      "hands"
+    ],
+    "love": [
+      "love",
+      "miss",
+      "goodbye",
+      "hug",
+      "proud"
+    ]
+  },
+  "backgrounds": [
+    "outside",
+    "home-evening",
+    "cosy-room"
+  ],
+  "fallbackPages": {
+    "story": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "Soon [[CHILD]]'s family will move to a new home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Moving means taking all our things to live in a different place.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, everything gets packed into brown boxes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Zzzip goes the tape.",
+              "kind": "describe"
+            },
+            {
+              "text": "Toys, books, plates and pillows all go in.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the boxes wait in a big tower.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "On moving day, a big truck comes.",
+              "kind": "describe"
+            },
+            {
+              "text": "The boxes and the beds ride in the truck.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the whole family drives to the new home together.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, the boxes come inside, and the family unpacks.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last of all, [[CHILD]] sleeps in the same bed, in a new room.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "outside",
+          "addresses": [
+            "unknown",
+            "separation"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "On moving day there are movers.",
+              "kind": "describe"
+            },
+            {
+              "text": "Movers are strong helpers.",
+              "kind": "describe"
+            },
+            {
+              "text": "Their job is to carry heavy boxes and furniture onto the truck.",
+              "kind": "describe"
+            },
+            {
+              "text": "They are careful with every box, even the special one.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say hello and watch them go up the ramp.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "strangers"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "[[GROWNUP]] tells [[CHILD]] where [[CHILD]] will be on moving day, and who is with [[CHILD]].",
+              "kind": "describe"
+            },
+            {
+              "text": "The family stays together, and by bedtime everyone is in the new home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Near the new home there are neighbours, and maybe a park with other kids.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can wave hello to someone new.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "separation",
+            "social"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "[[CHILD]] has a very important moving job.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] gets one special box.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] chooses what goes inside: a favourite toy, a book, a night light.",
+              "kind": "coach"
+            },
+            {
+              "text": "Then [[CHILD]] draws on the box so everyone knows it is special.",
+              "kind": "describe"
+            },
+            {
+              "text": "The special box rides in the car with the family, and it opens first.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "body"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Before moving day, [[CHILD]] says goodbye to the old room.",
+              "kind": "describe"
+            },
+            {
+              "text": "Goodbye, window. Goodbye, door.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can take a photo to remember.",
+              "kind": "coach"
+            },
+            {
+              "text": "In the new home, [[CHILD]] decides where the toys go and where the pictures hang.",
+              "kind": "describe"
+            },
+            {
+              "text": "Choosing makes the new room feel like [[CHILD]]'s own.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "love",
+            "body"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "When things are packed, the old home can look strange.",
+              "kind": "describe"
+            },
+            {
+              "text": "Empty rooms make echoes.",
+              "kind": "describe"
+            },
+            {
+              "text": "The new home has new smells and new sounds at night, like pipes or cars.",
+              "kind": "describe"
+            },
+            {
+              "text": "It can feel strange at first, and that is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "After a few nights, the new sounds start to feel normal.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "worried",
+          "background": "home-evening",
+          "addresses": [
+            "sensory"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Sometimes [[CHILD]] might miss the old home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Happy and sad can come at the same time.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to miss things, and [[GROWNUP]] misses them too.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]]'s bed, blanket and bedtime story come along.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can hug the blanket and take slow breaths.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "cosy-room",
+          "addresses": [
+            "love",
+            "safety"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "Tonight [[CHILD]] and [[GROWNUP]] play movers.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, they pack a toy box and tape it shut, zzzip.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[CHILD]] carries it like a strong mover to a new spot.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, they open it and find a new place for each toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Where should the bear live now?",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Let's say the moving steps once more.",
+              "kind": "coach"
+            },
+            {
+              "text": "First, pack the boxes and the special box.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then, goodbye to the old rooms.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, the truck and the drive.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, the special box opens, and the first night in the new home.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of [[CHILD]] and gives a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "cosy-room",
+          "addresses": [
+            "unknown",
+            "love"
+          ]
+        }
+      ]
+    },
+    "social": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "My name is [[CHILD]], and soon my family will move.",
+              "kind": "describe"
+            },
+            {
+              "text": "Moving means we will live in a new home.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, we pack our things in boxes.",
+              "kind": "describe"
+            },
+            {
+              "text": "My toys go in boxes too.",
+              "kind": "describe"
+            },
+            {
+              "text": "The boxes stay closed until the new home.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can help pack.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Next, a truck takes our boxes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then my family goes to the new home together.",
+              "kind": "describe"
+            },
+            {
+              "text": "We open the boxes in the new home.",
+              "kind": "describe"
+            },
+            {
+              "text": "My bed comes with us.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, I sleep in my bed in my new room.",
+              "kind": "describe"
+            },
+            {
+              "text": "My family is the same in the new home.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "unknown",
+            "separation"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "On moving day, movers come.",
+              "kind": "describe"
+            },
+            {
+              "text": "Movers are helpers.",
+              "kind": "describe"
+            },
+            {
+              "text": "Their job is to carry boxes.",
+              "kind": "describe"
+            },
+            {
+              "text": "They put the boxes on a truck.",
+              "kind": "describe"
+            },
+            {
+              "text": "They are careful with our things and our furniture.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say hello to the movers and watch the big truck.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "strangers"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "[[GROWNUP]] will tell me where I will be on moving day.",
+              "kind": "describe"
+            },
+            {
+              "text": "My family stays together.",
+              "kind": "describe"
+            },
+            {
+              "text": "Near my new home there are new neighbours.",
+              "kind": "describe"
+            },
+            {
+              "text": "Maybe there are kids who live near me.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say hello to a neighbour.",
+              "kind": "coach"
+            },
+            {
+              "text": "Making new friends can take time.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "separation",
+            "social"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "I have my own special box.",
+              "kind": "describe"
+            },
+            {
+              "text": "I choose what goes in my box.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can draw on my box.",
+              "kind": "describe"
+            },
+            {
+              "text": "My special box comes in the car with us.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can open my special box first in the new home.",
+              "kind": "coach"
+            },
+            {
+              "text": "My special box helps the new home feel like mine.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "body"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Before we move, I say goodbye to my old room.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take a photo of my room.",
+              "kind": "describe"
+            },
+            {
+              "text": "In my new room, I can choose where my toys go.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can tell [[GROWNUP]] where I want my bed.",
+              "kind": "coach"
+            },
+            {
+              "text": "Choosing helps me feel at home.",
+              "kind": "describe"
+            },
+            {
+              "text": "My new room will be my own room.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "love",
+            "body"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "A new home can have new sounds.",
+              "kind": "describe"
+            },
+            {
+              "text": "A new home can have new smells.",
+              "kind": "describe"
+            },
+            {
+              "text": "Empty rooms can make echoes.",
+              "kind": "describe"
+            },
+            {
+              "text": "New things can feel strange at first.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths when things feel strange.",
+              "kind": "coach"
+            },
+            {
+              "text": "After a few nights, the new sounds feel normal.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "worried",
+          "background": "home-evening",
+          "addresses": [
+            "sensory"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Sometimes I may miss my old home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Missing my old home is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can feel happy and sad at the same time.",
+              "kind": "describe"
+            },
+            {
+              "text": "My blanket and my bedtime story come with me.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can tell [[GROWNUP]] how I feel.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[GROWNUP]] can give me a hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "love",
+            "safety"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "At home, I can practise moving.",
+              "kind": "describe"
+            },
+            {
+              "text": "I pack my toys in a box.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I carry the box to a new spot.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, I open the box.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can find a new place for each toy.",
+              "kind": "coach"
+            },
+            {
+              "text": "Practising helps me know what will happen.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Here are the steps of moving.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, we pack boxes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then, the truck takes our boxes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, we go to the new home.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, I open my special box.",
+              "kind": "describe"
+            },
+            {
+              "text": "I practised all the steps, and I did a good job.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "cosy-room",
+          "addresses": [
+            "unknown"
+          ]
+        }
+      ]
+    }
+  },
+  "badge": {
+    "id": "new_home_explorer",
+    "label": "New Home Explorer"
+  }
+}

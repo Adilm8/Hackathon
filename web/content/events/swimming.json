@@ -1,0 +1,1032 @@
+{
+  "type": "swimming",
+  "version": 1,
+  "label": "First swimming lesson",
+  "countdownLabel": "the swimming lesson",
+  "beats": {
+    "what_happens": {
+      "title": "What happens at a swimming lesson",
+      "goals": [
+        "The steps: changing room, swimsuit, shower, sit on the edge, into the water with the teacher, games, towel",
+        "Kids start in shallow water and hold on to the edge, a float or the teacher",
+        "Nobody has to put their face in the water until they are ready"
+      ],
+      "parentSkill": "Name the steps in order, and say that the teacher stays close in the water."
+    },
+    "who_is_there": {
+      "title": "Who is at the swimming lesson",
+      "goals": [
+        "A swim teacher in the water, and a lifeguard who watches everyone",
+        "Other kids who are learning too",
+        "The grown-up watches from the side or swims too"
+      ],
+      "parentSkill": "Tell your child exactly where you will be: in the water or watching from the side."
+    },
+    "what_i_do": {
+      "title": "What I do in the pool",
+      "goals": [
+        "Listen to the teacher, hold the edge, kick my legs, blow bubbles",
+        "Walk, never run, by the pool",
+        "Say \"I need a break\" when I need one"
+      ],
+      "parentSkill": "Practise blowing bubbles and kicking in the bath, and the rule \"walk by the pool\"."
+    },
+    "if_scared": {
+      "title": "If the water feels scary",
+      "goals": [
+        "Water can feel cold at first, splashes are loud, the pool smells different",
+        "It is okay to go slowly: toes, then legs, then tummy",
+        "Calm tools: holding the edge, blowing bubbles, slow breaths, a float"
+      ],
+      "parentSkill": "Name the feeling and give one small step: 'The water feels big. Let's start with your toes.'"
+    },
+    "rehearsal": {
+      "title": "Let's practise swimming",
+      "goals": [
+        "Bath-time practice: bubbles, kicking, water on the face with a cup",
+        "Pack the swim bag together",
+        "Say the steps once more, ending with a warm towel"
+      ],
+      "parentSkill": "At bath time, practise bubbles and a little water on the forehead, only as far as your child wants."
+    }
+  },
+  "steps": [
+    "Change into my swimsuit in the changing room",
+    "Take a quick shower",
+    "Walk to the pool and sit on the edge",
+    "Get into the water with the teacher",
+    "Hold the edge, kick my legs and blow bubbles",
+    "Play water games with the other kids",
+    "Wrap up in a warm towel and get dressed"
+  ],
+  "sensory": [
+    "water that feels cold at first, then warmer",
+    "a pool smell, like a clean swimming pool",
+    "loud splashes and echoes",
+    "wet, slippery floors",
+    "goggles that press a little on the face",
+    "a fluffy towel after",
+    "water in the ears that sounds like a shell"
+  ],
+  "honestyNotes": "Do not promise the child will not go under or get water in the face; say the teacher helps and they can go slowly. Follow the swim school's safety rules. Swimming lessons do not make a child water-safe on their own; always supervise near water.",
+  "questionButtons": [
+    {
+      "id": "deep",
+      "text": "Is the water deep?",
+      "topic": "safety",
+      "fallbackAnswer": [
+        "Kids start where the water is not deep, and they hold on to the edge or a float.",
+        "The teacher is right there in the water with you."
+      ]
+    },
+    {
+      "id": "face",
+      "text": "Do I have to put my face in?",
+      "topic": "body",
+      "fallbackAnswer": [
+        "Only when you are ready.",
+        "You can start by blowing bubbles with just your mouth."
+      ]
+    },
+    {
+      "id": "cold",
+      "text": "Is the water cold?",
+      "topic": "sensory",
+      "fallbackAnswer": [
+        "It can feel cold at first.",
+        "After a few kicks, your body gets used to it, and a warm towel waits after."
+      ]
+    },
+    {
+      "id": "where",
+      "text": "Where will [[GROWNUP]] be?",
+      "topic": "separation",
+      "fallbackAnswer": [
+        "[[GROWNUP]] watches from the side or swims with you.",
+        "You can wave to [[GROWNUP]] any time."
+      ]
+    },
+    {
+      "id": "teacher",
+      "text": "Who is the teacher?",
+      "topic": "strangers",
+      "fallbackAnswer": [
+        "A swim teacher's job is to help kids learn to swim.",
+        "They stay close and show you each step."
+      ]
+    },
+    {
+      "id": "others",
+      "text": "Will there be other kids?",
+      "topic": "social",
+      "fallbackAnswer": [
+        "Yes. Other kids are learning too, and some of them feel nervous too.",
+        "You can play the water games together."
+      ]
+    },
+    {
+      "id": "sink",
+      "text": "What if I go under?",
+      "topic": "safety",
+      "fallbackAnswer": [
+        "If water splashes your face, you can close your eyes, blow out and hold the edge.",
+        "The teacher is right there to help you up."
+      ]
+    },
+    {
+      "id": "first",
+      "text": "What happens first?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "First the changing room and the swimsuit, then a quick shower.",
+        "Then you sit on the edge and the teacher helps you in."
+      ]
+    }
+  ],
+  "techniques": [
+    {
+      "id": "blow_bubbles",
+      "label": "Blowing bubbles",
+      "how": "Practise blowing bubbles in the bath or a bowl; blowing out keeps water out of the nose.",
+      "topics": [
+        "sensory",
+        "body",
+        "safety"
+      ]
+    },
+    {
+      "id": "hold_edge",
+      "label": "Holding the edge",
+      "how": "Show your child that holding the edge is always allowed and a good place to rest.",
+      "topics": [
+        "safety",
+        "separation"
+      ]
+    },
+    {
+      "id": "toes_first",
+      "label": "Toes first, step by step",
+      "how": "Go into the water little by little: toes, ankles, knees, tummy, shoulders.",
+      "topics": [
+        "sensory",
+        "unknown",
+        "body"
+      ]
+    },
+    {
+      "id": "bath_practice",
+      "label": "Bath-time practice",
+      "how": "At bath time, practise kicking, floating with support and a little water on the forehead with a cup.",
+      "topics": [
+        "body",
+        "sensory",
+        "unknown"
+      ]
+    },
+    {
+      "id": "goggles",
+      "label": "Trying goggles at home",
+      "how": "Try goggles at home first so the pressing feeling is familiar.",
+      "topics": [
+        "sensory",
+        "body"
+      ]
+    },
+    {
+      "id": "wave_signal",
+      "label": "A wave from the side",
+      "how": "Agree a wave signal so your child can see you from the water.",
+      "topics": [
+        "separation",
+        "strangers"
+      ]
+    },
+    {
+      "id": "break_signal",
+      "label": "Saying 'I need a break'",
+      "how": "Practise saying 'I need a break' and holding the edge to rest.",
+      "topics": [
+        "safety",
+        "pain"
+      ]
+    },
+    {
+      "id": "deep_breaths",
+      "label": "Smell the flower, blow the candle",
+      "how": "Breathe in slowly through the nose like smelling a flower and out like blowing a candle.",
+      "topics": [
+        "pain",
+        "sensory",
+        "safety"
+      ]
+    },
+    {
+      "id": "swim_buddy",
+      "label": "Finding a swim buddy",
+      "how": "Say hello to one other child at the start and do the games next to them.",
+      "topics": [
+        "social",
+        "strangers"
+      ]
+    }
+  ],
+  "ritual": [
+    "Swimsuit on and a quick shower",
+    "Hold the edge, kick and blow bubbles",
+    "Warm towel and a wave goodbye"
+  ],
+  "phrases": {
+    "pain": [
+      "If water gets in your eyes, close them and blink. It stings for a moment.",
+      "Say 'I need a break' and hold the edge."
+    ],
+    "separation": [
+      "I am right here watching. Wave to me!",
+      "I can see you the whole time."
+    ],
+    "unknown": [
+      "First the shower, then the edge, then the water with the teacher.",
+      "Toes first, step by step."
+    ],
+    "strangers": [
+      "The swim teacher's job is to help kids learn. They stay close.",
+      "Let's say hello to the teacher."
+    ],
+    "sensory": [
+      "The water feels cold at first, then your body gets used to it.",
+      "Splashes are loud. That is a pool sound."
+    ],
+    "safety": [
+      "Hold the edge whenever you like.",
+      "Walk, never run, by the pool."
+    ],
+    "social": [
+      "The other kids are learning too.",
+      "Maybe one of them can be your swim buddy."
+    ],
+    "body": [
+      "You put your face in only when you are ready.",
+      "Blow bubbles with your mouth first."
+    ],
+    "love": [
+      "I am proud of you for trying.",
+      "I love watching you splash."
+    ]
+  },
+  "topicWords": {
+    "pain": [
+      "sting",
+      "stings",
+      "hurt",
+      "ouch",
+      "sore"
+    ],
+    "separation": [
+      "watch",
+      "watches",
+      "watching",
+      "wave",
+      "side",
+      "right here",
+      "with",
+      "close"
+    ],
+    "unknown": [
+      "first",
+      "then",
+      "next",
+      "after",
+      "last",
+      "step",
+      "steps"
+    ],
+    "strangers": [
+      "teacher",
+      "lifeguard",
+      "hello",
+      "helper",
+      "job"
+    ],
+    "sensory": [
+      "cold",
+      "warm",
+      "splash",
+      "splashes",
+      "loud",
+      "smell",
+      "wet",
+      "slippery",
+      "echo",
+      "goggles",
+      "towel",
+      "water"
+    ],
+    "safety": [
+      "edge",
+      "float",
+      "safe",
+      "walk",
+      "careful",
+      "break",
+      "deep"
+    ],
+    "social": [
+      "kids",
+      "children",
+      "friend",
+      "buddy",
+      "together",
+      "games"
+    ],
+    "body": [
+      "face",
+      "legs",
+      "kick",
+      "kicks",
+      "body",
+      "eyes",
+      "mouth",
+      "toes",
+      "arms"
+    ],
+    "love": [
+      "love",
+      "proud",
+      "hug"
+    ]
+  },
+  "backgrounds": [
+    "outside",
+    "home-evening",
+    "cosy-room"
+  ],
+  "fallbackPages": {
+    "story": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "Soon [[CHILD]] will have a swimming lesson.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, [[CHILD]] and [[GROWNUP]] go to the changing room.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] puts on a swimsuit.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then comes a quick shower, sprinkle, sprinkle.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, [[CHILD]] walks to the pool and sits on the edge with the other kids.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Then the teacher helps [[CHILD]] into the water where it is not deep.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] holds the edge or a float.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that come kicking, bubbles and water games.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last of all, [[CHILD]] wraps up in a big warm towel.",
+              "kind": "describe"
+            },
+            {
+              "text": "Swimming lessons go slowly, step by step.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "outside",
+          "addresses": [
+            "unknown",
+            "safety"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "At the pool there is a swim teacher.",
+              "kind": "describe"
+            },
+            {
+              "text": "The teacher's job is to help kids learn to swim.",
+              "kind": "describe"
+            },
+            {
+              "text": "The teacher stays close in the water and shows each step.",
+              "kind": "describe"
+            },
+            {
+              "text": "There is also a lifeguard who watches the whole pool.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say hello to the teacher.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "strangers"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Other kids are at the lesson too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some of them are new, and some feel nervous too.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] watches from the side, or swims along.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can wave to [[GROWNUP]] any time.",
+              "kind": "coach"
+            },
+            {
+              "text": "Maybe [[CHILD]] will find a swim buddy for the games.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "outside",
+          "addresses": [
+            "social",
+            "separation"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "In the pool, [[CHILD]] has some fun jobs.",
+              "kind": "describe"
+            },
+            {
+              "text": "Hold the edge, and kick the legs, splish, splash.",
+              "kind": "describe"
+            },
+            {
+              "text": "Put the mouth near the water and blow bubbles, brrr.",
+              "kind": "coach"
+            },
+            {
+              "text": "Blowing bubbles keeps water out of the nose.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] only puts the face in when [[CHILD]] is ready.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "By the pool, the floor is wet and slippery.",
+              "kind": "describe"
+            },
+            {
+              "text": "So [[CHILD]] walks, and never runs.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] listens to the teacher, who tells each step first.",
+              "kind": "describe"
+            },
+            {
+              "text": "If [[CHILD]] needs a rest, [[CHILD]] can hold the edge and say, I need a break.",
+              "kind": "coach"
+            },
+            {
+              "text": "Being careful is part of swimming.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "safety"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "Some things at the pool feel new.",
+              "kind": "describe"
+            },
+            {
+              "text": "The water can feel cold at first.",
+              "kind": "describe"
+            },
+            {
+              "text": "Splashes are loud, and voices echo.",
+              "kind": "describe"
+            },
+            {
+              "text": "The pool has its own smell.",
+              "kind": "describe"
+            },
+            {
+              "text": "Goggles can press a little on the face.",
+              "kind": "describe"
+            },
+            {
+              "text": "It can feel big and strange, and that is okay.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "worried",
+          "background": "outside",
+          "addresses": [
+            "sensory"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "[[CHILD]] can go slowly.",
+              "kind": "describe"
+            },
+            {
+              "text": "Toes first, then the legs, then the tummy.",
+              "kind": "describe"
+            },
+            {
+              "text": "The water feels warmer after a few kicks.",
+              "kind": "describe"
+            },
+            {
+              "text": "If water splashes the face, [[CHILD]] can close the eyes, blow out and hold the edge.",
+              "kind": "coach"
+            },
+            {
+              "text": "The teacher is right there to help.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "sensory",
+            "body"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "Tonight [[CHILD]] practises swimming in the bath.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, blow bubbles in the water, brrr.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then kick the legs, splish, splash.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, [[GROWNUP]] pours a little water on [[CHILD]]'s forehead with a cup, only if [[CHILD]] wants.",
+              "kind": "describe"
+            },
+            {
+              "text": "Blink, blink, all done!",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Let's say the swimming steps once more.",
+              "kind": "coach"
+            },
+            {
+              "text": "First, swimsuit and shower.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then, sit on the edge.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, into the water with the teacher, kick and bubbles.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, a warm towel.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of [[CHILD]] for practising, and gives a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "cosy-room",
+          "addresses": [
+            "unknown",
+            "love"
+          ]
+        }
+      ]
+    },
+    "social": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "My name is [[CHILD]], and soon I will have a swimming lesson.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, I put on my swimsuit in the changing room.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I take a quick shower.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, I walk to the pool.",
+              "kind": "describe"
+            },
+            {
+              "text": "I sit on the edge with the other kids.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can wait for the teacher.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Then the teacher helps me into the water.",
+              "kind": "describe"
+            },
+            {
+              "text": "The water where kids start is not deep.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can hold the edge or a float.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, we play water games.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the end, I get a warm towel.",
+              "kind": "describe"
+            },
+            {
+              "text": "The lesson goes step by step.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "unknown",
+            "safety"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "At the pool there is a swim teacher.",
+              "kind": "describe"
+            },
+            {
+              "text": "The teacher helps kids learn to swim.",
+              "kind": "describe"
+            },
+            {
+              "text": "The teacher stays close to me.",
+              "kind": "describe"
+            },
+            {
+              "text": "A lifeguard watches the pool.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say hello to the teacher.",
+              "kind": "coach"
+            },
+            {
+              "text": "The teacher will show me what to do.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "strangers"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Other kids are at the lesson.",
+              "kind": "describe"
+            },
+            {
+              "text": "They are learning to swim too.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] watches from the side.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can wave to [[GROWNUP]].",
+              "kind": "coach"
+            },
+            {
+              "text": "[[GROWNUP]] can see me the whole time.",
+              "kind": "describe"
+            },
+            {
+              "text": "Many kids learn to swim at lessons like mine.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "social",
+            "separation"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "In the pool, I hold the edge.",
+              "kind": "describe"
+            },
+            {
+              "text": "I kick my legs.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can blow bubbles in the water.",
+              "kind": "coach"
+            },
+            {
+              "text": "Blowing bubbles keeps water out of my nose.",
+              "kind": "describe"
+            },
+            {
+              "text": "I put my face in the water only when I am ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "The teacher shows me how.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "The floor by the pool is wet.",
+              "kind": "describe"
+            },
+            {
+              "text": "A wet floor can be slippery.",
+              "kind": "describe"
+            },
+            {
+              "text": "I walk by the pool.",
+              "kind": "coach"
+            },
+            {
+              "text": "I listen to the teacher.",
+              "kind": "describe"
+            },
+            {
+              "text": "If I need a rest, I can hold the edge.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say, I need a break, and the teacher will help.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "safety"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "Some things at the pool can feel strange.",
+              "kind": "describe"
+            },
+            {
+              "text": "The water may feel cold at first.",
+              "kind": "describe"
+            },
+            {
+              "text": "Splashes can be loud.",
+              "kind": "describe"
+            },
+            {
+              "text": "The pool has a different smell.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel nervous.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "worried",
+          "background": "outside",
+          "addresses": [
+            "sensory"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I can go into the water slowly.",
+              "kind": "describe"
+            },
+            {
+              "text": "First my toes, then my legs.",
+              "kind": "describe"
+            },
+            {
+              "text": "The water feels warmer after I kick.",
+              "kind": "describe"
+            },
+            {
+              "text": "If water splashes my face, I can close my eyes and blow out.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can hold the edge.",
+              "kind": "describe"
+            },
+            {
+              "text": "The teacher is close to me.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "sensory",
+            "body"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "At home, I can practise in the bath.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can blow bubbles in the water.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can kick my legs.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] can pour a little water on my head.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can practise closing my eyes and blinking.",
+              "kind": "coach"
+            },
+            {
+              "text": "Practising helps the water feel less new.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Here are the steps of my swimming lesson.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, swimsuit and shower.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then, I sit on the edge.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, I get in the water with the teacher.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, a warm towel.",
+              "kind": "describe"
+            },
+            {
+              "text": "I practised all the steps, and I did a good job.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "cosy-room",
+          "addresses": [
+            "unknown"
+          ]
+        }
+      ]
+    }
+  },
+  "badge": {
+    "id": "splash_star",
+    "label": "Splash Star"
+  }
+}

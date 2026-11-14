@@ -429,7 +429,10 @@ This block is the first code commit and is copied as is. Zod schemas for everyth
 /** Local calendar date 'YYYY-MM-DD'. Never a Date object or a UTC timestamp. */
 export type ISODate = string;
 
-export type EventType = 'dentist' | 'school' | 'flight' | 'sibling' | 'haircut' | 'shot' | 'other';
+export type EventType =
+  | 'dentist' | 'school' | 'flight' | 'sibling' | 'haircut' | 'shot'
+  | 'doctor' | 'blood_test' | 'hospital' | 'moving' | 'sleepover' | 'babysitter' | 'swimming' | 'party'
+  | 'other';
 export type Beat = 'what_happens' | 'who_is_there' | 'what_i_do' | 'if_scared' | 'rehearsal';
 export type Topic =
   | 'pain' | 'separation' | 'unknown' | 'strangers' | 'sensory'
@@ -693,7 +696,7 @@ Rules:
 
 ## 7. Event templates (`web/content/events/*.json`)
 
-The templates are the product's own knowledge and the main answer to "is this a ChatGPT wrapper?". Seven files: `dentist`, `school`, `flight`, `sibling`, `haircut`, `shot`, `other`. They are imported by both the server (prompts, fallbacks) and the browser (plan, buttons, panel), validated by a zod schema in a unit test, and carry a `version` number.
+The templates are the product's own knowledge and the main answer to "is this a ChatGPT wrapper?". Fifteen files: `dentist`, `school`, `flight`, `sibling`, `haircut`, `shot`, `doctor` (check-up), `blood_test`, `hospital` (stay), `moving` (house), `sleepover`, `babysitter`, `swimming` (first lesson), `party` (birthday), `other`. Each has 6–7 steps, at least 5 sensory details, at least 8 question buttons and 8 techniques. The eight newer types have no scene of their own yet and reuse the closest one (`backgroundForEvent` in `components/character/backgrounds.tsx`: clinic for doctor, blood test and hospital; outside for moving and swimming; cosy room for sleepover; evening living room for babysitter and party). They are imported by both the server (prompts, fallbacks) and the browser (plan, buttons, panel), validated by a zod schema in a unit test, and carry a `version` number.
 
 ```ts
 export interface EventTemplate {
@@ -867,7 +870,7 @@ This is the plan for the "LLM as a whole" work Lida scheduled for later: choosin
 
 **Step 4. Decision rule.** A model that fails safety or schema is out. The cheapest model that passes quality and the time budgets wins; we move up a price class only when the cheaper one fails a named criterion. The answer model and the chapter model may differ. Target cost of an event: under about 3% of the Event Pack price ($0.30). The result table goes to `docs/llm-evaluation.md` and the chosen ids to env.
 
-**Step 5. Templates and prompts.** All seven templates complete to the schema in section 7, reviewed against the honesty rules; prompt versions iterated on the evaluation set until the scores stop improving; every change re-runs the safety part. Golden examples of good chapters are kept per event and used as few-shot material only if the evaluation shows they help.
+**Step 5. Templates and prompts.** All fifteen templates complete to the schema in section 7, reviewed against the honesty rules; prompt versions iterated on the evaluation set until the scores stop improving; every change re-runs the safety part. Golden examples of good chapters are kept per event and used as few-shot material only if the evaluation shows they help.
 
 **Step 6. Before the demo.** Safety test green three times in a row on the chosen models, sample chapter warmed, spending cap set for the jury window, fallback verified by switching the key off.
 
@@ -1040,7 +1043,7 @@ web/
     panel/                TopicList, PhraseCard, MemoryLine, SkillLine
     paywall/              PlanCard, TestCardBox, RenewalConsent
     day/                  RitualCard, RitualPdf
-  content/events/         seven templates (section 7)
+  content/events/         fifteen templates (section 7)
   lib/
     engine/               types.ts, schemas.ts, clock.ts, plan.ts, state.ts, topics.ts, access.ts,
                           suggestions.ts, ics.ts, fallback.ts, sample.ts
@@ -1194,7 +1197,7 @@ The service is stateless apart from two small in-memory pieces. To run several i
 
 ### 14.1 Automated
 
-- **Unit (Vitest)**: `plan` (all N from 1 to 5, today, tomorrow, 60 days, past date), `clock` and date helpers across month ends and daylight saving, chapter status, topics and `mustAddress`, access rules, check-in → memory, suggestions, `.ics` text, template schema for all seven files, safety filters (name, phone, email, address, both word lists), post-checks (lengths, stop phrases, 2:1 ratio).
+- **Unit (Vitest)**: `plan` (all N from 1 to 5, today, tomorrow, 60 days, past date), `clock` and date helpers across month ends and daylight saving, chapter status, topics and `mustAddress`, access rules, check-in → memory, suggestions, `.ics` text, template schema for all fifteen files, safety filters (name, phone, email, address, both word lists), post-checks (lengths, stop phrases, 2:1 ratio).
 - **API (Vitest, mock LLM, embedded database)**: family creation and cookie, state round trip and conflict, sample seed, chapter streaming and the 402 on chapter 2, answer categories for the scripted questions, ritual, verify with a mocked Stripe client, deletion.
 - **End to end (Playwright, mock LLM)**: the sample path from the landing to the badge with the Demo bar, once paying with the mocked checkout and once with demo access; a fresh family through onboarding, chapter 1, a question, the panel and the paywall; delete all data.
 

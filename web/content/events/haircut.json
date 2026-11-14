@@ -65,7 +65,8 @@
     "a buzzing clipper that tickles",
     "little hairs that feel itchy on the neck",
     "a comb that can tug a knot",
-    "a big mirror"
+    "a big mirror",
+    "a warm, loud hairdryer"
   ],
   "honestyNotes": "Cutting hair itself has no feeling, but a comb can tug, little hairs can itch, and the clippers buzz and tickle. Never promise 'it won't feel like anything'; describe each feeling honestly.",
   "questionButtons": [
@@ -121,6 +122,33 @@
       "fallbackAnswer": [
         "First the big chair and the cape, then a spray of water and a comb.",
         "Then snip, snip, and last, a look in the mirror."
+      ]
+    },
+    {
+      "id": "eyes",
+      "text": "Will water go in my eyes?",
+      "topic": "sensory",
+      "fallbackAnswer": [
+        "The hairdresser sprays gently and can cover your eyes with a hand.",
+        "You can close your eyes during the spray, too."
+      ]
+    },
+    {
+      "id": "dryer",
+      "text": "Why is the hairdryer so loud?",
+      "topic": "sensory",
+      "fallbackAnswer": [
+        "A hairdryer blows warm air, whoosh, and it makes a loud sound.",
+        "You can cover your ears, or ask for a towel instead of the hairdryer."
+      ]
+    },
+    {
+      "id": "look",
+      "text": "Will I look different?",
+      "topic": "body",
+      "fallbackAnswer": [
+        "A little different, a bit neater.",
+        "You are still you, and your hair keeps growing."
       ]
     }
   ],
@@ -190,6 +218,23 @@
         "pain",
         "sensory",
         "safety"
+      ]
+    },
+    {
+      "id": "cover_ears",
+      "label": "Covering ears for the loud parts",
+      "how": "Let your child cover the ears or wear ear muffs for the clippers and the hairdryer.",
+      "topics": [
+        "sensory"
+      ]
+    },
+    {
+      "id": "choose_style",
+      "label": "Choosing the haircut together",
+      "how": "Look at a picture together and let your child choose between two styles.",
+      "topics": [
+        "body",
+        "unknown"
       ]
     }
   ],

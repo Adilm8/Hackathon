@@ -1,0 +1,1030 @@
+{
+  "type": "hospital",
+  "version": 1,
+  "label": "Hospital stay",
+  "countdownLabel": "the hospital",
+  "beats": {
+    "what_happens": {
+      "title": "What happens at the hospital",
+      "goals": [
+        "The steps: check in, a wristband, my own bed, nurses check, the doctors do their work, rest, go home",
+        "The hospital is a place where doctors and nurses help bodies get better",
+        "Each day has a plan, and the grown-up knows it"
+      ],
+      "parentSkill": "Tell your child the plan you know in simple order, and say 'I don't know yet, we'll ask' when you don't."
+    },
+    "who_is_there": {
+      "title": "Who is at the hospital",
+      "goals": [
+        "Nurses, doctors and helpers wear name badges and introduce themselves",
+        "A grown-up from the family stays or visits, and says when",
+        "Other kids are in the hospital too"
+      ],
+      "parentSkill": "Say exactly who will be with your child and when, in words your child can repeat."
+    },
+    "what_i_do": {
+      "title": "What I do at the hospital",
+      "goals": [
+        "Wear the wristband, rest in the bed, tell a nurse how I feel",
+        "Use the call button to ask for help",
+        "Play, read and bring things from home"
+      ],
+      "parentSkill": "Practise telling feelings with words or a 1-to-5 hand: one finger is a little, five is a lot."
+    },
+    "if_scared": {
+      "title": "If I feel scared at the hospital",
+      "goals": [
+        "Beeps, bright lights, new smells and being in bed for a long time",
+        "Missing home and feeling worried are okay",
+        "Calm tools: a comfort toy from home, slow breaths, a hand to hold, a call or video"
+      ],
+      "parentSkill": "Accept the worry and stay honest: answer only what you know, and promise only what you can keep."
+    },
+    "rehearsal": {
+      "title": "Let's practise the hospital",
+      "goals": [
+        "Pack a bag together: toy, pyjamas, a book, a photo",
+        "Play hospital with a toy in a pretend bed",
+        "Say the plan once more, ending with going home"
+      ],
+      "parentSkill": "Pack the hospital bag together and let your child choose what comes from home."
+    }
+  },
+  "steps": [
+    "Arrive at the hospital and check in at the desk",
+    "Get a wristband with my name on it",
+    "Go to a room with my own bed",
+    "Nurses check my temperature and listen to my heart",
+    "The doctors do their work to help my body",
+    "Rest, play, read and sleep in the hospital bed",
+    "Go home when the doctors say my body is ready"
+  ],
+  "sensory": [
+    "beeping machines",
+    "a bed that goes up and down with buttons",
+    "a plastic wristband",
+    "bright lights and a clean, soapy smell",
+    "a small clip on the finger that glows red",
+    "new food on a tray",
+    "nurses who come in at night quietly"
+  ],
+  "honestyNotes": "Every hospital stay is different. Say only what you know about this stay, and use the hospital child life team where there is one. Some parts may hurt or feel uncomfortable; never promise it will not. Do not explain treatment or medicine; leave medical answers to the doctors and say \"Let's ask the doctor\".",
+  "questionButtons": [
+    {
+      "id": "why",
+      "text": "Why do I go to the hospital?",
+      "topic": "body",
+      "fallbackAnswer": [
+        "The hospital is where doctors and nurses help bodies get better.",
+        "The doctors will tell us more, and we can ask them anything."
+      ]
+    },
+    {
+      "id": "stay",
+      "text": "Will [[GROWNUP]] stay with me?",
+      "topic": "separation",
+      "fallbackAnswer": [
+        "[[GROWNUP]] will tell you exactly who stays with you and when.",
+        "Someone who loves you will be close, and the nurses are there all day and all night."
+      ]
+    },
+    {
+      "id": "hurt",
+      "text": "Will it hurt?",
+      "topic": "pain",
+      "fallbackAnswer": [
+        "Some parts may feel uncomfortable or sore.",
+        "You can always tell a nurse, and helping you feel better is their job."
+      ]
+    },
+    {
+      "id": "home",
+      "text": "When can I go home?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "You go home when the doctors say your body is ready.",
+        "[[GROWNUP]] will tell you the plan each day."
+      ]
+    },
+    {
+      "id": "beeps",
+      "text": "What are the beeping sounds?",
+      "topic": "sensory",
+      "fallbackAnswer": [
+        "Machines beep to tell the nurses how bodies are doing.",
+        "A beep is just a message for the nurse, and they come to check."
+      ]
+    },
+    {
+      "id": "sleep",
+      "text": "Where will I sleep?",
+      "topic": "safety",
+      "fallbackAnswer": [
+        "You sleep in a hospital bed with your own blanket and toy from home.",
+        "There is a button to call a nurse any time, even at night."
+      ]
+    },
+    {
+      "id": "who",
+      "text": "Who are all these people?",
+      "topic": "strangers",
+      "fallbackAnswer": [
+        "Nurses, doctors and helpers. They wear name badges and say their names.",
+        "You can ask anyone, what is your job?"
+      ]
+    },
+    {
+      "id": "play",
+      "text": "Can I play at the hospital?",
+      "topic": "social",
+      "fallbackAnswer": [
+        "Yes. Many hospitals have toys, books and a playroom.",
+        "You can bring your favourite things from home too."
+      ]
+    }
+  ],
+  "techniques": [
+    {
+      "id": "comfort_toy",
+      "label": "Bringing a comfort toy",
+      "how": "Pack a favourite toy, blanket or pillowcase from home so the bed smells and feels familiar.",
+      "topics": [
+        "separation",
+        "safety",
+        "social"
+      ]
+    },
+    {
+      "id": "hospital_bag",
+      "label": "Packing the bag together",
+      "how": "Let your child choose what goes in the hospital bag: pyjamas, a book, a toy, a family photo.",
+      "topics": [
+        "unknown",
+        "separation"
+      ]
+    },
+    {
+      "id": "feelings_hand",
+      "label": "The 1-to-5 feelings hand",
+      "how": "Practise showing how much something hurts or worries with fingers, one a little and five a lot.",
+      "topics": [
+        "pain",
+        "body",
+        "safety"
+      ]
+    },
+    {
+      "id": "call_button",
+      "label": "Practising the call button",
+      "how": "Find the call button together on the first day and practise pressing it once with the nurse.",
+      "topics": [
+        "safety",
+        "strangers"
+      ]
+    },
+    {
+      "id": "day_plan",
+      "label": "A picture plan for each day",
+      "how": "Draw the day in simple pictures (breakfast, check, rest, visit, sleep) and tick them off.",
+      "topics": [
+        "unknown"
+      ]
+    },
+    {
+      "id": "video_call",
+      "label": "A video call with family",
+      "how": "Plan a call with family or friends at a set time each day so there is something to look forward to.",
+      "topics": [
+        "separation",
+        "social",
+        "love"
+      ]
+    },
+    {
+      "id": "hold_hand",
+      "label": "Holding a hand",
+      "how": "Hold your child's hand during checks and stay where your child can see you, when allowed.",
+      "topics": [
+        "separation",
+        "pain",
+        "strangers"
+      ]
+    },
+    {
+      "id": "deep_breaths",
+      "label": "Smell the flower, blow the candle",
+      "how": "Breathe in slowly through the nose like smelling a flower and out like blowing a candle.",
+      "topics": [
+        "pain",
+        "sensory",
+        "safety"
+      ]
+    },
+    {
+      "id": "ask_child_life",
+      "label": "Asking for the child life team",
+      "how": "Ask if the hospital has a child life specialist who can explain and play through what will happen.",
+      "topics": [
+        "unknown",
+        "strangers",
+        "sensory"
+      ]
+    }
+  ],
+  "ritual": [
+    "Wristband on, bed and toy ready",
+    "Tell a nurse how I feel",
+    "Rest and get ready to go home"
+  ],
+  "phrases": {
+    "pain": [
+      "Some parts may feel sore. Tell me or the nurse and we will help.",
+      "Show me on your hand: one finger a little, five a lot."
+    ],
+    "separation": [
+      "Here is who will be with you, and when.",
+      "Your toy from home stays with you the whole time."
+    ],
+    "unknown": [
+      "Here is today's plan. If I don't know, we'll ask the doctor.",
+      "You go home when the doctors say your body is ready."
+    ],
+    "strangers": [
+      "The nurses and doctors wear name badges. Let's ask their names.",
+      "Their job is to help bodies get better."
+    ],
+    "sensory": [
+      "The beeps are messages for the nurses.",
+      "The finger clip glows red. It just counts your heartbeat."
+    ],
+    "safety": [
+      "You can press the call button any time, even at night.",
+      "The nurses are here all day and all night."
+    ],
+    "social": [
+      "Other kids stay at the hospital too. Maybe there is a playroom.",
+      "We can call family on video tonight."
+    ],
+    "body": [
+      "The doctors are helping your body get better.",
+      "You can always ask, what are you doing to my body?"
+    ],
+    "love": [
+      "I love you, every minute, even when I am not in the room.",
+      "I am proud of you."
+    ]
+  },
+  "topicWords": {
+    "pain": [
+      "hurt",
+      "sore",
+      "uncomfortable",
+      "ouch",
+      "feel better",
+      "fingers"
+    ],
+    "separation": [
+      "stay",
+      "stays",
+      "with",
+      "close",
+      "visit",
+      "toy from home",
+      "home",
+      "call",
+      "hold",
+      "hand"
+    ],
+    "unknown": [
+      "first",
+      "then",
+      "next",
+      "after",
+      "last",
+      "plan",
+      "step",
+      "steps",
+      "ask"
+    ],
+    "strangers": [
+      "nurse",
+      "nurses",
+      "doctor",
+      "doctors",
+      "helper",
+      "helpers",
+      "badge",
+      "badges",
+      "names",
+      "hello"
+    ],
+    "sensory": [
+      "beep",
+      "beeps",
+      "beeping",
+      "light",
+      "lights",
+      "smell",
+      "glows",
+      "clip",
+      "sound",
+      "sounds"
+    ],
+    "safety": [
+      "safe",
+      "button",
+      "careful",
+      "night",
+      "all day"
+    ],
+    "social": [
+      "kids",
+      "children",
+      "playroom",
+      "friends",
+      "family",
+      "toy",
+      "toys",
+      "play"
+    ],
+    "body": [
+      "body",
+      "bodies",
+      "better",
+      "heart",
+      "temperature",
+      "wristband",
+      "rest"
+    ],
+    "love": [
+      "love",
+      "loves",
+      "proud",
+      "hug"
+    ]
+  },
+  "backgrounds": [
+    "shot",
+    "outside",
+    "home-evening",
+    "cosy-room"
+  ],
+  "fallbackPages": {
+    "story": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "Soon [[CHILD]] will stay at the hospital for a little while.",
+              "kind": "describe"
+            },
+            {
+              "text": "The hospital is a big building where doctors and nurses help bodies get better.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, [[CHILD]] and [[GROWNUP]] check in at a desk.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[CHILD]] gets a wristband with a name on it, like a special bracelet.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Next, [[CHILD]] goes to a room with a bed that moves up and down with buttons.",
+              "kind": "describe"
+            },
+            {
+              "text": "A nurse checks [[CHILD]]'s temperature and listens to the heart.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the doctors do their work, step by step.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that comes resting, playing and sleeping, and at last, going home.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "unknown"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "At the hospital there are many helpers.",
+              "kind": "describe"
+            },
+            {
+              "text": "Nurses check on [[CHILD]] during the day and at night.",
+              "kind": "describe"
+            },
+            {
+              "text": "Doctors make the plan to help [[CHILD]]'s body.",
+              "kind": "describe"
+            },
+            {
+              "text": "Everyone wears a name badge and says hello.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can ask, what is your name, and what is your job?",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "strangers"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "[[GROWNUP]] tells [[CHILD]] who will stay at the hospital and when family will visit.",
+              "kind": "describe"
+            },
+            {
+              "text": "A favourite toy from home stays in the bed with [[CHILD]] the whole time.",
+              "kind": "describe"
+            },
+            {
+              "text": "Other kids stay at the hospital too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some hospitals have a playroom with toys and books.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can wave to the other kids.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "shot",
+          "addresses": [
+            "separation",
+            "social"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "At the hospital, [[CHILD]] has some important jobs.",
+              "kind": "describe"
+            },
+            {
+              "text": "One job is resting, so the body can get better.",
+              "kind": "describe"
+            },
+            {
+              "text": "Another job is telling a nurse how [[CHILD]] feels.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can use words, or show fingers: one finger means a little sore, five means a lot.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the nurse knows how to help.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "shot",
+          "addresses": [
+            "body",
+            "pain"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Next to the bed there is a call button.",
+              "kind": "describe"
+            },
+            {
+              "text": "If [[CHILD]] needs a nurse, [[CHILD]] can press it, even at night.",
+              "kind": "coach"
+            },
+            {
+              "text": "A nurse comes to help.",
+              "kind": "describe"
+            },
+            {
+              "text": "When [[CHILD]] feels well enough, there is time to play, draw and read.",
+              "kind": "describe"
+            },
+            {
+              "text": "Toys from home make the room feel cosy.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "safety",
+            "social"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "Some things at the hospital feel new and strange.",
+              "kind": "describe"
+            },
+            {
+              "text": "Machines make beep, beep sounds.",
+              "kind": "describe"
+            },
+            {
+              "text": "A beep is just a message for the nurses.",
+              "kind": "describe"
+            },
+            {
+              "text": "A little clip on the finger can glow red.",
+              "kind": "describe"
+            },
+            {
+              "text": "The lights are bright, and the smell is clean like soap.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel unsure about new things.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "worried",
+          "background": "shot",
+          "addresses": [
+            "sensory"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Sometimes [[CHILD]] might miss home, and some parts might feel sore.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel worried, and it is okay to cry.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can hug the toy from home and take slow breaths.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can tell a nurse or [[GROWNUP]] right away, and they will help.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "cosy-room",
+          "addresses": [
+            "separation",
+            "pain"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "Tonight [[CHILD]] and [[GROWNUP]] pack a hospital bag together.",
+              "kind": "describe"
+            },
+            {
+              "text": "In goes the favourite toy, cosy pyjamas, a book and a family photo.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] chooses what comes from home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[CHILD]] plays hospital with a toy in a pretend bed.",
+              "kind": "describe"
+            },
+            {
+              "text": "Beep, beep, how are you feeling, toy?",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Let's say the hospital plan once more.",
+              "kind": "coach"
+            },
+            {
+              "text": "First, check in and get the wristband.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the bed and the nurses.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, the doctors help, and [[CHILD]] rests.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, going home.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves [[CHILD]] every minute, and is proud of [[CHILD]] for practising.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "cosy-room",
+          "addresses": [
+            "unknown",
+            "love"
+          ]
+        }
+      ]
+    },
+    "social": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "My name is [[CHILD]], and soon I will stay at the hospital.",
+              "kind": "describe"
+            },
+            {
+              "text": "The hospital is where doctors help bodies get better.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, we check in at a desk.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I get a wristband with my name.",
+              "kind": "describe"
+            },
+            {
+              "text": "I keep the wristband on my arm.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask [[GROWNUP]] about the plan.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Next, I go to a room with a bed.",
+              "kind": "describe"
+            },
+            {
+              "text": "The bed moves up and down with buttons.",
+              "kind": "describe"
+            },
+            {
+              "text": "Nurses check my temperature.",
+              "kind": "describe"
+            },
+            {
+              "text": "The doctors do their work.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, I rest and play.",
+              "kind": "describe"
+            },
+            {
+              "text": "When the doctors say I am ready, I go home.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "unknown"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "At the hospital there are nurses and doctors.",
+              "kind": "describe"
+            },
+            {
+              "text": "They wear name badges.",
+              "kind": "describe"
+            },
+            {
+              "text": "Their job is to help kids get better.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask a nurse for help.",
+              "kind": "coach"
+            },
+            {
+              "text": "Nurses are at the hospital all day and all night.",
+              "kind": "describe"
+            },
+            {
+              "text": "Many different helpers may come to my room.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "strangers"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "[[GROWNUP]] tells me who will stay with me.",
+              "kind": "describe"
+            },
+            {
+              "text": "My family may visit at the hospital.",
+              "kind": "describe"
+            },
+            {
+              "text": "My toy from home stays with me.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can hug my toy when I miss home.",
+              "kind": "coach"
+            },
+            {
+              "text": "Other kids stay at the hospital too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some hospitals have a playroom.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "separation",
+            "social"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "At the hospital, I rest so my body can get better.",
+              "kind": "describe"
+            },
+            {
+              "text": "A nurse may ask how I feel.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can tell the nurse with words or fingers.",
+              "kind": "coach"
+            },
+            {
+              "text": "One finger means a little sore.",
+              "kind": "describe"
+            },
+            {
+              "text": "Five fingers means very sore.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the nurse can help me.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "body",
+            "pain"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "There is a call button next to my bed.",
+              "kind": "describe"
+            },
+            {
+              "text": "When I press the button, a nurse comes.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can press the button if I need help.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can press it at night too.",
+              "kind": "describe"
+            },
+            {
+              "text": "The nurses are careful and kind.",
+              "kind": "describe"
+            },
+            {
+              "text": "Asking for help is a good thing to do.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "safety"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "Some things at the hospital can feel strange.",
+              "kind": "describe"
+            },
+            {
+              "text": "Machines make beep sounds.",
+              "kind": "describe"
+            },
+            {
+              "text": "A beep is a message for the nurse.",
+              "kind": "describe"
+            },
+            {
+              "text": "The lights can be bright.",
+              "kind": "describe"
+            },
+            {
+              "text": "A clip on my finger may glow red.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths when things feel strange.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "worried",
+          "background": "shot",
+          "addresses": [
+            "sensory"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Sometimes I may miss home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes something may feel sore.",
+              "kind": "describe"
+            },
+            {
+              "text": "Feeling worried is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can tell [[GROWNUP]] or a nurse how I feel.",
+              "kind": "coach"
+            },
+            {
+              "text": "They will help me.",
+              "kind": "describe"
+            },
+            {
+              "text": "My toy from home is with me in the bed.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "separation",
+            "pain"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "At home, I can pack my hospital bag.",
+              "kind": "describe"
+            },
+            {
+              "text": "I choose my toy from home.",
+              "kind": "describe"
+            },
+            {
+              "text": "I pack my pyjamas and a book.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can bring a photo of my family.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can play hospital with my toy.",
+              "kind": "coach"
+            },
+            {
+              "text": "My toy can lie in a pretend bed.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "separation",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Here is my hospital plan.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, the wristband.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then, my bed and the nurses.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, the doctors help, and I rest.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, I go home.",
+              "kind": "describe"
+            },
+            {
+              "text": "I practised the plan, and I did a good job.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "cosy-room",
+          "addresses": [
+            "unknown"
+          ]
+        }
+      ]
+    }
+  },
+  "badge": {
+    "id": "hospital_hero",
+    "label": "Hospital Hero"
+  }
+}
