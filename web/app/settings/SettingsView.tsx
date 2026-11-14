@@ -5,6 +5,7 @@ import { SubscriptionCard } from '@/components/paywall/SubscriptionCard';
 import { ExportImport, RestoreLink, StyleToggle, ValuesProfile, VoiceConsent } from '@/components/settings';
 import { clearDeviceData } from '@/lib/storage/clear';
 import { Button, ButtonLink } from '@/components/ui/Button';
+import { ErrorBoundary } from '@/components/ui/ErrorBoundary';
 import { Chip } from '@/components/ui/Chip';
 import { EmptyState } from '@/components/ui/EmptyState';
 import { Field, TextInput } from '@/components/ui/Field';
@@ -111,7 +112,9 @@ export function SettingsView() {
           </div>
         </div>
         {isOn('voiceQuestion') && (
-          <VoiceConsent consentOn={settings.voiceQuestionConsentOn} onChange={settings.setVoiceConsent} workspace={getWorkspace()} />
+          <ErrorBoundary fallback={<p className="text-sm text-ink-soft">Voice options are not available in this browser. You can always type the question.</p>}>
+            <VoiceConsent consentOn={settings.voiceQuestionConsentOn} onChange={settings.setVoiceConsent} workspace={getWorkspace()} />
+          </ErrorBoundary>
         )}
       </Section>
 

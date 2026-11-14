@@ -6,7 +6,8 @@ export function Face({ rating, size = 48 }: { rating: 1 | 2 | 3; size?: number }
       <circle cx="12" cy="12" r="10" />
       <circle cx="9" cy="10" r="0.9" fill="currentColor" />
       <circle cx="15" cy="10" r="0.9" fill="currentColor" />
-      {rating === 3 && <path d="M7.5 7.5l2 1M16.5 7.5l-2 1" />}
+      {/* Sad, not angry: the inner ends of the brows go up. */}
+      {rating === 3 && <path d="M7.2 7.3l2.2-1.2M16.8 7.3l-2.2-1.2" />}
       <path d={mouth} />
     </svg>
   );

@@ -88,7 +88,7 @@ function Form({ ctx }: { ctx: EventCtx }) {
               }}
               className={`flex min-h-tap flex-col items-center gap-2 rounded-card border-2 bg-surface p-3 font-bold shadow-step transition-colors duration-fast ${
                 rating === r ? '!border-primary bg-surface-2 ring-2 ring-primary/30' : 'border-line'
-              } ${r === 1 ? 'text-success' : r === 2 ? 'text-accent-ink' : 'text-danger'}`}
+              } ${r === 1 ? 'text-success' : r === 2 ? 'text-accent-ink' : 'text-primary-text'}`}
             >
               <Face rating={r} />
               <span className="text-sm text-ink">{RATING_LABEL[r]}</span>

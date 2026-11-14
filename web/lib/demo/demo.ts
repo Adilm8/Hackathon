@@ -41,11 +41,22 @@ export interface TourStep {
   href: string;
   /** Time travel to apply before opening the link. */
   time?: TimeTarget;
+  /** What to do on the step's own screen when opening it is not enough. */
+  hint?: string;
+  /** The Demo bar can do this step itself (unlock = demo access, when the server offers it). */
+  action?: 'grant';
 }
 
 export interface TourSeen {
   panel?: boolean;
   day?: boolean;
+  /** The event the tour runs on, fixed at its first screen so a new or past event never restarts it. */
+  eventId?: string;
+}
+
+/** The tour's event: the one it started on while it still exists, else the nearest upcoming. */
+export function tourEvent(events: BigEvent[], realToday: ISODate, seen: TourSeen): BigEvent | undefined {
+  return (seen.eventId && events.find((e) => e.id === seen.eventId)) || demoEvent(events, realToday);
 }
 
 /**
@@ -57,12 +68,24 @@ export function tourSteps(event: BigEvent, list: Entitlement[], nowMs: number, s
   const base = `/event/${encodeURIComponent(event.id)}`;
   const access = hasEventAccess(list, event.id, nowMs);
   return [
-    { id: 'read', label: 'Read chapter 1', done: !!event.chapters.find((c) => c.index === 1)?.readOn, href: `${base}/read/1` },
-    { id: 'ask', label: 'Ask a question, watch the next page change', done: event.questions.length > 0, href: `${base}/read/1` },
+    {
+      id: 'read', label: 'Read chapter 1', done: !!event.chapters.find((c) => c.index === 1)?.readOn, href: `${base}/read/1`,
+      hint: 'Turn the pages with Next, then tap Finish on the last one.',
+    },
+    {
+      id: 'ask', label: 'Ask a question, watch the next page change', done: event.questions.length > 0, href: `${base}/read/1`,
+      hint: 'Tap one of the questions under the page. The next page changes to answer it.',
+    },
     { id: 'panel', label: 'Open the parent panel', done: !!seen.panel, href: `${base}/panel` },
-    { id: 'unlock', label: 'Unlock the full plan', done: access, href: `${base}/paywall` },
+    {
+      id: 'unlock', label: 'Unlock the full plan', done: access, href: `${base}/paywall`, action: 'grant',
+      hint: 'Pay with the test card 4242 4242 4242 4242, or tap Skip payment.',
+    },
     { id: 'day', label: 'Jump to the event day: card and PDF', done: !!seen.day || !!event.ritual, href: `${base}/day`, time: 'day' },
-    { id: 'after', label: 'After the event: check-in, badge, next big day', done: !!event.checkin, href: event.checkin ? `${base}/badge` : `${base}/checkin`, time: 'after' },
+    {
+      id: 'after', label: 'After the event: check-in, badge, next big day', done: !!event.checkin, href: event.checkin ? `${base}/badge` : `${base}/checkin`, time: 'after',
+      hint: 'Pick how it went and tap Save. The badge opens next.',
+    },
   ];
 }
 
@@ -80,8 +103,17 @@ export function readSeen(): TourSeen {
   }
 }
 
+/** Adds ticks, never removes one: `{ day: true, panel: undefined }` keeps an earlier panel tick. */
+export function mergeSeen(prev: TourSeen, patch: TourSeen): TourSeen {
+  const next = { ...prev };
+  if (patch.panel) next.panel = true;
+  if (patch.day) next.day = true;
+  if (patch.eventId && !prev.eventId) next.eventId = patch.eventId;
+  return next;
+}
+
 export function markSeen(patch: TourSeen): TourSeen {
-  const next = { ...readSeen(), ...patch };
+  const next = mergeSeen(readSeen(), patch);
   try {
     window.localStorage.setItem(SEEN_KEY, JSON.stringify(next));
   } catch {

@@ -4,10 +4,10 @@ import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { Icon } from '@/components/icons';
 import { clock, dateLabel } from '@/lib/engine/clock';
-import type { Workspace } from '@/lib/engine/types';
+import type { BigEvent, Workspace } from '@/lib/engine/types';
 import {
   clearSeen, demoEvent, demoModeOn, isDemoAccess, markSeen, readSeen, realTimeGroupOn, sampleAccess, timeTravelDate,
-  tourSteps, type TimeTarget, type TourSeen,
+  tourEvent, tourSteps, type TimeTarget, type TourSeen,
 } from '@/lib/demo/demo';
 import { setEntitlements, useEntitlements } from '@/lib/store/entitlement';
 import { useEvents } from '@/lib/store/events';
@@ -68,11 +68,14 @@ export function DemoBar({ workspace }: { workspace: Workspace }) {
   }, [sample]);
 
   // "Panel opened" and "day card seen" are not in the family data: noted per browser.
-  const here: TourSeen = { panel: /\/panel$/.test(pathname) || undefined, day: /\/day$/.test(pathname) || undefined };
-  useEffect(() => {
-    if (sample && (here.panel || here.day)) markSeen(here);
-  }, [sample, here.panel, here.day]); // eslint-disable-line react-hooks/exhaustive-deps
+  // Both count only on the tour's own event, which is fixed the first time the bar shows it.
   const stored = sample ? readSeen() : {};
+  const tour = sample ? tourEvent(events, clock.realToday(), stored) : undefined;
+  const onTour = !!tour && onScreenId !== undefined && decodeURIComponent(onScreenId) === tour.id;
+  const here: TourSeen = { panel: (onTour && /\/panel$/.test(pathname)) || undefined, day: (onTour && /\/day$/.test(pathname)) || undefined };
+  useEffect(() => {
+    if (sample && tour) markSeen({ ...here, eventId: tour.id });
+  }, [sample, tour?.id, here.panel, here.day]); // eslint-disable-line react-hooks/exhaustive-deps
   const seen: TourSeen = { panel: stored.panel || here.panel, day: stored.day || here.day };
 
   if (!sample && !timeOnly) return null;
@@ -89,8 +92,8 @@ export function DemoBar({ workspace }: { workspace: Workspace }) {
   const toggle = () => setOpenSaved(!open);
 
   // After a jump the bar folds away, so the screen it opened is fully visible on a phone.
-  const travel = (t: TimeTarget) => {
-    setOverride(timeTravelDate(event, t));
+  const travel = (t: TimeTarget, on: Pick<BigEvent, 'date' | 'chapters'> = event) => {
+    setOverride(timeTravelDate(on, t));
     setOpenSaved(false);
   };
 
@@ -116,10 +119,12 @@ export function DemoBar({ workspace }: { workspace: Workspace }) {
     } else setNote('Demo access is not available right now.');
   }
 
-  const steps = sample ? tourSteps(event, list, nowMs(), seen) : [];
+  const steps = sample && tour ? tourSteps(tour, list, nowMs(), seen) : [];
   const doneCount = steps.filter((s) => s.done).length;
   const nextStep = steps.find((s) => !s.done);
   const demo = isDemoAccess(workspace, list, nowMs());
+  const onStepPage = !!nextStep && decodeURIComponent(pathname) === decodeURIComponent(nextStep.href);
+  const canGrant = nextStep?.action === 'grant' && accessOn && !demo;
 
   return (
     <div className="no-print sticky bottom-0 z-30 border-t-2 border-accent bg-surface text-ink shadow-pop" role="region" aria-label="Demo bar">
@@ -134,17 +139,38 @@ export function DemoBar({ workspace }: { workspace: Workspace }) {
             </span>
             <span aria-hidden className="ml-auto pl-1 text-ink-soft">{open ? '▾' : '▴'}</span>
           </button>
-          {!open && nextStep && (
+          {!open && nextStep && !onStepPage && (
             <Link
               href={nextStep.href}
-              onClick={() => nextStep.time && setOverride(timeTravelDate(event, nextStep.time))}
+              onClick={() => nextStep.time && setOverride(timeTravelDate(tour ?? event, nextStep.time))}
               className="inline-flex min-h-tap shrink-0 items-center rounded-pill bg-primary px-3 text-sm font-extrabold text-primary-ink"
             >
               Next step →
             </Link>
           )}
+          {!open && nextStep && onStepPage && canGrant && (
+            <button
+              type="button"
+              disabled={!!busy}
+              onClick={() => access('grant')}
+              className="inline-flex min-h-tap shrink-0 items-center rounded-pill bg-accent px-3 text-sm font-extrabold text-accent-ink disabled:opacity-50"
+            >
+              {busy === 'grant' ? 'Unlocking…' : 'Skip payment →'}
+            </button>
+          )}
         </div>
-        {!open && nextStep && <p className="truncate pb-1 text-xs text-ink-soft">Next: {nextStep.label}</p>}
+        {!open && nextStep && !onStepPage && <p className="truncate pb-1 text-xs text-ink-soft">Next: {nextStep.label}</p>}
+        {!open && sample && steps.length > 0 && !nextStep && (
+          <p className="truncate pb-1 text-xs text-ink-soft">Tour complete. Open the bar to start again with Reset demo.</p>
+        )}
+        {/* On the step's own screen opening it again does nothing, so the strip says what to do here. */}
+        {!open && nextStep && onStepPage && (
+          <p role="status" className="pb-1 text-sm font-bold">
+            <span className="text-ink-soft">{nextStep.label}: </span>
+            {nextStep.hint ?? 'You are on this step now.'}
+          </p>
+        )}
+        {!open && note && <p role="status" className="pb-1 text-xs font-bold">{note}</p>}
         {open && (
           <div className="flex max-h-[55dvh] flex-col gap-3 overflow-y-auto pb-2">
             {sample && (
@@ -153,7 +179,7 @@ export function DemoBar({ workspace }: { workspace: Workspace }) {
                   <li key={s.id}>
                     <Link
                       href={s.href}
-                      onClick={() => (s.time ? travel(s.time) : setOpenSaved(false))}
+                      onClick={() => (s.time ? travel(s.time, tour) : setOpenSaved(false))}
                       className="flex min-h-tap items-center gap-2 rounded-card px-2 text-sm hover:bg-surface-2"
                     >
                       <span
@@ -162,7 +188,10 @@ export function DemoBar({ workspace }: { workspace: Workspace }) {
                       >
                         {s.done ? <Icon name="check" size={14} /> : i + 1}
                       </span>
-                      <span className={s.done ? 'text-ink-soft line-through decoration-1' : 'font-bold'}>{s.label}</span>
+                      <span className={s.done ? 'text-ink-soft line-through decoration-1' : 'font-bold'}>
+                        {s.label}
+                        {s === nextStep && onStepPage && s.hint && <span className="block text-xs font-normal text-ink-soft">{s.hint}</span>}
+                      </span>
                       <span className="sr-only">{s.done ? '(done)' : ''}</span>
                     </Link>
                   </li>
