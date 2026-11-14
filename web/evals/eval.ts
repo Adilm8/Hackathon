@@ -4,7 +4,7 @@
  * the whole chapter (p50/p95 against the 6 s and 25 s budgets), safety 16 of 16, and real cost.
  * Writes docs/llm-evaluation.md and the chapters to evals/out/<model>/ for blind scoring.
  *
- *   npm run eval -- --models=deepseek/deepseek-4.1-flash,anthropic/haiku-5.5 --runs=3 --approved-budget=1
+ *   npm run eval -- --models=<openrouter-id-1>,<openrouter-id-2> --runs=3 --approved-budget=1
  *   npm run eval -- --provider=gemini --runs=1          (uses GEMINI_MODEL)
  *   LLM_PROVIDER=mock npm run eval                      (dry run, no cost)
  *
