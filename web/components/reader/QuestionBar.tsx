@@ -1,12 +1,14 @@
 'use client';
-import { useEffect, useState } from 'react';
-import { BrowserListener } from '@/lib/speech/listener';
+import { useState, useSyncExternalStore } from 'react';
+import { BrowserListener, mayListenOnDevice } from '@/lib/speech/listener';
 import { Icon } from '@/components/icons';
 import { Button } from '@/components/ui/Button';
 import { TextArea } from '@/components/ui/Field';
 import { Sheet } from '@/components/ui/Sheet';
 
 /** Three question buttons, "Ask your own" and the counter "2 of 3 questions tonight" (4.7, 4.8). */
+const noop = () => () => {};
+
 export function QuestionBar({
   buttons, asked, limit = 3, busy, childName, onAsk, voice = false,
 }: {
@@ -17,22 +19,26 @@ export function QuestionBar({
 }) {
   const [open, setOpen] = useState(false);
   const [text, setText] = useState('');
-  const [canListen, setCanListen] = useState(false);
+  // Only whether the API exists; the on-device check runs on the tap (it can crash some Chromium builds).
+  const mayListen = useSyncExternalStore(noop, mayListenOnDevice, () => false);
+  const [refused, setRefused] = useState(false);
+  const canListen = mayListen && !refused;
   const [listening, setListening] = useState(false);
-  const [voiceError, setVoiceError] = useState(false);
-  useEffect(() => {
-    if (!voice) return;
-    let live = true;
-    new BrowserListener().available().then((v) => live && setCanListen(v));
-    return () => { live = false; };
-  }, [voice]);
+  const [voiceError, setVoiceError] = useState<null | 'unheard' | 'unavailable'>(null);
   async function listen() {
-    setVoiceError(false); setListening(true);
+    setVoiceError(null); setListening(true);
     try {
-      const t = await new BrowserListener().listenOnce();
+      const listener = new BrowserListener();
+      if (!(await listener.available())) {
+        setRefused(true);
+        setVoiceError('unavailable');
+        setListening(false);
+        return;
+      }
+      const t = await listener.listenOnce();
       setText(t.slice(0, 120)); // shown for the parent to check and edit before sending
     } catch {
-      setVoiceError(true);
+      setVoiceError('unheard');
     }
     setListening(false);
   }
@@ -84,7 +90,8 @@ export function QuestionBar({
               <Icon name="mic" size={18} /> {listening ? 'Listening…' : 'Say it'}
             </Button>
           )}
-          {voiceError && <p role="alert" className="text-sm text-danger">Could not hear that. Try again or type it.</p>}
+          {voiceError === 'unheard' && <p role="alert" className="text-sm text-danger">Could not hear that. Try again or type it.</p>}
+          {voiceError === 'unavailable' && <p role="alert" className="text-sm text-ink-soft">Asking by voice is not available on this device. Please type the question.</p>}
           <p className="text-right text-xs text-ink-soft">{text.length} / 120</p>
           <Button type="submit" size="l" disabled={!text.trim()}>Ask</Button>
         </form>

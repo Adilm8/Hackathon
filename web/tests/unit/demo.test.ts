@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { demoEvent, isDemoAccess, timeTravelDate, tourSteps } from '@/lib/demo/demo';
+import { demoEvent, isDemoAccess, mergeSeen, timeTravelDate, tourEvent, tourSteps } from '@/lib/demo/demo';
 import { buildSampleFamily } from '@/lib/engine/sample';
 import type { Entitlement } from '@/lib/engine/types';
 
@@ -56,5 +56,32 @@ describe('guided tour (4.3)', () => {
     const steps = tourSteps(read, [demoRow], NOW, { panel: true });
     expect(steps.filter((s) => s.done).map((s) => s.id)).toEqual(['read', 'ask', 'panel', 'unlock', 'after']);
     expect(steps.find((s) => s.id === 'after')?.href).toMatch(/\/badge$/);
+  });
+});
+
+describe('tour ticks are never lost (usability pass: panel and day looped)', () => {
+  it('a day tick keeps the earlier panel tick', () => {
+    expect(mergeSeen({ panel: true }, { panel: undefined, day: true })).toEqual({ panel: true, day: true });
+    expect(mergeSeen({ day: true }, { panel: true, day: undefined })).toEqual({ panel: true, day: true });
+    expect(mergeSeen({}, {})).toEqual({});
+  });
+  it('steps that need an action on their own screen carry a hint; unlock can be done by the bar', () => {
+    const doc = buildSampleFamily('2026-11-14');
+    const steps = tourSteps(doc.events[0], [], Date.UTC(2026, 10, 14), {});
+    for (const id of ['read', 'ask', 'unlock', 'after']) expect(steps.find((s) => s.id === id)?.hint).toBeTruthy();
+    expect(steps.find((s) => s.id === 'unlock')?.action).toBe('grant');
+  });
+});
+
+describe('the tour stays on its event (usability pass: restarted at 1/6)', () => {
+  it('keeps the first event even when a nearer one is added later', () => {
+    const doc = buildSampleFamily('2026-11-14');
+    const upcoming = demoEvent(doc.events, '2026-11-14')!;
+    const added = { ...upcoming, id: 'new-one', date: '2026-11-15' };
+    const events = [...doc.events, added];
+    expect(tourEvent(events, '2026-11-14', {})?.id).toBe('new-one');
+    expect(tourEvent(events, '2026-11-14', { eventId: upcoming.id })?.id).toBe(upcoming.id);
+    expect(tourEvent(doc.events, '2026-11-14', { eventId: 'gone' })?.id).toBe(upcoming.id);
+    expect(mergeSeen({ eventId: 'a' }, { eventId: 'b' }).eventId).toBe('a');
   });
 });

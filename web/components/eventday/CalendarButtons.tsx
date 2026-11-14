@@ -2,19 +2,19 @@
 import { Icon } from '@/components/icons';
 import { buttonClass } from '@/components/ui/Button';
 import type { BigEvent } from '@/lib/engine/types';
-import { googleCalendarUrl, icsHref, type IcsData } from '@/lib/engine/ics';
+import { googleCalendarUrl, icsHref, upcomingReminders } from '@/lib/engine/ics';
 
 /**
  * "Add to calendar" (.ics for Apple, Outlook, Android) and "Google Calendar" (a prefilled
  * nightly reminder), docs/SPEC.md 11.8. No child name goes into either.
  */
 export function CalendarButtons({ event, label }: { event: BigEvent; label: string }) {
-  const data: IcsData = {
-    label: label.slice(0, 60),
-    eventId: event.id,
-    chapterDates: event.chapters.map((c) => c.date).slice(0, 5),
-    eventDate: event.date,
-  };
+  // Real device time, not the Demo clock: a reminder at 19:30 that has already passed is left out.
+  const data = upcomingReminders(
+    { label: label.slice(0, 60), eventId: event.id, chapterDates: event.chapters.map((c) => c.date).slice(0, 5), eventDate: event.date },
+    new Date(),
+  );
+  if (data.chapterDates.length === 0 && data.skipCheckin) return null;
   const origin = typeof window === 'undefined' ? '' : window.location.origin;
   return (
     <div className="grid gap-3 sm:grid-cols-2">

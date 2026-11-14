@@ -27,14 +27,36 @@ function ctor(): RecognitionCtor | null {
 
 const LANG = 'en-US';
 
-export class BrowserListener implements Listener {
-  async available(): Promise<boolean> {
+/**
+ * Whether the browser could offer on-device recognition at all, WITHOUT asking it. Safe on render:
+ * only checks that the API exists. Calling `available()` is left to a tap, because in some
+ * Chromium builds the on-device check itself crashes the tab (usability pass, Chromium 153).
+ */
+export function mayListenOnDevice(): boolean {
+  try {
     const C = ctor();
-    if (!C || typeof C.available !== 'function') return false; // cannot prove it stays on the device
+    return !!C && typeof C.available === 'function';
+  } catch {
+    return false;
+  }
+}
+
+export class BrowserListener implements Listener {
+  /** Asks the browser for on-device support. Call it only after a tap; it gives up after `timeoutMs`. */
+  async available(timeoutMs = 3000): Promise<boolean> {
+    if (!mayListenOnDevice()) return false; // cannot prove it stays on the device
+    const C = ctor() as RecognitionCtor;
+    let timer: ReturnType<typeof setTimeout> | undefined;
     try {
-      return (await C.available({ langs: [LANG], processLocally: true })) === 'available';
+      const check = Promise.resolve(C.available!({ langs: [LANG], processLocally: true })).then((v) => v === 'available');
+      const late = new Promise<boolean>((resolve) => {
+        timer = setTimeout(() => resolve(false), timeoutMs);
+      });
+      return await Promise.race([check, late]);
     } catch {
       return false;
+    } finally {
+      clearTimeout(timer);
     }
   }
 

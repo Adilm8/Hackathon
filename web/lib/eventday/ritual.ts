@@ -18,12 +18,27 @@ function isCard(x: unknown): x is RitualCard {
   );
 }
 
-export async function loadRitual(
+/** One request per event at a time: a remount (React dev mode, a quick back-and-forth) shares it. */
+const inFlight = new Map<string, Promise<RitualResult>>();
+
+export function loadRitual(
   input: { event: BigEvent; child: ChildProfile; template: EventTemplate },
   timeoutMs = 8000,
 ): Promise<RitualResult> {
+  if (input.event.ritual) return Promise.resolve({ card: input.event.ritual, store: false });
+  const key = `${getWorkspace()}:${input.event.id}`;
+  const running = inFlight.get(key);
+  if (running) return running;
+  const p = requestRitual(input, timeoutMs).finally(() => inFlight.delete(key));
+  inFlight.set(key, p);
+  return p;
+}
+
+async function requestRitual(
+  input: { event: BigEvent; child: ChildProfile; template: EventTemplate },
+  timeoutMs: number,
+): Promise<RitualResult> {
   const { event, child, template } = input;
-  if (event.ritual) return { card: event.ritual, store: false };
   const fallback = () => ({ card: fallbackRitual(template, event, child), store: false });
   const ctrl = new AbortController();
   const timer = setTimeout(() => ctrl.abort(), timeoutMs);

@@ -66,14 +66,21 @@ Defaults chosen without Lida (to revisit):
 | Demo bar: tour, time travel, access (4.3, 5.1) | `components/eventday/DemoBar.tsx` (mounted by `Screen`), rules in `lib/demo/demo.ts` |
 | Demo access (9, 10.4a) | `POST /api/sample/access` (`grant`, `reset`); `GET` returns `{ demoMode }` for the Demo bar |
 
-Ready-made parts and patterns: the browser's own print to PDF with a CSS `@page A5` sheet (no PDF library to load), the `ics` package (ISC) for the calendar file, Google Calendar's public `render?action=TEMPLATE` link; a guided checklist that ticks itself from real data (onboarding checklists of Linear and Notion), a collapsible demo strip with a "Next step" button.
+Ready-made parts and patterns: jsPDF (MIT, loaded only on tap) for the A5 card file, the browser's print with a CSS `@page A5` sheet for printing, the `ics` package (ISC) for the calendar file, Google Calendar's public `render?action=TEMPLATE` link; a guided checklist that ticks itself from real data (onboarding checklists of Linear and Notion), a collapsible demo strip with a "Next step" button.
 
 Defaults chosen without Lida (to revisit):
 
-1. **Download PDF** opens the print window with the A5 card (choose "Save as PDF"). SPEC 11.7 named `@react-pdf/renderer`; printing keeps the bundle small and the card identical to the screen.
+1. **Download PDF** saves a real A5 file (`lib/eventday/pdf.ts`, jsPDF, black on white, same text as the card); **Print on A5** keeps the browser print. SPEC 11.7 named `@react-pdf/renderer`; jsPDF is smaller and loads only when tapped.
 2. The day card from the AI is stored once; when the AI is unavailable the template card (adjusted by memory) is shown and the AI is asked again next time.
 3. "Panel opened" and "day card seen" ticks of the tour are kept in this browser (`bds:sample:demo`), since they are not family data; the other four come from the family document.
 4. **Reset demo** removes the demo access on the server and then starts a fresh sample family (unpaid, real today, no questions), so the next juror starts clean.
 5. The Demo bar starts folded on phones (a strip with "Next step"), open on screens from 768 px; it folds itself after a jump. The "Demo access" badge in the header shows from 400 px; on narrower phones the Demo bar strip says it.
 6. The badge screen offers the three suggested events as links that preselect the event in the form (`/start?again=1&type=…`).
 7. The sample warm-up stays off (`LLM_WARM_SAMPLE` unset), so nothing is spent on a paid model.
+
+### Usability fixes (second pass)
+
+- Voice questions: the browser is asked about on-device recognition only after a tap, with a 3 s timeout (`mayListenOnDevice` just checks the API exists). Asking on page load crashed /settings in a Chromium build. Settings voice options sit in an error boundary; `app/error.tsx` catches any screen.
+- Demo bar: on a step's own screen "Next step" turns into what to do there (Finish, ask a question, Save), and on the paywall into "Skip payment"; tour ticks are only ever added (the day tick used to wipe the panel tick); the tour stays on the event it started with; "Tour complete" at 6/6.
+- Calendar: reminders whose time has passed on the parent's own clock are left out, chapter numbers stay real.
+- Check-in "Hard" face is sad (raised inner brows, blue), not angry. One /api/ritual request per event at a time.

@@ -10,7 +10,9 @@ import { Screen } from '@/components/ui/Screen';
 import { Skeleton } from '@/components/ui/Skeleton';
 import { dateLabel } from '@/lib/engine/clock';
 import type { RitualCard } from '@/lib/engine/types';
+import { buildCardPdf, saveFile } from '@/lib/eventday/pdf';
 import { loadRitual } from '@/lib/eventday/ritual';
+import { renderText } from '@/lib/engine/text';
 import { useEvents } from '@/lib/store/events';
 import { useEventCtx, type EventCtx } from '@/lib/store/hooks';
 import { eventLabel, eventPhase, fallbackRitual } from '@/lib/store/engine';
@@ -32,6 +34,7 @@ function PaidDay({ ctx }: { ctx: EventCtx }) {
   const setRitual = useEvents((s) => s.setRitual);
   const [card, setCard] = useState<RitualCard | null>(event.ritual ?? null);
   const [failed, setFailed] = useState(false);
+  const [pdfState, setPdfState] = useState<'idle' | 'busy' | 'error'>('idle');
   const label = eventLabel(event, template);
   const phase = eventPhase(event, today);
 
@@ -54,6 +57,24 @@ function PaidDay({ ctx }: { ctx: EventCtx }) {
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [event.id]);
+
+  async function download() {
+    if (!card) return;
+    setPdfState('busy');
+    try {
+      const pdf = await buildCardPdf({
+        title: `${child.name}'s big day`,
+        subtitle: `${label} · ${dateLabel(event.date, { weekday: true })}`,
+        steps: [renderText(card.steps[0], child), renderText(card.steps[1], child), renderText(card.steps[2], child)],
+        technique: { label: card.technique.label, how: renderText(card.technique.how, child) },
+        footnote: `Not therapy or medical advice.${card.source === 'llm' ? ' Steps written with AI from our checked template.' : ''} Big Day Stories`,
+      });
+      saveFile(pdf, 'big-day-card.pdf');
+      setPdfState('idle');
+    } catch {
+      setPdfState('error');
+    }
+  }
 
   function print() {
     const title = document.title;
@@ -90,10 +111,13 @@ function PaidDay({ ctx }: { ctx: EventCtx }) {
       {failed && <p className="no-print text-sm text-ink-soft">We showed the standard card for this big day.</p>}
 
       <div className="no-print flex flex-col gap-3">
-        <Button size="l" onClick={print} disabled={!card}>
-          <Icon name="printer" size={22} /> Download PDF
+        <Button size="l" onClick={download} disabled={!card || pdfState === 'busy'}>
+          <Icon name="download" size={22} /> {pdfState === 'busy' ? 'Making the PDF…' : 'Download PDF'}
         </Button>
-        <p className="text-center text-xs text-ink-soft">Choose “Save as PDF” in the print window, or print it on A5 paper.</p>
+        {pdfState === 'error' && <p role="alert" className="text-center text-sm text-danger">Could not make the file. Try Print instead.</p>}
+        <Button variant="secondary" onClick={print} disabled={!card}>
+          <Icon name="printer" size={20} /> Print on A5
+        </Button>
         <Link href={`/event/${encodeURIComponent(event.id)}/checkin`} className="mx-auto inline-flex min-h-tap items-center px-4 font-bold text-primary-text underline">
           Already back? Tell us how it went
         </Link>

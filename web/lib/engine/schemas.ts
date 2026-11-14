@@ -333,6 +333,10 @@ export const IcsPayload = z.strictObject({
   eventId: id,
   chapterDates: z.array(ISODateSchema).max(5),
   eventDate: ISODateSchema,
+  /** Number of the first chapter in `chapterDates` when earlier evenings are already past (default 1). */
+  firstChapter: z.number().int().min(1).max(6).optional(),
+  /** The "How did it go?" time on the event day is already past. */
+  skipCheckin: z.boolean().optional(),
 });
 
 // ---------- drift checks: types.ts <-> schemas.ts ----------

@@ -4,7 +4,7 @@ import { LUCIDE } from './lucide-data';
 
 export type IconName =
   | 'stethoscope' | 'school' | 'plane-takeoff' | 'baby' | 'scissors' | 'syringe' | 'sparkles'
-  | 'smile' | 'heart' | 'star' | 'check' | 'clock' | 'calendar-days' | 'printer' | 'moon' | 'sun'
+  | 'smile' | 'heart' | 'star' | 'check' | 'clock' | 'calendar-days' | 'printer' | 'download' | 'moon' | 'sun'
   | 'shield-check' | 'hand-heart' | 'bed-double' | 'book-open' | 'party-popper' | 'award'
   | 'sticker' | 'backpack' | 'armchair' | 'users-round' | 'map-pin' | 'sandwich' | 'cloud-moon'
   | 'hand' | 'ear' | 'wind' | 'circle-help' | 'arrow-right' | 'lock' | 'volume-2' | 'pencil'

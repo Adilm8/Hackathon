@@ -8,7 +8,7 @@ import { createEvents, type EventAttributes } from 'ics';
 
 /** DTSTAMP: the library reads `timestamp`, its typings do not list it. */
 type IcsEvent = EventAttributes & { timestamp: number };
-import { toLocalNoon } from './clock';
+import { fromDate, toLocalNoon } from './clock';
 import { IcsPayload } from './schemas';
 import type { ISODate } from './types';
 
@@ -17,7 +17,31 @@ export type IcsData = {
   eventId: string;
   chapterDates: ISODate[];
   eventDate: ISODate;
+  firstChapter?: number;
+  skipCheckin?: boolean;
 };
+
+const minutes = (t: { hour: number; minute: number }) => t.hour * 60 + t.minute;
+
+/**
+ * Only reminders still ahead of the parent's own clock: an evening whose 19:30 has passed today
+ * (or an earlier date) is left out, and the numbering keeps the real chapter numbers.
+ * `now` is the device's real time, not the Demo clock.
+ */
+export function upcomingReminders(
+  data: Pick<IcsData, 'label' | 'eventId' | 'eventDate'> & { chapterDates: ISODate[] },
+  now: Date,
+): IcsData {
+  const today = fromDate(now);
+  const nowMin = now.getHours() * 60 + now.getMinutes();
+  const ahead = (d: ISODate, t: { hour: number; minute: number }) => d > today || (d === today && nowMin < minutes(t));
+  const first = data.chapterDates.findIndex((d) => ahead(d, CHAPTER_TIME));
+  const skipped = first === -1 ? data.chapterDates.length : first;
+  const out: IcsData = { label: data.label, eventId: data.eventId, eventDate: data.eventDate, chapterDates: data.chapterDates.slice(skipped) };
+  if (skipped > 0) out.firstChapter = skipped + 1;
+  if (!ahead(data.eventDate, CHECKIN_TIME)) out.skipCheckin = true;
+  return out;
+}
 
 const CHAPTER_TIME = { hour: 19, minute: 30 };
 const CHECKIN_TIME = { hour: 19, minute: 0 };
@@ -41,21 +65,22 @@ export function buildIcs(data: IcsData, opts: { baseUrl: string; stampMs?: numbe
   const parsed = IcsPayload.parse(data);
   const url = base(opts.baseUrl);
   const stamp = opts.stampMs ?? Date.now();
-  const n = parsed.chapterDates.length;
+  const k0 = parsed.firstChapter ?? 1;
+  const n = k0 - 1 + parsed.chapterDates.length;
   const label = parsed.label.trim();
   const events: IcsEvent[] = parsed.chapterDates.map((d, i) => ({
-    uid: `${parsed.eventId}-chapter-${i + 1}@bigdaystories`,
-    title: chapterTitle(i + 1, n),
-    description: `Tonight's chapter for ${label}. Open it here: ${url}/event/${parsed.eventId}/read/${i + 1}`,
-    url: `${url}/event/${parsed.eventId}/read/${i + 1}`,
+    uid: `${parsed.eventId}-chapter-${k0 + i}@bigdaystories`,
+    title: chapterTitle(k0 + i, n),
+    description: `Tonight's chapter for ${label}. Open it here: ${url}/event/${parsed.eventId}/read/${k0 + i}`,
+    url: `${url}/event/${parsed.eventId}/read/${k0 + i}`,
     start: [...parts(d), CHAPTER_TIME.hour, CHAPTER_TIME.minute],
     startInputType: 'local',
     startOutputType: 'local',
     duration: { minutes: 20 },
     timestamp: stamp,
-    alarms: [{ action: 'display', description: chapterTitle(i + 1, n), trigger: { minutes: 0, before: true } }],
+    alarms: [{ action: 'display', description: chapterTitle(k0 + i, n), trigger: { minutes: 0, before: true } }],
   }));
-  events.push({
+  if (!parsed.skipCheckin) events.push({
     uid: `${parsed.eventId}-checkin@bigdaystories`,
     title: `${PRODUCT}: How did it go?`,
     description: `How did ${label} go? Save a 30-second check-in: ${url}/event/${parsed.eventId}/checkin`,
@@ -67,6 +92,7 @@ export function buildIcs(data: IcsData, opts: { baseUrl: string; stampMs?: numbe
     timestamp: stamp,
     alarms: [{ action: 'display', description: `${PRODUCT}: How did it go?`, trigger: { minutes: 0, before: true } }],
   });
+  if (events.length === 0) throw new Error('Nothing left to remind about');
   const { error, value } = createEvents(events, { productId: 'big-day-stories', calName: PRODUCT });
   if (error || !value) throw error ?? new Error('Could not build the calendar file');
   // The library writes an alert "at start" as "-PT", which is not a valid duration.
@@ -121,14 +147,23 @@ function gcalStamp(d: ISODate, hour: number, minute: number): string {
  */
 export function googleCalendarUrl(data: IcsData, opts: { baseUrl: string }): string {
   const parsed = IcsPayload.parse(data);
-  const first = parsed.chapterDates[0] ?? parsed.eventDate;
-  const count = Math.max(1, parsed.chapterDates.length);
-  const params = new URLSearchParams({
-    action: 'TEMPLATE',
-    text: `${PRODUCT}: tonight's chapter`,
-    dates: `${gcalStamp(first, CHAPTER_TIME.hour, CHAPTER_TIME.minute)}/${gcalStamp(first, CHAPTER_TIME.hour, CHAPTER_TIME.minute + 20)}`,
-    details: `Tonight's chapter for ${parsed.label.trim()}: ${base(opts.baseUrl)}/event/${parsed.eventId}`,
-    recur: `RRULE:FREQ=DAILY;COUNT=${count}`,
-  });
+  const count = parsed.chapterDates.length;
+  const plan = `${base(opts.baseUrl)}/event/${parsed.eventId}`;
+  // Every evening is past: the one reminder left is "How did it go?" on the big day.
+  const params =
+    count === 0
+      ? new URLSearchParams({
+          action: 'TEMPLATE',
+          text: `${PRODUCT}: How did it go?`,
+          dates: `${gcalStamp(parsed.eventDate, CHECKIN_TIME.hour, CHECKIN_TIME.minute)}/${gcalStamp(parsed.eventDate, CHECKIN_TIME.hour, CHECKIN_TIME.minute + 15)}`,
+          details: `How did ${parsed.label.trim()} go? Save a 30-second check-in: ${plan}/checkin`,
+        })
+      : new URLSearchParams({
+          action: 'TEMPLATE',
+          text: `${PRODUCT}: tonight's chapter`,
+          dates: `${gcalStamp(parsed.chapterDates[0], CHAPTER_TIME.hour, CHAPTER_TIME.minute)}/${gcalStamp(parsed.chapterDates[0], CHAPTER_TIME.hour, CHAPTER_TIME.minute + 20)}`,
+          details: `Tonight's chapter for ${parsed.label.trim()}: ${plan}`,
+          recur: `RRULE:FREQ=DAILY;COUNT=${count}`,
+        });
   return `https://calendar.google.com/calendar/render?${params.toString()}`;
 }
