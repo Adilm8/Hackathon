@@ -8,7 +8,7 @@ export type IconName =
   | 'shield-check' | 'hand-heart' | 'bed-double' | 'book-open' | 'party-popper' | 'award'
   | 'sticker' | 'backpack' | 'armchair' | 'users-round' | 'map-pin' | 'sandwich' | 'cloud-moon'
   | 'hand' | 'ear' | 'wind' | 'circle-help' | 'arrow-right' | 'lock' | 'volume-2' | 'pencil'
-  | 'door-open' | 'ticket' | 'luggage' | 'mic-off' | 'smile-plus' | 'cookie';
+  | 'door-open' | 'ticket' | 'luggage' | 'mic' | 'mic-off' | 'smile-plus' | 'cookie';
 
 export interface IconProps extends Omit<SVGProps<SVGSVGElement>, 'name'> {
   name: IconName;
