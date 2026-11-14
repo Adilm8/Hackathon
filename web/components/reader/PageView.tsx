@@ -32,22 +32,22 @@ export function PageView({
   const reading = position !== null && position.word !== null && position.sentence === si;
   const count = page.sentences.length;
   return (
-    <article className="flex h-full min-h-0 flex-col gap-3 lg:flex-row lg:items-stretch lg:gap-8">
-      <div className="relative h-[24%] min-h-[96px] max-h-56 shrink-0 max-[700px]:h-[19%] max-[700px]:min-h-[76px] overflow-hidden rounded-card border border-line bg-surface-2 lg:aspect-square lg:h-auto lg:max-h-full lg:w-[30%] lg:max-w-xs lg:self-center">
+    <article className="flex h-full min-h-0 flex-col gap-3 lg:gap-4">
+      <div className="flex min-h-0 flex-1 flex-col justify-center gap-4 lg:gap-5">
+      <div className="relative h-[30%] min-h-[76px] max-h-60 shrink-[4] overflow-hidden rounded-card border border-line bg-surface-2 max-[700px]:h-[22%] max-[700px]:min-h-[76px] lg:aspect-[16/10] lg:h-[38%] lg:max-h-72 lg:min-h-[140px] lg:w-auto lg:self-center">
         <Scene id={page.background} night={night} />
-        <div className="absolute bottom-0 left-1/2 h-[82%] -translate-x-1/2 lg:h-[72%]">
+        <div className="absolute bottom-0 left-1/2 h-[82%] -translate-x-1/2">
           <Character character={character} mood={page.mood} className="h-full w-auto" />
         </div>
         {page.kind === 'answer' && (
           <span className="absolute left-3 top-3 rounded-pill bg-surface/95 px-3 py-1 text-xs font-bold text-ink">Answer</span>
         )}
       </div>
-      <div className="flex min-h-0 flex-1 flex-col gap-2">
-      <div className="story-scroll flex min-h-0 flex-1 flex-col gap-3 overflow-y-auto">
+      <div className="story-scroll flex min-h-0 flex-col gap-3 overflow-y-auto">
         {updatedText && si === 0 && <UpdatedChip text={updatedText} />}
-        <div className="flex flex-1 items-center">
+        <div className="flex flex-1 items-center lg:justify-center">
           {/* The key restarts the entrance animation for every new sentence. */}
-          <p key={`${page.id}:${si}`} aria-live="polite" className={`${SIZE[textSize]} font-bold`}>
+          <p key={`${page.id}:${si}`} aria-live="polite" className={`${SIZE[textSize]} font-bold lg:max-w-4xl lg:text-center`}>
             {words.map((w, wi) => {
               const state = !reading ? '' : wi < position.word! ? 'word-read' : wi === position.word ? 'word-now' : 'word-next';
               return (
@@ -62,6 +62,7 @@ export function PageView({
         </div>
         {extra}
       </div>
+      </div>
         <div className="flex shrink-0 items-center justify-between gap-3">
           {count > 1 ? (
             <div aria-label={`Sentence ${si + 1} of ${count}`} role="img" className="flex gap-1.5">
@@ -72,7 +73,6 @@ export function PageView({
           ) : <span />}
           <p className="text-xs text-ink-soft">{page.source === 'fallback' ? 'Story text written by our team' : 'AI-generated story'}</p>
         </div>
-      </div>
     </article>
   );
 }
