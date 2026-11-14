@@ -5,13 +5,9 @@
  * BrowserNarrator: speechSynthesis, one utterance per sentence (A5), highlight on utterance
  * start, started only by a tap, best available en-US voice.
  */
-export interface Narrator {
-  available(): boolean;
-  speak(sentences: string[], opts: { onSentence(i: number): void; onEnd(): void; rate?: number }): void;
-  pause(): void;
-  resume(): void;
-  stop(): void;
-}
+import type { Narrator } from './types';
+
+export type { Narrator };
 
 function synth(): SpeechSynthesis | null {
   return typeof window !== 'undefined' && 'speechSynthesis' in window ? window.speechSynthesis : null;

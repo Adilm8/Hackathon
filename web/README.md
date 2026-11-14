@@ -43,7 +43,6 @@ Ready-made parts used (all permissive licences):
 |---|---|---|
 | [Radix UI primitives](https://github.com/radix-ui/primitives) (`react-dialog`, `react-switch`, `react-progress`) | MIT | sheets and dialogs with focus trap, switches, progress bar |
 | [Zustand](https://github.com/pmndrs/zustand) `persist` | MIT | browser stores |
-| [node-qrcode](https://github.com/soldair/node-qrcode) | MIT | QR code of the "another device" link |
 | Native `<input type="date">` | - | date of the big day (best practice on phones, see docs/design/ref-reader-calendar-dashboard.md) |
 
 Patterns taken from known products (docs/design): one question per screen with a progress bar and a guide character (Duolingo onboarding), a path of chapters (Duolingo home), plan cards with a highlighted best value (Quizlet upgrade), insight cards in the dark parent room (Quizlet, Novakid research).
