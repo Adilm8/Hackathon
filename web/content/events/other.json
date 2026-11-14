@@ -1,6 +1,6 @@
 {
   "type": "other",
-  "version": 1,
+  "version": 2,
   "label": "Another big day",
   "countdownLabel": "the big day",
   "beats": {
@@ -369,6 +369,60 @@
         {
           "sentences": [
             {
+              "text": "Before bed, [[GROWNUP]] tells [[CHILD]] a story about a little turtle.",
+              "kind": "describe"
+            },
+            {
+              "text": "Once there was a little turtle who lived by a wide, shiny stream.",
+              "kind": "describe"
+            },
+            {
+              "text": "One day, the little turtle needed to cross the stream to the other side.",
+              "kind": "describe"
+            },
+            {
+              "text": "It had never crossed the stream before.",
+              "kind": "describe"
+            },
+            {
+              "text": "The other side looked big and new.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, the turtle looked at the stream and saw a row of flat stepping stones.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the turtle's grown-up said, we will cross together, one stone at a time.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, they made a plan: one stone, then the next stone, then the next.",
+              "kind": "describe"
+            },
+            {
+              "text": "A big day is a bit like the stepping stones.",
+              "kind": "describe"
+            },
+            {
+              "text": "It comes one step at a time, with someone special close by.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "unknown",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Then [[CHILD]] arrives and looks around.",
               "kind": "describe"
             },
@@ -393,6 +447,60 @@
           "background": "outside",
           "addresses": [
             "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Here is the plan for the big day, step by step.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, [[CHILD]] gets ready at home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[CHILD]] and [[GROWNUP]] travel there together.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, [[CHILD]] says hello to the people there, or just waves.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then comes the main part of the day, one small step and then another.",
+              "kind": "describe"
+            },
+            {
+              "text": "If [[CHILD]] needs a break, there can be a break.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, [[CHILD]] and [[GROWNUP]] go home.",
+              "kind": "describe"
+            },
+            {
+              "text": "At home, [[CHILD]] can tell the best part, and the hard part too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, a big hug to celebrate trying something new.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can count the steps on fingers: ready, go, hello, the big part, home.",
+              "kind": "coach"
+            },
+            {
+              "text": "Knowing the plan makes a new day feel less new.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "separation"
           ]
         }
       ],
@@ -429,6 +537,52 @@
         {
           "sentences": [
             {
+              "text": "In the story, the little turtle met some helpers by the stream.",
+              "kind": "describe"
+            },
+            {
+              "text": "A frog sat on a lily pad and said hello.",
+              "kind": "describe"
+            },
+            {
+              "text": "A heron stood tall and watched the water.",
+              "kind": "describe"
+            },
+            {
+              "text": "The frog's job was to show where the stones were steady.",
+              "kind": "describe"
+            },
+            {
+              "text": "The heron's job was to keep an eye on everyone crossing.",
+              "kind": "describe"
+            },
+            {
+              "text": "At first, the little turtle felt shy with these new faces.",
+              "kind": "describe"
+            },
+            {
+              "text": "It stayed close to its grown-up and watched.",
+              "kind": "describe"
+            },
+            {
+              "text": "After a while, the frog smiled and said, this stone is a good one to start.",
+              "kind": "describe"
+            },
+            {
+              "text": "The turtle learned that new helpers can help, and that it is okay to watch first.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "strangers",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "[[GROWNUP]] is right there with [[CHILD]], or comes back at the time they agreed.",
               "kind": "describe"
             },
@@ -448,6 +602,57 @@
           "mood": "happy",
           "background": "outside",
           "addresses": [
+            "separation",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "On the big day, there may be new people.",
+              "kind": "describe"
+            },
+            {
+              "text": "Each new person has a job, and their job is to help.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say hello, or just wave.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can ask a helper, what happens next?",
+              "kind": "coach"
+            },
+            {
+              "text": "There may be other kids too, and some might be new, just like [[CHILD]].",
+              "kind": "describe"
+            },
+            {
+              "text": "Some people talk a lot, and some are quiet.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is right there with [[CHILD]], or comes back at the time they agreed.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can stay close to [[GROWNUP]] until it feels okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is fine to watch for a little while first.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "outside",
+          "addresses": [
+            "strangers",
             "separation",
             "social"
           ]
@@ -487,6 +692,52 @@
         {
           "sentences": [
             {
+              "text": "In the story, the little turtle had jobs on the stepping stones.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, look at the next stone.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then step onto it, slowly and carefully.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, stop and take a breath.",
+              "kind": "describe"
+            },
+            {
+              "text": "When a stone felt wobbly, the turtle said, stop, I need help.",
+              "kind": "describe"
+            },
+            {
+              "text": "Its grown-up held out a hand, and the turtle felt steady again.",
+              "kind": "describe"
+            },
+            {
+              "text": "When the turtle felt tired, it rested on a big flat stone.",
+              "kind": "describe"
+            },
+            {
+              "text": "Rest was part of the plan.",
+              "kind": "describe"
+            },
+            {
+              "text": "Step, breath, step, breath, the turtle went on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "cosy-room",
+          "addresses": [
+            "safety",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "[[CHILD]] can bring something to hold, like a small toy.",
               "kind": "describe"
             },
@@ -508,6 +759,53 @@
           "addresses": [
             "separation",
             "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "On the big day, [[CHILD]] has a few small jobs, just like the turtle.",
+              "kind": "describe"
+            },
+            {
+              "text": "Listen to the helpers, one step at a time.",
+              "kind": "coach"
+            },
+            {
+              "text": "If [[CHILD]] needs help, [[CHILD]] can say, can you help me, please?",
+              "kind": "coach"
+            },
+            {
+              "text": "If [[CHILD]] needs a break, [[CHILD]] can say, I need a break.",
+              "kind": "coach"
+            },
+            {
+              "text": "Those are strong words, and grown-ups listen to them.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can bring something to hold, like a small toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "And there is a hand to hold, too.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] and [[CHILD]] can have a special squeeze: three squeezes mean I'm here.",
+              "kind": "describe"
+            },
+            {
+              "text": "Each job is small, and [[CHILD]] can do them one at a time.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "safety",
+            "body",
+            "separation"
           ]
         }
       ],
@@ -544,6 +842,56 @@
         {
           "sentences": [
             {
+              "text": "In the middle of the stream, the little turtle stopped.",
+              "kind": "describe"
+            },
+            {
+              "text": "The water rushed and sparkled, and the other side still looked far away.",
+              "kind": "describe"
+            },
+            {
+              "text": "The turtle felt scared, and that was okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "Its grown-up did not say, there is nothing to be scared of.",
+              "kind": "describe"
+            },
+            {
+              "text": "The grown-up said, you feel scared, and I am right here.",
+              "kind": "describe"
+            },
+            {
+              "text": "Together they took three slow breaths.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the turtle looked only at the very next stone.",
+              "kind": "describe"
+            },
+            {
+              "text": "One more step, and then another.",
+              "kind": "describe"
+            },
+            {
+              "text": "Soon the turtle was on the other side, feeling proud.",
+              "kind": "describe"
+            },
+            {
+              "text": "Scared and brave can happen at the same time.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "safety",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "If it is too loud or too bright, [[CHILD]] can take a little break.",
               "kind": "describe"
             },
@@ -565,6 +913,57 @@
           "addresses": [
             "sensory",
             "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Sometimes new things feel scary.",
+              "kind": "describe"
+            },
+            {
+              "text": "Lots of children feel that way, and that is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "There may be new sounds, bright lights or a busy room.",
+              "kind": "describe"
+            },
+            {
+              "text": "If it is too loud or too bright, [[CHILD]] can ask for a quiet break.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can smell the flower and blow the candle, slow and soft.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can count to ten or hold [[GROWNUP]]'s hand.",
+              "kind": "coach"
+            },
+            {
+              "text": "Feelings can be big, and then they get smaller.",
+              "kind": "describe"
+            },
+            {
+              "text": "A grown-up can help.",
+              "kind": "describe"
+            },
+            {
+              "text": "Brave does not mean not scared.",
+              "kind": "describe"
+            },
+            {
+              "text": "Brave means trying, with someone close by.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "cosy-room",
+          "addresses": [
+            "sensory",
+            "separation",
+            "safety"
           ]
         }
       ],
@@ -602,6 +1001,56 @@
         {
           "sentences": [
             {
+              "text": "Tonight it is time to play stepping stones at home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pillows on the floor can be the stones.",
+              "kind": "describe"
+            },
+            {
+              "text": "A toy can be the little turtle.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, the turtle gets ready and looks at the first pillow.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[CHILD]] and the turtle step from pillow to pillow, together.",
+              "kind": "describe"
+            },
+            {
+              "text": "On a wobbly pillow, [[CHILD]] can say, stop, I need help.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[GROWNUP]] holds out a hand.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, the turtle rests on a big pillow and takes a slow breath.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, they reach the other side and cheer.",
+              "kind": "describe"
+            },
+            {
+              "text": "Playing it at home makes the big day feel more familiar.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Let's say the big day once more.",
               "kind": "coach"
             },
@@ -619,6 +1068,56 @@
             },
             {
               "text": "[[GROWNUP]] is proud of [[CHILD]] for practising.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "cosy-room",
+          "addresses": [
+            "unknown",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Now [[CHILD]] knows the whole story.",
+              "kind": "describe"
+            },
+            {
+              "text": "The little turtle crossed the stream one stone at a time, with its grown-up close by.",
+              "kind": "describe"
+            },
+            {
+              "text": "Soon [[CHILD]] will have the big day, step by step.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, get ready at home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then go there together.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, the main part, one step at a time, with breaks if needed.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, go home and tell the best part.",
+              "kind": "describe"
+            },
+            {
+              "text": "If [[CHILD]] needs help, [[CHILD]] can say, can you help me, please?",
+              "kind": "coach"
+            },
+            {
+              "text": "[[GROWNUP]] will be close by.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of [[CHILD]] and loves [[CHILD]] very much.",
               "kind": "describe"
             }
           ],
@@ -669,6 +1168,63 @@
         {
           "sentences": [
             {
+              "text": "Before my big day, [[GROWNUP]] tells me the plan.",
+              "kind": "describe"
+            },
+            {
+              "text": "The plan says what will happen first.",
+              "kind": "describe"
+            },
+            {
+              "text": "The plan says what will happen next.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] may show me pictures of the place.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask questions about the plan.",
+              "kind": "describe"
+            },
+            {
+              "text": "On the big day, I get ready at home.",
+              "kind": "describe"
+            },
+            {
+              "text": "I get dressed and eat.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may pack a bag with a toy or a snack.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can choose one thing to bring with me.",
+              "kind": "coach"
+            },
+            {
+              "text": "Then [[GROWNUP]] and I travel to the place.",
+              "kind": "describe"
+            },
+            {
+              "text": "We go together.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] holds my hand on the way.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Next, we arrive at the place.",
               "kind": "describe"
             },
@@ -697,6 +1253,60 @@
           "background": "outside",
           "addresses": [
             "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "When we arrive, I look around.",
+              "kind": "describe"
+            },
+            {
+              "text": "The place may be new to me.",
+              "kind": "describe"
+            },
+            {
+              "text": "There may be new rooms and new people.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the main part of the day begins.",
+              "kind": "describe"
+            },
+            {
+              "text": "It happens one step at a time.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes there is waiting.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes there are many things to do.",
+              "kind": "describe"
+            },
+            {
+              "text": "If I need a break, I can say so.",
+              "kind": "describe"
+            },
+            {
+              "text": "After the main part, the big day is done.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[GROWNUP]] and I go home together.",
+              "kind": "describe"
+            },
+            {
+              "text": "At home, I can tell [[GROWNUP]] about the day.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "unknown",
+            "separation"
           ]
         }
       ],
@@ -733,6 +1343,67 @@
         {
           "sentences": [
             {
+              "text": "On my big day, I may meet new people.",
+              "kind": "describe"
+            },
+            {
+              "text": "Each new person may have a job.",
+              "kind": "describe"
+            },
+            {
+              "text": "Their job may be to help me.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some people may tell me their name.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say hello, or I can wave.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay if I feel shy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Many children feel shy with new people.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some people talk a lot.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some people are quiet.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can watch first.",
+              "kind": "describe"
+            },
+            {
+              "text": "After some time, new people may feel less new.",
+              "kind": "describe"
+            },
+            {
+              "text": "The helpers have met many children before.",
+              "kind": "describe"
+            },
+            {
+              "text": "They know how to help children on a big day.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "strangers"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "[[GROWNUP]] will be with me, or will come back at a time we know.",
               "kind": "describe"
             },
@@ -750,6 +1421,60 @@
             },
             {
               "text": "That is okay.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "separation",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "[[GROWNUP]] tells me if they will stay with me.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes [[GROWNUP]] stays the whole time.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes [[GROWNUP]] goes and comes back at a time we agreed.",
+              "kind": "describe"
+            },
+            {
+              "text": "If [[GROWNUP]] goes, [[GROWNUP]] always says goodbye first.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] comes back at the time we agreed.",
+              "kind": "describe"
+            },
+            {
+              "text": "There may be other kids.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids may be new, like me.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say hi to another kid if I want to.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can stay close to [[GROWNUP]] until I feel okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "Both ways are okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids like to play right away, and some kids like to watch first.",
               "kind": "describe"
             }
           ],
@@ -795,6 +1520,60 @@
         {
           "sentences": [
             {
+              "text": "On my big day, I have some jobs.",
+              "kind": "describe"
+            },
+            {
+              "text": "I listen to the helpers.",
+              "kind": "describe"
+            },
+            {
+              "text": "I do one step at a time.",
+              "kind": "describe"
+            },
+            {
+              "text": "If I need help, I can say, can you help me, please?",
+              "kind": "describe"
+            },
+            {
+              "text": "If I need a break, I can say, I need a break.",
+              "kind": "describe"
+            },
+            {
+              "text": "If I want something to stop, I can say, stop, please.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grown-ups listen when I say these words.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can practise these words before my big day.",
+              "kind": "coach"
+            },
+            {
+              "text": "Saying these words is a good thing to do.",
+              "kind": "describe"
+            },
+            {
+              "text": "My job is to try my best.",
+              "kind": "describe"
+            },
+            {
+              "text": "Trying my best is enough.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "safety",
+            "body"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "I can bring a small toy to hold.",
               "kind": "describe"
             },
@@ -812,6 +1591,60 @@
             },
             {
               "text": "After the big day, I go home with [[GROWNUP]] and rest.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I can bring something to hold, like a small toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can hold [[GROWNUP]]'s hand.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] and I can have a special squeeze.",
+              "kind": "describe"
+            },
+            {
+              "text": "Three squeezes mean I'm here.",
+              "kind": "describe"
+            },
+            {
+              "text": "When I feel worried, I can squeeze [[GROWNUP]]'s hand.",
+              "kind": "coach"
+            },
+            {
+              "text": "Then [[GROWNUP]] can squeeze back.",
+              "kind": "describe"
+            },
+            {
+              "text": "After the big day, we can do something nice together.",
+              "kind": "describe"
+            },
+            {
+              "text": "It may be a game, a story or a walk.",
+              "kind": "describe"
+            },
+            {
+              "text": "We can choose the nice thing together before the big day.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I have something to look forward to.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the end of the big day, I go home.",
               "kind": "describe"
             }
           ],
@@ -860,6 +1693,68 @@
         {
           "sentences": [
             {
+              "text": "Sometimes new things feel scary.",
+              "kind": "describe"
+            },
+            {
+              "text": "Feeling scared is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "Many children feel scared before a big day.",
+              "kind": "describe"
+            },
+            {
+              "text": "There may be loud sounds.",
+              "kind": "describe"
+            },
+            {
+              "text": "There may be bright lights.",
+              "kind": "describe"
+            },
+            {
+              "text": "The place may smell new.",
+              "kind": "describe"
+            },
+            {
+              "text": "These things can feel like too much.",
+              "kind": "describe"
+            },
+            {
+              "text": "If it is too much, I can ask for a quiet break.",
+              "kind": "coach"
+            },
+            {
+              "text": "In a quiet break, I can rest for a little while.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I can try again, or stay and watch.",
+              "kind": "describe"
+            },
+            {
+              "text": "Big feelings can get smaller after a little while.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can tell [[GROWNUP]] how I feel.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] listens to me.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "safety",
+            "sensory"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "If it is too loud or too bright, I can take a break.",
               "kind": "describe"
             },
@@ -886,6 +1781,68 @@
             "sensory",
             "separation"
           ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "When I feel worried, I can take slow breaths.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can smell the flower and blow the candle.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can count to ten.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can hold my toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can hold [[GROWNUP]]'s hand.",
+              "kind": "describe"
+            },
+            {
+              "text": "Brave does not mean not scared.",
+              "kind": "describe"
+            },
+            {
+              "text": "Brave means trying, with someone close by.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is close by or comes back.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me whether I feel brave or scared.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "After the big day, we can have a big hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I can rest at home and talk about my day.",
+              "kind": "describe"
+            },
+            {
+              "text": "Every big day has an end.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "separation",
+            "love"
+          ]
         }
       ],
       "rehearsal": [
@@ -909,6 +1866,56 @@
             },
             {
               "text": "Then my toy says, I need a break, and takes a break.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Before my big day, I can practise at home.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can act out the big day with my toys.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, the toys get ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the toys go to the place together.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, a toy says hello to a new helper.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can practise saying, can you help me, please?",
+              "kind": "coach"
+            },
+            {
+              "text": "I can practise saying, I need a break.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can practise my slow breaths with [[GROWNUP]].",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the toys go home and tell about the day.",
+              "kind": "describe"
+            },
+            {
+              "text": "Practising helps me know what will happen.",
               "kind": "describe"
             }
           ],
@@ -950,6 +1957,64 @@
           "background": "cosy-room",
           "addresses": [
             "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Here is my plan for the big day.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, I get ready at home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[GROWNUP]] and I go to the place together.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, I say hello, or I wave.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, I do the main part, one step at a time.",
+              "kind": "describe"
+            },
+            {
+              "text": "If I need help or a break, I can say so.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, we go home.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can tell [[GROWNUP]] about my day.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for practising.",
+              "kind": "describe"
+            },
+            {
+              "text": "I know the plan.",
+              "kind": "describe"
+            },
+            {
+              "text": "Many children have big days, and I am having one too.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can do it one step at a time.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "cosy-room",
+          "addresses": [
+            "unknown",
+            "love"
           ]
         }
       ]

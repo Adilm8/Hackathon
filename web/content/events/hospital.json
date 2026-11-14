@@ -1,6 +1,6 @@
 {
   "type": "hospital",
-  "version": 1,
+  "version": 2,
   "label": "Hospital stay",
   "countdownLabel": "the hospital",
   "beats": {
@@ -401,6 +401,60 @@
         {
           "sentences": [
             {
+              "text": "Before bed, [[GROWNUP]] tells [[CHILD]] an old story about a very tall bed.",
+              "kind": "describe"
+            },
+            {
+              "text": "Once upon a time, a princess travelled far from home.",
+              "kind": "describe"
+            },
+            {
+              "text": "One rainy evening, she came to a big castle and knocked on the door.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, the helpers at the door said hello and wrote down her name.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then they showed her to a room with a very tall bed.",
+              "kind": "describe"
+            },
+            {
+              "text": "The bed had many soft mattresses, one on top of another.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, the princess climbed into the tall bed to rest.",
+              "kind": "describe"
+            },
+            {
+              "text": "It was not her bed from home, and it felt strange.",
+              "kind": "describe"
+            },
+            {
+              "text": "A hospital stay is a bit like that.",
+              "kind": "describe"
+            },
+            {
+              "text": "There is a new bed, new helpers and a plan to help the body get better.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "unknown",
+            "body"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Next, [[CHILD]] goes to a room with a bed that moves up and down with buttons.",
               "kind": "describe"
             },
@@ -421,6 +475,61 @@
           "background": "shot",
           "addresses": [
             "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Here is the hospital plan, step by step.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, [[CHILD]] and [[GROWNUP]] check in at the desk.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[CHILD]] gets a plastic wristband with a name on it.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next comes a room with a bed that goes up and down with buttons.",
+              "kind": "describe"
+            },
+            {
+              "text": "The lights are bright, and the room smells clean, like soap.",
+              "kind": "describe"
+            },
+            {
+              "text": "A nurse checks [[CHILD]]'s temperature and listens to the heart.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some machines may beep, and a small clip on a finger may glow red.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the doctors do their work to help [[CHILD]]'s body.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that comes resting, playing, eating from a tray and sleeping.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last of all, when the doctors say the body is ready, [[CHILD]] goes home.",
+              "kind": "describe"
+            },
+            {
+              "text": "If [[CHILD]] has a question, [[CHILD]] can ask, what is the plan today?",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "shot",
+          "addresses": [
+            "unknown",
+            "sensory",
+            "body"
           ]
         }
       ],
@@ -457,6 +566,56 @@
         {
           "sentences": [
             {
+              "text": "In the old story, the castle had many helpers.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some helpers worked in the day, and some helpers worked at night.",
+              "kind": "describe"
+            },
+            {
+              "text": "Each helper wore a little badge, so the princess knew who they were.",
+              "kind": "describe"
+            },
+            {
+              "text": "They said hello and told her their names.",
+              "kind": "describe"
+            },
+            {
+              "text": "One helper brought soup, and one helper brought more blankets.",
+              "kind": "describe"
+            },
+            {
+              "text": "At night, a helper tiptoed in quietly to check that the princess was resting.",
+              "kind": "describe"
+            },
+            {
+              "text": "The princess was not used to so many new faces.",
+              "kind": "describe"
+            },
+            {
+              "text": "But soon she knew the helpers by their names and their jobs.",
+              "kind": "describe"
+            },
+            {
+              "text": "A hospital has many helpers too, day and night.",
+              "kind": "describe"
+            },
+            {
+              "text": "Their job is to keep children safe and help their bodies get better.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "strangers",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "[[GROWNUP]] tells [[CHILD]] who will stay at the hospital and when family will visit.",
               "kind": "describe"
             },
@@ -482,6 +641,56 @@
           "addresses": [
             "separation",
             "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At the hospital, nurses and doctors wear name badges.",
+              "kind": "describe"
+            },
+            {
+              "text": "Nurses check on [[CHILD]] during the day and at night.",
+              "kind": "describe"
+            },
+            {
+              "text": "Doctors make the plan and do the work to help [[CHILD]]'s body.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some hospitals have a child life helper whose job is play and questions.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can ask any helper, what is your name, and what is your job?",
+              "kind": "coach"
+            },
+            {
+              "text": "[[GROWNUP]] tells [[CHILD]] who will stay at the hospital and who will visit.",
+              "kind": "describe"
+            },
+            {
+              "text": "When family cannot visit, they can call or say hello on a video call.",
+              "kind": "describe"
+            },
+            {
+              "text": "A favourite toy from home stays close the whole time.",
+              "kind": "describe"
+            },
+            {
+              "text": "Family is never far away, even at the hospital.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "strangers",
+            "separation"
           ]
         }
       ],
@@ -519,6 +728,52 @@
         {
           "sentences": [
             {
+              "text": "In the old story, the princess had some jobs at the castle.",
+              "kind": "describe"
+            },
+            {
+              "text": "Her first job was to rest, so her tired body could feel better.",
+              "kind": "describe"
+            },
+            {
+              "text": "Her second job was to tell the helpers how she felt.",
+              "kind": "describe"
+            },
+            {
+              "text": "In the night, the princess felt a little bump under all the mattresses.",
+              "kind": "describe"
+            },
+            {
+              "text": "She did not keep it to herself.",
+              "kind": "describe"
+            },
+            {
+              "text": "In the morning she told the helpers, I could feel a bump in my bed.",
+              "kind": "describe"
+            },
+            {
+              "text": "The helpers listened carefully and made the bed better.",
+              "kind": "describe"
+            },
+            {
+              "text": "Telling the helpers made things better.",
+              "kind": "describe"
+            },
+            {
+              "text": "The princess learned that saying how you feel is an important job.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Next to the bed there is a call button.",
               "kind": "describe"
             },
@@ -544,6 +799,57 @@
           "addresses": [
             "safety",
             "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At the hospital, [[CHILD]] has jobs just like the princess.",
+              "kind": "describe"
+            },
+            {
+              "text": "One job is resting, so the body can get better.",
+              "kind": "coach"
+            },
+            {
+              "text": "Another job is telling a nurse how [[CHILD]] feels.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can use words, or hold up fingers.",
+              "kind": "describe"
+            },
+            {
+              "text": "One finger means a little sore, and five fingers mean very sore.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the nurse knows how to help.",
+              "kind": "describe"
+            },
+            {
+              "text": "If [[CHILD]] needs help, [[CHILD]] can press the call button by the bed.",
+              "kind": "coach"
+            },
+            {
+              "text": "When [[CHILD]] feels well enough, there is time to draw, read and play.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some hospitals have a playroom with toys for children.",
+              "kind": "describe"
+            },
+            {
+              "text": "If [[CHILD]] wants to know what is next, [[CHILD]] can ask.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "shot",
+          "addresses": [
+            "body",
+            "pain",
+            "unknown"
           ]
         }
       ],
@@ -584,6 +890,52 @@
         {
           "sentences": [
             {
+              "text": "In the old story, the princess missed her home on the first night.",
+              "kind": "describe"
+            },
+            {
+              "text": "She missed her own bed and her own pillow.",
+              "kind": "describe"
+            },
+            {
+              "text": "She felt a little sad and a little worried, and that was okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "So she held the small toy she had brought from home.",
+              "kind": "describe"
+            },
+            {
+              "text": "She looked at a picture of her family.",
+              "kind": "describe"
+            },
+            {
+              "text": "She took slow breaths and thought about the people who love her.",
+              "kind": "describe"
+            },
+            {
+              "text": "A helper came in quietly and asked, how are you feeling?",
+              "kind": "describe"
+            },
+            {
+              "text": "The princess told the truth, and the helper stayed with her for a while.",
+              "kind": "describe"
+            },
+            {
+              "text": "Missing home is a feeling many children have, and it can be said out loud.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "separation",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Sometimes [[CHILD]] might miss home, and some parts might feel sore.",
               "kind": "describe"
             },
@@ -605,6 +957,57 @@
           "addresses": [
             "separation",
             "pain"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At the hospital, some things may feel new and strange.",
+              "kind": "describe"
+            },
+            {
+              "text": "Machines may beep, and the beeps are messages for the nurses.",
+              "kind": "describe"
+            },
+            {
+              "text": "The lights may be bright, and the bed may feel different from the bed at home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some parts may hurt or feel uncomfortable.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel worried, and it is okay to cry.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can hug the toy from home and take slow, soft breaths.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can tell a nurse or [[GROWNUP]] right away, and they will help.",
+              "kind": "coach"
+            },
+            {
+              "text": "If a question is about medicine or the body, the answer is, let's ask the doctor.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] can hold [[CHILD]]'s hand.",
+              "kind": "describe"
+            },
+            {
+              "text": "Every day at the hospital is one step closer to going home.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "shot",
+          "addresses": [
+            "pain",
+            "sensory",
+            "separation"
           ]
         }
       ],
@@ -642,6 +1045,56 @@
         {
           "sentences": [
             {
+              "text": "Tonight it is time to play the castle hospital.",
+              "kind": "describe"
+            },
+            {
+              "text": "A favourite toy can be the princess or the prince.",
+              "kind": "describe"
+            },
+            {
+              "text": "A pile of pillows can be the tall bed.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can be the nurse first.",
+              "kind": "describe"
+            },
+            {
+              "text": "The nurse puts a pretend wristband on the toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the nurse listens to its heart and checks its temperature.",
+              "kind": "describe"
+            },
+            {
+              "text": "The nurse asks: how do you feel, from one finger to five?",
+              "kind": "coach"
+            },
+            {
+              "text": "The toy can press a pretend call button, and the nurse comes right away.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then it is time to switch, and [[GROWNUP]] can be the nurse.",
+              "kind": "describe"
+            },
+            {
+              "text": "Playing it at home makes the real hospital feel more familiar.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "body"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Let's say the hospital plan once more.",
               "kind": "coach"
             },
@@ -670,6 +1123,57 @@
           "background": "cosy-room",
           "addresses": [
             "unknown",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Now [[CHILD]] knows the whole story.",
+              "kind": "describe"
+            },
+            {
+              "text": "The princess slept in a new tall bed, the helpers looked after her, and then she went home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Soon [[CHILD]] will stay at the hospital, step by step.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, check in and get a wristband.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the room, the bed with buttons and the nurses.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, the doctors help, and [[CHILD]] rests, plays and sleeps.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, going home.",
+              "kind": "describe"
+            },
+            {
+              "text": "If [[CHILD]] needs help, [[CHILD]] can press the call button or tell a nurse.",
+              "kind": "coach"
+            },
+            {
+              "text": "The toy from home will be close.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves [[CHILD]] every minute, at home and at the hospital.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "cosy-room",
+          "addresses": [
+            "unknown",
+            "separation",
             "love"
           ]
         }
@@ -714,6 +1218,55 @@
         {
           "sentences": [
             {
+              "text": "Before my hospital stay, [[GROWNUP]] and I pack a bag.",
+              "kind": "describe"
+            },
+            {
+              "text": "The bag may have pyjamas, a toothbrush, a book and my toy from home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then we travel to the hospital.",
+              "kind": "describe"
+            },
+            {
+              "text": "The hospital is a big building with many floors.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, we go to a desk to check in.",
+              "kind": "describe"
+            },
+            {
+              "text": "A helper asks for my name and my birthday.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I get a wristband with my name on it.",
+              "kind": "describe"
+            },
+            {
+              "text": "I wear the wristband the whole time I am at the hospital.",
+              "kind": "describe"
+            },
+            {
+              "text": "If the wristband feels strange, I can tell [[GROWNUP]].",
+              "kind": "coach"
+            },
+            {
+              "text": "Then a helper shows us the way to my room.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Next, I go to a room with a bed.",
               "kind": "describe"
             },
@@ -742,6 +1295,57 @@
           "background": "shot",
           "addresses": [
             "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "My room has a bed for me.",
+              "kind": "describe"
+            },
+            {
+              "text": "The bed has buttons that make it go up and down.",
+              "kind": "describe"
+            },
+            {
+              "text": "There may be a chair for [[GROWNUP]] next to my bed.",
+              "kind": "describe"
+            },
+            {
+              "text": "There may be machines next to the bed.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some machines make beeping sounds.",
+              "kind": "describe"
+            },
+            {
+              "text": "A nurse may put a small clip on my finger.",
+              "kind": "describe"
+            },
+            {
+              "text": "The clip may glow red, and it feels like a soft squeeze.",
+              "kind": "describe"
+            },
+            {
+              "text": "Food comes on a tray, and it may be different from food at home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Each day, the doctors and nurses follow a plan.",
+              "kind": "describe"
+            },
+            {
+              "text": "When my body is ready, I go home.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "unknown",
+            "body",
+            "sensory"
           ]
         }
       ],
@@ -782,6 +1386,59 @@
         {
           "sentences": [
             {
+              "text": "At the hospital there are many helpers.",
+              "kind": "describe"
+            },
+            {
+              "text": "There are nurses, doctors and other helpers.",
+              "kind": "describe"
+            },
+            {
+              "text": "They wear name badges.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some helpers work in the day, and some helpers work at night.",
+              "kind": "describe"
+            },
+            {
+              "text": "Nurses check my temperature and listen to my heart.",
+              "kind": "describe"
+            },
+            {
+              "text": "Doctors make a plan to help my body.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some hospitals have a child life helper who plays with children and answers questions.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask a helper, what is your name?",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay if I feel shy with new people.",
+              "kind": "describe"
+            },
+            {
+              "text": "The helpers meet many children.",
+              "kind": "describe"
+            },
+            {
+              "text": "They know how to help children feel calm.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "strangers"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "[[GROWNUP]] tells me who will stay with me.",
               "kind": "describe"
             },
@@ -803,6 +1460,56 @@
             },
             {
               "text": "Some hospitals have a playroom.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "separation",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "[[GROWNUP]] tells me who will stay with me at the hospital.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] tells me when family will visit.",
+              "kind": "describe"
+            },
+            {
+              "text": "If family cannot visit, we can make a video call.",
+              "kind": "describe"
+            },
+            {
+              "text": "My toy from home stays with me in my bed.",
+              "kind": "describe"
+            },
+            {
+              "text": "Other children stay at the hospital too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some hospitals have a playroom with toys, games and books.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can wave to the other kids or say hello.",
+              "kind": "coach"
+            },
+            {
+              "text": "Sometimes I can play in the playroom.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes I play in my room instead.",
+              "kind": "describe"
+            },
+            {
+              "text": "Both are okay.",
               "kind": "describe"
             }
           ],
@@ -852,6 +1559,60 @@
         {
           "sentences": [
             {
+              "text": "At the hospital, I have some jobs.",
+              "kind": "describe"
+            },
+            {
+              "text": "One job is resting.",
+              "kind": "describe"
+            },
+            {
+              "text": "Resting helps my body get better.",
+              "kind": "describe"
+            },
+            {
+              "text": "Another job is telling the nurse how I feel.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can use words, or I can hold up fingers.",
+              "kind": "coach"
+            },
+            {
+              "text": "One finger means a little sore.",
+              "kind": "describe"
+            },
+            {
+              "text": "Five fingers mean very sore.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the nurse knows how to help me.",
+              "kind": "describe"
+            },
+            {
+              "text": "My job is not to be quiet if something feels wrong.",
+              "kind": "describe"
+            },
+            {
+              "text": "My job is to tell a helper.",
+              "kind": "describe"
+            },
+            {
+              "text": "Telling a helper is a good and brave thing to do.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "body",
+            "pain"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "There is a call button next to my bed.",
               "kind": "describe"
             },
@@ -879,6 +1640,56 @@
           "mood": "calm",
           "background": "shot",
           "addresses": [
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Next to my bed there is a call button.",
+              "kind": "describe"
+            },
+            {
+              "text": "When I press the call button, a nurse comes.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can press it in the day and at night.",
+              "kind": "describe"
+            },
+            {
+              "text": "If I need help, I can press the button.",
+              "kind": "coach"
+            },
+            {
+              "text": "Some days I may feel tired.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some days I may feel well enough to play.",
+              "kind": "describe"
+            },
+            {
+              "text": "When I feel well, I can draw, read or play games.",
+              "kind": "describe"
+            },
+            {
+              "text": "The nurses check on me all day and all night.",
+              "kind": "describe"
+            },
+            {
+              "text": "They are careful and gentle.",
+              "kind": "describe"
+            },
+            {
+              "text": "Being at the hospital is a way to help my body feel better.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "shot",
+          "addresses": [
+            "body",
             "safety"
           ]
         }
@@ -920,6 +1731,68 @@
         {
           "sentences": [
             {
+              "text": "Some things at the hospital may feel new.",
+              "kind": "describe"
+            },
+            {
+              "text": "Machines beep.",
+              "kind": "describe"
+            },
+            {
+              "text": "A beep is a message for the nurses.",
+              "kind": "describe"
+            },
+            {
+              "text": "The lights may be bright, and the smell is clean like soap.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some things may hurt or feel uncomfortable.",
+              "kind": "describe"
+            },
+            {
+              "text": "Feeling worried is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay if I cry.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can tell [[GROWNUP]] or a nurse how I feel.",
+              "kind": "coach"
+            },
+            {
+              "text": "If I have a question about my body, we can ask the doctor.",
+              "kind": "describe"
+            },
+            {
+              "text": "The doctor will answer.",
+              "kind": "describe"
+            },
+            {
+              "text": "The doctors and nurses want to help me feel better.",
+              "kind": "describe"
+            },
+            {
+              "text": "They are careful and kind.",
+              "kind": "describe"
+            },
+            {
+              "text": "Each day, [[GROWNUP]] can tell me the plan for that day.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "pain",
+            "sensory"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Sometimes I may miss home.",
               "kind": "describe"
             },
@@ -949,6 +1822,60 @@
           "addresses": [
             "separation",
             "pain"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Sometimes I may miss home.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may miss my bed, my room or my family.",
+              "kind": "describe"
+            },
+            {
+              "text": "Missing home is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can hug my toy from home and take slow breaths.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can look at a family photo.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can make a video call.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] can hold my hand.",
+              "kind": "describe"
+            },
+            {
+              "text": "Many children feel this way at the hospital.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me every day, at home and at the hospital.",
+              "kind": "describe"
+            },
+            {
+              "text": "When my body is ready, I will go home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I can sleep in my own bed again.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "separation",
+            "love"
           ]
         }
       ],
@@ -990,6 +1917,56 @@
         {
           "sentences": [
             {
+              "text": "Before my stay, I can practise at home.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can pack my bag with [[GROWNUP]].",
+              "kind": "describe"
+            },
+            {
+              "text": "I choose my pyjamas, a book and my toy from home.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can make a pretend wristband for my toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can put my toy in a pretend hospital bed.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I can be the nurse and check my toy's temperature.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can practise holding up fingers to show how I feel.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can practise pressing a pretend call button.",
+              "kind": "describe"
+            },
+            {
+              "text": "Practising helps me know what will happen.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can practise as many times as I like.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "body"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Here is my hospital plan.",
               "kind": "describe"
             },
@@ -1018,6 +1995,60 @@
           "background": "cosy-room",
           "addresses": [
             "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Here is my plan for the hospital.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, we check in at the desk.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I get my wristband.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, I go to my room with my bed.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, the nurses and doctors help my body.",
+              "kind": "describe"
+            },
+            {
+              "text": "I rest, I play and I sleep.",
+              "kind": "describe"
+            },
+            {
+              "text": "If I need help, I press the call button or tell a nurse.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, when my body is ready, I go home.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for practising.",
+              "kind": "describe"
+            },
+            {
+              "text": "My toy from home will stay with me.",
+              "kind": "describe"
+            },
+            {
+              "text": "I know the steps, and I know how to ask for help.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "cosy-room",
+          "addresses": [
+            "unknown",
+            "love"
           ]
         }
       ]

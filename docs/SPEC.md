@@ -375,7 +375,7 @@ catch_up    if chapter.date < today
 locked      if chapter.date > today
 ```
 
-Chapter 1 is always open from the moment the event is created, whatever its date, so a parent who signs up three weeks ahead gets value in the first session. Later chapters open on their evening; missed ones stay open. One chapter a night is the recommended rhythm, not a wall: a family with access can open the next locked chapter early through a quiet "Read ahead" link on its card (one chapter ahead at most, with the note "One chapter a night works best"). Real families miss evenings and travel; a hard lock would punish exactly the parents who are trying. This rule is re-checked in the usability sessions (D16). Pages per chapter and words per page by age: 3–4 → 4 pages of 40–60 words; 5–6 → 5 pages of 60–90; 7–8 → 5 pages of 90–130.
+Chapter 1 is always open from the moment the event is created, whatever its date, so a parent who signs up three weeks ahead gets value in the first session. Later chapters open on their evening; missed ones stay open. One chapter a night is the recommended rhythm, not a wall: a family with access can open the next locked chapter early through a quiet "Read ahead" link on its card (one chapter ahead at most, with the note "One chapter a night works best"). Real families miss evenings and travel; a hard lock would punish exactly the parents who are trying. This rule is re-checked in the usability sessions (D16). Pages per chapter and words per page by age (a chapter takes about 2–3 minutes to read aloud): 3–4 → 5 pages of 60–80 words; 5–6 → 5 pages of 70–90; 7–8 → 5 pages of 85–110.
 
 ### 5.3 Event phase
 
@@ -721,7 +721,7 @@ export interface EventTemplate {
   phrases: Partial<Record<Topic, string[]>>;        // ready phrases for the parent, 1–3 per topic
   topicWords: Partial<Record<Topic, string[]>>;     // words that prove a page covered a topic (5.4)
   backgrounds: BackgroundId[];        // scenes the LLM may choose from
-  fallbackPages: Record<StyleMode, Record<Beat, {   // 2 pages per beat and style, 40–60 words each
+  fallbackPages: Record<StyleMode, Record<Beat, {   // 4 pages per beat and style, 36–125 words each, 260–450 words per beat
     sentences: Sentence[]; mood: Mood; background: BackgroundId; addresses: Topic[];
   }[]>>;
   badge: { id: string; label: string };             // "Brave Smile"
@@ -734,7 +734,7 @@ Content rules:
 - Every template is honest: no "it won't hurt", no promises about outcomes. Practical steps and sensory details are required because that is what books leave out (user-voice research).
 - Content from the ТЗ is used as is: the question buttons and rituals for the six events (ТЗ section 3), the dentist example (ТЗ section 7).
 - `other.json` is neutral: buttons "What will happen?", "Will you be with me?", "What if I get scared?"; neutral scenes; the parent's label is passed to the LLM as data.
-- The fallback pages make a complete, readable chapter for every beat with no LLM at all.
+- The fallback pages make a complete, readable chapter for every beat with no LLM at all, about 2–3 minutes read aloud. In story style the second page of each beat continues one public-domain tale scaffold per event (for example the crocodile and the little bird for the dentist, the lion and the mouse for a shot, stone soup for school); social style stays literal. Pages are taken in turn across a chapter's beats, at most five.
 
 ---
 

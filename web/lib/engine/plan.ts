@@ -206,9 +206,10 @@ export function readProgress(event: Pick<BigEvent, 'chapters'>): { read: number;
 
 /** Pages per chapter and words per page by age (5.2). */
 export function pageTargets(age: number): { pages: number; minWords: number; maxWords: number } {
-  if (age <= 4) return { pages: 4, minWords: 40, maxWords: 60 };
-  if (age <= 6) return { pages: 5, minWords: 60, maxWords: 90 };
-  return { pages: 5, minWords: 90, maxWords: 130 };
+  // About 2-3 minutes read aloud per chapter (300-500 words), still in short sentences.
+  if (age <= 4) return { pages: 5, minWords: 60, maxWords: 80 };
+  if (age <= 6) return { pages: 5, minWords: 70, maxWords: 90 };
+  return { pages: 5, minWords: 85, maxWords: 110 };
 }
 
 /** Events sorted for the home screen: upcoming first by date, then past events newest first. */

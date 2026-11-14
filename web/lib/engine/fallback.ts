@@ -22,8 +22,9 @@ export const FALLBACK_COPY = {
 const MAX_PAGES = 5;
 
 /**
- * Fallback pages for a chapter's beats: both pages of each beat, or the first page of each
- * beat when that would exceed five pages (multi-beat chapters, "Quick prep").
+ * Fallback pages for a chapter's beats, up to five: the beats' pages taken in turn (first page of
+ * every beat, then the second ones, ...), then put back in beat order. One beat gives all four of its
+ * pages; "Quick prep" (all five beats) gives the first page of each.
  */
 export function fallbackPages(
   template: EventTemplate,
@@ -32,18 +33,24 @@ export function fallbackPages(
   _age: number,
   chapterIndex: number,
 ): Page[] {
-  const byBeat = beats.map((b) => template.fallbackPages[styleMode][b]);
-  const total = byBeat.reduce((n, ps) => n + ps.length, 0);
-  const chosen = total > MAX_PAGES ? byBeat.map((ps) => ps[0]) : byBeat.flat();
-  return chosen.slice(0, MAX_PAGES).map((p, i) => ({
-    id: storyPageId(chapterIndex, i + 1),
-    kind: 'story',
-    sentences: p.sentences.map((s) => ({ ...s })),
-    mood: p.mood,
-    background: p.background,
-    addresses: [...p.addresses],
-    source: 'fallback',
-  }));
+  const lists = beats.map((b) => template.fallbackPages[styleMode][b]);
+  const picked: { beat: number; i: number }[] = [];
+  const longest = Math.max(0, ...lists.map((l) => l.length));
+  for (let i = 0; i < longest && picked.length < MAX_PAGES; i++)
+    for (let b = 0; b < lists.length && picked.length < MAX_PAGES; b++) if (lists[b][i]) picked.push({ beat: b, i });
+  picked.sort((x, y) => x.beat - y.beat || x.i - y.i);
+  return picked.map(({ beat, i }, n) => {
+    const p = lists[beat][i];
+    return {
+      id: storyPageId(chapterIndex, n + 1),
+      kind: 'story',
+      sentences: p.sentences.map((s) => ({ ...s })),
+      mood: p.mood,
+      background: p.background,
+      addresses: [...p.addresses],
+      source: 'fallback',
+    };
+  });
 }
 
 /** Summary of a fallback chapter, fed to later chapters (≤ 200 chars). */

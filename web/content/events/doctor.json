@@ -1,6 +1,6 @@
 {
   "type": "doctor",
-  "version": 1,
+  "version": 2,
   "label": "Doctor check-up",
   "countdownLabel": "the doctor check-up",
   "beats": {
@@ -403,6 +403,64 @@
         {
           "sentences": [
             {
+              "text": "Before bed, [[GROWNUP]] tells [[CHILD]] an old story about three little pigs.",
+              "kind": "describe"
+            },
+            {
+              "text": "The three little pigs each built a house.",
+              "kind": "describe"
+            },
+            {
+              "text": "One house was made of straw, and one house was made of sticks.",
+              "kind": "describe"
+            },
+            {
+              "text": "The third house was made of strong red bricks.",
+              "kind": "describe"
+            },
+            {
+              "text": "Every year, a kind old builder came to visit the brick house.",
+              "kind": "describe"
+            },
+            {
+              "text": "The builder did not come to fix anything.",
+              "kind": "describe"
+            },
+            {
+              "text": "The builder came to look and listen, to see that the house was strong.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, the builder said hello at the gate.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the builder walked all around the house, step by step.",
+              "kind": "describe"
+            },
+            {
+              "text": "A check-up at the doctor is a bit like that.",
+              "kind": "describe"
+            },
+            {
+              "text": "The doctor looks and listens, to see that a body is strong and growing.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "unknown",
+            "body"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "After that, [[CHILD]] stands tall on a scale and against a measuring line.",
               "kind": "describe"
             },
@@ -423,6 +481,57 @@
           "background": "shot",
           "addresses": [
             "unknown",
+            "body"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At the doctor, the steps go in order.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, the waiting room, with books, toys and other families.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then a nurse calls [[CHILD]]'s name and walks with [[CHILD]] and [[GROWNUP]] to a room.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, the scale and the measuring line, to see how much [[CHILD]] has grown.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, the table with the crinkly paper.",
+              "kind": "describe"
+            },
+            {
+              "text": "The doctor listens to the heart with a stethoscope, which may feel cold.",
+              "kind": "describe"
+            },
+            {
+              "text": "The doctor looks in the ears and eyes with a small bright light.",
+              "kind": "describe"
+            },
+            {
+              "text": "The doctor may touch the tongue with a flat stick and ask for a big aah.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, everyone says goodbye.",
+              "kind": "describe"
+            },
+            {
+              "text": "When the steps are known, the visit feels less new.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "shot",
+          "addresses": [
+            "unknown",
+            "sensory",
             "body"
           ]
         }
@@ -460,6 +569,64 @@
         {
           "sentences": [
             {
+              "text": "In the old story, the little pig felt shy when the builder came.",
+              "kind": "describe"
+            },
+            {
+              "text": "The builder had a big coat and a bag of tools.",
+              "kind": "describe"
+            },
+            {
+              "text": "So the builder said a friendly hello and told the pig about the job.",
+              "kind": "describe"
+            },
+            {
+              "text": "My job is to check that your house is strong, said the builder.",
+              "kind": "describe"
+            },
+            {
+              "text": "I will knock on the walls and listen.",
+              "kind": "describe"
+            },
+            {
+              "text": "I will look through the windows and up the chimney.",
+              "kind": "describe"
+            },
+            {
+              "text": "The little pig watched from the doorway.",
+              "kind": "describe"
+            },
+            {
+              "text": "Soon the little pig was not shy at all.",
+              "kind": "describe"
+            },
+            {
+              "text": "The pig even helped carry the tool bag.",
+              "kind": "describe"
+            },
+            {
+              "text": "A helper feels less new once you know their job.",
+              "kind": "describe"
+            },
+            {
+              "text": "The doctor and the nurse have jobs too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Their job is to help children stay healthy and strong.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "strangers",
+            "body"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "The doctor checks lots of kids every day.",
               "kind": "describe"
             },
@@ -485,6 +652,56 @@
           "addresses": [
             "separation",
             "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At the doctor's office, every helper has a job.",
+              "kind": "describe"
+            },
+            {
+              "text": "The person at the front desk writes down [[CHILD]]'s name.",
+              "kind": "describe"
+            },
+            {
+              "text": "The nurse helps [[CHILD]] stand on the scale and measures how tall [[CHILD]] is.",
+              "kind": "describe"
+            },
+            {
+              "text": "The nurse may also put a soft cuff on the arm.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the doctor comes in, says hello, and talks to [[CHILD]] and [[GROWNUP]].",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can ask the doctor, what is your job today?",
+              "kind": "coach"
+            },
+            {
+              "text": "The doctor may tell [[CHILD]] about each step before doing it.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] stays in the room the whole time, close by.",
+              "kind": "describe"
+            },
+            {
+              "text": "When the check-up is done, [[CHILD]] and [[GROWNUP]] go home together.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "strangers",
+            "separation"
           ]
         }
       ],
@@ -522,6 +739,56 @@
         {
           "sentences": [
             {
+              "text": "In the old story, the builder knocked on the brick walls, knock, knock.",
+              "kind": "describe"
+            },
+            {
+              "text": "The walls went thump, solid and strong.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the builder looked through every window, one by one.",
+              "kind": "describe"
+            },
+            {
+              "text": "The builder peeked up the chimney with a little lamp.",
+              "kind": "describe"
+            },
+            {
+              "text": "The little pig had a job too.",
+              "kind": "describe"
+            },
+            {
+              "text": "The pig kept the door open and stood still while the builder looked.",
+              "kind": "describe"
+            },
+            {
+              "text": "When the pig needed a moment, the pig said, wait please.",
+              "kind": "describe"
+            },
+            {
+              "text": "The builder stopped and waited, gently and patiently.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the check went on.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the end, the builder smiled and said, this house is strong and healthy.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "When the doctor looks in the ears, [[CHILD]] keeps still for a little peek.",
               "kind": "describe"
             },
@@ -546,6 +813,57 @@
           "background": "shot",
           "addresses": [
             "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At the doctor, [[CHILD]] has jobs just like the little pig.",
+              "kind": "describe"
+            },
+            {
+              "text": "On the scale, [[CHILD]] can stand tall and still, like a brick wall.",
+              "kind": "coach"
+            },
+            {
+              "text": "When the stethoscope listens, [[CHILD]] can breathe in, and breathe out, slowly.",
+              "kind": "coach"
+            },
+            {
+              "text": "The stethoscope may feel cold for a second, and then it warms up.",
+              "kind": "describe"
+            },
+            {
+              "text": "When the light looks in the ears, [[CHILD]] can keep still for a little peek.",
+              "kind": "coach"
+            },
+            {
+              "text": "The doctor may press gently on the tummy, which can tickle.",
+              "kind": "describe"
+            },
+            {
+              "text": "The cuff on the arm may squeeze like a hug, and then let go.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[CHILD]] can open wide and say aah.",
+              "kind": "coach"
+            },
+            {
+              "text": "Each job is short, and then comes the next step.",
+              "kind": "describe"
+            },
+            {
+              "text": "Every job helps the doctor see how [[CHILD]] is growing.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "shot",
+          "addresses": [
+            "body",
+            "sensory",
+            "unknown"
           ]
         }
       ],
@@ -582,6 +900,56 @@
         {
           "sentences": [
             {
+              "text": "One year in the old story, the little pig felt worried before the builder came.",
+              "kind": "describe"
+            },
+            {
+              "text": "What if something feels strange? asked the pig.",
+              "kind": "describe"
+            },
+            {
+              "text": "The pig's grown-up did not say that nothing would feel strange.",
+              "kind": "describe"
+            },
+            {
+              "text": "The grown-up said, some parts may feel a little odd, and they are over quickly.",
+              "kind": "describe"
+            },
+            {
+              "text": "The knocking may sound loud, and the lamp may be bright.",
+              "kind": "describe"
+            },
+            {
+              "text": "If something feels uncomfortable, you can tell the builder.",
+              "kind": "describe"
+            },
+            {
+              "text": "The little pig took a slow breath and held the grown-up's hand.",
+              "kind": "describe"
+            },
+            {
+              "text": "The builder came, the check went step by step, and soon it was done.",
+              "kind": "describe"
+            },
+            {
+              "text": "The pig felt proud and strong, like the brick house.",
+              "kind": "describe"
+            },
+            {
+              "text": "Worried and brave can be felt at the same time.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "pain",
+            "body"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "It is okay to feel worried at the doctor.",
               "kind": "describe"
             },
@@ -603,6 +971,57 @@
           "addresses": [
             "separation",
             "pain"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At the doctor, some parts may feel strange.",
+              "kind": "describe"
+            },
+            {
+              "text": "The stethoscope may be cold, the paper may crinkle, and the cuff may squeeze.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes a check-up has a shot, and [[GROWNUP]] will say so before the visit.",
+              "kind": "describe"
+            },
+            {
+              "text": "A shot is a quick pinch that can feel sore for a little while.",
+              "kind": "describe"
+            },
+            {
+              "text": "If something feels uncomfortable, [[CHILD]] can say, wait please.",
+              "kind": "coach"
+            },
+            {
+              "text": "The doctor will stop and wait, and will be gentle and careful.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can hold [[GROWNUP]]'s hand or sit on [[GROWNUP]]'s lap.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can smell the flower and blow the candle, slow and soft.",
+              "kind": "coach"
+            },
+            {
+              "text": "A favourite toy can sit close and watch.",
+              "kind": "describe"
+            },
+            {
+              "text": "Many children feel worried at the doctor, and that is okay.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "shot",
+          "addresses": [
+            "pain",
+            "separation",
+            "safety"
           ]
         }
       ],
@@ -640,6 +1059,60 @@
         {
           "sentences": [
             {
+              "text": "Tonight it is time to play the builder game.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] can be the little pig's house first.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] is the builder and knocks gently on [[GROWNUP]]'s back, knock, knock.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[CHILD]] listens to the heart with a paper tube, thump, thump.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, [[CHILD]] looks in the ears with a pretend light.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, [[CHILD]] says, open wide and say aah.",
+              "kind": "describe"
+            },
+            {
+              "text": "When the house says wait please, the builder stops and waits.",
+              "kind": "coach"
+            },
+            {
+              "text": "Then it is time to switch.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is the builder, and [[CHILD]] is the strong brick house.",
+              "kind": "describe"
+            },
+            {
+              "text": "A favourite toy can have a check-up too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Playing it at home makes the real check-up feel familiar.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "body"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Let's say the check-up steps once more.",
               "kind": "coach"
             },
@@ -661,6 +1134,56 @@
             },
             {
               "text": "[[GROWNUP]] is proud of [[CHILD]] for practising, and gives a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "cosy-room",
+          "addresses": [
+            "unknown",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Now [[CHILD]] knows the whole story.",
+              "kind": "describe"
+            },
+            {
+              "text": "The kind builder looked and listened, and the brick house stood strong.",
+              "kind": "describe"
+            },
+            {
+              "text": "Soon [[CHILD]] will go to the doctor, step by step.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, hello and the waiting room.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the scale and standing tall.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, the table, the stethoscope and the little light.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, goodbye and home.",
+              "kind": "describe"
+            },
+            {
+              "text": "If [[CHILD]] needs a moment, [[CHILD]] can say, wait please.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[GROWNUP]] will be right there in the room.",
+              "kind": "describe"
+            },
+            {
+              "text": "Whatever happens, [[GROWNUP]] is proud of [[CHILD]] for trying, and loves [[CHILD]] very much.",
               "kind": "describe"
             }
           ],
@@ -712,6 +1235,59 @@
         {
           "sentences": [
             {
+              "text": "Before the check-up, [[GROWNUP]] and I travel to the doctor's office.",
+              "kind": "describe"
+            },
+            {
+              "text": "We may go by car, by bus or on foot.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, we go through the door and find the front desk.",
+              "kind": "describe"
+            },
+            {
+              "text": "A helper there may ask my name and my birthday.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then we sit in the waiting room.",
+              "kind": "describe"
+            },
+            {
+              "text": "The waiting room may have chairs, books and toys.",
+              "kind": "describe"
+            },
+            {
+              "text": "Other families may be waiting too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes we wait for a short time, and sometimes for a longer time.",
+              "kind": "describe"
+            },
+            {
+              "text": "While I wait, I can play with a toy or look at a book.",
+              "kind": "coach"
+            },
+            {
+              "text": "Then a nurse says my name.",
+              "kind": "describe"
+            },
+            {
+              "text": "That means it is my turn.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Next, a nurse calls my name.",
               "kind": "describe"
             },
@@ -740,6 +1316,61 @@
           "background": "shot",
           "addresses": [
             "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "The nurse walks with us to a small room.",
+              "kind": "describe"
+            },
+            {
+              "text": "In the room there is a table with paper on top.",
+              "kind": "describe"
+            },
+            {
+              "text": "The paper makes a crinkly sound when I sit on it.",
+              "kind": "describe"
+            },
+            {
+              "text": "There may be a sink, a chair and pictures on the walls.",
+              "kind": "describe"
+            },
+            {
+              "text": "The nurse may put a soft cuff around my arm.",
+              "kind": "describe"
+            },
+            {
+              "text": "The cuff squeezes my arm for a few seconds and then lets go.",
+              "kind": "describe"
+            },
+            {
+              "text": "The doctor looks at my ears, my eyes and my mouth.",
+              "kind": "describe"
+            },
+            {
+              "text": "The doctor listens to my heart and my tummy.",
+              "kind": "describe"
+            },
+            {
+              "text": "All of this helps the doctor see that my body is healthy.",
+              "kind": "describe"
+            },
+            {
+              "text": "When the check-up is done, I put my shoes back on.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then we go home.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "unknown",
+            "body",
+            "sensory"
           ]
         }
       ],
@@ -780,6 +1411,59 @@
         {
           "sentences": [
             {
+              "text": "The nurse and the doctor may wear special clothes.",
+              "kind": "describe"
+            },
+            {
+              "text": "The doctor may wear a white coat or a shirt with a name tag.",
+              "kind": "describe"
+            },
+            {
+              "text": "The doctor may have a stethoscope around their neck.",
+              "kind": "describe"
+            },
+            {
+              "text": "The nurse may wear gloves.",
+              "kind": "describe"
+            },
+            {
+              "text": "They meet many children every day.",
+              "kind": "describe"
+            },
+            {
+              "text": "The doctor may say hello and tell me their name.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say hello back, or I can wave.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay if I feel shy.",
+              "kind": "describe"
+            },
+            {
+              "text": "The doctor and the nurse talk in calm voices.",
+              "kind": "describe"
+            },
+            {
+              "text": "They tell me what they will do before they do it.",
+              "kind": "describe"
+            },
+            {
+              "text": "Their job is to help children stay healthy.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "strangers"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "[[GROWNUP]] stays in the room with me the whole time.",
               "kind": "describe"
             },
@@ -809,6 +1493,56 @@
           "addresses": [
             "separation",
             "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "[[GROWNUP]] comes into the room with me.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] stays with me for the whole check-up.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] can sit close to the table.",
+              "kind": "describe"
+            },
+            {
+              "text": "The doctor may ask [[GROWNUP]] some questions about me.",
+              "kind": "describe"
+            },
+            {
+              "text": "The doctor may ask me some questions too.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can answer, or [[GROWNUP]] can help me.",
+              "kind": "describe"
+            },
+            {
+              "text": "If I want to know something, I can ask a question.",
+              "kind": "coach"
+            },
+            {
+              "text": "The doctor will answer and tell me what happens next.",
+              "kind": "describe"
+            },
+            {
+              "text": "After the check-up, [[GROWNUP]] and I leave together.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then we go home.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "separation",
+            "unknown"
           ]
         }
       ],
@@ -850,6 +1584,56 @@
         {
           "sentences": [
             {
+              "text": "The doctor uses some small tools.",
+              "kind": "describe"
+            },
+            {
+              "text": "One tool is a stethoscope, which helps the doctor hear my heart.",
+              "kind": "describe"
+            },
+            {
+              "text": "The end of the stethoscope may feel cold on my skin.",
+              "kind": "describe"
+            },
+            {
+              "text": "Another tool is a small light, which helps the doctor see in my ears and eyes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes the doctor uses a flat stick to look at my throat.",
+              "kind": "describe"
+            },
+            {
+              "text": "The stick touches my tongue for a moment.",
+              "kind": "describe"
+            },
+            {
+              "text": "The doctor may press gently on my tummy.",
+              "kind": "describe"
+            },
+            {
+              "text": "It may feel like a tickle.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can try to keep my body still while the doctor checks.",
+              "kind": "coach"
+            },
+            {
+              "text": "My job is to listen and try my best.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "body",
+            "sensory"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Sometimes I need a moment.",
               "kind": "describe"
             },
@@ -877,6 +1661,56 @@
           "mood": "calm",
           "background": "shot",
           "addresses": [
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At the check-up, the nurse sees how tall I am.",
+              "kind": "describe"
+            },
+            {
+              "text": "I stand with my back against a wall or a measuring stick.",
+              "kind": "describe"
+            },
+            {
+              "text": "I stand on a scale, and the scale shows a number.",
+              "kind": "describe"
+            },
+            {
+              "text": "The number tells how much I have grown.",
+              "kind": "describe"
+            },
+            {
+              "text": "Growing is what healthy bodies do.",
+              "kind": "describe"
+            },
+            {
+              "text": "If I need a break, I can say, wait please.",
+              "kind": "coach"
+            },
+            {
+              "text": "The doctor will pause and wait for me.",
+              "kind": "describe"
+            },
+            {
+              "text": "When I am ready, the doctor starts again.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the end, the doctor may say, all done.",
+              "kind": "describe"
+            },
+            {
+              "text": "I did my jobs, and the check-up is over.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "shot",
+          "addresses": [
+            "body",
             "safety"
           ]
         }
@@ -918,6 +1752,56 @@
         {
           "sentences": [
             {
+              "text": "Some parts of the check-up can feel strange.",
+              "kind": "describe"
+            },
+            {
+              "text": "The cuff squeezes my arm.",
+              "kind": "describe"
+            },
+            {
+              "text": "The stick on my tongue can feel funny.",
+              "kind": "describe"
+            },
+            {
+              "text": "The light can look very bright.",
+              "kind": "describe"
+            },
+            {
+              "text": "These feelings are short.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some check-ups have a shot.",
+              "kind": "describe"
+            },
+            {
+              "text": "A shot is a quick pinch, and my arm may be sore for a little while.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] will tell me before the visit if there is a shot.",
+              "kind": "describe"
+            },
+            {
+              "text": "If something feels uncomfortable, I can tell the doctor or [[GROWNUP]].",
+              "kind": "coach"
+            },
+            {
+              "text": "The doctor wants to know how I feel.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "pain",
+            "sensory"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Sometimes I feel worried at the doctor.",
               "kind": "describe"
             },
@@ -947,6 +1831,61 @@
           "addresses": [
             "separation",
             "pain"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Many children feel nervous at the doctor.",
+              "kind": "describe"
+            },
+            {
+              "text": "Feeling nervous is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can breathe in slowly through my nose and out through my mouth.",
+              "kind": "coach"
+            },
+            {
+              "text": "Breathing slowly can help my body feel calmer.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can hold [[GROWNUP]]'s hand.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can sit on [[GROWNUP]]'s lap if the doctor says it is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "My toy can sit with me too.",
+              "kind": "describe"
+            },
+            {
+              "text": "The doctor is careful and gentle.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me whether I feel brave or nervous.",
+              "kind": "describe"
+            },
+            {
+              "text": "After the check-up, I can rest and have a hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "Soon the visit is over.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "separation",
+            "safety",
+            "love"
           ]
         }
       ],
@@ -988,6 +1927,56 @@
         {
           "sentences": [
             {
+              "text": "Before the visit, I can practise at home.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can stand tall against a wall, and [[GROWNUP]] can measure me.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can lie on a towel, and it can be my table.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] can listen to my heart with a paper tube.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can open my mouth and say aah.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can practise saying, wait please.",
+              "kind": "coach"
+            },
+            {
+              "text": "When I say wait please, [[GROWNUP]] stops right away.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I can be the doctor for my toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can check its ears and listen to its heart.",
+              "kind": "describe"
+            },
+            {
+              "text": "Practising helps me know what will happen.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "body"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Here are the steps of my check-up.",
               "kind": "describe"
             },
@@ -1016,6 +2005,60 @@
           "background": "cosy-room",
           "addresses": [
             "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Here is my plan for the check-up.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, I say hello at the front desk and wait in the waiting room.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the nurse calls my name.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, I stand on the scale and stand tall.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, I sit on the crinkly paper.",
+              "kind": "describe"
+            },
+            {
+              "text": "The doctor listens to my heart and looks in my ears, eyes and mouth.",
+              "kind": "describe"
+            },
+            {
+              "text": "If I need a break, I can say, wait please.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, we say goodbye and go home.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for practising.",
+              "kind": "describe"
+            },
+            {
+              "text": "Going to a check-up is something many children do.",
+              "kind": "describe"
+            },
+            {
+              "text": "I know the steps, and I know how to ask for a break.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "cosy-room",
+          "addresses": [
+            "unknown",
+            "love"
           ]
         }
       ]

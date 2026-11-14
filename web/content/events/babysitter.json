@@ -1,6 +1,6 @@
 {
   "type": "babysitter",
-  "version": 1,
+  "version": 2,
   "label": "New babysitter",
   "countdownLabel": "the new babysitter",
   "beats": {
@@ -377,6 +377,60 @@
         {
           "sentences": [
             {
+              "text": "Before bed, [[GROWNUP]] tells [[CHILD]] an old story about a shoemaker's family.",
+              "kind": "describe"
+            },
+            {
+              "text": "Once upon a time, a shoemaker and his family lived above a little shoe shop.",
+              "kind": "describe"
+            },
+            {
+              "text": "They had a small child who loved to play with the leather scraps.",
+              "kind": "describe"
+            },
+            {
+              "text": "One evening, the grown-ups had to go out to the town for a few hours.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, they asked a kind helper elf to come and look after the child.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the elf knocked on the door, tap, tap, tap.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, everyone played together for a little while.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, the grown-ups said goodbye with a hug and a kiss.",
+              "kind": "describe"
+            },
+            {
+              "text": "We will come back after you sleep, they said.",
+              "kind": "describe"
+            },
+            {
+              "text": "And they always did come back.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "unknown",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Next, [[GROWNUP]] says goodbye with a hug, a kiss and see you after sleep.",
               "kind": "describe"
             },
@@ -398,6 +452,61 @@
           "addresses": [
             "unknown",
             "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Here is the babysitter evening, step by step.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, the doorbell rings, and the babysitter says hello.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then everyone plays together for a little while.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, [[GROWNUP]] says goodbye with the goodbye ritual.",
+              "kind": "describe"
+            },
+            {
+              "text": "The house may feel quiet when the door closes.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, [[CHILD]] and the babysitter play and have dinner.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then come the bedtime steps: bath, pyjamas and a story.",
+              "kind": "describe"
+            },
+            {
+              "text": "The babysitter's voice may read the story in a new way.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[CHILD]] sleeps in [[CHILD]]'s own bed, with [[CHILD]]'s own blanket.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, [[GROWNUP]] comes back, and [[CHILD]] sees [[GROWNUP]] after waking up.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can count the steps on fingers: hello, play, goodbye, dinner, bath, story, sleep.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "sensory",
+            "strangers"
           ]
         }
       ],
@@ -430,6 +539,52 @@
         {
           "sentences": [
             {
+              "text": "In the old story, the helper elf was small and kind.",
+              "kind": "describe"
+            },
+            {
+              "text": "The elf said hello and told the child its name.",
+              "kind": "describe"
+            },
+            {
+              "text": "The shoemaker had chosen the elf, because the elf was careful and good with children.",
+              "kind": "describe"
+            },
+            {
+              "text": "The grown-ups told the elf the house rules.",
+              "kind": "describe"
+            },
+            {
+              "text": "Dinner at the table, bath before bed, and the night light on.",
+              "kind": "describe"
+            },
+            {
+              "text": "The elf listened carefully and kept the rules the same.",
+              "kind": "describe"
+            },
+            {
+              "text": "So the evening felt like a normal evening, just with a new helper.",
+              "kind": "describe"
+            },
+            {
+              "text": "The child looked at the elf for a long time.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the child said, hello, and smiled.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "strangers",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Lots of kids have babysitters.",
               "kind": "describe"
             },
@@ -453,6 +608,57 @@
           "mood": "happy",
           "background": "home-evening",
           "addresses": [
+            "social",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "The babysitter has a name, and [[CHILD]] can learn it before the night.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] chose this babysitter and trusts them.",
+              "kind": "describe"
+            },
+            {
+              "text": "The babysitter's job is to keep [[CHILD]] safe and to have fun together.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] tells the babysitter the house rules and the bedtime steps.",
+              "kind": "describe"
+            },
+            {
+              "text": "The babysitter also knows how to call [[GROWNUP]].",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can ask the babysitter, what games do you like?",
+              "kind": "coach"
+            },
+            {
+              "text": "Lots of kids have babysitters.",
+              "kind": "describe"
+            },
+            {
+              "text": "Babysitters know games, songs and stories.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some babysitters come many times, and they become friends.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "strangers",
             "social",
             "safety"
           ]
@@ -492,6 +698,52 @@
         {
           "sentences": [
             {
+              "text": "In the old story, the child had a special job that evening.",
+              "kind": "describe"
+            },
+            {
+              "text": "The job was to show the elf around the house.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, the child showed the toy box.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the child showed the kitchen, the bathroom and the little bed.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, the child taught the elf a game with leather scraps and buttons.",
+              "kind": "describe"
+            },
+            {
+              "text": "The elf did not know the game, so the child was the teacher.",
+              "kind": "describe"
+            },
+            {
+              "text": "The elf laughed and said, you are a very good teacher.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, they made a tiny pair of shoes for a toy together.",
+              "kind": "describe"
+            },
+            {
+              "text": "The child felt big and proud.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "cosy-room",
+          "addresses": [
+            "social",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "[[CHILD]] can tell the babysitter what [[CHILD]] needs.",
               "kind": "describe"
             },
@@ -517,6 +769,53 @@
           "addresses": [
             "body",
             "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "[[CHILD]] has a special job too: giving the tour.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can show the babysitter the toys, the bedroom and the best hiding spot.",
+              "kind": "coach"
+            },
+            {
+              "text": "Then [[CHILD]] can teach the babysitter a favourite game.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can tell the babysitter what [[CHILD]] needs.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say: I am hungry, I need the toilet, or can I have my toy?",
+              "kind": "coach"
+            },
+            {
+              "text": "At bedtime, the babysitter does the same steps as [[GROWNUP]].",
+              "kind": "describe"
+            },
+            {
+              "text": "First bath, then pyjamas, then a story, then the night light.",
+              "kind": "describe"
+            },
+            {
+              "text": "Same steps, same bed, same blanket.",
+              "kind": "describe"
+            },
+            {
+              "text": "The babysitter is learning, and [[CHILD]] is the teacher.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "strangers",
+            "social",
+            "body"
           ]
         }
       ],
@@ -554,6 +853,56 @@
         {
           "sentences": [
             {
+              "text": "In the old story, the child felt sad when the door closed.",
+              "kind": "describe"
+            },
+            {
+              "text": "The child missed the grown-ups and cried a little.",
+              "kind": "describe"
+            },
+            {
+              "text": "The elf did not say, do not cry.",
+              "kind": "describe"
+            },
+            {
+              "text": "The elf said, you miss them, and that is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "They will come back after you sleep.",
+              "kind": "describe"
+            },
+            {
+              "text": "The elf sat close and showed the child a little heart drawn on the child's hand.",
+              "kind": "describe"
+            },
+            {
+              "text": "Your grown-ups drew this before they left, said the elf.",
+              "kind": "describe"
+            },
+            {
+              "text": "The child pressed the heart and took a slow breath.",
+              "kind": "describe"
+            },
+            {
+              "text": "After a little while, they started to play, and the sad feeling got smaller.",
+              "kind": "describe"
+            },
+            {
+              "text": "The love stayed the whole time.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "separation",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Before goodbye, [[GROWNUP]] and [[CHILD]] draw a little heart on their hands.",
               "kind": "describe"
             },
@@ -576,6 +925,57 @@
             "separation",
             "love",
             "body"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Goodbye can feel hard.",
+              "kind": "describe"
+            },
+            {
+              "text": "The house feels quiet when the door closes, and the babysitter's voice is new.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] might cry, and that is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "Lots of kids cry at goodbye.",
+              "kind": "describe"
+            },
+            {
+              "text": "When [[CHILD]] misses [[GROWNUP]], [[CHILD]] can press the heart on the hand.",
+              "kind": "coach"
+            },
+            {
+              "text": "If the tummy feels like butterflies, a slow breath helps them settle.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can hug a comfort toy or look at a photo of [[GROWNUP]].",
+              "kind": "coach"
+            },
+            {
+              "text": "After a few minutes of play, the worry often gets smaller.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] does not sneak away, [[GROWNUP]] always says goodbye.",
+              "kind": "describe"
+            },
+            {
+              "text": "And [[GROWNUP]] always comes back.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "cosy-room",
+          "addresses": [
+            "separation",
+            "body",
+            "sensory"
           ]
         }
       ],
@@ -617,6 +1017,56 @@
         {
           "sentences": [
             {
+              "text": "Tonight it is time to play the elf and the shoemaker's family.",
+              "kind": "describe"
+            },
+            {
+              "text": "A toy can be the helper elf, and another toy can be the child.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, the elf knocks, tap, tap, tap, and says hello.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then everyone plays together.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, the toy grown-ups say goodbye with a hug and see you after sleep.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, the child toy gives the elf a tour of the house.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can practise asking the elf: can I have my toy, please?",
+              "kind": "coach"
+            },
+            {
+              "text": "Then come dinner, bath, pyjamas and a story.",
+              "kind": "describe"
+            },
+            {
+              "text": "Finally, the toy child sleeps, and in the morning the grown-ups come back.",
+              "kind": "describe"
+            },
+            {
+              "text": "Playing it at home makes the real evening feel more familiar.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Let's say the babysitter steps once more.",
               "kind": "coach"
             },
@@ -646,6 +1096,57 @@
           "addresses": [
             "unknown",
             "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Now [[CHILD]] knows the whole story.",
+              "kind": "describe"
+            },
+            {
+              "text": "The kind elf looked after the child, and the grown-ups came back after sleep.",
+              "kind": "describe"
+            },
+            {
+              "text": "Soon a babysitter will come, step by step.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, hello and play together.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then our goodbye: a hug, a kiss and see you after sleep.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, play, dinner, a story and bed.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, [[GROWNUP]] comes back.",
+              "kind": "describe"
+            },
+            {
+              "text": "If [[CHILD]] misses [[GROWNUP]], [[CHILD]] can press the heart on the hand.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[GROWNUP]] always comes back.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of [[CHILD]] and loves [[CHILD]] very much.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "cosy-room",
+          "addresses": [
+            "unknown",
+            "love",
+            "separation"
           ]
         }
       ]
@@ -689,6 +1190,68 @@
         {
           "sentences": [
             {
+              "text": "Before the babysitter comes, [[GROWNUP]] tells me the plan.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] tells me the babysitter's name.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] tells me when [[GROWNUP]] will come back.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] may say, I will come back after you sleep.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the doorbell rings.",
+              "kind": "describe"
+            },
+            {
+              "text": "The babysitter comes in and says hello.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say hello, or I can wave.",
+              "kind": "coach"
+            },
+            {
+              "text": "Then we play together for a little while.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] shows the babysitter our home.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, [[GROWNUP]] gets ready to go.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] may put on a coat and shoes.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] will not leave without saying goodbye.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] always says goodbye before going out.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Next, [[GROWNUP]] says goodbye.",
               "kind": "describe"
             },
@@ -719,6 +1282,69 @@
             "unknown",
             "separation"
           ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "When it is time, [[GROWNUP]] says goodbye.",
+              "kind": "describe"
+            },
+            {
+              "text": "We do our goodbye ritual.",
+              "kind": "describe"
+            },
+            {
+              "text": "It may be a hug, a kiss and see you after sleep.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[GROWNUP]] goes out.",
+              "kind": "describe"
+            },
+            {
+              "text": "The babysitter and I play.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then we eat dinner.",
+              "kind": "describe"
+            },
+            {
+              "text": "After dinner, I have my bath and put on my pyjamas.",
+              "kind": "describe"
+            },
+            {
+              "text": "The babysitter reads me a story.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I go to sleep in my own bed.",
+              "kind": "describe"
+            },
+            {
+              "text": "The bedtime steps are the same as always.",
+              "kind": "describe"
+            },
+            {
+              "text": "Later, [[GROWNUP]] comes back.",
+              "kind": "describe"
+            },
+            {
+              "text": "If I am asleep, I see [[GROWNUP]] when I wake up.",
+              "kind": "describe"
+            },
+            {
+              "text": "In the morning, I can tell [[GROWNUP]] about my evening.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "separation",
+            "safety"
+          ]
         }
       ],
       "who_is_there": [
@@ -747,6 +1373,67 @@
             {
               "text": "I can learn the babysitter's name before the night.",
               "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "strangers"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "A babysitter is a grown-up who looks after kids.",
+              "kind": "describe"
+            },
+            {
+              "text": "My babysitter has a name.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] chose my babysitter.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] trusts my babysitter.",
+              "kind": "describe"
+            },
+            {
+              "text": "My babysitter knows how to take care of kids.",
+              "kind": "describe"
+            },
+            {
+              "text": "My babysitter may know games, songs and stories.",
+              "kind": "describe"
+            },
+            {
+              "text": "My babysitter's voice may sound different from [[GROWNUP]]'s voice.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay if I feel shy at first.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask my babysitter, what is your name?",
+              "kind": "coach"
+            },
+            {
+              "text": "After some time, the babysitter feels less new.",
+              "kind": "describe"
+            },
+            {
+              "text": "Many kids feel shy with a new babysitter.",
+              "kind": "describe"
+            },
+            {
+              "text": "It can help to meet the babysitter before [[GROWNUP]] goes out.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the babysitter's name and face are already known.",
+              "kind": "describe"
             }
           ],
           "mood": "calm",
@@ -788,6 +1475,60 @@
             "social",
             "safety"
           ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "[[GROWNUP]] tells the babysitter the rules of our home.",
+              "kind": "describe"
+            },
+            {
+              "text": "The rules stay the same when the babysitter is here.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] tells the babysitter my bedtime steps.",
+              "kind": "describe"
+            },
+            {
+              "text": "The babysitter knows how to call [[GROWNUP]].",
+              "kind": "describe"
+            },
+            {
+              "text": "The babysitter keeps me safe.",
+              "kind": "describe"
+            },
+            {
+              "text": "Many kids have babysitters.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids have the same babysitter many times.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can show the babysitter my favourite game.",
+              "kind": "coach"
+            },
+            {
+              "text": "We can play the game together.",
+              "kind": "describe"
+            },
+            {
+              "text": "Playing together helps us get to know each other.",
+              "kind": "describe"
+            },
+            {
+              "text": "After some time, the babysitter can become a friend.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "safety",
+            "social"
+          ]
         }
       ],
       "what_i_do": [
@@ -828,6 +1569,68 @@
         {
           "sentences": [
             {
+              "text": "I can show my babysitter around my home.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can show my toys.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can show my bedroom.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can show where my toothbrush is.",
+              "kind": "describe"
+            },
+            {
+              "text": "My babysitter is learning about my home.",
+              "kind": "describe"
+            },
+            {
+              "text": "I know my home very well.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can teach my babysitter a game I like.",
+              "kind": "coach"
+            },
+            {
+              "text": "My babysitter may teach me a new game too.",
+              "kind": "describe"
+            },
+            {
+              "text": "We can play with toys, draw or build.",
+              "kind": "describe"
+            },
+            {
+              "text": "Being the teacher can feel good.",
+              "kind": "describe"
+            },
+            {
+              "text": "My babysitter will listen to me.",
+              "kind": "describe"
+            },
+            {
+              "text": "My babysitter wants to know what I like.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can tell my babysitter my favourite food, song or story.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "social",
+            "strangers"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Sometimes I need things.",
               "kind": "describe"
             },
@@ -849,6 +1652,68 @@
             },
             {
               "text": "I sleep in my own bed.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I can tell my babysitter what I need.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say, I am hungry.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say, I need the toilet.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say, can I have my toy?",
+              "kind": "describe"
+            },
+            {
+              "text": "My babysitter will help me.",
+              "kind": "describe"
+            },
+            {
+              "text": "At bedtime, my babysitter follows my bedtime steps.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, the bath.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then, my pyjamas.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, a story.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, I get into my own bed with my own blanket.",
+              "kind": "coach"
+            },
+            {
+              "text": "The night light goes on.",
+              "kind": "describe"
+            },
+            {
+              "text": "If I need something in the night, I can call my babysitter.",
+              "kind": "describe"
+            },
+            {
+              "text": "My babysitter stays in our home the whole time [[GROWNUP]] is out.",
               "kind": "describe"
             }
           ],
@@ -898,6 +1763,64 @@
         {
           "sentences": [
             {
+              "text": "When [[GROWNUP]] says goodbye, I may feel sad.",
+              "kind": "describe"
+            },
+            {
+              "text": "The house may feel quiet when the door closes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids cry at goodbye.",
+              "kind": "describe"
+            },
+            {
+              "text": "Crying is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "My babysitter will help me.",
+              "kind": "describe"
+            },
+            {
+              "text": "My babysitter may sit close to me.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can tell my babysitter how I feel.",
+              "kind": "coach"
+            },
+            {
+              "text": "After some time, we may start to play.",
+              "kind": "describe"
+            },
+            {
+              "text": "The sad feeling often gets smaller when we play.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] always comes back.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] tells me the real time when [[GROWNUP]] will come back.",
+              "kind": "describe"
+            },
+            {
+              "text": "It may be after dinner, or after I sleep.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "separation",
+            "sensory"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "I can have a heart on my hand.",
               "kind": "describe"
             },
@@ -919,6 +1842,65 @@
             },
             {
               "text": "[[GROWNUP]] loves me and always comes back.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "separation",
+            "love",
+            "body"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Before goodbye, [[GROWNUP]] may draw a heart on my hand.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] may draw a heart on their hand too.",
+              "kind": "describe"
+            },
+            {
+              "text": "When I miss [[GROWNUP]], I can press the heart.",
+              "kind": "coach"
+            },
+            {
+              "text": "My tummy may feel like butterflies.",
+              "kind": "describe"
+            },
+            {
+              "text": "Butterflies in my tummy are a feeling of worry.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take a slow breath.",
+              "kind": "describe"
+            },
+            {
+              "text": "Slow breaths can help the butterflies settle.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can hug my toy or look at a photo of [[GROWNUP]].",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me the whole time.",
+              "kind": "describe"
+            },
+            {
+              "text": "When I wake up, [[GROWNUP]] will be home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then we can have a big hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "Many kids feel this way, and the feeling passes.",
               "kind": "describe"
             }
           ],
@@ -969,6 +1951,64 @@
         {
           "sentences": [
             {
+              "text": "Before the babysitter comes, I can practise at home.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can play babysitter with my toys.",
+              "kind": "describe"
+            },
+            {
+              "text": "One toy is the babysitter, and one toy is the kid.",
+              "kind": "describe"
+            },
+            {
+              "text": "The doorbell rings: ding dong.",
+              "kind": "describe"
+            },
+            {
+              "text": "The toy babysitter says hello.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the toy grown-up says goodbye.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can practise our goodbye ritual with [[GROWNUP]].",
+              "kind": "coach"
+            },
+            {
+              "text": "Then the toys play, eat dinner and go to bed.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, the toy grown-up comes back.",
+              "kind": "describe"
+            },
+            {
+              "text": "Practising helps me know what will happen.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can also make a picture card of my bedtime steps for the babysitter.",
+              "kind": "describe"
+            },
+            {
+              "text": "The card shows the bath, the pyjamas, the story and the night light.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Here are the steps of my babysitter night.",
               "kind": "describe"
             },
@@ -997,6 +2037,64 @@
           "background": "cosy-room",
           "addresses": [
             "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Here is my plan for the babysitter evening.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, the babysitter rings the doorbell and says hello.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then we play together.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, [[GROWNUP]] and I do our goodbye ritual.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, I play and eat dinner with the babysitter.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I have my bath, pyjamas and a story.",
+              "kind": "describe"
+            },
+            {
+              "text": "I sleep in my own bed.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, [[GROWNUP]] comes back.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for practising.",
+              "kind": "describe"
+            },
+            {
+              "text": "I know the plan.",
+              "kind": "describe"
+            },
+            {
+              "text": "Many kids have babysitters, and I am having one too.",
+              "kind": "describe"
+            },
+            {
+              "text": "If I miss [[GROWNUP]], I can press the heart on my hand.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "cosy-room",
+          "addresses": [
+            "unknown",
+            "love"
           ]
         }
       ]

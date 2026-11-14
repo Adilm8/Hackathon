@@ -24,7 +24,7 @@ import { mockAnswer } from './mock';
 import { buildAnswerPrompt, buildRewritePrompt } from './prompts/answer.v1';
 import { buildSystemPrompt } from './prompts/system.v1';
 import { callStructured } from './run';
-import { checkPage, postcheckOptions } from './validate';
+import { checkPage, postcheckOptions, wordCount } from './validate';
 
 export type AnswerEvent =
   | { type: 'category'; category: QuestionCategory; topic: Topic }
@@ -233,7 +233,7 @@ export async function* answerQuestion(input: AnswerInput): AsyncGenerator<Answer
         const parsed = rewrite.ok ? PageOut.safeParse(rewrite.object.nextPage) : null;
         if (parsed?.success) {
           const original: OutPage = { sentences: [], mood: 'calm', background: input.nextPage.background, addresses: [], source: 'fallback' };
-          const checked = checkPage(parsed.data, { template, age: ctx.child.age, post, fallback: original });
+          const checked = checkPage(parsed.data, { template, age: ctx.child.age, post, fallback: original, minWords: wordCount(nextText) });
           if (!checked.replaced) {
             yield { type: 'nextPage', page: { ...checked.page, source: src() } };
           }

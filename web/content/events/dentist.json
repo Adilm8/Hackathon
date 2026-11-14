@@ -1,6 +1,6 @@
 {
   "type": "dentist",
-  "version": 1,
+  "version": 2,
   "label": "Dentist visit",
   "countdownLabel": "the dentist",
   "beats": {
@@ -417,6 +417,60 @@
         {
           "sentences": [
             {
+              "text": "Before bed, [[GROWNUP]] tells [[CHILD]] a very old story.",
+              "kind": "describe"
+            },
+            {
+              "text": "Long ago, by a warm and sleepy river, there lived a big green crocodile.",
+              "kind": "describe"
+            },
+            {
+              "text": "The crocodile had many, many teeth.",
+              "kind": "describe"
+            },
+            {
+              "text": "Every morning, a little brown bird came to visit.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, the bird hopped onto the crocodile's nose and said hello.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the crocodile opened its mouth wide, wide, wide.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, the little bird looked at every tooth, one by one.",
+              "kind": "describe"
+            },
+            {
+              "text": "It cleaned the teeth with its tiny beak, peck, peck, peck.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, the crocodile closed its mouth slowly and smiled a big toothy smile.",
+              "kind": "describe"
+            },
+            {
+              "text": "The little bird was the crocodile's helper.",
+              "kind": "describe"
+            },
+            {
+              "text": "A dentist is a helper for teeth too.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "unknown",
+            "body"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Then [[CHILD]] climbs into a big chair that hums and leans back.",
               "kind": "describe"
             },
@@ -442,6 +496,57 @@
           "addresses": [
             "unknown",
             "sensory"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Here is what happens, step by step.",
+              "kind": "describe"
+            },
+            {
+              "text": "First comes the clinic door, then the front desk, then the waiting room.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next comes the big chair and the bright light.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, the dentist counts teeth and cleans them with a buzzy brush.",
+              "kind": "describe"
+            },
+            {
+              "text": "The toothpaste may taste minty or fruity, and it can feel a little gritty.",
+              "kind": "describe"
+            },
+            {
+              "text": "Cool water rinses the mouth, and a little straw slurps the water away.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the end comes a sticker and the trip home.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can count the steps on fingers: one, two, three, four, five.",
+              "kind": "coach"
+            },
+            {
+              "text": "Knowing the steps makes the visit feel less new.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "sensory",
+            "body"
           ]
         }
       ],
@@ -474,6 +579,60 @@
         {
           "sentences": [
             {
+              "text": "In the old story, the crocodile was very big and the bird was very small.",
+              "kind": "describe"
+            },
+            {
+              "text": "At first, the crocodile felt a little shy about opening its mouth.",
+              "kind": "describe"
+            },
+            {
+              "text": "The little bird said hello in a friendly chirp.",
+              "kind": "describe"
+            },
+            {
+              "text": "It told the crocodile its name and its job.",
+              "kind": "describe"
+            },
+            {
+              "text": "My job is to keep your teeth clean and strong, said the bird.",
+              "kind": "describe"
+            },
+            {
+              "text": "The crocodile listened.",
+              "kind": "describe"
+            },
+            {
+              "text": "It learned that the bird was careful and kind.",
+              "kind": "describe"
+            },
+            {
+              "text": "Soon the crocodile opened wide, because now the helper was not a stranger.",
+              "kind": "describe"
+            },
+            {
+              "text": "A new helper feels less new after a hello and a name.",
+              "kind": "describe"
+            },
+            {
+              "text": "The crocodile and the little bird became good friends.",
+              "kind": "describe"
+            },
+            {
+              "text": "Every morning, they met by the river again.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "strangers",
+            "body"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "The helpers wear masks and gloves to keep everything clean.",
               "kind": "describe"
             },
@@ -495,6 +654,56 @@
             }
           ],
           "mood": "happy",
+          "background": "dentist",
+          "addresses": [
+            "strangers",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At the dentist, every helper has a job, just like the little bird.",
+              "kind": "describe"
+            },
+            {
+              "text": "The helper at the front desk writes down [[CHILD]]'s name.",
+              "kind": "describe"
+            },
+            {
+              "text": "The dental assistant gets the tools ready and hands them to the dentist.",
+              "kind": "describe"
+            },
+            {
+              "text": "The dentist looks at each tooth and keeps it healthy.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say hello, wave, or just smile.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can also ask the dentist, what is your name?",
+              "kind": "coach"
+            },
+            {
+              "text": "[[GROWNUP]] stays close by the whole time.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] can stand right there, beside the big chair.",
+              "kind": "describe"
+            },
+            {
+              "text": "When the visit ends, [[CHILD]] and [[GROWNUP]] go home together.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
           "background": "dentist",
           "addresses": [
             "strangers",
@@ -535,6 +744,52 @@
         {
           "sentences": [
             {
+              "text": "In the old story, the crocodile had jobs too.",
+              "kind": "describe"
+            },
+            {
+              "text": "The crocodile lay very still in the warm sun.",
+              "kind": "describe"
+            },
+            {
+              "text": "It opened its mouth wide and kept it open.",
+              "kind": "describe"
+            },
+            {
+              "text": "When its mouth felt tired, it gave a little nod.",
+              "kind": "describe"
+            },
+            {
+              "text": "The bird stopped and waited until the crocodile was ready again.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the cleaning went on, peck, peck, peck.",
+              "kind": "describe"
+            },
+            {
+              "text": "The crocodile was the boss of its own break.",
+              "kind": "describe"
+            },
+            {
+              "text": "The bird always listened to the nod.",
+              "kind": "describe"
+            },
+            {
+              "text": "That is why the crocodile felt safe with its helper.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Sometimes a mouth gets tired of being open.",
               "kind": "describe"
             },
@@ -560,6 +815,60 @@
           "addresses": [
             "safety",
             "body"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At the dentist, the big chair hums and leans back slowly.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can lie back, still as the crocodile in the sun.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can open wide, like a big yawn.",
+              "kind": "coach"
+            },
+            {
+              "text": "The dentist may use a tiny mirror and a little brush that goes buzz.",
+              "kind": "describe"
+            },
+            {
+              "text": "The brush may tickle the teeth, and the toothpaste may taste minty.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then cool water rinses the mouth.",
+              "kind": "describe"
+            },
+            {
+              "text": "If the light feels bright, [[CHILD]] can wear sunglasses.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can count the teeth in a quiet head voice too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Each job helps the visit go smoothly.",
+              "kind": "describe"
+            },
+            {
+              "text": "If [[CHILD]]'s mouth gets tired, one hand goes up, just like the crocodile's nod.",
+              "kind": "describe"
+            },
+            {
+              "text": "The dentist stops for a break and waits.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "dentist",
+          "addresses": [
+            "body",
+            "sensory"
           ]
         }
       ],
@@ -592,6 +901,52 @@
         {
           "sentences": [
             {
+              "text": "One morning in the old story, the crocodile had a sore tooth.",
+              "kind": "describe"
+            },
+            {
+              "text": "The crocodile felt worried.",
+              "kind": "describe"
+            },
+            {
+              "text": "Will it feel strange? it asked the little bird.",
+              "kind": "describe"
+            },
+            {
+              "text": "The bird did not say it would feel like nothing.",
+              "kind": "describe"
+            },
+            {
+              "text": "The bird said, it may feel like a little poke, and then it will be over.",
+              "kind": "describe"
+            },
+            {
+              "text": "The crocodile took a long, slow breath through its nose.",
+              "kind": "describe"
+            },
+            {
+              "text": "The bird worked gently, and the poke was short.",
+              "kind": "describe"
+            },
+            {
+              "text": "Afterwards the tooth felt better, and the crocodile smiled.",
+              "kind": "describe"
+            },
+            {
+              "text": "Being worried and being brave can happen at the same time.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "pain",
+            "body"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "If the bright light feels too much, [[CHILD]] can wear sunglasses.",
               "kind": "coach"
             },
@@ -617,6 +972,53 @@
           "addresses": [
             "sensory",
             "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At the dentist, some things may tickle and some things may press.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes a tooth may feel a small pinch.",
+              "kind": "describe"
+            },
+            {
+              "text": "The feeling is short, and then it stops.",
+              "kind": "describe"
+            },
+            {
+              "text": "If something feels too much, [[CHILD]] can raise one hand.",
+              "kind": "coach"
+            },
+            {
+              "text": "A raised hand means stop, please, and the dentist will check and take a break.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can squeeze [[GROWNUP]]'s hand, who stays right there.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can smell the flower and blow the candle, slow and soft.",
+              "kind": "coach"
+            },
+            {
+              "text": "A favourite toy can come along and sit on a lap.",
+              "kind": "describe"
+            },
+            {
+              "text": "Feeling scared is okay, and many children feel it.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "dentist",
+          "addresses": [
+            "pain",
+            "separation",
+            "safety"
           ]
         }
       ],
@@ -654,6 +1056,60 @@
         {
           "sentences": [
             {
+              "text": "Tonight it is time to play the crocodile game.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] can be the little bird first.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] lies back on a pillow and opens wide, like the crocodile.",
+              "kind": "coach"
+            },
+            {
+              "text": "The little bird counts each tooth: one, two, three, all the way up.",
+              "kind": "describe"
+            },
+            {
+              "text": "When the crocodile needs a break, one hand goes up.",
+              "kind": "coach"
+            },
+            {
+              "text": "The little bird stops and waits right away.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then it is time to switch.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can be the helper and count the teeth of a favourite toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Practising at home makes the real visit feel more familiar.",
+              "kind": "describe"
+            },
+            {
+              "text": "The more times [[CHILD]] plays, the easier the steps become.",
+              "kind": "describe"
+            },
+            {
+              "text": "After the game, it is time for a story and a cosy sleep.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "body"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Let's say the steps one more time.",
               "kind": "coach"
             },
@@ -671,6 +1127,52 @@
             },
             {
               "text": "[[CHILD]] knows every step now, and [[GROWNUP]] is proud of [[CHILD]] for practising.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "cosy-room",
+          "addresses": [
+            "unknown",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Now [[CHILD]] knows the whole story.",
+              "kind": "describe"
+            },
+            {
+              "text": "The big crocodile opened wide, and the little bird kept its teeth strong.",
+              "kind": "describe"
+            },
+            {
+              "text": "Soon [[CHILD]] will go to the dentist, step by step.",
+              "kind": "describe"
+            },
+            {
+              "text": "First the door, then the waiting room, then the big chair.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next the light, the counting and the buzzy brush.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, a sticker and the way home.",
+              "kind": "describe"
+            },
+            {
+              "text": "If [[CHILD]] needs a break, one hand goes up.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[GROWNUP]] will be right there.",
+              "kind": "describe"
+            },
+            {
+              "text": "Whatever happens, [[GROWNUP]] is proud of [[CHILD]] for trying, and loves [[CHILD]] very much.",
               "kind": "describe"
             }
           ],
@@ -717,6 +1219,55 @@
         {
           "sentences": [
             {
+              "text": "When I go to the dentist, I go with [[GROWNUP]].",
+              "kind": "describe"
+            },
+            {
+              "text": "We may go in the car, on the bus or on foot.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, we find the clinic and open the door.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then we go to the front desk.",
+              "kind": "describe"
+            },
+            {
+              "text": "A helper there asks for my name.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, we sit in the waiting room.",
+              "kind": "describe"
+            },
+            {
+              "text": "The waiting room may have chairs, books and other children.",
+              "kind": "describe"
+            },
+            {
+              "text": "Waiting can take a little while.",
+              "kind": "describe"
+            },
+            {
+              "text": "While I wait, I can read a book or hold my toy.",
+              "kind": "coach"
+            },
+            {
+              "text": "Then a helper calls my name, and it is my turn.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Next, a helper says my name, and I go to a room with a big chair.",
               "kind": "describe"
             },
@@ -747,6 +1298,61 @@
             "unknown",
             "sensory"
           ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the dentist room, I sit in a big chair.",
+              "kind": "describe"
+            },
+            {
+              "text": "The chair moves and hums.",
+              "kind": "describe"
+            },
+            {
+              "text": "The dentist puts toothpaste on a small brush.",
+              "kind": "describe"
+            },
+            {
+              "text": "The toothpaste may taste minty or fruity.",
+              "kind": "describe"
+            },
+            {
+              "text": "It may feel a little gritty on my teeth.",
+              "kind": "describe"
+            },
+            {
+              "text": "The brush makes a buzzing sound while it cleans.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the dentist sprays a little cool water in my mouth.",
+              "kind": "describe"
+            },
+            {
+              "text": "A small straw sucks the water out.",
+              "kind": "describe"
+            },
+            {
+              "text": "The straw makes a slurping sound.",
+              "kind": "describe"
+            },
+            {
+              "text": "When the cleaning is done, I can sit up.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[GROWNUP]] and I go home.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "dentist",
+          "addresses": [
+            "unknown",
+            "sensory",
+            "body"
+          ]
         }
       ],
       "who_is_there": [
@@ -771,6 +1377,59 @@
             {
               "text": "I can say hello or wave.",
               "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "dentist",
+          "addresses": [
+            "strangers"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "The dentist and the assistant may wear special clothes.",
+              "kind": "describe"
+            },
+            {
+              "text": "They may wear masks over their mouth and nose.",
+              "kind": "describe"
+            },
+            {
+              "text": "They wear gloves on their hands.",
+              "kind": "describe"
+            },
+            {
+              "text": "They may wear glasses to protect their eyes.",
+              "kind": "describe"
+            },
+            {
+              "text": "This is how dentists keep everything clean.",
+              "kind": "describe"
+            },
+            {
+              "text": "The dentist may tell me their name.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say hello, or I can wave.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay if I feel shy.",
+              "kind": "describe"
+            },
+            {
+              "text": "The helpers have seen many shy children before.",
+              "kind": "describe"
+            },
+            {
+              "text": "They talk in kind, calm voices.",
+              "kind": "describe"
+            },
+            {
+              "text": "They tell me what they will do before they do it.",
+              "kind": "describe"
             }
           ],
           "mood": "calm",
@@ -812,6 +1471,61 @@
             "strangers",
             "separation"
           ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "The dentist may tell me what will happen before it happens.",
+              "kind": "describe"
+            },
+            {
+              "text": "The dentist may show me a tool first.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the dentist may let me touch it.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, the dentist uses it on my teeth.",
+              "kind": "describe"
+            },
+            {
+              "text": "This is called tell, show, do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] stays in the room with me.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] can sit close to the big chair.",
+              "kind": "describe"
+            },
+            {
+              "text": "If I want to, I can ask a question.",
+              "kind": "coach"
+            },
+            {
+              "text": "The dentist will answer my question.",
+              "kind": "describe"
+            },
+            {
+              "text": "The dentist and the helpers want my teeth to be healthy.",
+              "kind": "describe"
+            },
+            {
+              "text": "When the visit is over, they may say goodbye and smile at me.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "dentist",
+          "addresses": [
+            "strangers",
+            "separation",
+            "unknown"
+          ]
         }
       ],
       "what_i_do": [
@@ -847,6 +1561,52 @@
         {
           "sentences": [
             {
+              "text": "The dentist uses some small tools.",
+              "kind": "describe"
+            },
+            {
+              "text": "One tool is a tiny mirror on a stick.",
+              "kind": "describe"
+            },
+            {
+              "text": "The mirror helps the dentist see the back of my teeth.",
+              "kind": "describe"
+            },
+            {
+              "text": "Another tool is a small brush that spins and buzzes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Water goes into my mouth, and a straw takes it out.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can try to keep my tongue still and my mouth open.",
+              "kind": "coach"
+            },
+            {
+              "text": "Sometimes the dentist says close, and I close my mouth.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes the dentist says open, and I open it again.",
+              "kind": "describe"
+            },
+            {
+              "text": "My job is to listen and try my best.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "dentist",
+          "addresses": [
+            "body",
+            "sensory"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Sometimes my mouth gets tired.",
               "kind": "describe"
             },
@@ -872,6 +1632,56 @@
           "addresses": [
             "safety",
             "body"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "While my mouth is open, I can count in my head.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can count to ten, and then start again.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can also look at the ceiling or at [[GROWNUP]].",
+              "kind": "describe"
+            },
+            {
+              "text": "If the light is too bright, I can ask for sunglasses.",
+              "kind": "coach"
+            },
+            {
+              "text": "The sunglasses make the light softer.",
+              "kind": "describe"
+            },
+            {
+              "text": "When the dentist is finished, I can close my mouth and rest.",
+              "kind": "describe"
+            },
+            {
+              "text": "The dentist may say, all done.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I can sit up slowly.",
+              "kind": "describe"
+            },
+            {
+              "text": "I did my jobs, and my teeth are clean.",
+              "kind": "describe"
+            },
+            {
+              "text": "If I need a break, I can raise my hand, and the dentist will stop.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "dentist",
+          "addresses": [
+            "body",
+            "safety"
           ]
         }
       ],
@@ -908,6 +1718,68 @@
         {
           "sentences": [
             {
+              "text": "Some sounds at the dentist are loud.",
+              "kind": "describe"
+            },
+            {
+              "text": "The brush buzzes, and the straw slurps.",
+              "kind": "describe"
+            },
+            {
+              "text": "These sounds are normal, and they help clean my teeth.",
+              "kind": "describe"
+            },
+            {
+              "text": "If a sound feels too loud, I can tell the dentist.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some things may feel strange in my mouth.",
+              "kind": "describe"
+            },
+            {
+              "text": "They may tickle, or they may press.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes there is a little pinch.",
+              "kind": "describe"
+            },
+            {
+              "text": "The feeling is short.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can tell [[GROWNUP]] or the dentist how I feel.",
+              "kind": "coach"
+            },
+            {
+              "text": "Telling a grown-up how I feel is a good thing to do.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can breathe in slowly through my nose and out through my mouth.",
+              "kind": "coach"
+            },
+            {
+              "text": "Breathing slowly can help my body feel calmer.",
+              "kind": "describe"
+            },
+            {
+              "text": "The dentist works carefully and gently.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "dentist",
+          "addresses": [
+            "pain",
+            "sensory"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "The light is bright, and the brush makes a buzzing sound.",
               "kind": "describe"
             },
@@ -933,6 +1805,57 @@
           "addresses": [
             "sensory",
             "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "If I need a break, I raise my hand.",
+              "kind": "describe"
+            },
+            {
+              "text": "The dentist will stop and check on me.",
+              "kind": "describe"
+            },
+            {
+              "text": "When I am ready, the dentist starts again.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can hold my toy in my hand.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[GROWNUP]] can hold my hand or my foot.",
+              "kind": "describe"
+            },
+            {
+              "text": "Many children feel nervous at the dentist.",
+              "kind": "describe"
+            },
+            {
+              "text": "Feeling nervous is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me whether I feel brave or scared.",
+              "kind": "describe"
+            },
+            {
+              "text": "Soon the visit is over, and I go home.",
+              "kind": "describe"
+            },
+            {
+              "text": "At home, I can rest, play and have a hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "dentist",
+          "addresses": [
+            "separation",
+            "safety",
+            "love"
           ]
         }
       ],
@@ -970,6 +1893,60 @@
         {
           "sentences": [
             {
+              "text": "Before the visit, I can practise at home.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can look in a mirror and open my mouth wide.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can count my teeth with [[GROWNUP]].",
+              "kind": "describe"
+            },
+            {
+              "text": "I can lie back on a pillow like the big chair.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] can shine a small light, and I can wear sunglasses.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can practise raising my hand to say stop.",
+              "kind": "coach"
+            },
+            {
+              "text": "Then [[GROWNUP]] stops right away.",
+              "kind": "describe"
+            },
+            {
+              "text": "Practising helps me know what will happen.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can practise as many times as I like.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can also be the dentist and check the teeth of my toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "My toy can sit back, open wide and raise a paw to say stop.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "body"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Here are the steps.",
               "kind": "describe"
             },
@@ -998,6 +1975,60 @@
           "background": "cosy-room",
           "addresses": [
             "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Here is my plan for the dentist.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, I go in with [[GROWNUP]] and say hello at the front desk.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I wait in the waiting room.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, I sit in the big chair and open wide.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, the dentist counts and cleans my teeth.",
+              "kind": "describe"
+            },
+            {
+              "text": "If I need a break, I raise my hand.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the end, I pick a sticker.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then we go home.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for practising.",
+              "kind": "describe"
+            },
+            {
+              "text": "I know the steps, and I know how to ask for a break.",
+              "kind": "describe"
+            },
+            {
+              "text": "Going to the dentist is something many children do.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "cosy-room",
+          "addresses": [
+            "unknown",
+            "love"
           ]
         }
       ]

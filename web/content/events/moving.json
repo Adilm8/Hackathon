@@ -1,6 +1,6 @@
 {
   "type": "moving",
-  "version": 1,
+  "version": 2,
   "label": "Moving house",
   "countdownLabel": "moving day",
   "beats": {
@@ -401,6 +401,60 @@
         {
           "sentences": [
             {
+              "text": "Before bed, [[GROWNUP]] tells [[CHILD]] an old seaside story.",
+              "kind": "describe"
+            },
+            {
+              "text": "A hermit crab lives inside a shell, and the shell is its home.",
+              "kind": "describe"
+            },
+            {
+              "text": "The little crab grew, and one day its shell felt small.",
+              "kind": "describe"
+            },
+            {
+              "text": "So the crab family said, it is time to find a new home.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, the little crab picked up its favourite pebble and some seaweed.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the family walked along the sand together, step by step.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, they found a new shell, a bit bigger and a bit different.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, the little crab moved in.",
+              "kind": "describe"
+            },
+            {
+              "text": "The shell was new, but the crab was the same crab, with the same family.",
+              "kind": "describe"
+            },
+            {
+              "text": "Moving to a new home is a bit like that.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "unknown",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "On moving day, a big truck comes.",
               "kind": "describe"
             },
@@ -425,6 +479,61 @@
           "background": "outside",
           "addresses": [
             "unknown",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Here is the moving plan, step by step.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, everything gets packed into brown boxes, zzzip goes the tape.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[CHILD]] packs a special box and draws on it.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, the family says goodbye to each room of the old home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Empty rooms may make echoes when someone talks.",
+              "kind": "describe"
+            },
+            {
+              "text": "On moving day, a big truck comes, with a loud ramp.",
+              "kind": "describe"
+            },
+            {
+              "text": "Movers carry the boxes and the beds onto the truck.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, the family drives to the new home together.",
+              "kind": "describe"
+            },
+            {
+              "text": "The special box opens first, and [[CHILD]] sets up the new room.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last of all, [[CHILD]] sleeps the first night in the same bed, in a new room.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can count the steps on fingers: boxes, goodbye, truck, drive, special box, bed.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "outside",
+          "addresses": [
+            "unknown",
+            "sensory",
             "separation"
           ]
         }
@@ -462,6 +571,56 @@
         {
           "sentences": [
             {
+              "text": "In the old story, the new beach had new neighbours.",
+              "kind": "describe"
+            },
+            {
+              "text": "There was a slow old turtle, a busy family of sand crabs and a friendly starfish.",
+              "kind": "describe"
+            },
+            {
+              "text": "The neighbours said hello to the little hermit crab.",
+              "kind": "describe"
+            },
+            {
+              "text": "The little crab felt shy and stayed inside its shell for a while.",
+              "kind": "describe"
+            },
+            {
+              "text": "It peeked out, and then it hid again.",
+              "kind": "describe"
+            },
+            {
+              "text": "That was okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "The next day, the little crab peeked out a bit longer.",
+              "kind": "describe"
+            },
+            {
+              "text": "A sand crab waved one claw and said, do you want to play?",
+              "kind": "describe"
+            },
+            {
+              "text": "It can take time to know new neighbours and to find friends.",
+              "kind": "describe"
+            },
+            {
+              "text": "Little by little, the new beach began to feel known.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "strangers",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "[[GROWNUP]] tells [[CHILD]] where [[CHILD]] will be on moving day, and who is with [[CHILD]].",
               "kind": "describe"
             },
@@ -483,6 +642,57 @@
           "addresses": [
             "separation",
             "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "On moving day there are movers.",
+              "kind": "describe"
+            },
+            {
+              "text": "Movers are strong helpers.",
+              "kind": "describe"
+            },
+            {
+              "text": "Their job is to carry heavy boxes and furniture onto the truck.",
+              "kind": "describe"
+            },
+            {
+              "text": "They are careful with every box, even the special one.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say hello and watch them walk up the ramp.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[GROWNUP]] tells [[CHILD]] where [[CHILD]] will be on moving day, and who is with [[CHILD]].",
+              "kind": "describe"
+            },
+            {
+              "text": "The family stays together, and by bedtime everyone is in the new home.",
+              "kind": "describe"
+            },
+            {
+              "text": "The bed and the blanket come too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Near the new home there may be neighbours, and maybe a park.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "outside",
+          "addresses": [
+            "strangers",
+            "separation",
+            "safety"
           ]
         }
       ],
@@ -520,6 +730,52 @@
         {
           "sentences": [
             {
+              "text": "In the old story, the little crab had a job in the new shell.",
+              "kind": "describe"
+            },
+            {
+              "text": "It could choose where to put its favourite pebble.",
+              "kind": "describe"
+            },
+            {
+              "text": "First it tried the pebble by the door.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then it tried it in the back.",
+              "kind": "describe"
+            },
+            {
+              "text": "At last, it put the pebble right next to its bed of soft seaweed.",
+              "kind": "describe"
+            },
+            {
+              "text": "It decided, this is my corner.",
+              "kind": "describe"
+            },
+            {
+              "text": "The little crab also said goodbye to the old shell before leaving.",
+              "kind": "describe"
+            },
+            {
+              "text": "Goodbye, old shell, thank you for being my home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Saying goodbye helped the little crab feel ready, and choosing helped the new shell feel like its own.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Before moving day, [[CHILD]] says goodbye to the old room.",
               "kind": "describe"
             },
@@ -545,6 +801,53 @@
           "addresses": [
             "love",
             "body"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "[[CHILD]] has important moving jobs too.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can choose what goes into the special box: a favourite toy, a book, a night light.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can draw on the box so everyone knows it is special.",
+              "kind": "coach"
+            },
+            {
+              "text": "The special box rides in the car with the family, and it opens first.",
+              "kind": "describe"
+            },
+            {
+              "text": "Before moving day, [[CHILD]] can say goodbye to each room.",
+              "kind": "describe"
+            },
+            {
+              "text": "Goodbye, window, goodbye, door.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can take photos to remember the old home.",
+              "kind": "coach"
+            },
+            {
+              "text": "In the new home, [[CHILD]] decides where some things go in [[CHILD]]'s own room.",
+              "kind": "describe"
+            },
+            {
+              "text": "Choosing helps the new room feel like [[CHILD]]'s own.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "unknown",
+            "love"
           ]
         }
       ],
@@ -581,6 +884,53 @@
         {
           "sentences": [
             {
+              "text": "On the first night in the new shell, the little crab heard new sounds.",
+              "kind": "describe"
+            },
+            {
+              "text": "The waves sounded different, and the wind whistled in a new way.",
+              "kind": "describe"
+            },
+            {
+              "text": "The little crab missed the old shell.",
+              "kind": "describe"
+            },
+            {
+              "text": "It felt happy about the new shell and sad about the old one, both at the same time.",
+              "kind": "describe"
+            },
+            {
+              "text": "So the little crab held its favourite pebble.",
+              "kind": "describe"
+            },
+            {
+              "text": "It snuggled into its soft seaweed bed.",
+              "kind": "describe"
+            },
+            {
+              "text": "Its grown-up crab said, I miss the old shell too, and gave a big hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "After a few nights, the new sounds felt less new.",
+              "kind": "describe"
+            },
+            {
+              "text": "The little crab felt safe and cosy again.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "sensory",
+            "love",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Sometimes [[CHILD]] might miss the old home.",
               "kind": "describe"
             },
@@ -604,6 +954,57 @@
           "mood": "brave",
           "background": "cosy-room",
           "addresses": [
+            "love",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "When things are packed, the old home can look strange.",
+              "kind": "describe"
+            },
+            {
+              "text": "The new home may have new smells and new sounds at night, like pipes or cars.",
+              "kind": "describe"
+            },
+            {
+              "text": "It can feel strange at first, and that is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes [[CHILD]] might miss the old home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Happy and sad can come at the same time.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] may miss the old home too.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can hug the blanket and take slow breaths.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can ask for a night light in the new room.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]]'s bed, blanket and bedtime story all come along.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bedtime stays the same in the new home.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "sensory",
             "love",
             "safety"
           ]
@@ -642,6 +1043,56 @@
         {
           "sentences": [
             {
+              "text": "Tonight it is time to play the hermit crab move.",
+              "kind": "describe"
+            },
+            {
+              "text": "A cardboard box can be the old shell, and another box can be the new shell.",
+              "kind": "describe"
+            },
+            {
+              "text": "A toy can be the little crab.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, [[CHILD]] packs the toy's favourite things into a small box, zzzip goes pretend tape.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the toy says goodbye to the old shell.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, [[CHILD]] carries the box like a strong mover to the new shell.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, [[CHILD]] helps the toy choose where its things go.",
+              "kind": "describe"
+            },
+            {
+              "text": "Where should the pebble live now?",
+              "kind": "coach"
+            },
+            {
+              "text": "Last, the toy snuggles down for the first night.",
+              "kind": "describe"
+            },
+            {
+              "text": "Playing it at home makes the real move feel more familiar.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "sensory"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Let's say the moving steps once more.",
               "kind": "coach"
             },
@@ -671,6 +1122,53 @@
           "addresses": [
             "unknown",
             "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Now [[CHILD]] knows the whole story.",
+              "kind": "describe"
+            },
+            {
+              "text": "The little crab moved to a bigger shell, and it was still the same crab, with the same family.",
+              "kind": "describe"
+            },
+            {
+              "text": "Soon [[CHILD]]'s family will move, step by step.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, pack the boxes and the special box.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then say goodbye to the old rooms.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, the truck and the drive.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, the special box opens, and the first night in the new home.",
+              "kind": "describe"
+            },
+            {
+              "text": "The family stays together.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of [[CHILD]] and loves [[CHILD]] in every home.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "cosy-room",
+          "addresses": [
+            "unknown",
+            "love",
+            "separation"
           ]
         }
       ]
@@ -713,6 +1211,63 @@
         {
           "sentences": [
             {
+              "text": "Before we move, my family packs our things.",
+              "kind": "describe"
+            },
+            {
+              "text": "We put our things into boxes.",
+              "kind": "describe"
+            },
+            {
+              "text": "The boxes are brown and made of cardboard.",
+              "kind": "describe"
+            },
+            {
+              "text": "We close the boxes with tape.",
+              "kind": "describe"
+            },
+            {
+              "text": "The tape makes a zzzip sound.",
+              "kind": "describe"
+            },
+            {
+              "text": "We write on the boxes so we know what is inside.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some rooms may look empty when the boxes are packed.",
+              "kind": "describe"
+            },
+            {
+              "text": "My bed stays until moving day.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can help pack some of my toys.",
+              "kind": "coach"
+            },
+            {
+              "text": "Packing can take many days.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then it is moving day.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] tells me the day before.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Next, a truck takes our boxes.",
               "kind": "describe"
             },
@@ -742,6 +1297,61 @@
           "addresses": [
             "unknown",
             "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "On moving day, a big truck comes to our home.",
+              "kind": "describe"
+            },
+            {
+              "text": "The truck has a ramp.",
+              "kind": "describe"
+            },
+            {
+              "text": "Helpers carry the boxes and the furniture onto the truck.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the truck drives to our new home.",
+              "kind": "describe"
+            },
+            {
+              "text": "My family drives to the new home too.",
+              "kind": "describe"
+            },
+            {
+              "text": "We go together.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the new home, the helpers carry the boxes inside.",
+              "kind": "describe"
+            },
+            {
+              "text": "My family opens the boxes.",
+              "kind": "describe"
+            },
+            {
+              "text": "We put our things in the new rooms.",
+              "kind": "describe"
+            },
+            {
+              "text": "My bed goes into my new room.",
+              "kind": "describe"
+            },
+            {
+              "text": "On the first night, I sleep in my own bed in the new home.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "unknown",
+            "separation",
+            "safety"
           ]
         }
       ],
@@ -782,6 +1392,59 @@
         {
           "sentences": [
             {
+              "text": "On moving day, there are movers.",
+              "kind": "describe"
+            },
+            {
+              "text": "Movers are helpers who carry heavy things.",
+              "kind": "describe"
+            },
+            {
+              "text": "They carry boxes, beds, tables and chairs.",
+              "kind": "describe"
+            },
+            {
+              "text": "They are strong and careful.",
+              "kind": "describe"
+            },
+            {
+              "text": "They work as a team.",
+              "kind": "describe"
+            },
+            {
+              "text": "The movers may wear gloves.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say hello to the movers, or I can wave.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay if I feel shy.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can watch them from a safe spot.",
+              "kind": "describe"
+            },
+            {
+              "text": "I do not need to carry heavy things.",
+              "kind": "describe"
+            },
+            {
+              "text": "When the truck is empty, the movers go home.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "strangers"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "[[GROWNUP]] will tell me where I will be on moving day.",
               "kind": "describe"
             },
@@ -803,6 +1466,64 @@
             },
             {
               "text": "Making new friends can take time.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "separation",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "[[GROWNUP]] tells me where I will be on moving day.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] tells me who will be with me.",
+              "kind": "describe"
+            },
+            {
+              "text": "My family stays together.",
+              "kind": "describe"
+            },
+            {
+              "text": "At bedtime, my family is in the new home with me.",
+              "kind": "describe"
+            },
+            {
+              "text": "Near the new home, there may be neighbours.",
+              "kind": "describe"
+            },
+            {
+              "text": "Neighbours are people who live close by.",
+              "kind": "describe"
+            },
+            {
+              "text": "There may be a park near the new home.",
+              "kind": "describe"
+            },
+            {
+              "text": "There may be other kids at the park.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can wave hello to someone new.",
+              "kind": "coach"
+            },
+            {
+              "text": "It can take some time to make new friends.",
+              "kind": "describe"
+            },
+            {
+              "text": "That is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "The new home is a new place, and my family is the same family.",
               "kind": "describe"
             }
           ],
@@ -852,6 +1573,56 @@
         {
           "sentences": [
             {
+              "text": "I can pack my own special box.",
+              "kind": "describe"
+            },
+            {
+              "text": "I choose what goes inside.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can put my favourite toy, a book and my night light in the box.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can draw on my special box.",
+              "kind": "describe"
+            },
+            {
+              "text": "My special box rides in the car with my family.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the new home, my special box opens first.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can help decide where my things go in my new room.",
+              "kind": "coach"
+            },
+            {
+              "text": "My toys can go on a shelf or in a basket.",
+              "kind": "describe"
+            },
+            {
+              "text": "My pictures can go on the wall.",
+              "kind": "describe"
+            },
+            {
+              "text": "Choosing helps the new room feel like my own room.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Before we move, I say goodbye to my old room.",
               "kind": "describe"
             },
@@ -873,6 +1644,60 @@
             },
             {
               "text": "My new room will be my own room.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "love",
+            "body"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Before we leave, I can say goodbye to the old home.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can walk into each room and say goodbye.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take photos to remember the old home.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say goodbye to my friends and neighbours.",
+              "kind": "describe"
+            },
+            {
+              "text": "Saying goodbye can feel sad.",
+              "kind": "describe"
+            },
+            {
+              "text": "Saying goodbye can also help me feel ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can make a photo book of my old home and my new home.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can look at the photo book when I want to remember.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some things change when we move.",
+              "kind": "describe"
+            },
+            {
+              "text": "My family, my toys, my bed and my bedtime stay the same.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can choose one special thing to keep in my own hands on moving day.",
               "kind": "describe"
             }
           ],
@@ -921,6 +1746,59 @@
         {
           "sentences": [
             {
+              "text": "The old home may sound different when it is empty.",
+              "kind": "describe"
+            },
+            {
+              "text": "Empty rooms can make an echo.",
+              "kind": "describe"
+            },
+            {
+              "text": "An echo is when my voice comes back to me.",
+              "kind": "describe"
+            },
+            {
+              "text": "The new home may have new smells.",
+              "kind": "describe"
+            },
+            {
+              "text": "The new home may have new sounds at night.",
+              "kind": "describe"
+            },
+            {
+              "text": "The sounds may be pipes, cars or neighbours.",
+              "kind": "describe"
+            },
+            {
+              "text": "These sounds are normal.",
+              "kind": "describe"
+            },
+            {
+              "text": "After some nights, the new sounds start to feel normal too.",
+              "kind": "describe"
+            },
+            {
+              "text": "If a sound worries me, I can tell [[GROWNUP]].",
+              "kind": "coach"
+            },
+            {
+              "text": "[[GROWNUP]] can tell me what the sound is.",
+              "kind": "describe"
+            },
+            {
+              "text": "Knowing what the sound is can help.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "sensory"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Sometimes I may miss my old home.",
               "kind": "describe"
             },
@@ -942,6 +1820,60 @@
             },
             {
               "text": "[[GROWNUP]] can give me a hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "love",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Sometimes I may miss the old home.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel happy and sad at the same time.",
+              "kind": "describe"
+            },
+            {
+              "text": "Missing my old home is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] may miss the old home too.",
+              "kind": "describe"
+            },
+            {
+              "text": "We can talk about it together.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can hug my blanket and take slow breaths.",
+              "kind": "coach"
+            },
+            {
+              "text": "My bed and my blanket come with me to the new home.",
+              "kind": "describe"
+            },
+            {
+              "text": "My bedtime story comes with me too.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can have a night light in my new room.",
+              "kind": "describe"
+            },
+            {
+              "text": "Feelings about moving can last for some weeks.",
+              "kind": "describe"
+            },
+            {
+              "text": "That is okay.",
               "kind": "describe"
             }
           ],
@@ -990,6 +1922,55 @@
         {
           "sentences": [
             {
+              "text": "Before moving day, I can practise at home.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can pack a small box with my toys.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can close it with tape: zzzip.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can carry the box to another room.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I can open the box.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can find a new place for each toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can practise choosing where my things go.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can look at pictures of the new home with [[GROWNUP]].",
+              "kind": "describe"
+            },
+            {
+              "text": "We can talk about what my new room will look like.",
+              "kind": "describe"
+            },
+            {
+              "text": "Practising helps me know what will happen.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Here are the steps of moving.",
               "kind": "describe"
             },
@@ -1018,6 +1999,60 @@
           "background": "cosy-room",
           "addresses": [
             "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Here is my plan for moving.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, we pack the boxes, and I pack my special box.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I say goodbye to the rooms of the old home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, the movers put the boxes on the truck.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, my family drives to the new home together.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I open my special box first.",
+              "kind": "describe"
+            },
+            {
+              "text": "I help set up my new room.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, I sleep in my own bed in the new home.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for practising.",
+              "kind": "describe"
+            },
+            {
+              "text": "Many families move, and my family is moving too.",
+              "kind": "describe"
+            },
+            {
+              "text": "I know the steps.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "cosy-room",
+          "addresses": [
+            "unknown",
+            "love"
           ]
         }
       ]

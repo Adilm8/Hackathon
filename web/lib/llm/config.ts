@@ -32,11 +32,11 @@ export const BREAKER = { failures: 2, windowMs: 60_000, openMs: 120_000 } as con
 
 /** Rough prompt sizes used by the evaluation estimate (8.7): tokens per call. */
 export const TOKENS_ESTIMATE = {
-  chapter: { input: 2_400, output: 900 },
+  chapter: { input: 2_400, output: 1_500 },
   answer: { input: 1_900, output: 150 },
   rewrite: { input: 1_900, output: 250 },
   ritual: { input: 1_500, output: 120 },
-  eval: { input: 2_400, output: 900 },
+  eval: { input: 2_400, output: 1_500 },
 } as const;
 
 /**
