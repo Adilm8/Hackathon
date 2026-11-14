@@ -61,20 +61,22 @@ export function Onboarding() {
   const [known, setKnown] = useState<SavedProfile[]>(() => knownChildren(existing));
   // With only this workspace's child known, "Plan another big day" goes straight to the event.
   const quick = again && !!existing && known.length === 1;
+  // "Make a story for Leo" on the home page's Child section names a saved child.
+  const preset = known.find((k) => k.childId === search.get('child')) ?? (quick ? known[0] : undefined);
   // Fixed for this visit: accepting the gate must not shift the step list under the user.
   const [base] = useState<StepId[]>(() => {
     const all: StepId[] = ['gate', 'who', 'name', 'age', 'event', 'date', 'fears', 'character', 'values'];
     return all.filter((s) => !(s === 'gate' && gateOn) && !(s === 'who' && (known.length === 0 || quick)));
   });
   // Steps already answered by a saved child are left out ("Change" brings them back).
-  const [skip, setSkip] = useState<StepId[]>(() => (quick ? CHILD_STEPS : []));
+  const [skip, setSkip] = useState<StepId[]>(() => (preset ? CHILD_STEPS : []));
   const steps = base.filter((s) => !skip.includes(s));
-  const [step, setStep] = useState<StepId>(() => steps[0]);
+  const [step, setStep] = useState<StepId>(() => (preset && steps[0] === 'who' ? steps[1] : steps[0]));
   const i = Math.max(0, steps.indexOf(step));
-  const [pickedId, setPickedId] = useState<string | null>(() => (quick ? existing!.id : null));
+  const [pickedId, setPickedId] = useState<string | null>(() => preset?.childId ?? null);
 
   const [d, setD] = useState<Draft>(() => ({
-    ...childFields(quick ? known[0] : undefined),
+    ...childFields(preset),
     type: suggestedType, customLabel: '', date: '', fears: [], customFear: '',
     photos: [],
   }));
