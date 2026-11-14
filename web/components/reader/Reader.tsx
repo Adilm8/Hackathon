@@ -18,7 +18,12 @@ import { useSettings } from '@/lib/store/settings';
 import { isChapterOpen, questionButtonsForPage, questionsInChapter, renderText, updatedChipText } from '@/lib/store/engine';
 import { cleanText, isBlank, LIMITS, precheck } from '@/lib/safety/filters';
 import { askQuestion, generateChapter } from '@/lib/store/story';
+import { PagePhotos } from '@/components/photos/PagePhotos';
+import { isOn } from '@/lib/flags';
+import { getRecording, deleteRecording, recordingKey } from '@/lib/speech/recordings';
+import { getWorkspace } from '@/lib/store/workspace';
 import { ListenButton } from './ListenButton';
+import { RecordButton } from './RecordButton';
 import { PageView } from './PageView';
 import { ParentCheck } from './ParentCheck';
 import { QuestionBar } from './QuestionBar';
@@ -32,6 +37,7 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
   const st = useEvents.getState();
   const textSize = useSettings((s) => s.textSize);
   const nightMode = useSettings((s) => s.nightMode);
+  const voiceConsent = useSettings((s) => s.voiceQuestionConsentOn);
   const setTextSize = useSettings((s) => s.setTextSize);
   const [live, setLive] = useState<Page[] | null>(null);
   const [pageIdx, setPageIdx] = useState(0);
@@ -39,6 +45,8 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
   const [busy, setBusy] = useState(false);
   const [active, setActive] = useState<number | null>(null);
   const started = useRef(false);
+  const [recs, setRecs] = useState<{ key: string; has: boolean }>({ key: '', has: false });
+  const [recTick, setRecTick] = useState(0);
 
   const chapter = ctx?.event.chapters.find((c) => c.index === index);
   const allowed = ctx && chapter ? isChapterOpen(chapter, ctx.event, ctx.today, ctx.hasAccess) : false;
@@ -66,6 +74,13 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
   const night = nightMode === 'on' || (nightMode === 'auto' && (clock.hour() >= 19 || clock.hour() < 6));
   const render = useMemo(() => (t: string) => renderText(t, ctx?.child ?? null), [ctx?.child]);
   const touchX = useRef<number | null>(null);
+  const recKey = page ? recordingKey(getWorkspace(), eventId, index, page.id) : '';
+  useEffect(() => {
+    if (!isOn('parentVoice') || !recKey) return;
+    let live = true;
+    getRecording(recKey).then((b) => live && setRecs({ key: recKey, has: !!b })).catch(() => {});
+    return () => { live = false; };
+  }, [recKey, recTick]);
 
   if (!ctx) return <PlanNotFound />;
   if (!chapter || !allowed) return <Skeleton className="h-96" />;
@@ -111,6 +126,8 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
     st.insertAnswer(eventId, index, { questionId: q.id, afterPageId: page.id, sentences: res.answer, background: page.background, source: res.source });
     if (res.category === 'on_topic' && res.nextPage && nextStory && child.styleMode === 'story') {
       st.rewritePage(eventId, index, nextStory.id, res.nextPage, q.id, res.source);
+      // A page rewritten after a question loses its recording (SPEC 11.6).
+      void deleteRecording(recordingKey(getWorkspace(), eventId, index, nextStory.id)).catch(() => {});
     }
     setPageIdx(pageIdx + 1);
   };
@@ -164,18 +181,25 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
         }}
       >
         <PageView page={page} character={child.character} render={render} textSize={textSize} night={night} active={active} updatedText={updatedText} />
+        {isOn('placePhotos') && page.kind === 'story' && storyPages[0] === page && chapter.beats.includes('what_happens') && event.photos.length > 0 && (
+          <PagePhotos photos={event.photos} />
+        )}
         <div className="flex items-center gap-2">
           <Button variant="secondary" onClick={prev} disabled={pageIdx === 0} aria-label="Previous page">
             <Icon name="arrow-right" size={20} className="rotate-180" />
           </Button>
-          <ListenButton key={page.id} sentences={page.sentences.map((s) => renderText(s.text, child, { speak: true, pronunciation: child.pronunciation }))} onSentence={setActive} />
+          <ListenButton key={page.id} sentences={page.sentences.map((s) => renderText(s.text, child, { speak: true, pronunciation: child.pronunciation }))} onSentence={setActive}
+            recordingKey={isOn('parentVoice') ? recKey : undefined} hasRecording={recs.key === recKey && recs.has} voiceName={child.values.family[0]} />
           <Button className="flex-1" onClick={next}>
             {isLast ? 'Finish' : page.kind === 'answer' ? 'Back to story' : 'Next'}
           </Button>
         </div>
+        {isOn('parentVoice') && (
+          <RecordButton recKey={recKey} has={recs.key === recKey && recs.has} onChange={() => setRecTick((n) => n + 1)} />
+        )}
         <Dots count={pages.length} current={pageIdx} />
         {page.kind === 'story' && (
-          <QuestionBar buttons={questionButtonsForPage(template, storyPages.indexOf(page) + 1).map((b) => ({ id: b.id, text: render(b.text) }))} asked={asked} busy={busy} childName={child.name} onAsk={ask} />
+          <QuestionBar buttons={questionButtonsForPage(template, storyPages.indexOf(page) + 1).map((b) => ({ id: b.id, text: render(b.text) }))} asked={asked} busy={busy} childName={child.name} onAsk={ask} voice={isOn('voiceQuestion') && !!voiceConsent} />
         )}
         {busy && <p role="status" className="text-sm font-bold text-ink-soft">Thinking about {child.name}&apos;s question…</p>}
       </div>

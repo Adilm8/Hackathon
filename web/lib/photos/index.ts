@@ -53,6 +53,10 @@ export async function resizePhoto(file: Blob): Promise<Blob> {
   }
 }
 
+export async function putPhoto(key: string, blob: Blob): Promise<void> {
+  await set(key, blob, photoStore());
+}
+
 /** Resizes and stores a picked file; returns the PlacePhoto to put into the event, or null when the event is full. */
 export async function addPhoto(
   file: Blob, caption: string, ws: Workspace, eventId: string, existing: readonly PlacePhoto[],

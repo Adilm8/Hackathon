@@ -11,6 +11,8 @@ import { Field, TextInput } from '@/components/ui/Field';
 import { GuideBubble } from '@/components/ui/GuideBubble';
 import { ProgressBar } from '@/components/ui/ProgressBar';
 import { Toggle } from '@/components/ui/Toggle';
+import { PhotoPicker, type DraftPhoto } from '@/components/photos/PhotoPicker';
+import { photoKey, putPhoto } from '@/lib/photos';
 import { addDays, clock, dateLabel, diffDays } from '@/lib/engine/clock';
 import type { Character as CharacterT, ChildProfile, EventType, Pronoun, Topic, ValuesProfile } from '@/lib/engine/types';
 import { isOn } from '@/lib/flags';
@@ -36,7 +38,7 @@ const GROUP: Record<StepId, 1 | 2 | 3> = { gate: 1, name: 1, age: 1, event: 2, d
 interface Draft {
   name: string; pronunciation: string; age?: number; pronoun?: Pronoun;
   type?: EventType; customLabel: string; date: string; fears: Topic[]; customFear: string;
-  character: CharacterT; values: ValuesProfile; social: boolean;
+  character: CharacterT; values: ValuesProfile; social: boolean; photos: DraftPhoto[];
 }
 
 export function Onboarding() {
@@ -62,6 +64,7 @@ export function Onboarding() {
     character: existing?.character ?? { animal: 'bunny', color: 'blue', accessory: 'cap' },
     values: existing?.values ?? { tone: 'secular', bodyWords: 'anatomical', family: [] },
     social: existing?.styleMode === 'social',
+    photos: [],
   }));
   const set = (p: Partial<Draft>) => setD((x) => ({ ...x, ...p }));
   const [touched, setTouched] = useState(false);
@@ -111,8 +114,13 @@ export function Onboarding() {
       createdOn: existing?.createdOn ?? today,
     };
     useChild.getState().setChild(child);
+    const eventId = newId();
+    const photos = isOn('placePhotos')
+      ? d.photos.slice(0, 3).map((p, n) => ({ key: photoKey(getWorkspace(), eventId, n), caption: p.caption.trim().slice(0, 60), blob: p.blob }))
+      : [];
+    photos.forEach((p) => void putPhoto(p.key, p.blob)); // device only, never uploaded
     const event = createEvent({
-      id: newId(), childId, type: d.type!, date: d.date, today, fears: d.fears,
+      id: eventId, childId, photos: photos.map(({ key, caption }) => ({ key, caption })), type: d.type!, date: d.date, today, fears: d.fears,
       customLabel: d.type === 'other' ? d.customLabel.trim() : undefined,
       customFear: d.customFear.trim() || undefined,
     });
@@ -254,6 +262,7 @@ export function Onboarding() {
             {isOn('socialStyle') && (
               <Toggle id="social" label="Social story style" hint="Literal, first person, the same text every time. Helpful for many autistic kids." checked={d.social} onChange={(social) => set({ social })} />
             )}
+            {isOn('placePhotos') && <PhotoPicker value={d.photos} onChange={(photos) => set({ photos })} />}
             <p className="text-xs text-ink-soft">All optional. You can change these later in Settings.</p>
           </div>
         )}

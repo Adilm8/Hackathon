@@ -5,10 +5,10 @@
  * The stream that finishes a feature flips its flag in the same commit.
  */
 export const flags = {
-  placePhotos: false,
-  parentVoice: false,
-  voiceQuestion: false,
-  socialStyle: false,
+  placePhotos: true,
+  parentVoice: true,
+  voiceQuestion: true,
+  socialStyle: true,
   restoreLink: true,
   monthlyPlan: true,
   exportImport: true,

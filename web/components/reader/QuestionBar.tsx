@@ -1,5 +1,6 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { BrowserListener } from '@/lib/speech/listener';
 import { Icon } from '@/components/icons';
 import { Button } from '@/components/ui/Button';
 import { TextArea } from '@/components/ui/Field';
@@ -7,13 +8,34 @@ import { Sheet } from '@/components/ui/Sheet';
 
 /** Three question buttons, "Ask your own" and the counter "2 of 3 questions tonight" (4.7, 4.8). */
 export function QuestionBar({
-  buttons, asked, limit = 3, busy, childName, onAsk,
+  buttons, asked, limit = 3, busy, childName, onAsk, voice = false,
 }: {
+  /** F18: the parent ticked the consent box in Settings. The mic shows only where recognition runs on the device. */
+  voice?: boolean;
   buttons: { id: string; text: string }[]; asked: number; limit?: number; busy: boolean; childName: string;
   onAsk: (q: { text: string; buttonId?: string }) => void;
 }) {
   const [open, setOpen] = useState(false);
   const [text, setText] = useState('');
+  const [canListen, setCanListen] = useState(false);
+  const [listening, setListening] = useState(false);
+  const [voiceError, setVoiceError] = useState(false);
+  useEffect(() => {
+    if (!voice) return;
+    let live = true;
+    new BrowserListener().available().then((v) => live && setCanListen(v));
+    return () => { live = false; };
+  }, [voice]);
+  async function listen() {
+    setVoiceError(false); setListening(true);
+    try {
+      const t = await new BrowserListener().listenOnce();
+      setText(t.slice(0, 120)); // shown for the parent to check and edit before sending
+    } catch {
+      setVoiceError(true);
+    }
+    setListening(false);
+  }
   if (asked >= limit)
     return <p className="rounded-card bg-surface-2 p-4 text-center text-base font-bold">Great questions tonight. Let&apos;s ask more tomorrow.</p>;
   return (
@@ -57,6 +79,12 @@ export function QuestionBar({
         >
           <label htmlFor="own-q" className="sr-only">Question</label>
           <TextArea id="own-q" maxLength={120} value={text} onChange={(e) => setText(e.target.value)} placeholder="Will the dentist be nice?" autoFocus />
+          {voice && canListen && (
+            <Button variant="secondary" onClick={listen} disabled={listening} className="justify-self-start">
+              <Icon name="mic" size={18} /> {listening ? 'Listening…' : 'Say it'}
+            </Button>
+          )}
+          {voiceError && <p role="alert" className="text-sm text-danger">Could not hear that. Try again or type it.</p>}
           <p className="text-right text-xs text-ink-soft">{text.length} / 120</p>
           <Button type="submit" size="l" disabled={!text.trim()}>Ask</Button>
         </form>
