@@ -49,7 +49,7 @@ export function fallbackAnswer(template: EventTemplate, buttonId?: string): Sent
 
 /** A ready phrase for the parent on this topic, or a general one. */
 export function fallbackParentPhrase(template: EventTemplate, topic: Topic): string {
-  return template.phrases[topic]?.[0] ?? Object.values(template.phrases).find((p) => p?.length)?.[0] ?? "You're brave, and I'm right here with you.";
+  return template.phrases[topic]?.[0] ?? "That's a good question. Let's think about it together.";
 }
 
 /** Technique for the day card: what helped before, else one that fits the top worries, never one to avoid. */

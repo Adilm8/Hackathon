@@ -5,12 +5,13 @@
  * pageTargets and confirmAddresses follow docs/SPEC.md 5.2 and 5.4 (A9). Stream A exports the same
  * rules from lib/engine; once both are in main these local copies become re-exports.
  */
+import { grantsEventAccess } from '../db/entitlements';
 import { getState } from '../db/state';
+import { accessFor } from '../payments/access';
 import type { EventTemplate, Page, Topic } from '../engine/types';
 
 export { getTemplate } from '../engine/templates';
 export { getSession } from '../server/session';
-export { hasEventAccess } from '../db/entitlements';
 
 /** Pages per chapter and words per page by age (5.2). */
 export function pageTargets(age: number): { pages: number; minWords: number; maxWords: number } {
@@ -55,4 +56,9 @@ export async function childNameOf(familyId: string, timeoutMs = 400): Promise<{ 
   } catch {
     return {};
   }
+}
+
+/** Paid access to one event, after the subscription refresh of the payments stream (10.4). */
+export async function hasEventAccess(familyId: string, eventId: string, now = Date.now()): Promise<boolean> {
+  return grantsEventAccess(await accessFor(familyId, now), eventId, now);
 }

@@ -49,3 +49,4 @@ next-env.d.ts
 # files written by tooling, not part of the project
 AGENTS.md
 CLAUDE.md
+/evals/out/

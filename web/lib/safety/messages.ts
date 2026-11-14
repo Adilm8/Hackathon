@@ -1,7 +1,7 @@
 /**
  * Fixed texts of the safety layer (docs/SPEC.md 8.6). Shared by the browser and the server.
  * The wording of the child-facing message comes from the ТЗ and should be reviewed by a
- * child psychologist after the hackathon. Numbers verified on 15 Nov 2026:
+ * child psychologist after the hackathon. Numbers (to be re-checked before submission, SPEC 8.6):
  * Childhelp National Child Abuse Hotline 1-800-422-4453 (childhelphotline.org),
  * 988 Suicide & Crisis Lifeline (988lifeline.org), 911 for emergencies.
  */

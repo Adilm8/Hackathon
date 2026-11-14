@@ -93,7 +93,6 @@ function stripMarkup(text: string): { text: string; hit: boolean } {
     hit = true;
     return ' ';
   });
-  // eslint-disable-next-line no-control-regex
   out = out.replace(/[\u0000-\u001f\u007f​-‏‪-‮⁦-⁩]/g, ' ');
   return { text: out, hit };
 }

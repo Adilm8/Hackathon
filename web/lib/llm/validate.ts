@@ -66,7 +66,10 @@ export function checkPage(
 export function socialRatioOk(pages: Pick<OutPage, 'sentences'>[]): boolean {
   let describe = 0;
   let coach = 0;
-  for (const p of pages) for (const s of p.sentences) s.kind === 'coach' ? coach++ : describe++;
+  for (const p of pages) for (const s of p.sentences) {
+    if (s.kind === 'coach') coach++;
+    else describe++;
+  }
   return describe >= 2 * coach;
 }
 

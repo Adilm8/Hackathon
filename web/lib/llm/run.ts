@@ -103,6 +103,8 @@ export function callStructured<S extends z.ZodType>(call: StructuredCall<S>): St
     let inputTokens = 0;
     let outputTokens = 0;
     let reportedCost: number | undefined;
+    let streamError: unknown;
+    let finishReason: string | undefined;
     let result: CallResult<T>;
     try {
       const res = streamText({
@@ -116,8 +118,12 @@ export function callStructured<S extends z.ZodType>(call: StructuredCall<S>): St
         maxOutputTokens: call.maxOutputTokens,
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         providerOptions: handle.providerOptions as any,
-        onError: () => {
-          // Errors surface through `output` below; nothing is logged with the text.
+        onError: ({ error }) => {
+          // The first provider error explains a later "no output"; nothing with text is logged.
+          streamError ??= error;
+        },
+        onEnd: (e: { finishReason?: string }) => {
+          finishReason = e.finishReason;
         },
       });
       setPartials(res.partialOutputStream);
@@ -133,13 +139,17 @@ export function callStructured<S extends z.ZodType>(call: StructuredCall<S>): St
       result = { ok: true, object: parsed.data, provider: handle.provider, model: handle.modelId };
     } catch (e) {
       setPartials(empty);
-      const reason = classify(e, call.signal);
+      const cause = streamError ?? (e instanceof Error && e.cause) ?? e;
+      const reason = finishReason === 'content-filter' ? 'blocked' : classify(cause, call.signal);
+      e = cause;
       if (reason === 'error' || reason === 'timeout') {
         recordFailure(handle.key, { retryAfterMs: retryAfterMs(e) });
       }
       if (reason === 'error') {
         const status = APICallError.isInstance(e) ? ` status=${e.statusCode}` : '';
-        console.error(`[llm] ${call.route} ${handle.provider}:${handle.modelId} failed${status}: ${e instanceof Error ? e.name : 'error'}`);
+        // Provider error messages carry no request text; cut short anyway.
+        const msg = e instanceof Error ? e.message.replace(/\s+/g, ' ').slice(0, 160) : 'error';
+        console.error(`[llm] ${call.route} ${handle.provider}:${handle.modelId} failed${status}: ${msg}`);
       }
       result = { ok: false, reason, provider: handle.provider, model: handle.modelId };
     }
