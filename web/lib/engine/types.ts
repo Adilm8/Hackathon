@@ -206,7 +206,7 @@ export interface EventTemplate {
   phrases: Partial<Record<Topic, string[]>>;        // ready phrases for the parent, 1–3 per topic
   topicWords: Partial<Record<Topic, string[]>>;     // words that prove a page covered a topic (5.4)
   backgrounds: BackgroundId[];        // scenes the LLM may choose from
-  fallbackPages: Record<StyleMode, Record<Beat, {   // 2 pages per beat and style, 40–60 words each
+  fallbackPages: Record<StyleMode, Record<Beat, {   // 4 pages per beat and style, 36–125 words each, 260+ words per beat
     sentences: Sentence[]; mood: Mood; background: BackgroundId; addresses: Topic[];
   }[]>>;
   badge: { id: string; label: string };             // "Brave Smile"

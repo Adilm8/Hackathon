@@ -80,16 +80,20 @@ describe.each(EVENT_TYPES)('template %s', (type) => {
       for (const b of BEATS) for (const p of t.fallbackPages[s][b]) expect(t.backgrounds).toContain(p.background);
   });
 
-  it('has two fallback pages of 40-60 words (±10%) per beat and style', () => {
+  it('has four fallback pages per beat and style, about 2-3 minutes read aloud together', () => {
     for (const s of STYLES)
       for (const b of BEATS) {
         const pages = t.fallbackPages[s][b];
-        expect(pages.length, `${s}/${b}`).toBe(2);
+        expect(pages.length, `${s}/${b}`).toBe(4);
+        let total = 0;
         for (const p of pages) {
           const n = countWords(sentencesToText(p.sentences));
+          total += n;
           expect(n, `${s}/${b}: ${sentencesToText(p.sentences)}`).toBeGreaterThanOrEqual(36);
-          expect(n, `${s}/${b}: ${sentencesToText(p.sentences)}`).toBeLessThanOrEqual(66);
+          expect(n, `${s}/${b}: ${sentencesToText(p.sentences)}`).toBeLessThanOrEqual(125);
         }
+        expect(total, `${s}/${b} words`).toBeGreaterThanOrEqual(260);
+        expect(total, `${s}/${b} words`).toBeLessThanOrEqual(450);
       }
   });
 

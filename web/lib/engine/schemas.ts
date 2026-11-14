@@ -234,7 +234,7 @@ export const StoryContextSchema = z.strictObject({
 // ---------- LLM output (8.5) ----------
 const SentenceOut = z.object({ text: z.string().min(2).max(220), kind: z.enum(['describe', 'coach']) });
 export const PageOut = z.object({
-  sentences: z.array(SentenceOut).min(2).max(12),
+  sentences: z.array(SentenceOut).min(2).max(16),
   mood: MoodEnum,
   background: z.string(), // checked against the template list, else replaced by the first one
   addresses: z.array(TopicEnum),
@@ -265,7 +265,7 @@ export type RitualOutT = z.infer<typeof RitualOut>;
 
 // ---------- event template (7) ----------
 const TemplatePage = z.strictObject({
-  sentences: z.array(SentenceSchema).min(1).max(12),
+  sentences: z.array(SentenceSchema).min(1).max(16),
   mood: MoodEnum,
   background: BackgroundIdSchema,
   addresses: z.array(TopicEnum),

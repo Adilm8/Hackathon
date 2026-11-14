@@ -115,7 +115,7 @@ describe('questions (5.4)', () => {
     let e = ask(withChapter1(), 'q1');
     e = insertAnswerPage(e, 1, { questionId: 'q1', afterPageId: 'c1-p1', sentences: [{ text: 'A little pinch.', kind: 'describe' }], source: 'llm' }, tpl);
     const pages = e.chapters[0].pages;
-    expect(pages.map((p) => p.kind)).toEqual(['story', 'answer', 'story']);
+    expect(pages.map((p) => p.kind)).toEqual(['story', 'answer', 'story', 'story', 'story']);
     expect(pages[1].questionId).toBe('q1');
     const next = nextStoryPage(e.chapters[0], 'c1-p1');
     expect(next?.id).toBe('c1-p2');

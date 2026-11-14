@@ -101,7 +101,7 @@ export async function* generateChapter(input: ChapterInput): AsyncGenerator<Chap
         prompt,
         mock: () => mockChapter(ctx, template),
         signal: t.signal,
-        maxOutputTokens: 2_500,
+        maxOutputTokens: 3_500,
         skipRateLimit: input.warmup,
       });
 

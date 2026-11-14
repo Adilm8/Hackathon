@@ -1,6 +1,6 @@
 {
   "type": "shot",
-  "version": 1,
+  "version": 2,
   "label": "Shot at the doctor",
   "countdownLabel": "the doctor visit",
   "beats": {
@@ -394,6 +394,68 @@
         {
           "sentences": [
             {
+              "text": "Before bed, [[GROWNUP]] tells [[CHILD]] an old, old story.",
+              "kind": "describe"
+            },
+            {
+              "text": "Once there was a big lion with a golden mane.",
+              "kind": "describe"
+            },
+            {
+              "text": "The lion was strong, but one day its paw got tangled in a long green vine.",
+              "kind": "describe"
+            },
+            {
+              "text": "The lion pulled and tugged, but the vine held on.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then a tiny grey mouse came by.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can help, squeaked the mouse.",
+              "kind": "describe"
+            },
+            {
+              "text": "The lion laughed, because the mouse was so small.",
+              "kind": "describe"
+            },
+            {
+              "text": "But the mouse had sharp little teeth.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, the mouse found the right spot on the vine.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then, nibble, nibble, it worked very fast.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, the vine snapped, and the lion was free.",
+              "kind": "describe"
+            },
+            {
+              "text": "Something small helped something big.",
+              "kind": "describe"
+            },
+            {
+              "text": "A shot is small too, and it helps a body stay strong and healthy.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "unknown",
+            "body"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Next, [[CHILD]] sits on [[GROWNUP]]'s lap in a big hug.",
               "kind": "describe"
             },
@@ -418,6 +480,61 @@
           "background": "shot",
           "addresses": [
             "unknown",
+            "pain"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Here is what happens at the doctor, step by step.",
+              "kind": "describe"
+            },
+            {
+              "text": "First comes the waiting room, where there may be toys and books.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the nurse says hello and walks with [[CHILD]] and [[GROWNUP]] to a small room.",
+              "kind": "describe"
+            },
+            {
+              "text": "The paper on the bed may crinkle, and the room may smell clean.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, [[CHILD]] sits on [[GROWNUP]]'s lap for a big hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "The nurse wipes a small spot on the arm with a cool, wet wipe.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then comes a quick poke that may sting.",
+              "kind": "describe"
+            },
+            {
+              "text": "Everyone counts to three, and the poke is over.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that comes a colourful bandage, and a hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can count the steps along with [[GROWNUP]]: room, hug, wipe, poke, bandage.",
+              "kind": "coach"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "shot",
+          "addresses": [
+            "unknown",
+            "sensory",
             "pain"
           ]
         }
@@ -455,6 +572,56 @@
         {
           "sentences": [
             {
+              "text": "In the old story, the lion was surprised by the little mouse.",
+              "kind": "describe"
+            },
+            {
+              "text": "Who are you? asked the lion.",
+              "kind": "describe"
+            },
+            {
+              "text": "I am a mouse, and helping is my job, said the mouse.",
+              "kind": "describe"
+            },
+            {
+              "text": "The mouse said hello and showed the lion where it would nibble.",
+              "kind": "describe"
+            },
+            {
+              "text": "It told the lion each step before it started.",
+              "kind": "describe"
+            },
+            {
+              "text": "The lion listened and felt a bit calmer.",
+              "kind": "describe"
+            },
+            {
+              "text": "The mouse was very careful.",
+              "kind": "describe"
+            },
+            {
+              "text": "It knew exactly what to do, because it had untangled vines many times before.",
+              "kind": "describe"
+            },
+            {
+              "text": "A helper feels less new when you know their job.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the doctor, the nurse is a helper like that.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "strangers",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "[[GROWNUP]] is with [[CHILD]] the whole time.",
               "kind": "describe"
             },
@@ -480,6 +647,56 @@
           "addresses": [
             "separation",
             "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "The nurse gives shots to many children every day.",
+              "kind": "describe"
+            },
+            {
+              "text": "The nurse knows how to be quick and careful.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes a doctor helps too.",
+              "kind": "describe"
+            },
+            {
+              "text": "The nurse may tell [[CHILD]] each step before it happens.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can ask the nurse, what happens next?",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can also ask, can I choose my bandage?",
+              "kind": "coach"
+            },
+            {
+              "text": "[[GROWNUP]] stays with [[CHILD]] the whole time.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] holds [[CHILD]] close on a warm lap.",
+              "kind": "describe"
+            },
+            {
+              "text": "When the visit is done, [[CHILD]] and [[GROWNUP]] go home together.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "strangers",
+            "separation"
           ]
         }
       ],
@@ -521,6 +738,56 @@
         {
           "sentences": [
             {
+              "text": "In the old story, the lion had a job too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Hold your paw still and soft, said the mouse.",
+              "kind": "describe"
+            },
+            {
+              "text": "So the lion let its big paw go floppy, like a sleepy cat.",
+              "kind": "describe"
+            },
+            {
+              "text": "The lion looked up at the clouds instead of at the vine.",
+              "kind": "describe"
+            },
+            {
+              "text": "It took a big breath and blew it out slowly, whoosh.",
+              "kind": "describe"
+            },
+            {
+              "text": "Nibble, nibble, went the mouse.",
+              "kind": "describe"
+            },
+            {
+              "text": "The nibble gave the paw a little pinch.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then, snap, the vine was gone.",
+              "kind": "describe"
+            },
+            {
+              "text": "The lion's arm and paw felt a bit sore for a while, and then they felt fine.",
+              "kind": "describe"
+            },
+            {
+              "text": "The lion said thank you, and the mouse said, you were brave.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "pain"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "When the nurse says ready, everyone counts to three.",
               "kind": "describe"
             },
@@ -545,6 +812,56 @@
           "background": "shot",
           "addresses": [
             "pain"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At the doctor, [[CHILD]] has jobs just like the lion.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can sit on [[GROWNUP]]'s lap in a big hug hold.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can make the arm soft and floppy, like a noodle.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can look at a toy, a book or [[GROWNUP]]'s face.",
+              "kind": "coach"
+            },
+            {
+              "text": "When everyone counts to three, [[CHILD]] can blow out slowly, like birthday candles.",
+              "kind": "coach"
+            },
+            {
+              "text": "A soft arm often feels better than a tight arm.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] holds on the whole time.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the nurse puts on a bandage.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] may get to choose the colour.",
+              "kind": "describe"
+            },
+            {
+              "text": "Each job is short, and then the shot is done.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "shot",
+          "addresses": [
+            "body",
+            "separation"
           ]
         }
       ],
@@ -582,6 +899,56 @@
         {
           "sentences": [
             {
+              "text": "In the old story, the lion felt nervous before the nibble.",
+              "kind": "describe"
+            },
+            {
+              "text": "Will it hurt? asked the lion.",
+              "kind": "describe"
+            },
+            {
+              "text": "The mouse did not say no.",
+              "kind": "describe"
+            },
+            {
+              "text": "The mouse said, it may pinch a little, and it will be quick.",
+              "kind": "describe"
+            },
+            {
+              "text": "The lion's eyes felt wet, and that was okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "Even big lions can feel worried, and even big lions can cry.",
+              "kind": "describe"
+            },
+            {
+              "text": "The lion held on to a big tree and breathed slowly.",
+              "kind": "describe"
+            },
+            {
+              "text": "The pinch came, and then it was over.",
+              "kind": "describe"
+            },
+            {
+              "text": "Afterwards the lion felt proud and free.",
+              "kind": "describe"
+            },
+            {
+              "text": "Scared and brave can happen at the same time.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "pain",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Later the arm might feel a bit sore.",
               "kind": "describe"
             },
@@ -603,6 +970,57 @@
           "addresses": [
             "pain",
             "sensory"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "A shot may hurt a little, like a quick sting or pinch.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the sting stops.",
+              "kind": "describe"
+            },
+            {
+              "text": "Afterwards the arm may feel sore for a day, and then it gets better.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel scared, and it is okay to cry.",
+              "kind": "describe"
+            },
+            {
+              "text": "If [[CHILD]] cries, [[GROWNUP]] can hold [[CHILD]] in a big hug.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can bring a favourite toy to hold.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can smell the flower and blow out the candle, slow and soft.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[GROWNUP]] can ask the nurse about ways to make the poke feel smaller.",
+              "kind": "describe"
+            },
+            {
+              "text": "Many children feel nervous about shots.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] stays with [[CHILD]] the whole time, from the first step to the last.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "shot",
+          "addresses": [
+            "pain",
+            "separation",
+            "love"
           ]
         }
       ],
@@ -640,6 +1058,56 @@
         {
           "sentences": [
             {
+              "text": "Tonight it is time to play the lion and the mouse.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can be the little mouse first.",
+              "kind": "describe"
+            },
+            {
+              "text": "A teddy can be the big lion with a pretend tangle on its arm.",
+              "kind": "describe"
+            },
+            {
+              "text": "The mouse tells the lion: make your arm floppy, like a noodle.",
+              "kind": "coach"
+            },
+            {
+              "text": "Then the mouse wipes the spot with a pretend wipe.",
+              "kind": "describe"
+            },
+            {
+              "text": "Everyone counts, one, two, three, and the mouse gives a tiny pretend nibble.",
+              "kind": "describe"
+            },
+            {
+              "text": "The lion blows out slowly, whoosh.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, teddy gets a bandage and a big hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then it is time to switch, and [[CHILD]] can be the brave lion.",
+              "kind": "describe"
+            },
+            {
+              "text": "Playing it at home makes the real visit feel familiar.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "body"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Let's say the doctor steps once more.",
               "kind": "coach"
             },
@@ -657,6 +1125,56 @@
             },
             {
               "text": "[[GROWNUP]] is proud of [[CHILD]] for practising.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "cosy-room",
+          "addresses": [
+            "unknown",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Now [[CHILD]] knows the whole story.",
+              "kind": "describe"
+            },
+            {
+              "text": "The tiny mouse helped the big lion, and the lion was brave.",
+              "kind": "describe"
+            },
+            {
+              "text": "Soon [[CHILD]] will go to the doctor, step by step.",
+              "kind": "describe"
+            },
+            {
+              "text": "First the waiting room, then the small room.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, a big hug on [[GROWNUP]]'s lap and a floppy arm.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the wipe, the count to three and a quick poke.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, a bandage and a hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "If the poke stings, [[CHILD]] can blow out slowly.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[GROWNUP]] will be right there the whole time.",
+              "kind": "describe"
+            },
+            {
+              "text": "Whatever happens, [[GROWNUP]] is proud of [[CHILD]] and loves [[CHILD]] very much.",
               "kind": "describe"
             }
           ],
@@ -703,6 +1221,59 @@
         {
           "sentences": [
             {
+              "text": "Before the shot, [[GROWNUP]] and I travel to the doctor's office.",
+              "kind": "describe"
+            },
+            {
+              "text": "We may go by car, by bus or on foot.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, we go to the front desk.",
+              "kind": "describe"
+            },
+            {
+              "text": "A helper there may ask for my name.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then we sit in the waiting room.",
+              "kind": "describe"
+            },
+            {
+              "text": "The waiting room may have chairs, books and toys.",
+              "kind": "describe"
+            },
+            {
+              "text": "Other children may be waiting too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes we wait a short time, and sometimes a longer time.",
+              "kind": "describe"
+            },
+            {
+              "text": "While I wait, I can hold my toy or look at a book.",
+              "kind": "coach"
+            },
+            {
+              "text": "Then the nurse says my name.",
+              "kind": "describe"
+            },
+            {
+              "text": "That means it is my turn.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Next, I sit on [[GROWNUP]]'s lap.",
               "kind": "describe"
             },
@@ -732,6 +1303,61 @@
           "addresses": [
             "unknown",
             "pain"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "The nurse walks with us to a small room.",
+              "kind": "describe"
+            },
+            {
+              "text": "There may be a bed with paper on top.",
+              "kind": "describe"
+            },
+            {
+              "text": "The paper makes a crinkly sound.",
+              "kind": "describe"
+            },
+            {
+              "text": "The room may smell clean, like soap.",
+              "kind": "describe"
+            },
+            {
+              "text": "I sit on [[GROWNUP]]'s lap, or I sit on the bed.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may need to push up my sleeve.",
+              "kind": "describe"
+            },
+            {
+              "text": "The nurse cleans a small spot on my arm.",
+              "kind": "describe"
+            },
+            {
+              "text": "The wipe feels cool and wet.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the nurse gives the shot.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, the nurse puts a bandage on the spot.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the shot is done, and we can go home.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "unknown",
+            "sensory",
+            "body"
           ]
         }
       ],
@@ -768,6 +1394,68 @@
         {
           "sentences": [
             {
+              "text": "The nurse who gives the shot may wear gloves.",
+              "kind": "describe"
+            },
+            {
+              "text": "Gloves keep everything clean.",
+              "kind": "describe"
+            },
+            {
+              "text": "The nurse may say hello and tell me their name.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say hello back, or I can wave.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay if I feel shy.",
+              "kind": "describe"
+            },
+            {
+              "text": "The nurse talks in a calm voice.",
+              "kind": "describe"
+            },
+            {
+              "text": "The nurse may tell me what will happen before it happens.",
+              "kind": "describe"
+            },
+            {
+              "text": "The nurse is careful.",
+              "kind": "describe"
+            },
+            {
+              "text": "Shots help my body stay healthy and strong.",
+              "kind": "describe"
+            },
+            {
+              "text": "Shots help my body fight germs.",
+              "kind": "describe"
+            },
+            {
+              "text": "The nurse knows how to give shots to children.",
+              "kind": "describe"
+            },
+            {
+              "text": "The nurse gives shots to many children every week.",
+              "kind": "describe"
+            },
+            {
+              "text": "When the shot is done, the nurse may say, all done, good job.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "strangers",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "[[GROWNUP]] stays with me the whole time.",
               "kind": "describe"
             },
@@ -789,6 +1477,64 @@
             },
             {
               "text": "All of these ways are okay.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "separation",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "[[GROWNUP]] comes into the room with me.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] can hold me on their lap.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] stays with me the whole time.",
+              "kind": "describe"
+            },
+            {
+              "text": "Many children get shots.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some children cry, and some children do not.",
+              "kind": "describe"
+            },
+            {
+              "text": "Both are okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can bring my toy, and my toy can sit with me.",
+              "kind": "coach"
+            },
+            {
+              "text": "After the shot, [[GROWNUP]] and I leave together.",
+              "kind": "describe"
+            },
+            {
+              "text": "We may do something nice after the visit.",
+              "kind": "describe"
+            },
+            {
+              "text": "We may go to the park, read a book or have a snack.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] and I can choose the nice thing before we go.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then we go home.",
               "kind": "describe"
             }
           ],
@@ -834,6 +1580,64 @@
         {
           "sentences": [
             {
+              "text": "When it is time for the shot, I can let my arm go soft.",
+              "kind": "describe"
+            },
+            {
+              "text": "A soft arm is called a floppy noodle arm.",
+              "kind": "describe"
+            },
+            {
+              "text": "A floppy arm often feels better than a tight arm.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can look at my toy, a book or [[GROWNUP]]'s face.",
+              "kind": "coach"
+            },
+            {
+              "text": "I do not have to watch the shot.",
+              "kind": "describe"
+            },
+            {
+              "text": "The nurse may count to three.",
+              "kind": "describe"
+            },
+            {
+              "text": "The shot is quick.",
+              "kind": "describe"
+            },
+            {
+              "text": "It may feel like a poke or a sting.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then it is over.",
+              "kind": "describe"
+            },
+            {
+              "text": "My job is to try my best, and that is enough.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can blow out slowly while the nurse counts.",
+              "kind": "coach"
+            },
+            {
+              "text": "Blowing out slowly helps my body stay soft.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "body",
+            "pain"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "The nurse may count to three.",
               "kind": "describe"
             },
@@ -862,6 +1666,60 @@
           "background": "shot",
           "addresses": [
             "pain"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "After the shot, the nurse puts a bandage on my arm.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes I can choose the bandage.",
+              "kind": "describe"
+            },
+            {
+              "text": "It may have a colour or a picture.",
+              "kind": "describe"
+            },
+            {
+              "text": "My arm may feel sore later that day.",
+              "kind": "describe"
+            },
+            {
+              "text": "The sore feeling goes away after a little while.",
+              "kind": "describe"
+            },
+            {
+              "text": "The sore feeling means the medicine is working in my body.",
+              "kind": "describe"
+            },
+            {
+              "text": "If my arm feels sore, I can tell [[GROWNUP]].",
+              "kind": "coach"
+            },
+            {
+              "text": "[[GROWNUP]] can help me feel better.",
+              "kind": "describe"
+            },
+            {
+              "text": "The shot helps keep me healthy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Later, I can take the bandage off with [[GROWNUP]].",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I can put a pretend bandage on my toy.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "shot",
+          "addresses": [
+            "body",
+            "safety"
           ]
         }
       ],
@@ -903,6 +1761,68 @@
         {
           "sentences": [
             {
+              "text": "Some children feel scared about shots.",
+              "kind": "describe"
+            },
+            {
+              "text": "Feeling scared is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "A shot can hurt a little.",
+              "kind": "describe"
+            },
+            {
+              "text": "It feels like a quick pinch or a sting.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the pinch stops.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay if I say ouch.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay if I cry.",
+              "kind": "describe"
+            },
+            {
+              "text": "Crying is one way my body lets a big feeling out.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can tell [[GROWNUP]] how I feel.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[GROWNUP]] listens to me.",
+              "kind": "describe"
+            },
+            {
+              "text": "The nurse may know ways to make the poke feel smaller.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] can ask the nurse about them.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some ways are a cold spray, a numbing cream or a buzzing toy.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "pain",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Later my arm may feel a little sore.",
               "kind": "describe"
             },
@@ -932,6 +1852,60 @@
           "addresses": [
             "pain",
             "sensory"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "[[GROWNUP]] can hold me in a big hug during the shot.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] stays with me the whole time.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can breathe in slowly and blow out slowly, like a candle.",
+              "kind": "coach"
+            },
+            {
+              "text": "Slow breathing can help my body feel calmer.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can squeeze my toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Many children feel nervous before a shot.",
+              "kind": "describe"
+            },
+            {
+              "text": "After the shot, the hard part is over.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me whether I feel brave or scared.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "Soon we go home.",
+              "kind": "describe"
+            },
+            {
+              "text": "At home, I can rest and have a cosy hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "separation",
+            "love"
           ]
         }
       ],
@@ -973,6 +1947,64 @@
         {
           "sentences": [
             {
+              "text": "Before the visit, I can practise at home.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can sit on [[GROWNUP]]'s lap in a big hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can make my arm soft, like a floppy noodle.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] can touch my arm with a cool, wet cloth.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then we count to three.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can practise blowing out slowly.",
+              "kind": "coach"
+            },
+            {
+              "text": "Then I can put a pretend bandage on my toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "My toy can practise a floppy arm too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Practising helps me know what will happen.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can practise as many times as I like.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can also choose a toy to bring to the doctor.",
+              "kind": "describe"
+            },
+            {
+              "text": "My toy can sit on my lap and watch.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "body"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Here are the steps of my doctor visit.",
               "kind": "describe"
             },
@@ -1001,6 +2033,60 @@
           "background": "cosy-room",
           "addresses": [
             "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Here is my plan for the shot.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, I wait in the waiting room.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the nurse calls my name.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, I sit on [[GROWNUP]]'s lap in a big hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, the nurse cleans my arm with a cool wipe.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I make my arm floppy, and the nurse gives the shot.",
+              "kind": "describe"
+            },
+            {
+              "text": "The shot is quick, and it may sting.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the bandage goes on.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, we go home.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for practising.",
+              "kind": "describe"
+            },
+            {
+              "text": "I know the steps, and I know how to make my arm floppy.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "cosy-room",
+          "addresses": [
+            "unknown",
+            "love"
           ]
         }
       ]

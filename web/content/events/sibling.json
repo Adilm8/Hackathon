@@ -1,6 +1,6 @@
 {
   "type": "sibling",
-  "version": 1,
+  "version": 2,
   "label": "New baby in the family",
   "countdownLabel": "the new baby",
   "beats": {
@@ -392,6 +392,60 @@
         {
           "sentences": [
             {
+              "text": "Before bed, [[GROWNUP]] tells [[CHILD]] an old story about a family of sticks.",
+              "kind": "describe"
+            },
+            {
+              "text": "Once upon a time, a family of beavers lived in a cosy house by a stream.",
+              "kind": "describe"
+            },
+            {
+              "text": "Their house was made of sticks, all held together.",
+              "kind": "describe"
+            },
+            {
+              "text": "One spring, the beavers said, a new little beaver is coming.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, they made a plan.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then a kind helper beaver came to stay.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, the grown-up beavers went to help the baby be born.",
+              "kind": "describe"
+            },
+            {
+              "text": "After a few days, they came home with a tiny new baby.",
+              "kind": "describe"
+            },
+            {
+              "text": "The house was a little more crowded, but it was still the same cosy house, full of love.",
+              "kind": "describe"
+            },
+            {
+              "text": "When a family grows, there is a new stick in the bundle.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "unknown",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Next, [[CHILD]] meets the new baby.",
               "kind": "describe"
             },
@@ -417,6 +471,61 @@
           "addresses": [
             "unknown",
             "sensory"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Here is the plan, step by step.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, when the baby is ready to be born, some grown-ups go to the hospital.",
+              "kind": "describe"
+            },
+            {
+              "text": "A helper [[CHILD]] knows comes to stay with [[CHILD]].",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can talk to [[GROWNUP]] on the phone, or make a video call.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[CHILD]] meets the new baby, at the hospital or at home.",
+              "kind": "describe"
+            },
+            {
+              "text": "The baby is tiny, with tiny fingers and tiny toes, and smells of milk and soap.",
+              "kind": "describe"
+            },
+            {
+              "text": "The baby sleeps a lot, eats a lot and cries to talk.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, the baby comes home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some things change, like a quieter house when the baby sleeps.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some things stay the same, like bedtime stories and hugs.",
+              "kind": "describe"
+            },
+            {
+              "text": "And the grown-ups always come back from the hospital.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "sibling",
+          "addresses": [
+            "unknown",
+            "sensory",
+            "separation"
           ]
         }
       ],
@@ -453,6 +562,56 @@
         {
           "sentences": [
             {
+              "text": "In the old story, the big little beaver looked at the tiny baby beaver.",
+              "kind": "describe"
+            },
+            {
+              "text": "The baby was so small and so pink.",
+              "kind": "describe"
+            },
+            {
+              "text": "Am I still special? asked the big little beaver.",
+              "kind": "describe"
+            },
+            {
+              "text": "The grown-up beaver picked up one stick and said, this stick is you.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the grown-up picked up another stick and said, this is the baby.",
+              "kind": "describe"
+            },
+            {
+              "text": "The grown-up held the two sticks together with gentle hands.",
+              "kind": "describe"
+            },
+            {
+              "text": "Together, the sticks were even stronger.",
+              "kind": "describe"
+            },
+            {
+              "text": "You are still you, said the grown-up.",
+              "kind": "describe"
+            },
+            {
+              "text": "Your place in the family stays, and the love stays the same.",
+              "kind": "describe"
+            },
+            {
+              "text": "Now you have a new name too: big sibling.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "love",
+            "body"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "At the hospital, nurses and doctors help the baby be born safely.",
               "kind": "describe"
             },
@@ -477,6 +636,57 @@
           "background": "outside",
           "addresses": [
             "strangers",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "While the baby is being born, nurses and doctors help at the hospital.",
+              "kind": "describe"
+            },
+            {
+              "text": "Their job is to help the baby be born safely.",
+              "kind": "describe"
+            },
+            {
+              "text": "At home, the helper looks after [[CHILD]].",
+              "kind": "describe"
+            },
+            {
+              "text": "The helper knows [[CHILD]]'s favourite games and snacks.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can ask the helper, when will [[GROWNUP]] call?",
+              "kind": "coach"
+            },
+            {
+              "text": "The helper and [[CHILD]] can make a drawing for the baby.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[GROWNUP]] calls on the phone and says, I miss you.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] comes back from the hospital in a few days.",
+              "kind": "describe"
+            },
+            {
+              "text": "Everyone in the family has a job, and everyone is helping.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "strangers",
+            "separation",
             "safety"
           ]
         }
@@ -515,6 +725,52 @@
         {
           "sentences": [
             {
+              "text": "In the old story, the big little beaver wanted to help.",
+              "kind": "describe"
+            },
+            {
+              "text": "So the grown-ups gave the big little beaver a special job.",
+              "kind": "describe"
+            },
+            {
+              "text": "The job was to bring a soft leaf for the baby's bed.",
+              "kind": "describe"
+            },
+            {
+              "text": "The big little beaver carried it carefully in both hands and put it down gently.",
+              "kind": "describe"
+            },
+            {
+              "text": "Another day, the job was to sing a quiet song while the baby fell asleep.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes the big little beaver did not feel like helping, and that was okay too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Helping was a choice, not a must.",
+              "kind": "describe"
+            },
+            {
+              "text": "The baby liked to watch the big little beaver play.",
+              "kind": "describe"
+            },
+            {
+              "text": "Babies love to look at their big brothers and sisters.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "[[CHILD]]'s toys are still [[CHILD]]'s toys.",
               "kind": "describe"
             },
@@ -539,6 +795,57 @@
           "background": "home-evening",
           "addresses": [
             "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "A big sibling can have special jobs too.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can bring a diaper, choose tiny socks or sing a song.",
+              "kind": "coach"
+            },
+            {
+              "text": "When [[CHILD]] wants to hold the baby, [[CHILD]] sits down first.",
+              "kind": "coach"
+            },
+            {
+              "text": "A grown-up helps, with one hand under the baby's head.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] uses gentle hands, and the baby feels safe.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]]'s toys are still [[CHILD]]'s toys.",
+              "kind": "describe"
+            },
+            {
+              "text": "If [[CHILD]] wants to, [[CHILD]] can show the baby a toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "The baby may watch [[CHILD]] play.",
+              "kind": "describe"
+            },
+            {
+              "text": "Every day, there is still special time just for [[CHILD]] and a grown-up.",
+              "kind": "describe"
+            },
+            {
+              "text": "That special time is part of the plan.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "sibling",
+          "addresses": [
+            "body",
+            "social",
+            "love"
           ]
         }
       ],
@@ -576,6 +883,56 @@
         {
           "sentences": [
             {
+              "text": "In the old story, the big little beaver sometimes felt cross.",
+              "kind": "describe"
+            },
+            {
+              "text": "The baby cried at night, and the grown-ups were tired.",
+              "kind": "describe"
+            },
+            {
+              "text": "Everyone wanted to rest, and the house felt different.",
+              "kind": "describe"
+            },
+            {
+              "text": "The big little beaver said, I wish it was like before.",
+              "kind": "describe"
+            },
+            {
+              "text": "The grown-up beaver gave a big hug and said, it is okay to feel that.",
+              "kind": "describe"
+            },
+            {
+              "text": "Big feelings are allowed in our family.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the grown-up made special time, just the two of them.",
+              "kind": "describe"
+            },
+            {
+              "text": "They built a little dam in the stream together.",
+              "kind": "describe"
+            },
+            {
+              "text": "The big little beaver felt loved, and the cross feeling got smaller.",
+              "kind": "describe"
+            },
+            {
+              "text": "Love does not get smaller when a family gets bigger.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "love",
+            "pain"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Babies can cry loudly.",
               "kind": "describe"
             },
@@ -600,6 +957,57 @@
           "background": "cosy-room",
           "addresses": [
             "sensory",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "A baby can cry loudly, and sometimes for a long time.",
+              "kind": "describe"
+            },
+            {
+              "text": "Crying is how a baby talks.",
+              "kind": "describe"
+            },
+            {
+              "text": "When the crying feels too loud, [[CHILD]] can go to a cosy quiet spot with a book.",
+              "kind": "coach"
+            },
+            {
+              "text": "Sometimes [[CHILD]] may miss [[GROWNUP]] while the baby is new.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes [[CHILD]] may feel cross, or sad, or happy, all on one day.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say, I need a hug, and get one.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can name the feeling: I feel cross, or I feel sad.",
+              "kind": "coach"
+            },
+            {
+              "text": "Grown-ups listen.",
+              "kind": "describe"
+            },
+            {
+              "text": "Every day there is still special time for [[CHILD]], a story, a game or a big hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "That special time always stays.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "sensory",
+            "separation",
             "love"
           ]
         }
@@ -638,6 +1046,56 @@
         {
           "sentences": [
             {
+              "text": "Tonight it is time to play the beaver family.",
+              "kind": "describe"
+            },
+            {
+              "text": "A doll can be the baby beaver.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can be the big sibling.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] sits down and holds the doll with one hand under its head.",
+              "kind": "coach"
+            },
+            {
+              "text": "Gentle hands, soft voice, a quiet little song.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the doll pretends to cry, waa, waa.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] brings a pretend diaper and a soft blanket.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, [[CHILD]] shows the doll a favourite toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, the baby doll sleeps, and it is special time for [[CHILD]] and [[GROWNUP]].",
+              "kind": "describe"
+            },
+            {
+              "text": "Playing it at home makes the new baby feel more familiar.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Let's say the plan once more.",
               "kind": "coach"
             },
@@ -659,6 +1117,56 @@
             },
             {
               "text": "[[GROWNUP]] is so proud of [[CHILD]], the big sibling.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "cosy-room",
+          "addresses": [
+            "unknown",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Now [[CHILD]] knows the whole story.",
+              "kind": "describe"
+            },
+            {
+              "text": "The beaver family grew, and together they were even stronger.",
+              "kind": "describe"
+            },
+            {
+              "text": "Soon a new baby will join [[CHILD]]'s family, step by step.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, [[CHILD]] stays with a helper while some grown-ups go to the hospital.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[CHILD]] meets the tiny baby.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, the baby comes home, sleeps, eats and cries.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, there is still special time for [[CHILD]] every day.",
+              "kind": "describe"
+            },
+            {
+              "text": "If [[CHILD]] has a big feeling, [[CHILD]] can say it and get a hug.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] is still [[CHILD]].",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves [[CHILD]] always, and is proud of [[CHILD]], the big sibling.",
               "kind": "describe"
             }
           ],
@@ -706,6 +1214,56 @@
         {
           "sentences": [
             {
+              "text": "Before the baby is born, [[GROWNUP]] tells me the plan.",
+              "kind": "describe"
+            },
+            {
+              "text": "When the baby is ready, some grown-ups go to the hospital.",
+              "kind": "describe"
+            },
+            {
+              "text": "They may stay there for one day, or for a few days.",
+              "kind": "describe"
+            },
+            {
+              "text": "A helper I know comes to stay with me.",
+              "kind": "describe"
+            },
+            {
+              "text": "The helper may be a grandparent, a friend or someone from my family.",
+              "kind": "describe"
+            },
+            {
+              "text": "I stay at home, or I stay at the helper's home.",
+              "kind": "describe"
+            },
+            {
+              "text": "I eat, play and sleep like I do every day.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can talk to [[GROWNUP]] on the phone.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[GROWNUP]] comes back from the hospital.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the baby comes home too.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Next, I meet the new baby.",
               "kind": "describe"
             },
@@ -731,6 +1289,60 @@
             },
             {
               "text": "Some things will change, and some things will stay the same.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "sibling",
+          "addresses": [
+            "unknown",
+            "sensory"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "A new baby is very small.",
+              "kind": "describe"
+            },
+            {
+              "text": "A new baby has tiny fingers and tiny toes.",
+              "kind": "describe"
+            },
+            {
+              "text": "A new baby may smell of milk and soap.",
+              "kind": "describe"
+            },
+            {
+              "text": "A new baby sleeps a lot.",
+              "kind": "describe"
+            },
+            {
+              "text": "A new baby drinks milk many times a day and night.",
+              "kind": "describe"
+            },
+            {
+              "text": "A new baby cries.",
+              "kind": "describe"
+            },
+            {
+              "text": "Crying is how a baby tells grown-ups what it needs.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some things at home will change.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some things at home will stay the same.",
+              "kind": "describe"
+            },
+            {
+              "text": "My bed stays my bed, and my toys stay my toys.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bedtime stories stay too.",
               "kind": "describe"
             }
           ],
@@ -779,6 +1391,59 @@
         {
           "sentences": [
             {
+              "text": "I am still me.",
+              "kind": "describe"
+            },
+            {
+              "text": "I have the same name, the same toys and the same place in my family.",
+              "kind": "describe"
+            },
+            {
+              "text": "When I was a baby, the grown-ups took care of me too.",
+              "kind": "describe"
+            },
+            {
+              "text": "They held me, fed me and sang to me.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can look at my baby photos.",
+              "kind": "describe"
+            },
+            {
+              "text": "Now I am a big sibling.",
+              "kind": "describe"
+            },
+            {
+              "text": "A big sibling is a brother or a sister.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can tell [[GROWNUP]] how I feel about being a big sibling.",
+              "kind": "coach"
+            },
+            {
+              "text": "My family loves me.",
+              "kind": "describe"
+            },
+            {
+              "text": "My family loves the baby too.",
+              "kind": "describe"
+            },
+            {
+              "text": "There is enough love for everyone.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "sibling",
+          "addresses": [
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "At the hospital, nurses and doctors help the baby be born safely.",
               "kind": "describe"
             },
@@ -804,6 +1469,57 @@
           "addresses": [
             "strangers",
             "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At the hospital, doctors and nurses help the baby be born safely.",
+              "kind": "describe"
+            },
+            {
+              "text": "Their job is to help the baby and the grown-ups.",
+              "kind": "describe"
+            },
+            {
+              "text": "At home, my helper takes care of me.",
+              "kind": "describe"
+            },
+            {
+              "text": "My helper knows my favourite games and snacks.",
+              "kind": "describe"
+            },
+            {
+              "text": "My helper helps me at bedtime.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask my helper any question.",
+              "kind": "coach"
+            },
+            {
+              "text": "If I miss [[GROWNUP]], I can call on the phone.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can draw a picture for the baby.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I can give the picture to the baby when I meet the baby.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes there is a gift from the baby for me too.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "strangers",
+            "safety",
+            "separation"
           ]
         }
       ],
@@ -832,6 +1548,64 @@
             },
             {
               "text": "Gentle hands keep the baby safe.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "sibling",
+          "addresses": [
+            "body",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "When I meet the baby, I use gentle hands.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can touch the baby's hand or foot softly.",
+              "kind": "describe"
+            },
+            {
+              "text": "If I want to hold the baby, I sit down first.",
+              "kind": "describe"
+            },
+            {
+              "text": "A grown-up helps me hold the baby.",
+              "kind": "describe"
+            },
+            {
+              "text": "One hand goes under the baby's head.",
+              "kind": "describe"
+            },
+            {
+              "text": "The baby's head needs support.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can talk to the baby in a soft voice.",
+              "kind": "coach"
+            },
+            {
+              "text": "The baby may look at me.",
+              "kind": "describe"
+            },
+            {
+              "text": "The baby may hold my finger.",
+              "kind": "describe"
+            },
+            {
+              "text": "Babies cannot play games yet.",
+              "kind": "describe"
+            },
+            {
+              "text": "Babies grow, and later they can play.",
+              "kind": "describe"
+            },
+            {
+              "text": "One day, the baby and I may play together.",
               "kind": "describe"
             }
           ],
@@ -874,6 +1648,60 @@
           "addresses": [
             "social"
           ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "A big sibling can help with small jobs.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can bring a diaper.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can choose tiny socks for the baby.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can sing a song to the baby.",
+              "kind": "describe"
+            },
+            {
+              "text": "Helping is my choice.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes I want to help, and sometimes I want to play.",
+              "kind": "describe"
+            },
+            {
+              "text": "If I want to, I can show the baby a toy.",
+              "kind": "coach"
+            },
+            {
+              "text": "My special toys can stay in a safe place.",
+              "kind": "describe"
+            },
+            {
+              "text": "Every day, I have special time with a grown-up.",
+              "kind": "describe"
+            },
+            {
+              "text": "In special time, we can read, play or talk.",
+              "kind": "describe"
+            },
+            {
+              "text": "Special time is just for me.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "social",
+            "love"
+          ]
         }
       ],
       "if_scared": [
@@ -914,6 +1742,60 @@
         {
           "sentences": [
             {
+              "text": "When the baby is new, the grown-ups may be busy and tired.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes I may miss [[GROWNUP]].",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes I may feel cross.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes I may wish it was like before.",
+              "kind": "describe"
+            },
+            {
+              "text": "All these feelings are okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "Many big siblings feel this way.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say, I need a hug.",
+              "kind": "coach"
+            },
+            {
+              "text": "Then I can get a hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can name my feeling: I feel sad, or I feel cross.",
+              "kind": "describe"
+            },
+            {
+              "text": "My family will listen to me.",
+              "kind": "describe"
+            },
+            {
+              "text": "The love in my family stays the same.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "separation",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "The baby may cry loudly.",
               "kind": "describe"
             },
@@ -935,6 +1817,64 @@
             },
             {
               "text": "Special time stays every day.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "sensory",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Babies can cry loudly.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes the crying lasts a long time.",
+              "kind": "describe"
+            },
+            {
+              "text": "The crying can feel too loud for my ears.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can go to a quiet spot with a book or a toy.",
+              "kind": "coach"
+            },
+            {
+              "text": "The quiet spot can be my room or a cosy corner.",
+              "kind": "describe"
+            },
+            {
+              "text": "When the baby sleeps, the house may be quiet.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I may need to use a quiet voice.",
+              "kind": "describe"
+            },
+            {
+              "text": "Every day I still have special time with a grown-up.",
+              "kind": "describe"
+            },
+            {
+              "text": "A story, a game or a hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me always.",
+              "kind": "describe"
+            },
+            {
+              "text": "The baby will grow, and the crying will change too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bigger babies cry less.",
               "kind": "describe"
             }
           ],
@@ -984,6 +1924,56 @@
         {
           "sentences": [
             {
+              "text": "Before the baby comes, I can practise at home.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can hold a doll like a baby.",
+              "kind": "describe"
+            },
+            {
+              "text": "I sit down first.",
+              "kind": "describe"
+            },
+            {
+              "text": "I put one hand under the doll's head.",
+              "kind": "describe"
+            },
+            {
+              "text": "I use gentle hands.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can sing a quiet song to the doll.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can practise bringing a pretend diaper.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can practise using a soft voice.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can look at my own baby photos with [[GROWNUP]].",
+              "kind": "describe"
+            },
+            {
+              "text": "Practising helps me know what will happen.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Here is the plan.",
               "kind": "describe"
             },
@@ -1012,6 +2002,60 @@
           "background": "cosy-room",
           "addresses": [
             "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Here is my plan for the new baby.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, a helper I know stays with me while some grown-ups go to the hospital.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I talk to [[GROWNUP]] on the phone.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, I meet the baby and use gentle hands.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, the baby comes home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some things change, and some things stay the same.",
+              "kind": "describe"
+            },
+            {
+              "text": "Every day I have special time with a grown-up.",
+              "kind": "describe"
+            },
+            {
+              "text": "If I have a big feeling, I can say it.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me, the big sibling.",
+              "kind": "describe"
+            },
+            {
+              "text": "My family loves me always.",
+              "kind": "describe"
+            },
+            {
+              "text": "Many children become big siblings, and I am becoming one too.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "cosy-room",
+          "addresses": [
+            "unknown",
+            "love"
           ]
         }
       ]

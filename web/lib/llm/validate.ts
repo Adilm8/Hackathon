@@ -38,13 +38,16 @@ export interface PageCheck {
 
 /**
  * Checks one model page. Over the length range (+25%): trimmed at a sentence boundary.
- * Under half the minimum, or any safety hit: replaced by its fallback page.
+ * Under half the minimum (the age target, or `minWords` for a rewrite), or any safety hit: replaced by its fallback page.
  */
 export function checkPage(
   raw: PageOutT,
-  opts: { template: EventTemplate; age: number; post: PostcheckOptions; fallback: OutPage },
+  opts: { template: EventTemplate; age: number; post: PostcheckOptions; fallback: OutPage; minWords?: number },
 ): PageCheck {
-  const { minWords, maxWords } = pageTargets(opts.age);
+  const targets = pageTargets(opts.age);
+  const { maxWords } = targets;
+  // A rewritten page keeps the length of the page it replaces, which may be shorter than a new chapter page.
+  const minWords = opts.minWords ?? targets.minWords;
   const replace = (reason: string): PageCheck => ({ page: { ...opts.fallback }, replaced: true, reason });
 
   const sentences = raw.sentences.map((s) => ({ text: s.text.trim(), kind: s.kind }));

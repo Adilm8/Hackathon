@@ -1,6 +1,6 @@
 {
   "type": "party",
-  "version": 1,
+  "version": 2,
   "label": "Birthday party",
   "countdownLabel": "the party",
   "beats": {
@@ -382,6 +382,64 @@
         {
           "sentences": [
             {
+              "text": "Before bed, [[GROWNUP]] tells [[CHILD]] an old story about four musicians.",
+              "kind": "describe"
+            },
+            {
+              "text": "Once upon a time, a donkey wanted to make music.",
+              "kind": "describe"
+            },
+            {
+              "text": "The donkey set off down the road, clip clop, clip clop.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, the donkey met a dog who liked to sing.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then they met a cat who liked to purr.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, they met a rooster who liked to crow.",
+              "kind": "describe"
+            },
+            {
+              "text": "Will you join our band? asked the donkey, and one by one they said yes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some joined quickly, and some thought about it first.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, the four new friends walked together to a big party in the town.",
+              "kind": "describe"
+            },
+            {
+              "text": "A birthday party is a bit like that band.",
+              "kind": "describe"
+            },
+            {
+              "text": "Kids come together, step by step, to play and sing.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Next comes the birthday song.",
               "kind": "describe"
             },
@@ -407,6 +465,61 @@
           "addresses": [
             "unknown",
             "sensory"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Here is what happens at a party, step by step.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, [[CHILD]] and [[GROWNUP]] arrive and say hello.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[CHILD]] says happy birthday and gives the present to the birthday child.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next come the games, with music, balloons and kids running and laughing.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes there is face paint or a bright costume.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that comes the birthday song, with everyone singing at once.",
+              "kind": "describe"
+            },
+            {
+              "text": "The candles glow, and the room smells of cake.",
+              "kind": "describe"
+            },
+            {
+              "text": "The birthday child blows out the candles, and then there is cake and snacks.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last of all, [[CHILD]] says thank you and goodbye, and goes home.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can count the party steps on fingers: hello, games, song, cake, goodbye.",
+              "kind": "coach"
+            },
+            {
+              "text": "Knowing the steps makes the party feel less new.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "sensory",
+            "social"
           ]
         }
       ],
@@ -443,6 +556,56 @@
         {
           "sentences": [
             {
+              "text": "In the old story, the town had a big party in the square.",
+              "kind": "describe"
+            },
+            {
+              "text": "There were many people the musicians did not know.",
+              "kind": "describe"
+            },
+            {
+              "text": "A friendly host said hello and showed them where to stand.",
+              "kind": "describe"
+            },
+            {
+              "text": "The host was in charge of the party, and the host could help.",
+              "kind": "describe"
+            },
+            {
+              "text": "The donkey felt shy, and so did the cat.",
+              "kind": "describe"
+            },
+            {
+              "text": "So they stood together and watched for a while.",
+              "kind": "describe"
+            },
+            {
+              "text": "They saw other animals dancing and playing games.",
+              "kind": "describe"
+            },
+            {
+              "text": "After a while, a little goat came over and said, hello, do you want to play?",
+              "kind": "describe"
+            },
+            {
+              "text": "The cat said, yes, and the donkey said, maybe soon.",
+              "kind": "describe"
+            },
+            {
+              "text": "Both answers were okay.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "strangers",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "[[GROWNUP]] tells [[CHILD]] before the party: I stay, or I come back at pick-up time.",
               "kind": "describe"
             },
@@ -462,6 +625,57 @@
           "mood": "happy",
           "background": "home-evening",
           "addresses": [
+            "separation",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At the party, there is the birthday child and their family.",
+              "kind": "describe"
+            },
+            {
+              "text": "The grown-ups of that home are the hosts, and they are in charge.",
+              "kind": "describe"
+            },
+            {
+              "text": "If [[CHILD]] needs help, [[CHILD]] can ask a host or find [[GROWNUP]].",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] may know some kids, and some kids will be new.",
+              "kind": "describe"
+            },
+            {
+              "text": "Lots of kids feel shy at parties at first.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] tells [[CHILD]] before the party: I stay, or I come back at pick-up time.",
+              "kind": "describe"
+            },
+            {
+              "text": "If [[GROWNUP]] stays, [[CHILD]] can find [[GROWNUP]] any time.",
+              "kind": "describe"
+            },
+            {
+              "text": "If [[GROWNUP]] comes back later, the hosts take care of the kids.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] always comes back to take [[CHILD]] home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "strangers",
             "separation",
             "social"
           ]
@@ -504,6 +718,52 @@
         {
           "sentences": [
             {
+              "text": "In the old story, each musician had a job in the band.",
+              "kind": "describe"
+            },
+            {
+              "text": "The donkey went hee-haw, the dog went woof, the cat went meow, and the rooster went cock-a-doodle-doo.",
+              "kind": "describe"
+            },
+            {
+              "text": "Together, their music was very loud.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some animals at the party clapped.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some animals covered their ears and laughed.",
+              "kind": "describe"
+            },
+            {
+              "text": "When the music got too loud for the cat, the cat took a little break.",
+              "kind": "describe"
+            },
+            {
+              "text": "The cat sat in a quiet spot under a tree.",
+              "kind": "describe"
+            },
+            {
+              "text": "After a rest, the cat came back and sang a soft meow.",
+              "kind": "describe"
+            },
+            {
+              "text": "Every musician played in their own way.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "cosy-room",
+          "addresses": [
+            "social",
+            "sensory"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Sometimes a party gets very busy and loud.",
               "kind": "describe"
             },
@@ -529,6 +789,57 @@
           "addresses": [
             "safety",
             "sensory"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At the party, [[CHILD]] has jobs just like the musicians.",
+              "kind": "describe"
+            },
+            {
+              "text": "The first job is the present: [[CHILD]] says happy birthday and hands it over.",
+              "kind": "coach"
+            },
+            {
+              "text": "Then come the games.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can watch first and see how a game goes.",
+              "kind": "coach"
+            },
+            {
+              "text": "When [[CHILD]] is ready, [[CHILD]] can say, can I play?",
+              "kind": "coach"
+            },
+            {
+              "text": "If [[CHILD]] needs the toilet or a drink, [[CHILD]] can tell [[GROWNUP]] or a host.",
+              "kind": "describe"
+            },
+            {
+              "text": "If it gets too busy, [[CHILD]] can ask for a quiet break.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] and [[GROWNUP]] can agree on a special signal for leaving, like two squeezes of a hand.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then everyone knows the plan.",
+              "kind": "describe"
+            },
+            {
+              "text": "Each job is small, and [[CHILD]] can do them one at a time.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "social",
+            "safety",
+            "body"
           ]
         }
       ],
@@ -565,6 +876,56 @@
         {
           "sentences": [
             {
+              "text": "In the old story, a balloon popped at the party with a big bang.",
+              "kind": "describe"
+            },
+            {
+              "text": "The rooster jumped, the dog barked and the cat's tail went puffy.",
+              "kind": "describe"
+            },
+            {
+              "text": "For a moment, everyone felt surprised.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the donkey took a slow breath and said, it was only a balloon.",
+              "kind": "describe"
+            },
+            {
+              "text": "The pop was over very fast.",
+              "kind": "describe"
+            },
+            {
+              "text": "The cat still felt jumpy, so the dog gave the cat a hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "After a little while, the cat felt calm again.",
+              "kind": "describe"
+            },
+            {
+              "text": "Loud surprises can make anyone jump.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the music started again, a little softer this time.",
+              "kind": "describe"
+            },
+            {
+              "text": "Being surprised and then calming down is something bodies can do.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "sensory",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "[[CHILD]] can cover the ears, or wear ear muffs for the loud parts.",
               "kind": "coach"
             },
@@ -586,6 +947,57 @@
           "addresses": [
             "sensory",
             "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At the party, some things may be loud.",
+              "kind": "describe"
+            },
+            {
+              "text": "Music plays, everyone sings at once, and a balloon may pop.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can cover the ears or wear ear muffs for the loud parts.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can smell the flower and blow the candle, slow and soft.",
+              "kind": "coach"
+            },
+            {
+              "text": "If [[CHILD]] feels shy, [[CHILD]] can watch the games first.",
+              "kind": "describe"
+            },
+            {
+              "text": "If it all feels too much, there is a quiet spot.",
+              "kind": "describe"
+            },
+            {
+              "text": "If [[CHILD]] wants to go home early, the plan with [[GROWNUP]] can help.",
+              "kind": "describe"
+            },
+            {
+              "text": "Nobody has to have fun all the time at a party.",
+              "kind": "describe"
+            },
+            {
+              "text": "Many kids at the party feel just the same.",
+              "kind": "describe"
+            },
+            {
+              "text": "That is okay.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "sensory",
+            "social",
+            "safety"
           ]
         }
       ],
@@ -627,6 +1039,57 @@
         {
           "sentences": [
             {
+              "text": "Tonight it is time for a toy band at home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Toys can be the donkey, the dog, the cat and the rooster.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, the toys say hello and happy birthday to a birthday toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the band plays loud music with pots and spoons.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can practise covering the ears when the music is loud.",
+              "kind": "coach"
+            },
+            {
+              "text": "Next, a toy asks, can I play? and joins the game.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, everyone sings the birthday song and blows out pretend candles.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then a toy says, I need a quiet break, and sits on a pillow.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, the toys say thank you and goodbye.",
+              "kind": "describe"
+            },
+            {
+              "text": "Playing it at home makes the real party feel more familiar.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "social",
+            "sensory"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Let's say the party steps once more.",
               "kind": "coach"
             },
@@ -648,6 +1111,56 @@
             },
             {
               "text": "[[GROWNUP]] is proud of [[CHILD]] for practising, and gives a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "cosy-room",
+          "addresses": [
+            "unknown",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Now [[CHILD]] knows the whole story.",
+              "kind": "describe"
+            },
+            {
+              "text": "Four new friends made loud music together and had a party in their own way.",
+              "kind": "describe"
+            },
+            {
+              "text": "Soon [[CHILD]] will go to the party, step by step.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, hello and happy birthday.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then games, or watching first.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, the song, the candles and the cake.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, thank you, goodbye and home.",
+              "kind": "describe"
+            },
+            {
+              "text": "If it gets loud, [[CHILD]] can cover the ears or take a quiet break.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] and [[GROWNUP]] have a plan.",
+              "kind": "describe"
+            },
+            {
+              "text": "Whatever happens, [[GROWNUP]] is proud of [[CHILD]] for going, and loves [[CHILD]] very much.",
               "kind": "describe"
             }
           ],
@@ -698,6 +1211,71 @@
         {
           "sentences": [
             {
+              "text": "Before the party, [[GROWNUP]] and I get ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may wear party clothes.",
+              "kind": "describe"
+            },
+            {
+              "text": "We wrap a present for the birthday child.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then we travel to the party.",
+              "kind": "describe"
+            },
+            {
+              "text": "The party may be at a home, a park or a play place.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, we arrive and knock on the door or walk in.",
+              "kind": "describe"
+            },
+            {
+              "text": "A grown-up from the party says hello.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say hello, or I can wave.",
+              "kind": "coach"
+            },
+            {
+              "text": "Then I see the other kids.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids may already be playing.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids may arrive after me.",
+              "kind": "describe"
+            },
+            {
+              "text": "There may be balloons, music and food on a table.",
+              "kind": "describe"
+            },
+            {
+              "text": "The room may be busy and full of voices.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can stand with [[GROWNUP]] and look around first.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Next, everyone sings the birthday song.",
               "kind": "describe"
             },
@@ -719,6 +1297,64 @@
             },
             {
               "text": "I go home with [[GROWNUP]].",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "sensory"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At a party, there are different parts.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, kids arrive and say hello.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then there are games.",
+              "kind": "describe"
+            },
+            {
+              "text": "There may be music and balloons.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, everyone sings the birthday song.",
+              "kind": "describe"
+            },
+            {
+              "text": "The singing can be loud.",
+              "kind": "describe"
+            },
+            {
+              "text": "The birthday child blows out the candles on the cake.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, kids eat cake and snacks.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes the birthday child opens presents.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, we say thank you and goodbye.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes kids get a small bag to take home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[GROWNUP]] and I go home.",
               "kind": "describe"
             }
           ],
@@ -767,6 +1403,64 @@
         {
           "sentences": [
             {
+              "text": "At the party, there is the birthday child.",
+              "kind": "describe"
+            },
+            {
+              "text": "The birthday child has a family.",
+              "kind": "describe"
+            },
+            {
+              "text": "The grown-ups of the family are in charge of the party.",
+              "kind": "describe"
+            },
+            {
+              "text": "They help the kids.",
+              "kind": "describe"
+            },
+            {
+              "text": "There are other kids at the party too.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may know some kids.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids may be new to me.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say hello to the new kids, or I can wave.",
+              "kind": "coach"
+            },
+            {
+              "text": "Sometimes there is an entertainer.",
+              "kind": "describe"
+            },
+            {
+              "text": "An entertainer may wear a bright costume or do tricks.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay if I feel shy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Other kids may feel shy too.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "strangers",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "[[GROWNUP]] will tell me if they stay or come back.",
               "kind": "describe"
             },
@@ -797,6 +1491,59 @@
             "separation",
             "social"
           ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Before the party, [[GROWNUP]] tells me the plan.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes [[GROWNUP]] stays at the party with me.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes [[GROWNUP]] leaves and comes back at pick-up time.",
+              "kind": "describe"
+            },
+            {
+              "text": "If [[GROWNUP]] stays, I can find [[GROWNUP]] when I want to.",
+              "kind": "describe"
+            },
+            {
+              "text": "If [[GROWNUP]] leaves, the grown-ups at the party take care of me.",
+              "kind": "describe"
+            },
+            {
+              "text": "If I need help, I can tell a grown-up at the party.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[GROWNUP]] comes back at the end.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then we go home together.",
+              "kind": "describe"
+            },
+            {
+              "text": "Many kids go to parties with a grown-up.",
+              "kind": "describe"
+            },
+            {
+              "text": "Many kids go to parties alone, and a grown-up picks them up later.",
+              "kind": "describe"
+            },
+            {
+              "text": "Both ways are okay.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "separation"
+          ]
         }
       ],
       "what_i_do": [
@@ -824,6 +1571,59 @@
             },
             {
               "text": "Playing together can be fun.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At the party, I have a job.",
+              "kind": "describe"
+            },
+            {
+              "text": "I give the present to the birthday child.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say, happy birthday.",
+              "kind": "coach"
+            },
+            {
+              "text": "Then I can play games.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some games have rules.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can watch a game first to see the rules.",
+              "kind": "describe"
+            },
+            {
+              "text": "When I am ready, I can ask, can I play?",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes I win a game, and sometimes another kid wins.",
+              "kind": "describe"
+            },
+            {
+              "text": "Both are okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "Playing together is the fun part.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids like to play every game, and some kids like to play one or two.",
               "kind": "describe"
             }
           ],
@@ -866,6 +1666,56 @@
             "safety",
             "sensory"
           ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "If I need the toilet, I can tell [[GROWNUP]] or a grown-up at the party.",
+              "kind": "describe"
+            },
+            {
+              "text": "If I am thirsty, I can ask for a drink.",
+              "kind": "describe"
+            },
+            {
+              "text": "Parties can be busy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes I may need a break.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say, I need a quiet break.",
+              "kind": "coach"
+            },
+            {
+              "text": "Then I can go to a quiet spot.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can sit and rest for a little while.",
+              "kind": "describe"
+            },
+            {
+              "text": "After my break, I can go back to the party, or I can stay and watch.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] and I can have a plan for leaving early if I want to.",
+              "kind": "describe"
+            },
+            {
+              "text": "A plan helps me feel ready.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "safety",
+            "body"
+          ]
         }
       ],
       "if_scared": [
@@ -905,6 +1755,71 @@
         {
           "sentences": [
             {
+              "text": "Some things at a party are loud.",
+              "kind": "describe"
+            },
+            {
+              "text": "Music plays.",
+              "kind": "describe"
+            },
+            {
+              "text": "Kids laugh and shout.",
+              "kind": "describe"
+            },
+            {
+              "text": "Everyone sings the birthday song at the same time.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes a balloon pops.",
+              "kind": "describe"
+            },
+            {
+              "text": "A pop makes a big bang sound.",
+              "kind": "describe"
+            },
+            {
+              "text": "The bang is over very fast.",
+              "kind": "describe"
+            },
+            {
+              "text": "Loud sounds can make me jump.",
+              "kind": "describe"
+            },
+            {
+              "text": "That is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can cover my ears, or I can wear ear muffs.",
+              "kind": "coach"
+            },
+            {
+              "text": "Then the sound feels softer.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can also move to a quieter part of the room.",
+              "kind": "describe"
+            },
+            {
+              "text": "When the loud part is over, I can take my hands away from my ears.",
+              "kind": "describe"
+            },
+            {
+              "text": "Parties have loud parts and quiet parts.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "sensory"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Loud things can feel like too much.",
               "kind": "describe"
             },
@@ -934,6 +1849,64 @@
           "addresses": [
             "sensory",
             "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Some kids feel shy at a party.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids feel excited.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids feel both.",
+              "kind": "describe"
+            },
+            {
+              "text": "All of these feelings are okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths, smell the flower and blow the candle.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can stand close to [[GROWNUP]] for a while.",
+              "kind": "describe"
+            },
+            {
+              "text": "I do not have to play every game.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can watch first.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for going to the party.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me whether I play or watch.",
+              "kind": "describe"
+            },
+            {
+              "text": "If I want to go home early, we can use our plan.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then we go home together.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "social",
+            "love"
           ]
         }
       ],
@@ -975,6 +1948,64 @@
         {
           "sentences": [
             {
+              "text": "Before the party, I can practise at home.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can wrap a pretend present.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can practise saying, happy birthday.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can play a party game with my toys.",
+              "kind": "describe"
+            },
+            {
+              "text": "One toy can be the birthday child.",
+              "kind": "describe"
+            },
+            {
+              "text": "We can sing the birthday song.",
+              "kind": "describe"
+            },
+            {
+              "text": "We can blow out pretend candles.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can practise saying, can I play?",
+              "kind": "coach"
+            },
+            {
+              "text": "I can practise covering my ears when the music is loud.",
+              "kind": "describe"
+            },
+            {
+              "text": "Practising helps me know what will happen.",
+              "kind": "describe"
+            },
+            {
+              "text": "First we practise the hello, then the games, then the song.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can practise as many times as I like.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
               "text": "Here are the steps of the party.",
               "kind": "describe"
             },
@@ -1003,6 +2034,64 @@
           "background": "cosy-room",
           "addresses": [
             "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Here is my plan for the party.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, I say hello and happy birthday.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I give the present.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, I play games, or I watch first.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, everyone sings, and we eat cake.",
+              "kind": "describe"
+            },
+            {
+              "text": "If it gets loud, I can cover my ears.",
+              "kind": "describe"
+            },
+            {
+              "text": "If I need a break, I can go to a quiet spot.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, I say thank you and goodbye.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[GROWNUP]] and I go home.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for practising.",
+              "kind": "describe"
+            },
+            {
+              "text": "Many kids go to birthday parties, and I am going to one too.",
+              "kind": "describe"
+            },
+            {
+              "text": "I know the steps of the party.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "cosy-room",
+          "addresses": [
+            "unknown",
+            "love"
           ]
         }
       ]

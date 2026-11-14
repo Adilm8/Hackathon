@@ -61,7 +61,7 @@ export function buildSystemPrompt(ctx: StoryContext, template: EventTemplate): s
     `An adult reads the story aloud. The hero is a ${c.color} ${c.animal} with a ${c.accessory}. The hero's name is written exactly as [[CHILD]]; never invent or guess a real name. ${pronounRule(ctx)}`,
     'Rules:',
     `1. Be honest. Never promise "it won't hurt" or "nothing bad will happen". Honesty notes: ${template.honestyNotes}`,
-    `2. Short sentences. ${pages} pages, ${minWords}-${maxWords} words each. No scary imagery, villains or danger.`,
+    `2. Short sentences. ${pages} pages, ${minWords}-${maxWords} words each (8-14 sentences per page), so the chapter takes 2-3 minutes to read aloud. No scary imagery, villains or danger.`,
     `3. This chapter covers: ${list(goals)}. It must address these worries: ${list(worries)}.`,
     `   Build on what really happens: ${list(template.steps)}. Use real sensory details: ${list(template.sensory)}.`,
     `4. Prefer techniques that helped before: ${list(ctx.helpedBefore.map((id) => techniqueLabel(template, id)))}. Never use: ${list(ctx.avoid.map((id) => techniqueLabel(template, id)))}.`,

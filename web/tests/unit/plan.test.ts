@@ -145,9 +145,9 @@ describe('phase, countdown, tonight', () => {
     expect(readProgress(read1)).toEqual({ read: 1, total: 5 });
   });
   it('page targets by age', () => {
-    expect(pageTargets(3)).toEqual({ pages: 4, minWords: 40, maxWords: 60 });
-    expect(pageTargets(6)).toEqual({ pages: 5, minWords: 60, maxWords: 90 });
-    expect(pageTargets(8)).toEqual({ pages: 5, minWords: 90, maxWords: 130 });
+    expect(pageTargets(3)).toEqual({ pages: 5, minWords: 60, maxWords: 80 });
+    expect(pageTargets(6)).toEqual({ pages: 5, minWords: 70, maxWords: 90 });
+    expect(pageTargets(8)).toEqual({ pages: 5, minWords: 85, maxWords: 110 });
   });
   it('home ordering and focus (4.4)', () => {
     const past = { ...make('2026-11-16', '2026-11-10'), id: 'past' };
