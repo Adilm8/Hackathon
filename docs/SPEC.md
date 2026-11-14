@@ -1,6 +1,6 @@
 # Big Day Stories: product and engineering specification
 
-Version 1.4, 15 Nov 2026, 02:15 Astana. Owner: architect. Status: **development started** on this document (Lida, 15 Nov 01:58). The remaining questions of section 19 are accepted with their defaults and will be revisited later.
+Version 1.5, 15 Nov 2026, 02:40 Astana. Owner: architect. Status: **development started** on this document (Lida, 15 Nov 01:58). The remaining questions of section 19 are accepted with their defaults and will be revisited later.
 
 This is the single file development relies on. It merges the team ТЗ (features F1–F19), `docs/requirements.md` (ids C, F, FR, N), the research and analysis notes, and Lida's decisions of 15 Nov. Where this file and an older document disagree, `docs/decisions.md` wins first, then this file. Builders do not change contracts (section 6, 8, 9) on their own: they ask the architect.
 
@@ -923,11 +923,11 @@ Request: `{ eventId: string, context: StoryContext, topTopics: Topic[] }` → `{
 
 ### `POST /api/checkout`
 
-Request: `{ plan: 'event' | 'year' | 'month' | 'upgrade', eventId: string, renewalConsent?: boolean }` → `{ url }` (Stripe Checkout). Year, Monthly and upgrade need `renewalConsent: true`. Refuses to run when the Stripe key does not start with `sk_test_`.
+Request: `{ plan: 'event' | 'year' | 'month' | 'upgrade', eventId: string, renewalConsent?: boolean }` → `{ url }` (Stripe Checkout). Year, Monthly and upgrade need `renewalConsent: true`. 409 when the purchase would duplicate access the family already has: `event` for an event that is already unlocked, or any subscription plan while a subscription is active. `upgrade` is accepted only from an owner of an event purchase (400 otherwise). A sample family gets `&ws=sample` on both return addresses, so the return lands in the sample workspace. Refuses to run when the Stripe key does not start with `sk_test_`.
 
 ### `POST /api/verify`
 
-Request: `{ sessionId: string }` → `{ entitlements: Entitlement[] }`, or 402 when the session is not paid. The server retrieves the session from Stripe, checks that its metadata names this family, and inserts the entitlement row (once per Stripe session).
+Request: `{ sessionId: string }` → `{ entitlements: Entitlement[], purchase: { plan: 'event' | 'year' | 'month' | 'upgrade', eventId?: string } }`, or 402 when the session is not paid, 403 when it belongs to another family, 404 when Stripe does not know it. The server retrieves the session from Stripe, checks that its metadata names this family, and inserts the entitlement row (once per Stripe session). `purchase` repeats what was bought, as the checkout plan (so `upgrade` stays `upgrade`, although the row it writes is `year`), and `eventId` is the event the parent came from; `/paid` uses it to send the parent back to that event's plan.
 
 ### `POST /api/portal`
 
@@ -963,6 +963,8 @@ Health: `{ ok: true, db: true, provider, budgetLeft: boolean, version }`, used b
 | Monthly | $7.99 per month | `subscription`, monthly | same as Year |
 | Upgrade | $39 for the first year, then $49 | `subscription`, yearly, with a one-time $10 discount created by code | offered after the check-in to Event Pack owners |
 
+Names on screen (default of the payment stream, K12): the paywall calls the one-time purchase **Big Day Pass** and the subscription **Gold**, with yearly and monthly as a switch inside the Gold card, following 17.2. The stored plan ids and the API stay `event | year | month` (6.1), so a rename later touches only `plans.ts`. In this document "Event Pack" means Big Day Pass, and "Family Year" and "Monthly" mean Gold yearly and Gold monthly.
+
 Feature gating. Lida's decision for the MVP (D15): every feature is open to everyone. The only thing behind payment is what the case rules require a working paywall for: chapters 2+ and the event-day card. The column "Enforced now" is what the code checks; the named subscription levels are designed in 17.2.
 
 | Feature | Free | Event Pack | Family Year / Monthly | Enforced now |
@@ -982,7 +984,7 @@ Prices are defined in `web/lib/payments/plans.ts` and sent to Stripe as inline `
 
 1. Browser → `POST /api/checkout` → server creates a Checkout Session with `metadata { plan, eventId, familyId }`, `success_url = <base>/paid?session_id={CHECKOUT_SESSION_ID}`, `cancel_url = <base>/event/<id>/paywall?canceled=1`. `<base>` is `NEXT_PUBLIC_BASE_URL` when set, otherwise the request origin, so nothing has to be rebuilt when the Railway domain appears.
 2. Stripe hosted page, test card 4242 4242 4242 4242.
-3. `/paid` → `POST /api/verify` → the server retrieves the session from Stripe, requires `payment_status === 'paid'` and a matching `familyId`, writes the entitlement row and returns the family's entitlements. The browser caches them and opens the plan with the chapters unlocked.
+3. `/paid` → `POST /api/verify` → the server retrieves the session from Stripe, requires `payment_status === 'paid'` and a matching `familyId`, writes the entitlement row and returns the family's entitlements together with `purchase { plan, eventId? }`. The browser caches the entitlements (the `/paid` screen fires the window event `bds:entitlements` with the fresh list) and opens the plan of `purchase.eventId` with the chapters unlocked.
 
 ### 10.3 Upgrade after the check-in
 
@@ -1000,7 +1002,15 @@ For the jury demo mode (4.3) the server can write one more kind of row: status `
 
 Next to Year and Monthly: "Renews automatically at $49 per year until you cancel. We'll remind you 30 days before renewal. Cancel anytime in Settings." and a required consent checkbox. Settings show the plan, the renewal date and **Cancel subscription**, which opens the Stripe customer portal through `/api/portal` (the portal configuration is created by code on first use). The Event Pack has no renewal and says so.
 
+Defaults of the payment stream, accepted until Lida revisits them (section 19, K14 to K16):
+
+- **No free trial for Gold.** The first charge happens on the day of purchase. The "How it works" timeline on the paywall shows three real dates: the charge today, the reminder 30 days before renewal, the renewal. The monthly plan promises no reminder, because a notice 30 days ahead makes no sense for a one-month period.
+- **The renewal reminder is Stripe's own email** about an upcoming renewal, switched on in the Stripe dashboard (Settings → Billing → Subscriptions and emails, 30 days). We send no email of our own. Stripe sends no emails in test mode, so in the demo the promise is visible on the paywall but no letter arrives; the switch must be on before real payments.
+- **Cancelling takes effect at the end of the paid period.** The portal sets the subscription to end at the period end; the row gets status `canceled` and keeps giving access until `expires_at`, then it is `expired`. Settings then show "Cancelled. Access stays until <date>. Nothing more will be charged." in place of the renewal date, and the button becomes **Manage plan**. Refunds are not automatic; they are made by hand in the Stripe dashboard.
+
 ### 10.6 Known limits (stated in the README)
+
+Without a Stripe key the payment gateway is a mock in development and tests: checkout "pays" at once and returns to `/paid`. In a production build the mock runs only with `STRIPE_MOCK=on` (a demo server without a key); otherwise the paywall says that payments are not set up. A live key (`sk_live_…`) is always refused.
 
 Until the webhook is configured after the deploy, a parent who closes the tab before returning from Stripe gets access only when they open the return link again. A family is tied to a browser cookie; the restore link is the only way to another device until sign-in by email exists (section 17).
 
@@ -1045,7 +1055,7 @@ web/
   public/                 scenes, icons, manifest
 ```
 
-`lib/flags.ts` holds one boolean per P1/P2 feature (`placePhotos`, `parentVoice`, `voiceQuestion`, `socialStyle`, `restoreLink`, `monthlyPlan`, `exportImport`). A feature is switched on only when its acceptance criteria pass; an unfinished feature is invisible, never a dead button.
+`lib/flags.ts` holds one boolean per P1/P2 feature (`placePhotos`, `parentVoice`, `voiceQuestion`, `socialStyle`, `restoreLink`, `monthlyPlan`, `exportImport`). A feature is switched on only when its acceptance criteria pass; an unfinished feature is invisible, never a dead button. Switched on so far: `monthlyPlan` (payment stream, 15 Nov).
 
 The app is installable (web manifest, icons, theme colour), which gives "Add to Home Screen" a proper icon and name. No service worker in the MVP.
 
@@ -1142,6 +1152,7 @@ One Next.js Node service. Route handlers run on the Node runtime (not edge). One
 | `DATABASE_URL` | in production | PostgreSQL; empty = embedded database for development |
 | `STRIPE_SECRET_KEY` | yes | test key `sk_test_…` |
 | `STRIPE_WEBHOOK_SECRET` | no | enables the webhook after the deploy |
+| `STRIPE_MOCK` | no | `on` = fake payments in a production build without a Stripe key (demo servers only); never together with real payments |
 | `ENTITLEMENT_SECRET` | yes | signs the family session cookie |
 | `ADMIN_KEY` | no | protects the usage endpoint |
 | `DEMO_MODE` | no (`on`) | jury demo mode: demo access and the guided tour for sample families |
@@ -1389,5 +1400,15 @@ Lida's instruction when development started: keep the defaults, mark the questio
 | K7 | Social story style and questions | The answer page appears, but the next page is not rewritten, because the text must not change on re-reading; the topic moves to the next chapter | In a usability session with the social story persona |
 | K8 | Premium narration and the name | Not built in the MVP. When ElevenLabs is connected: explicit consent from the parent before the spoken name goes to the voice provider | When the voice work starts (17.1) |
 | K10 | Deploy timing | Deploy at 08:30 at the latest; the Railway project and PostgreSQL are created earlier | At checkpoint 2 (07:00) |
-| K12 | Names of the levels | The MVP paywall shows Event Pack, Family Year and Monthly as in the ТЗ; Gold, Platinum and Diamond are the working names of the later levels (17.2) | With the level design after the hackathon |
+| K12 | Names of the levels | Changed by the payment stream on 15 Nov: the paywall shows **Big Day Pass** ($9.99 once) and **Gold** ($49 a year or $7.99 a month) as in 17.2, in place of the ТЗ names Event Pack, Family Year and Monthly; plan ids are unchanged. Platinum and Diamond stay working names of later levels | With the level design after the hackathon; before the pitch, check that the slides use the same names as the paywall |
 | K13 | Budgets | Nothing is spent. Every paid run is requested separately with an estimate; the first request comes with the model shortlist | In the LLM working session (8.8) |
+
+### Accepted by default on 15 Nov, 02:25: payment stream, revisit later
+
+Defaults chosen by the payment stream while building the paywall (10.5). They are built as written.
+
+| # | Question | Built now (default) | To revisit |
+|---|---|---|---|
+| K14 | Free trial for Gold | No trial: the charge happens on the day of purchase, and the free level (chapter 1) plays the role of the trial | A 7-day trial is a later option; decide together with the levels, because a trial changes the auto-renewal wording and the timeline |
+| K15 | Who sends the renewal reminder | Stripe's upcoming-renewal email, 30 days before a yearly renewal, switched on in the Stripe dashboard; no email of our own; nothing is sent in test mode | Before real payments: turn the switch on and decide whether we also want our own letter or an in-app notice |
+| K16 | When a cancellation takes effect | At the end of the paid period; access stays until then; no automatic refund, refunds by hand in the Stripe dashboard | Refund policy and its wording in the Terms, before real payments |
