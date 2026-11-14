@@ -55,3 +55,25 @@ Defaults chosen without Lida (to revisit):
 4. In the sample, "Skip payment (demo access)" is also on the paywall itself, next to the real test checkout.
 5. The Privacy page has no contact address yet: one must be added before a public launch.
 6. Export/import backup and the "Use on another device" link are switched on (`lib/flags.ts`).
+
+## Event day and jury demo (stream G)
+
+| Part | Where |
+|---|---|
+| Day card (4.12), printable A5 card (11.7) | `app/event/[id]/day`, `components/eventday/RitualCardView.tsx`, `lib/eventday/ritual.ts` |
+| Check-in (4.13), badge and next event (4.14) | `app/event/[id]/checkin`, `app/event/[id]/badge` |
+| Calendar (11.8) | `GET /api/ics`, `components/eventday/CalendarButtons.tsx` on the plan |
+| Demo bar: tour, time travel, access (4.3, 5.1) | `components/eventday/DemoBar.tsx` (mounted by `Screen`), rules in `lib/demo/demo.ts` |
+| Demo access (9, 10.4a) | `POST /api/sample/access` (`grant`, `reset`); `GET` returns `{ demoMode }` for the Demo bar |
+
+Ready-made parts and patterns: the browser's own print to PDF with a CSS `@page A5` sheet (no PDF library to load), the `ics` package (ISC) for the calendar file, Google Calendar's public `render?action=TEMPLATE` link; a guided checklist that ticks itself from real data (onboarding checklists of Linear and Notion), a collapsible demo strip with a "Next step" button.
+
+Defaults chosen without Lida (to revisit):
+
+1. **Download PDF** opens the print window with the A5 card (choose "Save as PDF"). SPEC 11.7 named `@react-pdf/renderer`; printing keeps the bundle small and the card identical to the screen.
+2. The day card from the AI is stored once; when the AI is unavailable the template card (adjusted by memory) is shown and the AI is asked again next time.
+3. "Panel opened" and "day card seen" ticks of the tour are kept in this browser (`bds:sample:demo`), since they are not family data; the other four come from the family document.
+4. **Reset demo** removes the demo access on the server and then starts a fresh sample family (unpaid, real today, no questions), so the next juror starts clean.
+5. The Demo bar starts folded on phones (a strip with "Next step"), open on screens from 768 px; it folds itself after a jump. The "Demo access" badge in the header shows from 400 px; on narrower phones the Demo bar strip says it.
+6. The badge screen offers the three suggested events as links that preselect the event in the form (`/start?again=1&type=…`).
+7. The sample warm-up stays off (`LLM_WARM_SAMPLE` unset), so nothing is spent on a paid model.

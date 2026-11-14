@@ -44,7 +44,10 @@ interface Draft {
 
 export function Onboarding() {
   const router = useRouter();
-  const again = useSearchParams().get('again') === '1';
+  const search = useSearchParams();
+  const again = search.get('again') === '1';
+  // "Plan the next big day" on the badge screen can preselect a suggested event (4.14).
+  const suggestedType = EVENT_TYPES.find((t) => t === search.get('type'));
   const existing = useChild((s) => s.child);
   const gateOn = useSettings((s) => s.parentGateAcceptedOn);
   const acceptGate = useSettings((s) => s.acceptParentGate);
@@ -61,7 +64,7 @@ export function Onboarding() {
 
   const [d, setD] = useState<Draft>(() => ({
     name: existing?.name ?? '', pronunciation: existing?.pronunciation ?? '', age: existing?.age, pronoun: existing?.pronoun,
-    type: undefined, customLabel: '', date: '', fears: [], customFear: '',
+    type: suggestedType, customLabel: '', date: '', fears: [], customFear: '',
     character: existing?.character ?? { animal: 'bunny', color: 'blue', accessory: 'cap' },
     values: existing?.values ?? { tone: 'secular', bodyWords: 'anatomical', family: [] },
     social: existing?.styleMode === 'social',
