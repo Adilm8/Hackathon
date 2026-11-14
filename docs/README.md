@@ -9,3 +9,4 @@
 | [decisions.md](decisions.md) | Dated decision log; wins over older text in other files |
 | `research/` | Research notes (requirements, competitors, user voice) |
 | `analysis/` | Analysis of the spec |
+| `pitch/` | Business part of the pitch: market, model, unit economics, go-to-market ([business.md](pitch/business.md)); slide-by-slide deck outline and speech structure ([deck-outline.md](pitch/deck-outline.md)) |
