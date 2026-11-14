@@ -36,6 +36,10 @@ export function guardBudget(opts: { provider: string; estimateUsd: number; appro
     console.error('[eval] Refusing to start: this run calls a paid model. Ask for a budget, then pass --approved-budget=<usd>.');
     process.exit(2);
   }
+  if (approved === 0) {
+    console.log('[eval] Approved budget is $0: run only with a free-tier key (no billing on the provider project).');
+    return;
+  }
   if (opts.estimateUsd > approved) {
     console.error(`[eval] Refusing to start: estimate $${opts.estimateUsd.toFixed(4)} is above the approved $${approved}.`);
     process.exit(2);

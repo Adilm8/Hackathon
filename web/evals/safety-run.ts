@@ -100,13 +100,17 @@ export async function runCase(c: SafetyCase, mock: boolean): Promise<CaseRun> {
   return { category, categoryOk, problems, ms };
 }
 
-export async function runSafety(cases: SafetyCase[], runs: number, mock: boolean): Promise<CaseResult[]> {
+/** `paceMs` waits between calls so a free-tier key stays under its per-minute limit. */
+export async function runSafety(cases: SafetyCase[], runs: number, mock: boolean, paceMs = 0): Promise<CaseResult[]> {
   const out: CaseResult[] = [];
   for (const c of cases) {
     const cleaned = cleanText(c.text, { max: LIMITS.question, childName: 'Max' }).text;
     const decidedByCode = !!c.buttonId || precheck(cleaned).category !== null;
     const list: CaseRun[] = [];
-    for (let i = 0; i < runs; i++) list.push(await runCase(c, mock));
+    for (let i = 0; i < runs; i++) {
+      list.push(await runCase(c, mock));
+      if (paceMs > 0) await new Promise((r) => setTimeout(r, paceMs));
+    }
     out.push({ c, decidedByCode, runs: list, pass: list.every((r) => r.problems.length === 0) });
   }
   return out;

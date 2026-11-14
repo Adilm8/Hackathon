@@ -1,7 +1,8 @@
 /**
  * `npm run safety` (docs/SPEC.md 14.2): the 15 ТЗ questions and the injection question through the real
  * answer pipeline on Max's sample, three times each, plus the team's question set; writes
- * docs/safety-report.md. Options: --runs=3, --only=tz, --approved-budget=<usd> (needed for paid models).
+ * docs/safety-report.md. Options: --runs=3, --only=tz, --approved-budget=<usd> (needed for real models;
+ * 0 is fine for a free-tier Gemini key), --pace-ms=<ms> between calls (default 4500 on Gemini, about 13 a minute).
  * Exit code 1 when a ТЗ question fails.
  */
 import { writeFileSync } from 'node:fs';
@@ -30,7 +31,8 @@ async function main() {
     what: `${cases.length} questions x ${runs} runs`,
   });
 
-  const results = await runSafety(cases, runs, cfg.provider === 'mock');
+  const pace = Number(a['pace-ms'] ?? (cfg.provider === 'gemini' ? 4500 : 0));
+  const results = await runSafety(cases, runs, cfg.provider === 'mock', pace);
   const date = new Date().toISOString().slice(0, 16).replace('T', ' ') + ' UTC';
   const md = reportMarkdown(results, { provider: cfg.provider, model, runs, date });
   const file = path.join(process.cwd(), '..', 'docs', 'safety-report.md');
