@@ -1,0 +1,10 @@
+{
+  "name": "Big Day Stories",
+  "short_name": "Big Day",
+  "description": "Get your child ready for a big day in five evenings.",
+  "start_url": "/home",
+  "display": "standalone",
+  "background_color": "#FFF9F0",
+  "theme_color": "#5B6CFF",
+  "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}
