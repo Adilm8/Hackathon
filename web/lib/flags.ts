@@ -10,7 +10,7 @@ export const flags = {
   voiceQuestion: false,
   socialStyle: false,
   restoreLink: false,
-  monthlyPlan: false,
+  monthlyPlan: true,
   exportImport: false,
 } as const;
 
