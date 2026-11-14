@@ -16,12 +16,14 @@ import { Toaster } from './Toast';
  * (skeleton until then, docs/SPEC.md 6.2) and fills the AppShell header from the stores.
  */
 export function Screen({
-  children, room = 'child', bottomBar, wide = false,
+  children, room = 'child', bottomBar, wide = false, fit = false,
 }: {
   children: ReactNode | (() => ReactNode);
   room?: 'child' | 'parent';
   bottomBar?: ReactNode;
   wide?: boolean;
+  /** One screen without page scroll (see AppShell). */
+  fit?: boolean;
 }) {
   useEffect(() => bootApp(), []);
   const ready = useHydrated();
@@ -44,6 +46,7 @@ export function Screen({
         ) : null
       }
       wide={wide}
+      fit={fit}
       onExitSample={exitSample}
     >
       {ready ? (typeof children === 'function' ? children() : children) : <ScreenSkeleton />}

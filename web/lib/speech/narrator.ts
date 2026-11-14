@@ -5,9 +5,9 @@
  * BrowserNarrator: speechSynthesis, one utterance per sentence (A5), highlight on utterance
  * start, started only by a tap, best available en-US voice.
  */
-import type { Narrator } from './types';
+import type { Narrator, SpeakOptions } from './types';
 
-export type { Narrator };
+export type { Narrator, SpeakOptions };
 
 function synth(): SpeechSynthesis | null {
   return typeof window !== 'undefined' && 'speechSynthesis' in window ? window.speechSynthesis : null;
@@ -36,7 +36,7 @@ export class BrowserNarrator implements Narrator {
   available(): boolean {
     return synth() !== null;
   }
-  speak(sentences: string[], opts: { onSentence(i: number): void; onEnd(): void; rate?: number }): void {
+  speak(sentences: string[], opts: SpeakOptions): void {
     const s = synth();
     if (!s) return opts.onEnd();
     this.stop();
@@ -48,6 +48,9 @@ export class BrowserNarrator implements Narrator {
       if (voice) u.voice = voice;
       u.rate = opts.rate ?? 0.92;
       u.onstart = () => token === this.token && opts.onSentence(i);
+      u.onboundary = (e) => {
+        if (token === this.token && e.name === 'word') opts.onWord?.(i, e.charIndex);
+      };
       if (i === sentences.length - 1) u.onend = () => token === this.token && opts.onEnd();
       u.onerror = () => {
         if (token === this.token && i === sentences.length - 1) opts.onEnd();

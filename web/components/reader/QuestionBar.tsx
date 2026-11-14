@@ -43,21 +43,22 @@ export function QuestionBar({
     setListening(false);
   }
   if (asked >= limit)
-    return <p className="rounded-card bg-surface-2 p-4 text-center text-base font-bold">Great questions tonight. Let&apos;s ask more tomorrow.</p>;
+    return <p className="rounded-card bg-surface-2 px-4 py-3 text-center text-sm font-bold">Great questions tonight. Let&apos;s ask more tomorrow.</p>;
   return (
-    <section aria-label={`Questions ${childName} can ask`} className="flex flex-col gap-2">
-      <div className="flex items-center justify-between">
+    <section aria-label={`Questions ${childName} can ask`} className="flex min-w-0 flex-col gap-1 lg:flex-row lg:items-center lg:gap-3">
+      <div className="flex shrink-0 items-baseline justify-between gap-2 lg:flex-col lg:items-start lg:gap-0">
         <h2 className="text-sm font-extrabold">Did {childName} ask something?</h2>
-        <span className="text-xs font-bold text-ink-soft">{asked} of {limit} questions tonight</span>
+        <span className="whitespace-nowrap text-xs font-bold text-ink-soft"><span className="lg:hidden">{asked}/{limit} tonight</span><span className="max-lg:hidden">{asked} of {limit} questions tonight</span></span>
       </div>
-      <div className="flex flex-wrap gap-2">
+      {/* One row that scrolls sideways when it does not fit, so the questions never push the page down. */}
+      <div className="question-row -mx-4 flex min-w-0 snap-x gap-2 overflow-x-auto px-4 py-1 lg:mx-0 lg:px-1">
         {buttons.map((b) => (
           <button
             key={b.id}
             type="button"
             disabled={busy}
             onClick={() => onAsk({ text: b.text, buttonId: b.id })}
-            className="inline-flex min-h-tap items-center gap-2 rounded-pill border-2 border-line bg-surface px-4 text-sm font-bold shadow-step hover:border-primary disabled:opacity-50"
+            className="inline-flex min-h-tap shrink-0 snap-start items-center gap-2 whitespace-nowrap rounded-pill border-2 border-line bg-surface px-4 text-sm font-bold shadow-step hover:border-primary disabled:opacity-50"
           >
             <Icon name="circle-help" size={18} /> {b.text}
           </button>
@@ -66,7 +67,7 @@ export function QuestionBar({
           type="button"
           disabled={busy}
           onClick={() => setOpen(true)}
-          className="inline-flex min-h-tap items-center gap-2 rounded-pill border-2 border-dashed border-primary px-4 text-sm font-bold text-primary-text disabled:opacity-50"
+          className="inline-flex min-h-tap shrink-0 snap-start items-center gap-2 whitespace-nowrap rounded-pill border-2 border-dashed border-primary px-4 text-sm font-bold text-primary-text disabled:opacity-50"
         >
           <Icon name="pencil" size={18} /> Ask your own
         </button>

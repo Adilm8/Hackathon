@@ -17,6 +17,7 @@ export function AppShell({
   wide = false,
   headerExtra,
   onExitSample,
+  fit = false,
 }: {
   children: ReactNode;
   childName?: string;
@@ -32,11 +33,13 @@ export function AppShell({
   headerExtra?: ReactNode;
   /** Makes the "Sample data" badge a button that leaves the sample (4.3). */
   onExitSample?: () => void;
+  /** One screen, no page scroll (the reader): the content gets exactly the height left between the header and the bottom bar; the footer is left out. */
+  fit?: boolean;
 }) {
   return (
-    <div className={`${room === 'parent' ? 'room-parent' : ''} flex min-h-dvh flex-col bg-bg text-ink`}>
+    <div className={`${room === 'parent' ? 'room-parent' : ''} flex flex-col bg-bg text-ink ${fit ? 'h-dvh overflow-hidden' : 'min-h-dvh'}`}>
       <header className="no-print sticky top-0 z-20 border-b border-line bg-bg/95 backdrop-blur">
-        <div className="mx-auto flex h-14 max-w-5xl items-center gap-3 px-4">
+        <div className={`mx-auto flex h-14 items-center gap-3 px-4 ${wide ? 'max-w-6xl' : 'max-w-5xl'}`}>
           <Link href="/?landing=1" className="whitespace-nowrap font-display text-base font-extrabold sm:text-lg">
             Big Day Stories
           </Link>
@@ -72,14 +75,14 @@ export function AppShell({
           </div>
         </div>
       </header>
-      <main className={`mx-auto w-full flex-1 px-4 py-6 ${wide ? 'max-w-6xl' : 'max-w-3xl'}`}>{children}</main>
-      <footer className="no-print border-t border-line px-4 py-4 text-xs text-ink-soft">
+      <main className={`mx-auto w-full flex-1 px-4 ${fit ? 'flex min-h-0 flex-col py-3' : 'py-6'} ${wide ? 'max-w-6xl' : 'max-w-3xl'}`}>{children}</main>
+      {!fit && <footer className="no-print border-t border-line px-4 py-4 text-xs text-ink-soft">
         <div className="mx-auto flex max-w-5xl flex-wrap items-center gap-x-4 gap-y-2">
           <span>Not therapy or medical advice.</span>
           <Link href="/terms" className="inline-flex min-h-tap items-center underline">Terms</Link>
           <Link href="/privacy" className="inline-flex min-h-tap items-center underline">Privacy</Link>
         </div>
-      </footer>
+      </footer>}
       {bottomBar}
     </div>
   );
