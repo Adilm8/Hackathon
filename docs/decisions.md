@@ -1,0 +1,24 @@
+# Decisions log
+
+Append only, newest at the bottom. A decision here wins over older text in other docs.
+
+| Date | Decision | Decided by | Why |
+|---|---|---|---|
+| 2026-11-15 | Working files: requirements, roadmap by stages, architecture, decisions log | Lida | Track requirements and which features ship at which stage |
+| 2026-11-15 | The project is Big Day Stories; the earlier idea is dropped | Lida | New direction for the hackathon |
+| 2026-11-15 | Keep the full ТЗ scope and all core functionality; the analysis scope cuts are rejected | Lida | Product & Engineering is 40% of the score |
+| 2026-11-15 | Deploy once, at the end, straight to Railway (not Vercel) | Lida | |
+| 2026-11-15 | LLM through OpenRouter and Gemini; keys in `.env.local` locally (template `.env.example`) | Lida | |
+| 2026-11-15 | Voice generation and recognition through ElevenLabs later (future functionality) | Lida | |
+| 2026-11-15 | Usability checks by test users run in separate threads alongside development | Lida | |
+| 2026-11-15 | `docs/SPEC.md` is the single specification development relies on (flows, rules, data, API, build plan); it wins over older text in other docs | Lida, architect | One file to build from |
+| 2026-11-15 | PostgreSQL stores each family's plan, history and paid access; no login, a guest family is created silently; a seeded test profile exists for the jury | Lida | Keep past and future information; simple schema for the MVP |
+| 2026-11-15 | Production LLM is a paid model through OpenRouter chosen by an evaluation (SPEC 8.8); Gemini Flash is for tests only; every paid run needs a budget approved by Lida first (the key has a $5 limit) | Lida | Quality and cost control |
+| 2026-11-15 | No analytics tracker; product counts come from the database | Lida | The goal is an end-to-end product with a clear core value |
+| 2026-11-15 | Voice, generated pictures and other premium features are planned by subscription tier (SPEC 17); the MVP is sized by the time left | Lida | |
+| 2026-11-15 | Hard questions and complex mechanics are decided by Lida (SPEC 19); the stated default is built until she answers | Lida | |
+| 2026-11-15 | The child's name is never sent to an LLM (placeholder `[[CHILD]]`) and by default is not stored in the database | architect | Privacy claim survives the move to a database; pending K1 |
+| 2026-11-15 | Paid access is a database row written after the server verifies the Stripe session, not a flag in the browser | architect | A browser flag can be set by hand |
+| 2026-11-15 | Rate limit is per family (30/min) with a coarse per-IP guard (300/min) and a daily spending cap, instead of 30/min per IP (N8) | architect | The jury shares one Wi-Fi address |
+| 2026-11-15 | Build order: the whole cycle works on event templates and the mock provider before a real model is connected | architect | Working product from the first checkpoint; demo survives a model outage |
+| 2026-11-15 | Voice question (F18) is shown only where recognition runs on the device | architect | Default browser recognition sends audio to a server, which would break N5 |
