@@ -8,7 +8,8 @@ export type IconName =
   | 'shield-check' | 'hand-heart' | 'bed-double' | 'book-open' | 'party-popper' | 'award'
   | 'sticker' | 'backpack' | 'armchair' | 'users-round' | 'map-pin' | 'sandwich' | 'cloud-moon'
   | 'hand' | 'ear' | 'wind' | 'circle-help' | 'arrow-right' | 'lock' | 'volume-2' | 'pencil'
-  | 'door-open' | 'ticket' | 'luggage' | 'mic' | 'mic-off' | 'smile-plus' | 'cookie';
+  | 'door-open' | 'ticket' | 'luggage' | 'mic' | 'mic-off' | 'smile-plus' | 'cookie'
+  | 'heart-pulse' | 'droplet' | 'hospital' | 'house' | 'moon-star' | 'users' | 'waves' | 'cake';
 
 export interface IconProps extends Omit<SVGProps<SVGSVGElement>, 'name'> {
   name: IconName;
@@ -48,6 +49,14 @@ export const EVENT_ICON: Record<EventType, IconName> = {
   sibling: 'baby',
   haircut: 'scissors',
   shot: 'syringe',
+  doctor: 'heart-pulse',
+  blood_test: 'droplet',
+  hospital: 'hospital',
+  moving: 'house',
+  sleepover: 'moon-star',
+  babysitter: 'users',
+  swimming: 'waves',
+  party: 'cake',
   other: 'sparkles',
 };
 
@@ -58,6 +67,14 @@ export const EVENT_LABEL: Record<EventType, string> = {
   sibling: 'New sibling',
   haircut: 'Haircut',
   shot: 'Shot at the doctor',
+  doctor: 'Doctor check-up',
+  blood_test: 'Blood test',
+  hospital: 'Hospital stay',
+  moving: 'Moving house',
+  sleepover: 'First sleepover',
+  babysitter: 'New babysitter',
+  swimming: 'First swimming lesson',
+  party: 'Birthday party',
   other: 'Another big day',
 };
 

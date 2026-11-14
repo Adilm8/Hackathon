@@ -1,7 +1,7 @@
 {
   "type": "shot",
   "version": 1,
-  "label": "Shot or blood test",
+  "label": "Shot at the doctor",
   "countdownLabel": "the doctor visit",
   "beats": {
     "what_happens": {
@@ -64,7 +64,8 @@
     "a quick sting or pinch",
     "a sore arm afterwards",
     "paper crinkling on the exam bed",
-    "a clean smell in the room"
+    "a clean smell in the room",
+    "a colourful bandage to choose"
   ],
   "honestyNotes": "A shot or a blood test hurts a little: a quick sting or pinch, and the arm may be sore afterwards. Never say it won't hurt. Never use needle imagery in stories. Say it is quick, it is okay to cry, and the grown-up holds you.",
   "questionButtons": [
@@ -120,6 +121,33 @@
       "fallbackAnswer": [
         "After the poke, you get a bandage, maybe a sticker, and a big hug.",
         "Your arm may feel a bit sore later, and that gets better."
+      ]
+    },
+    {
+      "id": "sore_after",
+      "text": "Will my arm be sore after?",
+      "topic": "pain",
+      "fallbackAnswer": [
+        "Your arm can feel a little sore for a day or so.",
+        "Moving your arm and a gentle cuddle can help, and you can tell [[GROWNUP]] if it bothers you."
+      ]
+    },
+    {
+      "id": "how_many",
+      "text": "How many shots will I get?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "[[GROWNUP]] will find out and tell you before the visit.",
+        "Then you will know exactly what comes."
+      ]
+    },
+    {
+      "id": "look",
+      "text": "Do I have to look?",
+      "topic": "sensory",
+      "fallbackAnswer": [
+        "No. You can look away at a book or at [[GROWNUP]], or you can watch.",
+        "You choose."
       ]
     }
   ],
@@ -197,6 +225,24 @@
         "pain",
         "sensory",
         "safety"
+      ]
+    },
+    {
+      "id": "ask_numbing",
+      "label": "Asking about numbing cream or spray",
+      "how": "Ask the clinic ahead whether numbing cream or a cold spray is offered and follow their advice.",
+      "topics": [
+        "pain",
+        "safety"
+      ]
+    },
+    {
+      "id": "fun_after",
+      "label": "A plan for after",
+      "how": "Plan a small fun thing for after the visit and talk about it in the waiting room.",
+      "topics": [
+        "social",
+        "unknown"
       ]
     }
   ],

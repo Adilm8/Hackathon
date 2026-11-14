@@ -13,6 +13,9 @@ const STEPS = [
 const EVENTS = [
   ['dentist', 'Dentist'], ['school', 'First day at school'], ['flight', 'Flight'],
   ['sibling', 'New sibling'], ['haircut', 'Haircut'], ['shot', 'Shot'],
+  ['doctor', 'Doctor check-up'], ['blood_test', 'Blood test'], ['hospital', 'Hospital stay'],
+  ['moving', 'Moving house'], ['sleepover', 'Sleepover'], ['babysitter', 'New babysitter'],
+  ['swimming', 'Swimming lesson'], ['party', 'Birthday party'],
 ] as const;
 
 /** Landing (docs/SPEC.md 4.3): static, no client data fetching. */

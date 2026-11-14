@@ -1,0 +1,1028 @@
+{
+  "type": "blood_test",
+  "version": 1,
+  "label": "Blood test",
+  "countdownLabel": "the blood test",
+  "beats": {
+    "what_happens": {
+      "title": "What happens at a blood test",
+      "goals": [
+        "The steps: sit down, sleeve up, band on the arm, clean wipe, quick pinch, a few drops in a tube, cotton and bandage",
+        "A tiny bit of blood helps the doctor learn how the body is doing",
+        "The body makes new blood all the time"
+      ],
+      "parentSkill": "Name every step in order, including the pinch, and ask your child to say what comes next."
+    },
+    "who_is_there": {
+      "title": "Who helps at the blood test",
+      "goals": [
+        "A nurse or a phlebotomist takes the blood; their whole job is doing it gently",
+        "The grown-up stays close and holds the child",
+        "Other kids and grown-ups have blood tests too"
+      ],
+      "parentSkill": "Introduce the nurse by job, and plan where you will sit or hold your child."
+    },
+    "what_i_do": {
+      "title": "What I do in the chair",
+      "goals": [
+        "Sit on a lap or in a big chair and keep the arm floppy like a noodle",
+        "Look away or watch, it is my choice",
+        "Blow out slowly while the nurse works"
+      ],
+      "parentSkill": "Practise the floppy noodle arm and the long slow blow-out together."
+    },
+    "if_scared": {
+      "title": "If I feel scared",
+      "goals": [
+        "A band squeezes tight, the wipe is cold, the pinch stings for a moment",
+        "It is okay to cry or say ouch; holding still is the brave part",
+        "Calm tools: blowing out, a comfort hug, a toy, looking at something fun"
+      ],
+      "parentSkill": "Name the feeling and stay honest: 'It may pinch for a moment. I'm right here holding you.'"
+    },
+    "rehearsal": {
+      "title": "Let's practise the blood test",
+      "goals": [
+        "Play nurse with a toy: band, wipe, pretend pinch, bandage",
+        "Practise the noodle arm and the blow-out",
+        "Say the steps once more and end with the bandage and a treat"
+      ],
+      "parentSkill": "Let your child give a toy the pretend test first, then practise the comfort hold."
+    }
+  },
+  "steps": [
+    "Sit on a lap or in a big chair and roll up a sleeve",
+    "The nurse puts a stretchy band around the arm",
+    "A cold wipe cleans a small spot",
+    "A quick pinch, and a few drops of blood go into a tiny tube",
+    "Cotton and a press on the spot",
+    "Pick a bandage or a sticker",
+    "Do something nice together after"
+  ],
+  "sensory": [
+    "a stretchy band that squeezes the arm",
+    "a cold, wet wipe that smells clean",
+    "a quick pinch or sting",
+    "a little press of cotton",
+    "a colourful bandage",
+    "sometimes a finger prick that feels like a tiny poke"
+  ],
+  "honestyNotes": "A blood test usually pinches or stings for a moment. Say so plainly and never promise it will not be felt. Say the blood is a small amount and the body makes more. Do not describe needles in detail unless your child asks; follow the nurse about numbing cream.",
+  "questionButtons": [
+    {
+      "id": "hurt",
+      "text": "Will it hurt?",
+      "topic": "pain",
+      "fallbackAnswer": [
+        "It may pinch or sting for a moment, like a quick poke.",
+        "Then it is over, and you can blow out slowly while it happens."
+      ]
+    },
+    {
+      "id": "why",
+      "text": "Why do they need my blood?",
+      "topic": "body",
+      "fallbackAnswer": [
+        "A tiny bit of blood tells the doctor how your body is doing.",
+        "It is a way of checking, like a peek inside."
+      ]
+    },
+    {
+      "id": "enough",
+      "text": "Will I have enough blood left?",
+      "topic": "body",
+      "fallbackAnswer": [
+        "Yes. The nurse takes only a few drops, a tiny amount.",
+        "Your body makes new blood every day."
+      ]
+    },
+    {
+      "id": "cry",
+      "text": "Can I cry?",
+      "topic": "other",
+      "fallbackAnswer": [
+        "Yes. Crying is okay, and so is saying ouch.",
+        "Keeping your arm still is the brave part."
+      ]
+    },
+    {
+      "id": "look",
+      "text": "Do I have to watch?",
+      "topic": "sensory",
+      "fallbackAnswer": [
+        "No. You can look away at a book or [[GROWNUP]]'s face, or you can watch.",
+        "You choose."
+      ]
+    },
+    {
+      "id": "near",
+      "text": "Will [[GROWNUP]] hold me?",
+      "topic": "separation",
+      "fallbackAnswer": [
+        "Yes. [[GROWNUP]] can hold you in a big hug on a lap.",
+        "You are not alone for any part."
+      ]
+    },
+    {
+      "id": "who",
+      "text": "Who takes the blood?",
+      "topic": "strangers",
+      "fallbackAnswer": [
+        "A nurse. Taking blood gently is their job, and they do it many times a day.",
+        "They will tell you each step before they do it."
+      ]
+    },
+    {
+      "id": "after",
+      "text": "What happens after?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "After the blood test you get a bandage, and maybe a sticker.",
+        "Then we do something nice together."
+      ]
+    }
+  ],
+  "techniques": [
+    {
+      "id": "comfort_hold",
+      "label": "A comfort hug on the lap",
+      "how": "Sit your child on your lap, chest to chest or facing forward, and hug the free arm and legs gently.",
+      "topics": [
+        "separation",
+        "safety",
+        "pain"
+      ]
+    },
+    {
+      "id": "blow_out",
+      "label": "Blowing out the birthday candles",
+      "how": "Blow out slowly and long during the pinch, like many birthday candles, or blow bubbles.",
+      "topics": [
+        "pain",
+        "sensory"
+      ]
+    },
+    {
+      "id": "floppy_arm",
+      "label": "A floppy noodle arm",
+      "how": "Practise letting the arm go loose like a cooked noodle; a loose arm often feels less.",
+      "topics": [
+        "pain",
+        "body"
+      ]
+    },
+    {
+      "id": "look_away",
+      "label": "Looking at something fun",
+      "how": "Bring a picture book or a video to look at during the test, or look into your eyes.",
+      "topics": [
+        "sensory",
+        "unknown"
+      ]
+    },
+    {
+      "id": "ask_numbing",
+      "label": "Asking about numbing cream",
+      "how": "Ask the clinic ahead whether numbing cream or a cold spray is offered and follow their advice.",
+      "topics": [
+        "pain",
+        "safety"
+      ]
+    },
+    {
+      "id": "pick_bandage",
+      "label": "Choosing the bandage",
+      "how": "Let your child choose the bandage or sticker beforehand so there is something to look forward to.",
+      "topics": [
+        "social",
+        "unknown"
+      ]
+    },
+    {
+      "id": "comfort_toy",
+      "label": "Bringing a comfort toy",
+      "how": "Bring a favourite toy that can sit on the lap and get a pretend test first.",
+      "topics": [
+        "separation",
+        "strangers",
+        "social"
+      ]
+    },
+    {
+      "id": "warm_drink",
+      "label": "Drinking water before",
+      "how": "Offer water before the visit if the clinic allows it, and keep the arm warm with long sleeves.",
+      "topics": [
+        "body",
+        "safety"
+      ]
+    },
+    {
+      "id": "deep_breaths",
+      "label": "Smell the flower, blow the candle",
+      "how": "Breathe in slowly through the nose like smelling a flower and out like blowing a candle.",
+      "topics": [
+        "pain",
+        "sensory",
+        "safety"
+      ]
+    }
+  ],
+  "ritual": [
+    "Sit on a lap and roll up a sleeve",
+    "Floppy arm and blow out slowly",
+    "Pick a bandage and do something nice"
+  ],
+  "phrases": {
+    "pain": [
+      "It may pinch for a moment. Let's blow out slowly together.",
+      "Saying ouch is okay."
+    ],
+    "separation": [
+      "I'm holding you the whole time.",
+      "You can sit on my lap."
+    ],
+    "unknown": [
+      "First the band, then the wipe, then the pinch, then the bandage.",
+      "Let's ask the nurse to tell us each step."
+    ],
+    "strangers": [
+      "The nurse takes blood gently many times a day.",
+      "Let's say hello to the nurse."
+    ],
+    "sensory": [
+      "The band squeezes and the wipe is cold.",
+      "You can look at me instead of the arm."
+    ],
+    "safety": [
+      "The nurse is very careful and uses clean tools.",
+      "Holding still helps the nurse be quick."
+    ],
+    "social": [
+      "Lots of kids have blood tests. Your toy can go first.",
+      "Let's pick a bandage together."
+    ],
+    "body": [
+      "Only a few drops. Your body makes new blood every day.",
+      "Your blood helps the doctor check how your body is doing."
+    ],
+    "love": [
+      "I am so proud of you.",
+      "I love you, brave or scared."
+    ]
+  },
+  "topicWords": {
+    "pain": [
+      "hurt",
+      "pinch",
+      "sting",
+      "ouch",
+      "poke",
+      "sore",
+      "quick"
+    ],
+    "separation": [
+      "lap",
+      "hold",
+      "holds",
+      "holding",
+      "hug",
+      "with",
+      "close",
+      "right here",
+      "stay",
+      "stays",
+      "alone"
+    ],
+    "unknown": [
+      "first",
+      "then",
+      "next",
+      "after",
+      "last",
+      "step",
+      "steps"
+    ],
+    "strangers": [
+      "nurse",
+      "hello",
+      "helper",
+      "job"
+    ],
+    "sensory": [
+      "squeeze",
+      "squeezes",
+      "cold",
+      "wet",
+      "wipe",
+      "look",
+      "watch",
+      "smell",
+      "band",
+      "stretchy"
+    ],
+    "safety": [
+      "safe",
+      "careful",
+      "clean",
+      "still",
+      "gentle",
+      "gently"
+    ],
+    "social": [
+      "kids",
+      "children",
+      "toy",
+      "friend",
+      "people",
+      "grown-ups"
+    ],
+    "body": [
+      "blood",
+      "body",
+      "arm",
+      "drops",
+      "makes",
+      "noodle",
+      "finger"
+    ],
+    "love": [
+      "love",
+      "proud",
+      "hug"
+    ]
+  },
+  "backgrounds": [
+    "shot",
+    "outside",
+    "home-evening",
+    "cosy-room"
+  ],
+  "fallbackPages": {
+    "story": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "Soon [[CHILD]] will have a blood test.",
+              "kind": "describe"
+            },
+            {
+              "text": "A blood test means a nurse takes a tiny bit of blood, just a few drops.",
+              "kind": "describe"
+            },
+            {
+              "text": "The blood helps the doctor learn how [[CHILD]]'s body is doing.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, [[CHILD]] sits on [[GROWNUP]]'s lap or in a big chair.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[CHILD]] rolls up a sleeve.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Next, the nurse puts a stretchy band around the arm and cleans a spot with a cold wipe.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then comes a quick pinch, and a few drops go into a tiny tube.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, a cotton ball and a press.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last of all, [[CHILD]] picks a colourful bandage.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "unknown",
+            "pain"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "At the clinic there is a nurse.",
+              "kind": "describe"
+            },
+            {
+              "text": "Taking blood gently is the nurse's job.",
+              "kind": "describe"
+            },
+            {
+              "text": "The nurse does it many times a day, for big people and little people.",
+              "kind": "describe"
+            },
+            {
+              "text": "The nurse says hello and tells [[CHILD]] each step before it happens.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say hello, or just wave.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "strangers"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "[[GROWNUP]] stays right there the whole time.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can sit on [[GROWNUP]]'s lap for a big comfort hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "A favourite toy can come too and sit close.",
+              "kind": "describe"
+            },
+            {
+              "text": "Lots of kids have blood tests, and so do lots of grown-ups.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can squeeze the toy when it is time.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "shot",
+          "addresses": [
+            "separation",
+            "social"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "In the chair, [[CHILD]] has two jobs.",
+              "kind": "describe"
+            },
+            {
+              "text": "The first job is a floppy noodle arm.",
+              "kind": "coach"
+            },
+            {
+              "text": "A floppy arm lets the nurse be quick, and it often feels like less of a pinch.",
+              "kind": "describe"
+            },
+            {
+              "text": "The second job is blowing out slowly, like a whole cake of birthday candles.",
+              "kind": "coach"
+            },
+            {
+              "text": "Whoosh, whoosh, and the pinch is over.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "shot",
+          "addresses": [
+            "body",
+            "pain"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "[[CHILD]] can choose where to look.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids watch the nurse, and some kids look at a book or at [[GROWNUP]]'s face.",
+              "kind": "describe"
+            },
+            {
+              "text": "Both ways are fine.",
+              "kind": "describe"
+            },
+            {
+              "text": "Holding the arm still is the brave part, and the nurse is very careful.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can ask the nurse, what's next?",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "sensory",
+            "safety"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "Some parts of a blood test feel strange.",
+              "kind": "describe"
+            },
+            {
+              "text": "The band on the arm squeezes tight.",
+              "kind": "describe"
+            },
+            {
+              "text": "The wipe feels cold and wet.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then there is a quick pinch or a sting, and it can feel sore for a moment.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel scared about that, and it is okay to say ouch.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "worried",
+          "background": "shot",
+          "addresses": [
+            "sensory",
+            "pain"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "If [[CHILD]] cries, that is okay too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Crying does not stop the brave part.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can hold [[GROWNUP]] tight, hug a toy, or blow out slowly.",
+              "kind": "coach"
+            },
+            {
+              "text": "Then the cotton and the bandage come, and the hard part is done.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] gives [[CHILD]] a big proud hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "shot",
+          "addresses": [
+            "separation",
+            "love"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "Tonight [[CHILD]] and [[GROWNUP]] play nurse at home.",
+              "kind": "describe"
+            },
+            {
+              "text": "A hair tie can be the stretchy band, and a cotton ball can be the wipe.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, [[CHILD]] gives a toy a pretend blood test.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then it is [[CHILD]]'s turn.",
+              "kind": "describe"
+            },
+            {
+              "text": "Floppy noodle arm, and blow out slowly!",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "body"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Let's say the blood test steps once more.",
+              "kind": "coach"
+            },
+            {
+              "text": "First, sit and roll up a sleeve.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the band and the cold wipe.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, a quick pinch and blow out.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, the cotton and the bandage.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of [[CHILD]] for practising, and gives a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "cosy-room",
+          "addresses": [
+            "unknown",
+            "love"
+          ]
+        }
+      ]
+    },
+    "social": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "My name is [[CHILD]], and soon I will have a blood test.",
+              "kind": "describe"
+            },
+            {
+              "text": "A nurse will take a tiny bit of my blood.",
+              "kind": "describe"
+            },
+            {
+              "text": "My blood helps the doctor check my body.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, I sit on [[GROWNUP]]'s lap or in a big chair.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I roll up my sleeve.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can try to sit still.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Next, the nurse puts a band on my arm.",
+              "kind": "describe"
+            },
+            {
+              "text": "The nurse cleans a spot with a wipe.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I feel a quick pinch.",
+              "kind": "describe"
+            },
+            {
+              "text": "A few drops of blood go into a small tube.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, I get cotton and a bandage.",
+              "kind": "describe"
+            },
+            {
+              "text": "The blood test is short.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "unknown",
+            "pain"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "At the clinic there is a nurse.",
+              "kind": "describe"
+            },
+            {
+              "text": "The nurse's job is to take blood gently.",
+              "kind": "describe"
+            },
+            {
+              "text": "The nurse does blood tests every day.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say hello to the nurse.",
+              "kind": "coach"
+            },
+            {
+              "text": "The nurse will tell me each step.",
+              "kind": "describe"
+            },
+            {
+              "text": "The nurse knows how to help kids.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "strangers"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "[[GROWNUP]] stays with me.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] can hold me in a hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can bring a toy to hold.",
+              "kind": "coach"
+            },
+            {
+              "text": "Many kids have blood tests.",
+              "kind": "describe"
+            },
+            {
+              "text": "Many grown-ups have blood tests too.",
+              "kind": "describe"
+            },
+            {
+              "text": "A blood test is a normal thing to do.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "separation",
+            "social"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "In the chair, I keep my arm floppy like a noodle.",
+              "kind": "describe"
+            },
+            {
+              "text": "A floppy arm helps the nurse.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can blow out slowly during the pinch.",
+              "kind": "coach"
+            },
+            {
+              "text": "Blowing out can help my body feel calm.",
+              "kind": "describe"
+            },
+            {
+              "text": "The pinch is quick.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then it is over.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "body",
+            "pain"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I can choose where to look.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can look at a book.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can look at [[GROWNUP]].",
+              "kind": "describe"
+            },
+            {
+              "text": "I can watch the nurse if I want to.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can try to keep my arm still.",
+              "kind": "coach"
+            },
+            {
+              "text": "Keeping still helps the nurse be careful.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "sensory",
+            "safety"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "Some parts of a blood test can feel strange.",
+              "kind": "describe"
+            },
+            {
+              "text": "The band may squeeze my arm.",
+              "kind": "describe"
+            },
+            {
+              "text": "The wipe may feel cold.",
+              "kind": "describe"
+            },
+            {
+              "text": "The pinch may sting a little.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel scared.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say ouch if it stings.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "worried",
+          "background": "shot",
+          "addresses": [
+            "sensory",
+            "pain"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Sometimes kids cry at a blood test.",
+              "kind": "describe"
+            },
+            {
+              "text": "Crying is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] holds me close.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can hug my toy.",
+              "kind": "coach"
+            },
+            {
+              "text": "After the bandage, the blood test is done.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me and gives me a hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "separation",
+            "love"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "At home, I can practise a blood test.",
+              "kind": "describe"
+            },
+            {
+              "text": "My toy can go first.",
+              "kind": "describe"
+            },
+            {
+              "text": "I put a pretend band on its arm.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[GROWNUP]] practises with me.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can practise my floppy noodle arm.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can practise blowing out slowly.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "body"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Here are the steps of my blood test.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, I sit and roll up my sleeve.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then, the band and the wipe.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, a quick pinch.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, the bandage.",
+              "kind": "describe"
+            },
+            {
+              "text": "I practised all the steps, and I did a good job.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "cosy-room",
+          "addresses": [
+            "unknown"
+          ]
+        }
+      ]
+    }
+  },
+  "badge": {
+    "id": "super_sleeve",
+    "label": "Super Sleeve"
+  }
+}

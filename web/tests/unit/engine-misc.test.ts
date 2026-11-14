@@ -44,7 +44,7 @@ describe('access (5.6)', () => {
 describe('suggestions (5.9)', () => {
   it('by age, minus recent types, three shown', () => {
     expect(suggestNext({ age: 4 }, [], T)).toEqual(['haircut', 'shot', 'dentist']);
-    expect(suggestNext({ age: 4 }, [{ type: 'haircut', date: '2026-10-25' }, { type: 'dentist', date: '2026-11-20' }], T)).toEqual(['shot', 'school', 'flight']);
+    expect(suggestNext({ age: 4 }, [{ type: 'haircut', date: '2026-10-25' }, { type: 'dentist', date: '2026-11-20' }], T)).toEqual(['shot', 'school', 'doctor']);
     expect(suggestNext({ age: 4 }, [{ type: 'haircut', date: '2026-01-01' }], T)).toEqual(['haircut', 'shot', 'dentist']);
     expect(suggestNext({ age: 6 }, [], T)).toEqual(['school', 'dentist', 'flight']);
     expect(suggestNext({ age: 8 }, [], T)).toEqual(['dentist', 'flight', 'shot']);
@@ -154,7 +154,7 @@ describe('text helpers', () => {
   it('labels', () => {
     expect(eventLabel({ type: 'other', customLabel: 'Swim class' })).toBe('Swim class');
     expect(eventLabel({ type: 'dentist' })).toBe('Dentist visit');
-    expect(Object.keys(TEMPLATES)).toHaveLength(7);
+    expect(Object.keys(TEMPLATES)).toHaveLength(15);
     expect(TEMPLATES.flight.type).toBe('flight');
   });
 });

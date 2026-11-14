@@ -49,9 +49,16 @@ export function getBackground(id: BackgroundId): Background {
   return { id: known, src: `/scenes/${known}.svg`, nightSrc: `/scenes/${known}-night.svg`, alt: ALT[known] };
 }
 
+/** The main scene of each event type. Types without a scene of their own reuse the closest one. */
+const EVENT_SCENE: Record<EventType, KnownBackgroundId> = {
+  dentist: 'dentist', school: 'school', flight: 'flight', sibling: 'sibling', haircut: 'haircut', shot: 'shot',
+  doctor: 'shot', blood_test: 'shot', hospital: 'shot', moving: 'outside', sleepover: 'cosy-room',
+  babysitter: 'home-evening', swimming: 'outside', party: 'home-evening', other: 'outside',
+};
+
 /** The main scene of an event type; "other" uses the neutral outside-a-building scene. */
 export function backgroundForEvent(type: EventType): KnownBackgroundId {
-  return type === 'other' ? 'outside' : type;
+  return EVENT_SCENE[type];
 }
 
 export interface SceneProps {

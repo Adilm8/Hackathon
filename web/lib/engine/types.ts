@@ -7,7 +7,10 @@
 /** Local calendar date 'YYYY-MM-DD'. Never a Date object or a UTC timestamp. */
 export type ISODate = string;
 
-export type EventType = 'dentist' | 'school' | 'flight' | 'sibling' | 'haircut' | 'shot' | 'other';
+export type EventType =
+  | 'dentist' | 'school' | 'flight' | 'sibling' | 'haircut' | 'shot'
+  | 'doctor' | 'blood_test' | 'hospital' | 'moving' | 'sleepover' | 'babysitter' | 'swimming' | 'party'
+  | 'other';
 export type Beat = 'what_happens' | 'who_is_there' | 'what_i_do' | 'if_scared' | 'rehearsal';
 export type Topic =
   | 'pain' | 'separation' | 'unknown' | 'strangers' | 'sensory'

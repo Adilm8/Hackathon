@@ -56,13 +56,16 @@
     "Say hello to the people there",
     "Do the main part of the day, one step at a time",
     "Take a break if needed",
-    "Go home and talk about it"
+    "Go home and talk about it",
+    "Celebrate being brave with a hug"
   ],
   "sensory": [
     "new sounds and voices",
     "a new room with new smells",
     "bright lights or a busy place",
-    "a familiar hand to hold"
+    "a familiar hand to hold",
+    "a place that feels big and new",
+    "waiting in a line or a waiting room"
   ],
   "honestyNotes": "The parent's label describes the event; do not invent details about it. Never promise how it will feel or that nothing will go wrong. Promise only what is true: the grown-up is there or comes back.",
   "questionButtons": [
@@ -109,6 +112,33 @@
       "fallbackAnswer": [
         "That's a great question for [[GROWNUP]].",
         "[[GROWNUP]] will tell you exactly what it may feel like."
+      ]
+    },
+    {
+      "id": "how_long",
+      "text": "How long will it take?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "[[GROWNUP]] will tell you how long it lasts, maybe as long as one cartoon.",
+        "Then it is over, and we go home."
+      ]
+    },
+    {
+      "id": "dont_know",
+      "text": "What if I don't know what to do?",
+      "topic": "social",
+      "fallbackAnswer": [
+        "You can watch first, or ask a grown-up there.",
+        "Nobody knows everything the first time."
+      ]
+    },
+    {
+      "id": "after",
+      "text": "What happens after?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "After the big day, we go home and talk about it.",
+        "Maybe we will do something cosy together."
       ]
     }
   ],
@@ -169,6 +199,25 @@
       "topics": [
         "body",
         "strangers",
+        "safety"
+      ]
+    },
+    {
+      "id": "watch_first",
+      "label": "Watching first",
+      "how": "Let your child watch the new thing from the side before joining in.",
+      "topics": [
+        "social",
+        "strangers",
+        "unknown"
+      ]
+    },
+    {
+      "id": "quiet_break",
+      "label": "A quiet break",
+      "how": "Agree a signal for a short break somewhere quiet, and take it when asked.",
+      "topics": [
+        "sensory",
         "safety"
       ]
     }

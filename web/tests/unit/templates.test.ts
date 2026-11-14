@@ -2,7 +2,11 @@ import { describe, expect, it } from 'vitest';
 import { ALL_BACKGROUND_IDS, EVENT_TYPES, getTemplate } from '@/lib/engine/templates';
 import { EventTemplateSchema } from '@/lib/engine/schemas';
 import { containsAnyWord, countWords, sentencesToText } from '@/lib/engine/text';
-import { BACKGROUND_IDS } from '@/components/character/backgrounds';
+import { BACKGROUND_IDS, backgroundForEvent } from '@/components/character/backgrounds';
+import { EVENT_ICON, EVENT_LABEL } from '@/components/icons/Icon';
+import { BADGE_LABEL } from '@/components/badges/BadgeArt';
+import { LUCIDE } from '@/components/icons/lucide-data';
+import { EventTypeEnum } from '@/lib/engine/schemas';
 import type { Beat, StyleMode } from '@/lib/engine/types';
 
 const BEATS: Beat[] = ['what_happens', 'who_is_there', 'what_i_do', 'if_scared', 'rehearsal'];
@@ -27,8 +31,34 @@ it('template scenes are exactly the scenes of the background registry', () => {
   expect([...ALL_BACKGROUND_IDS].sort()).toEqual([...BACKGROUND_IDS].sort());
 });
 
+it('every event type of the contract has a template, an icon, a scene and a badge', () => {
+  expect([...EVENT_TYPES].sort()).toEqual([...EventTypeEnum.options].sort());
+  expect(EVENT_TYPES[EVENT_TYPES.length - 1]).toBe('other');
+  for (const type of EVENT_TYPES) {
+    expect(LUCIDE[EVENT_ICON[type]], type).toBeTruthy();
+    expect(EVENT_LABEL[type], type).toBeTruthy();
+    expect(BADGE_LABEL[type], type).toBeTruthy();
+    expect(BACKGROUND_IDS, type).toContain(backgroundForEvent(type));
+  }
+});
+
 describe.each(EVENT_TYPES)('template %s', (type) => {
   const t = getTemplate(type);
+
+  it('is detailed: steps, sensory details, eight or more questions and techniques', () => {
+    expect(t.steps.length).toBeGreaterThanOrEqual(6);
+    expect(t.sensory.length).toBeGreaterThanOrEqual(5);
+    expect(t.questionButtons.length).toBeGreaterThanOrEqual(8);
+    expect(t.techniques.length).toBeGreaterThanOrEqual(8);
+    expect(t.honestyNotes.length).toBeGreaterThan(40);
+    for (const b of Object.values(t.beats)) expect(b.parentSkill.length).toBeGreaterThan(20);
+  });
+
+  it('badge, labels and ritual are filled in', () => {
+    expect(t.badge.label).toBeTruthy();
+    expect(t.countdownLabel.startsWith('the ') || t.countdownLabel === 'moving day').toBe(true);
+    for (const r of t.ritual) expect(r.length).toBeGreaterThan(5);
+  });
 
   it('matches the schema and its file name', () => {
     expect(EventTemplateSchema.safeParse(t).success).toBe(true);

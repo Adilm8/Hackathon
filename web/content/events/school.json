@@ -56,14 +56,16 @@
     "Hang up the coat and find a spot in the classroom",
     "Circle time on the rug, then play time",
     "Snack time and time outside on the playground",
-    "The grown-up comes back at pick-up time"
+    "The grown-up comes back at pick-up time",
+    "Lunch or a snack from my lunch box, and a rest or story time"
   ],
   "sensory": [
     "many children's voices at once",
     "bright colours, paint and crayons",
     "the smell of snacks and paint",
     "a soft rug for circle time",
-    "a bell or a song that means 'tidy up'"
+    "a bell or a song that means 'tidy up'",
+    "a lunch box that clicks open"
   ],
   "honestyNotes": "Some children cry at goodbye and that is normal. Never promise the child will not feel sad or will make a friend on day one. Promise only what is true: the grown-up comes back.",
   "questionButtons": [
@@ -119,6 +121,33 @@
       "fallbackAnswer": [
         "Classrooms can get loud when everyone plays.",
         "You can tell the teacher and sit somewhere quiet for a little while."
+      ]
+    },
+    {
+      "id": "lunch",
+      "text": "What if I don't like the food?",
+      "topic": "body",
+      "fallbackAnswer": [
+        "You can eat what you like from your lunch box and say no thank you to the rest.",
+        "The teacher can help you open things."
+      ]
+    },
+    {
+      "id": "lost",
+      "text": "What if I get lost?",
+      "topic": "safety",
+      "fallbackAnswer": [
+        "Your teacher always knows where every child is.",
+        "If you are not sure where to go, stay where you are and ask a teacher."
+      ]
+    },
+    {
+      "id": "rest",
+      "text": "Is there a rest time?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "Many classes have a quiet time to rest or look at books.",
+        "You can ask the teacher about it on the first day."
       ]
     }
   ],
@@ -186,6 +215,24 @@
         "separation",
         "pain",
         "safety"
+      ]
+    },
+    {
+      "id": "visit_before",
+      "label": "Visiting the school before",
+      "how": "Walk or drive past the school, play in the playground, or visit the classroom before the first day.",
+      "topics": [
+        "unknown",
+        "strangers"
+      ]
+    },
+    {
+      "id": "family_photo",
+      "label": "A family photo in the backpack",
+      "how": "Put a small family photo in the backpack pocket to look at when missing home.",
+      "topics": [
+        "separation",
+        "love"
       ]
     }
   ],

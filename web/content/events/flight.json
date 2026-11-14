@@ -65,7 +65,8 @@
     "ears that feel full or pop",
     "small bumps like a car on a bumpy road",
     "clouds and tiny houses out of the window",
-    "a beeping security gate"
+    "a beeping security gate",
+    "a tiny toilet with a loud whoosh flush"
   ],
   "honestyNotes": "Ears may hurt a little or pop; swallowing helps. Bumps can happen and feel strange. Never promise 'nothing can go wrong'; say pilots train for a long time and planes are built to fly through bumps.",
   "questionButtons": [
@@ -121,6 +122,33 @@
       "fallbackAnswer": [
         "You can look out of the window, have a snack and play with your toys.",
         "Some people even take a nap."
+      ]
+    },
+    {
+      "id": "toilet",
+      "text": "Is there a toilet on the plane?",
+      "topic": "body",
+      "fallbackAnswer": [
+        "Yes. There is a tiny toilet with a very loud whoosh when it flushes.",
+        "You can go with [[GROWNUP]], and you can cover your ears for the whoosh."
+      ]
+    },
+    {
+      "id": "suitcase",
+      "text": "Where does my suitcase go?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "Big suitcases ride in the tummy of the plane.",
+        "Your small bag stays with you, and the suitcase waits for you at the end."
+      ]
+    },
+    {
+      "id": "sleep",
+      "text": "Can I sleep on the plane?",
+      "topic": "safety",
+      "fallbackAnswer": [
+        "Yes. You can lean on [[GROWNUP]] or on a little pillow.",
+        "The seatbelt stays on while you sleep, like a gentle hug."
       ]
     }
   ],
@@ -197,6 +225,24 @@
         "safety",
         "sensory",
         "pain"
+      ]
+    },
+    {
+      "id": "own_ticket",
+      "label": "Holding my own ticket",
+      "how": "Let your child hold a boarding pass (or a drawn one) and show it at the gate.",
+      "topics": [
+        "unknown",
+        "social"
+      ]
+    },
+    {
+      "id": "flight_map",
+      "label": "Following the flight on a map",
+      "how": "Show the start and the end of the trip on a map and point to where the plane is now.",
+      "topics": [
+        "unknown",
+        "safety"
       ]
     }
   ],

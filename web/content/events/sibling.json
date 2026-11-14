@@ -56,14 +56,16 @@
     "The child visits or waits at home and talks on the phone",
     "The child meets the baby, maybe with a gift from the baby",
     "The baby comes home and sleeps, eats and cries a lot",
-    "The child keeps special one-on-one time with a grown-up"
+    "The child keeps special one-on-one time with a grown-up",
+    "The child helps with a small job, like choosing the baby's socks"
   ],
   "sensory": [
     "a tiny baby that smells of milk and soap",
     "a baby's cry that can be loud",
     "very small fingers and toes",
     "a quiet house while the baby sleeps",
-    "the beeps and long halls of a hospital"
+    "the beeps and long halls of a hospital",
+    "tiny clothes and a small bath"
   ],
   "honestyNotes": "A baby cries, needs a lot of care and takes grown-ups' time. Never promise nothing will change. Promise what is true: the child is loved the same and has special time, and grown-ups come back from the hospital.",
   "questionButtons": [
@@ -119,6 +121,33 @@
       "fallbackAnswer": [
         "First you stay with a helper you know, then you meet the baby.",
         "After that, the baby comes home, and you become a big sibling."
+      ]
+    },
+    {
+      "id": "play_with_me",
+      "text": "When can the baby play with me?",
+      "topic": "social",
+      "fallbackAnswer": [
+        "New babies mostly sleep, eat and cry.",
+        "In a few months the baby will smile at you, and later you can play together."
+      ]
+    },
+    {
+      "id": "who_looks",
+      "text": "Who looks after me when the baby is born?",
+      "topic": "separation",
+      "fallbackAnswer": [
+        "[[GROWNUP]] will tell you who looks after you while the baby is born.",
+        "It will be someone you know and like."
+      ]
+    },
+    {
+      "id": "so_much_help",
+      "text": "Why does the baby need so much help?",
+      "topic": "body",
+      "fallbackAnswer": [
+        "Babies cannot walk, talk or eat by themselves yet.",
+        "Grown-ups help them, just like they helped you when you were tiny."
       ]
     }
   ],
@@ -187,6 +216,26 @@
         "sensory",
         "safety",
         "separation"
+      ]
+    },
+    {
+      "id": "baby_photos",
+      "label": "Looking at my baby photos",
+      "how": "Look at photos of your child as a baby and tell how you cared for them.",
+      "topics": [
+        "love",
+        "unknown",
+        "body"
+      ]
+    },
+    {
+      "id": "name_feelings",
+      "label": "Naming big feelings",
+      "how": "Say feelings out loud for your child: 'You wish the baby would go back. That's a big feeling, and I love you.'",
+      "topics": [
+        "love",
+        "pain",
+        "social"
       ]
     }
   ],

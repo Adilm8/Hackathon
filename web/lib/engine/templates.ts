@@ -11,11 +11,27 @@ import flight from '@/content/events/flight.json';
 import sibling from '@/content/events/sibling.json';
 import haircut from '@/content/events/haircut.json';
 import shot from '@/content/events/shot.json';
+import doctor from '@/content/events/doctor.json';
+import blood_test from '@/content/events/blood_test.json';
+import hospital from '@/content/events/hospital.json';
+import moving from '@/content/events/moving.json';
+import sleepover from '@/content/events/sleepover.json';
+import babysitter from '@/content/events/babysitter.json';
+import swimming from '@/content/events/swimming.json';
+import party from '@/content/events/party.json';
 import other from '@/content/events/other.json';
 
-export const EVENT_TYPES: readonly EventType[] = ['dentist', 'school', 'flight', 'sibling', 'haircut', 'shot', 'other'];
+/** Every event type, in the order onboarding shows them; "other" stays last. */
+export const EVENT_TYPES: readonly EventType[] = [
+  'dentist', 'doctor', 'shot', 'blood_test', 'hospital', 'haircut', 'school', 'babysitter', 'sleepover',
+  'party', 'swimming', 'flight', 'moving', 'sibling', 'other',
+];
 
-const RAW: Record<EventType, unknown> = { dentist, school, flight, sibling, haircut, shot, other };
+const RAW: Record<EventType, unknown> = {
+  dentist, school, flight, sibling, haircut, shot,
+  doctor, blood_test, hospital, moving, sleepover, babysitter, swimming, party,
+  other,
+};
 
 const cache = new Map<EventType, EventTemplate>();
 
@@ -34,7 +50,7 @@ export function getTemplate(type: EventType): EventTemplate {
   return t;
 }
 
-/** All seven templates, in the order of EVENT_TYPES. */
+/** All templates, in the order of EVENT_TYPES. */
 export function allTemplates(): EventTemplate[] {
   return EVENT_TYPES.map(getTemplate);
 }
@@ -51,7 +67,8 @@ export const TEMPLATES: Readonly<Record<EventType, EventTemplate>> = new Proxy({
 
 /**
  * Every scene id the templates may use. It matches BACKGROUND_IDS of the scene registry
- * (components/character/backgrounds.tsx, 11.4): one main scene per event plus three neutral ones.
+ * (components/character/backgrounds.tsx, 11.4): the six original event scenes plus three neutral ones.
+ * Newer event types reuse these scenes (see backgroundForEvent).
  */
 export const ALL_BACKGROUND_IDS: readonly string[] = [
   'dentist', 'school', 'flight', 'sibling', 'haircut', 'shot', 'home-evening', 'outside', 'cosy-room',

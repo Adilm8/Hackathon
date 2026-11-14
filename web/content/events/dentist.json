@@ -65,7 +65,9 @@
     "a minty or fruity taste of toothpaste",
     "cool water and a slurpy straw that sucks it up",
     "a chair that hums as it moves",
-    "gloves and masks on the helpers"
+    "gloves and masks on the helpers",
+    "a little straw that slurps the water away",
+    "dentist toothpaste that tastes fruity and feels gritty"
   ],
   "honestyNotes": "May feel a little pinch, press or tickle. Never promise 'no pain'. Say the feeling is short and the dentist stops when the child raises a hand.",
   "questionButtons": [
@@ -123,6 +125,33 @@
       "fallbackAnswer": [
         "When your teeth are counted and clean, the chair goes back down.",
         "Then you pick a sticker, and you go home with [[GROWNUP]]."
+      ]
+    },
+    {
+      "id": "spit",
+      "text": "Do I have to spit?",
+      "topic": "sensory",
+      "fallbackAnswer": [
+        "Sometimes the dentist asks you to rinse and spit into a little sink.",
+        "Other times a tiny straw slurps the water away, and it tickles a bit."
+      ]
+    },
+    {
+      "id": "taste",
+      "text": "What does the toothpaste taste like?",
+      "topic": "sensory",
+      "fallbackAnswer": [
+        "Dentist toothpaste can taste like fruit or mint, and it feels a bit gritty.",
+        "If you do not like it, you can say so, and they will rinse it away."
+      ]
+    },
+    {
+      "id": "picture",
+      "text": "What is the picture of my teeth?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "Sometimes the dentist takes a picture of your teeth with a special camera.",
+        "You bite on something small and keep still for a moment, and then it is done."
       ]
     }
   ],
@@ -202,6 +231,25 @@
         "social",
         "separation",
         "unknown"
+      ]
+    },
+    {
+      "id": "tell_show_do",
+      "label": "Tell, show, do",
+      "how": "Ask the dentist to tell what each tool does, show it on a finger, then use it.",
+      "topics": [
+        "unknown",
+        "strangers",
+        "sensory"
+      ]
+    },
+    {
+      "id": "mirror_practice",
+      "label": "Practising with a mirror",
+      "how": "Practise 'open wide' and counting teeth in front of a mirror at home.",
+      "topics": [
+        "unknown",
+        "body"
       ]
     }
   ],
