@@ -2,7 +2,7 @@
 
 Features by stage. The full specification is `docs/SPEC.md`; its build plan (section 15) runs the streams below in parallel threads and branches. Each stage ends with a checkpoint that runs locally; the production deploy happens once, near the end, on Railway with PostgreSQL (Stage 6). Status: `todo`, `in progress`, `done`, `off` (switched off by its flag). Hard deadline: submission before 12:00 Nov 15 (Astana), see C3 in `requirements.md`.
 
-Scope rule (Lida, Nov 15): nothing is cut. A feature that is not passing at code freeze (10:30) is switched off in `flags.ts` and listed in the README as "next". The cycle is closed on templates and the mock provider before any model is connected (SPEC A1). Usability checks by test users run alongside development in separate threads (SPEC 14.4).
+Scope rule (Lida, Nov 15): nothing is cut. A feature that is not passing at code freeze (10:30) is switched off in `flags.ts` and listed in the README as "next". Every feature is open in the MVP; payment unlocks only chapters 2+ and the event-day card (SPEC D15, K3, K11). The cycle is closed on templates and the mock provider before any model is connected (SPEC A1); the working provider for development and tests is Gemini (`LLM_PROVIDER=gemini`), OpenRouter becomes the production choice after the evaluation (SPEC D17, 8.8). Usability checks by test users run alongside development in separate threads (SPEC 14.4).
 
 ## Stage 0: Foundation (02:00–02:45, stream S0, alone)
 
@@ -23,7 +23,7 @@ Checkpoint 1 (05:00, together with Stage 2): Max's chapter 1 reads on a phone-si
 | Feature | Requirements | Stream | Owner | Status |
 |---|---|---|---|---|
 | Parent gate | FR-A1 | C | coder | todo |
-| Onboarding form (3 steps, minimum data, name stays on the device) | F2, N4 | C | builder | todo |
+| Onboarding form (3 steps, first name or nickname, never a surname) | F2, N4 | C | builder | todo |
 | Plan engine (code, from event template), story state, topics | F3, F7 | A | builder | todo |
 | `/api/chapter` with streaming, template fallback, mock provider | F4, N8 | B | builder | todo |
 | Reader with Listen, "AI-generated" label | F4, FR-A2 | C | builder | todo |
@@ -49,7 +49,7 @@ Guest family account without login; plan and history on the server; local-first 
 | Delete all data: server rows and every local store | F19 | coder | todo |
 | Rate limits (30 LLM calls/min per family, 300/min per IP) and daily LLM budget | N8 | coder | todo |
 
-## Stage 3: Event day, check-in, retention, demo (05:00–07:00, stream G; B connects the real model)
+## Stage 3: Event day, check-in, retention, demo (05:00–07:00, stream G; B connects Gemini)
 
 Checkpoint 2 (07:00, together with Stage 4): the whole cycle works locally with a test payment: sample → paywall → chapters 2+ → day card → check-in → badge → next event prefilled.
 
@@ -67,7 +67,7 @@ Checkpoint 2 (07:00, together with Stage 4): the whole cycle works locally with 
 
 | Feature | Requirements | Owner | Status |
 |---|---|---|---|
-| Paywall after chapter 1: Event Pack $9.99, Year $49, upgrade after check-in | F8, N12 | builder | todo |
+| Paywall after chapter 1 (locks only chapters 2+ and the day card): Event Pack $9.99, Family Year $49, Monthly, upgrade after check-in | F8, N12 | builder | todo |
 | Stripe Checkout test mode, `/api/verify`, paid access as a database row checked by the server | F8, C4, N10 | builder | todo |
 | Year plan auto-renewal consent, `/api/portal`, cancel | FR-A3 | coder | todo |
 | Optional webhook `/api/stripe/webhook` after the deploy | N10 | builder | todo |
@@ -104,6 +104,7 @@ Planned by tier in SPEC section 17.
 | Idea | Source | Notes |
 |---|---|---|
 | Voice generation and recognition through ElevenLabs (story narration, the child's spoken questions) | Lida, Nov 15; SPEC 17.1 | Budget approved by Lida first. Check child-voice data rules (COPPA biometrics, N5) and ElevenLabs data retention |
+| Named subscription levels (Gold, Platinum, Diamond next to the one-time Big Day Pass) with features locked by level | SPEC D15, K12, 17.2 | Everything is open in the MVP |
 | Generated pictures inside stories | SPEC D10, 17.2 | Candidate for a higher tier |
 | Sign-in by email, several children | ТЗ roadmap, SPEC 17 | |
 | Prompt review with a child psychologist; COPPA lawyer before a pilot | ТЗ roadmap, research | |

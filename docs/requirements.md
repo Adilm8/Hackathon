@@ -78,7 +78,7 @@ Sacrifice order if time runs out: child's voice → parent's voice → place pho
 | N1 | Works equally on desktop and mobile web; iOS Safari 16+, Chrome Android | Must | speech APIs behind feature-detect |
 | N2 | Public link usable without login; a guest family account is created silently on first use | Must | C3, SPEC D8 |
 | N3 | No secrets in the repository or its history; keys only in env | Must | C3 |
-| N4 | Minimum data: child's first name or nickname, age, event type, fears; no surname, address or face photo. The name never leaves the device: prompts carry `[[CHILD]]` | Must | COPPA, SPEC A4 |
+| N4 | Minimum data: child's first name or nickname, age, event type, fears. The first name or nickname is stored on the server; a surname, address, school or photo of the child never. The name is never sent to an AI provider (prompts carry `[[CHILD]]`), never logged and never put into calendar titles | Must | COPPA, SPEC D14, A4 |
 | N5 | Child's voice is never stored or sent; parent's voice only in IndexedDB | Must | biometrics under COPPA |
 | N6 | LLM provider does not train on our data; terms named in README | Must | |
 | N7 | First page ≤ 6 s, answer ≤ 4 s, Lighthouse mobile ≥ 85 | Should | ТЗ |
@@ -103,4 +103,4 @@ Sacrifice order if time runs out: child's voice → parent's voice → place pho
 
 ## 7. Open questions
 
-- Pitch wording: never "COPPA does not apply to us", never "clinically proven"; say "minimal data, parent is the operator, the child's name stays on the device, lawyer before a pilot".
+- Pitch wording: never "COPPA does not apply to us", never "clinically proven"; say "minimal data, parent is the operator, the child's name is never sent to an AI provider, lawyer before a pilot".
