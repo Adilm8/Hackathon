@@ -1,0 +1,967 @@
+{
+  "type": "shot",
+  "version": 1,
+  "label": "Shot or blood test",
+  "countdownLabel": "the doctor visit",
+  "beats": {
+    "what_happens": {
+      "title": "What happens at the doctor",
+      "goals": [
+        "The steps: waiting room, exam room, sitting on a lap, a quick poke, a bandage",
+        "The poke is quick and may sting or pinch, then it is over",
+        "Medicine from a shot helps the body stay strong"
+      ],
+      "parentSkill": "Explain the steps honestly and practise them with a toy doctor kit."
+    },
+    "who_is_there": {
+      "title": "Who helps at the doctor",
+      "goals": [
+        "A nurse or doctor gives the shot; it is their job and they do it every day",
+        "The grown-up holds the child the whole time",
+        "Other kids come for shots too"
+      ],
+      "parentSkill": "Ask the nurse to say each step out loud before doing it."
+    },
+    "what_i_do": {
+      "title": "What I do during the shot",
+      "goals": [
+        "Sit on the grown-up's lap in a big hug",
+        "Keep the arm floppy like a noodle, look at something else, count to three",
+        "Blow out like blowing a candle during the poke"
+      ],
+      "parentSkill": "Practise the 'floppy noodle arm' and slow blowing at home."
+    },
+    "if_scared": {
+      "title": "If I feel scared or it hurts",
+      "goals": [
+        "It is okay to cry, feel scared or say ouch",
+        "The sting is short; the arm may feel sore later and gets better",
+        "Hugs, counting and blowing out help"
+      ],
+      "parentSkill": "Stay calm and close; say 'It's okay to cry. I've got you.'"
+    },
+    "rehearsal": {
+      "title": "Let's practise the doctor visit",
+      "goals": [
+        "Play doctor with a toy and a pretend bandage",
+        "Practise the lap hug, floppy arm, count to three and blow",
+        "Go through the steps once more, ending with the bandage and a hug"
+      ],
+      "parentSkill": "Let your child give the toy its pretend shot and a bandage."
+    }
+  },
+  "steps": [
+    "Wait in the waiting room",
+    "Go into the exam room with a grown-up",
+    "Sit on the grown-up's lap in a big hug",
+    "The nurse cleans a small spot on the arm with a cool wipe",
+    "A quick poke while everyone counts to three",
+    "A bandage goes on the spot",
+    "A big hug, and the visit is done"
+  ],
+  "sensory": [
+    "a cool, wet wipe on the arm",
+    "a quick sting or pinch",
+    "a sore arm afterwards",
+    "paper crinkling on the exam bed",
+    "a clean smell in the room"
+  ],
+  "honestyNotes": "A shot or a blood test hurts a little: a quick sting or pinch, and the arm may be sore afterwards. Never say it won't hurt. Never use needle imagery in stories. Say it is quick, it is okay to cry, and the grown-up holds you.",
+  "questionButtons": [
+    {
+      "id": "hurt",
+      "text": "Will it hurt?",
+      "topic": "pain",
+      "fallbackAnswer": [
+        "Yes, it may hurt a little, like a quick pinch.",
+        "It's over fast, and then a bandage goes on and you get a big hug."
+      ]
+    },
+    {
+      "id": "why",
+      "text": "Why do I need it?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "The medicine helps your body stay strong against germs.",
+        "Doctors check what each body needs, and this keeps you healthy."
+      ]
+    },
+    {
+      "id": "cry",
+      "text": "Can I cry?",
+      "topic": "love",
+      "fallbackAnswer": [
+        "Yes, it's okay to cry.",
+        "Crying is one way to let a big feeling out, and [[GROWNUP]] will hug you."
+      ]
+    },
+    {
+      "id": "near",
+      "text": "Will [[GROWNUP]] hold me?",
+      "topic": "separation",
+      "fallbackAnswer": [
+        "Yes. You can sit on [[GROWNUP]]'s lap in a big hug.",
+        "[[GROWNUP]] stays with you the whole time."
+      ]
+    },
+    {
+      "id": "who",
+      "text": "Who will do it?",
+      "topic": "strangers",
+      "fallbackAnswer": [
+        "A nurse or a doctor. Their job is to help bodies stay healthy.",
+        "They'll tell you each step before they do it."
+      ]
+    },
+    {
+      "id": "after",
+      "text": "What happens after?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "After the poke, you get a bandage, maybe a sticker, and a big hug.",
+        "Your arm may feel a bit sore later, and that gets better."
+      ]
+    }
+  ],
+  "techniques": [
+    {
+      "id": "comfort_hold",
+      "label": "A comfort hug hold",
+      "how": "Hold your child on your lap, chest to chest or side-on, so they feel held rather than held down.",
+      "topics": [
+        "separation",
+        "safety",
+        "body"
+      ]
+    },
+    {
+      "id": "blow_out",
+      "label": "Blowing out the sting",
+      "how": "During the poke, blow out slowly as if blowing a candle or bubbles.",
+      "topics": [
+        "pain"
+      ]
+    },
+    {
+      "id": "look_and_count",
+      "label": "Looking away and counting",
+      "how": "Look at a picture or a toy and count to three together during the poke.",
+      "topics": [
+        "pain",
+        "unknown",
+        "sensory"
+      ]
+    },
+    {
+      "id": "floppy_arm",
+      "label": "The floppy noodle arm",
+      "how": "Practise letting the arm go soft like a noodle; a relaxed arm feels less sore.",
+      "topics": [
+        "pain",
+        "body"
+      ]
+    },
+    {
+      "id": "pick_bandage",
+      "label": "Choosing the bandage",
+      "how": "Bring a favourite bandage or let your child choose one to look forward to.",
+      "topics": [
+        "unknown",
+        "love"
+      ]
+    },
+    {
+      "id": "ask_comfort_options",
+      "label": "Asking about comfort options",
+      "how": "Ask the nurse ahead what comfort options they offer for children.",
+      "topics": [
+        "pain",
+        "strangers"
+      ]
+    },
+    {
+      "id": "comfort_toy",
+      "label": "Bringing a comfort toy",
+      "how": "A favourite toy can wait with your child and get a pretend bandage too; other kids may bring one as well.",
+      "topics": [
+        "social",
+        "separation",
+        "sensory"
+      ]
+    },
+    {
+      "id": "deep_breaths",
+      "label": "Smell the flower, blow the candle",
+      "how": "Breathe in slowly through the nose like smelling a flower and out like blowing a candle.",
+      "topics": [
+        "pain",
+        "sensory",
+        "safety"
+      ]
+    }
+  ],
+  "ritual": [
+    "Sit on [[GROWNUP]]'s lap",
+    "A quick poke, count to three",
+    "A bandage and a big hug"
+  ],
+  "phrases": {
+    "pain": [
+      "It might hurt a little, like a quick pinch. Then it's over.",
+      "Let's blow it away together, slow and long."
+    ],
+    "unknown": [
+      "First a cool wipe, then a quick poke, then a bandage.",
+      "The medicine helps your body stay strong."
+    ],
+    "love": [
+      "It's okay to cry. I've got you.",
+      "I'm proud of you, whatever you feel."
+    ],
+    "separation": [
+      "You'll sit on my lap the whole time.",
+      "I'll hold you in a big hug."
+    ],
+    "strangers": [
+      "The nurse helps kids every day. Let's say hello.",
+      "They'll tell you each step first."
+    ],
+    "sensory": [
+      "The wipe feels cool and wet.",
+      "Look at me or your toy while we count."
+    ],
+    "safety": [
+      "The nurse knows how to do this safely.",
+      "Doctors and nurses help keep bodies healthy."
+    ],
+    "body": [
+      "The nurse only needs your arm. You can keep your shirt sleeve up.",
+      "Your arm may feel sore later, and it gets better."
+    ],
+    "social": [
+      "Lots of kids get shots. Brave kids sometimes cry too.",
+      "Your toy can get a pretend bandage next."
+    ]
+  },
+  "topicWords": {
+    "pain": [
+      "hurt",
+      "pinch",
+      "sting",
+      "poke",
+      "sore",
+      "ouch"
+    ],
+    "unknown": [
+      "first",
+      "then",
+      "next",
+      "after",
+      "step",
+      "medicine",
+      "why"
+    ],
+    "love": [
+      "cry",
+      "hug",
+      "love",
+      "proud",
+      "okay"
+    ],
+    "separation": [
+      "lap",
+      "hold",
+      "with you",
+      "whole time",
+      "stay",
+      "hug"
+    ],
+    "strangers": [
+      "nurse",
+      "doctor",
+      "hello",
+      "helper"
+    ],
+    "sensory": [
+      "cool",
+      "wet",
+      "wipe",
+      "smell",
+      "crinkle",
+      "look"
+    ],
+    "safety": [
+      "safe",
+      "healthy",
+      "strong",
+      "careful",
+      "clean"
+    ],
+    "body": [
+      "arm",
+      "body",
+      "sleeve",
+      "spot"
+    ],
+    "social": [
+      "kids",
+      "children",
+      "toy",
+      "friend",
+      "others"
+    ]
+  },
+  "backgrounds": [
+    "shot",
+    "outside",
+    "home-evening",
+    "cosy-room"
+  ],
+  "fallbackPages": {
+    "story": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "Soon [[CHILD]] will visit the doctor for a shot.",
+              "kind": "describe"
+            },
+            {
+              "text": "A shot puts a little medicine in the arm, and it helps the body stay strong against germs.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, [[CHILD]] and [[GROWNUP]] sit in the waiting room.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then a nurse says hello and takes them to a small room.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Next, [[CHILD]] sits on [[GROWNUP]]'s lap in a big hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "The nurse cleans a small spot on the arm with a cool wipe.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then there is a quick poke that may sting or pinch.",
+              "kind": "describe"
+            },
+            {
+              "text": "Everyone counts, one, two, three, and it's over.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, a bandage goes on, and there is a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "shot",
+          "addresses": [
+            "unknown",
+            "pain"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "At the doctor's office, a nurse or a doctor gives the shot.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is their job, and they do it for lots of children every day.",
+              "kind": "describe"
+            },
+            {
+              "text": "The nurse tells [[CHILD]] each step before doing it.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can ask the nurse, what happens next?",
+              "kind": "coach"
+            },
+            {
+              "text": "Nurses like questions.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "strangers"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "[[GROWNUP]] is with [[CHILD]] the whole time.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] sits on [[GROWNUP]]'s lap, held close and warm.",
+              "kind": "describe"
+            },
+            {
+              "text": "Lots of other kids come to the doctor for shots too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids cry, some kids giggle, and some are very quiet.",
+              "kind": "describe"
+            },
+            {
+              "text": "Every kid is brave in their own way.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "separation",
+            "social"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "During the shot, [[CHILD]] has three jobs.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sit on [[GROWNUP]]'s lap in a big hug.",
+              "kind": "coach"
+            },
+            {
+              "text": "Make the arm floppy, like a soft noodle.",
+              "kind": "coach"
+            },
+            {
+              "text": "Look at a toy or at [[GROWNUP]]'s face.",
+              "kind": "coach"
+            },
+            {
+              "text": "A floppy arm feels much better than a tight arm.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] holds on the whole time.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "shot",
+          "addresses": [
+            "body",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "When the nurse says ready, everyone counts to three.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] blows out slowly, like blowing out a birthday candle.",
+              "kind": "coach"
+            },
+            {
+              "text": "The poke may sting for a moment.",
+              "kind": "describe"
+            },
+            {
+              "text": "Blowing out helps the sting float away.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then a bandage goes on the spot, and [[CHILD]] can choose a sticker.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "pain"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "It's okay to feel scared about a shot.",
+              "kind": "describe"
+            },
+            {
+              "text": "It's okay to cry, too.",
+              "kind": "describe"
+            },
+            {
+              "text": "A shot may hurt a little, like a quick pinch, and then it stops.",
+              "kind": "describe"
+            },
+            {
+              "text": "Crying lets a big feeling out, and [[GROWNUP]] gives the biggest hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "Feelings come, and feelings go.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "worried",
+          "background": "shot",
+          "addresses": [
+            "love",
+            "pain"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Later the arm might feel a bit sore.",
+              "kind": "describe"
+            },
+            {
+              "text": "That's the medicine doing its job, and it gets better.",
+              "kind": "describe"
+            },
+            {
+              "text": "If something feels too much, [[CHILD]] can smell a flower and blow out a candle.",
+              "kind": "coach"
+            },
+            {
+              "text": "The wipe feels cool, the paper on the bed crinkles, and soon it is all done.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "cosy-room",
+          "addresses": [
+            "pain",
+            "sensory"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "Tonight [[CHILD]] and [[GROWNUP]] play doctor at home.",
+              "kind": "describe"
+            },
+            {
+              "text": "A teddy needs a pretend shot.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, [[CHILD]] cleans teddy's arm with a pretend wipe.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then they count, one, two, three, and teddy blows out.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, teddy gets a bandage and a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "body"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Let's say the doctor steps once more.",
+              "kind": "coach"
+            },
+            {
+              "text": "First the waiting room, then the small room.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, a big hug on [[GROWNUP]]'s lap, a floppy arm, and count to three.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, a bandage and a hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of [[CHILD]] for practising.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "cosy-room",
+          "addresses": [
+            "unknown",
+            "love"
+          ]
+        }
+      ]
+    },
+    "social": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "My name is [[CHILD]], and soon I will go to the doctor for a shot.",
+              "kind": "describe"
+            },
+            {
+              "text": "A shot is a way to give medicine that helps my body stay strong.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, I wait in the waiting room with [[GROWNUP]].",
+              "kind": "describe"
+            },
+            {
+              "text": "Then a nurse calls us into a small room.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can bring a toy to hold.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Next, I sit on [[GROWNUP]]'s lap.",
+              "kind": "describe"
+            },
+            {
+              "text": "The nurse cleans a small spot on my arm with a cool wipe.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the nurse gives the shot.",
+              "kind": "describe"
+            },
+            {
+              "text": "The shot may hurt a little, like a quick pinch.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, the nurse puts a bandage on my arm.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can choose a sticker if there are stickers.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "unknown",
+            "pain"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "At the doctor's office there is a nurse or a doctor.",
+              "kind": "describe"
+            },
+            {
+              "text": "Their job is to help keep children healthy.",
+              "kind": "describe"
+            },
+            {
+              "text": "The nurse will tell me what will happen.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask the nurse a question.",
+              "kind": "coach"
+            },
+            {
+              "text": "The nurse gives many children shots.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "strangers"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "[[GROWNUP]] stays with me the whole time.",
+              "kind": "describe"
+            },
+            {
+              "text": "I sit on [[GROWNUP]]'s lap.",
+              "kind": "describe"
+            },
+            {
+              "text": "Many other kids get shots too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids cry, and some kids do not cry.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can hold [[GROWNUP]]'s hand.",
+              "kind": "coach"
+            },
+            {
+              "text": "All of these ways are okay.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "separation",
+            "social"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "During the shot, I sit on [[GROWNUP]]'s lap.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can make my arm soft and floppy.",
+              "kind": "coach"
+            },
+            {
+              "text": "A soft arm can feel better than a tight arm.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can look at my toy or at [[GROWNUP]].",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] holds me in a hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "body",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "The nurse may count to three.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can blow out slowly, like blowing a candle.",
+              "kind": "coach"
+            },
+            {
+              "text": "The shot may sting for a short time.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the sting stops.",
+              "kind": "describe"
+            },
+            {
+              "text": "The nurse puts on a bandage.",
+              "kind": "describe"
+            },
+            {
+              "text": "The shot part is very short.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "pain"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "Some children feel scared about a shot.",
+              "kind": "describe"
+            },
+            {
+              "text": "Feeling scared is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "Crying is okay too.",
+              "kind": "describe"
+            },
+            {
+              "text": "A shot can hurt a little, and then the hurt goes away.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] will hug me after the shot.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can tell [[GROWNUP]] how I feel.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "worried",
+          "background": "shot",
+          "addresses": [
+            "love",
+            "pain"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Later my arm may feel a little sore.",
+              "kind": "describe"
+            },
+            {
+              "text": "A sore arm usually gets better soon.",
+              "kind": "describe"
+            },
+            {
+              "text": "The wipe feels cool and wet.",
+              "kind": "describe"
+            },
+            {
+              "text": "The paper on the bed may crinkle.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            },
+            {
+              "text": "Then the visit is done, and I go home.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "pain",
+            "sensory"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "At home, I can practise the doctor visit.",
+              "kind": "describe"
+            },
+            {
+              "text": "My teddy can get a pretend shot.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, I clean teddy's arm with a pretend wipe.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then we count to three.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can practise blowing out slowly.",
+              "kind": "coach"
+            },
+            {
+              "text": "Next, teddy gets a bandage.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "body"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Here are the steps of my doctor visit.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, the waiting room.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then, I sit on [[GROWNUP]]'s lap.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, a quick poke and count to three.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, a bandage and a hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "I practised all the steps, and I did a good job.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "cosy-room",
+          "addresses": [
+            "unknown"
+          ]
+        }
+      ]
+    }
+  },
+  "badge": {
+    "id": "brave_arm",
+    "label": "Brave Arm"
+  }
+}
