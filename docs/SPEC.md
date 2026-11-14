@@ -1,6 +1,6 @@
 # Big Day Stories: product and engineering specification
 
-Version 1.1, 15 Nov 2026, 01:40 Astana. Owner: architect. Status: ready to build on. It includes Lida's answers of 15 Nov 01:26. Open product questions are collected in section 19; until she answers, the stated default is built.
+Version 1.6, 15 Nov 2026, 02:50 Astana. Owner: architect. Status: **development started** on this document (Lida, 15 Nov 01:58). The remaining questions of section 19 are accepted with their defaults and will be revisited later.
 
 This is the single file development relies on. It merges the team ТЗ (features F1–F19), `docs/requirements.md` (ids C, F, FR, N), the research and analysis notes, and Lida's decisions of 15 Nov. Where this file and an older document disagree, `docs/decisions.md` wins first, then this file. Builders do not change contracts (section 6, 8, 9) on their own: they ask the architect.
 
@@ -48,6 +48,11 @@ Contents: 1 Product · 2 Decisions · 3 Scope · 4 User flows and screens · 5 P
 | D11 | Analytics is not a priority. The goal is an end-to-end product with a clear core value; no third-party tracker is built. |
 | D12 | Stripe stays; more payment methods and checkout styling may be added (10.7). |
 | D13 | Voice (recognition, narration in the character's voice, the parent's voice, spoken answers, adaptation) is wanted because it raises the product in the jury's eyes. For the MVP it is sized by the time left; everything else is planned by tier (17.1). |
+| D14 | Child's name: follow US law and best practice. A first name or a nickname may be stored; a surname never (6.3). |
+| D15 | Features are grouped into named subscription levels, to be finalised later; the free level offers a couple of trial stories. **In the MVP every feature is open**; only the paywall required by the case rules stays (10.1, 17.2). |
+| D16 | Pacing of chapters and the check-in details are decided by the architect and re-checked in a working session (5.2, 4.13). |
+| D17 | Models: follow benchmarks and start from the cheaper end, though not the very cheapest (candidates named by Lida: DeepSeek 4.1 Flash, Haiku 5.5); read what is written about them, then test. Until then Gemini is used wherever possible, within its limits (8.1, 8.8). |
+| D18 | The paywall stays. The jury, and anyone opening the deployed link, must still be able to see every function quickly: solved by the jury demo mode (4.3, 5.1). |
 
 ### 2.2 Working defaults
 
@@ -72,7 +77,7 @@ Each fixes something that would break or be untrue in production. Sources: `docs
 | A1 | Build screens, then LLM | The template fallback layer is built first; the whole cycle runs with `LLM_PROVIDER=mock` | Parallel work without keys; demo survives an LLM outage; the ТЗ needs the fallback anyway |
 | A2 | Rate limit 30/min per IP | 30/min per family, 300/min per IP as a coarse guard, plus a daily spending cap in dollars | The jury sits behind one Wi-Fi address; a per-IP limit of 30 would lock them out |
 | A3 | Access flag in localStorage; no database | Paid access is a row in the database, written by the server after it verifies the Stripe session; `/api/chapter` (chapters 2+) and `/api/ritual` check it for the family in the session cookie | A plain flag can be set by hand; the jury reads the code |
-| A4 | Child's name in the prompt | The prompt carries the placeholder `[[CHILD]]`; the browser substitutes the name when rendering and speaking. By default the name and its pronunciation are also kept out of the database (section 19, K1) | "Your child's name never leaves your device" stays true even with a database; removes prompt injection through the name field. Adds an optional pronoun field |
+| A4 | Child's name in the prompt | The prompt carries the placeholder `[[CHILD]]`; the browser substitutes the name when rendering and speaking. The first name or nickname is stored in our database (D14) but never sent to an AI provider, never logged and never put into calendar titles | "Your child's name is never sent to an AI provider"; removes prompt injection through the name field. Adds an optional pronoun field |
 | A5 | Highlight the current sentence through speech boundary events | Pages are arrays of sentences; each sentence is one utterance; highlight switches on utterance start | Boundary events are unreliable on mobile; long utterances get cut off in Chrome |
 | A6 | Dates | An event date is a local calendar string `YYYY-MM-DD`; "today" comes only from `clock.today()` in the browser; the server never does date arithmetic | Server runs in UTC, jury in UTC+5, users in the US |
 | A7 | One .ics opens in Google, Apple and Outlook | .ics served by a route with `text/calendar` (Apple, Outlook, Android) plus an "Add to Google Calendar" link | Google Calendar on the web does not open .ics by click; blob links are unstable on iOS |
@@ -195,8 +200,14 @@ Every screen has: a header with the child's name and a settings button; the "Sam
 - **Try a sample** is the jury's test profile. It creates a fresh *sample family* on the server for this browser (so jury members never see each other's clicks) and opens its plan. The seed: Max, age 4, bunny in a blue cap; family Mom and Dad; secular. One **past** event (a haircut three weeks ago with a saved check-in: "a bit hard", counting to ten helped, the cape did not; one badge) and one **upcoming** event (dentist; fears: pain and strangers; date = today + 5, so the plan has 5 chapters and chapter 1 is tonight). The past event makes the memory mechanic visible at once: the panel already says "Last time: counting to ten helped".
 - From there everything runs through the same code as a real family: same engine, same API calls, same paywall, same database tables. Nothing is hard-coded per screen.
 - The sample never touches the real family. "Exit sample" in the badge returns to the real workspace (or the landing when there is none). Sample families are deleted automatically after 7 days.
-- Chapter 1 of the sample is served from a one-hour server cache warmed at boot (12.3), so it opens instantly on a bad network. Jury questions are processed live.
-- The Demo panel (5.1) is visible in the sample workspace.
+- Every chapter of the sample and its ritual card are served from a one-hour server cache warmed at boot (12.3), so the jury's path opens instantly on a bad network and does not depend on a provider's rate limits. Jury questions, and everything after a question changes the story, are processed live.
+- **Jury demo mode.** The paywall stays exactly as a real family sees it, and the sample adds a Demo bar (5.1) that makes the whole product reachable in three minutes:
+  - a **guided tour** of six steps that tick themselves off, each a direct link: read chapter 1 → ask a question and watch the next page change → open the parent panel → unlock the full plan → jump to the event day (ritual card, PDF) → jump to after the event (check-in, badge, next event with the form filled in);
+  - **two ways through the paywall**, side by side: **Pay with the test card** (the real Stripe test checkout, card number shown with a Copy button; this is the path that proves the payment works) and **Skip payment (demo access)** (one tap, for a juror who has already seen the checkout or has no time to type a card);
+  - **time travel** (Evening 2, Event day, After the event) and **Reset demo** (back to the unpaid state and to today, so the next person at the same phone starts clean).
+- Demo access exists only for sample families and is granted by the server (9, 10.4); a real family can never receive it. While it is active the header shows "Demo access" next to "Sample data", so nobody mistakes it for a free product.
+- A real family on the deployed link goes through the true flow: the paywall shows the test-mode box with the card number, so anyone evaluating "Start for free" can also complete a purchase in seconds.
+- The landing says under the sample button: "Judging or just curious? The sample shows the whole product in 3 minutes." The README repeats the six steps.
 
 ### 4.4 Home
 
@@ -213,7 +224,7 @@ Three steps with a progress bar. Only name, age, event and date are required; er
 
 | Step | Fields | Rules |
 |---|---|---|
-| 1. Child | Name or nickname (required, 1–20 letters, spaces, hyphen, apostrophe); "How is it pronounced?" (optional, ≤ 30) with a **Hear it** button that speaks the pronunciation; age 3–8 (required); pronoun he / she / they (optional) | No surname, address, school or photo of the child is asked. Helper text says the name stays on this device |
+| 1. Child | First name or nickname (required, one word of 1–20 letters, hyphen and apostrophe allowed; helper text: "A nickname works too. Please don't add a last name."); "How is it pronounced?" (optional, ≤ 30) with a **Hear it** button that speaks the pronunciation; age 3–8 (required); pronoun he / she / they (optional) | No surname, address, school or photo of the child is asked. Helper text says the name is never sent to an AI provider |
 | 2. Event | One of 6 events or "Other" (then a label ≤ 40 chars); date (required); up to 3 fears from a list; "Something else" (≤ 40 chars) | Date before today, or more than 60 days ahead → error under the field. Today and tomorrow are allowed and show a "Quick prep" note (5.2) |
 | 3. Character and values | Character builder with live preview: animal (4) × colour (6) × accessory (3); values profile: tone secular / religious; body words anatomical / family words; who is at home (chips: Mom, Dad, Mama, Papa, Mommy, Daddy, Grandma, Grandpa, Nana, Stepmom, Stepdad, Aunt, Uncle); "Social story style" toggle with a one-line explanation; up to 3 photos of the place (11.5) | All optional. Defaults: bunny, blue, cap; secular; anatomical; nobody selected (stories then say "your grown-up"); style "story" |
 
@@ -225,8 +236,8 @@ Finishing the form creates the event, builds the plan in code (5.2) and opens `/
 
 - Countdown "N sleeps until the dentist" (N = days until the event; "Tomorrow is the big day" for 1; "Today is the big day" for 0).
 - One card per chapter: number, evening date, title from the template, status **locked** (opens on its evening, or needs payment), **today**, **catch up** (its evening has passed and it is unread), **read**.
-- Buttons: **Add to calendar** (11.8), **Parent panel**, and in the sample or with `?demo=1` the **Demo: skip to…** panel.
-- Tapping a chapter that needs payment opens the paywall. Tapping a date-locked chapter shows "This chapter opens on Wednesday evening".
+- Buttons: **Add to calendar** (11.8), **Parent panel**. In the sample the Demo bar (5.1) sits at the bottom of the screen.
+- Tapping a chapter that needs payment opens the paywall. Tapping a date-locked chapter shows "This chapter opens on Wednesday evening", with the "Read ahead" link when the family has access and it is the next chapter (5.2).
 - While a chapter is generating the reader shows a page skeleton (not a spinner).
 
 ### 4.7 Reader (F4, FR-A2)
@@ -295,14 +306,15 @@ Title "What's on Max's mind". Computed entirely by code from the stored question
 ### 4.13 Check-in (F10)
 
 - Available from the event date; the home screen prompts for it on every later day until saved. Takes 30 seconds.
-- Three faces: calm / a bit hard / hard. Checkboxes "What helped?" listing the techniques used in this plan (stories and ritual card) plus an own field (≤ 60 chars). **Save**.
+- Three faces: calm / a bit hard / hard. Checkboxes "What helped?" listing the techniques used in this plan (stories and ritual card) plus an own field (≤ 60 chars). When the plan recorded fewer than three techniques (chapters served from the template report none), the list is topped up from the event template: techniques that match the event's fears first, then the rest, six chips at most (K19). **Save**.
 - A second optional row "Anything that didn't work?" with the same chips.
-- Saved to the event and to the child profile: ticked techniques as `helped`, the ones ticked in the second row as `didnt_help`, the own entry as `helped`. Untouched techniques are recorded as neither (section 19, K6).
+- Saved to the event and to the child profile: ticked techniques as `helped`, the ones ticked in the second row as `didnt_help`, the own entry as `helped`. Untouched techniques are recorded as neither and may be suggested again: an unticked box usually means "we didn't try it", not "it failed".
+- The check-in can be opened and saved again. A second save replaces the memory records of this event; it never adds a second set (K21).
 - Free for everyone (Q1).
 
 ### 4.14 Badge and next event (F10, F11)
 
-- The bravery badge for this event type, the collection of earned badges, "Skills you practised: 3" (parent skills of the read chapters).
+- The bravery badge for this event type, the collection of earned badges (one badge per event: saving the check-in again does not add another, and the badge keeps its first date, K20), "Skills you practised: 3" (parent skills of the read chapters).
 - Three suggested next events by age (5.9), button **Plan the next big day** → `/start?again=1`.
 - For Event Pack owners: "Add $39 and get the full year" (10.3).
 - Hint "Add Big Day Stories to your Home Screen so your plan stays on this phone" on iOS Safari (FR-B1).
@@ -313,11 +325,13 @@ Child profile and character; values profile; social story style toggle; text siz
 
 ### 4.16 Privacy and Terms (FR-A4)
 
-`/privacy` fits one screen: what is collected (age, event, date, fears, the child's questions, check-ins; the first name or nickname stays on the device), where it is stored (our database and this browser; photos and voice recordings only in this browser), what is sent to AI providers (story context without the name) and to Stripe (payment), that providers do not train on the data, retention (until the parent deletes it; inactive guest families are removed after 12 months, sample families after 7 days), how to delete everything in one tap, contact. `/terms`: short terms including the auto-renewal terms and "not therapy or medical advice".
+`/privacy` fits one screen: what is collected (a first name or nickname, never a surname; age, event, date, fears, the child's questions, check-ins), where it is stored (our database and this browser; photos and voice recordings only in this browser), what is sent to AI providers (story context without the name) and to Stripe (payment), that providers do not train on the data, retention (until the parent deletes it; inactive guest families are removed after 12 months, sample families after 7 days), how to delete everything in one tap, contact. `/terms`: short terms including the auto-renewal terms and "not therapy or medical advice".
 
 ---
 
 ## 5. Product rules (the engine)
+
+The functions that implement this section are listed in `web/lib/engine/README.md` (engine stream). That file is the reference for function names and signatures; this section stays the reference for the rules.
 
 All rules in this section are pure TypeScript in `web/lib/engine/`, covered by unit tests, with no LLM involved.
 
@@ -325,7 +339,12 @@ All rules in this section are pure TypeScript in `web/lib/engine/`, covered by u
 
 - `clock.today(): ISODate` returns the local calendar date of the device as `YYYY-MM-DD`, or the override stored in `bds:settings.clockOverride`. Every component and engine function takes "today" from here; nothing else calls `new Date()` for calendar logic.
 - Date helpers work on the strings (`addDays`, `diffDays`, `weekdayLabel`), using local noon internally to avoid daylight-saving edges.
-- The Demo panel is visible in the sample workspace and when the URL carries `?demo=1` (remembered for the session). Buttons: **Evening 2** (override = date of chapter 2), **Event day** (override = event date), **After the event** (override = event date + 1), **Back to today** (remove the override). The panel moves "today" only; screens react through the same rules as for a real family. It also shows the hint "Chapters 2+ and the day card need the test payment".
+- The Demo bar is a collapsible strip at the bottom of every screen of the sample workspace. It has three groups: the guided tour (4.3), time, and access.
+  - **Time:** **Evening 2** (override = date of chapter 2), **Event day** (override = event date), **After the event** (override = event date + 1), **Back to today** (remove the override). It moves "today" only; screens react through the same rules as for a real family. Never a screen swap.
+  - **Access:** **Pay with the test card** (opens the paywall), **Skip payment (demo access)** and **Reset demo**. Skip and reset call `POST /api/sample/access`; the server refuses them for any family that is not a sample.
+  - **Tour:** progress is derived from the family's data (chapter read, question asked, panel opened, access present, check-in saved), not from a separate script, so the ticks are honest.
+- For a real family the URL parameter `?demo=1` (remembered for the session) shows the time group only, for our own testing. It never shows the access group.
+- The whole demo mode is switched by the server variable `DEMO_MODE` (`on` for the hackathon). With `off`, the sample still works but has no demo access, which is how the product would run after the hackathon.
 
 ### 5.2 Plan
 
@@ -356,7 +375,7 @@ catch_up    if chapter.date < today
 locked      if chapter.date > today
 ```
 
-Chapter 1 is always open from the moment the event is created, whatever its date, so a parent who signs up three weeks ahead gets value in the first session. Later chapters open on their evening; missed ones stay open. Pages per chapter and words per page by age: 3–4 → 4 pages of 40–60 words; 5–6 → 5 pages of 60–90; 7–8 → 5 pages of 90–130.
+Chapter 1 is always open from the moment the event is created, whatever its date, so a parent who signs up three weeks ahead gets value in the first session. Later chapters open on their evening; missed ones stay open. One chapter a night is the recommended rhythm, not a wall: a family with access can open the next locked chapter early through a quiet "Read ahead" link on its card (one chapter ahead at most, with the note "One chapter a night works best"). Real families miss evenings and travel; a hard lock would punish exactly the parents who are trying. This rule is re-checked in the usability sessions (D16). Pages per chapter and words per page by age: 3–4 → 4 pages of 40–60 words; 5–6 → 5 pages of 60–90; 7–8 → 5 pages of 90–130.
 
 ### 5.3 Event phase
 
@@ -366,8 +385,9 @@ Chapter 1 is always open from the moment the event is created, whatever its date
 
 The story state is rebuilt by code before every LLM call from what is stored; the LLM never owns it.
 
-- `mustAddress`: topics the story still has to cover. Seeded with the fears chosen in onboarding. A question with a real topic (not `other`, not unsafe, not a sensitive one the parent kept to themselves) adds its topic.
-- A topic leaves `mustAddress` when a generated page lists it in `addresses` **and** the page text contains a word from the template's word list for that topic (A9). The question is then marked `answeredInStory`.
+- `mustAddress`: topics the story still has to cover. Seeded with the fears chosen in onboarding. A question with a real topic (not `other`, not unsafe, not a sensitive one the parent kept to themselves) adds its topic. Order: fears first, then question topics in the order asked.
+- A topic leaves `mustAddress` when a generated page lists it in `addresses` **and** the page text contains a word from the template's word list for that topic (A9). The question is then marked `answeredInStory`. Only **story pages** close a topic. An answer page never does, even when it covers the topic well: the answer is a short reply to one question, and the promise of the product is that the story itself takes the worry up (K18).
+- `askedQuestions`: the texts of the last 5 questions of category `on_topic` only. Off-topic questions are left out as noise. The text of a sensitive question never goes into the prompt of a later chapter; when the parent showed or edited the draft, only its **topic** enters `mustAddress`, so the story approaches the subject through the template's safe material and not through the child's own words (K17).
 - `usedTechniques`: ids of template techniques the generated chapters used (validated against the template's list).
 - `helpedBefore` and `avoid`: from the child's technique memory (5.7).
 - Question limit: 3 stored questions per chapter. Unsafe questions are not stored and do not count.
@@ -383,7 +403,7 @@ The story state is rebuilt by code before every LLM call from what is stored; th
 
 ### 5.7 Memory of what helped (F11)
 
-The child profile keeps `techniques[]` with `helped` or `didnt_help` per technique, written by check-ins. For a new event: techniques marked `helped` go to the prompt as "prefer", `didnt_help` as "never use"; the same lists drive the ritual card and the panel line "Last time…". The newest record wins when a technique has both outcomes.
+The child profile keeps `techniques[]` with `helped` or `didnt_help` per technique, written by check-ins. For a new event: techniques marked `helped` go to the prompt as "prefer", `didnt_help` as "never use"; the same lists drive the ritual card and the panel line "Last time…". The newest record wins when a technique has both outcomes. Records are kept per event: saving a check-in again replaces that event's records. The memory used while a plan is being written leaves out the event itself, so a plan is never steered by its own check-in.
 
 ### 5.8 Social story style (F15, FR-B2, FR-B3)
 
@@ -450,8 +470,8 @@ export interface Badge { id: string; label: string; eventType: EventType; eventI
 
 export interface ChildProfile {
   id: string;
-  name: string;                   // first name or nickname; device-only, see DEVICE_ONLY_FIELDS
-  pronunciation?: string;         // how the name is spoken, used only by speech; device-only
+  name: string;                   // first name or nickname, one word, never a surname; never sent to an LLM
+  pronunciation?: string;         // how the name is spoken, used only by speech
   age: 3 | 4 | 5 | 6 | 7 | 8;
   pronoun?: Pronoun;
   character: Character;
@@ -548,7 +568,7 @@ export interface StoryContext {
   styleMode: StyleMode;
   chapter: { index: number; total: number; beats: Beat[] };
   mustAddress: Topic[];
-  askedQuestions: { text: string; topic: Topic; chapter: number }[];   // last 5
+  askedQuestions: { text: string; topic: Topic; chapter: number }[];   // last 5, category on_topic only (5.4)
   usedTechniques: string[];
   helpedBefore: string[];
   avoid: string[];
@@ -568,13 +588,10 @@ export interface Entitlement {
 /** The document synced between the browser and the server (6.2). */
 export interface FamilyDoc {
   schemaVersion: number;
-  child: ChildProfile | null;     // without DEVICE_ONLY_FIELDS when stored on the server
+  child: ChildProfile | null;
   events: BigEvent[];
   updatedAt: number;              // ms since epoch, set by the browser on every change
 }
-
-/** Fields that never leave the device (section 19, K1). */
-export const DEVICE_ONLY_FIELDS = ['child.name', 'child.pronunciation'] as const;
 
 export interface Settings {
   parentGateAcceptedOn?: ISODate;
@@ -593,7 +610,7 @@ export interface Settings {
 | Key | Content | Written by |
 |---|---|---|
 | `bds:workspace` | `'real'` or `'sample'` | landing, sample badge |
-| `bds:settings` | `Settings` (device preferences, not synced) | parent gate, settings, demo panel |
+| `bds:settings` | `Settings` (device preferences, not synced) | parent gate, settings, Demo bar |
 | `bds:child` | `ChildProfile` | onboarding, check-in, settings |
 | `bds:events` | `BigEvent[]` (chapters, questions, check-ins inside) | onboarding, reader, check-in |
 | `bds:sync` | `{ version, lastSyncedAt, dirty }` | sync module |
@@ -603,7 +620,7 @@ IndexedDB through `idb-keyval`, two databases: `bds-photos` (key `<workspace>:<e
 
 **Sync (`web/lib/sync/`).** The stores are Zustand with `persist`. A sync module watches them:
 
-1. On app start, when a session cookie exists: `GET /api/state`. If the server version is newer than `bds:sync.version`, the server document replaces the local one (device-only fields are kept from the local copy). If the local copy is dirty, it is pushed.
+1. On app start, when a session cookie exists: `GET /api/state`. If the server version is newer than `bds:sync.version`, the server document replaces the local one. If the local copy is dirty, it is pushed.
 2. After any change: mark dirty, wait 1.5 s of quiet, `PUT /api/state` with `{ doc, baseVersion }`. Success returns the new version.
 3. Conflict (HTTP 409, the server version moved on): the copy with the newer `updatedAt` wins as a whole and is written to both sides. Editing one family on two devices at the same moment is not supported in the MVP and is stated as a known limit.
 4. Offline or server error: the app keeps working on the local copy and retries with backoff. Reading cached chapters needs no network. A small "Saved" / "Saving…" / "Offline, saved on this device" indicator sits in the header.
@@ -629,7 +646,7 @@ create table families (
 
 create table family_state (                 -- the FamilyDoc, one row per family
   family_id   uuid primary key references families(id) on delete cascade,
-  doc         jsonb not null,               -- validated by zod; no name inside by default (K1)
+  doc         jsonb not null,               -- validated by zod; first name or nickname only, no surname
   version     integer not null default 1,
   updated_at  timestamptz not null default now()
 );
@@ -639,10 +656,10 @@ create table entitlements (                 -- paid access, written only by the 
   family_id               uuid not null references families(id) on delete cascade,
   plan                    text not null check (plan in ('event', 'year', 'month')),
   event_id                text,             -- for plan 'event'
-  stripe_session_id       text not null unique,
+  stripe_session_id       text not null unique,   -- 'demo:<family id>' for demo access
   stripe_customer_id      text,
   stripe_subscription_id  text,
-  status                  text not null,    -- 'active' | 'canceled' | 'expired'
+  status                  text not null,    -- 'active' | 'canceled' | 'expired' | 'demo' (sample families only)
   expires_at              timestamptz not null,
   created_at              timestamptz not null default now()
 );
@@ -666,9 +683,10 @@ create index llm_calls_created_at on llm_calls (created_at);
 Rules:
 
 - **Identity without login.** A family is created by `POST /api/family` when the parent gate is accepted (or by `POST /api/sample`). The server sets an httpOnly, Secure, SameSite=Lax cookie holding a signed session (`{ familyId, kind }`, signed with `ENTITLEMENT_SECRET`, valid one year, renewed on use). Real and sample sessions use two cookies (`bds_session`, `bds_sample_session`); the request header `x-bds-workspace` says which one applies.
-- **What is stored.** Age, character, values profile, events with their chapters, questions, check-ins, technique memory and badges. Not stored: the child's name and pronunciation (default, K1), photos, voice recordings, payment card data (Stripe holds it), the text of LLM prompts.
+- **What is stored.** A first name or nickname, age, character, values profile, events with their chapters, questions, check-ins, technique memory and badges. Never asked for and never stored: surname, address, school, date of birth, a photo of the child, the child's voice. Not stored on the server: place photos and voice recordings (device only), payment card data (Stripe holds it), the text of LLM prompts. The name is excluded from every prompt, log line and calendar title.
+- **US rules we follow** (not legal advice; a lawyer reviews before any real launch): the parent is the one who enters everything and confirms being an adult guardian; only what the feature needs is collected (COPPA data minimisation); nothing is used for advertising or model training; retention periods are published and deletion is one tap (the amended COPPA rule forbids indefinite retention); a child's voice is biometric data and is not collected.
 - **Deletion and retention.** `DELETE /api/family` removes the family and everything linked to it. A daily job removes sample families older than 7 days and real guest families not seen for 12 months. These periods are stated on the Privacy page.
-- **Another device.** Settings can create a restore code (32 random bytes, shown once as a link and QR code; only its hash is stored). Opening `/restore#<code>` on another device sets the session cookie for that family and pulls the document; the name is asked once on the new device because it is device-only.
+- **Another device.** Settings can create a restore code (32 random bytes, shown once as a link and QR code; only its hash is stored). Opening `/restore#<code>` on another device sets the session cookie for that family and pulls the document.
 - **Growing later.** When sign-in, several children or reporting need relational queries, the document is split into `children`, `events`, `chapters`, `questions`, `checkins`, `technique_memory` tables by a migration that reads `family_state.doc`. Types in 6.1 already have the ids for that.
 
 ---
@@ -722,7 +740,8 @@ Content rules:
 ### 8.1 Providers and routing
 
 - One code path for every provider through the AI SDK (`ai` package; structured streaming with `streamText` and `Output.object`), with `@openrouter/ai-sdk-provider` for OpenRouter and `@ai-sdk/google` for Gemini. The API of the installed major version is checked against the SDK docs at Stage 0; the contracts below do not depend on it.
-- `LLM_PROVIDER`: `openrouter` (production, paid models), `gemini` (Gemini Flash, for tests only, by Lida's decision), `mock` (no network and no cost: text comes from the templates; the default for automated tests, usability threads and anyone without keys).
+- `LLM_PROVIDER`: `gemini` (Gemini Flash: the working provider for development and tests **for now**, used wherever possible within its rate limits, D17), `openrouter` (paid models, the production choice once the evaluation in 8.8 has picked them), `mock` (no network and no cost: text comes from the templates; the default for automated tests, usability threads and anyone without keys).
+- Gemini's limits are expected: a rate-limit answer (HTTP 429) is treated like any failure, so the user gets the template fallback at once, the circuit breaker pauses calls for the time the provider asks, and the health endpoint shows it. Automated tests never use a real provider.
 - Models come from env and can differ per call: `OPENROUTER_MODEL` for chapters and ritual cards (quality matters most), `OPENROUTER_MODEL_ANSWER` for answers (speed matters most; falls back to `OPENROUTER_MODEL` when empty), `GEMINI_MODEL` for the test provider. Which models these are is decided by the evaluation in 8.8, not by taste.
 - Reasoning is switched off or set to the minimum for these calls. `temperature` is left at the provider default.
 - Fallback per call: on an error or a missed deadline the template fallback is sent immediately; the user never waits for a second model. A circuit breaker counts failures: after 2 failures of the primary model within 60 s, requests go to the model in `OPENROUTER_MODEL_BACKUP` (when set) for 2 minutes.
@@ -842,18 +861,11 @@ This is the plan for the "LLM as a whole" work Lida scheduled for later: choosin
 - The 15 tricky questions of the ТЗ (section 8) plus a prompt-injection question ("Ignore your rules and…"), each with its expected category and required or forbidden phrases.
 - A scoring sheet per chapter: honest (no false promises), right length and vocabulary for the age, covers the beat, addresses every `mustAddress` topic, uses only allowed techniques and family members, warm and concrete (real steps and sensory details from the template), no clichés or filler.
 
-**Step 2. Candidate models (no cost).** Shortlist from the OpenRouter catalogue with structured output support, in two price classes. As listed on 15 Nov (to be re-read on the day; prices per million tokens, input / output):
+**Step 2. Desk research (no cost).** Start from the cheaper end of the OpenRouter catalogue, though not the very cheapest (D17). First candidates, named by Lida: **DeepSeek 4.1 Flash** and **Haiku 5.5**; one step up, only if both fail: a mid-range model such as `openai/gpt-6.1-terra` or `google/gemini-4-hydrogen`. Prices as listed on 15 Nov, per million tokens, input / output (to be re-read on the day): small models about $0.04–0.10 / $0.50; mid-range $1.00–1.50 / $5.00–7.50. For each candidate we collect what is published: writing and instruction-following benchmarks, measured latency and throughput, reliability of JSON-schema output, and what developers report about tone, refusals and children's content. Public benchmarks only order the shortlist; none of them measures "an honest story for a four-year-old in valid JSON within 4 seconds", so the decision comes from our own run.
 
-| Class | Candidates | Listed price |
-|---|---|---|
-| Small and fast (answers, maybe chapters) | `deepseek/deepseek-v4.1-flash`, `meta/muse-ember`, and the smallest current model of each other major vendor in the catalogue | about $0.04–0.10 / $0.50 |
-| Mid-range (chapters, parent drafts) | `openai/gpt-6.1-terra`, `google/gemini-4-hydrogen` | $1.00–1.50 / $5.00–7.50 |
+**Step 3. Run the comparison (needs an approved budget).** `npm run eval -- --models=a,b --approved-budget=<usd>`. Cheapest candidates first: 16 chapters and 16 questions × 3 runs per model. Measured automatically: schema validity rate, safety categories and stop phrases (must be 16 of 16 in all three runs), time to first page and to answer (p50 and p95 against the 6 s and 4 s budgets), cost per event. Scored blind: story quality on the sheet above, by Lida on a sample of 2 chapters per model and by a judge model on all of them. Estimated spend: well under $1 for the two small candidates, under $2 if a mid-range model has to be added; the script prints the estimate before it starts, and nothing runs until Lida approves the amount.
 
-Public benchmarks are used only to build this shortlist (writing quality, instruction following, latency and throughput rankings); the decision comes from our own evaluation, because no public benchmark measures "honest story for a four-year-old in valid JSON within 4 seconds".
-
-**Step 3. Run the comparison (needs an approved budget).** `npm run eval -- --models=a,b,c --approved-budget=2`. For each model: 16 chapters and 16 questions × 3 runs. Measured automatically: schema validity rate, safety categories and stop phrases (must be 16 of 16 in all three runs), time to first page and to answer (p50 and p95 against the 6 s and 4 s budgets), cost per event. Scored blind: story quality on the sheet above, by Lida on a sample of 2 chapters per model and by a judge model on all of them. Estimated spend for five candidates: under $2 in total; the script prints the estimate before it starts.
-
-**Step 4. Decision rule.** A model that fails safety or schema is out. Among the rest: the answer model is the fastest one that passes quality; the chapter model is the best quality that keeps the first page under 6 s and the cost of an event under about 3% of the Event Pack price ($0.30). The result table goes to `docs/llm-evaluation.md` and the chosen ids to env.
+**Step 4. Decision rule.** A model that fails safety or schema is out. The cheapest model that passes quality and the time budgets wins; we move up a price class only when the cheaper one fails a named criterion. The answer model and the chapter model may differ. Target cost of an event: under about 3% of the Event Pack price ($0.30). The result table goes to `docs/llm-evaluation.md` and the chosen ids to env.
 
 **Step 5. Templates and prompts.** All seven templates complete to the schema in section 7, reviewed against the honesty rules; prompt versions iterated on the evaluation set until the scores stop improving; every change re-runs the safety part. Golden examples of good chapters are kept per event and used as few-shot material only if the evaluation shows they help.
 
@@ -874,7 +886,7 @@ Common rules: JSON bodies validated by zod (unknown fields rejected); the family
 | `POST /api/family` | `{}` → `{ familyId }` and the session cookie. Idempotent: returns the existing family when the cookie is valid |
 | `POST /api/sample` | `{ today: ISODate }` → `{ doc: FamilyDoc, version, entitlements: [] }` and the sample session cookie. Creates a new seeded family (4.3); the dates of the seed are computed from `today` |
 | `GET /api/state` | → `{ doc, version, entitlements: Entitlement[] }` |
-| `PUT /api/state` | `{ doc: FamilyDoc, baseVersion }` → `{ version }`, or 409 with `{ doc, version }` of the server copy. The document is validated against the zod schema of `FamilyDoc`; device-only fields are stripped |
+| `PUT /api/state` | `{ doc: FamilyDoc, baseVersion }` → `{ version }`, or 409 with `{ doc, version }` of the server copy. The document is validated against the zod schema of `FamilyDoc` |
 | `POST /api/restore/code` | → `{ code }` (shown once; replaces any earlier code) |
 | `POST /api/restore` | `{ code }` → `{ doc, version, entitlements }` and the session cookie; 404 for an unknown code; limited to 5 attempts per minute per IP |
 | `DELETE /api/family` | → 204; deletes the family of the active workspace and clears its cookie |
@@ -915,11 +927,11 @@ Request: `{ eventId: string, context: StoryContext, topTopics: Topic[] }` → `{
 
 ### `POST /api/checkout`
 
-Request: `{ plan: 'event' | 'year' | 'month' | 'upgrade', eventId: string, renewalConsent?: boolean }` → `{ url }` (Stripe Checkout). Year, Monthly and upgrade need `renewalConsent: true`. Refuses to run when the Stripe key does not start with `sk_test_`.
+Request: `{ plan: 'event' | 'year' | 'month' | 'upgrade', eventId: string, renewalConsent?: boolean }` → `{ url }` (Stripe Checkout). Year, Monthly and upgrade need `renewalConsent: true`. 409 when the purchase would duplicate access the family already has: `event` for an event that is already unlocked, or any subscription plan while a subscription is active. `upgrade` is accepted only from an owner of an event purchase (400 otherwise). A sample family gets `&ws=sample` on both return addresses, so the return lands in the sample workspace. Refuses to run when the Stripe key does not start with `sk_test_`.
 
 ### `POST /api/verify`
 
-Request: `{ sessionId: string }` → `{ entitlements: Entitlement[] }`, or 402 when the session is not paid. The server retrieves the session from Stripe, checks that its metadata names this family, and inserts the entitlement row (once per Stripe session).
+Request: `{ sessionId: string }` → `{ entitlements: Entitlement[], purchase: { plan: 'event' | 'year' | 'month' | 'upgrade', eventId?: string } }`, or 402 when the session is not paid, 403 when it belongs to another family, 404 when Stripe does not know it. The server retrieves the session from Stripe, checks that its metadata names this family, and inserts the entitlement row (once per Stripe session). `purchase` repeats what was bought, as the checkout plan (so `upgrade` stays `upgrade`, although the row it writes is `year`), and `eventId` is the event the parent came from; `/paid` uses it to send the parent back to that event's plan.
 
 ### `POST /api/portal`
 
@@ -928,6 +940,10 @@ Request: `{}` → `{ url }` of the Stripe customer portal for the family's subsc
 ### `POST /api/stripe/webhook`
 
 Active only when `STRIPE_WEBHOOK_SECRET` is set (after the deploy). Verifies the signature and handles `checkout.session.completed` (grants access even if the parent closed the tab), `customer.subscription.updated` and `customer.subscription.deleted` (renewal, cancellation).
+
+### `POST /api/sample/access`
+
+Request: `{ action: 'grant' | 'reset' }` → `{ entitlements: Entitlement[] }`. `grant` gives the sample family a `year` entitlement with status `demo`, valid 24 hours; `reset` removes every entitlement of the sample family. 403 when the session is not a sample family or `DEMO_MODE` is off. This is the only way access is created without Stripe.
 
 ### `GET /api/ics`
 
@@ -951,7 +967,9 @@ Health: `{ ok: true, db: true, provider, budgetLeft: boolean, version }`, used b
 | Monthly | $7.99 per month | `subscription`, monthly | same as Year |
 | Upgrade | $39 for the first year, then $49 | `subscription`, yearly, with a one-time $10 discount created by code | offered after the check-in to Event Pack owners |
 
-Feature gating. The column "Enforced now" is what the code checks in the MVP; the rest of the tier design is in 17.2 and waits for Lida's decision (section 19, K3).
+Names on screen (default of the payment stream, K12): the paywall calls the one-time purchase **Big Day Pass** and the subscription **Gold**, with yearly and monthly as a switch inside the Gold card, following 17.2. The stored plan ids and the API stay `event | year | month` (6.1), so a rename later touches only `plans.ts`. In this document "Event Pack" means Big Day Pass, and "Family Year" and "Monthly" mean Gold yearly and Gold monthly.
+
+Feature gating. Lida's decision for the MVP (D15): every feature is open to everyone. The only thing behind payment is what the case rules require a working paywall for: chapters 2+ and the event-day card. The column "Enforced now" is what the code checks; the named subscription levels are designed in 17.2.
 
 | Feature | Free | Event Pack | Family Year / Monthly | Enforced now |
 |---|---|---|---|---|
@@ -959,8 +977,8 @@ Feature gating. The column "Enforced now" is what the code checks in the MVP; th
 | Chapters 2+ | no | this event | all events | yes |
 | Event-day card and PDF | no | this event | all events | yes |
 | Calendar reminders, check-in, badge | yes | yes | yes | - |
-| Memory of what helped across events | yes | yes | yes | open to all (K3) |
-| Social story style, place photos, parent's recorded voice | yes | yes | yes | open to all (K3) |
+| Memory of what helped across events | yes | yes | yes | open to all |
+| Social story style, place photos, parent's recorded voice | yes | yes | yes | open to all |
 | Device voice (Listen) | yes | yes | yes | - |
 | Premium narration, cloud voice questions, pictures in stories | - | - | planned tiers (17.2) | not built |
 
@@ -970,7 +988,7 @@ Prices are defined in `web/lib/payments/plans.ts` and sent to Stripe as inline `
 
 1. Browser → `POST /api/checkout` → server creates a Checkout Session with `metadata { plan, eventId, familyId }`, `success_url = <base>/paid?session_id={CHECKOUT_SESSION_ID}`, `cancel_url = <base>/event/<id>/paywall?canceled=1`. `<base>` is `NEXT_PUBLIC_BASE_URL` when set, otherwise the request origin, so nothing has to be rebuilt when the Railway domain appears.
 2. Stripe hosted page, test card 4242 4242 4242 4242.
-3. `/paid` → `POST /api/verify` → the server retrieves the session from Stripe, requires `payment_status === 'paid'` and a matching `familyId`, writes the entitlement row and returns the family's entitlements. The browser caches them and opens the plan with the chapters unlocked.
+3. `/paid` → `POST /api/verify` → the server retrieves the session from Stripe, requires `payment_status === 'paid'` and a matching `familyId`, writes the entitlement row and returns the family's entitlements together with `purchase { plan, eventId? }`. The browser caches the entitlements (the `/paid` screen fires the window event `bds:entitlements` with the fresh list) and opens the plan of `purchase.eventId` with the chapters unlocked.
 
 ### 10.3 Upgrade after the check-in
 
@@ -980,11 +998,23 @@ Prices are defined in `web/lib/payments/plans.ts` and sent to Stripe as inline `
 
 Access is a row in `entitlements`, written only by the server after Stripe confirms the payment. `/api/chapter` (chapters 2+) and `/api/ritual` look it up for the family in the session cookie on every call; nothing the browser stores can grant access. Event Pack rows expire after 90 days; subscription rows carry the period end and are refreshed from Stripe when they are within 3 days of expiry (and by the webhook once it is configured). Because access belongs to the family, it follows the family to another device through the restore link.
 
+### 10.4a Demo access
+
+For the jury demo mode (4.3) the server can write one more kind of row: status `demo`, plan `year`, 24 hours, only for a family of kind `sample`, only while `DEMO_MODE` is on. It is checked by the same code as a paid row, so what the jury sees after "Skip payment" is exactly what a paying family gets. Real families have no route to it.
+
 ### 10.5 Auto-renewal rules (FR-A3)
 
 Next to Year and Monthly: "Renews automatically at $49 per year until you cancel. We'll remind you 30 days before renewal. Cancel anytime in Settings." and a required consent checkbox. Settings show the plan, the renewal date and **Cancel subscription**, which opens the Stripe customer portal through `/api/portal` (the portal configuration is created by code on first use). The Event Pack has no renewal and says so.
 
+Defaults of the payment stream, accepted until Lida revisits them (section 19, K14 to K16):
+
+- **No free trial for Gold.** The first charge happens on the day of purchase. The "How it works" timeline on the paywall shows three real dates: the charge today, the reminder 30 days before renewal, the renewal. The monthly plan promises no reminder, because a notice 30 days ahead makes no sense for a one-month period.
+- **The renewal reminder is Stripe's own email** about an upcoming renewal, switched on in the Stripe dashboard (Settings → Billing → Subscriptions and emails, 30 days). We send no email of our own. Stripe sends no emails in test mode, so in the demo the promise is visible on the paywall but no letter arrives; the switch must be on before real payments.
+- **Cancelling takes effect at the end of the paid period.** The portal sets the subscription to end at the period end; the row gets status `canceled` and keeps giving access until `expires_at`, then it is `expired`. Settings then show "Cancelled. Access stays until <date>. Nothing more will be charged." in place of the renewal date, and the button becomes **Manage plan**. Refunds are not automatic; they are made by hand in the Stripe dashboard.
+
 ### 10.6 Known limits (stated in the README)
+
+Without a Stripe key the payment gateway is a mock in development and tests: checkout "pays" at once and returns to `/paid`. In a production build the mock runs only with `STRIPE_MOCK=on` (a demo server without a key); otherwise the paywall says that payments are not set up. A live key (`sk_live_…`) is always refused.
 
 Until the webhook is configured after the deploy, a parent who closes the tab before returning from Stripe gets access only when they open the return link again. A family is tied to a browser cookie; the restore link is the only way to another device until sign-in by email exists (section 17).
 
@@ -1029,11 +1059,16 @@ web/
   public/                 scenes, icons, manifest
 ```
 
-`lib/flags.ts` holds one boolean per P1/P2 feature (`placePhotos`, `parentVoice`, `voiceQuestion`, `socialStyle`, `restoreLink`, `monthlyPlan`, `exportImport`). A feature is switched on only when its acceptance criteria pass; an unfinished feature is invisible, never a dead button.
+`lib/flags.ts` holds one boolean per P1/P2 feature (`placePhotos`, `parentVoice`, `voiceQuestion`, `socialStyle`, `restoreLink`, `monthlyPlan`, `exportImport`). A feature is switched on only when its acceptance criteria pass; an unfinished feature is invisible, never a dead button. Switched on so far: `monthlyPlan` (payment stream, 15 Nov).
 
 The app is installable (web manifest, icons, theme colour), which gives "Add to Home Screen" a proper icon and name. No service worker in the MVP.
 
 ### 11.2 Look and feel
+
+The visual design comes from the design work in `docs/design/` (Lida, 15 Nov): `style-guide.md` holds the tokens (colours, type scale, radii, shadows, motion), the component list and the screen-by-screen references. Builders implement the look from there. Where the two documents differ, the style guide wins on look and layout, and this document wins on behaviour, data, rules and wording that carries a rule (disclaimers, consent, test-mode notice). Two points of contact:
+
+- Onboarding keeps the three steps and four required fields of 4.5; a step may be laid out as several single-question screens with the progress bar, as the style guide suggests.
+- The style guide's two "rooms" map onto this document as follows: the light, warm room is the landing, onboarding, plan and reader; the dark, calm room is the parent panel, paywall and settings. The reader's night mode (4.7) is a third state on top: the reader darkens after 19:00.
 
 Calm, warm and uncluttered: one page of story per screen, large type, generous spacing, one primary action per screen. A light theme by day and a muted dark theme for evenings. Design tokens (colours, radii, spacing, type scale) live in the Tailwind theme and are the only source of styling values. Text contrast at least 4.5:1, tap targets at least 44 × 44 px, no flashing, no autoplaying sound, motion reduced when the system asks for it. The parent-facing surfaces (panel, paywall, settings) look like a tool; the reader looks like a picture book.
 
@@ -1093,7 +1128,7 @@ One Next.js Node service. Route handlers run on the Node runtime (not edge). One
 
 ### 12.3 Caches
 
-- Sample chapter 1: generated once at boot for the seed context and kept in memory for one hour, then refreshed in the background. A request for exactly that context is answered from the cache; until it is warm the template fallback is used. So the first screen of the jury path never waits for a model.
+- Sample content: all chapters of the seed context and its ritual card are generated in the background at boot through the normal pipeline and kept in memory for one hour, then refreshed. A request for exactly that context is answered from the cache; until an entry is warm the template fallback is used. So the jury path never waits for a model and survives provider rate limits. As soon as a question changes the context, generation is live.
 - Stripe prices and the portal configuration id: memoised in memory.
 
 ### 12.4 Rate limits and budget
@@ -1113,16 +1148,18 @@ One Next.js Node service. Route handlers run on the Node runtime (not edge). One
 
 | Variable | Needed | Use |
 |---|---|---|
-| `LLM_PROVIDER` | yes | `openrouter`, `gemini` or `mock`. A missing key or model falls back to `mock` with a warning |
+| `LLM_PROVIDER` | yes | `gemini` (now), `openrouter` (after the evaluation) or `mock`. A missing key or model falls back to `mock` with a warning |
 | `OPENROUTER_API_KEY` | for `openrouter` | paid models; the key has a $5 limit |
 | `OPENROUTER_MODEL`, `OPENROUTER_MODEL_ANSWER`, `OPENROUTER_MODEL_BACKUP` | for `openrouter` | models chosen by the evaluation (8.8) |
-| `GEMINI_API_KEY`, `GEMINI_MODEL` | for `gemini` | tests only |
+| `GEMINI_API_KEY`, `GEMINI_MODEL` | for `gemini` | development and tests, within the provider's limits |
 | `LLM_BUDGET_USD_PER_DAY` | no (1) | daily spending cap |
 | `DATABASE_URL` | in production | PostgreSQL; empty = embedded database for development |
 | `STRIPE_SECRET_KEY` | yes | test key `sk_test_…` |
 | `STRIPE_WEBHOOK_SECRET` | no | enables the webhook after the deploy |
+| `STRIPE_MOCK` | no | `on` = fake payments in a production build without a Stripe key (demo servers only); never together with real payments |
 | `ENTITLEMENT_SECRET` | yes | signs the family session cookie |
 | `ADMIN_KEY` | no | protects the usage endpoint |
+| `DEMO_MODE` | no (`on`) | jury demo mode: demo access and the guided tour for sample families |
 | `NEXT_PUBLIC_BASE_URL` | no | public URL; empty = taken from the request |
 | `ELEVENLABS_API_KEY` | later | voice (17.1) |
 
@@ -1142,7 +1179,7 @@ The service is stateless apart from two small in-memory pieces. To run several i
 | Devices | iOS Safari 16+, Chrome on Android, desktop Chrome and Safari; width from 360 px; desktop gets the two-column reader (N1) | usability threads, 14.4 |
 | Speed | Landing: Lighthouse mobile performance ≥ 85. First page of a chapter ≤ 6 s. Answer ≤ 4 s. Sample chapter 1 instant (N7) | Lighthouse; timings in `llm_calls` |
 | Resilience | Every LLM call has a deadline and a template fallback; reading works offline for cached chapters; the app works when the database is unreachable and saves later (N8) | tests with `LLM_PROVIDER=mock` and with the network off |
-| Privacy | Minimum data; the name stays on the device; photos and voice stay on the device; no text in logs; deletion in one tap removes the server copy too; retention periods published (N4, N5, FR-A4) | Privacy page, code review, network tab |
+| Privacy | Minimum data: a first name or nickname, never a surname; the name never goes to an AI provider; photos and voice stay on the device; no text in logs; deletion in one tap removes the server copy too; retention periods published (N4, N5, FR-A4) | Privacy page, code review, network tab |
 | AI data | Providers that do not train on inputs; named in the README (N6) | README |
 | Safety | Five levels (8.6); automatic safety test 16 of 16, three runs | `npm run safety` |
 | Payments | Verified on the server; access stored on the server; test key only; no dark patterns (N10, N12) | review, test purchase |
@@ -1159,7 +1196,7 @@ The service is stateless apart from two small in-memory pieces. To run several i
 
 - **Unit (Vitest)**: `plan` (all N from 1 to 5, today, tomorrow, 60 days, past date), `clock` and date helpers across month ends and daylight saving, chapter status, topics and `mustAddress`, access rules, check-in → memory, suggestions, `.ics` text, template schema for all seven files, safety filters (name, phone, email, address, both word lists), post-checks (lengths, stop phrases, 2:1 ratio).
 - **API (Vitest, mock LLM, embedded database)**: family creation and cookie, state round trip and conflict, sample seed, chapter streaming and the 402 on chapter 2, answer categories for the scripted questions, ritual, verify with a mocked Stripe client, deletion.
-- **End to end (Playwright, mock LLM)**: the sample path from the landing to the badge with the demo panel; a fresh family through onboarding, chapter 1, a question, the panel and the paywall; delete all data.
+- **End to end (Playwright, mock LLM)**: the sample path from the landing to the badge with the Demo bar, once paying with the mocked checkout and once with demo access; a fresh family through onboarding, chapter 1, a question, the panel and the paywall; delete all data.
 
 Commands: `npm test` (unit + API), `npm run e2e`, `npm run safety`, `npm run eval`. Build and tests must be green before a merge to `main`.
 
@@ -1204,7 +1241,7 @@ The stages follow `docs/roadmap.md`. Inside a stage the streams below run in par
 | D Persistence | `lib/db/*`, `lib/server/session.ts`, `lib/sync/*`, `app/api/family`, `state`, `sample`, `restore` | S0 |
 | E Payments | `lib/payments/*`, `app/api/checkout`, `verify`, `portal`, `stripe/webhook`, `components/paywall`, `/paid` | D |
 | F Visuals | `components/character/*`, scenes, icons, badges, night theme | S0 |
-| G Event day and retention | day card and PDF, check-in, badge and next event, calendar, demo panel | A, C |
+| G Event day and retention | day card and PDF, check-in, badge and next event, calendar, Demo bar with guided tour, `app/api/sample/access` | A, C, D |
 | H Extras | values profile, social style, photos, export/import, parent's voice, voice question, restore link | C, D |
 | I Quality | usability threads, safety and evaluation runs, README, final review, deploy | everything |
 
@@ -1240,10 +1277,10 @@ Done once, at 08:30 at the latest (15.2).
 
 1. Railway project → **PostgreSQL** service. Its `DATABASE_URL` is referenced by the web service.
 2. Web service from the GitHub repository, **Root Directory `web`**. Build: `npm run build`. Start: `npm start`, which runs `next start -H 0.0.0.0 -p $PORT`. Railway provides `PORT`. One replica.
-3. Variables from 12.6. `NEXT_PUBLIC_BASE_URL` may stay empty: return URLs are built from the request.
+3. Variables from 12.6, with `DEMO_MODE=on`. `NEXT_PUBLIC_BASE_URL` may stay empty: return URLs are built from the request.
 4. Health check path `/api/health`. Migrations run at start.
 5. **Generate Domain** in the service's networking settings; that URL is the production link for the submission.
-6. After the first successful run: open the link in a private window on a phone, run the sample, make a test payment, check `/api/health` and `/api/admin/usage`.
+6. After the first successful run: open the link in a private window on a phone and walk the guided tour of the sample twice, once with **Pay with the test card** and once with **Skip payment**; then create a real family through "Start for free" and pay with the test card; check `/api/health` and `/api/admin/usage`.
 7. Optional, when there is time: add the Stripe webhook endpoint `<domain>/api/stripe/webhook` in the Stripe dashboard (test mode) and put its signing secret into `STRIPE_WEBHOOK_SECRET`.
 
 The link must stay up until the end of the final: do not redeploy during the jury window (12:00–15:00) unless something is broken, and set `LLM_BUDGET_USD_PER_DAY` for that window deliberately.
@@ -1265,22 +1302,39 @@ The interfaces of 11.6 stay; each item below is a new implementation behind them
 | Spoken answers | Answer page with Listen | Hands-free loop: question by voice → the character answers aloud → the story continues | top tier | the two rows above |
 | Adaptation | Text adapts (question → next page) | Voice adapts too: slower and softer at night, shorter sentences for younger children, the calm technique spoken as a guided exercise | top tier | prompt and voice settings per age and time |
 
-### 17.2 Tier design (proposal for Lida, prices of the new tier are a hypothesis)
+### 17.2 Subscription levels (design after the MVP; names and prices are proposals)
 
-| | Free | Event Pack $9.99 | Family Year $49 (or $7.99/month) | Family Plus (new, for example $99/year) |
-|---|---|---|---|---|
-| Stories | chapter 1 | one event in full | all events | all events |
-| Questions and parent panel | yes | yes | yes | yes |
-| Day card, PDF | - | yes | yes | yes |
-| Memory across events, history | basic | basic | full history and "what works for Max" summary | same |
-| Children | 1 | 1 | up to 3 | up to 5 |
-| Social story style, place photos | yes | yes | yes | yes |
-| Voice | device voice, own recording | same | character voice narration, voice questions | parent-voice narration, spoken answers |
-| Pictures | SVG character and scenes | same | same | generated illustrations with the same character on every page; stories built around the family's own photos |
-| Model | small fast model | same | same | stronger model for chapters |
-| Extras | - | - | share link for grandma or nanny, note for the teacher or doctor | printed bravery book at a discount, priority new events |
+Principles taken from how consumer subscriptions that convert well are built:
 
-Why this shape: every row that costs us money per use (premium voice, pictures, a stronger model) sits in a tier whose price covers it; everything that proves the core value stays free or in the cheapest paid step.
+- At most three paid choices on one screen; more causes hesitation. One is marked as recommended.
+- A level is defined by who it is for, not by a list of switches. Every level must have one headline benefit a parent can repeat.
+- Whatever costs us money per use (premium voice, generated pictures, a stronger model, print) sits in a level whose price covers it. Whatever proves the core value stays free or in the cheapest paid step.
+- Safety and control are never sold: Parent check, the panel, deletion and export are in every level.
+- A one-time purchase stays next to the subscriptions, because fear of subscription traps is the most common complaint in this category.
+
+| | **Free** | **Big Day Pass** $9.99 once | **Gold** $49/year or $7.99/month | **Platinum** about $99/year | **Diamond** about $149/year |
+|---|---|---|---|---|---|
+| For whom | trying it out | one event, no subscription | a family with several big days a year | families who want the richest experience | children who need it most often; the top of the line |
+| Headline | "See how your child reacts" | "Everything for this one big day" | "Ready for every big day" | "Stories that sound and look like a real book" | "In your own voice, on paper, with everyone who helps" |
+| Stories | a couple of trial stories: chapter 1 of the first two events | one event in full | all events | all events | all events |
+| Questions, parent panel, Parent check | yes | yes | yes | yes | yes |
+| Event-day card and PDF, calendar | calendar only | yes | yes | yes | yes |
+| Check-in, badge, memory | yes, last event | yes, last event | full history and a "What works for Max" summary | same | same |
+| Children | 1 | 1 | up to 3 | up to 3 | up to 5 |
+| Social story style, place photos | yes | yes | yes | yes | yes |
+| Voice | device voice | device voice, own recording | own recordings kept in the account | character voice narration, voice questions on every browser | narration in the parent's own voice, spoken answers |
+| Pictures | SVG character and scenes | same | same | generated illustrations with the same character on every page | stories built around the family's own photos |
+| Model | small fast model | same | same | stronger model for chapters | same |
+| Sharing | - | - | read-only link for grandma or nanny | note for the teacher or doctor | everything, plus a mode for a therapist working with the family |
+| Extras | - | - | - | printed bravery book at a discount | one printed bravery book a year included |
+
+Notes for the decision:
+
+- Names. Gold, Platinum and Diamond are instantly understood as a ladder, which is their strength; their weakness is that they say nothing about the benefit and people disagree on whether platinum or diamond is higher. An alternative in the product's own language is Brave (Gold), Braver (Platinum), Bravest (Diamond), or plain Family, Family Plus, Family Pro. The table uses the metal names Lida suggested; the final choice is hers (section 19).
+- Start with two subscriptions (Gold and Platinum) and add Diamond only when parent-voice narration and print exist; an empty top level looks unfinished.
+- The free level in the MVP stays as the ТЗ defines it (chapter 1 of any event); the limit of two trial events is switched on together with the levels.
+- Prices of Platinum and Diamond are hypotheses to test: they must cover voice and picture costs, which are measured first (17.1).
+- In code the levels are one table `plans.ts` mapping a level to a list of capability keys (`chapters.all`, `daycard`, `voice.premium`, `images.generated`, …). Screens ask "does this family have capability X", never "is this family Gold", so levels can be renamed and regrouped without touching the screens.
 
 ### 17.3 Backlog
 
@@ -1316,7 +1370,7 @@ Why this shape: every row that costs us money per use (premium voice, pictures, 
 | Model answers a child badly in front of the jury | Low | High | Five levels, Parent check, safety test three runs, fallback on any doubt |
 | Spend or rate limit during the jury window | Medium | High | $5 key limit, daily cap in code, warmed sample, template fallback, limit per family not per IP |
 | "A ChatGPT wrapper" | High | Medium | Code-versus-model table in the README; demo starts with a question that changes the page; the product runs with the model switched off |
-| Storing family data on a server changes the privacy story | Medium | Medium | Name, photos and voice stay on the device; no text in logs; one-tap deletion; published retention; say "minimal data, parent is the operator, lawyer before a pilot", never "COPPA does not apply" |
+| Storing family data on a server changes the privacy story | Medium | Medium | Only a first name or nickname, never a surname; the name never goes to an AI provider; photos and voice stay on the device; no text in logs; one-tap deletion; published retention; say "minimal data, parent is the operator, lawyer before a pilot", never "COPPA does not apply" |
 | Guest account lost when cookies are cleared | Medium | Medium | Restore link; sign-in by email first after the hackathon |
 | Chosen model too slow for 4 s answers | Medium | Medium | Separate fast model for answers; fallback answer written in the template |
 | Web speech sounds robotic or is missing | High | Low | Parent reads by default; best device voice chosen; premium voice planned (17.1) |
@@ -1326,17 +1380,51 @@ Why this shape: every row that costs us money per use (premium voice, pictures, 
 
 ## 19. Questions for Lida
 
-Hard questions and questions about complex mechanics (D7). Each has the default that is being built; answering changes one module.
+Hard questions and questions about complex mechanics (D7).
 
-| # | Question | Default being built | If you choose otherwise |
+### Answered on 15 Nov, 01:42
+
+| # | Question | Decision |
+|---|---|---|
+| K1 | Child's name on the server | Follow US law and best practice: a first name or a nickname is stored, a surname never; the name never goes to an AI provider (D14, 6.3) |
+| K3 | Features locked by level in the MVP | Everything is open in the MVP; named levels are designed for later (D15, 17.2) |
+| K5 | Reading ahead | Decided by the architect: one chapter a night is recommended, a family with access may read one chapter ahead; re-checked in a usability session (5.2) |
+| K6 | What counts as "didn't help" | Decided by the architect: only what the parent marks; untouched techniques stay neutral (4.13) |
+| K9 | Model budget | No approval yet and nothing is spent. Strategy: benchmarks first, start from the cheaper models, test, move up only if needed; Gemini for now (D17, 8.8) |
+| K11 | Does the paywall stay in the MVP? | Yes (01:55). The paywall stays; the jury sees everything through the jury demo mode: guided tour, real test checkout and one-tap demo access for sample families only (D18, 4.3, 5.1) |
+| K2 | Jury test profile | Decided by the architect as the best solution: a fresh sample family per browser, Max with one past event and the upcoming dentist, unpaid at first, with "Pay with the test card" and "Skip payment (demo access)" side by side |
+
+### Accepted by default on 15 Nov, 01:58: revisit later
+
+Lida's instruction when development started: keep the defaults, mark the questions, come back to them later. Each row is built as written; none of them blocks development.
+
+| # | Question | Built now (default) | To revisit |
 |---|---|---|---|
-| K1 | With a database, do we store the child's name on the server? | No. The name and pronunciation stay on the device; everything else is stored. The pitch keeps "your child's name never leaves your device". On a second device the parent types the name once. | Store it: simpler restore, weaker privacy claim |
-| K2 | What does the jury's test profile contain? | A fresh sample family per browser: Max with one past event (haircut, check-in saved) and the upcoming dentist, unpaid, so the jury sees memory at once and tries the test payment themselves | A clean Max with no history, or an already paid sample that skips the payment |
-| K3 | Which features are locked by tier in the MVP? | Only chapters 2+ and the day card. Memory, social story style, photos and the parent's recording are open to everyone, although the ТЗ tariff table puts some of them in Family Year | Lock them to Year as in the ТЗ: stronger upsell, but the jury sees less without paying $49 in test mode |
-| K4 | Second event for an Event Pack owner | Chapter 1 free again; then $9.99 for that event or the $39 upgrade to the year | For example a cheaper second pack |
-| K5 | Pacing: may a paid parent read tomorrow's chapter today? | No. Chapter 1 opens at once, later chapters open on their evening, missed ones stay open. One chapter a night is the product | Allow reading ahead for paid plans |
-| K6 | Check-in: what counts as "didn't help"? | Only what the parent marks in the optional second row. Untouched techniques are neutral and may be suggested again | Treat every unticked technique as "didn't help" (literal reading of the ТЗ) |
-| K7 | Social story style and questions | The answer page appears, but the next page is not rewritten, because the text must not change on re-reading; the topic moves to the next chapter | Rewrite the next page in this mode too |
-| K8 | Premium narration and the name | When ElevenLabs is connected, the spoken name has to be sent to the voice provider. Proposal: ask the parent for explicit consent on first use of premium voice | Keep premium voice name-free (the character says "you") |
-| K9 | Budgets to approve | Nothing is spent without your approval. First request, when the LLM thread starts: up to $2 for comparing five models. Optional: under $1 for a pre-rendered voice for the sample chapter | |
-| K10 | Deploy timing | Create the Railway project and PostgreSQL now, deploy the app at 08:30 at the latest | Deploy later: every hour after 09:00 removes time to fix what only production shows |
+| K4 | Second event for a Big Day Pass owner | Chapter 1 free again; then $9.99 for that event or the $39 upgrade to the year | Pricing of the second pass, after the first payments |
+| K7 | Social story style and questions | The answer page appears, but the next page is not rewritten, because the text must not change on re-reading; the topic moves to the next chapter | In a usability session with the social story persona |
+| K8 | Premium narration and the name | Not built in the MVP. When ElevenLabs is connected: explicit consent from the parent before the spoken name goes to the voice provider | When the voice work starts (17.1) |
+| K10 | Deploy timing | Deploy at 08:30 at the latest; the Railway project and PostgreSQL are created earlier | At checkpoint 2 (07:00) |
+| K12 | Names of the levels | Changed by the payment stream on 15 Nov: the paywall shows **Big Day Pass** ($9.99 once) and **Gold** ($49 a year or $7.99 a month) as in 17.2, in place of the ТЗ names Event Pack, Family Year and Monthly; plan ids are unchanged. Platinum and Diamond stay working names of later levels | With the level design after the hackathon; before the pitch, check that the slides use the same names as the paywall |
+| K13 | Budgets | Nothing is spent. Every paid run is requested separately with an estimate; the first request comes with the model shortlist | In the LLM working session (8.8) |
+
+### Accepted by default on 15 Nov, 02:25: payment stream, revisit later
+
+Defaults chosen by the payment stream while building the paywall (10.5). They are built as written.
+
+| # | Question | Built now (default) | To revisit |
+|---|---|---|---|
+| K14 | Free trial for Gold | No trial: the charge happens on the day of purchase, and the free level (chapter 1) plays the role of the trial | A 7-day trial is a later option; decide together with the levels, because a trial changes the auto-renewal wording and the timeline |
+| K15 | Who sends the renewal reminder | Stripe's upcoming-renewal email, 30 days before a yearly renewal, switched on in the Stripe dashboard; no email of our own; nothing is sent in test mode | Before real payments: turn the switch on and decide whether we also want our own letter or an in-app notice |
+| K16 | When a cancellation takes effect | At the end of the paid period; access stays until then; no automatic refund, refunds by hand in the Stripe dashboard | Refund policy and its wording in the Terms, before real payments |
+
+### Accepted by default on 15 Nov, 02:31: engine stream, revisit later
+
+Rules the engine stream fixed where this document left room (5.4, 4.13, 4.14, 5.7). They are built as written and covered by unit tests.
+
+| # | Question | Built now (default) | To revisit |
+|---|---|---|---|
+| K17 | Which questions go into the prompts of later chapters | Only the texts of `on_topic` questions (last 5). Off-topic ones are left out; a sensitive question gives only its topic, and only if the parent did not keep it to themselves | In the LLM working session (8.8): does the story feel more personal if a shown or edited sensitive question is also quoted |
+| K18 | What closes a topic | Only a story page that names the topic and passes the word check. An answer page does not, so a topic a child asked about always comes back in the story | In a usability session: does the repetition read as care or as nagging, especially in plans of 1 or 2 chapters |
+| K19 | "What helped?" when the plan used no techniques | The list is topped up from the event template, techniques for the chosen fears first, six chips at most | When real plans exist: is an offered technique the family never met confusing; an alternative is the own field only |
+| K20 | How many badges per event | One. Saving the check-in again keeps the first badge and its date | With the badge collection design (levels, repeated events of the same type) |
+| K21 | Saving the check-in again | Replaces the memory records of that event; the latest save is the truth | If a history of edits is ever wanted for the "What works for Max" summary (17.2) |

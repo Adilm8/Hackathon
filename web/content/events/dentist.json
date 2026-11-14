@@ -1,0 +1,962 @@
+{
+  "type": "dentist",
+  "version": 1,
+  "label": "Dentist visit",
+  "countdownLabel": "the dentist",
+  "beats": {
+    "what_happens": {
+      "title": "What happens at the dentist",
+      "goals": [
+        "A dentist is a doctor who keeps teeth strong and clean",
+        "The visit follows the same steps every time: door, waiting room, big chair, counting teeth, a sticker",
+        "Nothing is a surprise: the dentist shows and tells before doing"
+      ],
+      "parentSkill": "Name the steps in order and ask your child to say what comes next."
+    },
+    "who_is_there": {
+      "title": "Who is at the dentist",
+      "goals": [
+        "The front desk helper, the dental assistant and the dentist each have one job",
+        "They wear masks and gloves to keep everyone clean, and smile behind the mask",
+        "The grown-up stays close the whole time"
+      ],
+      "parentSkill": "Talk about the helpers by their job, so new faces feel like part of the plan."
+    },
+    "what_i_do": {
+      "title": "What I do in the big chair",
+      "goals": [
+        "The child's jobs: sit back, open wide, keep hands on the tummy",
+        "Raising a hand means 'I need a break', and the dentist stops",
+        "The child can count teeth with the dentist"
+      ],
+      "parentSkill": "Practise 'open wide' and the stop signal with a mirror and a toothbrush."
+    },
+    "if_scared": {
+      "title": "If I feel scared",
+      "goals": [
+        "Feeling scared is okay and many children feel it",
+        "Some things may tickle, press or pinch a little, and that feeling ends",
+        "Calm-down tools: slow breaths, holding a hand or a foot, sunglasses for the bright light"
+      ],
+      "parentSkill": "Name the feeling without fixing it: 'You feel worried. I'm right here.'"
+    },
+    "rehearsal": {
+      "title": "Let's practise the dentist",
+      "goals": [
+        "Play dentist at home with a toothbrush and a toy",
+        "Go through every step once more, ending with the sticker",
+        "Celebrate the child's bravery and the plan for afterwards"
+      ],
+      "parentSkill": "Let your child be the dentist first, then switch roles."
+    }
+  },
+  "steps": [
+    "Walk in through the clinic door and say hello at the front desk",
+    "Wait in the waiting room until the child's name is called",
+    "Sit in the big chair that moves up and leans back",
+    "Put on sunglasses for the bright light above",
+    "Open wide while the dentist counts and checks each tooth with a tiny mirror",
+    "Teeth are cleaned with a buzzy brush and rinsed with water",
+    "Pick a sticker and go home"
+  ],
+  "sensory": [
+    "a bright lamp over the chair",
+    "a buzzing sound from the little brush",
+    "a minty or fruity taste of toothpaste",
+    "cool water and a slurpy straw that sucks it up",
+    "a chair that hums as it moves",
+    "gloves and masks on the helpers"
+  ],
+  "honestyNotes": "May feel a little pinch, press or tickle. Never promise 'no pain'. Say the feeling is short and the dentist stops when the child raises a hand.",
+  "questionButtons": [
+    {
+      "id": "pain",
+      "text": "Will it hurt?",
+      "topic": "pain",
+      "fallbackAnswer": [
+        "Most of the visit feels like tickles and presses.",
+        "Sometimes a tooth feels a little pinch, and then it stops.",
+        "If you need a break, raise your hand and the dentist will wait."
+      ]
+    },
+    {
+      "id": "mom_near",
+      "text": "Will [[GROWNUP]] be there?",
+      "topic": "separation",
+      "fallbackAnswer": [
+        "Yes, [[GROWNUP]] can stay in the room with you.",
+        "You can look at [[GROWNUP]] or hold a hand or a foot the whole time."
+      ]
+    },
+    {
+      "id": "tools",
+      "text": "What are the tools for?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "The tiny mirror helps the dentist see the back of your teeth.",
+        "The buzzy brush cleans them, and the little straw slurps up the water.",
+        "You can ask the dentist to show you each tool first."
+      ]
+    },
+    {
+      "id": "light",
+      "text": "Why is the light so bright?",
+      "topic": "sensory",
+      "fallbackAnswer": [
+        "The bright light helps the dentist see inside your mouth.",
+        "You can wear sunglasses, and you can close your eyes too."
+      ]
+    },
+    {
+      "id": "who_dentist",
+      "text": "Who is the dentist?",
+      "topic": "strangers",
+      "fallbackAnswer": [
+        "A dentist is a doctor whose job is keeping teeth healthy.",
+        "The dentist will say hello and tell you each step before doing it."
+      ]
+    },
+    {
+      "id": "after",
+      "text": "What happens after?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "When your teeth are counted and clean, the chair goes back down.",
+        "Then you pick a sticker, and you go home with [[GROWNUP]]."
+      ]
+    }
+  ],
+  "techniques": [
+    {
+      "id": "hold_hand_or_foot",
+      "label": "Holding a hand or a foot",
+      "how": "Sit or stand where your child can reach you and hold a hand or a foot during the check.",
+      "topics": [
+        "separation",
+        "pain",
+        "strangers"
+      ]
+    },
+    {
+      "id": "count_teeth",
+      "label": "Counting teeth together",
+      "how": "Ask the dentist to count teeth out loud and count along in your head or with your fingers.",
+      "topics": [
+        "unknown",
+        "pain"
+      ]
+    },
+    {
+      "id": "count_to_ten",
+      "label": "Counting to ten",
+      "how": "Count slowly to ten together during each part of the check; many parts are done before ten.",
+      "topics": [
+        "unknown",
+        "pain",
+        "sensory"
+      ]
+    },
+    {
+      "id": "sunglasses",
+      "label": "Wearing sunglasses",
+      "how": "Bring your child's own sunglasses or ask for a pair to soften the bright lamp.",
+      "topics": [
+        "sensory"
+      ]
+    },
+    {
+      "id": "sticker_after",
+      "label": "Choosing a sticker after",
+      "how": "Talk about the sticker or a small treat at the end, so there is something to look forward to.",
+      "topics": [
+        "unknown",
+        "pain"
+      ]
+    },
+    {
+      "id": "stop_signal",
+      "label": "The hand-up stop signal",
+      "how": "Agree with the dentist that a raised hand means 'please wait', and practise it at home.",
+      "topics": [
+        "safety",
+        "pain",
+        "body"
+      ]
+    },
+    {
+      "id": "deep_breaths",
+      "label": "Smell the flower, blow the candle",
+      "how": "Breathe in slowly through the nose like smelling a flower and out through the mouth like blowing a candle.",
+      "topics": [
+        "pain",
+        "sensory",
+        "safety",
+        "unknown"
+      ]
+    },
+    {
+      "id": "comfort_toy",
+      "label": "Bringing a comfort toy",
+      "how": "Let your child bring a favourite toy to hold in the waiting room and in the chair.",
+      "topics": [
+        "social",
+        "separation",
+        "unknown"
+      ]
+    }
+  ],
+  "ritual": [
+    "Sit in the big chair",
+    "Open wide and count teeth",
+    "Pick a sticker"
+  ],
+  "phrases": {
+    "pain": [
+      "It might feel like a tickle or a little pinch, and then it's over.",
+      "You can raise your hand any time and the dentist will wait."
+    ],
+    "separation": [
+      "I'll be right here in the room. You can look at me the whole time.",
+      "You can hold my hand or I can hold your foot."
+    ],
+    "unknown": [
+      "First the big chair, then counting teeth, then a sticker.",
+      "The dentist will show you each tool before using it."
+    ],
+    "strangers": [
+      "The dentist's job is to keep teeth healthy. Let's say hello together.",
+      "They wear masks to keep things clean. There's a smile under there."
+    ],
+    "sensory": [
+      "The light is bright so the dentist can see. Sunglasses help.",
+      "The little brush buzzes. It sounds louder than it feels."
+    ],
+    "safety": [
+      "The dentist does this every day and knows how to keep you safe.",
+      "If something feels wrong, raise your hand and they stop."
+    ],
+    "body": [
+      "The dentist only looks at your mouth and teeth.",
+      "You decide when you need a break."
+    ],
+    "love": [
+      "I'm proud of you for trying, whatever happens."
+    ],
+    "social": [
+      "Other children come to the dentist too. Everyone waits their turn.",
+      "You can wave hello to the other kids in the waiting room."
+    ]
+  },
+  "topicWords": {
+    "pain": [
+      "hurt",
+      "pinch",
+      "ouch",
+      "sore",
+      "tickle",
+      "press",
+      "poke",
+      "feel"
+    ],
+    "separation": [
+      "stay",
+      "close",
+      "right there",
+      "nearby",
+      "with you",
+      "hand",
+      "together",
+      "beside"
+    ],
+    "unknown": [
+      "first",
+      "then",
+      "next",
+      "step",
+      "after",
+      "show",
+      "what happens"
+    ],
+    "strangers": [
+      "dentist",
+      "helper",
+      "assistant",
+      "hello",
+      "friendly",
+      "name",
+      "mask"
+    ],
+    "sensory": [
+      "light",
+      "bright",
+      "buzz",
+      "sound",
+      "noise",
+      "taste",
+      "minty",
+      "water",
+      "cool",
+      "loud",
+      "sunglasses"
+    ],
+    "safety": [
+      "safe",
+      "careful",
+      "stop",
+      "check",
+      "break"
+    ],
+    "social": [
+      "friend",
+      "kids",
+      "children",
+      "share",
+      "play"
+    ],
+    "body": [
+      "mouth",
+      "teeth",
+      "tooth",
+      "body",
+      "tongue",
+      "lips"
+    ],
+    "love": [
+      "love",
+      "hug",
+      "proud",
+      "special"
+    ]
+  },
+  "backgrounds": [
+    "dentist",
+    "outside",
+    "home-evening",
+    "cosy-room"
+  ],
+  "fallbackPages": {
+    "story": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "Soon [[CHILD]] will visit the dentist.",
+              "kind": "describe"
+            },
+            {
+              "text": "A dentist is a doctor who helps teeth stay strong and clean.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, [[CHILD]] and [[GROWNUP]] walk through the clinic door.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then they say hello at the front desk.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, they sit in the waiting room until [[CHILD]]'s name is called.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Then [[CHILD]] climbs into a big chair that hums and leans back.",
+              "kind": "describe"
+            },
+            {
+              "text": "A bright light shines above, so the dentist can see.",
+              "kind": "describe"
+            },
+            {
+              "text": "The dentist shows a tiny mirror and counts every tooth.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, a buzzy brush cleans the teeth.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the end, [[CHILD]] picks a sticker.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "dentist",
+          "addresses": [
+            "unknown",
+            "sensory"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "At the front desk, a helper smiles and says hello to [[CHILD]].",
+              "kind": "describe"
+            },
+            {
+              "text": "In the room there is a dental assistant who hands the dentist the tools.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the dentist comes in and says a friendly name.",
+              "kind": "describe"
+            },
+            {
+              "text": "Each helper has one job: keeping teeth healthy.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "dentist",
+          "addresses": [
+            "strangers"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "The helpers wear masks and gloves to keep everything clean.",
+              "kind": "describe"
+            },
+            {
+              "text": "Under each mask there is a smile.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] stays right there in the room, close to [[CHILD]].",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can look at [[GROWNUP]] any time.",
+              "kind": "coach"
+            },
+            {
+              "text": "Everyone in the room is on [[CHILD]]'s team.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "dentist",
+          "addresses": [
+            "strangers",
+            "separation"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "In the big chair, [[CHILD]] has three jobs.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sit back like a sleepy cat.",
+              "kind": "coach"
+            },
+            {
+              "text": "Open wide like a big yawn.",
+              "kind": "coach"
+            },
+            {
+              "text": "Keep both hands resting on the tummy.",
+              "kind": "coach"
+            },
+            {
+              "text": "The dentist counts each tooth, and [[CHILD]] can count along in a quiet head voice.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "dentist",
+          "addresses": [
+            "body"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Sometimes a mouth gets tired of being open.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[CHILD]] can raise one hand high.",
+              "kind": "coach"
+            },
+            {
+              "text": "A raised hand means please wait, and the dentist will stop for a break.",
+              "kind": "describe"
+            },
+            {
+              "text": "After a little rest, the counting goes on.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] is the boss of the stop signal.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "dentist",
+          "addresses": [
+            "safety",
+            "body"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "Lots of children feel a little scared at the dentist, and that is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some things tickle, some things press, and sometimes a tooth feels a small pinch.",
+              "kind": "describe"
+            },
+            {
+              "text": "That feeling is short, and then it stops.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can smell a flower and blow out a candle, slow and soft.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "worried",
+          "background": "dentist",
+          "addresses": [
+            "pain"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "If the bright light feels too much, [[CHILD]] can wear sunglasses.",
+              "kind": "coach"
+            },
+            {
+              "text": "If the buzzy sound feels loud, [[CHILD]] can count teeth with the dentist.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[GROWNUP]] can hold a hand or a foot the whole time.",
+              "kind": "describe"
+            },
+            {
+              "text": "Brave does not mean not scared.",
+              "kind": "describe"
+            },
+            {
+              "text": "Brave means trying with a helper close by.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "dentist",
+          "addresses": [
+            "sensory",
+            "separation"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "Tonight [[CHILD]] and [[GROWNUP]] play dentist at home.",
+              "kind": "describe"
+            },
+            {
+              "text": "A favourite toy sits in the big chair.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] says, open wide, and counts the toy's teeth with a toothbrush.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then they switch, and [[GROWNUP]] counts [[CHILD]]'s teeth.",
+              "kind": "describe"
+            },
+            {
+              "text": "Remember the stop signal: one hand up.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Let's say the steps one more time.",
+              "kind": "coach"
+            },
+            {
+              "text": "First the door, then the waiting room, then the big chair.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, open wide and count teeth.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, pick a sticker.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] knows every step now, and [[GROWNUP]] is proud of [[CHILD]] for practising.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "cosy-room",
+          "addresses": [
+            "unknown",
+            "love"
+          ]
+        }
+      ]
+    },
+    "social": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "My name is [[CHILD]], and soon I will go to the dentist.",
+              "kind": "describe"
+            },
+            {
+              "text": "A dentist is a doctor who checks and cleans teeth.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, I walk through the clinic door with [[GROWNUP]].",
+              "kind": "describe"
+            },
+            {
+              "text": "Then we say hello at the front desk and sit in the waiting room.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can bring a toy to hold while I wait.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "dentist",
+          "addresses": [
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Next, a helper says my name, and I go to a room with a big chair.",
+              "kind": "describe"
+            },
+            {
+              "text": "The chair moves up and leans back.",
+              "kind": "describe"
+            },
+            {
+              "text": "There is a bright light above the chair.",
+              "kind": "describe"
+            },
+            {
+              "text": "The dentist counts my teeth and cleans them with a small brush that buzzes.",
+              "kind": "describe"
+            },
+            {
+              "text": "When it is done, I can pick a sticker.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can try to sit still.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "dentist",
+          "addresses": [
+            "unknown",
+            "sensory"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "At the dentist there are a few people who help.",
+              "kind": "describe"
+            },
+            {
+              "text": "A helper at the front desk writes down my name.",
+              "kind": "describe"
+            },
+            {
+              "text": "A dental assistant gets the tools ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "The dentist checks my teeth.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say hello or wave.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "dentist",
+          "addresses": [
+            "strangers"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "The helpers wear masks and gloves.",
+              "kind": "describe"
+            },
+            {
+              "text": "Masks and gloves keep everything clean.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] stays in the room with me.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can look at [[GROWNUP]] when I want to.",
+              "kind": "coach"
+            },
+            {
+              "text": "Many children go to the dentist two times a year.",
+              "kind": "describe"
+            },
+            {
+              "text": "The dentist knows how to help children.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "dentist",
+          "addresses": [
+            "strangers",
+            "separation"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "When I sit in the big chair, I lean back.",
+              "kind": "describe"
+            },
+            {
+              "text": "The dentist will ask me to open my mouth wide.",
+              "kind": "describe"
+            },
+            {
+              "text": "The dentist uses a tiny mirror to look at each tooth.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can try to keep my hands on my tummy.",
+              "kind": "coach"
+            },
+            {
+              "text": "The dentist may count my teeth out loud.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "dentist",
+          "addresses": [
+            "body"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Sometimes my mouth gets tired.",
+              "kind": "describe"
+            },
+            {
+              "text": "If I need a break, I can raise my hand.",
+              "kind": "coach"
+            },
+            {
+              "text": "When I raise my hand, the dentist will stop and wait.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the dentist will start again when I am ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "Raising my hand is a safe way to say stop.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "dentist",
+          "addresses": [
+            "safety",
+            "body"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "Some children feel worried at the dentist.",
+              "kind": "describe"
+            },
+            {
+              "text": "Feeling worried is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some things may tickle or press, and sometimes I may feel a small pinch.",
+              "kind": "describe"
+            },
+            {
+              "text": "The feeling is short.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can breathe in slowly and breathe out slowly.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "worried",
+          "background": "dentist",
+          "addresses": [
+            "pain"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "The light is bright, and the brush makes a buzzing sound.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can wear sunglasses to make the light softer.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[GROWNUP]] can hold my hand or my foot.",
+              "kind": "describe"
+            },
+            {
+              "text": "The visit has an end.",
+              "kind": "describe"
+            },
+            {
+              "text": "After the visit, I go home.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "dentist",
+          "addresses": [
+            "sensory",
+            "separation"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "At home, I can practise going to the dentist.",
+              "kind": "describe"
+            },
+            {
+              "text": "I sit on a chair and lean back.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] counts my teeth with a toothbrush.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can practise opening wide and raising my hand to say stop.",
+              "kind": "coach"
+            },
+            {
+              "text": "Then I can count the teeth of my toy.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Here are the steps.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, the waiting room.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then, the big chair and the bright light.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, the dentist counts and cleans my teeth.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, I pick a sticker.",
+              "kind": "describe"
+            },
+            {
+              "text": "I practised all the steps, and that was a good job.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "cosy-room",
+          "addresses": [
+            "unknown"
+          ]
+        }
+      ]
+    }
+  },
+  "badge": {
+    "id": "brave_smile",
+    "label": "Brave Smile"
+  }
+}

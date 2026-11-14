@@ -1,0 +1,955 @@
+{
+  "type": "haircut",
+  "version": 1,
+  "label": "Haircut",
+  "countdownLabel": "the haircut",
+  "beats": {
+    "what_happens": {
+      "title": "What happens at a haircut",
+      "goals": [
+        "The steps: salon door, big chair, cape, spray, comb, snip, mirror",
+        "Hair can't feel anything, so snipping is just a sound",
+        "It ends with a look in the mirror"
+      ],
+      "parentSkill": "Name the steps in order and show the tools on your own hair first."
+    },
+    "who_is_there": {
+      "title": "Who cuts my hair",
+      "goals": [
+        "The hairdresser's job is to make hair neat and comfy",
+        "Other people get haircuts too",
+        "The grown-up stays close and can be seen in the mirror"
+      ],
+      "parentSkill": "Introduce the hairdresser by name and job before the chair."
+    },
+    "what_i_do": {
+      "title": "What I do in the chair",
+      "goals": [
+        "Sit still like a statue, look in the mirror, keep hands under the cape",
+        "Tilt the head when asked",
+        "Ask for a break by saying 'stop please'"
+      ],
+      "parentSkill": "Practise 'statue still' for a count of ten with a towel cape."
+    },
+    "if_scared": {
+      "title": "If it feels strange",
+      "goals": [
+        "Spray can feel cold, a comb can tug, clippers buzz and tickle",
+        "Hair grows back, and it is okay to feel unsure",
+        "Calm tools: counting to ten, holding a toy, a hand to hold"
+      ],
+      "parentSkill": "If your child gets upset, pause, breathe together, and offer a short break."
+    },
+    "rehearsal": {
+      "title": "Let's practise a haircut",
+      "goals": [
+        "Play salon at home with a towel cape, a spray bottle and a comb",
+        "Practise sitting still and counting",
+        "Go through the steps once more, ending at the mirror"
+      ],
+      "parentSkill": "Let your child give a toy a pretend haircut first."
+    }
+  },
+  "steps": [
+    "Walk into the salon and say hello",
+    "Climb into the big chair, maybe on a booster seat",
+    "Put on a cape that covers the clothes",
+    "Spray a little water and comb the hair",
+    "Snip with scissors or buzz with clippers",
+    "Brush the little hairs away",
+    "Look in the mirror at the new haircut"
+  ],
+  "sensory": [
+    "cold spray of water",
+    "the snip-snip sound of scissors",
+    "a buzzing clipper that tickles",
+    "little hairs that feel itchy on the neck",
+    "a comb that can tug a knot",
+    "a big mirror"
+  ],
+  "honestyNotes": "Cutting hair itself has no feeling, but a comb can tug, little hairs can itch, and the clippers buzz and tickle. Never promise 'it won't feel like anything'; describe each feeling honestly.",
+  "questionButtons": [
+    {
+      "id": "hurt",
+      "text": "Does it hurt?",
+      "topic": "pain",
+      "fallbackAnswer": [
+        "Hair can't feel anything, so the snip is just a sound.",
+        "Sometimes the comb tugs a knot a little, and you can say ouch and the hairdresser goes slower."
+      ]
+    },
+    {
+      "id": "grow_back",
+      "text": "Will my hair grow back?",
+      "topic": "body",
+      "fallbackAnswer": [
+        "Yes. Hair grows back all the time, a tiny bit every day.",
+        "That's why people get haircuts again and again."
+      ]
+    },
+    {
+      "id": "tickle",
+      "text": "What if it tickles?",
+      "topic": "sensory",
+      "fallbackAnswer": [
+        "The buzzy clippers can tickle, and little hairs can feel itchy.",
+        "It's okay to giggle, and the brush sweeps the itchy hairs away."
+      ]
+    },
+    {
+      "id": "who_cuts",
+      "text": "Who will cut my hair?",
+      "topic": "strangers",
+      "fallbackAnswer": [
+        "A hairdresser. Their job is to make hair neat and comfy.",
+        "They'll say hello and tell you what they're doing."
+      ]
+    },
+    {
+      "id": "near_me",
+      "text": "Will [[GROWNUP]] stay with me?",
+      "topic": "separation",
+      "fallbackAnswer": [
+        "Yes, [[GROWNUP]] stays right there.",
+        "You can see [[GROWNUP]] in the big mirror the whole time."
+      ]
+    },
+    {
+      "id": "what_first",
+      "text": "What happens first?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "First the big chair and the cape, then a spray of water and a comb.",
+        "Then snip, snip, and last, a look in the mirror."
+      ]
+    }
+  ],
+  "techniques": [
+    {
+      "id": "count_to_ten",
+      "label": "Counting to ten",
+      "how": "Count slowly to ten together during each part; the part is often done before ten.",
+      "topics": [
+        "unknown",
+        "sensory",
+        "pain"
+      ]
+    },
+    {
+      "id": "cape_at_home",
+      "label": "Practising the cape at home",
+      "how": "Wear a towel as a cape at home first, so the real cape feels familiar.",
+      "topics": [
+        "sensory",
+        "unknown"
+      ]
+    },
+    {
+      "id": "lap_sit",
+      "label": "Sitting on a grown-up's lap",
+      "how": "Ask if your child can sit on your lap, with a cape over you both.",
+      "topics": [
+        "separation",
+        "safety"
+      ]
+    },
+    {
+      "id": "hold_toy",
+      "label": "Holding a favourite toy",
+      "how": "Let your child hold a toy under the cape; the toy can get a pretend haircut first.",
+      "topics": [
+        "separation",
+        "strangers",
+        "social"
+      ]
+    },
+    {
+      "id": "feel_the_buzz",
+      "label": "Feeling the buzz first",
+      "how": "Ask the hairdresser to let your child feel the clippers buzz on a hand before the head.",
+      "topics": [
+        "sensory",
+        "body"
+      ]
+    },
+    {
+      "id": "stop_please",
+      "label": "Saying 'stop please'",
+      "how": "Agree a short break signal and ask the hairdresser to honour it.",
+      "topics": [
+        "safety",
+        "pain",
+        "body"
+      ]
+    },
+    {
+      "id": "deep_breaths",
+      "label": "Smell the flower, blow the candle",
+      "how": "Breathe in slowly through the nose like smelling a flower and out like blowing a candle.",
+      "topics": [
+        "pain",
+        "sensory",
+        "safety"
+      ]
+    }
+  ],
+  "ritual": [
+    "Put on the cape",
+    "Snip, snip, sit still",
+    "Look in the mirror"
+  ],
+  "phrases": {
+    "pain": [
+      "Hair can't feel anything. The snip is just a sound.",
+      "If the comb tugs, say ouch and we'll go slower."
+    ],
+    "body": [
+      "Hair grows back a tiny bit every day.",
+      "The hairdresser only touches your hair."
+    ],
+    "sensory": [
+      "The clippers buzz and tickle. It's okay to giggle.",
+      "Little hairs can itch. We'll brush them away."
+    ],
+    "strangers": [
+      "The hairdresser's job is to make hair neat. Let's say hello.",
+      "They'll tell you what they're doing each time."
+    ],
+    "separation": [
+      "I'm right here. You can see me in the mirror.",
+      "Want to sit on my lap?"
+    ],
+    "unknown": [
+      "First the cape, then the spray, then snip, then the mirror.",
+      "Let's count to ten for each part."
+    ],
+    "safety": [
+      "Hairdressers use scissors very carefully every day.",
+      "You can say 'stop please' and they'll wait."
+    ],
+    "social": [
+      "Lots of people get haircuts. Look, someone else is in a chair too.",
+      "Your toy can watch and cheer you on."
+    ],
+    "love": [
+      "I love your hair long or short."
+    ]
+  },
+  "topicWords": {
+    "pain": [
+      "hurt",
+      "feel",
+      "tug",
+      "ouch",
+      "pull",
+      "sore"
+    ],
+    "body": [
+      "hair",
+      "grow",
+      "grows",
+      "head",
+      "neck",
+      "ears"
+    ],
+    "sensory": [
+      "tickle",
+      "buzz",
+      "itch",
+      "itchy",
+      "cold",
+      "spray",
+      "sound",
+      "snip",
+      "mirror"
+    ],
+    "strangers": [
+      "hairdresser",
+      "hello",
+      "helper"
+    ],
+    "separation": [
+      "right there",
+      "stay",
+      "close",
+      "lap",
+      "mirror",
+      "with",
+      "hand"
+    ],
+    "unknown": [
+      "first",
+      "then",
+      "next",
+      "after",
+      "last",
+      "step",
+      "part"
+    ],
+    "safety": [
+      "careful",
+      "safe",
+      "stop",
+      "break"
+    ],
+    "social": [
+      "people",
+      "kids",
+      "children",
+      "toy",
+      "friend"
+    ],
+    "love": [
+      "love",
+      "hug",
+      "proud"
+    ]
+  },
+  "backgrounds": [
+    "haircut",
+    "outside",
+    "home-evening",
+    "cosy-room"
+  ],
+  "fallbackPages": {
+    "story": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "Soon [[CHILD]] will get a haircut.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, [[CHILD]] and [[GROWNUP]] walk into the salon and say hello.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[CHILD]] climbs into a big chair that goes up and down.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next comes a cape, like a superhero cape worn backwards.",
+              "kind": "describe"
+            },
+            {
+              "text": "It keeps little hairs off the clothes.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Then a little spray of water makes the hair wet, and a comb makes it smooth.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, snip, snip go the scissors.",
+              "kind": "describe"
+            },
+            {
+              "text": "Hair can't feel anything, so the snip is just a sound.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, [[CHILD]] looks in the big mirror and sees the new haircut.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "haircut",
+          "addresses": [
+            "unknown",
+            "pain"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "At the salon there is a hairdresser.",
+              "kind": "describe"
+            },
+            {
+              "text": "A hairdresser's job is to make hair neat and comfy.",
+              "kind": "describe"
+            },
+            {
+              "text": "The hairdresser says hello and tells [[CHILD]] each step before doing it.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say hello back, or just wave.",
+              "kind": "coach"
+            },
+            {
+              "text": "Hairdressers cut lots of children's hair every day.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "strangers"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Other people get haircuts at the salon too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Big people, small people, even grandpas.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] stays right there, close by.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can look in the big mirror and see [[GROWNUP]] the whole time.",
+              "kind": "coach"
+            },
+            {
+              "text": "A favourite toy can watch and cheer.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "haircut",
+          "addresses": [
+            "separation",
+            "social"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "In the big chair, [[CHILD]] has a few jobs.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sit still like a statue.",
+              "kind": "coach"
+            },
+            {
+              "text": "Keep both hands under the cape.",
+              "kind": "coach"
+            },
+            {
+              "text": "When the hairdresser says tilt, [[CHILD]] moves the head a tiny bit.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[CHILD]] counts slowly to ten, and often that part is done before ten.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "haircut",
+          "addresses": [
+            "unknown",
+            "body"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Sometimes sitting still is hard.",
+              "kind": "describe"
+            },
+            {
+              "text": "If [[CHILD]] needs a break, [[CHILD]] can say, stop please.",
+              "kind": "coach"
+            },
+            {
+              "text": "The hairdresser will stop the scissors and wait.",
+              "kind": "describe"
+            },
+            {
+              "text": "After a little wiggle, the haircut goes on.",
+              "kind": "describe"
+            },
+            {
+              "text": "Hairdressers are very careful with scissors, and [[CHILD]] is careful too.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "haircut",
+          "addresses": [
+            "safety"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "Some things at a haircut feel funny.",
+              "kind": "describe"
+            },
+            {
+              "text": "The spray can feel cold.",
+              "kind": "describe"
+            },
+            {
+              "text": "The buzzy clippers can tickle around the ears.",
+              "kind": "describe"
+            },
+            {
+              "text": "Little hairs can feel itchy on the neck, and a soft brush sweeps them away.",
+              "kind": "describe"
+            },
+            {
+              "text": "It's okay to giggle, and it's okay to feel unsure.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "worried",
+          "background": "haircut",
+          "addresses": [
+            "sensory"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Sometimes the comb tugs a little knot.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say ouch, and the hairdresser will go slower.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can hold a toy, hold [[GROWNUP]]'s hand, or count to ten.",
+              "kind": "coach"
+            },
+            {
+              "text": "And hair always grows back, a tiny bit every day.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "haircut",
+          "addresses": [
+            "pain",
+            "separation"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "Tonight [[CHILD]] and [[GROWNUP]] play salon at home.",
+              "kind": "describe"
+            },
+            {
+              "text": "A towel is the cape, and a spray bottle makes a cold little mist.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, [[CHILD]] gives a toy a pretend haircut with a comb.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then it's [[CHILD]]'s turn in the chair.",
+              "kind": "describe"
+            },
+            {
+              "text": "Statue still, and count to ten!",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "sensory"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Let's say the haircut steps once more.",
+              "kind": "coach"
+            },
+            {
+              "text": "First the big chair and the cape.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the spray and the comb.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, snip, snip, and maybe a buzz.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, a look in the mirror.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of [[CHILD]] for practising.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "cosy-room",
+          "addresses": [
+            "unknown",
+            "love"
+          ]
+        }
+      ]
+    },
+    "social": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "My name is [[CHILD]], and soon I will get a haircut.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, I go to the salon with [[GROWNUP]].",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I sit in a big chair.",
+              "kind": "describe"
+            },
+            {
+              "text": "The hairdresser puts a cape on me.",
+              "kind": "describe"
+            },
+            {
+              "text": "The cape keeps hair off my clothes.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can try to sit still in the chair.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Next, the hairdresser sprays a little water on my hair.",
+              "kind": "describe"
+            },
+            {
+              "text": "The water may feel cold.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the hairdresser combs my hair and cuts it with scissors.",
+              "kind": "describe"
+            },
+            {
+              "text": "The scissors make a snip sound.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, I look in the mirror.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say thank you to the hairdresser.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "haircut",
+          "addresses": [
+            "unknown",
+            "sensory"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "At the salon there is a hairdresser.",
+              "kind": "describe"
+            },
+            {
+              "text": "The hairdresser's job is to cut hair.",
+              "kind": "describe"
+            },
+            {
+              "text": "The hairdresser will tell me what will happen next.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say hello to the hairdresser.",
+              "kind": "coach"
+            },
+            {
+              "text": "Hairdressers cut many children's hair every week.",
+              "kind": "describe"
+            },
+            {
+              "text": "They know how to help.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "strangers"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Other people get haircuts at the salon too.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] stays with me.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can see [[GROWNUP]] in the mirror.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can bring a toy to hold.",
+              "kind": "coach"
+            },
+            {
+              "text": "Many children get haircuts, and it is a normal thing to do.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "haircut",
+          "addresses": [
+            "separation",
+            "social"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "In the chair, I keep my hands under the cape.",
+              "kind": "describe"
+            },
+            {
+              "text": "The hairdresser may ask me to tilt my head.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can try to move my head a little when the hairdresser asks.",
+              "kind": "coach"
+            },
+            {
+              "text": "Each part of the haircut is short.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can count to ten while the hairdresser cuts my hair.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "haircut",
+          "addresses": [
+            "unknown",
+            "body"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Sometimes it is hard to sit still.",
+              "kind": "describe"
+            },
+            {
+              "text": "If I need a break, I can say, stop please.",
+              "kind": "coach"
+            },
+            {
+              "text": "The hairdresser will stop and wait.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then we can start again.",
+              "kind": "describe"
+            },
+            {
+              "text": "Hairdressers are careful with scissors.",
+              "kind": "describe"
+            },
+            {
+              "text": "Saying stop please is a safe way to ask for a break.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "haircut",
+          "addresses": [
+            "safety"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "Some parts of a haircut can feel strange.",
+              "kind": "describe"
+            },
+            {
+              "text": "The clippers make a buzzing sound and can tickle.",
+              "kind": "describe"
+            },
+            {
+              "text": "Little hairs can feel itchy.",
+              "kind": "describe"
+            },
+            {
+              "text": "The hairdresser brushes the little hairs away.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths if it feels strange.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "worried",
+          "background": "haircut",
+          "addresses": [
+            "sensory"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Sometimes the comb may tug my hair.",
+              "kind": "describe"
+            },
+            {
+              "text": "A tug can feel a little sore.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say ouch, and the hairdresser will go slower.",
+              "kind": "coach"
+            },
+            {
+              "text": "Hair cannot feel the scissors.",
+              "kind": "describe"
+            },
+            {
+              "text": "My hair grows back a little every day.",
+              "kind": "describe"
+            },
+            {
+              "text": "That is why people get haircuts many times.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "haircut",
+          "addresses": [
+            "pain",
+            "body"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "At home, I can practise a haircut.",
+              "kind": "describe"
+            },
+            {
+              "text": "A towel can be my cape.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] can spray a little water and comb my hair.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can practise sitting still and counting to ten.",
+              "kind": "coach"
+            },
+            {
+              "text": "Then I can look in the mirror.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "sensory"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Here are the steps of my haircut.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, the chair and the cape.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then, the spray and the comb.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, the scissors snip my hair.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, I look in the mirror.",
+              "kind": "describe"
+            },
+            {
+              "text": "I practised all the steps, and I did a good job.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "cosy-room",
+          "addresses": [
+            "unknown"
+          ]
+        }
+      ]
+    }
+  },
+  "badge": {
+    "id": "snip_snap_star",
+    "label": "Snip Snap Star"
+  }
+}

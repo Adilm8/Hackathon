@@ -1,0 +1,941 @@
+{
+  "type": "flight",
+  "version": 1,
+  "label": "First flight",
+  "countdownLabel": "the flight",
+  "beats": {
+    "what_happens": {
+      "title": "What happens on a plane trip",
+      "goals": [
+        "The trip has steps: airport, bags, security gate, waiting, boarding, flying, landing",
+        "Each step is short and the family stays together",
+        "At the end the plane lands and the trip goes on"
+      ],
+      "parentSkill": "Say the trip steps in order using a toy plane, and let your child fly it."
+    },
+    "who_is_there": {
+      "title": "Who helps on a plane trip",
+      "goals": [
+        "Security helpers check bags and shoes to keep everyone safe",
+        "Flight attendants help passengers; pilots fly the plane and train for a long time",
+        "Lots of other families and kids fly too"
+      ],
+      "parentSkill": "Point out the helpers by their jobs: 'That person checks bags so everyone is safe.'"
+    },
+    "what_i_do": {
+      "title": "What I do on the plane",
+      "goals": [
+        "Walk through the gate, put shoes and toys in a tray",
+        "Buckle the seatbelt, look out of the window, have a snack",
+        "Chew, sip or yawn when the ears feel full"
+      ],
+      "parentSkill": "Practise buckling a belt and 'chew and sip' for the ears at home."
+    },
+    "if_scared": {
+      "title": "If I feel scared on the plane",
+      "goals": [
+        "Engines are loud and a plane can feel bumpy; that is normal",
+        "Ears may feel full or pop, and swallowing helps",
+        "Planes are flown by trained pilots, and the seatbelt holds you snug"
+      ],
+      "parentSkill": "Stay calm and name what is happening: 'That's a bump. The seatbelt is holding us.'"
+    },
+    "rehearsal": {
+      "title": "Let's practise flying",
+      "goals": [
+        "Play airport at home with a tray, a pretend gate and chairs as seats",
+        "Practise buckling up and chewing for the ears",
+        "Go through the trip once more, ending with landing"
+      ],
+      "parentSkill": "Let your child be the pilot announcing each step."
+    }
+  },
+  "steps": [
+    "Arrive at the airport and give the big bags to a helper",
+    "Walk through the security gate and put shoes and toys in a tray",
+    "Wait at the gate and watch the planes",
+    "Walk onto the plane and find the seats",
+    "Buckle the seatbelt and take off",
+    "Snack, look out of the window, rest",
+    "Land, unbuckle and walk off the plane"
+  ],
+  "sensory": [
+    "the loud hum of the engines",
+    "a push back into the seat at take-off",
+    "ears that feel full or pop",
+    "small bumps like a car on a bumpy road",
+    "clouds and tiny houses out of the window",
+    "a beeping security gate"
+  ],
+  "honestyNotes": "Ears may hurt a little or pop; swallowing helps. Bumps can happen and feel strange. Never promise 'nothing can go wrong'; say pilots train for a long time and planes are built to fly through bumps.",
+  "questionButtons": [
+    {
+      "id": "ears",
+      "text": "Will my ears hurt?",
+      "topic": "pain",
+      "fallbackAnswer": [
+        "Your ears may feel full, or they may pop, and sometimes that feels a little sore.",
+        "Chewing, sipping water or a big yawn helps the feeling go away."
+      ]
+    },
+    {
+      "id": "fall",
+      "text": "Will the plane fall?",
+      "topic": "safety",
+      "fallbackAnswer": [
+        "Pilots learn for a long time to fly planes safely.",
+        "Sometimes the plane feels bumpy, like a car on a bumpy road, and the seatbelt holds you snug."
+      ]
+    },
+    {
+      "id": "shoes",
+      "text": "Why take off my shoes?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "At the security gate, helpers check shoes and bags to keep everyone safe.",
+        "You put your shoes in a tray, walk through, and put them right back on."
+      ]
+    },
+    {
+      "id": "loud",
+      "text": "Why is the plane so loud?",
+      "topic": "sensory",
+      "fallbackAnswer": [
+        "The engines hum loudly so the plane can go fast and fly.",
+        "Headphones or soft hands over your ears can make the sound smaller."
+      ]
+    },
+    {
+      "id": "together",
+      "text": "Will we sit together?",
+      "topic": "separation",
+      "fallbackAnswer": [
+        "Yes, you sit next to [[GROWNUP]].",
+        "You can hold hands when the plane takes off."
+      ]
+    },
+    {
+      "id": "bored",
+      "text": "What will I do on the plane?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "You can look out of the window, have a snack and play with your toys.",
+        "Some people even take a nap."
+      ]
+    }
+  ],
+  "techniques": [
+    {
+      "id": "chew_and_sip",
+      "label": "Chewing and sipping for the ears",
+      "how": "At take-off and landing offer a drink, a snack to chew, or a pacifier, and practise big yawns.",
+      "topics": [
+        "pain",
+        "sensory"
+      ]
+    },
+    {
+      "id": "headphones",
+      "label": "Headphones or earmuffs",
+      "how": "Bring headphones or soft earmuffs to make the engine sound smaller.",
+      "topics": [
+        "sensory"
+      ]
+    },
+    {
+      "id": "hold_hand",
+      "label": "Holding hands",
+      "how": "Hold your child's hand at take-off, at landing and through bumps.",
+      "topics": [
+        "separation",
+        "safety",
+        "strangers"
+      ]
+    },
+    {
+      "id": "seatbelt_hug",
+      "label": "The seatbelt hug",
+      "how": "Call the seatbelt 'a hug from the plane' and practise buckling it at home.",
+      "topics": [
+        "safety",
+        "body"
+      ]
+    },
+    {
+      "id": "window_game",
+      "label": "Window spotting game",
+      "how": "Play 'I spy' out of the window: clouds, roads, tiny cars.",
+      "topics": [
+        "unknown",
+        "sensory"
+      ]
+    },
+    {
+      "id": "security_preview",
+      "label": "Security gate preview",
+      "how": "Explain the tray and the gate beforehand; a helper may check bags or ask to look, and you stay right next to your child.",
+      "topics": [
+        "body",
+        "strangers",
+        "unknown"
+      ]
+    },
+    {
+      "id": "busy_bag",
+      "label": "A busy bag",
+      "how": "Pack a few small toys, a book and stickers so waiting has something to do; other kids on board may wave too.",
+      "topics": [
+        "social",
+        "unknown"
+      ]
+    },
+    {
+      "id": "deep_breaths",
+      "label": "Smell the flower, blow the candle",
+      "how": "Breathe in slowly through the nose like smelling a flower and out like blowing a candle.",
+      "topics": [
+        "safety",
+        "sensory",
+        "pain"
+      ]
+    }
+  ],
+  "ritual": [
+    "Walk through the scanner gate",
+    "Find my window seat",
+    "Land and see who is waiting"
+  ],
+  "phrases": {
+    "pain": [
+      "Your ears might feel full. Let's chew and sip together.",
+      "A big yawn can help your ears pop."
+    ],
+    "safety": [
+      "Pilots practise for a long time to fly safely.",
+      "Bumps feel funny, and the seatbelt holds us snug."
+    ],
+    "unknown": [
+      "First the gate, then the waiting room, then the plane.",
+      "Shoes go in the tray and come right back."
+    ],
+    "sensory": [
+      "The engines are loud. Headphones make it smaller.",
+      "That push in your seat means we're taking off."
+    ],
+    "separation": [
+      "We sit together the whole flight.",
+      "I'll walk through the gate right after you."
+    ],
+    "strangers": [
+      "The helpers at the airport check bags to keep everyone safe.",
+      "Flight attendants help everyone on the plane."
+    ],
+    "body": [
+      "A helper might look at your bag or your shoes. I stay right next to you.",
+      "You can always tell me if something feels wrong."
+    ],
+    "social": [
+      "Lots of families fly. Maybe a kid will wave at you.",
+      "We can play a quiet game so everyone can rest."
+    ],
+    "love": [
+      "I'm right here with you, all the way."
+    ]
+  },
+  "topicWords": {
+    "pain": [
+      "ears",
+      "ear",
+      "pop",
+      "hurt",
+      "sore",
+      "full"
+    ],
+    "safety": [
+      "safe",
+      "seatbelt",
+      "pilot",
+      "bump",
+      "bumpy",
+      "snug",
+      "trained",
+      "learn"
+    ],
+    "unknown": [
+      "first",
+      "then",
+      "next",
+      "after",
+      "step",
+      "gate",
+      "tray"
+    ],
+    "sensory": [
+      "loud",
+      "hum",
+      "noise",
+      "sound",
+      "headphones",
+      "push",
+      "window",
+      "clouds",
+      "beep"
+    ],
+    "separation": [
+      "together",
+      "next to",
+      "hold hands",
+      "hand",
+      "right after",
+      "with"
+    ],
+    "strangers": [
+      "helper",
+      "flight attendant",
+      "pilot",
+      "hello"
+    ],
+    "body": [
+      "shoes",
+      "check",
+      "body",
+      "belt"
+    ],
+    "social": [
+      "families",
+      "kids",
+      "children",
+      "people",
+      "wave",
+      "friend"
+    ],
+    "love": [
+      "love",
+      "hug",
+      "proud"
+    ]
+  },
+  "backgrounds": [
+    "flight",
+    "outside",
+    "home-evening",
+    "cosy-room"
+  ],
+  "fallbackPages": {
+    "story": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "Soon [[CHILD]] will fly on a plane.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, [[CHILD]] and [[GROWNUP]] go to a big airport.",
+              "kind": "describe"
+            },
+            {
+              "text": "A helper takes the big bags, and they get a ride on a moving belt.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next comes the security gate, where shoes and toys go in a tray.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then everyone waits by the big windows and watches the planes.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "flight",
+          "addresses": [
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Then [[CHILD]] walks onto the plane and finds a seat.",
+              "kind": "describe"
+            },
+            {
+              "text": "Click goes the seatbelt, snug like a hug.",
+              "kind": "coach"
+            },
+            {
+              "text": "The engines hum, the plane rolls fast, and up it goes into the sky.",
+              "kind": "describe"
+            },
+            {
+              "text": "After a snack and a look at the clouds, the plane comes down and lands.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "flight",
+          "addresses": [
+            "unknown",
+            "safety"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "At the security gate there are helpers in uniforms.",
+              "kind": "describe"
+            },
+            {
+              "text": "Their job is to check bags and shoes so everyone is safe.",
+              "kind": "describe"
+            },
+            {
+              "text": "They might say, shoes in the tray, please.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] puts the shoes in, walks through the gate, and puts them right back on.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] walks through right after.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "flight",
+          "addresses": [
+            "strangers",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "On the plane, flight attendants say hello and help everyone find a seat.",
+              "kind": "describe"
+            },
+            {
+              "text": "In front, the pilots fly the plane.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pilots learn for a long, long time to fly safely.",
+              "kind": "describe"
+            },
+            {
+              "text": "There are lots of other people and families on the plane too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Maybe a kid will wave at [[CHILD]] from across the aisle.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "flight",
+          "addresses": [
+            "strangers",
+            "social"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "On the plane, [[CHILD]] has some jobs.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sit in the seat next to [[GROWNUP]] and click the seatbelt.",
+              "kind": "coach"
+            },
+            {
+              "text": "When the plane goes up, [[CHILD]] can hold [[GROWNUP]]'s hand.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then there is time to look out of the window, have a snack and play with a toy.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "flight",
+          "addresses": [
+            "safety",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "When the plane goes up and comes down, ears can feel full.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes they pop with a funny little sound.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can chew a snack, take a sip of water, or do a big lion yawn.",
+              "kind": "coach"
+            },
+            {
+              "text": "That helps the ears feel better.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] knows the ear trick now.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "flight",
+          "addresses": [
+            "pain"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "A plane can be loud, like a big humming fan.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes the plane feels bumpy, like a car on a bumpy road.",
+              "kind": "describe"
+            },
+            {
+              "text": "The seatbelt holds [[CHILD]] snug, and the pilots know what to do with bumps.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can put on headphones and hold [[GROWNUP]]'s hand.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "worried",
+          "background": "flight",
+          "addresses": [
+            "sensory",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "If [[CHILD]]'s ears feel sore, there is the ear trick: chew, sip, or yawn.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] sits right next to [[CHILD]] the whole time.",
+              "kind": "describe"
+            },
+            {
+              "text": "When something feels strange, [[CHILD]] can smell a flower and blow out a candle, slow and soft.",
+              "kind": "coach"
+            },
+            {
+              "text": "Being brave means trying, even when it feels new.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "flight",
+          "addresses": [
+            "pain",
+            "separation"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "Tonight [[CHILD]] and [[GROWNUP]] play airport at home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Two chairs are the plane seats, and a box is the security tray.",
+              "kind": "describe"
+            },
+            {
+              "text": "Shoes go in the tray, then [[CHILD]] walks through the pretend gate.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, [[CHILD]] sits down and clicks a pretend seatbelt.",
+              "kind": "describe"
+            },
+            {
+              "text": "Now try the ear trick: a big lion yawn!",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Let's say the trip once more.",
+              "kind": "coach"
+            },
+            {
+              "text": "First the airport and the bags, then the security gate and the tray.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, the plane, the seatbelt and up into the sky.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, snacks, clouds and landing.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of [[CHILD]] for practising every step.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "cosy-room",
+          "addresses": [
+            "unknown",
+            "love"
+          ]
+        }
+      ]
+    },
+    "social": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "My name is [[CHILD]], and soon I will fly on a plane.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, I go to the airport with [[GROWNUP]].",
+              "kind": "describe"
+            },
+            {
+              "text": "A helper takes our big bags.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then we go to the security gate, where my shoes and toys go in a tray.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can put my things in the tray.",
+              "kind": "coach"
+            },
+            {
+              "text": "Then I walk through the gate.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "flight",
+          "addresses": [
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Next, we wait by the windows until it is time to get on the plane.",
+              "kind": "describe"
+            },
+            {
+              "text": "On the plane, I sit in my seat and wear a seatbelt.",
+              "kind": "describe"
+            },
+            {
+              "text": "The plane goes fast and goes up into the sky.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can look out of the window.",
+              "kind": "coach"
+            },
+            {
+              "text": "After some time, the plane lands, and we walk off.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "flight",
+          "addresses": [
+            "unknown",
+            "safety"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "At the airport there are security helpers.",
+              "kind": "describe"
+            },
+            {
+              "text": "Their job is to check bags and shoes so everyone is safe.",
+              "kind": "describe"
+            },
+            {
+              "text": "A helper may ask me to put my shoes in a tray.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can do what the helper asks.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[GROWNUP]] stays next to me.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "flight",
+          "addresses": [
+            "strangers",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "On the plane there are flight attendants.",
+              "kind": "describe"
+            },
+            {
+              "text": "Flight attendants help people find their seats.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pilots fly the plane, and they learn for a long time to fly safely.",
+              "kind": "describe"
+            },
+            {
+              "text": "Many other people and families are on the plane too.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say hello if someone says hello to me.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "flight",
+          "addresses": [
+            "strangers",
+            "social"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "On the plane, I sit next to [[GROWNUP]].",
+              "kind": "describe"
+            },
+            {
+              "text": "I wear my seatbelt when the light is on.",
+              "kind": "describe"
+            },
+            {
+              "text": "The seatbelt keeps me safe in my seat.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can hold [[GROWNUP]]'s hand when the plane goes up.",
+              "kind": "coach"
+            },
+            {
+              "text": "Then I can have a snack and play with a toy.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "flight",
+          "addresses": [
+            "safety",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "When the plane goes up or down, my ears may feel full.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes my ears pop, and sometimes they feel a little sore.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can chew, sip water or yawn.",
+              "kind": "coach"
+            },
+            {
+              "text": "Chewing and yawning help my ears feel better.",
+              "kind": "describe"
+            },
+            {
+              "text": "The full feeling goes away.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "flight",
+          "addresses": [
+            "pain"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "The plane makes a loud humming sound.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes the plane feels bumpy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bumps are normal on a plane, and the seatbelt keeps me snug.",
+              "kind": "describe"
+            },
+            {
+              "text": "The pilots know what to do.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can wear headphones to make the sound quieter.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "worried",
+          "background": "flight",
+          "addresses": [
+            "sensory",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Some children feel worried on a plane, and that is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] sits next to me the whole time.",
+              "kind": "describe"
+            },
+            {
+              "text": "If my ears feel sore, I can chew or yawn.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can breathe in and breathe out slowly.",
+              "kind": "describe"
+            },
+            {
+              "text": "The flight has an end, and then the plane lands.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "flight",
+          "addresses": [
+            "separation",
+            "pain"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "At home, I can practise flying.",
+              "kind": "describe"
+            },
+            {
+              "text": "Two chairs can be plane seats.",
+              "kind": "describe"
+            },
+            {
+              "text": "A box can be the security tray.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can practise putting my shoes in the tray and clicking a seatbelt.",
+              "kind": "coach"
+            },
+            {
+              "text": "Then I can practise a big yawn for my ears.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Here are the steps of my trip.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, the airport and the security gate.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then, the waiting room and the plane.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, the seatbelt and flying in the sky.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, the plane lands.",
+              "kind": "describe"
+            },
+            {
+              "text": "I practised all the steps, and I did a good job.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "cosy-room",
+          "addresses": [
+            "unknown"
+          ]
+        }
+      ]
+    }
+  },
+  "badge": {
+    "id": "sky_explorer",
+    "label": "Sky Explorer"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "name": "big-day-stories",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start -H 0.0.0.0 -p ${PORT:-3000}",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "db:generate": "drizzle-kit generate",
+    "safety": "tsx --conditions=react-server evals/safety.ts",
+    "eval": "tsx --conditions=react-server evals/eval.ts"
+  },
+  "dependencies": {
+    "@ai-sdk/google": "^4.0.121",
+    "@electric-sql/pglite": "^0.5.16",
+    "@openrouter/ai-sdk-provider": "^3.1.0",
+    "@radix-ui/react-dialog": "^1.3.1",
+    "@radix-ui/react-progress": "^1.2.1",
+    "@radix-ui/react-switch": "^1.4.1",
+    "ai": "^7.0.173",
+    "drizzle-orm": "^0.45.4",
+    "ics": "^3.12.1",
+    "idb-keyval": "^6.3.0",
+    "next": "16.4.6",
+    "obscenity": "^0.4.6",
+    "pg": "^8.23.1",
+    "qrcode": "^1.5.4",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "server-only": "^0.0.1",
+    "stripe": "^23.1.0",
+    "zod": "^4.6.7",
+    "zustand": "^5.1.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/turbopack": "4.3.3",
+    "@types/node": "^22.20.5",
+    "@types/pg": "^8.23.1",
+    "@types/qrcode": "^1.5.6",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "drizzle-kit": "^0.31.11",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.6",
+    "tailwindcss": "4.3.3",
+    "tsx": "^4.23.15",
+    "typescript": "^5",
+    "vitest": "^5.1.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
