@@ -42,7 +42,7 @@ export function RecordButton({ recKey, has, onChange, compact = false }: { recKe
           onClick={toggle}
           aria-label={rec ? 'Stop recording' : has ? 'Record my voice again' : 'Record my voice for this page'}
           title={rec ? 'Stop recording' : has ? 'Record again' : 'Record my voice'}
-          className={`${iconBtn} ${rec ? 'bg-danger text-white hover:bg-danger' : ''}`}
+          className={`${iconBtn} ${rec ? 'bg-danger text-danger-ink hover:bg-danger' : ''}`}
         >
           <Icon name={rec ? 'mic-off' : 'mic'} size={22} />
         </button>

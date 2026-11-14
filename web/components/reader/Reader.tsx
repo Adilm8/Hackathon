@@ -24,6 +24,7 @@ import { PagePhotos } from '@/components/photos/PagePhotos';
 import { isOn } from '@/lib/flags';
 import { getRecording, deleteRecording, recordingKey } from '@/lib/speech/recordings';
 import { getWorkspace } from '@/lib/store/workspace';
+import { isNight } from '@/lib/theme';
 import { ListenButton, type ReadPosition } from './ListenButton';
 import { RecordButton } from './RecordButton';
 import { PageView } from './PageView';
@@ -82,15 +83,10 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
 
   const pages = chapter && chapter.pages.length > 0 ? chapter.pages : live ?? [];
   const page = pages[Math.min(pageIdx, Math.max(0, pages.length - 1))];
-  const night = nightMode === 'on' || (nightMode === 'auto' && (clock.hour() >= 19 || clock.hour() < 6));
+  // Night colours are app-wide (components/ui/ThemeSync.tsx); here they pick the night scenes.
+  const night = isNight(nightMode, clock.hour());
   const render = useMemo(() => (t: string) => renderText(t, ctx?.child ?? null), [ctx?.child]);
   const touchX = useRef<number | null>(null);
-  // Night colours cover the whole page, header included, so there is never a dark block on a light page.
-  useEffect(() => {
-    const root = document.documentElement;
-    root.classList.toggle('reader-night', night);
-    return () => root.classList.remove('reader-night');
-  }, [night]);
   const recKey = page ? recordingKey(getWorkspace(), eventId, index, page.id) : '';
   useEffect(() => {
     if (!isOn('parentVoice') || !recKey) return;

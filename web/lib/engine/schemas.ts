@@ -195,6 +195,7 @@ export const SettingsSchema = z.strictObject({
   clockOverride: ISODateSchema.optional(),
   textSize: z.enum(['m', 'l', 'xl']),
   nightMode: z.enum(['auto', 'on', 'off']),
+  palette: z.enum(['warm', 'ocean', 'forest', 'lavender']).optional(),
   voiceQuestionConsentOn: ISODateSchema.optional(),
   schemaVersion: z.number().int().min(1),
 });

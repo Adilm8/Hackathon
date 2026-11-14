@@ -21,7 +21,7 @@ export default function PlanPage() {
 }
 
 const STATUS: Record<ChapterStatus, { label: string; icon: IconName; node: string }> = {
-  read: { label: 'Read', icon: 'check', node: 'bg-success text-white border-success' },
+  read: { label: 'Read', icon: 'check', node: 'bg-success text-success-ink border-success' },
   today: { label: 'Tonight', icon: 'book-open', node: 'bg-primary text-primary-ink border-primary-press' },
   catch_up: { label: 'Catch up', icon: 'book-open', node: 'bg-accent text-accent-ink border-accent' },
   locked: { label: 'Opens later', icon: 'moon', node: 'bg-surface-2 text-ink-soft border-line' },

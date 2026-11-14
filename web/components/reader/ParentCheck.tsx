@@ -12,7 +12,7 @@ export function ParentCheck({
   const [editing, setEditing] = useState(false);
   const [text, setText] = useState(draft ?? '');
   return (
-    <section aria-label="Parent check" className="room-parent flex flex-col gap-4 rounded-card border border-line bg-surface p-5 text-ink shadow-pop">
+    <section aria-label="Parent check" className="flex flex-col gap-4 rounded-card border border-line bg-surface p-5 text-ink shadow-pop">
       <p className="text-xs font-extrabold uppercase tracking-wide text-accent">Only you see this</p>
       <h2 className="text-lg font-extrabold">Your child asked: “{question}”</h2>
       {draft ? (
