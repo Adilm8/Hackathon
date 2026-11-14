@@ -13,8 +13,9 @@ describe('event templates', () => {
           for (const p of pages) expect(t.backgrounds).toContain(p.background);
         }
       }
-      const text = JSON.stringify(t);
-      expect(text).not.toMatch(/won't hurt|will not hurt|no pain\b(?!')/i);
+      // Honesty rule (SPEC 7): child-facing text never promises "no pain".
+      const childText = JSON.stringify([t.fallbackPages, t.questionButtons.map((b) => b.fallbackAnswer)]);
+      expect(childText).not.toMatch(/won't hurt|will not hurt|doesn't hurt|no pain/i);
     });
   }
 });
