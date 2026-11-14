@@ -25,7 +25,7 @@ Principles:
 - Code computes and stores (plan, story state, topics, counters, access). The LLM only writes text by rules and returns JSON that code validates. Product knowledge lives in the event templates.
 - Every LLM call has a deadline and a template fallback; the whole cycle works with `LLM_PROVIDER=mock`.
 - Local-first: the browser holds a working copy, the database holds the durable copy. No login: a guest family is identified by a signed, httpOnly cookie.
-- The child's name is never sent to an LLM and by default never stored on the server. Photos and voice recordings stay on the device.
+- The child's name is never sent to an LLM. The database holds a first name or nickname only, never a surname. Photos and voice recordings stay on the device.
 - Paid access is a database row written by the server after it verifies the Stripe session.
 
 ## Stack
@@ -35,7 +35,7 @@ Principles:
 | UI | Next.js (App Router) + TypeScript + Tailwind, installable web app | 11 |
 | State | Zustand persisted to localStorage; idb-keyval for photos and recordings; sync module | 6.2 |
 | Database | PostgreSQL on Railway through Drizzle ORM; embedded PostgreSQL (PGlite) when `DATABASE_URL` is empty | 6.3 |
-| LLM | OpenRouter (paid models chosen by evaluation), Gemini Flash for tests, mock provider; AI SDK with schema-validated streaming; zod | 8 |
+| LLM | Gemini Flash for now, OpenRouter paid models once the evaluation picks them, mock provider; AI SDK with schema-validated streaming; zod | 8 |
 | Safety | Five levels: filters before the model, provider safety, system prompt, checks after the model, Parent check | 8.6 |
 | Illustrations | SVG character builder + static scenes | 11.4 |
 | Speech | `Narrator` and `Listener` interfaces; browser implementations now, ElevenLabs later | 11.6, 17.1 |

@@ -17,8 +17,12 @@ Append only, newest at the bottom. A decision here wins over older text in other
 | 2026-11-15 | No analytics tracker; product counts come from the database | Lida | The goal is an end-to-end product with a clear core value |
 | 2026-11-15 | Voice, generated pictures and other premium features are planned by subscription tier (SPEC 17); the MVP is sized by the time left | Lida | |
 | 2026-11-15 | Hard questions and complex mechanics are decided by Lida (SPEC 19); the stated default is built until she answers | Lida | |
-| 2026-11-15 | The child's name is never sent to an LLM (placeholder `[[CHILD]]`) and by default is not stored in the database | architect | Privacy claim survives the move to a database; pending K1 |
+| 2026-11-15 | The child's name is never sent to an LLM (placeholder `[[CHILD]]`) | architect | Privacy and no prompt injection through the name field |
 | 2026-11-15 | Paid access is a database row written after the server verifies the Stripe session, not a flag in the browser | architect | A browser flag can be set by hand |
 | 2026-11-15 | Rate limit is per family (30/min) with a coarse per-IP guard (300/min) and a daily spending cap, instead of 30/min per IP (N8) | architect | The jury shares one Wi-Fi address |
 | 2026-11-15 | Build order: the whole cycle works on event templates and the mock provider before a real model is connected | architect | Working product from the first checkpoint; demo survives a model outage |
 | 2026-11-15 | Voice question (F18) is shown only where recognition runs on the device | architect | Default browser recognition sends audio to a server, which would break N5 |
+| 2026-11-15 | Child's name: follow US law and best practice; a first name or nickname is stored, a surname never | Lida | |
+| 2026-11-15 | Features will be grouped into named subscription levels (SPEC 17.2); the free level offers a couple of trial stories; in the MVP every feature is open and only the case-rule paywall (chapters 2+, day card) stays | Lida | |
+| 2026-11-15 | Models: benchmarks first, start from the cheaper models (DeepSeek 4.1 Flash, Haiku 5.5), then test; Gemini is used wherever possible for now | Lida | Cost control; Gemini has limits and is reviewed again soon |
+| 2026-11-15 | A family with access may read one chapter ahead; a check-in records "didn't help" only when the parent marks it | architect | Delegated by Lida; re-checked in a usability session |
