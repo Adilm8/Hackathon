@@ -14,6 +14,9 @@ export function AppShell({
   saveIndicator,
   room = 'child',
   bottomBar,
+  wide = false,
+  headerExtra,
+  onExitSample,
 }: {
   children: ReactNode;
   childName?: string;
@@ -23,20 +26,39 @@ export function AppShell({
   room?: 'child' | 'parent';
   /** Demo bar of the sample workspace. */
   bottomBar?: ReactNode;
+  /** Wider main column (reader + panel side by side on desktop). */
+  wide?: boolean;
+  /** Extra badges next to "Sample data" (e.g. "Demo access"). */
+  headerExtra?: ReactNode;
+  /** Makes the "Sample data" badge a button that leaves the sample (4.3). */
+  onExitSample?: () => void;
 }) {
   return (
     <div className={`${room === 'parent' ? 'room-parent' : ''} flex min-h-dvh flex-col bg-bg text-ink`}>
       <header className="no-print sticky top-0 z-20 border-b border-line bg-bg/95 backdrop-blur">
         <div className="mx-auto flex h-14 max-w-5xl items-center gap-3 px-4">
-          <Link href="/?landing=1" className="font-display text-lg font-extrabold">
+          <Link href="/?landing=1" className="whitespace-nowrap font-display text-base font-extrabold sm:text-lg">
             Big Day Stories
           </Link>
-          {isSample && (
-            <span className="rounded-pill bg-accent px-3 py-1 text-xs font-bold text-accent-ink">Sample data</span>
-          )}
+          {isSample &&
+            (onExitSample ? (
+              <button
+                type="button"
+                onClick={onExitSample}
+                aria-label="Sample data. Exit the sample"
+                className="inline-flex min-h-tap items-center"
+              >
+                <span className="inline-flex items-center gap-1 whitespace-nowrap rounded-pill bg-accent px-2 py-0.5 text-xs font-bold text-accent-ink">
+                  Sample data <span aria-hidden>×</span>
+                </span>
+              </button>
+            ) : (
+              <span className="whitespace-nowrap rounded-pill bg-accent px-2 py-0.5 text-xs font-bold text-accent-ink">Sample data</span>
+            ))}
+          {headerExtra}
           <div className="ml-auto flex items-center gap-3">
             {saveIndicator}
-            {childName && <span className="text-sm font-bold text-ink-soft">{childName}</span>}
+            {childName && <span className="hidden text-sm font-bold text-ink-soft min-[400px]:inline">{childName}</span>}
             <Link
               href="/settings"
               aria-label="Settings"
@@ -50,7 +72,7 @@ export function AppShell({
           </div>
         </div>
       </header>
-      <main className="mx-auto w-full max-w-5xl flex-1 px-4 py-6">{children}</main>
+      <main className={`mx-auto w-full flex-1 px-4 py-6 ${wide ? 'max-w-6xl' : 'max-w-3xl'}`}>{children}</main>
       <footer className="no-print border-t border-line px-4 py-4 text-xs text-ink-soft">
         <div className="mx-auto flex max-w-5xl flex-wrap items-center gap-x-4 gap-y-2">
           <span>Not therapy or medical advice.</span>

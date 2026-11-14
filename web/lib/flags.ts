@@ -9,9 +9,9 @@ export const flags = {
   parentVoice: false,
   voiceQuestion: false,
   socialStyle: false,
-  restoreLink: false,
+  restoreLink: true,
   monthlyPlan: true,
-  exportImport: false,
+  exportImport: true,
 } as const;
 
 export type FlagName = keyof typeof flags;
