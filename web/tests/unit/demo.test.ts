@@ -41,7 +41,7 @@ describe('demo access badge (4.3)', () => {
 describe('guided tour (4.3)', () => {
   it('starts with nothing ticked in a fresh sample', () => {
     const steps = tourSteps(dentist, [], NOW, {});
-    expect(steps.map((s) => s.id)).toEqual(['read', 'ask', 'panel', 'unlock', 'day', 'after']);
+    expect(steps.map((s) => s.id)).toEqual(['ask', 'read', 'panel', 'unlock', 'day', 'after']);
     expect(steps.every((s) => !s.done)).toBe(true);
     expect(steps.find((s) => s.id === 'day')?.time).toBe('day');
     expect(steps.find((s) => s.id === 'after')?.href).toMatch(/\/checkin$/);
@@ -54,7 +54,7 @@ describe('guided tour (4.3)', () => {
       checkin: { rating: 1 as const, helped: [], didntHelp: [], savedOn: '2026-11-21' },
     };
     const steps = tourSteps(read, [demoRow], NOW, { panel: true });
-    expect(steps.filter((s) => s.done).map((s) => s.id)).toEqual(['read', 'ask', 'panel', 'unlock', 'after']);
+    expect(steps.filter((s) => s.done).map((s) => s.id)).toEqual(['ask', 'read', 'panel', 'unlock', 'after']);
     expect(steps.find((s) => s.id === 'after')?.href).toMatch(/\/badge$/);
   });
 });

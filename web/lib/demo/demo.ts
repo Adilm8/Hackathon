@@ -69,12 +69,12 @@ export function tourSteps(event: BigEvent, list: Entitlement[], nowMs: number, s
   const access = hasEventAccess(list, event.id, nowMs);
   return [
     {
-      id: 'read', label: 'Read chapter 1', done: !!event.chapters.find((c) => c.index === 1)?.readOn, href: `${base}/read/1`,
-      hint: 'Turn the pages with Next, then tap Finish on the last one.',
+      id: 'ask', label: 'Ask a question, watch the next page change', done: event.questions.length > 0, href: `${base}/read/1`,
+      hint: 'Tap a question under the page; the next page changes to answer it. On the chapter end, tap Read it again first.',
     },
     {
-      id: 'ask', label: 'Ask a question, watch the next page change', done: event.questions.length > 0, href: `${base}/read/1`,
-      hint: 'Tap one of the questions under the page. The next page changes to answer it.',
+      id: 'read', label: 'Read chapter 1 to the end', done: !!event.chapters.find((c) => c.index === 1)?.readOn, href: `${base}/read/1`,
+      hint: 'Turn the pages with Next, then tap Finish on the last one.',
     },
     { id: 'panel', label: 'Open the parent panel', done: !!seen.panel, href: `${base}/panel` },
     {

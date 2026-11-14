@@ -103,6 +103,8 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
     if (!isLast) return setPageIdx(pageIdx + 1);
     st.markChapterRead(eventId, index, clock.today());
     setMode({ kind: 'end' });
+    // The end screen is shorter than a page: start it at the top so its title is not under the header.
+    window.scrollTo({ top: 0 });
   };
   const prev = () => setPageIdx(Math.max(0, pageIdx - 1));
 

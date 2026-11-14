@@ -17,8 +17,8 @@ Setup and run instructions: `web/README.md`.
 
 Open the site and tap **Try a sample**. You get your own sample family (Max, 4, a dentist visit in 5 days and a past haircut), and a Demo bar at the bottom of every screen with a guided tour that ticks itself off:
 
-1. Read chapter 1.
-2. Ask a question and watch the next page change.
+1. While reading chapter 1, ask a question and watch the next page change.
+2. Read chapter 1 to the end and tap **Finish**.
 3. Open the parent panel.
 4. Unlock the full plan: **Pay with the test card** (Stripe test mode, card 4242 4242 4242 4242, any future date, any CVC) or **Skip payment (demo access)**.
 5. Jump to the event day: the "first, then" card and its printable A5 PDF.
