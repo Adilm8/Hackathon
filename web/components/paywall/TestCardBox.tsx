@@ -20,7 +20,7 @@ export function TestCardBox() {
     <div className="flex flex-wrap items-center gap-3 rounded-card border-2 border-dashed border-line bg-surface-2 p-4 text-sm">
       <span className="rounded-pill bg-accent px-2 py-0.5 text-xs font-extrabold text-accent-ink">Test mode</span>
       <span className="min-w-0 flex-1">
-        No real money. Use card <span className="font-mono font-bold">{CARD}</span>, any future date, any CVC.
+        No real money. Use card <span className="whitespace-nowrap font-mono font-bold">{CARD}</span>, any future date, any CVC.
       </span>
       <button
         type="button"
