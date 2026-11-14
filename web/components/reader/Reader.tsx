@@ -6,6 +6,7 @@ import { Character } from '@/components/character';
 import { Icon } from '@/components/icons';
 import { PanelView } from '@/components/panel/PanelView';
 import { Button, ButtonLink } from '@/components/ui/Button';
+import { EmptyState } from '@/components/ui/EmptyState';
 import { PlanNotFound } from '@/components/ui/NotFound';
 import { ProgressBar } from '@/components/ui/ProgressBar';
 import { Skeleton } from '@/components/ui/Skeleton';
@@ -83,7 +84,15 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
   }, [recKey, recTick]);
 
   if (!ctx) return <PlanNotFound />;
-  if (!chapter || !allowed) return <Skeleton className="h-96" />;
+  if (!chapter)
+    return (
+      <EmptyState
+        title="This chapter isn't in the plan"
+        text={`The plan for this big day has ${ctx.event.chapters.length} ${ctx.event.chapters.length === 1 ? 'chapter' : 'chapters'}.`}
+        action={<ButtonLink href={`/event/${eventId}`}>Back to the plan</ButtonLink>}
+      />
+    );
+  if (!allowed) return <Skeleton className="h-96" />;
   const { event, child, template } = ctx;
   const total = event.chapters.length;
   const asked = questionsInChapter(event, index);
@@ -191,7 +200,7 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
           <ListenButton key={page.id} sentences={page.sentences.map((s) => renderText(s.text, child, { speak: true, pronunciation: child.pronunciation }))} onSentence={setActive}
             recordingKey={isOn('parentVoice') ? recKey : undefined} hasRecording={recs.key === recKey && recs.has} voiceName={child.values.family[0]} />
           <Button className="flex-1" onClick={next}>
-            {isLast ? 'Finish' : page.kind === 'answer' ? 'Back to story' : 'Next'}
+            {isLast ? 'Finish' : page.kind === 'answer' ? 'Back to the story' : 'Next'}
           </Button>
         </div>
         {isOn('parentVoice') && (
