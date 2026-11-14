@@ -6,13 +6,19 @@ import 'server-only';
 export type LlmRoute = 'chapter' | 'answer' | 'ritual' | 'eval';
 
 /** Server budgets per call, in ms (8.2). The browser-side deadlines are 1 s larger. */
+const scale = (() => {
+  const v = Number(process.env.LLM_DEADLINE_SCALE ?? 1);
+  return Number.isFinite(v) && v >= 1 ? v : 1;
+})();
 export const DEADLINES = {
-  chapterFirstPage: 5_000,
-  chapterTotal: 25_000,
-  answer: 3_500,
-  answerNextPage: 12_000,
-  ritual: 4_000,
+  chapterFirstPage: 5_000 * scale,
+  chapterTotal: 25_000 * scale,
+  answer: 3_500 * scale,
+  answerNextPage: 12_000 * scale,
+  ritual: 4_000 * scale,
 } as const;
+/** Production budgets, for reports when DEADLINES are stretched by LLM_DEADLINE_SCALE (evaluation only). */
+export const BUDGET_MS = { chapterFirstPage: 5_000, chapterTotal: 25_000, answer: 3_500, ritual: 4_000 } as const;
 
 /** Rate limits (12.4). */
 export const LIMITS = {

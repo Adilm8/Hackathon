@@ -10,6 +10,7 @@ const failures = new Map<string, number[]>();
 const openUntil = new Map<string, number>();
 
 export function isOpen(key: string, now = Date.now()): boolean {
+  if (process.env.LLM_BREAKER === 'off') return false; // evaluation only
   const until = openUntil.get(key);
   if (until === undefined) return false;
   if (until <= now) {
