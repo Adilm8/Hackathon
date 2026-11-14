@@ -119,7 +119,7 @@ describe('sample family and demo access', () => {
     const dentist = out.doc.events.find((e: { type: string }) => e.type === 'dentist');
     expect(dentist.date).toBe('2026-11-20');
     expect(dentist.chapters).toHaveLength(5);
-    expect(out.doc.events.find((e: { type: string }) => e.type === 'haircut').checkin.helped).toEqual(['count-to-ten']);
+    expect(out.doc.events.find((e: { type: string }) => e.type === 'haircut').checkin.helped).toEqual(['count_to_ten']);
     const sampleCookie = cookieOf(s, 'bds_sample_session');
     expect((await stateGet(req('/api/state', { cookie: sampleCookie, ws: 'sample' }))).status).toBe(200);
     // the sample cookie does not open the real workspace

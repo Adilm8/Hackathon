@@ -1,7 +1,7 @@
 import { NextResponse, type NextRequest } from 'next/server';
 import { createFamily, deleteFamily } from '@/lib/db/families';
 import { replaceState } from '@/lib/db/state';
-import { buildSampleDoc } from '@/lib/db/sample-seed';
+import { buildSampleFamily as buildSampleDoc } from '@/lib/engine/sample';
 import { SampleBody } from '@/lib/engine/schemas';
 import { apiError, clientIp, readJson } from '@/lib/server/http';
 import { allow } from '@/lib/server/ratelimit';
