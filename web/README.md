@@ -84,3 +84,9 @@ Defaults chosen without Lida (to revisit):
 - Demo bar: on a step's own screen "Next step" turns into what to do there (Finish, ask a question, Save), and on the paywall into "Skip payment"; tour ticks are only ever added (the day tick used to wipe the panel tick); the tour stays on the event it started with; "Tour complete" at 6/6.
 - Calendar: reminders whose time has passed on the parent's own clock are left out, chapter numbers stay real.
 - Check-in "Hard" face is sad (raised inner brows, blue), not angry. One /api/ritual request per event at a time.
+
+### Saved children and "Create your own story"
+
+- Every finished onboarding saves the child in this browser under `bds:profiles` (`lib/store/profiles.ts`): first name or nickname only (anything after a space is dropped), age, pronoun, pronunciation, story friend, values, story style. Up to 6, newest first, the same first name updates the same child. Not sent to the server; "Delete all data" removes it with the other `bds` keys.
+- Onboarding opens with "Who is this story for?" when a saved child exists. Tapping one skips name, age, story friend and values and goes to the big day ("Change" brings them back); the pencil keeps the steps but prefilled; × forgets a saved child. "Plan another big day" with only this workspace's child goes straight to the event, also skipping the story friend and values.
+- "Create your own story" (`components/ui/CreateStoryButton.tsx`): a header button on every screen except onboarding, and on /home. In the sample it switches to the parent's own space first, so the sample stays intact for the tour.

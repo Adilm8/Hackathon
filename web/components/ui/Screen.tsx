@@ -7,6 +7,7 @@ import { exitSample } from '@/lib/store/sample';
 import { getWorkspace } from '@/lib/store/workspace';
 import { DemoAccessBadge, DemoBar } from '@/components/eventday/DemoBar';
 import { AppShell } from './AppShell';
+import { HeaderCreateStory } from './CreateStoryButton';
 import { SaveIndicator } from './SaveIndicator';
 import { ScreenSkeleton } from './Skeleton';
 import { Toaster } from './Toast';
@@ -34,7 +35,12 @@ export function Screen({
       room={room}
       childName={ready ? child?.name : undefined}
       isSample={ready && ws === 'sample'}
-      headerExtra={ready ? <DemoAccessBadge workspace={ws} /> : null}
+      headerExtra={ready ? (
+        <>
+          <DemoAccessBadge workspace={ws} />
+          <HeaderCreateStory workspace={ws} />
+        </>
+      ) : null}
       saveIndicator={ready ? <SaveIndicator /> : null}
       bottomBar={
         ready ? (

@@ -26,6 +26,7 @@ import { api } from '@/lib/sync/api';
 import { startSyncNow } from '@/lib/store/boot';
 import { getWorkspace } from '@/lib/store/workspace';
 import { newId } from '@/lib/store/id';
+import { firstNameOnly, loadProfiles, removeProfile, saveProfile, type SavedProfile } from '@/lib/store/profiles';
 
 const NAME_RE = /^[\p{L}][\p{L}'’-]{0,19}$/u;
 const EVENT_CAPTION: Record<EventType, string> = {
@@ -36,8 +37,8 @@ const EVENT_CAPTION: Record<EventType, string> = {
   swimming: 'Pool and swim teacher', party: 'A friend\'s party', other: 'Anything else: a new club, a trip…',
 };
 
-type StepId = 'gate' | 'name' | 'age' | 'event' | 'date' | 'fears' | 'character' | 'values';
-const GROUP: Record<StepId, 1 | 2 | 3> = { gate: 1, name: 1, age: 1, event: 2, date: 2, fears: 2, character: 3, values: 3 };
+type StepId = 'gate' | 'who' | 'name' | 'age' | 'event' | 'date' | 'fears' | 'character' | 'values';
+const GROUP: Record<StepId, 1 | 2 | 3> = { gate: 1, who: 1, name: 1, age: 1, event: 2, date: 2, fears: 2, character: 3, values: 3 };
 
 interface Draft {
   name: string; pronunciation: string; age?: number; pronoun?: Pronoun;
@@ -56,24 +57,44 @@ export function Onboarding() {
   const acceptGate = useSettings((s) => s.acceptParentGate);
   const today = clock.today();
 
-  const prefill = again && existing;
+  // Children this browser already knows: the one of this workspace first, then the saved ones.
+  const [known, setKnown] = useState<SavedProfile[]>(() => knownChildren(existing));
+  // With only this workspace's child known, "Plan another big day" goes straight to the event.
+  const quick = again && !!existing && known.length === 1;
   // Fixed for this visit: accepting the gate must not shift the step list under the user.
-  const [steps] = useState<StepId[]>(() => {
-    const all: StepId[] = ['gate', 'name', 'age', 'event', 'date', 'fears', 'character', 'values'];
-    return gateOn ? all.filter((s) => s !== 'gate') : all;
+  const [base] = useState<StepId[]>(() => {
+    const all: StepId[] = ['gate', 'who', 'name', 'age', 'event', 'date', 'fears', 'character', 'values'];
+    return all.filter((s) => !(s === 'gate' && gateOn) && !(s === 'who' && (known.length === 0 || quick)));
   });
-  const [i, setI] = useState(() => (prefill ? Math.max(0, steps.indexOf('event')) : 0));
-  const step = steps[Math.min(i, steps.length - 1)];
+  // Steps already answered by a saved child are left out ("Change" brings them back).
+  const [skip, setSkip] = useState<StepId[]>(() => (quick ? CHILD_STEPS : []));
+  const steps = base.filter((s) => !skip.includes(s));
+  const [step, setStep] = useState<StepId>(() => steps[0]);
+  const i = Math.max(0, steps.indexOf(step));
+  const [pickedId, setPickedId] = useState<string | null>(() => (quick ? existing!.id : null));
 
   const [d, setD] = useState<Draft>(() => ({
-    name: existing?.name ?? '', pronunciation: existing?.pronunciation ?? '', age: existing?.age, pronoun: existing?.pronoun,
+    ...childFields(quick ? known[0] : undefined),
     type: suggestedType, customLabel: '', date: '', fears: [], customFear: '',
-    character: existing?.character ?? { animal: 'bunny', color: 'blue', accessory: 'cap' },
-    values: existing?.values ?? { tone: 'secular', bodyWords: 'anatomical', family: [] },
-    social: existing?.styleMode === 'social',
     photos: [],
   }));
   const set = (p: Partial<Draft>) => setD((x) => ({ ...x, ...p }));
+  const picked = known.find((k) => k.childId === pickedId);
+
+  /** "Who is this story for?": a saved child fills and skips the child steps; edit keeps them. */
+  const choose = (p: SavedProfile | null, edit = false) => {
+    setPickedId(p?.childId ?? null);
+    setD((x) => ({ ...x, ...childFields(p ?? undefined) }));
+    const nextSkip = p && !edit ? CHILD_STEPS : [];
+    setSkip(nextSkip);
+    const visible = base.filter((s) => !nextSkip.includes(s));
+    setStep(visible[visible.indexOf('who') + 1] ?? visible[0]);
+    setTouched(false);
+  };
+  const changeChild = () => {
+    setSkip([]);
+    setStep(base.includes('who') ? 'who' : 'name');
+  };
   const [touched, setTouched] = useState(false);
   const [gateTick, setGateTick] = useState(false);
 
@@ -83,6 +104,7 @@ export function Onboarding() {
 
   const valid: Record<StepId, boolean> = {
     gate: gateTick,
+    who: true,
     name: !nameErr,
     age: d.age !== undefined,
     event: !!d.type && (d.type !== 'other' || d.customLabel.trim().length > 0),
@@ -100,13 +122,16 @@ export function Onboarding() {
       acceptGate(today);
       if (getWorkspace() === 'real') void api.createFamily().then(() => startSyncNow());
     }
-    if (i < steps.length - 1) setI(i + 1);
+    if (i < steps.length - 1) setStep(steps[i + 1]);
     else finish();
   };
-  const back = () => (i > 0 ? setI(i - 1) : router.push(existing ? '/home' : '/?landing=1'));
+  const back = () => (i > 0 ? setStep(steps[i - 1]) : router.push(existing ? '/home' : '/?landing=1'));
 
   const finish = () => {
-    const childId = existing?.id ?? newId();
+    // Same child as this workspace's (picked, or typed again by name): keep its id, badges and memory.
+    const same = existing && (pickedId === existing.id || (!pickedId && firstNameOnly(existing.name).toLocaleLowerCase() === d.name.trim().toLocaleLowerCase()))
+      ? existing : null;
+    const childId = same?.id ?? picked?.childId ?? newId();
     const child: ChildProfile = {
       id: childId,
       name: d.name.trim(),
@@ -116,11 +141,12 @@ export function Onboarding() {
       character: d.character,
       values: d.values,
       styleMode: d.social && isOn('socialStyle') ? 'social' : 'story',
-      techniques: existing?.techniques ?? [],
-      badges: existing?.badges ?? [],
-      createdOn: existing?.createdOn ?? today,
+      techniques: same?.techniques ?? [],
+      badges: same?.badges ?? [],
+      createdOn: same?.createdOn ?? today,
     };
     useChild.getState().setChild(child);
+    saveProfile(child);
     const eventId = newId();
     const photos = isOn('placePhotos')
       ? d.photos.slice(0, 3).map((p, n) => ({ key: photoKey(getWorkspace(), eventId, n), caption: p.caption.trim().slice(0, 60), blob: p.blob }))
@@ -139,6 +165,7 @@ export function Onboarding() {
   const nm = d.name.trim() || 'your child';
   const titleOf: Record<StepId, string> = {
     gate: 'Hi! I help kids get ready for big days. First, a quick check.',
+    who: 'Who is this story for?',
     name: "What's your child's name?",
     age: `How old is ${nm}?`,
     event: `What big day is coming up for ${nm}?`,
@@ -162,6 +189,48 @@ export function Onboarding() {
             <input type="checkbox" className="mt-1 size-6 accent-[var(--primary)]" checked={gateTick} onChange={(e) => setGateTick(e.target.checked)} />
             <span className="text-base font-bold">I&apos;m a parent or guardian (18+)</span>
           </label>
+        )}
+
+        {step === 'who' && (
+          <>
+            <div role="radiogroup" aria-label="Child" className="flex flex-col gap-3">
+              {known.map((p) => (
+                <div key={p.childId} className="flex items-stretch gap-2">
+                  <ChoiceCard
+                    className="flex-1"
+                    selected={pickedId === p.childId}
+                    onSelect={() => choose(p)}
+                    icon={<Character character={p.character} mood="happy" size={40} decorative />}
+                    title={p.name}
+                    caption={`${p.age} years · saved on this device`}
+                  />
+                  <Button variant="secondary" onClick={() => choose(p, true)} aria-label={`Edit ${p.name}'s details`} className="!px-4">
+                    <Icon name="pencil" size={20} />
+                  </Button>
+                  {p.childId !== existing?.id && (
+                    <Button variant="ghost" onClick={() => setKnown(withoutSaved(removeProfile(p.childId), existing))} aria-label={`Forget ${p.name} on this device`} className="!px-3">
+                      <span aria-hidden className="text-xl leading-none">×</span>
+                    </Button>
+                  )}
+                </div>
+              ))}
+              <ChoiceCard
+                selected={false}
+                onSelect={() => choose(null)}
+                icon={<Icon name="smile-plus" size={28} />}
+                title="Someone new"
+                caption="Type a new child's first name or nickname"
+              />
+            </div>
+            <p className="text-xs text-ink-soft">Saved children stay in this browser only. Tap one to skip straight to the big day.</p>
+          </>
+        )}
+
+        {(step === 'event' || step === 'date' || step === 'fears') && skip.includes('name') && (
+          <p className="-mt-2 flex flex-wrap items-center gap-2 text-sm text-ink-soft">
+            <span>Story for <strong className="text-ink">{d.name}</strong>, {d.age} years.</span>
+            <button type="button" onClick={changeChild} className="inline-flex min-h-tap items-center font-bold text-primary-text underline">Change</button>
+          </p>
         )}
 
         {step === 'name' && (
@@ -288,3 +357,32 @@ function DatePreview({ date, today }: { date: string; today: string }) {
   );
 }
 
+
+/** Name, age, story friend and values: the steps a saved child already answers. */
+const CHILD_STEPS: StepId[] = ['name', 'age', 'character', 'values'];
+
+function childFields(p?: SavedProfile): Pick<Draft, 'name' | 'pronunciation' | 'age' | 'pronoun' | 'character' | 'values' | 'social'> {
+  return {
+    name: p?.name ?? '', pronunciation: p?.pronunciation ?? '', age: p?.age, pronoun: p?.pronoun,
+    character: p?.character ?? { animal: 'bunny', color: 'blue', accessory: 'cap' },
+    values: p?.values ?? { tone: 'secular', bodyWords: 'anatomical', family: [] },
+    social: p?.styleMode === 'social',
+  };
+}
+
+function withoutSaved(saved: SavedProfile[], existing: ChildProfile | null): SavedProfile[] {
+  if (!existing) return saved;
+  const key = firstNameOnly(existing.name).toLocaleLowerCase();
+  const own = saved.find((p) => p.childId === existing.id || p.name.toLocaleLowerCase() === key);
+  // The workspace's own child is shown with its current details, keeping its id.
+  const first: SavedProfile = { ...(own ?? { savedAt: 0 }), ...pickChild(existing), childId: existing.id, savedAt: own?.savedAt ?? 0 };
+  return [first, ...saved.filter((p) => p !== own)];
+}
+
+function knownChildren(existing: ChildProfile | null): SavedProfile[] {
+  return withoutSaved(loadProfiles(), existing);
+}
+
+function pickChild(c: ChildProfile) {
+  return { name: firstNameOnly(c.name), pronunciation: c.pronunciation, age: c.age, pronoun: c.pronoun, character: c.character, values: c.values, styleMode: c.styleMode };
+}
