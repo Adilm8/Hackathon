@@ -45,9 +45,16 @@ export function Screen({
       bottomBar={
         ready ? (
           <>
-            {bottomBar}
             {/* Jury demo mode (SPEC 5.1): sample workspace, or ?demo=1 for the time group only. */}
-            <DemoBar workspace={ws} />
+            {bottomBar ? (
+              // One sticky stack, so a screen's own bar (home tab bar) sits under the Demo bar instead of behind it.
+              <div className="sticky bottom-0 z-30">
+                <DemoBar workspace={ws} />
+                {bottomBar}
+              </div>
+            ) : (
+              <DemoBar workspace={ws} />
+            )}
           </>
         ) : null
       }
