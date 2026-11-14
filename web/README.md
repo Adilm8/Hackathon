@@ -32,3 +32,27 @@ Migrations in `drizzle/` are applied automatically when the server starts (`inst
 - Components never call `new Date()` for calendar logic: use `clock.today()` from `lib/engine/clock.ts`.
 - Unfinished P1/P2 features stay off in `lib/flags.ts`.
 - `typecheck`, `test` and `build` are green before a push to `main`.
+
+## Screens (stream C)
+
+Routes of SPEC 4.2 live in `app/`; the reader, panel and shared UI in `components/reader`, `components/panel`, `components/ui`. Screens read and write family data only through `lib/store/*` (Zustand stores with the `bds:` keys of SPEC 6.2); `lib/store/boot.ts` hydrates them on the client and starts `lib/sync`. Engine functions come through `lib/store/engine.ts`, the story calls (`/api/chapter`, `/api/answer`, deadlines and template fallbacks) through `lib/store/story.ts`, the read-aloud voice through `lib/speech/narrator.ts`.
+
+Ready-made parts used (all permissive licences):
+
+| Part | Licence | Used for |
+|---|---|---|
+| [Radix UI primitives](https://github.com/radix-ui/primitives) (`react-dialog`, `react-switch`, `react-progress`) | MIT | sheets and dialogs with focus trap, switches, progress bar |
+| [Zustand](https://github.com/pmndrs/zustand) `persist` | MIT | browser stores |
+| [node-qrcode](https://github.com/soldair/node-qrcode) | MIT | QR code of the "another device" link |
+| Native `<input type="date">` | - | date of the big day (best practice on phones, see docs/design/ref-reader-calendar-dashboard.md) |
+
+Patterns taken from known products (docs/design): one question per screen with a progress bar and a guide character (Duolingo onboarding), a path of chapters (Duolingo home), plan cards with a highlighted best value (Quizlet upgrade), insight cards in the dark parent room (Quizlet, Novakid research).
+
+Defaults chosen without Lida (to revisit):
+
+1. Onboarding is eight single-question screens grouped into the three steps of SPEC 4.5; the parent gate is the first screen.
+2. The reader turns to night colours from 19:00 to 06:00 device time; the moon/sun button and Settings override it.
+3. When the AI is unavailable, a button question still rewrites the next page from the template answer ("Max remembered the question…"), so the main mechanic stays visible offline.
+4. In the sample, "Skip payment (demo access)" is also on the paywall itself, next to the real test checkout.
+5. The Privacy page has no contact address yet: one must be added before a public launch.
+6. Export/import backup and the "Use on another device" link are switched on (`lib/flags.ts`).

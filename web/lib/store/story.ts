@@ -153,6 +153,7 @@ export async function askQuestion(input: {
     const out: Partial<AnswerResult> = { answer: [], source: 'llm' };
     for await (const m of ndjson(res)) {
       if (m.type === 'category') {
+        // A later category line only ever raises it (sensitive -> unsafe): the last one wins.
         out.category = m.category as QuestionCategory;
         out.topic = TOPICS.includes(m.topic as Topic) ? (m.topic as Topic) : 'other';
         if (out.category === 'unsafe') break;
@@ -197,6 +198,3 @@ function rewriteLocally(next: Page, question: string, answer: Sentence[]): Omit<
   };
 }
 
-export const SAFE_MESSAGE = "Thank you for telling me. That's really important. Please tell a grown-up you trust right now.";
-export const SAFE_ADULT_NOTE =
-  'If a child may be in danger, call the Childhelp National Child Abuse Hotline at 1-800-422-4453 or 911. For thoughts of self-harm, call or text 988.';

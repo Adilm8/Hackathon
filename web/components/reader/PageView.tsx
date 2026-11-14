@@ -34,7 +34,7 @@ export function PageView({
           </span>
         ))}
       </p>
-      <p className="text-xs text-ink-soft">{page.source === 'fallback' ? 'Written by our team (the AI story writer was not available)' : 'AI-generated story'}</p>
+      <p className="text-xs text-ink-soft">{page.source === 'fallback' ? 'Story text written by our team' : 'AI-generated story'}</p>
     </article>
   );
 }

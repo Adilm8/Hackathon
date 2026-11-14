@@ -16,7 +16,7 @@ import { useEventCtx } from '@/lib/store/hooks';
 import { newId } from '@/lib/store/id';
 import { useSettings } from '@/lib/store/settings';
 import { isChapterOpen, questionButtonsForPage, questionsInChapter, renderText, updatedChipText } from '@/lib/store/engine';
-import { cleanQuestion, preClassify } from '@/lib/store/shim/safety';
+import { cleanText, isBlank, LIMITS, precheck } from '@/lib/safety/filters';
 import { askQuestion, generateChapter } from '@/lib/store/story';
 import { ListenButton } from './ListenButton';
 import { PageView } from './PageView';
@@ -84,8 +84,10 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
 
   const ask = async ({ text, buttonId }: { text: string; buttonId?: string }) => {
     if (!page || busy) return;
-    const clean = cleanQuestion(text, child.name);
-    const pre = buttonId ? null : preClassify(clean);
+    const clean = buttonId ? text : cleanText(text, { max: LIMITS.question, childName: child.name, pronunciation: child.pronunciation }).text;
+    if (isBlank(clean)) return;
+    // Level 1 in the browser too (8.6): an unsafe question never leaves the device.
+    const pre = buttonId ? null : precheck(clean).category;
     if (pre === 'unsafe') return setMode({ kind: 'unsafe' });
     setBusy(true);
     const nextStory = pages.slice(pageIdx + 1).find((p) => p.kind === 'story');
@@ -181,7 +183,7 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
   })();
 
   return (
-    <div className={`${night ? 'reader-night' : ''} -mx-4 -my-6 min-h-full bg-bg px-4 py-6 text-ink`}>
+    <div className={`${night ? 'reader-night' : ''} -mx-4 -my-6 min-h-[calc(100dvh-8rem)] bg-bg px-4 py-6 text-ink`}>
       <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[minmax(0,1fr)_360px]">
         <div className="flex min-w-0 flex-col gap-4">
           <div className="flex items-center gap-2">
