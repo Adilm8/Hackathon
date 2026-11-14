@@ -5,10 +5,13 @@
  * Unsafe: category → done; nothing is sent to a model, stored or counted.
  * Level 1 in code decides unsafe, fixes sensitive (the model can only draft the parent's answer and
  * cannot lower the category) and answers rule-breaking, rude and non-English questions itself.
+ * Two calls: the answer (route 'answer', deadline 3.5 s), then the rewritten next page (route 'rewrite',
+ * main model, within the 12 s total), so the answer never waits for the page.
  * Deadlines: answer 3.5 s, rewritten next page 12 s. On failure: a button gets its template answer,
  * an own question gets the "great question" line, the next page stays as it was.
  */
 import 'server-only';
+import { z } from 'zod';
 import { AnswerOut, PageOut, type AnswerOutT } from '../engine/schemas';
 import type { EventTemplate, QuestionCategory, QuestionSource, Sentence, StoryContext, Topic } from '../engine/types';
 import { env } from '../env';
@@ -18,7 +21,7 @@ import { checkText } from '../safety/postcheck';
 import { DEADLINES } from './config';
 import { fallbackAnswer, fallbackParentPhrase, type OutPage } from './fallback';
 import { mockAnswer } from './mock';
-import { buildAnswerPrompt } from './prompts/answer.v1';
+import { buildAnswerPrompt, buildRewritePrompt } from './prompts/answer.v1';
 import { buildSystemPrompt } from './prompts/system.v1';
 import { callStructured } from './run';
 import { checkPage, postcheckOptions } from './validate';
@@ -44,6 +47,8 @@ export interface AnswerInput {
 }
 
 export class BlankQuestion extends Error {}
+
+const RewriteOut = z.object({ nextPage: PageOut });
 
 const RANK: Record<QuestionCategory, number> = { on_topic: 0, off_topic: 0, sensitive: 1, unsafe: 2 };
 
@@ -130,7 +135,8 @@ export async function* answerQuestion(input: AnswerInput): AsyncGenerator<Answer
       prompt: buildAnswerPrompt(ctx, {
         question: cleaned.text,
         currentPage: pageText(input.currentPage.text, input),
-        nextPage: input.nextPage ? pageText(input.nextPage.text, input) : undefined,
+        // The next page is rewritten by a second call (route 'rewrite') after the answer is out.
+        nextPage: undefined,
         sensitive,
         buttonTopic: button?.topic,
       }),
@@ -142,7 +148,7 @@ export async function* answerQuestion(input: AnswerInput): AsyncGenerator<Answer
           nextPage: input.nextPage ? { text: pageText(input.nextPage.text, input), background: input.nextPage.background } : undefined,
         }),
       signal: ac.signal,
-      maxOutputTokens: 900,
+      maxOutputTokens: 400,
     });
 
     for await (const raw of call.partials) {
@@ -200,9 +206,32 @@ export async function* answerQuestion(input: AnswerInput): AsyncGenerator<Answer
         }
         answerSent = true;
       }
-      if (category === 'on_topic' && ctx.styleMode === 'story' && input.nextPage && out.nextPage) {
-        const parsed = PageOut.safeParse(out.nextPage);
-        if (parsed.success) {
+      if (category === 'on_topic' && ctx.styleMode === 'story' && input.nextPage) {
+        if (answerTimer) clearTimeout(answerTimer);
+        answerTimer = null;
+        const nextText = pageText(input.nextPage.text, input);
+        const background = input.nextPage.background;
+        const rewrite = await callStructured({
+          route: 'rewrite',
+          familyId: input.familyId,
+          schema: RewriteOut,
+          system: buildSystemPrompt(ctx, template),
+          prompt: buildRewritePrompt({
+            question: cleaned.text,
+            currentPage: pageText(input.currentPage.text, input),
+            answer: out.answer.map((s) => s.text).join(' '),
+            nextPage: nextText,
+          }),
+          mock: () => ({
+            nextPage:
+              mockAnswer(ctx, template, { question: cleaned.text, buttonId: button?.id, sensitive: false, nextPage: { text: nextText, background } }).nextPage ??
+              { sentences: [{ text: nextText, kind: 'describe' }, { text: nextText, kind: 'describe' }], mood: 'calm', background, addresses: [] },
+          }),
+          signal: ac.signal,
+          maxOutputTokens: 700,
+        }).final;
+        const parsed = rewrite.ok ? PageOut.safeParse(rewrite.object.nextPage) : null;
+        if (parsed?.success) {
           const original: OutPage = { sentences: [], mood: 'calm', background: input.nextPage.background, addresses: [], source: 'fallback' };
           const checked = checkPage(parsed.data, { template, age: ctx.child.age, post, fallback: original });
           if (!checked.replaced) {

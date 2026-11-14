@@ -17,6 +17,20 @@ export interface AnswerPromptInput {
   buttonTopic?: string;
 }
 
+/**
+ * Second, separate call for an on_topic answer in story style: rewrite the next page (8.4).
+ * Split from the answer so the child's answer is not held back by the page (deadline 3.5 s):
+ * models that do not stream structured output return the whole object at once.
+ */
+export function buildRewritePrompt(input: { question: string; currentPage: string; answer: string; nextPage: string }): string {
+  return [
+    `The child asked: ${dataBlock(input.question)} while hearing page: ${dataBlock(input.currentPage)}.`,
+    `The character already answered: ${dataBlock(input.answer)}`,
+    `Rewrite the next page so it naturally refers to the question, keeping its events and length. Next page now: ${dataBlock(input.nextPage)}`,
+    'Return only nextPage (sentences with text and kind, mood, background, addresses).',
+  ].join('\n');
+}
+
 export function buildAnswerPrompt(ctx: StoryContext, input: AnswerPromptInput): string {
   const lines = [
     `The child asked: ${dataBlock(input.question)} while hearing page: ${dataBlock(input.currentPage)}.`,
