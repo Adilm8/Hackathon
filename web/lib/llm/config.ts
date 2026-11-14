@@ -41,7 +41,8 @@ const PRICES: { match: RegExp; input: number; output: number }[] = [
   { match: /gemini.*flash.*lite/i, input: 0.1, output: 0.4 },
   { match: /gemini.*flash/i, input: 0.3, output: 2.5 },
   { match: /gemini.*pro/i, input: 1.25, output: 10 },
-  { match: /deepseek/i, input: 0.3, output: 1.2 },
+  { match: /deepseek/i, input: 0.3, output: 1.2 }, // v4.1 flash baseline provider price; cheapest routes ~0.05 / 0.20
+  { match: /haiku-5/i, input: 0.1, output: 0.5 }, // OpenRouter list price, 15 Nov 2026
   { match: /haiku/i, input: 1, output: 5 },
   { match: /^mock$/, input: 0, output: 0 },
 ];
