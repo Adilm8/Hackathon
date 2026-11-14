@@ -131,6 +131,7 @@ describe('POST /api/answer', () => {
 
   it('unsafe: category then done, nothing else, no model call', async () => {
     const db = await getDb();
+    await new Promise((r) => setTimeout(r, 50)); // let earlier calls finish their log lines
     const before = (await db.select().from(llmCalls)).length;
     const out = await lines(await ask('Someone at home hurts me'));
     expect(out).toEqual([{ type: 'category', category: 'unsafe', topic: 'safety' }, { type: 'done', parentPhrase: '' }]);

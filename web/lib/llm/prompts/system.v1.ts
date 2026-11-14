@@ -6,7 +6,8 @@
  */
 import type { EventTemplate, StoryContext, Topic } from '../../engine/types';
 import { dataBlock } from '../../safety/filters';
-import { pageTargets } from '../deps';
+import { findTechniqueAnywhere, pageTargets } from '../deps';
+import { allowedTechniques } from '../fallback';
 
 export const SYSTEM_PROMPT_VERSION = 'system.v1';
 
@@ -40,9 +41,9 @@ function pronounRule(ctx: StoryContext): string {
 }
 
 function techniqueLabel(template: EventTemplate, id: string): string {
-  const t = template.techniques.find((x) => x.id === id);
+  const t = findTechniqueAnywhere(id, template);
   if (t) return `${t.label} (${t.id})`;
-  // Own techniques from a check-in: 'custom:<slug>'; the slug is parent text, so it goes in a data block.
+  // The parent's own technique from a check-in is parent text, so it goes in a data block.
   return dataBlock(id.replace(/^custom:/, '').replace(/[-_]+/g, ' '));
 }
 
@@ -64,7 +65,7 @@ export function buildSystemPrompt(ctx: StoryContext, template: EventTemplate): s
     `3. This chapter covers: ${list(goals)}. It must address these worries: ${list(worries)}.`,
     `   Build on what really happens: ${list(template.steps)}. Use real sensory details: ${list(template.sensory)}.`,
     `4. Prefer techniques that helped before: ${list(ctx.helpedBefore.map((id) => techniqueLabel(template, id)))}. Never use: ${list(ctx.avoid.map((id) => techniqueLabel(template, id)))}.`,
-    `   Only use techniques from this list and report their ids: ${template.techniques.map((t) => `${t.id} = ${t.label}: ${t.how}`).join(' | ')}.`,
+    `   Only use techniques from this list and report their ids: ${allowedTechniques(template, ctx).map((t) => `${t.id} = ${t.label}: ${t.how}`).join(' | ')}.`,
     `5. Family values: tone ${ctx.values.tone}; the family is exactly ${family}, mention no other family members; body words: ${ctx.values.bodyWords === 'anatomical' ? 'correct anatomical words' : 'gentle family words'}.`,
     '   Refer to the grown-up as [[GROWNUP]] or with one of the family words above, never with a name.',
     '6. No medical, legal or psychological advice. If asked, say: "That\'s a great question for [[GROWNUP]] or the doctor."',

@@ -10,7 +10,7 @@ import { env } from '../env';
 import { checkText } from '../safety/postcheck';
 import { cacheGet, cacheKey, cacheSet } from '../server/cache';
 import { DEADLINES, PROMPT_VERSION } from './config';
-import { fallbackRitual, pickTechnique } from './fallback';
+import { allowedTechniques, fallbackRitual, pickTechnique } from './fallback';
 import { mockRitual } from './mock';
 import { buildRitualPrompt } from './prompts/ritual.v1';
 import { buildSystemPrompt } from './prompts/system.v1';
@@ -54,7 +54,7 @@ export async function ritualCard(input: RitualInput): Promise<RitualCard> {
     const steps = res.object.steps.map((s) => s.trim());
     if (steps.some((s) => s.length < 2 || checkText(s, post).length > 0)) return fallbackRitual(template, ctx, topTopics);
 
-    const allowed = template.techniques.find((t) => t.id === res.object.techniqueId && !ctx.avoid.includes(t.id));
+    const allowed = allowedTechniques(template, ctx).find((t) => t.id === res.object.techniqueId);
     const t = allowed ?? pickTechnique(template, ctx, topTopics);
     const isMock = env().llm.provider === 'mock';
     const card: RitualCard = {

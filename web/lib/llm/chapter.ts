@@ -145,7 +145,7 @@ export async function* generateChapter(input: ChapterInput): AsyncGenerator<Chap
         const done: ChapterEvent = {
           type: 'done',
           summary: cleanShort(out.summary, 200, post) ?? fallbackSummary(template, ctx.chapter.beats),
-          usedTechniques: filterTechniques(out.usedTechniques, template, ctx.avoid),
+          usedTechniques: filterTechniques(out.usedTechniques, template, ctx),
           place: cleanShort(out.place, 40, post) ?? ctx.place ?? '',
           source: isMock ? 'fallback' : 'llm',
         };

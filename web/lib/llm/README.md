@@ -16,6 +16,7 @@ Spec: `docs/SPEC.md` sections 8 (AI layer and safety), 9 (`/api/chapter`, `/api/
 | `lib/llm/prompts/*.v1.ts` | Versioned prompts (8.3, 8.4) |
 | `lib/llm/validate.ts`, `fallback.ts`, `mock.ts` | Checks of model output, template fallbacks, mock output |
 | `lib/llm/deps.ts` | The only imports from other streams (templates, session, access, child name) |
+| `lib/llm/warm.ts` | Opt-in background generation of the sample chapters for the cache |
 | `lib/server/budget.ts`, `cache.ts` | Daily dollar cap and `llm_calls` log; one-hour cache of chapters and day cards |
 | `evals/` | `npm run safety`, `npm run eval`, the question set and the story scenarios |
 
@@ -32,7 +33,7 @@ Spec: `docs/SPEC.md` sections 8 (AI layer and safety), 9 (`/api/chapter`, `/api/
 
 ## Configuration
 
-`LLM_PROVIDER` = `mock` (default, no cost) | `gemini` (`GEMINI_API_KEY`, `GEMINI_MODEL`) | `openrouter` (`OPENROUTER_API_KEY`, `OPENROUTER_MODEL`, optional `OPENROUTER_MODEL_ANSWER`, `OPENROUTER_MODEL_BACKUP`). `LLM_BUDGET_USD_PER_DAY` (default 1). `LLM_MOCK_DELAY_MS` slows the mock stream (15 ms per chunk in development).
+`LLM_PROVIDER` = `mock` (default, no cost) | `gemini` (`GEMINI_API_KEY`, `GEMINI_MODEL`) | `openrouter` (`OPENROUTER_API_KEY`, `OPENROUTER_MODEL`, optional `OPENROUTER_MODEL_ANSWER`, `OPENROUTER_MODEL_BACKUP`). `LLM_BUDGET_USD_PER_DAY` (default 1). `LLM_MOCK_DELAY_MS` slows the mock stream (15 ms per chunk in development). `LLM_WARM_SAMPLE=on` warms the sample chapters (spends money on a paid provider).
 
 ## Scripts
 
@@ -45,7 +46,7 @@ Spec: `docs/SPEC.md` sections 8 (AI layer and safety), 9 (`/api/chapter`, `/api/
 2. The sensitive list is deliberately wide (for example "hospital", "touch me", "God"): a false hit only sends the question through Parent check.
 3. Gemini safety filter at `BLOCK_LOW_AND_ABOVE`; reasoning off (`reasoning: 'none'`). A blocked answer falls back like any failure.
 4. Prices of unknown models are counted high ($2 / $10 per million tokens) so the daily cap errs on the safe side; OpenRouter reports the real cost and that number is used.
-5. The jury path is cached per context for an hour after the first reader. Warming the sample at boot (12.3) needs the browser's context builder on the server; it is the next step once the engine's builder is in main.
+5. The jury path is cached per context for an hour after the first reader. Warming the sample at boot and every hour (12.3, `lib/llm/warm.ts`) is **off by default** because it spends on a paid provider (5 chapters an hour); switch it on with `LLM_WARM_SAMPLE=on` once Lida approves. It builds the sample from `lib/engine/sample.ts`, so `/api/sample` should seed from the same builder for the cache to match.
 6. Help-line numbers in `messages.ts` must be re-checked before submission (8.6).
 7. A safety run on Gemini needs an approved budget, even on the free tier, because the script cannot know the billing plan (estimate for 65 questions × 3 runs: about $0.28 at Flash prices).
 

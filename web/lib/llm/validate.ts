@@ -7,7 +7,7 @@ import type { EventTemplate, Sentence, StoryContext, Topic } from '../engine/typ
 import type { PageOutT } from '../engine/schemas';
 import { checkText, type PostcheckOptions } from '../safety/postcheck';
 import { confirmAddresses, pageTargets } from './deps';
-import type { OutPage } from './fallback';
+import { allowedTechniques, type OutPage } from './fallback';
 
 export function wordCount(text: string): number {
   return text.replace(/\[\[(CHILD|GROWNUP)\]\]/g, 'X').split(/\s+/).filter((w) => /[\p{L}\p{N}]/u.test(w)).length;
@@ -73,10 +73,10 @@ export function socialRatioOk(pages: Pick<OutPage, 'sentences'>[]): boolean {
   return describe >= 2 * coach;
 }
 
-/** Technique ids the template knows, minus the ones to avoid, without duplicates. */
-export function filterTechniques(ids: string[], template: EventTemplate, avoid: string[]): string[] {
-  const known = new Set(template.techniques.map((t) => t.id));
-  return [...new Set(ids)].filter((id) => known.has(id) && !avoid.includes(id));
+/** Technique ids the model may report (template + helped before), without duplicates. */
+export function filterTechniques(ids: string[], template: EventTemplate, ctx: Pick<StoryContext, 'helpedBefore' | 'avoid'>): string[] {
+  const known = new Set(allowedTechniques(template, ctx).map((t) => t.id));
+  return [...new Set(ids)].filter((id) => known.has(id));
 }
 
 /** A short free-text field from the model (summary, place): kept only when clean. */

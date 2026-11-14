@@ -6,6 +6,7 @@ export async function register() {
     await migrateDb();
     console.log('[db] migrations applied');
     (await import('./lib/server/jobs')).startJobs();
+    (await import('./lib/llm/warm')).startSampleWarmup();
   } catch (e) {
     // The app keeps working on the local copy and saves later (N8).
     const cause = e instanceof Error && e.cause instanceof Error ? ` (${e.cause.message})` : '';

@@ -4,7 +4,7 @@
  */
 import type { Beat, EventTemplate, Mood, RitualCard, Sentence, StoryContext, StyleMode, Topic } from '../engine/types';
 import { OWN_QUESTION_FALLBACK } from '../safety/messages';
-import { pageTargets } from './deps';
+import { findTechniqueAnywhere, pageTargets } from './deps';
 
 export interface OutPage {
   sentences: Sentence[];
@@ -52,10 +52,26 @@ export function fallbackParentPhrase(template: EventTemplate, topic: Topic): str
   return template.phrases[topic]?.[0] ?? "That's a good question. Let's think about it together.";
 }
 
+type Technique = EventTemplate['techniques'][number];
+
+/**
+ * Techniques the model may use for this event: the template's own plus the ones that helped in an
+ * earlier event of another type (memory travels across events, 5.7), minus the ones to avoid.
+ */
+export function allowedTechniques(template: EventTemplate, ctx: Pick<StoryContext, 'helpedBefore' | 'avoid'>): Technique[] {
+  const out = new Map<string, Technique>();
+  for (const t of template.techniques) out.set(t.id, t);
+  for (const id of ctx.helpedBefore) {
+    const t = findTechniqueAnywhere(id, template);
+    if (t && !out.has(t.id)) out.set(t.id, t);
+  }
+  const list = [...out.values()].filter((t) => !ctx.avoid.includes(t.id));
+  return list.length ? list : template.techniques;
+}
+
 /** Technique for the day card: what helped before, else one that fits the top worries, never one to avoid. */
-export function pickTechnique(template: EventTemplate, ctx: Pick<StoryContext, 'helpedBefore' | 'avoid'>, topTopics: Topic[]) {
-  const allowed = template.techniques.filter((t) => !ctx.avoid.includes(t.id));
-  const pool = allowed.length ? allowed : template.techniques;
+export function pickTechnique(template: EventTemplate, ctx: Pick<StoryContext, 'helpedBefore' | 'avoid'>, topTopics: Topic[]): Technique {
+  const pool = allowedTechniques(template, ctx);
   return (
     ctx.helpedBefore.map((id) => pool.find((t) => t.id === id)).find(Boolean) ??
     topTopics.map((topic) => pool.find((t) => t.topics.includes(topic))).find(Boolean) ??

@@ -6,7 +6,7 @@
 import type { EventTemplate, StoryContext, Topic } from '../engine/types';
 import type { AnswerOutT, ChapterOutT, PageOutT, RitualOutT } from '../engine/schemas';
 import { normalise } from '../safety/stoplist';
-import { fallbackAnswer, fallbackChapterPages, fallbackParentPhrase, fallbackSummary, pickTechnique } from './fallback';
+import { allowedTechniques, fallbackAnswer, fallbackChapterPages, fallbackParentPhrase, fallbackSummary, pickTechnique } from './fallback';
 
 export function mockChapter(ctx: StoryContext, template: EventTemplate): ChapterOutT {
   let pages = fallbackChapterPages(template, ctx.chapter.beats, ctx.styleMode, ctx.child.age);
@@ -19,7 +19,7 @@ export function mockChapter(ctx: StoryContext, template: EventTemplate): Chapter
       pages = [...pages, ...extra.slice(0, 3 - pages.length)];
     }
   }
-  const usable = template.techniques.filter((t) => !ctx.avoid.includes(t.id));
+  const usable = allowedTechniques(template, ctx);
   return {
     pages: pages.slice(0, 5).map(({ sentences, mood, background, addresses }) => ({ sentences, mood, background, addresses })),
     summary: fallbackSummary(template, ctx.chapter.beats),
