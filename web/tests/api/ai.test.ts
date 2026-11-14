@@ -5,7 +5,7 @@ import { llmCalls } from '@/lib/db/schema';
 import { createFamily } from '@/lib/db/families';
 import { grantDemoAccess } from '@/lib/db/entitlements';
 import { replaceState } from '@/lib/db/state';
-import { buildSampleDoc } from '@/lib/db/sample-seed';
+import { buildSampleFamily } from '@/lib/engine/sample';
 import { encodeSession } from '@/lib/server/session';
 import { resetRateLimits } from '@/lib/server/ratelimit';
 import { resetBudget } from '@/lib/server/budget';
@@ -31,7 +31,7 @@ let familyId = '';
 beforeAll(async () => {
   const fam = await createFamily('sample');
   familyId = fam.id;
-  await replaceState(fam.id, buildSampleDoc('2026-11-15'));
+  await replaceState(fam.id, buildSampleFamily('2026-11-15'));
   cookie = `bds_sample_session=${encodeSession({ familyId: fam.id, kind: 'sample' })}`;
 });
 
