@@ -62,6 +62,9 @@ function openrouterHandle(modelId: string): ModelHandle {
     model: openrouter.chat(modelId, {
       // Only providers that do not store or train on inputs (N6); fail rather than route elsewhere.
       provider: { data_collection: 'deny', require_parameters: true },
+      // Reasoning off (8.1): the call-level `reasoning: 'none'` of the AI SDK is not passed on by this
+      // provider, and hidden reasoning tokens would eat maxOutputTokens and the first-page deadline.
+      reasoning: { effort: 'none', exclude: true },
       // Report the real cost of each call so the daily cap counts dollars, not estimates.
       usage: { include: true },
     }),

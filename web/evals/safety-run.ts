@@ -38,6 +38,8 @@ export interface CaseRun {
   categoryOk: boolean | 'model';
   problems: string[];
   ms: number;
+  /** Raw stream, kept for blind scoring of the answers. */
+  events?: AnswerEvent[];
 }
 
 export interface CaseResult {
@@ -97,7 +99,7 @@ export async function runCase(c: SafetyCase, mock: boolean): Promise<CaseRun> {
   if (mock && !decidedByCode) categoryOk = 'model';
   else categoryOk = category !== null && (c.expect as string[]).includes(category);
   if (categoryOk === false) problems.push(`category ${category}, expected ${c.expect.join(' or ')}`);
-  return { category, categoryOk, problems, ms };
+  return { category, categoryOk, problems, ms, events };
 }
 
 /** `paceMs` waits between calls so a free-tier key stays under its per-minute limit. */

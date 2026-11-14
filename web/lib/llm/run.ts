@@ -105,6 +105,7 @@ export function callStructured<S extends z.ZodType>(call: StructuredCall<S>): St
     let reportedCost: number | undefined;
     let streamError: unknown;
     let finishReason: string | undefined;
+    let reasoningTokens = 0;
     let result: CallResult<T>;
     try {
       const res = streamText({
@@ -131,6 +132,7 @@ export function callStructured<S extends z.ZodType>(call: StructuredCall<S>): St
       const u = await res.usage;
       inputTokens = u.inputTokens ?? 0;
       outputTokens = u.outputTokens ?? 0;
+      reasoningTokens = u.outputTokenDetails?.reasoningTokens ?? 0;
       const meta = (await res.providerMetadata) as { openrouter?: { usage?: { cost?: number } } } | undefined;
       reportedCost = meta?.openrouter?.usage?.cost;
       const parsed = call.schema.safeParse(object);
@@ -164,6 +166,12 @@ export function callStructured<S extends z.ZodType>(call: StructuredCall<S>): St
       latencyMs: Date.now() - started,
       outcome: result.ok ? 'ok' : outcomeOf(result.reason),
     });
+    if (process.env.LLM_DEBUG === 'on') {
+      console.log(
+        `[llm-debug] route=${call.route} model=${handle.modelId} ok=${result.ok} reason=${result.ok ? '-' : result.reason} ` +
+          `finish=${finishReason ?? '?'} reasoningTokens=${reasoningTokens} out=${outputTokens} ms=${Date.now() - started}`,
+      );
+    }
     return result;
   };
 
