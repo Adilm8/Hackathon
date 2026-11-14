@@ -23,7 +23,7 @@
 
 ### 3. User & evidence
 - **Ключевая мысль:** мы понимаем двух родителей и слышали их голос.
-- **На слайде:** два портрета: Sarah (one big day a year → Event Pack) и Jason (child with autism, a big day every week → Family Year). 3–4 цитаты родителей с подписью источника (`docs/research/user-voice-big-day-stories.md`). Если будут интервью: "We talked to N US parents: X said …".
+- **На слайде:** два портрета: Sarah (one big day a year → Big Day Pass) и Jason (child with autism, a big day every week → Gold). 3–4 цитаты родителей с подписью источника (`docs/research/user-voice-big-day-stories.md`). Если будут интервью: "We talked to N US parents: X said …".
 - **Критерий:** Problem & User (15%).
 
 ### 4. Solution in 3 steps
@@ -40,17 +40,17 @@
 
 ### 6. Why parents pay and come back
 - **Ключевая мысль:** платят после того, как увидели ценность, и продукт сам зовёт к следующему событию.
-- **На слайде:** Free (chapter 1) → paywall → **Event Pack $9.99 once** / **Family Year $49** (median Education app: $44.99/yr, RevenueCat). "No subscription trap: one-time pack, 30-day renewal reminder." Цикл удержания стрелками: countdown → calendar reminders → check-in → badge → next event prefilled → memory of what works for this child. North Star: events completed to check-in.
+- **На слайде:** Free (chapter 1) → paywall → **Big Day Pass $9.99 once** / **Gold $49/yr or $7.99/mo** (median Education app: $44.99/yr, RevenueCat). "No subscription trap: one-time pack, 30-day renewal reminder." Цикл удержания стрелками: countdown → calendar reminders → check-in → badge → next event prefilled → memory of what works for this child. North Star: events completed to check-in.
 - **Критерий:** Value & Retention (20%).
 
 ### 7. Market & path to $100M ARR
 - **Ключевая мысль:** большой рынок снизу, и честный путь к $100M слоями.
-- **На слайде:** слева воронка: TAM ≈ $830M (17M US families with a child 3–8 × $49), SAM ≈ $210M (anxiety/autism families on Year + one big day on Pack), SOM ≈ $1M in year 3 (36k payers from SEO, clinics, communities). Справа столбик слоёв: US core $33M + Event Packs $15M + premium tiers $8.5M + print books $9M + ages 2–12 & Spanish $20M + UK/CA/AU $15M ≈ $100M. Подпись: "hypotheses; sizing sources in README". Мелко: Wonderbly sold 8M+ personalized books, acquired by Penguin Random House (2025).
+- **На слайде:** слева воронка: TAM ≈ $830M (17M US families with a child 3–8 × $49), SAM ≈ $210M (anxiety/autism families on Gold + one big day on Pass), SOM ≈ $1M in year 3 (36k payers from SEO, clinics, communities). Справа столбик слоёв: US core $33M + Big Day Passes $15M + premium tiers $8.5M + print books $9M + ages 2–12 & Spanish $20M + UK/CA/AU $15M ≈ $100M. Подпись: "hypotheses; sizing sources in README". Мелко: Wonderbly sold 8M+ personalized books, acquired by Penguin Random House (2025).
 - **Критерий:** Business Potential (15%).
 
 ### 8. Unit economics
 - **Ключевая мысль:** маржа выше 90%, и мы знаем, почему реклама не сработает.
-- **На слайде:** маржа: Event Pack 90–94%, Year 94–96% (Stripe 30¢ is the biggest cost, AI is cents). LTV year 1 ≈ $25 (benchmark: $22.82 per payer, RevenueCat Education). CAC: paid search ≈ $390 (CPC $6.23 × 1.6% conversion, WordStream 2025) → **we don't buy ads**; SEO library < $1, clinics $3–5 → target CAC ≤ $8, LTV/CAC ≥ 3. Воронка-цели пилота: 30% → 60% → 8–10% → 1.6% of visitors pay ($0.35 per visitor vs $0.30 per install benchmark).
+- **На слайде:** маржа: Big Day Pass 90–94%, Gold 94–96% (Stripe 30¢ is the biggest cost, AI is cents). LTV year 1 ≈ $25 (benchmark: $22.82 per payer, RevenueCat Education). CAC: paid search ≈ $390 (CPC $6.23 × 1.6% conversion, WordStream 2025) → **we don't buy ads**; SEO library < $1, clinics $3–5 → target CAC ≤ $8, LTV/CAC ≥ 3. Воронка-цели пилота: 30% → 60% → 8–10% → 1.6% of visitors pay ($0.35 per visitor vs $0.30 per install benchmark).
 - **Критерий:** Business Potential (15%).
 
 ### 9. Competitors & our angle
