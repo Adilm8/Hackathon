@@ -1,6 +1,6 @@
 # Big Day Stories: product and engineering specification
 
-Version 1.3, 15 Nov 2026, 02:10 Astana. Owner: architect. Status: ready to build on. It includes Lida's answers of 15 Nov 01:26, 01:42 and 01:55. Questions that are still open are in section 19; until she answers, the stated default is built.
+Version 1.4, 15 Nov 2026, 02:15 Astana. Owner: architect. Status: **development started** on this document (Lida, 15 Nov 01:58). The remaining questions of section 19 are accepted with their defaults and will be revisited later.
 
 This is the single file development relies on. It merges the team ТЗ (features F1–F19), `docs/requirements.md` (ids C, F, FR, N), the research and analysis notes, and Lida's decisions of 15 Nov. Where this file and an older document disagree, `docs/decisions.md` wins first, then this file. Builders do not change contracts (section 6, 8, 9) on their own: they ask the architect.
 
@@ -1051,6 +1051,11 @@ The app is installable (web manifest, icons, theme colour), which gives "Add to 
 
 ### 11.2 Look and feel
 
+The visual design comes from the design work in `docs/design/` (Lida, 15 Nov): `style-guide.md` holds the tokens (colours, type scale, radii, shadows, motion), the component list and the screen-by-screen references. Builders implement the look from there. Where the two documents differ, the style guide wins on look and layout, and this document wins on behaviour, data, rules and wording that carries a rule (disclaimers, consent, test-mode notice). Two points of contact:
+
+- Onboarding keeps the three steps and four required fields of 4.5; a step may be laid out as several single-question screens with the progress bar, as the style guide suggests.
+- The style guide's two "rooms" map onto this document as follows: the light, warm room is the landing, onboarding, plan and reader; the dark, calm room is the parent panel, paywall and settings. The reader's night mode (4.7) is a third state on top: the reader darkens after 19:00.
+
 Calm, warm and uncluttered: one page of story per screen, large type, generous spacing, one primary action per screen. A light theme by day and a muted dark theme for evenings. Design tokens (colours, radii, spacing, type scale) live in the Tailwind theme and are the only source of styling values. Text contrast at least 4.5:1, tap targets at least 44 × 44 px, no flashing, no autoplaying sound, motion reduced when the system asks for it. The parent-facing surfaces (panel, paywall, settings) look like a tool; the reader looks like a picture book.
 
 ### 11.3 State
@@ -1374,13 +1379,15 @@ Hard questions and questions about complex mechanics (D7).
 | K11 | Does the paywall stay in the MVP? | Yes (01:55). The paywall stays; the jury sees everything through the jury demo mode: guided tour, real test checkout and one-tap demo access for sample families only (D18, 4.3, 5.1) |
 | K2 | Jury test profile | Decided by the architect as the best solution: a fresh sample family per browser, Max with one past event and the upcoming dentist, unpaid at first, with "Pay with the test card" and "Skip payment (demo access)" side by side |
 
-### Still open (the default is built until answered)
+### Accepted by default on 15 Nov, 01:58: revisit later
 
-| # | Question | Default being built | If you choose otherwise |
+Lida's instruction when development started: keep the defaults, mark the questions, come back to them later. Each row is built as written; none of them blocks development.
+
+| # | Question | Built now (default) | To revisit |
 |---|---|---|---|
-| K4 | Second event for a Big Day Pass owner | Chapter 1 free again; then $9.99 for that event or the $39 upgrade to the year | For example a cheaper second pass |
-| K7 | Social story style and questions | The answer page appears, but the next page is not rewritten, because the text must not change on re-reading; the topic moves to the next chapter | Rewrite the next page in this mode too |
-| K8 | Premium narration and the name | When ElevenLabs is connected, the spoken name has to be sent to the voice provider. Proposal: explicit consent from the parent on first use of premium voice | Keep premium voice name-free (the character says "you") |
-| K10 | Deploy timing | Create the Railway project and PostgreSQL now, deploy the app at 08:30 at the latest | Deploy later: every hour after 09:00 removes time to fix what only production shows |
-| K12 | Names of the levels | Gold, Platinum, Diamond as suggested, next to the one-time Big Day Pass; in the MVP the paywall shows Event Pack, Family Year and Monthly as in the ТЗ | Brave / Braver / Bravest, or Family / Family Plus / Family Pro |
-| K13 | Budgets | Every paid run is requested separately with an estimate. First request will come with the model shortlist: well under $1 for the two small models | |
+| K4 | Second event for a Big Day Pass owner | Chapter 1 free again; then $9.99 for that event or the $39 upgrade to the year | Pricing of the second pass, after the first payments |
+| K7 | Social story style and questions | The answer page appears, but the next page is not rewritten, because the text must not change on re-reading; the topic moves to the next chapter | In a usability session with the social story persona |
+| K8 | Premium narration and the name | Not built in the MVP. When ElevenLabs is connected: explicit consent from the parent before the spoken name goes to the voice provider | When the voice work starts (17.1) |
+| K10 | Deploy timing | Deploy at 08:30 at the latest; the Railway project and PostgreSQL are created earlier | At checkpoint 2 (07:00) |
+| K12 | Names of the levels | The MVP paywall shows Event Pack, Family Year and Monthly as in the ТЗ; Gold, Platinum and Diamond are the working names of the later levels (17.2) | With the level design after the hackathon |
+| K13 | Budgets | Nothing is spent. Every paid run is requested separately with an estimate; the first request comes with the model shortlist | In the LLM working session (8.8) |
