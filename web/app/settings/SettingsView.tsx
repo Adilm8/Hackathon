@@ -2,7 +2,9 @@
 import { useRouter } from 'next/navigation';
 import { useState, type ReactNode } from 'react';
 import { SubscriptionCard } from '@/components/paywall/SubscriptionCard';
-import { ExportImport, RestoreLink, StyleToggle, ValuesProfile, VoiceConsent } from '@/components/settings';
+import { ExportImport, PalettePicker, RestoreLink, StyleToggle, ValuesProfile, VoiceConsent } from '@/components/settings';
+import { clock } from '@/lib/engine/clock';
+import { DEFAULT_PALETTE, isNight } from '@/lib/theme';
 import { clearDeviceData } from '@/lib/storage/clear';
 import { Button, ButtonLink } from '@/components/ui/Button';
 import { ErrorBoundary } from '@/components/ui/ErrorBoundary';
@@ -98,17 +100,21 @@ export function SettingsView() {
         <EmptyState title="No child profile yet" text="Start a plan to set up the profile." action={<ButtonLink href="/start">Start</ButtonLink>} />
       )}
 
+      <Section title="Colours">
+        <PalettePicker
+          palette={settings.palette ?? DEFAULT_PALETTE}
+          nightMode={settings.nightMode}
+          mode={isNight(settings.nightMode, clock.hour()) ? 'night' : 'light'}
+          onPalette={settings.setPalette}
+          onNightMode={settings.setNightMode}
+        />
+      </Section>
+
       <Section title="Reading">
         <div>
           <p className="mb-2 text-sm font-bold">Text size</p>
           <div className="flex gap-2">
             {(['m', 'l', 'xl'] as const).map((s) => <Chip key={s} selected={settings.textSize === s} onToggle={() => settings.setTextSize(s)}>{s === 'm' ? 'Medium' : s === 'l' ? 'Large' : 'Extra large'}</Chip>)}
-          </div>
-        </div>
-        <div>
-          <p className="mb-2 text-sm font-bold">Night colours in the reader</p>
-          <div className="flex gap-2">
-            {(['auto', 'on', 'off'] as const).map((m) => <Chip key={m} selected={settings.nightMode === m} onToggle={() => settings.setNightMode(m)}>{m === 'auto' ? 'After 7 pm' : m === 'on' ? 'Always' : 'Never'}</Chip>)}
           </div>
         </div>
         {isOn('voiceQuestion') && (

@@ -16,6 +16,7 @@ interface SettingsState extends Settings {
   setClockOverride(d: ISODate | undefined): void;
   setTextSize(s: Settings['textSize']): void;
   setNightMode(m: Settings['nightMode']): void;
+  setPalette(p: NonNullable<Settings['palette']>): void;
   setVoiceConsent(on: ISODate | undefined): void;
   reset(): void;
 }
@@ -28,8 +29,9 @@ export const useSettings = create<SettingsState>()(
       setClockOverride: (d) => set({ clockOverride: d }),
       setTextSize: (textSize) => set({ textSize }),
       setNightMode: (nightMode) => set({ nightMode }),
+      setPalette: (palette) => set({ palette }),
       setVoiceConsent: (voiceQuestionConsentOn) => set({ voiceQuestionConsentOn }),
-      reset: () => set({ ...initial, parentGateAcceptedOn: undefined, clockOverride: undefined, voiceQuestionConsentOn: undefined }),
+      reset: () => set({ ...initial, palette: undefined, parentGateAcceptedOn: undefined, clockOverride: undefined, voiceQuestionConsentOn: undefined }),
     }),
     {
       name: typeof window === 'undefined' ? 'bds:settings' : storeKey('settings'),
@@ -42,6 +44,7 @@ export const useSettings = create<SettingsState>()(
         clockOverride: s.clockOverride,
         textSize: s.textSize,
         nightMode: s.nightMode,
+        palette: s.palette,
         voiceQuestionConsentOn: s.voiceQuestionConsentOn,
         schemaVersion: s.schemaVersion,
       }),

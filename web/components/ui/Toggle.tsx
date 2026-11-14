@@ -15,7 +15,7 @@ export function Toggle({ id, label, hint, checked, onChange }: { id: string; lab
         onCheckedChange={onChange}
         className="relative mt-1 h-8 w-14 shrink-0 rounded-pill bg-line transition-colors duration-fast data-[state=checked]:bg-primary"
       >
-        <Switch.Thumb className="block size-6 translate-x-1 rounded-pill bg-white shadow transition-transform duration-fast ease-soft data-[state=checked]:translate-x-7" />
+        <Switch.Thumb className="block size-6 translate-x-1 rounded-pill bg-surface shadow transition-transform duration-fast ease-soft data-[state=checked]:translate-x-7" />
       </Switch.Root>
     </div>
   );

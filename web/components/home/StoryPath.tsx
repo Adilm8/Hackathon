@@ -60,7 +60,7 @@ function Node({ node, current }: { node: PathNode; current: boolean }) {
   const size = current ? 'size-20' : 'size-16';
   const look =
     node.state === 'done'
-      ? 'bg-success text-white shadow-[0_5px_0_color-mix(in_srgb,var(--success)_70%,black)]'
+      ? 'bg-success text-success-ink shadow-[0_5px_0_color-mix(in_srgb,var(--success)_70%,black)]'
       : node.state === 'open'
         ? 'bg-primary text-primary-ink shadow-[0_5px_0_var(--primary-press)]'
         : node.state === 'pay'

@@ -75,7 +75,7 @@ export function PaidScreen({ sessionId, workspace }: { sessionId: string | null;
   const href = state.eventId ? `/event/${encodeURIComponent(state.eventId)}` : '/home';
   return (
     <div className="mx-auto flex max-w-md flex-col items-center gap-5 py-16 text-center">
-      <span aria-hidden className="flex size-16 items-center justify-center rounded-pill bg-success text-white">
+      <span aria-hidden className="flex size-16 items-center justify-center rounded-pill bg-success text-success-ink">
         <svg viewBox="0 0 24 24" className="size-9" fill="none" stroke="currentColor" strokeWidth="3">
           <path d="M5 12.5l4.5 4.5L19 7.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>

@@ -23,7 +23,7 @@ export function AppShell({
   childName?: string;
   isSample?: boolean;
   saveIndicator?: ReactNode;
-  /** 'parent' = the dark, calm room (panel, paywall, settings). */
+  /** 'parent' = panel, paywall, settings. Same palette as the rest of the app; kept as a marker. */
   room?: 'child' | 'parent';
   /** Demo bar of the sample workspace. */
   bottomBar?: ReactNode;
@@ -37,7 +37,7 @@ export function AppShell({
   fit?: boolean;
 }) {
   return (
-    <div className={`${room === 'parent' ? 'room-parent' : ''} flex flex-col bg-bg text-ink ${fit ? 'h-dvh overflow-hidden' : 'min-h-dvh'}`}>
+    <div data-room={room} className={`flex flex-col bg-bg text-ink ${fit ? 'h-dvh overflow-hidden' : 'min-h-dvh'}`}>
       <header className="no-print sticky top-0 z-20 border-b border-line bg-bg/95 backdrop-blur">
         <div className={`mx-auto flex h-14 items-center gap-3 px-4 ${wide ? 'max-w-6xl' : 'max-w-5xl'}`}>
           <Link href="/?landing=1" className="whitespace-nowrap font-display text-base font-extrabold sm:text-lg">

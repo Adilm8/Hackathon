@@ -179,6 +179,8 @@ export interface Settings {
   clockOverride?: ISODate;
   textSize: 'm' | 'l' | 'xl';
   nightMode: 'auto' | 'on' | 'off';
+  /** Colour palette of the whole app (Settings > Colours). Missing = 'warm'. */
+  palette?: 'warm' | 'ocean' | 'forest' | 'lavender';
   voiceQuestionConsentOn?: ISODate;
   schemaVersion: number;
 }

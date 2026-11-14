@@ -84,7 +84,7 @@ export function TasksCard({ tasks }: { tasks: DayTask[] }) {
         {tasks.map((t) => (
           <li key={t.key}>
             <Link href={t.href ?? '#'} className="flex min-h-tap items-center gap-3 rounded-card hover:bg-surface-2">
-              <span className={`flex size-9 shrink-0 items-center justify-center rounded-pill ${t.done ? 'bg-success text-white' : 'bg-surface-2 text-primary-text'}`}>
+              <span className={`flex size-9 shrink-0 items-center justify-center rounded-pill ${t.done ? 'bg-success text-success-ink' : 'bg-surface-2 text-primary-text'}`}>
                 <Icon name={t.done ? 'check' : 'target'} size={20} />
               </span>
               <span className="flex flex-1 flex-col gap-1">

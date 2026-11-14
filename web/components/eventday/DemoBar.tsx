@@ -184,7 +184,7 @@ export function DemoBar({ workspace }: { workspace: Workspace }) {
                     >
                       <span
                         aria-hidden
-                        className={`flex size-6 shrink-0 items-center justify-center rounded-pill text-xs font-extrabold ${s.done ? 'bg-success text-white' : 'border-2 border-line text-ink-soft'}`}
+                        className={`flex size-6 shrink-0 items-center justify-center rounded-pill text-xs font-extrabold ${s.done ? 'bg-success text-success-ink' : 'border-2 border-line text-ink-soft'}`}
                       >
                         {s.done ? <Icon name="check" size={14} /> : i + 1}
                       </span>

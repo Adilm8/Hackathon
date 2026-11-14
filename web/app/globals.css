@@ -6,11 +6,18 @@
  * Tailwind utilities generated from them (bg-bg, text-ink, bg-primary, rounded-card,
  * shadow-step, text-story ...), never raw hex values.
  *
- * Rooms (SPEC 11.2): the light, warm room is the default (landing, onboarding, plan,
- * reader). Add the class `room-parent` to a screen's root for the dark, calm room
- * (parent panel, paywall, settings). `reader-night` is the reader's night mode.
+ * Rooms (SPEC 11.2) share one palette now; see the palettes below.
  */
-:root {
+/*
+ * Colour palettes (Settings > Colours). One palette for the whole app: there is no separate
+ * dark "parent room" any more. <html> carries data-palette (warm | ocean | forest | lavender)
+ * and data-mode (light | night); components/ui/ThemeSync.tsx sets them from the settings and a
+ * script in app/layout.tsx sets them before the first paint. Every palette keeps WCAG AA:
+ * ink and ink-soft on bg/surface/surface-2 >= 4.5:1, primary-text on bg/surface >= 4.5:1,
+ * button labels on primary >= 3:1 (19 px bold), accent-ink on accent and success-ink on
+ * success >= 4.5:1. Checked by tests/unit/palettes.test.ts.
+ */
+:root, [data-palette="warm"][data-mode="light"] {
   --bg: #fff9f0;
   --surface: #ffffff;
   --surface-2: #fdf3e4;
@@ -19,52 +26,171 @@
   --primary: #5b6cff;
   --primary-press: #4453e0;
   --primary-ink: #ffffff;
-  /* Contrast (WCAG AA): #5B6CFF on white is 4.17:1, so text labels on primary are
-     >= 19px bold (large text, 3:1). Links and small primary text use --primary-text (5.9:1). */
   --primary-text: #4453e0;
   --accent: #ffb547;
   --accent-ink: #2b2a3a;
   --success: #3dbe8b;
+  --success-ink: #123826;
   --danger: #e5565b;
+  --danger-ink: #ffffff;
   --line: #e8e2d6;
   --focus: #5b6cff;
   --pop-shadow: 0 12px 32px rgba(20, 20, 60, 0.18);
   color-scheme: light;
 }
 
-.room-parent,
-.reader-night {
-  --bg: #0e1020;
-  --surface: #1a1d33;
-  --surface-2: #22264a;
-  --line: #2c3050;
-  --ink: #f4f3fa;
-  --ink-soft: #a5a7c4;
-  --primary: #7b89ff; /* lighter than the day value so text on dark keeps 4.5:1 */
-  --primary-press: #5b6cff;
-  --primary-ink: #0e1020;
-  --primary-text: #a5afff;
-  --focus: #a5afff;
-  --pop-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
-  color-scheme: dark;
-}
-
-/* Reader night colours: a warm bedtime dusk (plum and cream) instead of the parent room's navy,
-   applied to the whole page (the Reader puts the class on <html>), so the header and the page
-   never sit in two different colour schemes. All text pairs keep WCAG AA:
-   ink on surface 13.4:1, ink-soft on surface 7.1:1, primary-text on surface 6.9:1. */
-.reader-night {
+[data-palette="warm"][data-mode="night"] {
   --bg: #1f1a2c;
   --surface: #2a2339;
   --surface-2: #342b45;
-  --line: #463c5c;
   --ink: #f8f0e3;
   --ink-soft: #c9bccf;
   --primary: #8e98ff;
   --primary-press: #6f7bf0;
   --primary-ink: #1f1a2c;
   --primary-text: #b4baff;
+  --accent: #ffb547;
+  --accent-ink: #2b2a3a;
+  --success: #4fcf98;
+  --success-ink: #123826;
+  --danger: #ff7b7f;
+  --danger-ink: #1f1a2c;
+  --line: #463c5c;
   --focus: #b4baff;
+  --pop-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+  color-scheme: dark;
+}
+
+[data-palette="ocean"][data-mode="light"] {
+  --bg: #f1f8fb;
+  --surface: #ffffff;
+  --surface-2: #e2f0f6;
+  --ink: #16303c;
+  --ink-soft: #4d6672;
+  --primary: #0b7fa0;
+  --primary-press: #086482;
+  --primary-ink: #ffffff;
+  --primary-text: #086482;
+  --accent: #ffb547;
+  --accent-ink: #16303c;
+  --success: #2fb388;
+  --success-ink: #0d3427;
+  --danger: #d9474f;
+  --danger-ink: #ffffff;
+  --line: #d3e4eb;
+  --focus: #0b7fa0;
+  --pop-shadow: 0 12px 32px rgba(20, 20, 60, 0.18);
+  color-scheme: light;
+}
+
+[data-palette="ocean"][data-mode="night"] {
+  --bg: #0f1d25;
+  --surface: #172a34;
+  --surface-2: #1f3643;
+  --line: #2d4a58;
+  --ink: #eaf5f8;
+  --ink-soft: #a8c3cd;
+  --primary: #5cc6e2;
+  --primary-press: #3aafcf;
+  --primary-ink: #0f1d25;
+  --primary-text: #86d6ec;
+  --accent: #ffb547;
+  --accent-ink: #16303c;
+  --success: #4fcf98;
+  --success-ink: #0d3427;
+  --danger: #ff7b7f;
+  --danger-ink: #0f1d25;
+  --focus: #86d6ec;
+  --pop-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+  color-scheme: dark;
+}
+
+[data-palette="forest"][data-mode="light"] {
+  --bg: #f4f8f0;
+  --surface: #ffffff;
+  --surface-2: #e6f0de;
+  --ink: #1f2d20;
+  --ink-soft: #55675a;
+  --primary: #2e7b4f;
+  --primary-press: #22603d;
+  --primary-ink: #ffffff;
+  --primary-text: #22603d;
+  --accent: #f2b33d;
+  --accent-ink: #1f2d20;
+  --success: #3aa86f;
+  --success-ink: #0f2e1d;
+  --danger: #cf4b4b;
+  --danger-ink: #ffffff;
+  --line: #d8e5cf;
+  --focus: #2e7b4f;
+  --pop-shadow: 0 12px 32px rgba(20, 20, 60, 0.18);
+  color-scheme: light;
+}
+
+[data-palette="forest"][data-mode="night"] {
+  --bg: #121b14;
+  --surface: #1a271d;
+  --surface-2: #233326;
+  --line: #33483a;
+  --ink: #eef5ea;
+  --ink-soft: #afc3ae;
+  --primary: #72d29b;
+  --primary-press: #52b97f;
+  --primary-ink: #121b14;
+  --primary-text: #93ddb2;
+  --accent: #f2b33d;
+  --accent-ink: #1f2d20;
+  --success: #72d29b;
+  --success-ink: #0f2e1d;
+  --danger: #ff8080;
+  --danger-ink: #121b14;
+  --focus: #93ddb2;
+  --pop-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+  color-scheme: dark;
+}
+
+[data-palette="lavender"][data-mode="light"] {
+  --bg: #f8f5fd;
+  --surface: #ffffff;
+  --surface-2: #efe8fa;
+  --ink: #2a2440;
+  --ink-soft: #635b79;
+  --primary: #7450d6;
+  --primary-press: #5c3cb8;
+  --primary-ink: #ffffff;
+  --primary-text: #5c3cb8;
+  --accent: #ffb547;
+  --accent-ink: #2a2440;
+  --success: #3dbe8b;
+  --success-ink: #123826;
+  --danger: #d94f6a;
+  --danger-ink: #ffffff;
+  --line: #e4dbf2;
+  --focus: #7450d6;
+  --pop-shadow: 0 12px 32px rgba(20, 20, 60, 0.18);
+  color-scheme: light;
+}
+
+[data-palette="lavender"][data-mode="night"] {
+  --bg: #191427;
+  --surface: #231c35;
+  --surface-2: #2d2542;
+  --line: #42385c;
+  --ink: #f3eefc;
+  --ink-soft: #bdb2d6;
+  --primary: #b39cff;
+  --primary-press: #9a80f5;
+  --primary-ink: #191427;
+  --primary-text: #c8b8ff;
+  --accent: #ffb547;
+  --accent-ink: #2a2440;
+  --success: #4fcf98;
+  --success-ink: #123826;
+  --danger: #ff7b8f;
+  --danger-ink: #191427;
+  --focus: #c8b8ff;
+  --pop-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+  color-scheme: dark;
 }
 
 @theme inline {
@@ -81,6 +207,8 @@
   --color-accent-ink: var(--accent-ink);
   --color-success: var(--success);
   --color-danger: var(--danger);
+  --color-success-ink: var(--success-ink);
+  --color-danger-ink: var(--danger-ink);
   --color-line: var(--line);
   --color-focus: var(--focus);
 
