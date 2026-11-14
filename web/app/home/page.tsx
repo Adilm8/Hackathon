@@ -5,6 +5,7 @@ import { BadgeArt } from '@/components/badges';
 import { EventIcon, Icon } from '@/components/icons';
 import { ButtonLink } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
+import { CreateStoryButton } from '@/components/ui/CreateStoryButton';
 import { EmptyState } from '@/components/ui/EmptyState';
 import { Screen } from '@/components/ui/Screen';
 import { dateLabel } from '@/lib/engine/clock';
@@ -12,6 +13,7 @@ import type { BigEvent, ChildProfile } from '@/lib/engine/types';
 import { useChild } from '@/lib/store/child';
 import { useEvents } from '@/lib/store/events';
 import { useToday } from '@/lib/store/hooks';
+import { getWorkspace } from '@/lib/store/workspace';
 import { countdownText, eventLabel, eventPhase, getTemplate, readProgress, tonightChapter } from '@/lib/store/engine';
 
 /** Today view (docs/SPEC.md 4.4). */
@@ -23,12 +25,13 @@ function Home() {
   const child = useChild((s) => s.child);
   const events = useEvents((s) => s.events);
   const today = useToday();
+  const ws = getWorkspace();
   if (!child || events.length === 0)
     return (
       <EmptyState
-        title="No plans here yet"
-        text="Start with the big day that's coming up, it takes two minutes."
-        action={<ButtonLink href={child ? '/start?again=1' : '/?landing=1'}>{child ? 'Plan a big day' : 'Go to the start page'}</ButtonLink>}
+        title="No stories here yet"
+        text="Tell us about the big day that's coming up. It takes two minutes, and the first chapter is written for your child."
+        action={<CreateStoryButton workspace={ws} />}
       />
     );
 
@@ -40,7 +43,13 @@ function Home() {
 
   return (
     <div className="flex flex-col gap-6">
-      <h1 className="font-display text-xl font-extrabold">Hi! Here is {child.name}&apos;s plan.</h1>
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <h1 className="font-display text-xl font-extrabold">Hi! Here is {child.name}&apos;s plan.</h1>
+        {ws === 'sample' && <CreateStoryButton workspace={ws} className="sm:w-auto" />}
+      </div>
+      {ws === 'sample' && (
+        <p className="-mt-3 text-sm text-ink-soft">This is a sample family. Make a real story for your own child; the sample stays here for later.</p>
+      )}
       {nearest && <TopSlot event={nearest} child={child} today={today} />}
 
       {upcoming.length > 0 && (
@@ -50,11 +59,11 @@ function Home() {
         </section>
       )}
 
-      <div className="flex flex-col gap-3 sm:flex-row">
-        <ButtonLink href="/start?again=1" variant="secondary" className="sm:w-auto">
-          <Icon name="smile-plus" size={20} /> Plan another big day
-        </ButtonLink>
-      </div>
+      {ws !== 'sample' && (
+        <div className="flex flex-col gap-3 sm:flex-row">
+          <CreateStoryButton workspace={ws} label="Create a new story" className="sm:w-auto" />
+        </div>
+      )}
 
       {child.badges.length > 0 && (
         <section aria-labelledby="badges">

@@ -20,3 +20,15 @@ export async function startSample(): Promise<void> {
 export function exitSample(): void {
   switchWorkspace('real', workspaceHasData('real') ? '/home' : '/?landing=1');
 }
+
+/**
+ * "Create your own story": always in the parent's own space. From the sample it leaves the
+ * sample first, so the sample family stays as it is for the tour.
+ */
+export function ownStoryHref(): string {
+  return workspaceHasData('real') ? '/start?again=1' : '/start';
+}
+
+export function startOwnStory(): void {
+  switchWorkspace('real', ownStoryHref());
+}
