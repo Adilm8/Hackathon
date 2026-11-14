@@ -3,7 +3,7 @@
  * plays a stored take. Browser APIs only, nothing is uploaded (docs/SPEC.md 11.6).
  */
 import { getRecording } from './recordings';
-import type { Narrator } from './types';
+import type { Narrator, SpeakOptions } from './types';
 
 const MIME_CANDIDATES = ['audio/webm;codecs=opus', 'audio/mp4', 'audio/webm', 'audio/ogg;codecs=opus'];
 
@@ -89,7 +89,7 @@ export class RecordedNarrator implements Narrator {
     return typeof Audio !== 'undefined';
   }
 
-  speak(_sentences: string[], opts: { onSentence(i: number): void; onEnd(): void; rate?: number }): void {
+  speak(_sentences: string[], opts: SpeakOptions): void {
     this.stop();
     const token = ++this.token;
     void getRecording(this.key).then((blob) => {

@@ -1,7 +1,8 @@
 'use client';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import * as Dialog from '@radix-ui/react-dialog';
 import { Character } from '@/components/character';
 import { Icon } from '@/components/icons';
 import { PanelView } from '@/components/panel/PanelView';
@@ -23,7 +24,7 @@ import { PagePhotos } from '@/components/photos/PagePhotos';
 import { isOn } from '@/lib/flags';
 import { getRecording, deleteRecording, recordingKey } from '@/lib/speech/recordings';
 import { getWorkspace } from '@/lib/store/workspace';
-import { ListenButton } from './ListenButton';
+import { ListenButton, type ReadPosition } from './ListenButton';
 import { RecordButton } from './RecordButton';
 import { PageView } from './PageView';
 import { ParentCheck } from './ParentCheck';
@@ -44,7 +45,16 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
   const [pageIdx, setPageIdx] = useState(0);
   const [mode, setMode] = useState<Mode>({ kind: 'read' });
   const [busy, setBusy] = useState(false);
-  const [active, setActive] = useState<number | null>(null);
+  const [position, setPosition] = useState<ReadPosition | null>(null);
+  const [step, setStep] = useState(0);
+  const [navTick, setNavTick] = useState(0);
+  const panel = usePanelOpen();
+  const scrollBox = useRef<HTMLDivElement | null>(null);
+  // The voice moves the sentence on screen as it reads.
+  const onProgress = useCallback((p: ReadPosition | null) => {
+    setPosition(p);
+    if (p) setStep(p.sentence);
+  }, []);
   const started = useRef(false);
   const [recs, setRecs] = useState<{ key: string; has: boolean }>({ key: '', has: false });
   const [recTick, setRecTick] = useState(0);
@@ -75,6 +85,12 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
   const night = nightMode === 'on' || (nightMode === 'auto' && (clock.hour() >= 19 || clock.hour() < 6));
   const render = useMemo(() => (t: string) => renderText(t, ctx?.child ?? null), [ctx?.child]);
   const touchX = useRef<number | null>(null);
+  // Night colours cover the whole page, header included, so there is never a dark block on a light page.
+  useEffect(() => {
+    const root = document.documentElement;
+    root.classList.toggle('reader-night', night);
+    return () => root.classList.remove('reader-night');
+  }, [night]);
   const recKey = page ? recordingKey(getWorkspace(), eventId, index, page.id) : '';
   useEffect(() => {
     if (!isOn('parentVoice') || !recKey) return;
@@ -99,14 +115,29 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
   const storyPages = pages.filter((p) => p.kind === 'story');
   const isLast = pageIdx >= pages.length - 1;
 
-  const next = () => {
-    if (!isLast) return setPageIdx(pageIdx + 1);
-    st.markChapterRead(eventId, index, clock.today());
-    setMode({ kind: 'end' });
-    // The end screen is shorter than a page: start it at the top so its title is not under the header.
-    window.scrollTo({ top: 0 });
+  const sentenceCount = page?.sentences.length ?? 1;
+  const lastSentence = step >= sentenceCount - 1;
+  const turn = (i: number, s: number) => {
+    setPageIdx(i);
+    setStep(s);
+    setPosition(null);
+    setNavTick((n) => n + 1); // a tap stops the voice
   };
-  const prev = () => setPageIdx(Math.max(0, pageIdx - 1));
+  // Next shows the page's next sentence, then turns the page; Finish only on the last sentence of the last page.
+  const next = () => {
+    if (!lastSentence) return turn(pageIdx, step + 1);
+    if (!isLast) return turn(pageIdx + 1, 0);
+    st.markChapterRead(eventId, index, clock.today());
+    setNavTick((n) => n + 1);
+    setMode({ kind: 'end' });
+    scrollBox.current?.scrollTo({ top: 0 });
+  };
+  const prev = () => {
+    if (step > 0) return turn(pageIdx, step - 1);
+    if (pageIdx === 0) return;
+    const before = pages[pageIdx - 1];
+    turn(pageIdx - 1, Math.max(0, (before?.sentences.length ?? 1) - 1));
+  };
 
   const ask = async ({ text, buttonId }: { text: string; buttonId?: string }) => {
     if (!page || busy) return;
@@ -140,7 +171,7 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
       // A page rewritten after a question loses its recording (SPEC 11.6).
       void deleteRecording(recordingKey(getWorkspace(), eventId, index, nextStory.id)).catch(() => {});
     }
-    setPageIdx(pageIdx + 1);
+    turn(pageIdx + 1, 0);
   };
 
   const updatedText = (() => {
@@ -150,7 +181,7 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
   })();
 
   const body = (() => {
-    if (mode.kind === 'end') return <ChapterEnd ctx={ctx} index={index} total={total} onReread={() => { setPageIdx(0); setMode({ kind: 'read' }); }} />;
+    if (mode.kind === 'end') return <ChapterEnd ctx={ctx} index={index} total={total} onReread={() => { turn(0, 0); setMode({ kind: 'read' }); }} />;
     if (mode.kind === 'unsafe') return <SafeMessage onBack={() => setMode({ kind: 'read' })} />;
     if (mode.kind === 'check')
       return (
@@ -162,7 +193,7 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
             st.setParentAction(eventId, mode.q.id, edited ? 'edited' : 'shown', sentences);
             st.insertAnswer(eventId, index, { questionId: mode.q.id, afterPageId: mode.q.afterPageId, sentences, source: 'llm' });
             setMode({ kind: 'read' });
-            setPageIdx(pageIdx + 1);
+            turn(pageIdx + 1, 0);
           }}
           onSelf={() => {
             st.setParentAction(eventId, mode.q.id, 'self');
@@ -180,9 +211,10 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
           <p className="text-sm text-ink-soft">Writing tonight&apos;s chapter…</p>
         </div>
       );
+    const photos = isOn('placePhotos') && page.kind === 'story' && storyPages[0] === page && step === 0 && chapter.beats.includes('what_happens') && event.photos.length > 0;
     return (
       <div
-        className="flex flex-col gap-5"
+        className="flex min-h-0 flex-1 flex-col gap-3"
         onTouchStart={(e) => (touchX.current = e.touches[0].clientX)}
         onTouchEnd={(e) => {
           if (touchX.current === null) return;
@@ -191,83 +223,140 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
           if (Math.abs(dx) > 60) (dx < 0 ? next : prev)();
         }}
       >
-        <PageView page={page} character={child.character} render={render} textSize={textSize} night={night} active={active} updatedText={updatedText} />
-        {isOn('placePhotos') && page.kind === 'story' && storyPages[0] === page && chapter.beats.includes('what_happens') && event.photos.length > 0 && (
-          <PagePhotos photos={event.photos} />
-        )}
+        <div className="min-h-0 flex-1">
+          <PageView
+            page={page} character={child.character} render={render} textSize={textSize} night={night}
+            step={step} position={position} updatedText={updatedText}
+            extra={photos ? <PagePhotos photos={event.photos} /> : undefined}
+          />
+        </div>
         <div className="flex items-center gap-2">
-          <Button variant="secondary" onClick={prev} disabled={pageIdx === 0} aria-label="Previous page">
+          <Button variant="secondary" onClick={prev} disabled={pageIdx === 0 && step === 0} aria-label="Previous sentence" className="px-4">
             <Icon name="arrow-right" size={20} className="rotate-180" />
           </Button>
-          <ListenButton key={page.id} sentences={page.sentences.map((s) => renderText(s.text, child, { speak: true, pronunciation: child.pronunciation }))} onSentence={setActive}
+          <ListenButton key={`${page.id}:${navTick}`} from={step}
+            sentences={page.sentences.map((s) => renderText(s.text, child, { speak: true, pronunciation: child.pronunciation }))}
+            shown={page.sentences.map((s) => render(s.text))} onProgress={onProgress}
             recordingKey={isOn('parentVoice') ? recKey : undefined} hasRecording={recs.key === recKey && recs.has} voiceName={child.values.family[0]} />
           <Button className="flex-1" onClick={next}>
-            {isLast ? 'Finish' : page.kind === 'answer' ? 'Back to the story' : 'Next'}
+            {lastSentence && isLast ? 'Finish' : lastSentence && page.kind === 'answer' ? 'Back to the story' : 'Next'}
           </Button>
         </div>
-        {isOn('parentVoice') && (
-          <RecordButton recKey={recKey} has={recs.key === recKey && recs.has} onChange={() => setRecTick((n) => n + 1)} />
-        )}
-        <Dots count={pages.length} current={pageIdx} />
-        {page.kind === 'story' && (
+        {busy ? (
+          <p role="status" className="flex min-h-tap items-center text-sm font-bold text-ink-soft">Thinking about {child.name}&apos;s question…</p>
+        ) : page.kind === 'story' ? (
           <QuestionBar buttons={questionButtonsForPage(template, storyPages.indexOf(page) + 1).map((b) => ({ id: b.id, text: render(b.text) }))} asked={asked} busy={busy} childName={child.name} onAsk={ask} voice={isOn('voiceQuestion') && !!voiceConsent} />
-        )}
-        {busy && <p role="status" className="text-sm font-bold text-ink-soft">Thinking about {child.name}&apos;s question…</p>}
+        ) : null}
       </div>
     );
   })();
 
+  const reading = mode.kind === 'read' && !!page;
+  const panelBody = (
+    <>
+      <PanelView event={event} child={child} template={template} today={ctx.today} compact />
+      <ButtonLink href={`/event/${eventId}/panel`} variant="ghost" className="mt-3">Open the full panel</ButtonLink>
+    </>
+  );
+  const iconBtn = 'inline-flex size-tap shrink-0 items-center justify-center rounded-pill hover:bg-surface-2';
   return (
-    <div className={`${night ? 'reader-night' : ''} -mx-4 -my-6 min-h-[calc(100dvh-8rem)] bg-bg px-4 py-6 text-ink`}>
-      <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[minmax(0,1fr)_360px]">
-        <div className="flex min-w-0 flex-col gap-4">
-          <div className="flex items-center gap-2">
-            <Link href={`/event/${eventId}`} aria-label="Back to the plan" className="inline-flex size-tap items-center justify-center rounded-pill hover:bg-surface-2">
-              <Icon name="door-open" size={22} />
-            </Link>
-            <div className="flex-1">
-              <ProgressBar value={mode.kind === 'end' ? storyPages.length : Math.min(pageIdx + 1, pages.length || 1)} max={Math.max(pages.length, 1)} label={`Chapter ${index} of ${total}, page ${pageIdx + 1}`} />
-            </div>
-            <button
-              type="button"
-              onClick={() => setTextSize(textSize === 'm' ? 'l' : textSize === 'l' ? 'xl' : 'm')}
-              aria-label={`Text size: ${textSize.toUpperCase()}. Tap to change`}
-              className="inline-flex size-tap items-center justify-center rounded-pill font-extrabold hover:bg-surface-2"
-            >
-              Aa
-            </button>
-            <button
-              type="button"
-              onClick={() => useSettings.getState().setNightMode(night ? 'off' : 'on')}
-              aria-label={night ? 'Switch to day colours' : 'Switch to night colours'}
-              className="inline-flex size-tap items-center justify-center rounded-pill hover:bg-surface-2"
-            >
-              <Icon name={night ? 'sun' : 'moon'} size={22} />
-            </button>
+    <div className="flex min-h-0 flex-1 gap-6">
+      <div className="flex min-w-0 flex-1 flex-col gap-2">
+        <div className="flex items-center gap-1 sm:gap-2">
+          <Link href={`/event/${eventId}`} aria-label="Back to the plan" className={iconBtn}>
+            <Icon name="door-open" size={22} />
+          </Link>
+          <div className="min-w-0 flex-1">
+            <p className="truncate text-xs font-bold text-ink-soft">
+              {total === 1 ? 'Quick prep' : `Chapter ${index} of ${total}`} · {chapter.title}
+            </p>
+            <ProgressBar value={mode.kind === 'end' ? storyPages.length : Math.min(pageIdx + 1, pages.length || 1)} max={Math.max(pages.length, 1)} label={`Chapter ${index} of ${total}, page ${pageIdx + 1}`} />
           </div>
-          <p className="text-xs font-bold text-ink-soft">
-            {total === 1 ? 'Quick prep' : `Chapter ${index} of ${total}`} · {chapter.title}
-          </p>
+          <button
+            type="button"
+            onClick={() => setTextSize(textSize === 'm' ? 'l' : textSize === 'l' ? 'xl' : 'm')}
+            aria-label={`Text size: ${textSize.toUpperCase()}. Tap to change`}
+            className={`${iconBtn} font-extrabold`}
+          >
+            Aa
+          </button>
+          <button
+            type="button"
+            onClick={() => useSettings.getState().setNightMode(night ? 'off' : 'on')}
+            aria-label={night ? 'Switch to day colours' : 'Switch to night colours'}
+            className={iconBtn}
+          >
+            <Icon name={night ? 'sun' : 'moon'} size={22} />
+          </button>
+          {isOn('parentVoice') && reading && (
+            <RecordButton compact recKey={recKey} has={recs.key === recKey && recs.has} onChange={() => setRecTick((n) => n + 1)} />
+          )}
+          <button
+            type="button"
+            onClick={() => panel.toggle()}
+            aria-expanded={panel.open}
+            aria-label={`What's on ${child.name}'s mind (parent panel)`}
+            title="Parent panel"
+            className={`${iconBtn} ${panel.open ? 'xl:bg-surface-2' : ''}`}
+          >
+            <Icon name="hand-heart" size={22} />
+          </button>
+        </div>
+        <div ref={scrollBox} key={mode.kind} className={`flex min-h-0 flex-1 flex-col ${reading ? '' : 'overflow-y-auto'}`}>
           {body}
         </div>
-        <aside aria-label="Parent panel" className="room-parent hidden h-fit rounded-card border border-line bg-bg p-5 text-ink lg:block">
-          <PanelView event={event} child={child} template={template} today={ctx.today} compact />
-          <ButtonLink href={`/event/${eventId}/panel`} variant="ghost" className="mt-3">Open the full panel</ButtonLink>
-        </aside>
       </div>
+      {/* Wide screens: a side column that folds away. Narrower screens: a drawer from the right. */}
+      {panel.open && (
+        <aside aria-label="Parent panel" className="hidden w-[340px] shrink-0 overflow-y-auto rounded-card border border-line bg-surface-2 p-5 text-ink xl:block">
+          {panelBody}
+        </aside>
+      )}
+      <Dialog.Root open={panel.drawer} onOpenChange={panel.setDrawer}>
+        <Dialog.Portal>
+          <Dialog.Overlay className="fixed inset-0 z-40 bg-black/40 xl:hidden" />
+          <Dialog.Content className="fixed inset-y-0 right-0 z-50 w-[min(92vw,380px)] overflow-y-auto border-l border-line bg-bg p-5 text-ink shadow-pop xl:hidden">
+            <Dialog.Title className="sr-only">Parent panel</Dialog.Title>
+            <Dialog.Description className="sr-only">What&apos;s on {child.name}&apos;s mind, for the parent.</Dialog.Description>
+            <Dialog.Close aria-label="Close the parent panel" className={`${iconBtn} float-right -mr-2 -mt-2 text-2xl font-bold`}>
+              <span aria-hidden>×</span>
+            </Dialog.Close>
+            {panelBody}
+          </Dialog.Content>
+        </Dialog.Portal>
+      </Dialog.Root>
     </div>
   );
 }
 
-function Dots({ count, current }: { count: number; current: number }) {
-  if (count <= 1) return null;
-  return (
-    <div aria-hidden className="flex justify-center gap-2">
-      {Array.from({ length: count }, (_, i) => (
-        <span key={i} className={`h-2.5 rounded-pill transition-all duration-fast ${i === current ? 'w-6 bg-primary' : 'w-2.5 bg-line'}`} />
-      ))}
-    </div>
-  );
+const PANEL_KEY = 'bds:ui:reader-panel';
+
+/**
+ * The parent panel next to the reader: on screens 1280 px and wider it is a side column that
+ * stays open or closed as the parent left it; on narrower screens the same button opens a drawer.
+ */
+function usePanelOpen() {
+  // The reader renders only in the browser (after the stores hydrate), so storage is readable here.
+  const [open, setOpen] = useState(() => {
+    try {
+      return window.localStorage.getItem(PANEL_KEY) !== '0';
+    } catch {
+      return true;
+    }
+  });
+  const [drawer, setDrawer] = useState(false);
+  const toggle = () => {
+    if (!window.matchMedia('(min-width: 1280px)').matches) return setDrawer(true);
+    setOpen((v) => {
+      try {
+        window.localStorage.setItem(PANEL_KEY, v ? '0' : '1');
+      } catch {
+        /* ignore */
+      }
+      return !v;
+    });
+  };
+  return { open, drawer, setDrawer, toggle };
 }
 
 function ChapterEnd({ ctx, index, total, onReread }: { ctx: NonNullable<ReturnType<typeof useEventCtx>>; index: number; total: number; onReread: () => void }) {
