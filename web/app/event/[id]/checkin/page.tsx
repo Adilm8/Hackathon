@@ -1,4 +1,5 @@
 'use client';
+import { getWorkspace } from '@/lib/store/workspace';
 import { useParams, useRouter } from 'next/navigation';
 import { useMemo, useState } from 'react';
 import { Character } from '@/components/character';
@@ -27,7 +28,8 @@ export default function CheckinPage() {
 function CheckinScreen({ id }: { id: string }) {
   const ctx = useEventCtx(id);
   if (!ctx) return <PlanNotFound />;
-  if (ctx.today < ctx.event.date)
+  // Demo (sample family): the check-in opens early so the jury can see it and the badge.
+  if (ctx.today < ctx.event.date && getWorkspace() !== 'sample')
     return (
       <div className="mx-auto flex max-w-md flex-col items-center gap-4 py-12 text-center">
         <Character character={ctx.child.character} mood="calm" size={120} decorative />

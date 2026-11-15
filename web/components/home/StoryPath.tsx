@@ -42,6 +42,14 @@ export function StoryPath({ nodes, child, onLocked }: { nodes: PathNode[]; child
                     Read now <Icon name="arrow-right" size={16} />
                   </button>
                 )}
+                {n.demo && n.href && (
+                  <Link
+                    href={n.href}
+                    className="mt-1 inline-flex min-h-tap items-center gap-1 whitespace-nowrap rounded-pill px-3 text-sm font-extrabold text-primary-text hover:bg-surface-2"
+                  >
+                    Open in demo <Icon name="arrow-right" size={16} />
+                  </Link>
+                )}
               </div>
               {isCur && (
                 <div

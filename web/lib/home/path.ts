@@ -24,6 +24,8 @@ export interface PathNode {
   chapter?: number;
   /** A locked chapter the parent may open now, skipping the waiting days. */
   early?: boolean;
+  /** Demo only: a future step that opens right away, so the jury can jump ahead. */
+  demo?: boolean;
 }
 
 /** The plan of one big day now lives on the home page: /event/<id> redirects here. */
@@ -31,9 +33,23 @@ export function planHref(eventId: string): string {
   return `/home?event=${encodeURIComponent(eventId)}`;
 }
 
-export function buildPath(event: BigEvent, today: ISODate, hasAccess: boolean): PathNode[] {
+/**
+ * `demo` (the sample family): every future step is clickable at once, so the jury can open later
+ * chapters, the big day, the check-in and the badge without waiting. Real families keep the locks.
+ */
+export function buildPath(event: BigEvent, today: ISODate, hasAccess: boolean, demo = false): PathNode[] {
   const base = `/event/${event.id}`;
   const phase = eventPhase(event, today);
+  const nodes = buildRealPath(event, today, hasAccess, base, phase);
+  if (!demo) return nodes;
+  return nodes.map((n) => {
+    if (n.state !== 'locked') return n;
+    const href = n.kind === 'chapter' ? `${base}/read/${n.chapter}` : `${base}/${n.kind}`;
+    return { ...n, href, early: false, demo: true };
+  });
+}
+
+function buildRealPath(event: BigEvent, today: ISODate, hasAccess: boolean, base: string, phase: ReturnType<typeof eventPhase>): PathNode[] {
   const nodes: PathNode[] = event.chapters.map((ch) => {
     const s = chapterStatus(ch, event, today, hasAccess);
     const state: NodeState = s === 'read' ? 'done' : s === 'needs_pay' ? 'pay' : s === 'locked' ? 'locked' : 'open';
