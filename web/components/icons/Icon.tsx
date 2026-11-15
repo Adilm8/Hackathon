@@ -1,6 +1,7 @@
 import type { SVGProps } from 'react';
 import type { EventType } from '@/lib/engine/types';
 import { LUCIDE } from './lucide-data';
+import { EVENT_TONE, ICON_TONE, TONES, toneBg, toneFill, toneInk, type Tone } from './tones';
 
 export type IconName =
   | 'stethoscope' | 'school' | 'plane-takeoff' | 'baby' | 'scissors' | 'syringe' | 'sparkles'
@@ -22,10 +23,31 @@ export interface IconProps extends Omit<SVGProps<SVGSVGElement>, 'name'> {
   size?: number;
   /** Accessible label; without it the icon is hidden from screen readers. */
   label?: string;
+  /**
+   * Coloured (duotone) look: a tone name, a hex colour, or 'auto' for the icon's default tone.
+   * Without it the icon is a plain line icon in `currentColor`.
+   */
+  tone?: Tone | 'auto' | (string & {});
 }
 
-/** Lucide stroke icon (ISC licence, see lucide-data.ts). Colour follows `currentColor`. */
-export function Icon({ name, size = 24, label, strokeWidth = 2, ...rest }: IconProps) {
+/** Resolves a tone prop to a hex colour, or null for a plain icon. */
+export function resolveTone(name: string, tone: IconProps['tone']): string | null {
+  if (!tone) return null;
+  if (tone === 'auto') return TONES[ICON_TONE[name] ?? 'blue'];
+  if (tone in TONES) return TONES[tone as Tone];
+  return tone;
+}
+
+/**
+ * Lucide stroke icon (ISC licence, see lucide-data.ts). Colour follows `currentColor`; with
+ * `tone` the shapes get a soft colour fill under a coloured outline (works in light and night).
+ */
+export function Icon({ name, size = 24, label, strokeWidth = 2, tone, ...rest }: IconProps) {
+  const inner = LUCIDE[name] ?? '';
+  const hex = resolveTone(name, tone);
+  const html = hex
+    ? `<g fill="${toneFill(hex)}" stroke="none">${inner}</g><g stroke="${toneInk(hex)}">${inner}</g>`
+    : inner;
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -42,8 +64,28 @@ export function Icon({ name, size = 24, label, strokeWidth = 2, ...rest }: IconP
       aria-hidden={label ? undefined : true}
       focusable="false"
       {...rest}
-      dangerouslySetInnerHTML={{ __html: LUCIDE[name] ?? '' }}
+      dangerouslySetInnerHTML={{ __html: html }}
     />
+  );
+}
+
+export interface IconChipProps extends IconProps {
+  /** Diameter of the round chip in px (default: icon size × 1.75). */
+  chip?: number;
+  className?: string;
+}
+
+/** A coloured icon on a soft round background of the same hue. */
+export function IconChip({ name, size = 24, chip, tone = 'auto', className = '', ...rest }: IconChipProps) {
+  const hex = resolveTone(name, tone) ?? TONES.blue;
+  const d = chip ?? Math.round(size * 1.75);
+  return (
+    <span
+      className={`inline-flex shrink-0 items-center justify-center rounded-pill ${className}`}
+      style={{ width: d, height: d, background: toneBg(hex) }}
+    >
+      <Icon name={name} size={size} tone={hex} {...rest} />
+    </span>
   );
 }
 
@@ -129,6 +171,11 @@ export interface EventIconProps extends Omit<IconProps, 'name'> {
   type: EventType;
 }
 
-export function EventIcon({ type, label, ...rest }: EventIconProps) {
-  return <Icon name={EVENT_ICON[type]} label={label} {...rest} />;
+export function EventIcon({ type, label, tone, ...rest }: EventIconProps) {
+  return <Icon name={EVENT_ICON[type]} label={label} tone={tone === 'auto' ? EVENT_TONE[type] : tone} {...rest} />;
+}
+
+/** The event's icon in its own colour on a soft round chip. */
+export function EventChip({ type, size = 24, chip, className }: { type: EventType; size?: number; chip?: number; className?: string }) {
+  return <IconChip name={EVENT_ICON[type]} tone={EVENT_TONE[type]} size={size} chip={chip} className={className} />;
 }

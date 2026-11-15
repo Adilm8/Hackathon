@@ -4,7 +4,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { Suspense, useState } from 'react';
 import { Character } from '@/components/character';
 import { BadgeArt } from '@/components/badges';
-import { EVENT_LABEL, EventIcon, Icon } from '@/components/icons';
+import { EVENT_LABEL, EventChip, EventIcon, Icon, IconChip } from '@/components/icons';
 import { Chip } from '@/components/ui/Chip';
 import { achievementSummary } from '@/lib/home/achievements';
 import { SideNav, TabBar, type HomeTab } from '@/components/home/HomeNav';
@@ -93,10 +93,10 @@ function Home({ tab, eventParam }: { tab: HomeTab; eventParam: string | null }) 
       {tab === 'path' && <ReminderBanner events={events} today={today} />}
       <div className="flex items-center justify-between gap-2 lg:hidden">
         <Link href="/home?tab=child" className="inline-flex min-h-tap items-center gap-2 min-w-0 rounded-pill border border-line bg-surface px-3 text-sm font-bold">
-          <Icon name="smile" size={18} className="shrink-0" /> <span className="truncate">{child.name}</span>
+          <Icon name="smile" size={18} tone="auto" className="shrink-0" /> <span className="truncate">{child.name}</span>
         </Link>
         <Link href={`/event/${chosen.id}/panel`} className="inline-flex min-h-tap items-center gap-1.5 rounded-pill border border-line bg-surface px-3 text-sm font-extrabold">
-          <Icon name="hand-heart" size={16} /> Parent panel
+          <Icon name="hand-heart" size={16} tone="auto" /> Parent panel
         </Link>
       </div>
       <div className="grid gap-6 lg:grid-cols-[210px_minmax(0,1fr)] xl:grid-cols-[210px_minmax(0,1fr)_300px]">
@@ -155,7 +155,7 @@ function PathTab({ event, events, child, today, hasAccess }: { event: BigEvent; 
               aria-current={e.id === event.id ? 'page' : undefined}
               className={`inline-flex min-h-tap max-w-[16rem] items-center gap-2 rounded-pill border-2 px-3 text-sm font-bold ${e.id === event.id ? 'border-primary bg-surface-2' : 'border-line bg-surface'}`}
             >
-              <EventIcon type={e.type} size={18} className="shrink-0" /> <span className="truncate">{eventLabel(e, getTemplate(e.type))}</span>
+              <EventIcon type={e.type} size={18} tone="auto" className="shrink-0" /> <span className="truncate">{eventLabel(e, getTemplate(e.type))}</span>
             </Link>
           ))}
         </nav>
@@ -280,9 +280,13 @@ function Achievements({ child, events }: { child: ChildProfile; events: BigEvent
         <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3">
           {a.journey.map((x) => (
             <li key={x.id} className={`flex items-center gap-3 rounded-card border-2 p-3 text-sm ${x.earned ? 'border-primary/40 bg-surface' : 'border-dashed border-line text-ink-soft'}`}>
-              <span className={`flex size-10 shrink-0 items-center justify-center rounded-pill ${x.earned ? 'bg-accent text-accent-ink' : 'bg-surface-2'}`} aria-hidden>
-                <Icon name={x.icon} size={20} />
-              </span>
+              {x.earned ? (
+                <IconChip name={x.icon} size={22} chip={40} />
+              ) : (
+                <span className="flex size-10 shrink-0 items-center justify-center rounded-pill bg-surface-2" aria-hidden>
+                  <Icon name={x.icon} size={20} />
+                </span>
+              )}
               <span className="flex min-w-0 flex-col">
                 <span className="font-bold leading-tight">{x.name}</span>
                 <span className="text-xs">{x.earned ? x.how : `${x.how} · ${x.value}/${x.goal}`}</span>
@@ -376,7 +380,7 @@ function EventRow({ event, today }: { event: BigEvent; today: string }) {
   const phase = eventPhase(event, today);
   return (
     <Link href={`/home?event=${event.id}`} className="flex min-h-tap items-center gap-3 rounded-card border border-line bg-surface p-4 shadow-step hover:border-ink-soft/40">
-      <span className="flex size-12 items-center justify-center rounded-pill bg-surface-2"><EventIcon type={event.type} size={26} /></span>
+      <EventChip type={event.type} size={26} chip={48} />
       <span className="flex min-w-0 flex-1 flex-col">
         <span className="truncate font-extrabold">{eventLabel(event, t)}</span>
         <span className="text-xs text-ink-soft">
@@ -429,7 +433,7 @@ function LibraryRow({ item, events }: { item: LibraryItem; events: BigEvent[] })
   return (
     <div className="flex items-center gap-2 rounded-card border border-line bg-surface p-3 shadow-step">
       <Link href={`/event/${encodeURIComponent(item.eventId)}/read/${item.chapter}`} className="flex min-h-tap flex-1 items-center gap-3 rounded-card hover:bg-surface-2">
-        <span className="flex size-12 shrink-0 items-center justify-center rounded-pill bg-surface-2"><EventIcon type={item.eventType} size={24} /></span>
+        <EventChip type={item.eventType} size={24} chip={48} />
         <span className="flex min-w-0 flex-1 flex-col">
           <span className="truncate font-extrabold">{item.title || `Chapter ${item.chapter}`}</span>
           <span className="text-xs text-ink-soft">{label} · chapter {item.chapter} · read {dateLabel(item.readOn)}</span>

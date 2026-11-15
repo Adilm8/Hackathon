@@ -6,7 +6,7 @@
  * - API calls are never cached (family data stays in the browser store and the server).
  * Bump VERSION to drop old caches.
  */
-const VERSION = 'bds-v3';
+const VERSION = 'bds-v4';
 const STATIC = /^\/(_next\/static|icons|scenes|avatar)\//;
 
 self.addEventListener('install', (e) => {

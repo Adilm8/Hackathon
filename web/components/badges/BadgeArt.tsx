@@ -1,47 +1,11 @@
 import type { EventType } from '@/lib/engine/types';
 import { LUCIDE } from '@/components/icons/lucide-data';
 import { EVENT_ICON } from '@/components/icons/Icon';
+import { EVENT_TONE } from '@/components/icons/tones';
 import { INK, mix } from '@/components/character/palette';
 
-/** Medal colours per event type; the gold centre stays the shared "I'm ready" accent. */
-const RIBBON: Record<EventType, string> = {
-  dentist: '#5b6cff',
-  school: '#e5565b',
-  flight: '#3dbe8b',
-  sibling: '#9b6be8',
-  haircut: '#ff8a3d',
-  shot: '#2fa6c9',
-  doctor: '#3aa0e0',
-  blood_test: '#e0527a',
-  hospital: '#4fb3a9',
-  moving: '#c98a3d',
-  sleepover: '#5a5fc9',
-  babysitter: '#d46bb3',
-  swimming: '#2bb5d6',
-  party: '#f06c9b',
-  tooth_loss: '#f2a93b',
-  surgery: '#4f8fd9',
-  potty: '#7cc36b',
-  daycare: '#f07a5a',
-  new_school: '#d9534f',
-  camp: '#4caf7a',
-  sports: '#e8a33d',
-  performance: '#b05fd6',
-  new_class: '#5aa9e6',
-  bike: '#3fae9b',
-  road_trip: '#6b8bd6',
-  holiday: '#e0654f',
-  halloween: '#f08a24',
-  playdate: '#e86fa0',
-  eye_exam: '#3a9bd9',
-  big_bed: '#7a6be0',
-  test_day: '#5c7fb8',
-  two_homes: '#c77d5a',
-  new_pet: '#d99a3d',
-  pet_loss: '#8a7fb8',
-  parent_trip: '#4f9fa8',
-  other: '#6b6a7b',
-};
+/** Medal colours per event type (shared with the coloured icons). */
+const RIBBON = EVENT_TONE;
 
 /** Suggested labels; the template's own `badge.label` (SPEC 7) wins when it exists. */
 export const BADGE_LABEL: Record<EventType, string> = {

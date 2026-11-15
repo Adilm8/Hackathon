@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { BadgeArt } from '@/components/badges';
-import { Icon, type IconName } from '@/components/icons';
+import { Icon, IconChip, type IconName } from '@/components/icons';
 import { ButtonLink } from '@/components/ui/Button';
 import { CreateStoryButton } from '@/components/ui/CreateStoryButton';
 import type { BigEvent, ChildProfile, Workspace } from '@/lib/engine/types';
@@ -31,7 +31,7 @@ export function PlanCard({ event, hasAccess, label }: { event: BigEvent | null; 
           <h2 id="plan-h" className="text-lg font-extrabold leading-tight">Unlock the whole story</h2>
           <p className="mt-1 text-sm text-ink-soft">Chapters 2 to 5, the &quot;first, then&quot; card and the badge for {label.toLowerCase()}. Gold covers every big day and adds painted pictures and premium voices.</p>
         </div>
-        <Icon name="crown" size={40} className="shrink-0 text-accent" />
+        <Icon name="crown" size={40} tone="yellow" className="shrink-0" />
       </div>
       <ButtonLink href={`/event/${event.id}/paywall`} className="w-full">See plans</ButtonLink>
     </section>
@@ -48,9 +48,11 @@ export function StreakCard({ streak, week, child }: { streak: Streak; week: Week
         <Link href="/home?tab=badges" className="-mr-2 inline-flex min-h-tap items-center rounded-pill px-2 text-sm font-extrabold text-primary-text hover:bg-surface-2">All badges</Link>
       </div>
       <div className="flex items-center gap-3">
-        <span className={`flex size-12 items-center justify-center rounded-pill ${n > 0 ? 'bg-accent text-accent-ink' : 'bg-surface-2 text-ink-soft'}`}>
-          <Icon name="flame" size={28} />
-        </span>
+        {n > 0 ? (
+          <IconChip name="flame" size={28} chip={48} />
+        ) : (
+          <span className="flex size-12 items-center justify-center rounded-pill bg-surface-2 text-ink-soft"><Icon name="flame" size={28} /></span>
+        )}
         <p className="flex-1 text-sm">
           {n > 0 ? (
             <><strong className="text-lg">{n}</strong> {n === 1 ? 'evening' : 'evenings'} in a row. Keep it going tonight.</>
@@ -113,7 +115,7 @@ export function LevelCard({ level, name }: { level: Level; name: string }) {
   return (
     <section className={`${card} flex flex-col gap-3`} aria-labelledby="level-h">
       <div className="flex items-center gap-3">
-        <span className="flex size-12 shrink-0 items-center justify-center rounded-pill bg-primary text-primary-ink"><Icon name="star" size={26} /></span>
+        <IconChip name="star" size={28} chip={48} />
         <div className="flex-1">
           <h2 id="level-h" className="text-lg font-extrabold leading-tight">{level.name}</h2>
           <p className="text-sm font-bold text-ink-soft">Level {level.number}</p>
@@ -152,7 +154,7 @@ export function WeekReport({ week, name }: { week: WeekSummary; name: string }) 
       <ul className="grid grid-cols-2 gap-3">
         {items.map((i) => (
           <li key={i.label} className="flex items-center gap-3 rounded-card bg-surface-2 p-3">
-            <Icon name={i.icon} size={22} className="shrink-0 text-primary-text" />
+            <Icon name={i.icon} size={24} tone="auto" className="shrink-0" />
             <span className="flex flex-col leading-tight"><strong className="text-lg">{i.value}</strong><span className="text-xs text-ink-soft">{i.label}</span></span>
           </li>
         ))}
@@ -182,9 +184,11 @@ export function TasksCard({ tasks }: { tasks: DayTask[] }) {
         {tasks.map((t) => (
           <li key={t.key}>
             <Link href={t.href ?? '#'} className="flex min-h-tap items-center gap-3 rounded-card hover:bg-surface-2">
-              <span className={`flex size-9 shrink-0 items-center justify-center rounded-pill ${t.done ? 'bg-success text-success-ink' : 'bg-surface-2 text-primary-text'}`}>
-                <Icon name={t.done ? 'check' : 'target'} size={20} />
-              </span>
+              {t.done ? (
+                <span className="flex size-9 shrink-0 items-center justify-center rounded-pill bg-success text-success-ink"><Icon name="check" size={20} /></span>
+              ) : (
+                <IconChip name="target" size={20} chip={36} />
+              )}
               <span className="flex flex-1 flex-col gap-1">
                 <span className={`text-sm font-bold ${t.done ? 'text-ink-soft line-through' : ''}`}>{t.label}</span>
                 <span className="h-2 overflow-hidden rounded-pill bg-surface-2" aria-hidden>
@@ -215,7 +219,7 @@ export function CreateCard({ workspace }: { workspace: Workspace }) {
 export function RoutineCard({ name }: { name: string }) {
   return (
     <Link href="/routine" className={`${card} flex items-center gap-3 hover:border-ink-soft/40`}>
-      <span className="flex size-12 shrink-0 items-center justify-center rounded-pill bg-surface-2 text-primary-text"><Icon name="moon-star" size={26} /></span>
+      <IconChip name="moon-star" size={26} chip={48} />
       <span className="flex flex-1 flex-col">
         <span className="font-extrabold">Bedtime routine</span>
         <span className="text-xs text-ink-soft">Bath, teeth, pyjamas, story, lights: a calm timer for {name}&apos;s evening.</span>
