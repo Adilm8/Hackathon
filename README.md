@@ -110,6 +110,11 @@ Sarah's son Max is 4. On Friday he sees the dentist, and last time he screamed i
 </table>
 
 <p align="center">
+  <img src="docs/media/gifs/cartoon-mode.gif" width="640" alt="Cartoon mode: the chapter plays as a picture-book cartoon"><br>
+  <sub>Cartoon mode (Gold): painted pictures with gentle motion, a quiet lullaby and the storyteller voice</sub>
+</p>
+
+<p align="center">
   <img src="docs/media/screens/laptop-03-reader.png" width="720" alt="Reader on a laptop with the parent panel"><br>
   <sub>Reader on a laptop, with the parent panel on the right</sub>
 </p>
