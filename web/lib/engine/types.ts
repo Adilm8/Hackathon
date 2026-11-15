@@ -184,6 +184,7 @@ export interface Checkin {
   helped: string[];               // technique ids
   didntHelp: string[];
   custom?: string;                // <= 60 chars
+  brave?: string[];               // brave-moment sticker ids the parent chose, <= 2 (lib/home/achievements.ts)
   savedOn: ISODate;
 }
 

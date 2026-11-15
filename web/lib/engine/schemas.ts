@@ -204,6 +204,7 @@ export const CheckinSchema = z.strictObject({
   helped: z.array(z.string().max(80)).max(20),
   didntHelp: z.array(z.string().max(80)).max(20),
   custom: z.string().max(60).optional(),
+  brave: z.array(z.string().max(40)).max(2).optional(),
   savedOn: ISODateSchema,
 });
 

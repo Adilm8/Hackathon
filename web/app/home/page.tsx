@@ -4,7 +4,9 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { Suspense } from 'react';
 import { Character } from '@/components/character';
 import { BadgeArt } from '@/components/badges';
-import { EventIcon, Icon } from '@/components/icons';
+import { EVENT_LABEL, EventIcon, Icon } from '@/components/icons';
+import { Chip } from '@/components/ui/Chip';
+import { achievementSummary } from '@/lib/home/achievements';
 import { SideNav, TabBar, type HomeTab } from '@/components/home/HomeNav';
 import { CreateCard, LevelCard, RoutineCard, PlanCard, StreakCard, TasksCard, WeekReport } from '@/components/home/SideCards';
 import { StoryPath } from '@/components/home/StoryPath';
@@ -216,6 +218,74 @@ function BadgesTab({ child, events, today }: { child: ChildProfile; events: BigE
           </li>
         ))}
       </ul>
+      <Achievements child={child} events={events} />
+    </>
+  );
+}
+
+const TIER_LABEL = { bronze: 'Bronze', silver: 'Silver', gold: 'Gold' } as const;
+
+function Achievements({ child, events }: { child: ChildProfile; events: BigEvent[] }) {
+  const a = achievementSummary(events, child);
+  return (
+    <>
+      <section aria-labelledby="ach-journey" className="flex flex-col gap-3">
+        <h2 id="ach-journey" className="font-display text-lg font-extrabold">Achievements <span className="text-sm font-bold text-ink-soft">{a.earned} of {a.total}</span></h2>
+        <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+          {a.journey.map((x) => (
+            <li key={x.id} className={`flex items-center gap-3 rounded-card border-2 p-3 text-sm ${x.earned ? 'border-primary/40 bg-surface' : 'border-dashed border-line text-ink-soft'}`}>
+              <span className={`flex size-10 shrink-0 items-center justify-center rounded-pill ${x.earned ? 'bg-accent text-accent-ink' : 'bg-surface-2'}`} aria-hidden>
+                <Icon name={x.icon} size={20} />
+              </span>
+              <span className="flex min-w-0 flex-col">
+                <span className="font-bold leading-tight">{x.name}</span>
+                <span className="text-xs">{x.earned ? x.how : `${x.how} · ${x.value}/${x.goal}`}</span>
+              </span>
+              <span className="sr-only">{x.earned ? 'earned' : 'not earned yet'}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section aria-labelledby="ach-sets" className="flex flex-col gap-3">
+        <h2 id="ach-sets" className="font-display text-lg font-extrabold">Collections</h2>
+        <ul className="flex flex-col gap-3">
+          {a.collections.map((c) => (
+            <li key={c.id} className="rounded-card border-2 border-line bg-surface p-3">
+              <p className="mb-2 text-sm font-bold">{c.name} <span className="text-ink-soft">{c.have.length}/{c.types.length}{c.done ? ' · complete!' : ''}</span></p>
+              <ul className="flex flex-wrap gap-2" aria-label={`${c.name} badges`}>
+                {c.types.map((t) => (
+                  <li key={t} title={EVENT_LABEL[t]}>
+                    <BadgeArt eventType={t} earned={c.have.includes(t)} size={44} label={`${EVENT_LABEL[t]}${c.have.includes(t) ? '' : ', not earned yet'}`} />
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {a.levels.some((l) => l.count > 1) && (
+        <section aria-labelledby="ach-levels" className="flex flex-col gap-2">
+          <h2 id="ach-levels" className="font-display text-lg font-extrabold">Badge levels</h2>
+          <ul className="flex flex-wrap gap-2">
+            {a.levels.filter((l) => l.count > 1).map((l) => (
+              <li key={l.eventType}><Chip tone={l.tier === 'gold' ? 'accent' : 'neutral'}>{EVENT_LABEL[l.eventType]} ×{l.count} · {TIER_LABEL[l.tier]}</Chip></li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {a.brave.length > 0 && (
+        <section aria-labelledby="ach-brave" className="flex flex-col gap-2">
+          <h2 id="ach-brave" className="font-display text-lg font-extrabold">Brave moment stickers</h2>
+          <ul className="flex flex-wrap gap-2">
+            {a.brave.map((m) => (
+              <li key={m.id}><Chip tone="success"><Icon name={m.icon} size={14} /> {m.label}{m.count > 1 ? ` ×${m.count}` : ''}</Chip></li>
+            ))}
+          </ul>
+        </section>
+      )}
     </>
   );
 }
