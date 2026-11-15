@@ -28,6 +28,7 @@ import { getRecording, deleteRecording, recordingKey } from '@/lib/speech/record
 import { getWorkspace } from '@/lib/store/workspace';
 import { isNight } from '@/lib/theme';
 import { useImmersive } from '@/lib/reader/immersive';
+import { LEAVE_READER_EVENT } from '@/lib/reader/gate';
 import { ListenButton, type ReadPosition } from './ListenButton';
 import { RecordButton } from './RecordButton';
 import { VoicePicker } from './VoicePicker';
@@ -63,6 +64,15 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
   // leaving the reader still does (the door button).
   const immersive = useImmersive();
   const { guard, gate } = useParentGate();
+  // The header logo leaves the reader too, through the same grown-up gate as the door button.
+  useEffect(() => {
+    const leave = (e: Event) => {
+      const href = (e as CustomEvent<string>).detail || '/home';
+      guard(() => router.push(href));
+    };
+    window.addEventListener(LEAVE_READER_EVENT, leave);
+    return () => window.removeEventListener(LEAVE_READER_EVENT, leave);
+  }, [guard, router]);
   const scrollBox = useRef<HTMLDivElement | null>(null);
   // The voice moves the sentence on screen as it reads.
   const onProgress = useCallback((p: ReadPosition | null) => {

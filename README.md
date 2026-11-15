@@ -40,3 +40,5 @@ Open the site and tap **Try a sample**. You get your own sample family (Max, 4, 
 6. Jump to after the event: the check-in, the badge, and the next big day with the form filled in.
 
 **Evening 2**, **Event day** and **After the event** move the app's clock; **Reset demo** starts a clean sample for the next person.
+
+To look around the whole app instead, tap **Or explore the whole app with sample data** under the buttons: the same sample family opens on the home page, with Max and his sister Mia (her school plan started last night, so her path, streak and library already have something in them). The Demo bar's **More to explore** links lead to the home path, library, badges, the story friend, storyteller voices and the parent's own voice, the bedtime routine and the colour palettes. The sample is kept apart from a real family's data, and the **Sample data ×** badge leaves it.

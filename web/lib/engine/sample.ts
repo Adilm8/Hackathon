@@ -94,8 +94,10 @@ export function buildSampleFamily(today: ISODate, opts: { nowMs?: number } = {})
 
 /**
  * Max's big sister in the sample, so the jury can try switching children: Mia, 6, a fox,
- * starting a new school in a week (fears: separation and other children). Kept on the
- * device next to Max (lib/store/children.ts); her big day is in the same events list.
+ * starting a new school in a week (fears: separation and other children). Her plan started
+ * last night and chapter 1 is already read with one question answered, so her home shows a
+ * path in progress, a streak and a story in the library. Kept on the device next to Max
+ * (lib/store/children.ts); her big day is in the same events list.
  */
 export const SAMPLE_SIBLING_IDS = { child: 'sample-mia', event: 'sample-mia-school' } as const;
 
@@ -112,9 +114,27 @@ export function buildSampleSibling(today: ISODate): { child: ChildProfile; event
     badges: [],
     createdOn: addDays(today, -2),
   };
-  const event = createEvent(
-    { id: SAMPLE_SIBLING_IDS.event, childId: child.id, type: 'school', date: addDays(today, 7), today, fears: ['separation', 'social'] },
-    getTemplate('school'),
+  const template = getTemplate('school');
+  const yesterday = addDays(today, -1);
+  let event = createEvent(
+    { id: SAMPLE_SIBLING_IDS.event, childId: child.id, type: 'school', date: addDays(today, 7), today: yesterday, fears: ['separation', 'social'] },
+    template,
   );
+  const first = event.chapters.find((c) => c.index === 1);
+  if (first) {
+    const fb = fallbackChapter(template, first, child.styleMode, child.age);
+    event = applyGeneratedChapter(event, 1, { ...fb, source: 'fallback' }, template, yesterday);
+    const afterPageId = event.chapters.find((c) => c.index === 1)?.pages[0]?.id;
+    if (afterPageId) {
+      const res = recordQuestion(
+        event,
+        { id: 'sample-q-school-1', chapter: 1, afterPageId, text: 'What if nobody plays with me?', source: 'button', buttonId: 'no_friends', category: 'on_topic' },
+        yesterday,
+        template,
+      );
+      if (res.ok) event = setQuestionAnswer(res.event, res.question.id, fallbackAnswer(template, 'no_friends'));
+    }
+    event = markChapterRead(event, 1, yesterday);
+  }
   return { child, event };
 }
