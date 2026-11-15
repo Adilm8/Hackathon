@@ -46,7 +46,7 @@ export function AppShell({
   const logoClass = 'inline-flex min-h-tap items-center whitespace-nowrap font-display text-base font-extrabold sm:text-lg';
   return (
     <div data-room={room} className={`flex flex-col bg-bg text-ink ${fit ? 'h-dvh overflow-hidden' : 'min-h-dvh'}`}>
-      <header className="no-print sticky top-0 z-20 border-b border-line bg-bg/95 backdrop-blur">
+      <header data-app-chrome className="no-print sticky top-0 z-20 border-b border-line bg-bg/95 backdrop-blur">
         <div className={`mx-auto flex h-14 items-center gap-3 px-4 ${wide ? 'max-w-6xl' : 'max-w-5xl'}`}>
           {childMode ? (
             <span className={logoClass}>Big Day Stories</span>

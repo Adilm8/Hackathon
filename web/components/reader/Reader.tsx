@@ -27,6 +27,7 @@ import { isOn } from '@/lib/flags';
 import { getRecording, deleteRecording, recordingKey } from '@/lib/speech/recordings';
 import { getWorkspace } from '@/lib/store/workspace';
 import { isNight } from '@/lib/theme';
+import { useImmersive } from '@/lib/reader/immersive';
 import { ListenButton, type ReadPosition } from './ListenButton';
 import { RecordButton } from './RecordButton';
 import { PageView } from './PageView';
@@ -57,6 +58,9 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
   const [autoListen, setAutoListen] = useState(false);
   const readOn = usePrefs((p) => p.readOn);
   const panel = usePanelOpen();
+  // Full screen: only the story on screen (lib/reader/immersive.ts). Leaving it needs no grown-up;
+  // leaving the reader still does (the door button).
+  const immersive = useImmersive();
   const { guard, gate } = useParentGate();
   const scrollBox = useRef<HTMLDivElement | null>(null);
   // The voice moves the sentence on screen as it reads.
@@ -318,10 +322,21 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
           >
             <Icon name={night ? 'sun' : 'moon'} size={22} />
           </button>
-          {isOn('parentVoice') && reading && (
+          <button
+            type="button"
+            onClick={immersive.toggle}
+            aria-pressed={immersive.on}
+            aria-label={immersive.on ? 'Leave full screen' : 'Full screen'}
+            title={immersive.on ? 'Leave full screen' : 'Full screen'}
+            className={iconBtn}
+          >
+            <Icon name={immersive.on ? 'minimize' : 'maximize'} size={22} />
+          </button>
+          {isOn('parentVoice') && reading && !immersive.on && (
             <RecordButton compact recKey={recKey} has={recs.key === recKey && recs.has} onChange={() => setRecTick((n) => n + 1)} />
           )}
-          <button
+          {/* Parent tools stay out of the child's full screen. */}
+          {!immersive.on && <button
             type="button"
             onClick={() => (panel.closing() ? panel.toggle() : guard(() => panel.toggle()))}
             aria-expanded={panel.open}
@@ -330,14 +345,14 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
             className={`${iconBtn} ${panel.open ? 'xl:bg-surface-2' : ''}`}
           >
             <Icon name="hand-heart" size={22} />
-          </button>
+          </button>}
         </div>
         <div ref={scrollBox} key={mode.kind} className={`flex min-h-0 flex-1 flex-col ${reading ? '' : 'overflow-y-auto'}`}>
           {body}
         </div>
       </div>
       {/* Wide screens: a side column that folds away. Narrower screens: a drawer from the right. */}
-      {panel.open && (
+      {panel.open && !immersive.on && (
         <aside aria-label="Parent panel" className="hidden w-[340px] shrink-0 overflow-y-auto rounded-card border border-line bg-surface-2 p-5 text-ink xl:block">
           {panelBody}
         </aside>
