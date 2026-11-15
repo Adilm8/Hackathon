@@ -1,6 +1,6 @@
 # Big Day Stories
 
-Short personalised stories that prepare children aged 3-8 for a big day (the dentist, a first day at school, a flight), answer the child's questions inside the story, and show the parent what worries the child and what to say.
+Short personalised stories that prepare children aged 2-12 for a big day (the dentist, a first day at school, a flight), answer the child's questions inside the story, and show the parent what worries the child and what to say.
 
 Built for Business Cup 2.0 (Nov 14-15, 2026).
 

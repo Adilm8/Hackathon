@@ -5,7 +5,7 @@
 import type { StoryContext } from '../../engine/types';
 import { dataBlock } from '../../safety/filters';
 
-export const ANSWER_PROMPT_VERSION = 'answer.v1';
+export const ANSWER_PROMPT_VERSION = 'answer.v1.1';
 
 export interface AnswerPromptInput {
   question: string;
@@ -36,6 +36,8 @@ export function buildAnswerPrompt(ctx: StoryContext, input: AnswerPromptInput): 
     `The child asked: ${dataBlock(input.question)} while hearing page: ${dataBlock(input.currentPage)}.`,
     'First classify: on_topic | off_topic | sensitive | unsafe.',
     '- on_topic: answer as the character in 2-3 sentences, then rewrite the next page so it naturally refers',
+    '  The FIRST sentence of answer answers the question itself, honestly and directly (for "Will it hurt?": what it may feel like and for how long).',
+    '  Never start with a greeting or an introduction ("Hi", "I am ...", the character\'s name or species); the child already knows who is talking.',
     `  to the question.${input.nextPage && ctx.styleMode === 'story' ? ` Next page now: ${dataBlock(input.nextPage)}` : ' There is no next page to rewrite: return nextPage as null.'}`,
     '- off_topic: one kind sentence, then gently return to the story. nextPage is null.',
     '- sensitive (death, illness, divorce, body, where babies come from, religion): do NOT answer the child.',
@@ -47,6 +49,7 @@ export function buildAnswerPrompt(ctx: StoryContext, input: AnswerPromptInput): 
   ];
   if (input.sensitive) lines.push('Code has already classified this question as sensitive. Return category "sensitive" and write parentDraft.');
   if (input.buttonTopic) lines.push(`The topic of this question is ${input.buttonTopic}.`);
+  if (ctx.story?.avoidWords?.length) lines.push(`Never use these words: ${ctx.story.avoidWords.map((w) => dataBlock(w)).join(' ')}`);
   if (ctx.styleMode === 'social') lines.push('Social story style: answer literally in the first person, no fantasy. nextPage is always null.');
   lines.push('Fields in this order: category, topic, answer (sentences with text and kind), parentDraft, parentPhrase, nextPage.');
   return lines.join('\n');

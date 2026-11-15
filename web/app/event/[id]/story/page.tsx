@@ -11,6 +11,7 @@ import { useEvents } from '@/lib/store/events';
 import { useEventCtx } from '@/lib/store/hooks';
 import { cleanStoryText } from '@/lib/store/storyPrefs';
 import type { BigEvent, ChildProfile, EventTemplate, StoryPrefs } from '@/lib/engine/types';
+import { planHref } from '@/lib/home/path';
 
 /** Story options of one event, changeable after New Story. New settings apply to chapters not written yet. */
 export default function StoryOptionsPage() {
@@ -33,7 +34,7 @@ function Form({ event, child, template, today }: { event: BigEvent; child: Child
 
   const save = () => {
     update(event.id, (e) => applyStoryPrefs(e, cleanStoryText(value, child.name, child.pronunciation), today, template));
-    router.push(`/event/${encodeURIComponent(event.id)}`);
+    router.push(planHref(event.id));
   };
 
   return (
@@ -61,7 +62,7 @@ function Form({ event, child, template, today }: { event: BigEvent; child: Child
       </section>
       <div className="sticky bottom-0 flex gap-3 bg-bg/90 py-3 backdrop-blur">
         <Button size="l" className="flex-1" onClick={save}>Save</Button>
-        <ButtonLink href={`/event/${encodeURIComponent(event.id)}`} variant="ghost" size="l">Cancel</ButtonLink>
+        <ButtonLink href={planHref(event.id)} variant="ghost" size="l">Cancel</ButtonLink>
       </div>
     </div>
   );

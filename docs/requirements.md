@@ -17,7 +17,7 @@ Inputs: the case brief (Business Cup 2.0), the team spec (ТЗ "Big Day Stories"
 
 ## 2. Target user and problem
 
-- User: a US parent (25–45) of a child aged 3–8 facing a "big day": a first visit to the dentist, a doctor, a new school, and similar events.
+- User: a US parent (25–45) of a child aged 2–12 facing a "big day": a first visit to the dentist, a doctor, a new school, and similar events.
 - Problem: the child is anxious before the event; the parent wants a quick, personal way to prepare them.
 - Job: get a short personalised story about the child's upcoming event, read or listen to it together, and track what helped.
 - One full event cycle, walkable in 3 minutes without login: the parent enters the event, date and fears; gets a 5-chapter plan with a countdown; reads a chapter aloud while the child asks questions that the character answers and the next page takes into account; the parent panel collects question topics and suggests phrases; on the day, a "first → then" ritual card; afterwards a "how did it go" check-in, a bravery badge and the next event suggestion (the retention loop).
@@ -35,7 +35,7 @@ Inputs: the case brief (Business Cup 2.0), the team spec (ТЗ "Big Day Stories"
 | Id | Requirement and acceptance criteria | Priority | Stage |
 |---|---|---|---|
 | F1 | **Try a sample** (for the jury): one button on the landing fills Max's form and runs the same generation as for a real parent; "Sample data" badge on every sample screen; no login | P0 | 1 |
-| F2 | **Onboarding in 2 minutes**, 3 steps: (1) name, pronunciation, age 3–8; (2) event from 6 + "Other", date, up to 3 fears from a list + "more" field; (3) character and values profile. Only name, age, event and date are required. Date in the past or more than 60 days ahead is an error. No surname, address or child photo | P0 | 1 |
+| F2 | **Onboarding in 2 minutes**, 3 steps: (1) name, pronunciation, age 2–12; (2) event from 6 + "Other", date, up to 3 fears from a list + "more" field; (3) character and values profile. Only name, age, event and date are required. Date in the past or more than 60 days ahead is an error. No surname, address or child photo | P0 | 1 |
 | F3 | **Plan by evenings**: min(5, days to the event) chapters with dates and a theme each; countdown "3 sleeps until the dentist"; chapter status locked / today / read. The plan skeleton is built by code from the event template, not by the LLM | P0 | 1 |
 | F4 | **Reader**: background + character + text 18–22 px; swipe or back/next buttons; "Listen" via `speechSynthesis` with the current sentence highlighted; name spoken from the pronunciation field; page length by age; first page ready ≤ 6 s after tap | P0 | 1 |
 | F5 | **Child asks a question**: 3 common-question buttons per page for the event + "Own question"; an answer page from the character (2–3 sentences); the next page is regenerated and refers to the question; max 3 questions per chapter (then "Let's ask tomorrow"); answer ≤ 4 s | P0 | 1 |

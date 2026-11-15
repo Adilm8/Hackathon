@@ -52,7 +52,7 @@ Live status: `GET /api/health` (see [below](#apihealth)).
 |---|---|
 | Unknown scene id (for example from a model) | The cosy-room scene |
 | **New:** scene file fails to load (night variant missing, offline before it was cached, a generated picture removed) | Falls back to the day scene, then the cosy-room scene, then hides the picture; the page colour shows through |
-| Generated pictures (Platinum) unavailable | The built-in SVG scenes |
+| Painted scene picture missing or fails to load | The built-in SVG scene for the same place (IllustratedScene) |
 
 ### Payments (Stripe, test mode only)
 
@@ -95,7 +95,7 @@ Live status: `GET /api/health` (see [below](#apihealth)).
 | Input | Rule |
 |---|---|
 | Child's name | One word, 2 to 20 letters (first name or nickname, never a surname). **New:** the browser form and the server now use one rule: curly apostrophe (D’Andre, typed by iPhone keyboards), combining marks (Hindi, Thai, decomposed accents) and any script are accepted; emoji, digits and spaces are refused; stored in one Unicode form (NFC). Before, a name with ’ passed the form but the server refused the whole family document, so it never saved |
-| Child's age | 3 to 8 (2 to 12 once PR #35 is merged) on the form and in every server schema |
+| Child's age | 2 to 12 on the form and in every server schema; text level and page count follow the age |
 | Event date | Today to 60 days ahead on the form ("This date has passed"). **New:** the server refuses dates that do not exist (2026-02-31, month 13) |
 | Words to avoid | **New:** the placeholders `[[CHILD]]` and `[[GROWNUP]]` no longer count as words, so avoiding "child" does not strip every sentence; if every template sentence holds an avoided word, a calm neutral page is shown instead of an empty chapter |
 | Long fields | Every field has a maximum length in the zod schemas (question 300, own fear 40, captions 60...); request bodies are capped at 512 KB; unknown fields are rejected |

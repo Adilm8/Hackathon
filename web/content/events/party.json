@@ -2100,5 +2100,178 @@
   "badge": {
     "id": "party_star",
     "label": "Party Star"
+  },
+  "olderPages": {
+    "what_happens": {
+      "sentences": [
+        {
+          "text": "Most parties follow a pattern.",
+          "kind": "describe"
+        },
+        {
+          "text": "Guests arrive, say happy birthday and leave presents on a table.",
+          "kind": "describe"
+        },
+        {
+          "text": "There are games or an activity, then the birthday song, cake and snacks, and sometimes presents get opened.",
+          "kind": "describe"
+        },
+        {
+          "text": "At the end, everyone says thank you and goodbye, and maybe gets a small goody bag.",
+          "kind": "describe"
+        },
+        {
+          "text": "Knowing the order helps the noisy parts feel expected.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can ask [[GROWNUP]] what time the party ends.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "happy",
+      "background": "outside",
+      "addresses": [
+        "unknown",
+        "strangers",
+        "social"
+      ]
+    },
+    "who_is_there": {
+      "sentences": [
+        {
+          "text": "The birthday kid is the star of the day, and their family is hosting.",
+          "kind": "describe"
+        },
+        {
+          "text": "There will be other guests, some [[CHILD]] knows and some not.",
+          "kind": "describe"
+        },
+        {
+          "text": "Grown-ups usually help run the games.",
+          "kind": "describe"
+        },
+        {
+          "text": "The host is the person to ask about the bathroom or where to put a coat.",
+          "kind": "coach"
+        },
+        {
+          "text": "Finding one kid who is also a bit quiet and saying hi is a good way to start.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "home-evening",
+      "addresses": [
+        "strangers",
+        "separation",
+        "sensory"
+      ]
+    },
+    "what_i_do": {
+      "sentences": [
+        {
+          "text": "A few party skills go a long way.",
+          "kind": "describe"
+        },
+        {
+          "text": "Say happy birthday and hand over the present.",
+          "kind": "describe"
+        },
+        {
+          "text": "Join a game, or watch the first round and jump in on the next.",
+          "kind": "describe"
+        },
+        {
+          "text": "Taking turns and letting the birthday kid win sometimes is part of being a good guest.",
+          "kind": "describe"
+        },
+        {
+          "text": "If it gets too loud, [[CHILD]] can step away for a minute to somewhere quieter.",
+          "kind": "coach"
+        },
+        {
+          "text": "At the end, saying thank you to the host is the last job.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "brave",
+      "background": "home-evening",
+      "addresses": [
+        "social",
+        "separation",
+        "unknown"
+      ]
+    },
+    "if_scared": {
+      "sentences": [
+        {
+          "text": "Parties can be loud, crowded and full of surprises, and it is normal to feel a bit overwhelmed or shy.",
+          "kind": "describe"
+        },
+        {
+          "text": "Not every kid likes every game, and that's okay.",
+          "kind": "describe"
+        },
+        {
+          "text": "The birthday song is loud for a minute and then it's cake.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] and [[GROWNUP]] can agree on a secret signal that means I need a break.",
+          "kind": "coach"
+        },
+        {
+          "text": "A slow breath and a sip of water help the body settle.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "worried",
+      "background": "home-evening",
+      "addresses": [
+        "sensory",
+        "unknown",
+        "safety"
+      ]
+    },
+    "rehearsal": {
+      "sentences": [
+        {
+          "text": "Here is the party in order.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] arrives, says happy birthday and puts the present down.",
+          "kind": "describe"
+        },
+        {
+          "text": "Games next, joining in or watching first.",
+          "kind": "describe"
+        },
+        {
+          "text": "The song, cake and snacks.",
+          "kind": "describe"
+        },
+        {
+          "text": "A quick break if needed, using the secret signal.",
+          "kind": "describe"
+        },
+        {
+          "text": "Then thank you, goodbye and home with [[GROWNUP]].",
+          "kind": "describe"
+        },
+        {
+          "text": "Tonight, [[CHILD]] can practise one way to start a chat, like, I like your shoes, where did you get them?",
+          "kind": "coach"
+        }
+      ],
+      "mood": "happy",
+      "background": "home-evening",
+      "addresses": [
+        "unknown",
+        "social",
+        "separation"
+      ]
+    }
   }
 }

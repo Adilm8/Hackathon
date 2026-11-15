@@ -2023,5 +2023,166 @@
   "badge": {
     "id": "big_day_hero",
     "label": "Big Day Hero"
+  },
+  "olderPages": {
+    "what_happens": {
+      "sentences": [
+        {
+          "text": "Every new event can be broken into steps: getting ready, getting there, saying hello, doing the main part and going home.",
+          "kind": "describe"
+        },
+        {
+          "text": "Thinking it through ahead of time takes some of the mystery away.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can ask [[GROWNUP]] what happens first, what happens in the middle and how it ends, and how long each part might take.",
+          "kind": "describe"
+        },
+        {
+          "text": "Writing the steps down or drawing them can help [[CHILD]] remember the plan.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "home-evening",
+      "addresses": [
+        "unknown",
+        "safety",
+        "strangers"
+      ]
+    },
+    "who_is_there": {
+      "sentences": [
+        {
+          "text": "At most new places there is a person in charge: a coach, a teacher, a leader or a helper.",
+          "kind": "describe"
+        },
+        {
+          "text": "They have done this many times.",
+          "kind": "describe"
+        },
+        {
+          "text": "There may be other kids or grown-ups who are new too.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[GROWNUP]] will be there or nearby, depending on the event.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can ask, who is the person in charge, and how do I find them if I need help?",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "outside",
+      "addresses": [
+        "strangers",
+        "safety",
+        "body"
+      ]
+    },
+    "what_i_do": {
+      "sentences": [
+        {
+          "text": "[[CHILD]] can plan their own part of the day.",
+          "kind": "describe"
+        },
+        {
+          "text": "What do I need to bring?",
+          "kind": "describe"
+        },
+        {
+          "text": "What will I need to do?",
+          "kind": "describe"
+        },
+        {
+          "text": "When can I take a break?",
+          "kind": "describe"
+        },
+        {
+          "text": "Being ready with one sentence for help, like, excuse me, can you show me where to go, makes new places easier.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can also choose one small goal, like learning one name or trying one new thing.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "brave",
+      "background": "outside",
+      "addresses": [
+        "safety",
+        "body",
+        "unknown"
+      ]
+    },
+    "if_scared": {
+      "sentences": [
+        {
+          "text": "Something new can bring both excitement and nerves, and the two feel very similar in the body: a fast heart, a fluttery stomach.",
+          "kind": "describe"
+        },
+        {
+          "text": "Naming the feeling helps.",
+          "kind": "describe"
+        },
+        {
+          "text": "Not knowing exactly what will happen is often the hardest part, and it gets easier once the day starts.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can ask any question, even ones that seem small.",
+          "kind": "coach"
+        },
+        {
+          "text": "A slow breath out, longer than the breath in, tells the body it is safe.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "worried",
+      "background": "outside",
+      "addresses": [
+        "safety",
+        "strangers",
+        "pain"
+      ]
+    },
+    "rehearsal": {
+      "sentences": [
+        {
+          "text": "Here is the day, start to finish.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] gets ready at home and travels there with [[GROWNUP]].",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] says hello and finds the person in charge.",
+          "kind": "describe"
+        },
+        {
+          "text": "The main part happens one step at a time, with a break if needed.",
+          "kind": "describe"
+        },
+        {
+          "text": "Then home, and a talk about the best part.",
+          "kind": "describe"
+        },
+        {
+          "text": "Tonight, [[CHILD]] can tell [[GROWNUP]] the plan in their own words.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "happy",
+      "background": "home-evening",
+      "addresses": [
+        "unknown",
+        "safety",
+        "separation"
+      ]
+    }
   }
 }
