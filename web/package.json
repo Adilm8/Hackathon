@@ -13,7 +13,8 @@
     "db:generate": "drizzle-kit generate",
     "safety": "tsx --conditions=react-server evals/safety.ts",
     "eval": "tsx --conditions=react-server evals/eval.ts",
-    "vapid": "node scripts/vapid-keys.mjs"
+    "vapid": "node scripts/vapid-keys.mjs",
+    "voice:test": "node scripts/voice-test.mjs"
   },
   "dependencies": {
     "@ai-sdk/google": "^4.0.121",
