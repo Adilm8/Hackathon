@@ -109,3 +109,21 @@ describe('story audio retention', async () => {
     expect((await fs.readdir(dir)).sort()).toEqual(['fresh.wav']);
   });
 });
+
+describe('parent voice sample', async () => {
+  const { encodeWav } = await import('@/lib/speech/wav');
+  const { checkWav } = await import('@/lib/tts/voiceSample');
+  const wav = (seconds: number) => Buffer.from(encodeWav(new Float32Array(16000 * seconds).fill(0.1), 16000));
+  it('encodes 16 kHz mono 16-bit WAV', () => {
+    const b = wav(1);
+    expect(b.toString('ascii', 0, 4)).toBe('RIFF');
+    expect(b.readUInt32LE(24)).toBe(16000);
+    expect(b.readInt16LE(44)).toBeGreaterThan(3000);
+    expect(b.length).toBe(44 + 32000);
+  });
+  it('accepts a 10 to 45 s sample and refuses others', () => {
+    expect(checkWav(wav(25))).toEqual({ seconds: 25 });
+    expect(checkWav(wav(3))).toEqual({ error: 'short' });
+    expect(checkWav(Buffer.from('not a wav at all, definitely not a riff header here......'))).toEqual({ error: 'format' });
+  });
+});

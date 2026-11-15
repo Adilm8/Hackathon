@@ -60,3 +60,10 @@ Blind test of 20 voices on one passage (`npm run voice:test`). Lida's favourites
 
 Recommended setup (in `.env.example`): `TTS_MODEL=hexgrad/kokoro-82m`, and `TTS_VOICES` with our own characters, mixing models with `model@voice`:
 Owl the Storyteller (Kokoro Bella, default), Kind Friend (Fish Free), Grandma Bear (Kokoro Emma), Night Whale (Kokoro Michael), Moon Storyteller (ElevenLabs v3 Lily, premium).
+
+## Parent's voice clone (demo, Lida chose it for the MVP on 15 Nov 2026)
+
+- Settings > Reading (and the reader's voice button) > "My voice as the storyteller (beta)": explicit adult consent, read a fixed ~25 s text, listen back, "Use this voice".
+- The browser converts the take to a 16 kHz mono WAV and uploads it once (`POST /api/voice-sample`). One sample per family, stored next to the audio cache in `voices/`.
+- "My voice" joins the character voices. Each sentence goes to `TTS_CLONE_MODEL` (default `fish-audio/s2.1-pro`, $15/M chars) with the sample and its transcript as `input_references`. OpenRouter cloning is stateless.
+- Biometric data rules: never used for anything else, deleted by "Delete my voice", by Delete all data (with the family), and after 30 days by the hourly sweep. Legal review is still needed before a public launch.

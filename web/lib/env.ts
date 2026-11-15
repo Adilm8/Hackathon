@@ -79,6 +79,8 @@ function load() {
       voices: parseVoices(str('TTS_VOICES')),
       /** on = only zero-data-retention providers (fewer models qualify). */
       zdr: str('TTS_ZDR') === 'on',
+      /** Model for the parent's cloned voice (demo); it must accept input_references. */
+      cloneModel: str('TTS_CLONE_MODEL') || 'fish-audio/s2.1-pro',
       pricePerMChars: Number(str('TTS_PRICE_PER_M_CHARS') || '80'),
       cacheDir: str('TTS_CACHE_DIR'),
       enabled: !!str('OPENROUTER_API_KEY') && !!str('TTS_MODEL'),
