@@ -13,7 +13,7 @@ import { hasEventAccess } from '@/lib/engine/access';
 import { setEntitlements, useEntitlements } from '@/lib/store/entitlement';
 import { useEvents } from '@/lib/store/events';
 import { useToday } from '@/lib/store/hooks';
-import { startSample } from '@/lib/store/sample';
+import { exitSample, startSample } from '@/lib/store/sample';
 import { useSettings } from '@/lib/store/settings';
 import { nowMs } from '@/lib/store/time';
 
@@ -289,6 +289,15 @@ export function DemoBar({ workspace }: { workspace: Workspace }) {
                   </>
                 )}
               </div>
+            )}
+            {sample && (
+              <button
+                type="button"
+                onClick={exitSample}
+                className="inline-flex min-h-tap items-center gap-1 self-start rounded-pill border-2 border-line bg-surface px-3 text-sm font-extrabold hover:bg-surface-2"
+              >
+                <Icon name="chevron-left" size={16} /> Back to my app
+              </button>
             )}
             {note && <p role="status" className="text-sm font-bold">{note}</p>}
           </div>
