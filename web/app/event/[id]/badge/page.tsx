@@ -14,7 +14,7 @@ import { PlanNotFound } from '@/components/ui/NotFound';
 import { Screen } from '@/components/ui/Screen';
 import { dateLabel } from '@/lib/engine/clock';
 import { useEntitlements } from '@/lib/store/entitlement';
-import { useEvents } from '@/lib/store/events';
+import { useEventsOfActiveChild } from '@/lib/store/children';
 import { useEventCtx } from '@/lib/store/hooks';
 import { exitSample } from '@/lib/store/sample';
 import { getWorkspace } from '@/lib/store/workspace';
@@ -28,7 +28,7 @@ export default function BadgePage() {
 
 function BadgeScreen({ id }: { id: string }) {
   const ctx = useEventCtx(id);
-  const events = useEvents((s) => s.events);
+  const events = useEventsOfActiveChild();
   const list = useEntitlements((s) => s.list);
   const ws = getWorkspace();
   if (!ctx) return <PlanNotFound />;

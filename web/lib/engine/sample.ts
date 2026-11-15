@@ -91,3 +91,30 @@ export function buildSampleFamily(today: ISODate, opts: { nowMs?: number } = {})
     updatedAt: opts.nowMs ?? Date.now(),
   };
 }
+
+/**
+ * Max's big sister in the sample, so the jury can try switching children: Mia, 6, a fox,
+ * starting a new school in a week (fears: separation and other children). Kept on the
+ * device next to Max (lib/store/children.ts); her big day is in the same events list.
+ */
+export const SAMPLE_SIBLING_IDS = { child: 'sample-mia', event: 'sample-mia-school' } as const;
+
+export function buildSampleSibling(today: ISODate): { child: ChildProfile; event: BigEvent } {
+  const child: ChildProfile = {
+    id: SAMPLE_SIBLING_IDS.child,
+    name: 'Mia',
+    age: 6,
+    pronoun: 'she',
+    character: { animal: 'fox', color: 'purple', accessory: 'scarf' },
+    values: { tone: 'secular', bodyWords: 'anatomical', family: ['Mom', 'Dad'] },
+    styleMode: 'story',
+    techniques: [],
+    badges: [],
+    createdOn: addDays(today, -2),
+  };
+  const event = createEvent(
+    { id: SAMPLE_SIBLING_IDS.event, childId: child.id, type: 'school', date: addDays(today, 7), today, fears: ['separation', 'social'] },
+    getTemplate('school'),
+  );
+  return { child, event };
+}

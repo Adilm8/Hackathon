@@ -26,6 +26,7 @@ import { api } from '@/lib/sync/api';
 import { startSyncNow } from '@/lib/store/boot';
 import { getWorkspace } from '@/lib/store/workspace';
 import { newId } from '@/lib/store/id';
+import { stashActiveFor } from '@/lib/store/children';
 import { firstNameOnly, loadProfiles, removeProfile, saveProfile, type SavedProfile } from '@/lib/store/profiles';
 
 const NAME_RE = /^[\p{L}][\p{L}'’-]{0,19}$/u;
@@ -134,6 +135,9 @@ export function Onboarding() {
     const same = existing && (pickedId === existing.id || (!pickedId && firstNameOnly(existing.name).toLocaleLowerCase() === d.name.trim().toLocaleLowerCase()))
       ? existing : null;
     const childId = same?.id ?? picked?.childId ?? newId();
+    // Another child: the current one waits on this device with its badges; a child coming back gets theirs.
+    const waiting = same ? null : stashActiveFor(childId);
+    const keep = same ?? waiting;
     const child: ChildProfile = {
       id: childId,
       name: d.name.trim(),
@@ -143,9 +147,9 @@ export function Onboarding() {
       character: d.character,
       values: d.values,
       styleMode: d.social && isOn('socialStyle') ? 'social' : 'story',
-      techniques: same?.techniques ?? [],
-      badges: same?.badges ?? [],
-      createdOn: same?.createdOn ?? today,
+      techniques: keep?.techniques ?? [],
+      badges: keep?.badges ?? [],
+      createdOn: keep?.createdOn ?? today,
     };
     useChild.getState().setChild(child);
     saveProfile(child);
