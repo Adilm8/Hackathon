@@ -47,3 +47,21 @@ export function ParentCheck({
     </section>
   );
 }
+
+/**
+ * What the child sees first after a sensitive question: no adult wording, no draft. A grown-up
+ * opens the parent check (through the parent gate); otherwise the question waits in the parent panel.
+ */
+export function AskGrownUp({ childName, onGrownUp, onLater }: { childName: string; onGrownUp: () => void; onLater: () => void }) {
+  return (
+    <section aria-label="Ask a grown-up" className="flex flex-col items-center gap-4 rounded-card border border-line bg-surface p-6 text-center text-ink shadow-pop">
+      <span className="flex size-14 items-center justify-center rounded-pill bg-accent text-accent-ink"><Icon name="hand-heart" size={28} /></span>
+      <h2 className="font-display text-xl font-extrabold">Great question, {childName}!</h2>
+      <p className="text-base">Let&apos;s ask your grown-up about this one together.</p>
+      <div className="grid w-full gap-2 sm:grid-cols-2">
+        <Button onClick={onGrownUp}>I&apos;m the grown-up</Button>
+        <Button variant="secondary" onClick={onLater}>Keep reading</Button>
+      </div>
+    </section>
+  );
+}
