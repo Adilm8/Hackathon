@@ -41,6 +41,7 @@ import type { PageRecorder } from '@/lib/speech/recorder';
 import { recordingToWav } from '@/lib/speech/wav';
 import { VoicePicker } from './VoicePicker';
 import { PageView } from './PageView';
+import { CartoonPlayer } from './CartoonPlayer';
 import { AskGrownUp, ParentCheck } from './ParentCheck';
 import { useParentGate } from './ParentGate';
 import { QuestionBar } from './QuestionBar';
@@ -74,6 +75,7 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
   // Full screen: only the story on screen (lib/reader/immersive.ts). Leaving it needs no grown-up;
   // leaving the reader still does (the door button).
   const immersive = useImmersive();
+  const [cartoon, setCartoon] = useState(false);
   const { guard, gate } = useParentGate();
   // The header logo leaves the reader too, through the same grown-up gate as the door button.
   useEffect(() => {
@@ -321,6 +323,7 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
           <PageView
             page={page} character={child.character} render={render} textSize={textSize} night={night}
             step={step} position={position} updatedText={updatedText} illustration={illustration}
+            onCartoon={isOn('cartoonMode') ? () => setCartoon(true) : undefined}
             extra={photos ? <PagePhotos photos={event.photos} /> : undefined}
           />
         </div>
@@ -372,6 +375,12 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
   const iconBtn = 'inline-flex size-tap max-[400px]:size-10 shrink-0 items-center justify-center rounded-pill hover:bg-surface-2';
   return (
     <div className="flex min-h-0 flex-1 gap-6">
+      {cartoon && pages.length > 0 && (
+        <CartoonPlayer
+          pages={pages} child={child} eventType={event.type} beats={chapter.beats} night={night} start={pageIdx}
+          onClose={(last) => { setCartoon(false); turn(last, 0); }}
+        />
+      )}
       <div className="flex min-w-0 flex-1 flex-col gap-2">
         {/* Phones: the icon row leaves no room, so the chapter name gets its own line. */}
         <p className="line-clamp-2 text-xs font-bold text-ink-soft sm:hidden">
