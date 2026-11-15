@@ -14,7 +14,7 @@ export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
 
 const Body = z.strictObject({
-  sentences: z.array(z.string().trim().min(1).max(FRAME_MAX_CHARS)).min(1).max(8),
+  sentences: z.array(z.string().trim().min(1).max(FRAME_MAX_CHARS)).min(1).max(24),
   eventType: z.enum(EVENT_TYPES as unknown as [string, ...string[]]),
 });
 
