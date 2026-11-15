@@ -245,7 +245,7 @@ DO NOT include: text, letters, numbers, labels, logos, watermarks, grid lines, g
 ```
 docs/design/avatar/sheets/        исходники из Gemini (JPG 2752×1536): 00-template.jpg, 01-species.jpg, 02-outfits.jpg,
                                   03-headwear.jpg, 04-accessories.jpg, 05-companions.jpg,
-                                  06-expressions.jpg, 07-backdrops.jpg (+ версия: 04-accessories.v2.jpg)
+                                  06-expressions.jpg, 07-backdrops.jpg
 web/scripts/avatar/               скрипты: slice.py, trace.py, colorize.py, build.mjs, ids.json
 web/public/avatar/<level>/<id>.svg   готовые слои, для проверки глазами и для <img>
 web/public/avatar/backdrop/<id>.webp фоны (не трассируем, WebP ≤ 150 KB)
