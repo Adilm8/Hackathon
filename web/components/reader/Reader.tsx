@@ -30,11 +30,12 @@ import { isNight } from '@/lib/theme';
 import { ListenButton, type ReadPosition } from './ListenButton';
 import { RecordButton } from './RecordButton';
 import { PageView } from './PageView';
-import { ParentCheck } from './ParentCheck';
+import { AskGrownUp, ParentCheck } from './ParentCheck';
+import { useParentGate } from './ParentGate';
 import { QuestionBar } from './QuestionBar';
 import { SafeMessage } from './SafeMessage';
 
-type Mode = { kind: 'read' } | { kind: 'check'; q: Question; draft?: string } | { kind: 'unsafe' } | { kind: 'end' };
+type Mode = { kind: 'read' } | { kind: 'check'; q: Question; draft?: string; parent?: boolean } | { kind: 'unsafe' } | { kind: 'end' };
 
 export function Reader({ eventId, index }: { eventId: string; index: number }) {
   const ctx = useEventCtx(eventId);
@@ -56,6 +57,7 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
   const [autoListen, setAutoListen] = useState(false);
   const readOn = usePrefs((p) => p.readOn);
   const panel = usePanelOpen();
+  const { guard, gate } = useParentGate();
   const scrollBox = useRef<HTMLDivElement | null>(null);
   // The voice moves the sentence on screen as it reads.
   const onProgress = useCallback((p: ReadPosition | null) => {
@@ -198,6 +200,14 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
   const body = (() => {
     if (mode.kind === 'end') return <ChapterEnd ctx={ctx} index={index} total={total} onReread={() => { turn(0, 0); setMode({ kind: 'read' }); }} />;
     if (mode.kind === 'unsafe') return <SafeMessage onBack={() => setMode({ kind: 'read' })} />;
+    if (mode.kind === 'check' && !mode.parent)
+      return (
+        <AskGrownUp
+          childName={child.name}
+          onGrownUp={() => guard(() => setMode({ ...mode, parent: true }))}
+          onLater={() => setMode({ kind: 'read' })}
+        />
+      );
     if (mode.kind === 'check')
       return (
         <ParentCheck
@@ -283,9 +293,9 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
           {total === 1 ? 'Quick prep' : `Chapter ${index} of ${total}`} · {chapter.title}
         </p>
         <div className="flex items-center gap-1 sm:gap-2">
-          <Link href={`/event/${eventId}`} aria-label="Back to the plan" className={iconBtn}>
+          <button type="button" onClick={() => guard(() => router.push(`/event/${eventId}`))} aria-label="Back to the plan" className={iconBtn}>
             <Icon name="door-open" size={22} />
-          </Link>
+          </button>
           <div className="min-w-0 flex-1">
             <p className="truncate text-xs font-bold text-ink-soft max-sm:hidden">
               {total === 1 ? 'Quick prep' : `Chapter ${index} of ${total}`} · {chapter.title}
@@ -313,7 +323,7 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
           )}
           <button
             type="button"
-            onClick={() => panel.toggle()}
+            onClick={() => (panel.closing() ? panel.toggle() : guard(() => panel.toggle()))}
             aria-expanded={panel.open}
             aria-label={`What's on ${child.name}'s mind (parent panel)`}
             title="Parent panel"
@@ -332,14 +342,15 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
           {panelBody}
         </aside>
       )}
+      {gate}
       <Dialog.Root open={panel.drawer} onOpenChange={panel.setDrawer}>
         <Dialog.Portal>
           <Dialog.Overlay className="fixed inset-0 z-40 bg-black/40 xl:hidden" />
           <Dialog.Content className="fixed inset-y-0 right-0 z-50 w-[min(92vw,380px)] overflow-y-auto border-l border-line bg-bg p-5 text-ink shadow-pop xl:hidden">
             <Dialog.Title className="sr-only">Parent panel</Dialog.Title>
             <Dialog.Description className="sr-only">What&apos;s on {child.name}&apos;s mind, for the parent.</Dialog.Description>
-            <Dialog.Close aria-label="Close the parent panel" className={`${iconBtn} float-right -mr-2 -mt-2 text-2xl font-bold`}>
-              <span aria-hidden>×</span>
+            <Dialog.Close aria-label="Close the parent panel" className={`${iconBtn} float-right -mr-2 -mt-2`}>
+              <Icon name="x" size={22} />
             </Dialog.Close>
             {panelBody}
           </Dialog.Content>
@@ -376,7 +387,9 @@ function usePanelOpen() {
       return !v;
     });
   };
-  return { open, drawer, setDrawer, toggle };
+  /** True when the tap folds the side column away (wide screens); opening asks the parent gate. */
+  const closing = () => open && window.matchMedia('(min-width: 1280px)').matches;
+  return { open, drawer, setDrawer, toggle, closing };
 }
 
 function ChapterEnd({ ctx, index, total, onReread }: { ctx: NonNullable<ReturnType<typeof useEventCtx>>; index: number; total: number; onReread: () => void }) {

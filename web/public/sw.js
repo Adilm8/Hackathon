@@ -1,12 +1,13 @@
 /*
  * Big Day Stories service worker: the app opens and already-loaded screens work offline.
  * - Pages: network first, the last copy from the cache when offline.
- * - Hashed build files (/_next/static), icons and scenes: cache first (they never change).
+ * - Hashed build files (/_next/static), icons, scenes and avatar layers: cache first (they never change;
+ *   avatar URLs carry a content hash).
  * - API calls are never cached (family data stays in the browser store and the server).
  * Bump VERSION to drop old caches.
  */
 const VERSION = 'bds-v2';
-const STATIC = /^\/(_next\/static|icons|scenes)\//;
+const STATIC = /^\/(_next\/static|icons|scenes|avatar)\//;
 
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(VERSION).then((c) => c.addAll(['/home', '/manifest.webmanifest'])).catch(() => undefined));

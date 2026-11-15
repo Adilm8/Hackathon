@@ -14,7 +14,7 @@ describe('sample family (4.3)', () => {
     const r = FamilyDocSchema.safeParse(doc);
     expect(r.success, JSON.stringify(r.error?.issues)).toBe(true);
     expect(doc.updatedAt).toBe(1);
-    expect(doc.child).toMatchObject({ name: 'Max', age: 4, character: { animal: 'bunny', color: 'blue', accessory: 'cap' } });
+    expect(doc.child).toMatchObject({ name: 'Max', age: 4, character: { animal: 'bunny', color: 'blue', headwear: 'cap' } });
     expect(doc.child?.values.family).toEqual(['Mom', 'Dad']);
   });
   it('past haircut three weeks ago with check-in, memory and a badge', () => {

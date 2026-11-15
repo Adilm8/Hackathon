@@ -1,6 +1,7 @@
 'use client';
 import { Icon } from '@/components/icons';
 import type { BigEvent, ChildProfile, EventTemplate } from '@/lib/engine/types';
+import { useEvents } from '@/lib/store/events';
 import { renderText, summarise } from '@/lib/store/engine';
 
 type Summary = ReturnType<typeof summarise>;
@@ -12,6 +13,26 @@ export function PanelView({ event, child, template, today, compact = false }: { 
   return (
     <div className="flex flex-col gap-4">
       <h2 className={`${compact ? 'text-lg' : 'font-display text-2xl'} font-extrabold`}>What&apos;s on {child.name}&apos;s mind</h2>
+      {s.waiting.length > 0 && (
+        <section aria-labelledby="waiting-h" className="rounded-card border-2 border-accent bg-surface p-4">
+          <h3 id="waiting-h" className="text-sm font-extrabold">Waiting for you</h3>
+          <p className="mt-1 text-sm text-ink-soft">{child.name} asked this while reading. It&apos;s best answered by you, together.</p>
+          <ul className="mt-2 flex flex-col gap-2 text-sm">
+            {s.waiting.map((q) => (
+              <li key={q.id} className="flex flex-wrap items-center justify-between gap-2">
+                <span className="font-bold">“{r(q.text)}”</span>
+                <button
+                  type="button"
+                  onClick={() => useEvents.getState().setParentAction(event.id, q.id, 'self')}
+                  className="inline-flex min-h-tap items-center rounded-pill px-2 text-sm font-extrabold text-primary-text hover:bg-surface-2"
+                >
+                  We talked about it
+                </button>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
       {s.memoryLines.length > 0 && <MemoryLine lines={s.memoryLines} />}
       {s.empty ? (
         <p className="rounded-card border border-dashed border-line p-4 text-sm text-ink-soft">No questions yet. They&apos;ll show up here as you read.</p>
@@ -55,7 +76,7 @@ export function TopicList({ rows, render, compact }: { rows: Summary['rows']; re
 export function PhraseCard({ phrases }: { phrases: string[] }) {
   return (
     <div className="mt-3 rounded-field bg-surface-2 p-3">
-      <p className="text-xs font-extrabold uppercase tracking-wide text-ink-soft">You can say</p>
+      <p className="text-sm font-extrabold text-ink-soft">You can say</p>
       <ul className="mt-1 flex flex-col gap-1 text-sm font-bold">{phrases.map((p) => <li key={p}>{p}</li>)}</ul>
     </div>
   );
@@ -82,7 +103,7 @@ export function SkillLine({ text }: { text: string }) {
 function TechniqueCard({ t }: { t: { label: string; how: string } }) {
   return (
     <div className="rounded-card border border-line bg-surface p-4">
-      <p className="text-xs font-extrabold uppercase tracking-wide text-ink-soft">For the big day</p>
+      <p className="text-sm font-extrabold text-ink-soft">For the big day</p>
       <p className="mt-1 text-base font-extrabold">{t.label}</p>
       <p className="text-sm text-ink-soft">{t.how}</p>
     </div>

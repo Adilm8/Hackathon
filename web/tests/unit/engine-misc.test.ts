@@ -109,8 +109,10 @@ describe('parent panel (5.5)', () => {
     e = add(e, 'c', { text: 'Why is the sky blue?', topic: 'sensory', category: 'off_topic' });
     const r2 = recordQuestion(e, { id: 'd', chapter: 2, afterPageId: 'c2-p1', text: 'Where do babies come from?', source: 'custom', category: 'sensitive', topic: 'body' }, T, t);
     if (!r2.ok) throw new Error();
+    expect(summarise(r2.event, { techniques: [] }, t, T).waiting.map((q) => q.id)).toEqual(['d']);
     e = setParentAction(r2.event, 'd', 'self');
     const s = summarise(e, { techniques: [] }, t, T);
+    expect(s.waiting).toEqual([]);
     expect(s.rows.map((r) => [r.topic, r.count])).toEqual([['pain', 2], ['body', 1]]);
     expect(s.rows[0].label).toBe('Pain');
     expect(s.rows[0].phrases[0]).toBe('It may pinch, then stop.');

@@ -21,7 +21,10 @@ export function pageWords(sentences: Pick<Sentence, 'text'>[]): number {
 export function postcheckOptions(ctx: Pick<StoryContext, 'values' | 'child'>): PostcheckOptions {
   return {
     familyWords: ctx.values.family,
-    allowWords: [ctx.child.character.animal, 'Bunny', 'Bear', 'Fox', 'Kitten', 'Mom', 'Dad'],
+    allowWords: [
+      ctx.child.character.animal, 'Bunny', 'Bear', 'Fox', 'Kitten', 'Dragon', 'Owl', 'Owlet', 'Hedgehog', 'Fawn',
+      'Moon', 'Cloud', 'Cub', 'Ember', 'Star', 'Puff', 'Sage', 'Moss', 'Dew', 'Mom', 'Dad',
+    ],
   };
 }
 

@@ -275,3 +275,11 @@ web/components/character/art/generated.ts   сгенерированный мо�
 1. Листы уже лежат в `docs/design/avatar/sheets/` (15 Nov).
 2. Написать скрипты из шагов 1–7, прогнать, проверить слои глазами в `/start` на всех 8 существах.
 3. Расширить модель `Character` (species 8, outfit, headwear, accessory, companion, furVariant) с переводом старых значений, обновить конструктор: вкладки Friend / Colours / Clothes / Hats / Extras / Buddy.
+
+### Статус (15 Nov): конвейер построен
+- `npm run avatar` (в `web/`) пересобирает всё: `scripts/avatar/slice.py` → `trace.py` → `build.mjs`. Нужны Python 3 и `pip install -r web/scripts/avatar/requirements.txt` (Pillow, NumPy, SciPy, vtracer).
+- Заменить клетку: положить новый лист с тем же именем в `docs/design/avatar/sheets/` и запустить `npm run avatar`. Имена файлов слоёв не меняются, в URL добавляется хеш содержимого, поэтому браузер и service worker возьмут новую версию.
+- Перекраска сделана заранее готовыми файлами (`<id>--<colour>.svg`, `species/<id>--dusk|dawn.svg`), а не CSS-переменными: слои подключаются как `<image>`, лениво кешируются и не раздувают JS. Цвета: `web/scripts/avatar/colors.json`.
+- Выравнивание: каждая клетка совмещается с манекеном листа 0 (сдвиг по маске серого), затем ставится на холст: ступни y = 285, центр x = 120, 0,34 единицы на пиксель листа.
+- Лица берутся из листа 6 (calm, worried, brave, happy используются по настроению страницы), код больше не рисует лицо.
+- Известное: у Moon Bunny кончики ушей обрезаны краем листа (ровный срез). Если мешает, перегенерировать клетку 1 листа 1 с запасом сверху.

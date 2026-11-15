@@ -2,6 +2,7 @@
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useState } from 'react';
 import { Character } from '@/components/character';
+import { DEFAULT_CHARACTER } from '@/lib/engine/character';
 import { CharacterBuilder } from '@/components/ui/CharacterBuilder';
 import { EventIcon, Icon } from '@/components/icons';
 import { Button } from '@/components/ui/Button';
@@ -206,7 +207,7 @@ export function Onboarding() {
                     className="flex-1"
                     selected={pickedId === p.childId}
                     onSelect={() => choose(p)}
-                    icon={<Character character={p.character} mood="happy" size={40} decorative />}
+                    icon={<Character character={p.character} mood="happy" size={40} framing="head" decorative />}
                     title={p.name}
                     caption={`${p.age} years · saved on this device`}
                   />
@@ -215,7 +216,7 @@ export function Onboarding() {
                   </Button>
                   {p.childId !== existing?.id && (
                     <Button variant="ghost" onClick={() => setKnown(withoutSaved(removeProfile(p.childId), existing))} aria-label={`Forget ${p.name} on this device`} className="!px-3">
-                      <span aria-hidden className="text-xl leading-none">×</span>
+                      <Icon name="x" size={20} />
                     </Button>
                   )}
                 </div>
@@ -381,7 +382,7 @@ const CHILD_STEPS: StepId[] = ['name', 'age', 'character', 'values'];
 function childFields(p?: SavedProfile): Pick<Draft, 'name' | 'pronunciation' | 'age' | 'pronoun' | 'character' | 'values' | 'social'> {
   return {
     name: p?.name ?? '', pronunciation: p?.pronunciation ?? '', age: p?.age, pronoun: p?.pronoun,
-    character: p?.character ?? { animal: 'bunny', color: 'blue', accessory: 'cap' },
+    character: p?.character ?? DEFAULT_CHARACTER,
     values: p?.values ?? { tone: 'secular', bodyWords: 'anatomical', family: [] },
     social: p?.styleMode === 'social',
   };

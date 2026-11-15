@@ -16,8 +16,9 @@ export function Field({ label, helper, error, id, children }: { label: string; h
 }
 
 export const inputClass =
-  'min-h-btn-m w-full rounded-field border-2 border-line bg-surface px-4 text-base text-ink placeholder:text-ink-soft/70 ' +
-  'focus:border-primary focus:outline-none aria-[invalid=true]:border-danger';
+  'min-h-btn-m w-full rounded-field border-2 border-line bg-surface px-4 text-base text-ink placeholder:text-ink-soft ' +
+  'transition-[border-color,box-shadow] duration-fast focus:border-primary focus:outline-none focus:ring-4 focus:ring-focus/30 ' +
+  'aria-[invalid=true]:border-danger';
 
 export function TextInput(props: ComponentProps<'input'>) {
   return <input {...props} className={`${inputClass} ${props.className ?? ''}`} />;

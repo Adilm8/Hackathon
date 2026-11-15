@@ -88,10 +88,10 @@ function Home({ tab, eventParam }: { tab: HomeTab; eventParam: string | null }) 
       <ChildSwitcher onSwitch={onSwitch} />
       {tab === 'path' && <ReminderBanner events={events} today={today} />}
       <div className="flex items-center justify-between gap-2 lg:hidden">
-        <Link href="/home?tab=child" className="inline-flex min-h-tap items-center gap-2 rounded-pill border border-line bg-surface px-3 text-sm font-bold">
-          <Icon name="smile" size={18} /> {child.name}
+        <Link href="/home?tab=child" className="inline-flex min-h-tap items-center gap-2 min-w-0 rounded-pill border border-line bg-surface px-3 text-sm font-bold">
+          <Icon name="smile" size={18} className="shrink-0" /> <span className="truncate">{child.name}</span>
         </Link>
-        <Link href={`/event/${chosen.id}/panel`} className="inline-flex min-h-tap items-center gap-1.5 rounded-pill border border-line bg-surface px-3 text-xs font-extrabold uppercase">
+        <Link href={`/event/${chosen.id}/panel`} className="inline-flex min-h-tap items-center gap-1.5 rounded-pill border border-line bg-surface px-3 text-sm font-extrabold">
           <Icon name="hand-heart" size={16} /> Parent panel
         </Link>
       </div>
@@ -130,14 +130,14 @@ function PathTab({ event, events, child, today, hasAccess }: { event: BigEvent; 
       : ch ? `Tonight: chapter ${ch.index} of ${p.total}` : `${p.read} of ${p.total} chapters read`;
   return (
     <>
-      <header className="flex flex-wrap items-center gap-3 rounded-card bg-primary p-4 text-primary-ink shadow-step-primary sm:p-5">
+      <header className="grid grid-cols-[auto_minmax(0,1fr)] items-center gap-x-3 gap-y-4 rounded-card bg-primary p-4 text-primary-ink shadow-step-primary sm:flex sm:p-5">
         <span className="flex size-12 shrink-0 items-center justify-center rounded-pill bg-primary-ink/15"><EventIcon type={event.type} size={28} /></span>
         <div className="min-w-0 flex-1">
-          <p className="text-xs font-extrabold uppercase tracking-wide opacity-85">{child.name}&apos;s big day · {dateLabel(event.date, { weekday: true })}</p>
-          <h1 className="font-display text-lg font-extrabold leading-tight sm:text-xl">{label}</h1>
+          <h1 className="line-clamp-2 break-words font-display text-xl font-extrabold leading-tight">{label}</h1>
           <p className="text-base font-bold leading-snug">{status}</p>
+          <p className="truncate text-sm font-bold opacity-85">{child.name}&apos;s big day · {dateLabel(event.date, { weekday: true })}</p>
         </div>
-        <Link href={`/event/${event.id}`} className="inline-flex min-h-tap items-center gap-2 rounded-card border-2 border-primary-ink/30 px-3 text-sm font-extrabold uppercase hover:bg-primary-ink/10">
+        <Link href={`/event/${event.id}`} className="col-span-2 inline-flex min-h-tap items-center justify-center gap-2 whitespace-nowrap rounded-pill border-2 border-primary-ink/40 px-4 text-sm font-extrabold hover:bg-primary-ink/10 sm:col-span-1">
           <Icon name="book-open" size={18} /> Plan &amp; reminders
         </Link>
       </header>
@@ -149,9 +149,9 @@ function PathTab({ event, events, child, today, hasAccess }: { event: BigEvent; 
               key={e.id}
               href={`/home?event=${e.id}`}
               aria-current={e.id === event.id ? 'page' : undefined}
-              className={`inline-flex min-h-tap items-center gap-2 rounded-pill border-2 px-3 text-sm font-bold ${e.id === event.id ? 'border-primary bg-surface-2' : 'border-line bg-surface'}`}
+              className={`inline-flex min-h-tap max-w-[16rem] items-center gap-2 rounded-pill border-2 px-3 text-sm font-bold ${e.id === event.id ? 'border-primary bg-surface-2' : 'border-line bg-surface'}`}
             >
-              <EventIcon type={e.type} size={18} /> {eventLabel(e, getTemplate(e.type))}
+              <EventIcon type={e.type} size={18} className="shrink-0" /> <span className="truncate">{eventLabel(e, getTemplate(e.type))}</span>
             </Link>
           ))}
         </nav>
@@ -241,7 +241,7 @@ function ChildTab({ child, events, today }: { child: ChildProfile; events: BigEv
         {others.length === 0 && <p className="text-sm text-ink-soft">When you make a story for another child, they are saved here, so you never type them again.</p>}
         {others.map((p) => (
           <Link key={p.childId} href={`/start?again=1&child=${encodeURIComponent(p.childId)}`} className="flex min-h-tap items-center gap-3 rounded-card border border-line bg-surface p-3 shadow-step hover:border-ink-soft/40">
-            <Character character={p.character} mood="calm" size={48} decorative />
+            <Character character={p.character} mood="calm" size={48} framing="head" decorative />
             <span className="flex flex-1 flex-col">
               <span className="font-extrabold">{p.name}</span>
               <span className="text-xs text-ink-soft">{p.age} years · make a story for {p.name}</span>
@@ -261,8 +261,8 @@ function EventRow({ event, today }: { event: BigEvent; today: string }) {
   return (
     <Link href={`/home?event=${event.id}`} className="flex min-h-tap items-center gap-3 rounded-card border border-line bg-surface p-4 shadow-step hover:border-ink-soft/40">
       <span className="flex size-12 items-center justify-center rounded-pill bg-surface-2"><EventIcon type={event.type} size={26} /></span>
-      <span className="flex flex-1 flex-col">
-        <span className="font-extrabold">{eventLabel(event, t)}</span>
+      <span className="flex min-w-0 flex-1 flex-col">
+        <span className="truncate font-extrabold">{eventLabel(event, t)}</span>
         <span className="text-xs text-ink-soft">
           {dateLabel(event.date, { weekday: true })} · {phase === 'done' ? 'Done' : phase === 'prep' ? `${p.read} of ${p.total} evenings read` : countdownText(event, t, today)}
         </span>
@@ -318,7 +318,7 @@ function LibraryRow({ item, events }: { item: LibraryItem; events: BigEvent[] })
           <span className="truncate font-extrabold">{item.title || `Chapter ${item.chapter}`}</span>
           <span className="text-xs text-ink-soft">{label} · chapter {item.chapter} · read {dateLabel(item.readOn)}</span>
         </span>
-        <span className="hidden text-sm font-extrabold uppercase text-primary-text sm:inline">Read again</span>
+        <span className="hidden text-sm font-extrabold text-primary-text sm:inline">Read again</span>
       </Link>
       <button
         type="button"
