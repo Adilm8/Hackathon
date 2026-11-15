@@ -89,6 +89,20 @@ export function tourSteps(event: BigEvent, list: Entitlement[], nowMs: number, s
   ];
 }
 
+/**
+ * "More to explore" in the Demo bar: newer parts of the app that the six-step story tour does
+ * not pass through. Plain links, not ticked, so the tour count stays 6.
+ */
+export const EXPLORE: { id: string; label: string; href: string }[] = [
+  { id: 'home', label: 'Home: story path, streak, switch to Mia', href: '/home' },
+  { id: 'library', label: 'Library of read stories', href: '/home?tab=library' },
+  { id: 'badges', label: 'Badges and progress', href: '/home?tab=badges' },
+  { id: 'friend', label: 'Dress up the story friend', href: '/settings#story-friend' },
+  { id: 'voice', label: 'Storyteller voices, a parent\'s own voice', href: '/settings#reading' },
+  { id: 'routine', label: 'Bedtime routine timer', href: '/routine' },
+  { id: 'colours', label: 'Colours: 4 palettes, day and night', href: '/settings#colours' },
+];
+
 // ---------- browser state ----------
 
 const SEEN_KEY = 'bds:sample:demo';

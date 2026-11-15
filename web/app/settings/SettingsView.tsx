@@ -1,7 +1,7 @@
 'use client';
 import { childNameError } from '@/lib/childName';
 import { useRouter } from 'next/navigation';
-import { useState, type ReactNode } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 import { SubscriptionCard } from '@/components/paywall/SubscriptionCard';
 import { ExportImport, NarrationSettings, PalettePicker, Reminders, RestoreLink, StyleToggle, ValuesProfile, VoiceConsent } from '@/components/settings';
 import { clock } from '@/lib/engine/clock';
@@ -29,7 +29,11 @@ import { api } from '@/lib/sync/api';
 
 function Section({ title, children }: { title: string; children: ReactNode }) {
   return (
-    <section aria-label={title} className="flex flex-col gap-4 rounded-card border border-line bg-surface p-5 shadow-step">
+    <section
+      id={title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}
+      aria-label={title}
+      className="flex scroll-mt-20 flex-col gap-4 rounded-card border border-line bg-surface p-5 shadow-step"
+    >
       <h2 className="text-lg font-extrabold">{title}</h2>
       {children}
     </section>
@@ -47,6 +51,12 @@ export function SettingsView() {
   const [name, setName] = useState(child?.name ?? '');
   const [confirmDelete, setConfirmDelete] = useState(false);
   const [deleting, setDeleting] = useState(false);
+  // Links like /settings#colours (Demo bar): the sections render after hydration, so the
+  // browser's own jump to the hash finds nothing; scroll once they are on the page.
+  useEffect(() => {
+    const id = decodeURIComponent(window.location.hash.slice(1));
+    if (id) document.getElementById(id)?.scrollIntoView({ block: 'start' });
+  }, []);
 
   const deleteAll = async () => {
     setDeleting(true);

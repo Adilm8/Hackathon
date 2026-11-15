@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 import { Icon } from '@/components/icons';
+import { LEAVE_READER_EVENT } from '@/lib/reader/gate';
 
 /**
  * Frame of every screen (docs/SPEC.md 4.2): header with the child's name and a settings
@@ -40,7 +41,7 @@ export function AppShell({
   fit?: boolean;
   /** Where the logo leads: /home for a family with data, the landing page otherwise. */
   homeHref?: string;
-  /** The child's own screen (the reader): no settings button and no logo link, so a child can't wander off. */
+  /** The child's own screen (the reader): no settings button, and the logo asks the reader's parent gate before leaving, so a child can't wander off. */
   childMode?: boolean;
 }) {
   const logoClass = 'inline-flex min-h-tap items-center whitespace-nowrap font-display text-base font-extrabold sm:text-lg';
@@ -49,7 +50,13 @@ export function AppShell({
       <header data-app-chrome className="no-print sticky top-0 z-20 border-b border-line bg-bg/95 backdrop-blur">
         <div className={`mx-auto flex h-14 items-center gap-3 px-4 ${wide ? 'max-w-6xl' : 'max-w-5xl'}`}>
           {childMode ? (
-            <span className={logoClass}>Big Day Stories</span>
+            <button
+              type="button"
+              className={logoClass}
+              onClick={() => window.dispatchEvent(new CustomEvent(LEAVE_READER_EVENT, { detail: homeHref }))}
+            >
+              Big Day Stories
+            </button>
           ) : (
             <Link href={homeHref} className={logoClass}>Big Day Stories</Link>
           )}
