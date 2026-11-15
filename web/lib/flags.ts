@@ -12,6 +12,8 @@ export const flags = {
   restoreLink: true,
   monthlyPlan: true,
   exportImport: true,
+  /** Painted scene pictures (lib/illustrations); open to every level in the MVP like the premium voice. */
+  illustratedScenes: true,
 } as const;
 
 export type FlagName = keyof typeof flags;

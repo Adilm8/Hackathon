@@ -15,7 +15,8 @@
     "eval": "tsx --conditions=react-server evals/eval.ts",
     "vapid": "node scripts/vapid-keys.mjs",
     "voice:test": "node scripts/voice-test.mjs",
-    "avatar": "sh scripts/avatar/run.sh"
+    "avatar": "sh scripts/avatar/run.sh",
+    "illustrations": "tsx scripts/illustrations/generate.ts"
   },
   "dependencies": {
     "@ai-sdk/google": "^4.0.121",
@@ -50,6 +51,7 @@
     "drizzle-kit": "^0.31.11",
     "eslint": "^9",
     "eslint-config-next": "16.4.6",
+    "sharp": "^0.35.5",
     "svgo": "^4.1.0",
     "tailwindcss": "4.3.3",
     "tsx": "^4.23.15",

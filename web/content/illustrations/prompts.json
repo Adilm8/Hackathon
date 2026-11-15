@@ -1,0 +1,163 @@
+{
+  "version": 1,
+  "style": "STYLE LOCK — \"Moonlit Meadow\", art set BDS-01, scene backgrounds: cozy storybook illustration for children aged 3 to 7, fully original. Flat vector illustration: solid flat colour fills, at most one darker shade per colour as a simple hard-edged shape, no gradients, no textures, no noise, no glow. Smooth, uniform dark plum outline (#2B2A3A), the same thickness everywhere. Warm gentle palette: cream #FFF9F0, soft indigo #5B6CFF, mint #3DBE8B, honey #FFC93C, coral #E5565B, lilac #9B6BE8, apricot #FF8A3D, with soft pastel tints. Rounded, chunky, friendly shapes, nothing sharp, spooky, messy or menacing. Calm, tidy and well lit, like a page of a bedtime picture book.",
+  "format": "FORMAT: one landscape background, aspect ratio 16:9, eye-level view seen from a child's height. Keep the lower middle third of the picture open and uncluttered (a clear floor area): a story character is placed there later. Put the main objects to the left, the right and the back.",
+  "avoid": "DO NOT include: people, children, faces, hands, animals, creatures, characters, toys with faces, text, letters, numbers, labels, signs with writing, logos, watermarks, frames, needles, blood, sharp tools, scissors close up, anything scary, dark shadows, photorealism, 3D render look.",
+  "neutral": {
+    "home-evening": "A family living room in the evening: a soft sofa with cushions, a warm floor lamp, a rug, a low table with a cup of cocoa, a window with a deep blue sky and a few stars.",
+    "outside": "A friendly street in daytime: a low building with a big blue door, a tree with round leaves, a path, a bench, a few flowers and fluffy clouds.",
+    "cosy-room": "A cosy child's bedroom: a small bed with a quilt, a night lamp, a shelf of picture books, a rug and a window with curtains."
+  },
+  "events": {
+    "dentist": {
+      "place": "a bright, friendly children's dental clinic",
+      "beats": {
+        "what_happens": "The treatment room: a big soft blue dentist chair that leans back, a round lamp above it, a small sink and a tray with a toothbrush and a little mirror.",
+        "who_is_there": "The front desk with a little bell and a jar of stickers, a coat rack with a white coat and a mask and gloves box on a shelf.",
+        "what_i_do": "Close view of the big chair from the side, a cup of water, a cartoon tooth poster without words and a hand-held mirror.",
+        "if_scared": "A calm corner of the waiting room: a beanbag, a basket of picture books, a fish tank with bubbles and a window with sunlight.",
+        "rehearsal": "A living room set up for a pretend dentist game: a cushion chair, a toothbrush, a hand mirror, a torch and a sticker sheet on the rug."
+      }
+    },
+    "school": {
+      "place": "a cheerful first-grade classroom",
+      "beats": {
+        "what_happens": "The classroom: little round tables with chairs, a chalkboard with drawn shapes, a calendar wall without words and sunny windows.",
+        "who_is_there": "The teacher's desk with an apple and a pot of pencils, a reading rug with cushions in a circle and a shelf of picture books.",
+        "what_i_do": "The cubbies with hooks for backpacks and coats, a lunch box on a shelf and a row of coloured cups.",
+        "if_scared": "A quiet calm corner: a small tent of fabric, a soft cushion, a basket of books and a window with a tree outside.",
+        "rehearsal": "A bedroom set up for a pretend school day: a small backpack, a lunch box, crayons and a drawing board on the rug."
+      }
+    },
+    "flight": {
+      "place": "a calm, sunny airport and a plane",
+      "beats": {
+        "what_happens": "A big airport window with a friendly round plane waiting outside on the runway, rows of soft seats inside.",
+        "who_is_there": "A check-in counter with a small suitcase on a belt, a rolling luggage cart and a gentle wave of hanging lamps.",
+        "what_i_do": "Inside the plane: a window seat with a belt, a little folding table with a cup of juice, and fluffy clouds outside the round window.",
+        "if_scared": "A cosy plane seat with a blanket, headphones and a small pillow, and a calm sky with clouds outside the window.",
+        "rehearsal": "A living room set up as a pretend plane: two chairs in a row, a blanket, a small suitcase and paper clouds on the wall."
+      }
+    },
+    "sibling": {
+      "place": "a family home getting ready for a new baby",
+      "beats": {
+        "what_happens": "A soft nursery: a crib with a mobile of moons and stars, a changing table with folded clothes and a rocking chair.",
+        "who_is_there": "A living room with a big sofa, a baby carrier on the floor, a basket of soft blankets and family pictures without faces.",
+        "what_i_do": "A low shelf with a small baby book, a soft rattle, a tiny hat and a step stool next to the crib.",
+        "if_scared": "A cosy big-kid corner in the nursery: a beanbag, a special box of the older child's own toys and a night lamp.",
+        "rehearsal": "A bedroom set up for pretend baby care: a wrapped blanket bundle on a cushion, a toy bottle, a tiny bath and a soft towel."
+      }
+    },
+    "haircut": {
+      "place": "a friendly, bright hair salon",
+      "beats": {
+        "what_happens": "A hair salon with a big round mirror, a small red chair that goes up and down, and a shelf of bottles.",
+        "who_is_there": "A front desk with a little bell, a coat stand with a cape, and a comb, a spray bottle and a brush on a tidy tray.",
+        "what_i_do": "Close view of the small chair with a booster seat, a cape folded on it and a hand mirror on the counter.",
+        "if_scared": "A calm waiting bench with a picture book, a soft toy-free cushion, a plant and sunlight through the window.",
+        "rehearsal": "A bathroom set up for a pretend haircut: a small stool, a towel cape, a comb, a spray bottle and a hand mirror."
+      }
+    },
+    "shot": {
+      "place": "a calm, friendly children's clinic room",
+      "beats": {
+        "what_happens": "A clinic room with a soft exam table covered with paper, a rainbow poster, a small sink and a jar of bandages.",
+        "who_is_there": "A nurse's station with a tidy desk, a stethoscope on a hook, a box of gloves and a jar of stickers.",
+        "what_i_do": "A chair next to the exam table with a small cushion, a box of colourful bandages and a soft ball to squeeze.",
+        "if_scared": "A calm corner of the clinic: a beanbag, a bubble tube lamp, a basket of picture books and a window with the sky.",
+        "rehearsal": "A living room set up for a pretend doctor game: a toy doctor's bag, colourful bandages, a toy stethoscope and a cushion bed."
+      }
+    },
+    "doctor": {
+      "place": "a friendly children's doctor's office",
+      "beats": {
+        "what_happens": "A doctor's room with a soft exam table, a height chart without numbers, a weighing scale and a window with sunlight.",
+        "who_is_there": "A reception desk with a little bell, a waiting area with small chairs and a basket of picture books.",
+        "what_i_do": "The exam table with a stethoscope, a small light for looking in ears and a wooden tongue stick on a tray.",
+        "if_scared": "A cosy waiting corner: a beanbag, a fish tank with bubbles, a plant and a basket of soft books.",
+        "rehearsal": "A bedroom set up for a pretend check-up: a toy stethoscope, a toy light, a cushion exam bed and a height chart on the door."
+      }
+    },
+    "blood_test": {
+      "place": "a calm, friendly children's clinic lab",
+      "beats": {
+        "what_happens": "A small clinic room with a comfy chair with a wide armrest, a tidy shelf, a box of colourful bandages and a window.",
+        "who_is_there": "A friendly front desk with a little bell, a coat stand with a white coat and a jar of stickers.",
+        "what_i_do": "The comfy chair with a cushion on the armrest, a soft squeeze ball and a cup of water on a side table.",
+        "if_scared": "A calm corner: a bubble tube lamp, a beanbag, a picture book and a soft blanket.",
+        "rehearsal": "A living room set up for pretend practice: a cushion armrest, colourful bandages, a squeeze ball and a sticker sheet."
+      }
+    },
+    "hospital": {
+      "place": "a bright, friendly children's hospital ward",
+      "beats": {
+        "what_happens": "A hospital room for a child: a bed with a colourful quilt, a big window with sunshine, a bedside table and a soft armchair.",
+        "who_is_there": "A nurse's station with tidy shelves, a cart with folded blankets and a board with drawn stars without words.",
+        "what_i_do": "The hospital bed with a button remote, a tray table with juice and a stack of picture books.",
+        "if_scared": "A cosy corner of the room: a reading lamp, a soft blanket on the armchair, a plant and a starry night window.",
+        "rehearsal": "A bedroom set up for a pretend hospital stay: a small bag packed with pyjamas, a soft blanket and a toy doctor's kit."
+      }
+    },
+    "moving": {
+      "place": "a family moving to a new home",
+      "beats": {
+        "what_happens": "A friendly moving van in front of a new little house with a round door, boxes on the path and a tree.",
+        "who_is_there": "An empty sunny living room in the new house with stacked cardboard boxes, a rolled rug and a lamp.",
+        "what_i_do": "A child's new bedroom with an open box of books, a bed frame, a window and a small rug.",
+        "if_scared": "A cosy reading nook in the new room: the child's own blanket, a night lamp and a box of favourite things.",
+        "rehearsal": "A living room with a pretend move: small boxes made from shoe boxes, a toy truck and a drawn map of a house on paper."
+      }
+    },
+    "babysitter": {
+      "place": "the family's own home in the evening",
+      "beats": {
+        "what_happens": "The front hall at home: a door, a coat rack, a little table with keys and a lamp switched on.",
+        "who_is_there": "The kitchen table with two cups of cocoa, a plate of cookies and a board game box.",
+        "what_i_do": "The living room with a blanket fort, a stack of picture books and a soft rug.",
+        "if_scared": "A cosy bed with a night lamp, a favourite blanket and a window with a calm moon.",
+        "rehearsal": "A bedroom with a drawn bedtime chart without words, a toothbrush cup and pyjamas folded on the bed."
+      }
+    },
+    "sleepover": {
+      "place": "a friend's cosy home at night",
+      "beats": {
+        "what_happens": "A friend's bedroom with two sleeping bags on the floor, a night lamp and a shelf of books.",
+        "who_is_there": "A kitchen table set for a snack with two cups of milk and a plate of crackers, a window with stars.",
+        "what_i_do": "A small packed overnight bag with pyjamas, a toothbrush and a soft blanket next to a sleeping bag.",
+        "if_scared": "A sleeping bag with a torch, a favourite blanket and a calm moon in the window.",
+        "rehearsal": "A living room with a pretend sleepover: a sleeping bag on the rug, a torch, a pillow and a picture book."
+      }
+    },
+    "swimming": {
+      "place": "a calm indoor swimming pool for children",
+      "beats": {
+        "what_happens": "A bright indoor pool with shallow, still water, wide steps going in, colourful floats and big windows.",
+        "who_is_there": "The poolside with a lifeguard chair, a red rescue ring, a stack of kickboards and towels on hooks.",
+        "what_i_do": "Shallow steps into the water with a pool noodle, a kickboard and goggles on the edge.",
+        "if_scared": "A warm bench by the pool with a fluffy towel, a water bottle and calm water in the background.",
+        "rehearsal": "A bathroom set up for practice: a bath with bubbles, goggles, a cup for pouring and a towel on a hook."
+      }
+    },
+    "party": {
+      "place": "a cheerful birthday party at a friend's home",
+      "beats": {
+        "what_happens": "A party room with balloons, paper garlands, a table with a cake and cups, and wrapped presents.",
+        "who_is_there": "A door with a balloon tied to the handle, a coat rack with small jackets and a basket for presents.",
+        "what_i_do": "A play corner with party games: a ring toss, a stack of cushions and a basket of party hats.",
+        "if_scared": "A quiet room next to the party with a sofa, a picture book, a cup of juice and the door open.",
+        "rehearsal": "A living room set up for a pretend party: a paper hat, a small wrapped present, a cupcake and one balloon."
+      }
+    },
+    "other": {
+      "place": "a friendly new place for a big day",
+      "beats": {
+        "what_happens": "A friendly building with a big blue door, a path, a tree and a bench, and fluffy clouds.",
+        "who_is_there": "A welcoming entrance hall with a front desk, a little bell, a plant and small chairs.",
+        "what_i_do": "A bright room with a table, two chairs, a shelf of tidy things and a sunny window.",
+        "if_scared": "A calm corner with a beanbag, a soft blanket, a picture book and a plant.",
+        "rehearsal": "A living room set up for a pretend practice: a small bag, a drawn map on paper and a cushion seat."
+      }
+    }
+  }
+}

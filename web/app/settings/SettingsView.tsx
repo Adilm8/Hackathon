@@ -134,6 +134,13 @@ export function SettingsView() {
           hint="A clearer font with more space between letters and words. Helps early and struggling readers."
           checked={prefs.easyRead} onChange={prefs.setEasyRead}
         />
+        {isOn('illustratedScenes') && (
+          <Toggle
+            id="illustrated" label="Painted pictures"
+            hint="Each chapter shows its own painted scene. Turn off for the simple drawn scenes."
+            checked={prefs.illustrated} onChange={prefs.setIllustrated}
+          />
+        )}
         <Toggle
           id="sounds" label="Sounds"
           hint="A soft chime when a chapter ends or a badge is earned."
