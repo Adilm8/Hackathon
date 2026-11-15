@@ -33,7 +33,7 @@ export function ChildSwitcher({ onSwitch, compact = false }: { onSwitch: (childI
           }`}
         >
           <span className="flex size-9 items-center justify-center overflow-hidden rounded-pill bg-surface-2">
-            <Character character={c.character} mood={c.active ? 'happy' : 'calm'} size={36} decorative />
+            <Character character={c.character} mood={c.active ? 'happy' : 'calm'} size={36} framing="head" decorative />
           </span>
           {c.name}
           {c.active && <span className="sr-only">(shown now)</span>}

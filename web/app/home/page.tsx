@@ -241,7 +241,7 @@ function ChildTab({ child, events, today }: { child: ChildProfile; events: BigEv
         {others.length === 0 && <p className="text-sm text-ink-soft">When you make a story for another child, they are saved here, so you never type them again.</p>}
         {others.map((p) => (
           <Link key={p.childId} href={`/start?again=1&child=${encodeURIComponent(p.childId)}`} className="flex min-h-tap items-center gap-3 rounded-card border border-line bg-surface p-3 shadow-step hover:border-ink-soft/40">
-            <Character character={p.character} mood="calm" size={48} decorative />
+            <Character character={p.character} mood="calm" size={48} framing="head" decorative />
             <span className="flex flex-1 flex-col">
               <span className="font-extrabold">{p.name}</span>
               <span className="text-xs text-ink-soft">{p.age} years · make a story for {p.name}</span>

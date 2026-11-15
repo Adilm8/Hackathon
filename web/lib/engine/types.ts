@@ -17,9 +17,23 @@ export type Topic =
   | 'safety' | 'social' | 'body' | 'love' | 'other';
 export type Mood = 'calm' | 'worried' | 'brave' | 'happy';
 export type StyleMode = 'story' | 'social';
-export type Animal = 'bunny' | 'bear' | 'fox' | 'kitten';
-export type CharacterColor = 'blue' | 'green' | 'yellow' | 'red' | 'purple' | 'orange';
-export type Accessory = 'cap' | 'scarf' | 'backpack';
+/** Story friend species (SPEC 6, 11.4). The first four are the original ids and stay valid. */
+export type Animal = 'bunny' | 'bear' | 'fox' | 'kitten' | 'dragon' | 'owl' | 'hedgehog' | 'fawn';
+/** Outfit colour. teal and pink were added with Story friend 2.0. */
+export type CharacterColor = 'blue' | 'green' | 'yellow' | 'red' | 'purple' | 'orange' | 'teal' | 'pink';
+/**
+ * Accessory worn on the body or held in the paw. 'cap' is the legacy value from before
+ * Story friend 2.0: it now means headwear 'cap' (see resolveCharacter in ./character.ts).
+ */
+export type Accessory =
+  | 'none' | 'cap' | 'scarf' | 'backpack' | 'cape' | 'satchel' | 'star-necklace' | 'star-wand' | 'lantern' | 'plush-star';
+export type Outfit =
+  | 'tunic' | 'raincoat' | 'star-robe' | 'knight-tabard' | 'overalls' | 'moon-pajamas' | 'explorer-vest' | 'knit-sweater';
+export type Headwear =
+  | 'none' | 'cap' | 'wizard-hat' | 'flower-crown' | 'star-crown' | 'beret' | 'acorn-cap' | 'bow-headband' | 'goggles';
+export type Companion =
+  | 'none' | 'firefly' | 'cloud-puff' | 'star-sprite' | 'crystal-snail' | 'ladybug' | 'tiny-turtle' | 'mushroom-sprout' | 'pebble-chick';
+export type FurVariant = 'classic' | 'dusk' | 'dawn';
 export type Pronoun = 'he' | 'she' | 'they';
 export type QuestionCategory = 'on_topic' | 'off_topic' | 'sensitive' | 'unsafe';
 export type QuestionSource = 'button' | 'custom' | 'voice';
@@ -29,7 +43,20 @@ export type TextSource = 'llm' | 'fallback';
 /** Scene id; must exist in components/character/backgrounds registry. */
 export type BackgroundId = string;
 
-export interface Character { animal: Animal; color: CharacterColor; accessory: Accessory }
+/**
+ * The child's Story friend. animal, color and accessory are the original fields; the rest were
+ * added with Story friend 2.0 and are optional, so profiles saved before keep working
+ * (defaults: tunic, no headwear unless accessory is the legacy 'cap', no companion, classic fur).
+ */
+export interface Character {
+  animal: Animal;
+  color: CharacterColor;
+  accessory: Accessory;
+  outfit?: Outfit;
+  headwear?: Headwear;
+  companion?: Companion;
+  fur?: FurVariant;
+}
 
 export interface ValuesProfile {
   tone: 'secular' | 'religious';
