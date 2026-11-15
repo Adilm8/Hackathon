@@ -69,28 +69,33 @@ export class CloudNarrator implements Narrator {
     const el = (this.el ??= new Audio());
     el.src = silence ??= silentWav();
     void el.play().catch(() => {});
+    // No premium audio for sentence i (network, budget, provider): the device voice reads the rest
+    // of the page, so Listen never goes silent halfway (docs/reliability.md).
+    const toDevice = (i: number): void => {
+      if (token !== this.token) return;
+      if (!deviceNarrator.available()) return opts.onEnd();
+      this.fallback = true;
+      deviceNarrator.speak(sentences.slice(i), {
+        ...opts,
+        onSentence: (k) => opts.onSentence(i + k),
+        ...(opts.onWord ? { onWord: (k: number, c: number) => opts.onWord!(i + k, c) } : {}),
+      });
+    };
     const playAt = async (i: number): Promise<void> => {
       if (token !== this.token) return;
       if (i >= sentences.length) return opts.onEnd();
       const url = await audioUrl(sentences[i], opts.voiceURI);
       if (token !== this.token) return;
-      if (!url) {
-        if (i === 0) {
-          // No premium audio: the device voice reads the whole page.
-          this.fallback = true;
-          return deviceNarrator.speak(sentences, opts);
-        }
-        return opts.onEnd();
-      }
+      if (!url) return toDevice(i);
       // The next two sentences load while this one plays, so there is no gap between them.
       for (const k of [i + 1, i + 2]) if (k < sentences.length) void audioUrl(sentences[k], opts.voiceURI);
       el.src = url;
       el.playbackRate = opts.rate ? opts.rate / 0.92 : 1; // 0.92 is "Normal" for the device voice
       el.onended = () => void playAt(i + 1);
-      el.onerror = () => token === this.token && opts.onEnd();
+      el.onerror = () => toDevice(i);
       opts.onSentence(i);
       if (i === 0) this.mediaSession();
-      await el.play().catch(() => token === this.token && opts.onEnd());
+      await el.play().catch(() => toDevice(i));
     };
     void playAt(0);
   }

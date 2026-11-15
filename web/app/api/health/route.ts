@@ -1,14 +1,28 @@
 import { NextResponse } from 'next/server';
-import { pingDb } from '@/lib/db/client';
-import { env } from '@/lib/env';
-import { openKeys } from '@/lib/llm/breaker';
-import { budgetLeft } from '@/lib/server/budget';
+import { buildHealth, collectHealth } from '@/lib/server/health';
 import pkg from '@/package.json';
 
 export const dynamic = 'force-dynamic';
 
-/** Health check for Railway (docs/SPEC.md 9). `paused` lists provider models the circuit breaker holds back. */
+/**
+ * Health check for Railway and for the jury Q&A (docs/SPEC.md 9, docs/reliability.md).
+ * 200 while the app can serve families (status ok or degraded: a fallback is in use),
+ * 503 only when the database is down. The older top-level fields stay for existing callers.
+ */
 export async function GET() {
-  const [db, left] = await Promise.all([pingDb(), budgetLeft().catch(() => true)]);
-  return NextResponse.json({ ok: true, db, provider: env().llm.provider, budgetLeft: left, paused: openKeys(), version: pkg.version });
+  const i = await collectHealth();
+  const { status, checks } = buildHealth(i);
+  return NextResponse.json(
+    {
+      ok: status !== 'down',
+      status,
+      checks,
+      db: i.db,
+      provider: i.llmProvider,
+      budgetLeft: i.budgetLeft,
+      paused: i.paused,
+      version: pkg.version,
+    },
+    { status: status === 'down' ? 503 : 200, headers: { 'cache-control': 'no-store' } },
+  );
 }

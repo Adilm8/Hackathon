@@ -46,12 +46,30 @@ export function fallbackPages(
     const p = lists[beat][i];
     return { sentences: p.sentences.map((s) => ({ ...s })), mood: p.mood, background: p.background, addresses: [...p.addresses] };
   });
-  return pagesWithoutAvoided(pages, story?.avoidWords).map((p, n) => ({
+  let kept = pagesWithoutAvoided(pages, story?.avoidWords);
+  // Every sentence held an avoided word (or the template has no pages for these beats):
+  // one calm page rather than an empty chapter, which the reader cannot show.
+  if (!kept.length) kept = [lastResortPage(pages[0]?.background ?? lists.flat()[0]?.background ?? 'cosy-room')];
+  return kept.map((p, n) => ({
     id: storyPageId(chapterIndex, n + 1),
     kind: 'story',
     ...p,
     source: 'fallback',
   }));
+}
+
+/** Neutral page with no event words, used only when nothing else is left to show. */
+export function lastResortPage(background: Page['background']): Omit<Page, 'id' | 'kind' | 'source'> {
+  return {
+    sentences: [
+      { text: 'It was a calm and cozy evening.', kind: 'describe' },
+      { text: "Let's take a slow breath in, and a slow breath out.", kind: 'coach' },
+      { text: 'Tomorrow is a new day, and we will be ready for it together.', kind: 'describe' },
+    ],
+    mood: 'calm',
+    background,
+    addresses: [],
+  };
 }
 
 /** Summary of a fallback chapter, fed to later chapters (≤ 200 chars). */
