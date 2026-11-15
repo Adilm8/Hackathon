@@ -75,10 +75,14 @@ def flatten(img: Image.Image, k: int, seed: int = 7) -> tuple[np.ndarray, np.nda
     d_ink = np.linalg.norm(pal - INK, axis=1)
     if d_ink.min() < 70:
         pal[d_ink.argmin()] = INK
+    elif (np.linalg.norm(px[alpha] - INK, axis=1) < 90).sum() > 200:
+        # thin outlines (small sheets) have no flat inner pixels for k-means to find
+        pal = np.vstack([pal, INK])
     # the outer outline picks up magenta spill from the key; dark pixels near the edge are ink
     ring = alpha & ~ndimage.binary_erosion(alpha, iterations=6)
     lum = px.max(-1) / 255
-    px[ring & (lum < 0.5)] = INK
+    tint = np.minimum(px[..., 0], px[..., 2]) - px[..., 1]
+    px[ring & ((lum < 0.5) | (tint > 70))] = INK
     flat = px[alpha]
     idx = np.argmin(((flat[:, None, :] - pal[None]) ** 2).sum(-1), axis=1)
     out = np.zeros(alpha.shape, np.int16) - 1
@@ -86,6 +90,10 @@ def flatten(img: Image.Image, k: int, seed: int = 7) -> tuple[np.ndarray, np.nda
     # antialiased pixels between two colours (e.g. fur next to the outline) take the colour
     # of the flat area next to them instead of a third colour that happens to be nearest
     edge = alpha & (grad >= 90)
+    # outline pixels are a thin line, not a blend: they keep the ink colour
+    ink_idx = [j for j, c in enumerate(pal) if tuple(int(v) for v in c) == INK]
+    if ink_idx:
+        edge &= out != ink_idx[0]
     core = alpha & ~edge
     votes = np.stack([ndimage.uniform_filter(((out == j) & core).astype(float), 7) for j in range(len(pal))])
     has = votes.max(0) > 0

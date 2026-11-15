@@ -31,11 +31,26 @@ MARGIN = 0.3  # look this far into neighbouring cells for parts that stick out
 SHEET_SIZE = (2752, 1536)  # size of the template sheet; other sheets are scaled to it
 
 
-def load(name: str) -> np.ndarray:
-    im = Image.open(SHEETS / name).convert("RGB")
+def open_sheet(path: Path) -> Image.Image:
+    im = Image.open(path).convert("RGB")
     if im.size != SHEET_SIZE:
-        print(f"{name}: {im.size[0]}x{im.size[1]}, scaled to {SHEET_SIZE[0]}x{SHEET_SIZE[1]} (use full-size downloads for best quality)")
+        print(f"{path.name}: {im.size[0]}x{im.size[1]}, scaled to {SHEET_SIZE[0]}x{SHEET_SIZE[1]} (use full-size downloads for best quality)")
         im = im.resize(SHEET_SIZE, Image.LANCZOS)
+    return im
+
+
+def load(name: str) -> np.ndarray:
+    """A sheet plus single-cell fixes: <stem>.cell<N>.png|jpg is a whole sheet from which only
+    cell N (1-8) is taken, so a re-generated cell never re-encodes the other seven."""
+    im = open_sheet(SHEETS / name)
+    stem = Path(name).stem
+    cw, ch = SHEET_SIZE[0] // 4, SHEET_SIZE[1] // 2
+    for fix in sorted(SHEETS.glob(f"{stem}.cell*.*")):
+        n = int(fix.stem.split(".cell")[1]) - 1
+        r, c = divmod(n, 4)
+        box = (c * cw, r * ch, (c + 1) * cw, (r + 1) * ch)
+        im.paste(open_sheet(fix).crop(box), box[:2])
+        print(f"{name}: cell {n + 1} from {fix.name}")
     return np.asarray(im).astype(np.int16)
 
 
@@ -43,7 +58,8 @@ def background(a: np.ndarray) -> np.ndarray:
     """Magenta key: high red and blue, low green."""
     r, g, b = (a[..., i].astype(np.int32) for i in range(3))
     dist = np.sqrt((r - 255) ** 2 + g ** 2 + (b - 255) ** 2)
-    keyish = (np.minimum(r, b) - g > 120) & (np.abs(r - b) < 90)
+    # bright magenta only: a dark outline blended with the key stays part of the figure
+    keyish = (np.minimum(r, b) - g > 120) & (np.abs(r - b) < 90) & (np.minimum(r, b) > 200)
     return (dist < 110) | keyish
 
 
