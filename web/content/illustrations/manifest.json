@@ -1,4 +1,9 @@
 {
   "version": 1,
-  "files": {}
+  "files": {
+    "events/dentist/what_happens": "f94a8140ce",
+    "events/dentist/who_is_there": "f19eb8bea3",
+    "events/dentist/what_i_do": "5788e5fd39"
+  },
+  "model": "recraft/recraft-v4.1-flash"
 }
