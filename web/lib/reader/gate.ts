@@ -21,3 +21,9 @@ export function openGate(now: number = Date.now()): void {
 export function resetGate(): void {
   openedAt = null;
 }
+
+/**
+ * The reader's header logo: AppShell has no access to the reader's gate, so in child mode the
+ * logo fires this window event (detail = where to go) and the reader leaves through its gate.
+ */
+export const LEAVE_READER_EVENT = 'bds:leave-reader';

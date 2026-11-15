@@ -1,4 +1,4 @@
-import type { Accessory, Animal, Character, CharacterColor, Companion, FurVariant, Headwear, Outfit } from './types';
+import type { Accessory, Animal, Character, CharacterColor, CharacterSize, Companion, FurVariant, Headwear, Outfit } from './types';
 
 /**
  * Story friend options and the one place that turns a saved Character (old or new) into a
@@ -25,6 +25,10 @@ export const COMPANIONS: Companion[] = [
   'none', 'firefly', 'cloud-puff', 'star-sprite', 'crystal-snail', 'ladybug', 'tiny-turtle', 'mushroom-sprout', 'pebble-chick',
 ];
 export const FUR_VARIANTS: FurVariant[] = ['classic', 'dusk', 'dawn'];
+export const CHARACTER_SIZES: CharacterSize[] = ['s', 'm', 'l'];
+export const SIZE_NAME: Record<CharacterSize, string> = { s: 'Small', m: 'Medium', l: 'Large' };
+/** Height of the friend over the reader's scene, as a share of the scene height. */
+export const SIZE_SCALE: Record<CharacterSize, number> = { s: 0.62, m: 0.82, l: 1 };
 
 export interface ResolvedCharacter {
   animal: Animal;
@@ -34,6 +38,7 @@ export interface ResolvedCharacter {
   accessory: Exclude<Accessory, 'cap'>;
   companion: Companion;
   fur: FurVariant;
+  size: CharacterSize;
 }
 
 export const DEFAULT_CHARACTER: Character = {
@@ -59,6 +64,7 @@ export function resolveCharacter(c: Partial<Character> | null | undefined): Reso
     accessory: legacyCap ? 'none' : oneOf(ACCESSORIES, c?.accessory, 'none'),
     companion: oneOf(COMPANIONS, c?.companion, 'none'),
     fur: oneOf(FUR_VARIANTS, c?.fur, 'classic'),
+    size: oneOf(CHARACTER_SIZES, c?.size, 'm'),
   };
 }
 

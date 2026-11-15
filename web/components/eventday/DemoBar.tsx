@@ -6,9 +6,10 @@ import { Icon } from '@/components/icons';
 import { clock, dateLabel } from '@/lib/engine/clock';
 import type { BigEvent, Workspace } from '@/lib/engine/types';
 import {
-  clearSeen, demoEvent, demoModeOn, isDemoAccess, markSeen, readSeen, realTimeGroupOn, sampleAccess, timeTravelDate,
+  clearSeen, demoEvent, EXPLORE, demoModeOn, isDemoAccess, markSeen, readSeen, realTimeGroupOn, sampleAccess, timeTravelDate,
   tourEvent, tourSteps, type TimeTarget, type TourSeen,
 } from '@/lib/demo/demo';
+import { hasEventAccess } from '@/lib/engine/access';
 import { setEntitlements, useEntitlements } from '@/lib/store/entitlement';
 import { useEvents } from '@/lib/store/events';
 import { useToday } from '@/lib/store/hooks';
@@ -79,7 +80,7 @@ export function DemoBar({ workspace }: { workspace: Workspace }) {
   const stored = sample ? readSeen() : {};
   const tour = sample ? tourEvent(events, clock.realToday(), stored) : undefined;
   const onTour = !!tour && onScreenId !== undefined && decodeURIComponent(onScreenId) === tour.id;
-  const here: TourSeen = { panel: (onTour && /\/panel$/.test(pathname)) || undefined, day: (onTour && /\/day$/.test(pathname)) || undefined };
+  const here: TourSeen = { panel: (onTour && /\/panel$/.test(pathname)) || undefined, day: (onTour && /\/day$/.test(pathname) && hasEventAccess(list, tour?.id ?? '', nowMs())) || undefined };
   useEffect(() => {
     if (sample && tour) markSeen({ ...here, eventId: tour.id });
   }, [sample, tour?.id, here.panel, here.day]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -213,6 +214,21 @@ export function DemoBar({ workspace }: { workspace: Workspace }) {
                   </li>
                 ))}
               </ol>
+            )}
+            {sample && (
+              <nav aria-label="More to explore" className="flex flex-wrap items-center gap-2">
+                <span className="text-xs font-bold text-ink-soft">More to explore</span>
+                {EXPLORE.map((x) => (
+                  <Link
+                    key={x.id}
+                    href={x.href}
+                    onClick={() => setOpenSaved(false)}
+                    className="inline-flex min-h-tap items-center rounded-pill border-2 border-line bg-surface px-3 text-sm font-bold hover:bg-surface-2"
+                  >
+                    {x.label}
+                  </Link>
+                ))}
+              </nav>
             )}
             <div role="group" aria-label="Time travel" className="flex flex-wrap items-center gap-2">
               <span className="text-xs font-bold text-ink-soft">Skip to</span>

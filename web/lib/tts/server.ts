@@ -7,11 +7,15 @@
  * for providers that do not train on data (data_collection deny; zero retention with TTS_ZDR=on). Costs count against the LLM daily cap.
  */
 import 'server-only';
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { mkdir, readdir, readFile, stat, unlink, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { budgetLeft, recordCall } from '../server/budget';
 import { cacheKey } from '../server/cache';
 import { env } from '../env';
+import { getSample, SAMPLE_TRANSCRIPT } from './voiceSample';
+
+/** The parent's cloned voice (demo): a voice id the client may send when the family saved a sample. */
+export const PARENT_VOICE = 'parent';
 
 export const TTS_MAX_CHARS = 400;
 
@@ -29,7 +33,7 @@ export function pcmToWav(pcm: Buffer, rate = 24000): Buffer {
   return Buffer.concat([h, pcm]);
 }
 
-export type TtsResult = { audio: Buffer; cached: boolean; type: 'audio/mpeg' | 'audio/wav' } | { error: 'disabled' | 'budget' | 'upstream' };
+export type TtsResult = { audio: Buffer; cached: boolean; type: 'audio/mpeg' | 'audio/wav' } | { error: 'disabled' | 'budget' | 'upstream' | 'no_sample' };
 
 function dir(): string {
   return env().tts.cacheDir || path.join(process.cwd(), '.data', 'tts');
@@ -61,11 +65,46 @@ export function splitVoice(id: string, defaultModel: string): { model: string; v
   return at > 0 ? { model: id.slice(0, at), voice: id.slice(at + 1) } : { model: defaultModel, voice: id };
 }
 
+/** Story audio holds the child's first name, so it is kept at most 30 days (Privacy page). */
+export const AUDIO_MAX_AGE_MS = 30 * 24 * 60 * 60 * 1000;
+let lastSweep = 0;
+/** Deletes cached audio older than AUDIO_MAX_AGE_MS; runs at most once an hour. Never throws. */
+export async function sweepOldAudio(now = Date.now(), folder = dir()): Promise<number> {
+  if (now - lastSweep < 60 * 60 * 1000) return 0;
+  lastSweep = now;
+  let removed = 0;
+  // Story audio, and parent voice samples (voices/) which are biometric data: at most 30 days too.
+  for (const [sub, re] of [['', /\.(mp3|wav)$/], ['voices', /\.(wav|json)$/]] as const) {
+    try {
+      const d = path.join(folder, sub);
+      for (const name of await readdir(d)) {
+        if (!re.test(name)) continue;
+        const f = path.join(d, name);
+        const st = await stat(f).catch(() => null);
+        if (st && st.isFile() && now - st.mtimeMs > AUDIO_MAX_AGE_MS && (await unlink(f).then(() => true, () => false))) removed++;
+      }
+    } catch {
+      /* folder does not exist yet */
+    }
+  }
+  return removed;
+}
+/** Tests only. */
+export function resetSweep(): void {
+  lastSweep = 0;
+}
+
 export async function synthesize(text: string, familyId: string | null, wantedVoice?: string): Promise<TtsResult> {
   const { tts, llm } = env();
   if (!tts.enabled) return { error: 'disabled' };
-  const { model, voice } = splitVoice(resolveVoice(wantedVoice, tts.voices), tts.model);
-  const key = cacheKey(['tts', 1, model, voice, text]);
+  void sweepOldAudio();
+  // The parent's voice: the family's own sample goes with every sentence (stateless cloning).
+  const sample = wantedVoice === PARENT_VOICE && familyId ? await getSample(familyId) : null;
+  if (wantedVoice === PARENT_VOICE && !sample) return { error: 'no_sample' };
+  const { model, voice } = sample
+    ? { model: tts.cloneModel, voice: '' }
+    : splitVoice(resolveVoice(wantedVoice, tts.voices), tts.model);
+  const key = cacheKey(['tts', 1, model, voice, sample ? `${familyId}:${sample.hash}` : '', text]);
   const pcm = wantsPcm(model);
   const type = pcm ? 'audio/wav' : 'audio/mpeg';
   const file = path.join(dir(), `${key}.${pcm ? 'wav' : 'mp3'}`);
@@ -85,11 +124,17 @@ export async function synthesize(text: string, familyId: string | null, wantedVo
         model,
         input: text,
         ...(voice ? { voice } : {}),
+        ...(sample
+          ? { input_references: [
+            { type: 'input_audio', input_audio: { data: `data:audio/wav;base64,${sample.wav.toString('base64')}` } },
+            { type: 'text', text: SAMPLE_TRANSCRIPT },
+          ] }
+          : {}),
         response_format: pcm ? 'pcm' : 'mp3',
-        instructions: 'Warm, calm bedtime-story narration for a young child.',
+        ...(sample ? {} : { instructions: 'Warm, calm bedtime-story narration for a young child.' }),
         provider: { data_collection: 'deny', ...(tts.zdr ? { zdr: true } : {}) },
       }),
-      signal: AbortSignal.timeout(20_000),
+      signal: AbortSignal.timeout(sample ? 30_000 : 20_000),
     });
     if (!res.ok) {
       console.error(`[tts] upstream ${res.status}`);

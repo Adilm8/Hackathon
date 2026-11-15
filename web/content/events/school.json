@@ -2049,5 +2049,173 @@
   "badge": {
     "id": "school_star",
     "label": "School Star"
+  },
+  "olderPages": {
+    "what_happens": {
+      "sentences": [
+        {
+          "text": "A school day runs on a schedule, and most classes post it on the wall so everyone knows what comes next.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] arrives, says goodbye at the door, hangs up a bag and finds a desk or cubby.",
+          "kind": "describe"
+        },
+        {
+          "text": "There is usually a morning meeting, some lessons, a snack or lunch, recess outside and time for reading.",
+          "kind": "describe"
+        },
+        {
+          "text": "At the end of the day, [[GROWNUP]] comes back at pick-up.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can look for the schedule on the wall on the first morning.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "outside",
+      "addresses": [
+        "unknown",
+        "separation"
+      ]
+    },
+    "who_is_there": {
+      "sentences": [
+        {
+          "text": "The teacher runs the classroom and is the person to go to with a problem.",
+          "kind": "describe"
+        },
+        {
+          "text": "Many schools also have teaching assistants, a nurse for when someone feels unwell, a librarian, and lunch and playground helpers.",
+          "kind": "describe"
+        },
+        {
+          "text": "The other kids are new too, or they were new once.",
+          "kind": "describe"
+        },
+        {
+          "text": "Many of them are wondering whether they will make friends.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can learn one person's name on the first day and use it the next morning.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "outside",
+      "addresses": [
+        "strangers",
+        "social",
+        "unknown"
+      ]
+    },
+    "what_i_do": {
+      "sentences": [
+        {
+          "text": "A few skills make a new class easier.",
+          "kind": "describe"
+        },
+        {
+          "text": "Saying hi and asking a question, like what's your name, starts most friendships.",
+          "kind": "describe"
+        },
+        {
+          "text": "Asking, can I play too, works on the playground.",
+          "kind": "describe"
+        },
+        {
+          "text": "Raising a hand or going up to the teacher is the way to ask for help.",
+          "kind": "describe"
+        },
+        {
+          "text": "If the room gets loud, it is fine to take a quiet break if the class has a calm corner.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can practise one friendly opening line tonight.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "brave",
+      "background": "outside",
+      "addresses": [
+        "social",
+        "strangers",
+        "sensory"
+      ]
+    },
+    "if_scared": {
+      "sentences": [
+        {
+          "text": "Starting somewhere new can make the stomach feel fluttery, and that is the body getting ready for something important.",
+          "kind": "describe"
+        },
+        {
+          "text": "It is common to miss home, to forget a name, or to feel lost the first day.",
+          "kind": "describe"
+        },
+        {
+          "text": "Teachers expect that.",
+          "kind": "describe"
+        },
+        {
+          "text": "It usually takes a few weeks for a new place to feel normal.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can say to the teacher, I'm new and I'm not sure where to go.",
+          "kind": "coach"
+        },
+        {
+          "text": "Thinking about the pick-up moment helps on a long afternoon.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "worried",
+      "background": "school",
+      "addresses": [
+        "separation",
+        "strangers",
+        "unknown"
+      ]
+    },
+    "rehearsal": {
+      "sentences": [
+        {
+          "text": "Here is the first day in order.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] and [[GROWNUP]] walk to the door and do the goodbye.",
+          "kind": "describe"
+        },
+        {
+          "text": "Bag on the hook, find a seat, look for the schedule.",
+          "kind": "describe"
+        },
+        {
+          "text": "Morning meeting, lessons, snack, recess with a friendly question, then lunch and quiet reading.",
+          "kind": "describe"
+        },
+        {
+          "text": "At pick-up, [[CHILD]] tells [[GROWNUP]] one good thing.",
+          "kind": "describe"
+        },
+        {
+          "text": "Tonight, [[CHILD]] can pack the bag and set out clothes so the morning is calm.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "happy",
+      "background": "home-evening",
+      "addresses": [
+        "separation",
+        "social",
+        "unknown"
+      ]
+    }
   }
 }

@@ -1,10 +1,11 @@
 'use client';
 import { childNameError } from '@/lib/childName';
 import { useRouter } from 'next/navigation';
-import { useState, type ReactNode } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 import { SubscriptionCard } from '@/components/paywall/SubscriptionCard';
 import { ExportImport, NarrationSettings, PalettePicker, Reminders, RestoreLink, StyleToggle, ValuesProfile, VoiceConsent } from '@/components/settings';
 import { clock } from '@/lib/engine/clock';
+import { CHILD_AGES } from '@/lib/engine/plan';
 import { DEFAULT_PALETTE, isNight } from '@/lib/theme';
 import { clearDeviceData } from '@/lib/storage/clear';
 import { Button, ButtonLink } from '@/components/ui/Button';
@@ -29,7 +30,11 @@ import { api } from '@/lib/sync/api';
 
 function Section({ title, children }: { title: string; children: ReactNode }) {
   return (
-    <section aria-label={title} className="flex flex-col gap-4 rounded-card border border-line bg-surface p-5 shadow-step">
+    <section
+      id={title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}
+      aria-label={title}
+      className="flex scroll-mt-20 flex-col gap-4 rounded-card border border-line bg-surface p-5 shadow-step"
+    >
       <h2 className="text-lg font-extrabold">{title}</h2>
       {children}
     </section>
@@ -47,6 +52,12 @@ export function SettingsView() {
   const [name, setName] = useState(child?.name ?? '');
   const [confirmDelete, setConfirmDelete] = useState(false);
   const [deleting, setDeleting] = useState(false);
+  // Links like /settings#colours (Demo bar): the sections render after hydration, so the
+  // browser's own jump to the hash finds nothing; scroll once they are on the page.
+  useEffect(() => {
+    const id = decodeURIComponent(window.location.hash.slice(1));
+    if (id) document.getElementById(id)?.scrollIntoView({ block: 'start' });
+  }, []);
 
   const deleteAll = async () => {
     setDeleting(true);
@@ -82,7 +93,7 @@ export function SettingsView() {
             <div>
               <p className="mb-2 text-sm font-bold">Age</p>
               <div className="flex flex-wrap gap-2">
-                {([3, 4, 5, 6, 7, 8] as const).map((a) => <Chip key={a} selected={child.age === a} onToggle={() => updateChild({ age: a })}>{a}</Chip>)}
+                {CHILD_AGES.map((a) => <Chip key={a} selected={child.age === a} onToggle={() => updateChild({ age: a })}>{a}</Chip>)}
               </div>
             </div>
             <div>

@@ -5,6 +5,7 @@ import { and, eq, lt, sql } from 'drizzle-orm';
 import { getDb } from './client';
 import { families, type FamilyRow } from './schema';
 import type { Workspace } from '../engine/types';
+import { deleteSample } from '../tts/voiceSample';
 
 const DAY_MS = 86_400_000;
 export const SAMPLE_RETENTION_DAYS = 7;
@@ -30,6 +31,7 @@ export async function touchFamily(id: string): Promise<void> {
 
 /** Deletes the family and, by cascade, its document, access rows (llm_calls keep the cost only). */
 export async function deleteFamily(id: string): Promise<boolean> {
+  await deleteSample(id); // the parent's voice sample (biometric) goes with the family
   const db = await getDb();
   const rows = await db.delete(families).where(eq(families.id, id)).returning({ id: families.id });
   return rows.length > 0;

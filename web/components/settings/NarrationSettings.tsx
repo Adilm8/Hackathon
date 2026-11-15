@@ -7,6 +7,7 @@ import { Toggle } from '@/components/ui/Toggle';
 import { narrator, readingVoices, speakOnce, subscribeVoices } from '@/lib/speech/narrator';
 import { RATES, type RateName } from '@/lib/speech/voices';
 import { usePrefs } from '@/lib/store/prefs';
+import { ParentVoiceClone } from './ParentVoiceClone';
 import { Segmented } from './Segmented';
 
 const noop = () => () => {};
@@ -33,8 +34,11 @@ export function NarrationSettings() {
     void premiumVoices().then((v) => live && setCharacters(v));
     return () => { live = false; };
   }, []);
+  const [parentHas, setParentHas] = useState(false);
   const premium = characters.length > 0;
-  const character = characters.find((c) => c.id === characterVoice)?.id ?? characters[0]?.id ?? '';
+  // The parent's cloned voice (demo) joins the characters once it is saved.
+  const all = parentHas ? [...characters, { id: 'parent', label: 'My voice' }] : characters;
+  const character = all.find((c) => c.id === characterVoice)?.id ?? all[0]?.id ?? '';
   const hearCharacter = (id: string) =>
     cloudNarrator.speak([SAMPLE], { voiceURI: id, rate: RATES[speechRate], onSentence: () => {}, onEnd: () => {} });
   const device = !premium || storyVoice === 'device';
@@ -52,17 +56,26 @@ export function NarrationSettings() {
           onChange={(v) => setVoice({ storyVoice: v })}
         />
       )}
-      {premium && storyVoice === 'premium' && characters.length > 1 && (
+      {premium && storyVoice === 'premium' && all.length > 1 && (
         <div className="grid gap-2">
           <Segmented<string>
             label="Character voice" value={character}
-            options={characters.map((c) => ({ value: c.id, label: c.label }))}
+            options={all.map((c) => ({ value: c.id, label: c.label }))}
             onChange={(id) => { setVoice({ characterVoice: id }); hearCharacter(id); }}
           />
           <Button variant="secondary" className="justify-self-start" onClick={() => hearCharacter(character)}>
             <Icon name="volume-2" size={18} /> Hear it
           </Button>
         </div>
+      )}
+      {premium && storyVoice === 'premium' && (
+        <ParentVoiceClone
+          onChange={(has) => {
+            setParentHas(has);
+            if (has) setVoice({ characterVoice: 'parent' });
+            else if (usePrefs.getState().characterVoice === 'parent') setVoice({ characterVoice: null });
+          }}
+        />
       )}
       {device && voices.length > 0 && (
         <div className="grid gap-2">

@@ -7,8 +7,12 @@ import { buildSampleSibling } from '@/lib/engine/sample';
 import { clearWorkspaceKeys, seedWorkspace } from './seed';
 import { switchWorkspace, workspaceHasData } from './workspace';
 
-/** Creates a fresh sample family on the server (local seed when offline) and opens its upcoming plan. */
-export async function startSample(): Promise<void> {
+/**
+ * Creates a fresh sample family on the server (local seed when offline). `plan` opens its
+ * upcoming plan (the 3-minute tour), `home` opens the home page to look around the whole app.
+ * The sample lives in its own workspace (bds:sample:*), so a real family's data is untouched.
+ */
+export async function startSample(open: 'plan' | 'home' = 'plan'): Promise<void> {
   const today = clock.realToday();
   clearWorkspaceKeys('sample');
   const server = await api.createSample(today);
@@ -18,7 +22,7 @@ export async function startSample(): Promise<void> {
   const doc = { ...base, events: [...base.events.filter((e) => e.id !== mia.event.id), mia.event] };
   seedWorkspace('sample', doc, server?.entitlements ?? [], server?.version, [mia.child]);
   const upcoming = doc.events.filter((e) => e.date >= today).sort((a, b) => (a.date < b.date ? -1 : 1))[0];
-  switchWorkspace('sample', upcoming ? `/event/${upcoming.id}` : '/home');
+  switchWorkspace('sample', open === 'plan' && upcoming ? `/event/${upcoming.id}` : '/home');
 }
 
 export function exitSample(): void {

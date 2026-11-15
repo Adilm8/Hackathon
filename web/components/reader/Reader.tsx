@@ -15,6 +15,8 @@ import { ProgressBar } from '@/components/ui/ProgressBar';
 import { Skeleton } from '@/components/ui/Skeleton';
 import { clock } from '@/lib/engine/clock';
 import type { Page, Question } from '@/lib/engine/types';
+import { CHARACTER_SIZES, normalizeCharacter, resolveCharacter, SIZE_NAME } from '@/lib/engine/character';
+import { useChild } from '@/lib/store/child';
 import { useEvents } from '@/lib/store/events';
 import { useEventCtx } from '@/lib/store/hooks';
 import { newId } from '@/lib/store/id';
@@ -29,6 +31,7 @@ import { getRecording, deleteRecording, recordingKey } from '@/lib/speech/record
 import { getWorkspace } from '@/lib/store/workspace';
 import { isNight } from '@/lib/theme';
 import { useImmersive } from '@/lib/reader/immersive';
+import { LEAVE_READER_EVENT } from '@/lib/reader/gate';
 import { ListenButton, type ReadPosition } from './ListenButton';
 import { RecordButton } from './RecordButton';
 import { VoicePicker } from './VoicePicker';
@@ -65,6 +68,15 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
   // leaving the reader still does (the door button).
   const immersive = useImmersive();
   const { guard, gate } = useParentGate();
+  // The header logo leaves the reader too, through the same grown-up gate as the door button.
+  useEffect(() => {
+    const leave = (e: Event) => {
+      const href = (e as CustomEvent<string>).detail || '/home';
+      guard(() => router.push(href));
+    };
+    window.addEventListener(LEAVE_READER_EVENT, leave);
+    return () => window.removeEventListener(LEAVE_READER_EVENT, leave);
+  }, [guard, router]);
   const scrollBox = useRef<HTMLDivElement | null>(null);
   // The voice moves the sentence on screen as it reads.
   const onProgress = useCallback((p: ReadPosition | null) => {
@@ -294,7 +306,8 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
       <ButtonLink href={`/event/${eventId}/panel`} variant="ghost" className="mt-3">Open the full panel</ButtonLink>
     </>
   );
-  const iconBtn = 'inline-flex size-tap shrink-0 items-center justify-center rounded-pill hover:bg-surface-2';
+  // Eight buttons share the row: a touch smaller on the narrowest phones so none is cut off.
+  const iconBtn = 'inline-flex size-tap max-[400px]:size-10 shrink-0 items-center justify-center rounded-pill hover:bg-surface-2';
   return (
     <div className="flex min-h-0 flex-1 gap-6">
       <div className="flex min-w-0 flex-1 flex-col gap-2">
@@ -302,7 +315,7 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
         <p className="line-clamp-2 text-xs font-bold text-ink-soft sm:hidden">
           {total === 1 ? 'Quick prep' : `Chapter ${index} of ${total}`} · {chapter.title}
         </p>
-        <div className="flex items-center gap-1 sm:gap-2">
+        <div className="flex items-center gap-0 min-[400px]:gap-1 sm:gap-2">
           <button type="button" onClick={() => guard(() => router.push(`/event/${eventId}`))} aria-label="Back to the plan" className={iconBtn}>
             <Icon name="door-open" size={22} />
           </button>
@@ -320,6 +333,7 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
           >
             Aa
           </button>
+          <FriendSizeButton className={iconBtn} />
           <button
             type="button"
             onClick={() => useSettings.getState().setNightMode(night ? 'off' : 'on')}
@@ -437,5 +451,25 @@ function ChapterEnd({ ctx, index, total, onReread }: { ctx: NonNullable<ReturnTy
       </div>
       <Link href={`/event/${event.id}`} className="inline-flex min-h-tap items-center font-bold text-primary-text underline">Back to the plan</Link>
     </section>
+  );
+}
+
+/** Cycles the Story friend's size over the scene (S, M, L); saved on the child's character. */
+function FriendSizeButton({ className }: { className: string }) {
+  const character = useChild((s) => s.child?.character);
+  if (!character) return null;
+  const size = resolveCharacter(character).size;
+  const next = CHARACTER_SIZES[(CHARACTER_SIZES.indexOf(size) + 1) % CHARACTER_SIZES.length];
+  return (
+    <button
+      type="button"
+      onClick={() => useChild.getState().updateChild({ character: normalizeCharacter({ ...character, size: next }) })}
+      aria-label={`Story friend size: ${SIZE_NAME[size]}. Tap for ${SIZE_NAME[next]}`}
+      title={`Story friend size: ${SIZE_NAME[size]}`}
+      className={`${className} gap-0.5`}
+    >
+      <Icon name="smile" size={18} />
+      <span className="text-xs font-extrabold">{size.toUpperCase()}</span>
+    </button>
   );
 }

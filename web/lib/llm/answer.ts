@@ -24,6 +24,7 @@ import { mockAnswer } from './mock';
 import { buildAnswerPrompt, buildRewritePrompt } from './prompts/answer.v1';
 import { buildSystemPrompt } from './prompts/system.v1';
 import { callStructured } from './run';
+import { withoutAvoided } from '../engine/storyPrefs';
 import { checkPage, postcheckOptions, wordCount } from './validate';
 
 export type AnswerEvent =
@@ -61,6 +62,12 @@ function asSentences(lines: string[]): Sentence[] {
 /** Text of a page for the prompt, with the name replaced (pages come from the browser). */
 function pageText(text: string, input: AnswerInput): string {
   return cleanText(text, { max: 1500, childName: input.childName, pronunciation: input.pronunciation, keepPlaceholders: true }).text;
+}
+
+/** "Hi!", "I am Leo, the bunny", "It's me, your friend": a greeting or introduction, not an answer. */
+export function isIntroduction(text: string): boolean {
+  const t = text.trim().toLowerCase();
+  return /^(hi|hello|hey)\b[^.?!]*[.?!]?$/.test(t) || /^(hi|hello|hey)?[,!\s]*(i am|i'm|it's me|it is me|this is)\b/.test(t);
 }
 
 export async function* answerQuestion(input: AnswerInput): AsyncGenerator<AnswerEvent> {
@@ -117,7 +124,10 @@ export async function* answerQuestion(input: AnswerInput): AsyncGenerator<Answer
   };
   const childAnswer = (sentences: { text: string; kind: 'describe' | 'coach' }[] | undefined, category: QuestionCategory): Sentence[] | null => {
     const limit = category === 'off_topic' ? 2 : 3;
-    const list = (sentences ?? []).slice(0, limit).map((s) => ({ text: s.text.trim(), kind: s.kind }));
+    // A self-introduction ("Hi! I am Bunny...") is never the answer: drop it when more follows (prod test, 15 Nov).
+    const all = (sentences ?? []).map((s) => ({ text: s.text.trim(), kind: s.kind })).filter((s) => s.text);
+    const trimmed = all.length > 1 && isIntroduction(all[0].text) ? all.slice(1) : all;
+    const list = withoutAvoided(trimmed, ctx.story?.avoidWords).slice(0, limit);
     if (!list.length) return null;
     return list.every((s) => checkText(s.text, post).length === 0) ? list : null;
   };
@@ -148,7 +158,8 @@ export async function* answerQuestion(input: AnswerInput): AsyncGenerator<Answer
           nextPage: input.nextPage ? { text: pageText(input.nextPage.text, input), background: input.nextPage.background } : undefined,
         }),
       signal: ac.signal,
-      maxOutputTokens: 400,
+      // 400 cut off the JSON on Haiku 5.5 (answer + parent draft + phrase), so the final parse failed.
+      maxOutputTokens: 900,
     });
 
     for await (const raw of call.partials) {
@@ -233,7 +244,7 @@ export async function* answerQuestion(input: AnswerInput): AsyncGenerator<Answer
         const parsed = rewrite.ok ? PageOut.safeParse(rewrite.object.nextPage) : null;
         if (parsed?.success) {
           const original: OutPage = { sentences: [], mood: 'calm', background: input.nextPage.background, addresses: [], source: 'fallback' };
-          const checked = checkPage(parsed.data, { template, age: ctx.child.age, post, fallback: original, minWords: wordCount(nextText) });
+          const checked = checkPage(parsed.data, { template, age: ctx.child.age, post, fallback: original, minWords: wordCount(nextText), avoidWords: ctx.story?.avoidWords });
           if (!checked.replaced) {
             yield { type: 'nextPage', page: { ...checked.page, source: src() } };
           }

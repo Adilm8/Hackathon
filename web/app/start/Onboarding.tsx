@@ -16,13 +16,16 @@ import { ValuesProfile } from '@/components/settings';
 import { PhotoPicker, type DraftPhoto } from '@/components/photos/PhotoPicker';
 import { photoKey, putPhoto } from '@/lib/photos';
 import { addDays, clock, dateLabel, diffDays } from '@/lib/engine/clock';
-import type { Character as CharacterT, ChildProfile, EventType, Pronoun, Topic, ValuesProfile as ValuesProfileT } from '@/lib/engine/types';
+import type { Character as CharacterT, ChildProfile, EventType, Pronoun, StoryPrefs, Topic, ValuesProfile as ValuesProfileT } from '@/lib/engine/types';
 import { isOn } from '@/lib/flags';
 import { speakOnce } from '@/lib/speech/narrator';
 import { useChild } from '@/lib/store/child';
 import { useEvents } from '@/lib/store/events';
 import { useSettings } from '@/lib/store/settings';
-import { createEvent, EVENT_TYPES, FEAR_OPTIONS, getTemplate, isQuickPrep, validateEventDate } from '@/lib/store/engine';
+import { CHILD_AGES, createEvent, EVENT_TYPES, FEAR_OPTIONS, getTemplate, isQuickPrep, maxChapters, validateEventDate } from '@/lib/store/engine';
+import { GenrePicker } from '@/components/story/GenrePicker';
+import { StoryOptions } from '@/components/story/StoryOptions';
+import { cleanStoryText } from '@/lib/store/storyPrefs';
 import { api } from '@/lib/sync/api';
 import { startSyncNow } from '@/lib/store/boot';
 import { getWorkspace } from '@/lib/store/workspace';
@@ -39,12 +42,12 @@ const EVENT_CAPTION: Record<EventType, string> = {
   swimming: 'Pool and swim teacher', party: 'A friend\'s party', other: 'Anything else: a new club, a trip…',
 };
 
-type StepId = 'gate' | 'who' | 'name' | 'age' | 'event' | 'date' | 'fears' | 'character' | 'values';
-const GROUP: Record<StepId, 1 | 2 | 3> = { gate: 1, who: 1, name: 1, age: 1, event: 2, date: 2, fears: 2, character: 3, values: 3 };
+type StepId = 'gate' | 'who' | 'name' | 'age' | 'event' | 'genre' | 'date' | 'fears' | 'story' | 'character' | 'values';
+const GROUP: Record<StepId, 1 | 2 | 3> = { gate: 1, who: 1, name: 1, age: 1, event: 2, genre: 2, date: 2, fears: 2, story: 2, character: 3, values: 3 };
 
 interface Draft {
   name: string; pronunciation: string; age?: number; pronoun?: Pronoun;
-  type?: EventType; customLabel: string; date: string; fears: Topic[]; customFear: string;
+  type?: EventType; customLabel: string; date: string; fears: Topic[]; customFear: string; story: StoryPrefs;
   character: CharacterT; values: ValuesProfileT; social: boolean; photos: DraftPhoto[];
 }
 
@@ -67,7 +70,7 @@ export function Onboarding() {
   const preset = known.find((k) => k.childId === search.get('child')) ?? (quick ? known[0] : undefined);
   // Fixed for this visit: accepting the gate must not shift the step list under the user.
   const [base] = useState<StepId[]>(() => {
-    const all: StepId[] = ['gate', 'who', 'name', 'age', 'event', 'date', 'fears', 'character', 'values'];
+    const all: StepId[] = ['gate', 'who', 'name', 'age', 'event', 'genre', 'date', 'fears', 'story', 'character', 'values'];
     return all.filter((s) => !(s === 'gate' && gateOn) && !(s === 'who' && (known.length === 0 || quick)));
   });
   // Steps already answered by a saved child are left out ("Change" brings them back).
@@ -79,7 +82,7 @@ export function Onboarding() {
 
   const [d, setD] = useState<Draft>(() => ({
     ...childFields(preset),
-    type: suggestedType, customLabel: '', date: '', fears: [], customFear: '',
+    type: suggestedType, customLabel: '', date: '', fears: [], customFear: '', story: {},
     photos: [],
   }));
   const set = (p: Partial<Draft>) => setD((x) => ({ ...x, ...p }));
@@ -114,6 +117,8 @@ export function Onboarding() {
     event: !!d.type && (d.type !== 'other' || d.customLabel.trim().length > 0),
     date: !dateErr,
     fears: true,
+    genre: true,
+    story: true,
     character: true,
     values: true,
   };
@@ -163,6 +168,7 @@ export function Onboarding() {
       id: eventId, childId, photos: photos.map(({ key, caption }) => ({ key, caption })), type: d.type!, date: d.date, today, fears: d.fears,
       customLabel: d.type === 'other' ? d.customLabel.trim() : undefined,
       customFear: d.customFear.trim() || undefined,
+      story: cleanStoryText(d.story, child.name, child.pronunciation),
     });
     useEvents.getState().addEvent(event);
     router.push(`/event/${event.id}`);
@@ -178,6 +184,8 @@ export function Onboarding() {
     event: `What big day is coming up for ${nm}?`,
     date: 'When is the big day?',
     fears: `What might worry ${nm}? Pick up to 3.`,
+    genre: 'What kind of story?',
+    story: `Make the story yours`,
     character: `Let's make ${nm}'s story friend.`,
     values: 'A few things about your family',
   };
@@ -258,8 +266,8 @@ export function Onboarding() {
 
         {step === 'age' && (
           <>
-            <div role="radiogroup" aria-label="Age" className="grid grid-cols-3 gap-3">
-              {[3, 4, 5, 6, 7, 8].map((a) => (
+            <div role="radiogroup" aria-label="Age" className="grid grid-cols-4 gap-3 sm:grid-cols-6">
+              {CHILD_AGES.map((a) => (
                 <ChoiceCard key={a} selected={d.age === a} onSelect={() => set({ age: a })} title={`${a}`} caption="years" className="justify-center" />
               ))}
             </div>
@@ -321,6 +329,18 @@ export function Onboarding() {
             <Field id="cfear" label="Something else (optional)">
               <TextInput id="cfear" maxLength={40} value={d.customFear} onChange={(e) => set({ customFear: e.target.value })} />
             </Field>
+          </>
+        )}
+
+        {step === 'genre' && <GenrePicker value={d.story.genre} onChange={(genre) => set({ story: { ...d.story, genre } })} />}
+
+        {step === 'story' && d.type && (
+          <>
+            <p className="-mt-2 text-sm text-ink-soft">All optional. You can change these later from the plan.</p>
+            <StoryOptions
+              value={d.story} onChange={(story) => set({ story })} template={getTemplate(d.type)}
+              maxEvenings={d.date && !dateErr ? maxChapters(d.date, today) : 1} family={d.values.family}
+            />
           </>
         )}
 

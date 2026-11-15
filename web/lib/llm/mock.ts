@@ -6,22 +6,23 @@
 import type { EventTemplate, StoryContext, Topic } from '../engine/types';
 import type { AnswerOutT, ChapterOutT, PageOutT, RitualOutT } from '../engine/schemas';
 import { normalise } from '../safety/stoplist';
+import { pageTargets } from './deps';
 import { allowedTechniques, fallbackAnswer, fallbackChapterPages, fallbackParentPhrase, fallbackSummary, pickTechnique } from './fallback';
 
 export function mockChapter(ctx: StoryContext, template: EventTemplate): ChapterOutT {
-  let pages = fallbackChapterPages(template, ctx.chapter.beats, ctx.styleMode, ctx.child.age);
+  let pages = fallbackChapterPages(template, ctx.chapter.beats, ctx.styleMode, ctx.child.age, ctx.story);
   if (pages.length < 3) {
     // Pad with the following beats so the mock always returns a schema-valid chapter.
     const order = Object.keys(template.beats) as (keyof EventTemplate['beats'])[];
     const last = order.indexOf(ctx.chapter.beats[ctx.chapter.beats.length - 1]);
     for (let k = 1; pages.length < 3 && k < order.length; k++) {
-      const extra = fallbackChapterPages(template, [order[(last + k) % order.length]], ctx.styleMode, ctx.child.age);
+      const extra = fallbackChapterPages(template, [order[(last + k) % order.length]], ctx.styleMode, ctx.child.age, ctx.story);
       pages = [...pages, ...extra.slice(0, 3 - pages.length)];
     }
   }
   const usable = allowedTechniques(template, ctx);
   return {
-    pages: pages.slice(0, 5).map(({ sentences, mood, background, addresses }) => ({ sentences, mood, background, addresses })),
+    pages: pages.slice(0, pageTargets(ctx.child.age, ctx.story?.length).pages).map(({ sentences, mood, background, addresses }) => ({ sentences, mood, background, addresses })),
     summary: fallbackSummary(template, ctx.chapter.beats),
     usedTechniques: usable.slice(0, 1).map((t) => t.id),
     place: template.backgrounds[Math.min(ctx.chapter.index - 1, template.backgrounds.length - 1)].replace(/_/g, ' ').slice(0, 40),

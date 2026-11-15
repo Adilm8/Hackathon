@@ -2,7 +2,9 @@
  * Template fallbacks of the three calls (docs/SPEC.md 8.2). Written by the team, never by a model,
  * so they are always safe to show. The whole cycle works on these with no LLM at all (A1).
  */
-import type { Beat, EventTemplate, Mood, RitualCard, Sentence, StoryContext, StyleMode, Topic } from '../engine/types';
+import { fallbackPagesForAge } from '../engine/ageText';
+import { pagesWithoutAvoided } from '../engine/storyPrefs';
+import type { Beat, EventTemplate, Mood, RitualCard, Sentence, StoryContext, StoryPrefs, StyleMode, Topic } from '../engine/types';
 import { OWN_QUESTION_FALLBACK } from '../safety/messages';
 import { findTechniqueAnywhere, pageTargets } from './deps';
 
@@ -18,9 +20,15 @@ export interface OutPage {
  * Pages for a chapter's beats: the beats' fallback pages taken in turn (first page of every beat,
  * then the second ones) until the age's page count is reached, then put back in beat order.
  */
-export function fallbackChapterPages(template: EventTemplate, beats: Beat[], styleMode: StyleMode, age: number): OutPage[] {
-  const target = pageTargets(age).pages;
-  const lists = beats.map((b) => template.fallbackPages[styleMode]?.[b] ?? template.fallbackPages.story[b] ?? []);
+export function fallbackChapterPages(
+  template: EventTemplate,
+  beats: Beat[],
+  styleMode: StyleMode,
+  age: number,
+  story?: Pick<StoryPrefs, 'length' | 'avoidWords'>,
+): OutPage[] {
+  const target = pageTargets(age, story?.length).pages;
+  const lists = beats.map((b) => fallbackPagesForAge(template, b, styleMode, age));
   const picked: { beat: number; i: number }[] = [];
   const maxLen = Math.max(0, ...lists.map((l) => l.length));
   for (let i = 0; i < maxLen && picked.length < target; i++) {
@@ -29,10 +37,11 @@ export function fallbackChapterPages(template: EventTemplate, beats: Beat[], sty
     }
   }
   picked.sort((x, y) => x.beat - y.beat || x.i - y.i);
-  return picked.map(({ beat, i }) => {
+  const pages: OutPage[] = picked.map(({ beat, i }) => {
     const p = lists[beat][i];
     return { sentences: p.sentences.map((s) => ({ ...s })), mood: p.mood, background: p.background, addresses: [...p.addresses], source: 'fallback' };
   });
+  return pagesWithoutAvoided(pages, story?.avoidWords);
 }
 
 /** Chapter summary for later prompts when the chapter came from the templates. */

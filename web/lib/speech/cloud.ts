@@ -5,6 +5,7 @@
  * unlocked inside the Listen tap, because iPhone Safari plays audio only from an element a tap started.
  * If the first sentence cannot be fetched the device voice reads instead, so Listen never goes silent.
  */
+import { getWorkspace } from '../store/workspace';
 import { narrator as deviceNarrator } from './narrator';
 import type { Narrator, SpeakOptions } from './types';
 
@@ -40,7 +41,10 @@ function audioUrl(text: string, voice?: string | null): Promise<string | null> {
   const key = `${voice ?? ''}\n${text}`;
   let p = memo.get(key);
   if (!p) {
-    p = fetch('/api/tts', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(voice ? { text, voice } : { text }) })
+    p = fetch('/api/tts', {
+      method: 'POST',
+      // The server picks the family (own or sample) by this header, like every other API call.
+      headers: { 'Content-Type': 'application/json', 'x-bds-workspace': getWorkspace() }, body: JSON.stringify(voice ? { text, voice } : { text }) })
       .then(async (r) => (r.ok ? URL.createObjectURL(await r.blob()) : null))
       .catch(() => null);
     p.then((u) => u === null && memo.delete(key));

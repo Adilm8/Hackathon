@@ -89,3 +89,41 @@ describe('character voices across models', async () => {
     expect(priceFor('someone/new-tts', 33)).toBe(33);
   });
 });
+
+describe('story audio retention', async () => {
+  const { sweepOldAudio, resetSweep, AUDIO_MAX_AGE_MS } = await import('@/lib/tts/server');
+  const fs = await import('node:fs/promises');
+  const os = await import('node:os');
+  const path = await import('node:path');
+  it('deletes audio older than 30 days and keeps newer audio', async () => {
+    const dir = await fs.mkdtemp(path.join(os.tmpdir(), 'tts-'));
+    const old = path.join(dir, 'old.mp3');
+    const fresh = path.join(dir, 'fresh.wav');
+    await fs.writeFile(old, 'a');
+    await fs.writeFile(fresh, 'b');
+    const now = Date.now();
+    const past = new Date(now - AUDIO_MAX_AGE_MS - 60_000);
+    await fs.utimes(old, past, past);
+    resetSweep();
+    expect(await sweepOldAudio(now, dir)).toBe(1);
+    expect((await fs.readdir(dir)).sort()).toEqual(['fresh.wav']);
+  });
+});
+
+describe('parent voice sample', async () => {
+  const { encodeWav } = await import('@/lib/speech/wav');
+  const { checkWav } = await import('@/lib/tts/voiceSample');
+  const wav = (seconds: number) => Buffer.from(encodeWav(new Float32Array(16000 * seconds).fill(0.1), 16000));
+  it('encodes 16 kHz mono 16-bit WAV', () => {
+    const b = wav(1);
+    expect(b.toString('ascii', 0, 4)).toBe('RIFF');
+    expect(b.readUInt32LE(24)).toBe(16000);
+    expect(b.readInt16LE(44)).toBeGreaterThan(3000);
+    expect(b.length).toBe(44 + 32000);
+  });
+  it('accepts a 10 to 45 s sample and refuses others', () => {
+    expect(checkWav(wav(25))).toEqual({ seconds: 25 });
+    expect(checkWav(wav(3))).toEqual({ error: 'short' });
+    expect(checkWav(Buffer.from('not a wav at all, definitely not a riff header here......'))).toEqual({ error: 'format' });
+  });
+});
