@@ -22,7 +22,7 @@ import { speakOnce } from '@/lib/speech/narrator';
 import { useChild } from '@/lib/store/child';
 import { useEvents } from '@/lib/store/events';
 import { useSettings } from '@/lib/store/settings';
-import { CHILD_AGES, createEvent, EVENT_TYPES, FEAR_OPTIONS, getTemplate, isQuickPrep, maxChapters, validateEventDate } from '@/lib/store/engine';
+import { CHILD_AGES, createEvent, EVENT_GROUPS, EVENT_TYPES, FEAR_OPTIONS, getTemplate, isQuickPrep, maxChapters, validateEventDate } from '@/lib/store/engine';
 import { GenrePicker } from '@/components/story/GenrePicker';
 import { StoryOptions } from '@/components/story/StoryOptions';
 import { cleanStoryText } from '@/lib/store/storyPrefs';
@@ -62,6 +62,35 @@ const EVENT_CAPTION: Record<EventType, string> = {
   pet_loss: 'When a pet dies',
   parent_trip: 'A work trip or time apart', other: 'Anything else: a new club, a trip…',
 };
+
+/** Big day picker: a search box and the types in groups, "Something else" last. */
+function EventPicker({ value, onPick }: { value?: EventType; onPick: (t: EventType) => void }) {
+  const [q, setQ] = useState('');
+  const needle = q.trim().toLowerCase();
+  const matches = (t: EventType) =>
+    !needle || `${getTemplate(t).label} ${EVENT_CAPTION[t]}`.toLowerCase().includes(needle);
+  const card = (t: EventType) => (
+    <ChoiceCard key={t} selected={value === t} onSelect={() => onPick(t)} icon={<EventIcon type={t} size={28} />} title={t === 'other' ? 'Something else' : getTemplate(t).label} caption={EVENT_CAPTION[t]} />
+  );
+  const groups = EVENT_GROUPS.map((g) => ({ ...g, shown: g.types.filter(matches) })).filter((g) => g.shown.length > 0);
+  return (
+    <>
+      <Field id="event-search" label="Find a big day">
+        <TextInput id="event-search" type="search" maxLength={40} placeholder="e.g. tooth, camp, vet" value={q} onChange={(e) => setQ(e.target.value)} />
+      </Field>
+      <div role="radiogroup" aria-label="Big day" className="flex flex-col gap-5">
+        {groups.map((g) => (
+          <section key={g.id} aria-label={g.label} className="flex flex-col gap-2">
+            <h3 className="text-sm font-bold text-ink-soft">{g.label}</h3>
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">{g.shown.map(card)}</div>
+          </section>
+        ))}
+        {groups.length === 0 && <p className="text-sm text-ink-soft">No match. Choose Something else and name the big day.</p>}
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">{card('other')}</div>
+      </div>
+    </>
+  );
+}
 
 type StepId = 'gate' | 'who' | 'name' | 'age' | 'event' | 'genre' | 'date' | 'fears' | 'story' | 'character' | 'values';
 const GROUP: Record<StepId, 1 | 2 | 3> = { gate: 1, who: 1, name: 1, age: 1, event: 2, genre: 2, date: 2, fears: 2, story: 2, character: 3, values: 3 };
@@ -306,11 +335,7 @@ export function Onboarding() {
 
         {step === 'event' && (
           <>
-            <div role="radiogroup" aria-label="Big day" className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-              {EVENT_TYPES.map((t) => (
-                <ChoiceCard key={t} selected={d.type === t} onSelect={() => set({ type: t })} icon={<EventIcon type={t} size={28} />} title={t === 'other' ? 'Something else' : getTemplate(t).label} caption={EVENT_CAPTION[t]} />
-              ))}
-            </div>
+            <EventPicker value={d.type} onPick={(t) => set({ type: t })} />
             {d.type === 'other' && (
               <Field id="olabel" label="What is the big day?" error={touched && !d.customLabel.trim() ? 'Please name the big day.' : ''}>
                 <TextInput id="olabel" maxLength={40} placeholder="e.g. Swimming lesson" value={d.customLabel} onChange={(e) => set({ customLabel: e.target.value })} />

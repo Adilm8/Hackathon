@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { ALL_BACKGROUND_IDS, EVENT_TYPES, getTemplate } from '@/lib/engine/templates';
+import { ALL_BACKGROUND_IDS, EVENT_GROUPS, EVENT_TYPES, getTemplate } from '@/lib/engine/templates';
 import { EventTemplateSchema } from '@/lib/engine/schemas';
 import { questionButtonsForAge } from '@/lib/engine/fallback';
 import { containsAnyWord, countWords, sentencesToText } from '@/lib/engine/text';
@@ -166,4 +166,10 @@ describe.each(EVENT_TYPES)('template %s', (type) => {
       expect(t.techniques.some((x) => x.topics.includes(topic)), `technique for ${topic}`).toBe(true);
     }
   });
+});
+
+it('picker groups list every event type exactly once, with "other" last', () => {
+  const grouped = EVENT_GROUPS.flatMap((g) => g.types);
+  expect(new Set(grouped).size).toBe(grouped.length);
+  expect([...grouped, 'other'].sort()).toEqual([...EventTypeEnum.options].sort());
 });

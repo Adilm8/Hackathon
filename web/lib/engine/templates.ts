@@ -42,12 +42,21 @@ import pet_loss from '@/content/events/pet_loss.json';
 import parent_trip from '@/content/events/parent_trip.json';
 import other from '@/content/events/other.json';
 
-/** Every event type, in the order onboarding shows them; "other" stays last. */
-export const EVENT_TYPES: readonly EventType[] = [
-  'dentist', 'doctor', 'shot', 'blood_test', 'hospital', 'haircut', 'school', 'babysitter', 'sleepover',
-  'party', 'swimming', 'flight', 'moving', 'sibling', 'tooth_loss',
-  'surgery', 'potty', 'daycare', 'new_school', 'camp', 'sports', 'performance', 'new_class', 'bike', 'road_trip', 'holiday', 'halloween', 'playdate', 'eye_exam', 'big_bed', 'test_day', 'two_homes', 'new_pet', 'pet_loss', 'parent_trip', 'other',
+/**
+ * Groups of big days for the picker, in display order. Every type appears exactly once;
+ * "other" is shown on its own after the groups.
+ */
+export const EVENT_GROUPS: readonly { id: string; label: string; types: readonly EventType[] }[] = [
+  { id: 'health', label: 'Health and doctors', types: ['dentist', 'doctor', 'shot', 'blood_test', 'eye_exam', 'hospital', 'surgery'] },
+  { id: 'growing', label: 'Growing up', types: ['potty', 'big_bed', 'tooth_loss', 'haircut', 'bike'] },
+  { id: 'school', label: 'School and learning', types: ['daycare', 'school', 'new_school', 'test_day', 'new_class'] },
+  { id: 'fun', label: 'Friends and fun', types: ['party', 'playdate', 'sports', 'performance', 'swimming', 'halloween', 'holiday'] },
+  { id: 'away', label: 'Trips and nights away', types: ['flight', 'road_trip', 'sleepover', 'camp', 'babysitter'] },
+  { id: 'family', label: 'Family changes', types: ['sibling', 'moving', 'new_pet', 'two_homes', 'pet_loss', 'parent_trip'] },
 ];
+
+/** Every event type, in the order onboarding shows them; "other" stays last. */
+export const EVENT_TYPES: readonly EventType[] = [...EVENT_GROUPS.flatMap((g) => g.types), 'other'];
 
 const RAW: Record<EventType, unknown> = {
   dentist, school, flight, sibling, haircut, shot,
