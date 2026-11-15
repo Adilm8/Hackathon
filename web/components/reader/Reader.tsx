@@ -95,7 +95,8 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
   const [recTick] = useState(0);
 
   const chapter = ctx?.event.chapters.find((c) => c.index === index);
-  const allowed = ctx && chapter ? isChapterOpen(chapter, ctx.event, ctx.today, ctx.hasAccess) : false;
+  // Demo (sample family): any chapter opens at once, so the jury can jump ahead; payment still applies.
+  const allowed = ctx && chapter ? getWorkspace() === 'sample' || isChapterOpen(chapter, ctx.event, ctx.today, ctx.hasAccess) : false;
   const needsPay = !!ctx && !!chapter && index > 1 && !ctx.hasAccess;
 
   useEffect(() => {

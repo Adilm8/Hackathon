@@ -26,6 +26,20 @@ describe('home story path', () => {
     if (n2[1].kind === 'chapter' && read1.chapters.length > 1) expect(['pay', 'locked']).toContain(n2[1].state);
   });
 
+  it('in the demo opens every future step at once; real families keep the locks', () => {
+    const real = buildPath(upcoming, today, true);
+    const demo = buildPath(upcoming, today, true, true);
+    const base = `/event/${upcoming.id}`;
+    expect(demo.filter((n) => n.state === 'locked').every((n) => !!n.href && n.demo)).toBe(true);
+    expect(demo.find((n) => n.kind === 'day')!.href).toBe(`${base}/day`);
+    expect(demo.find((n) => n.kind === 'checkin')!.href).toBe(`${base}/checkin`);
+    expect(demo.find((n) => n.kind === 'badge')!.href).toBe(`${base}/badge`);
+    const lockedCh = demo.find((n) => n.kind === 'chapter' && n.state === 'locked');
+    if (lockedCh) expect(lockedCh.href).toBe(`${base}/read/${lockedCh.chapter}`);
+    expect(real.find((n) => n.kind === 'badge')!.href).toBeUndefined();
+    expect(real.some((n) => n.demo)).toBe(false);
+  });
+
   it('counts evenings in a row, today or up to yesterday', () => {
     const ev = (dates: string[]) => ({ chapters: dates.map((d, i) => ({ ...upcoming.chapters[0], index: i + 1, readOn: d })) });
     expect(readingStreak([ev([addDays(today, -2), addDays(today, -1)])], today)).toBe(2);

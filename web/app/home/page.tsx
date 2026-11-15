@@ -171,7 +171,7 @@ function PathTab({ event, events, child, today, hasAccess }: { event: BigEvent; 
       {phase === 'after' && <PhaseCard href={`/event/${encodeURIComponent(event.id)}/checkin`} title="How did it go?" cta="Tell us in 30 seconds" />}
 
       <StoryPath
-        nodes={buildPath(event, today, hasAccess)}
+        nodes={buildPath(event, today, hasAccess, getWorkspace() === 'sample')}
         child={child}
         onLocked={(n) => {
           const c = event.chapters.find((x) => x.index === n.chapter);
