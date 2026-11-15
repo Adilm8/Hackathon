@@ -14,6 +14,7 @@
     "safety": "tsx --conditions=react-server evals/safety.ts",
     "eval": "tsx --conditions=react-server evals/eval.ts",
     "vapid": "node scripts/vapid-keys.mjs",
+    "voice:test": "node scripts/voice-test.mjs",
     "avatar": "sh scripts/avatar/run.sh"
   },
   "dependencies": {
