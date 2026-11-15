@@ -79,6 +79,38 @@
   "fawn": {
    "dusk": "#a7b4cf",
    "dawn": "#f0a0a8"
+  },
+  "wolf": {
+   "dusk": "#8f8bd6",
+   "dawn": "#d9a97a"
+  },
+  "lion": {
+   "dusk": "#b9b4e6",
+   "dawn": "#f2a07a"
+  },
+  "tiger": {
+   "dusk": "#e8e6f2",
+   "dawn": "#f4b25a"
+  },
+  "dino": {
+   "dusk": "#9a8be0",
+   "dawn": "#7cc96b"
+  },
+  "panda": {
+   "dusk": "#dfe6ff",
+   "dawn": "#ffe3d2"
+  },
+  "monkey": {
+   "dusk": "#7c86c4",
+   "dawn": "#d98a5a"
+  },
+  "rhino": {
+   "dusk": "#8fb0d9",
+   "dawn": "#d9b48f"
+  },
+  "yeti": {
+   "dusk": "#c9d2ff",
+   "dawn": "#ffe0ec"
   }
  }
 }

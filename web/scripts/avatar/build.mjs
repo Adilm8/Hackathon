@@ -39,9 +39,12 @@ for (const level of fs.readdirSync(pub)) {
 }
 
 const levels = {};
-for (const [level, sheet] of Object.entries(cfg.sheets)) {
-  if (level === 'template') continue;
-  levels[level] = {};
+const sheetsDir = path.resolve(web, '..', 'docs', 'design', 'avatar', 'sheets');
+for (const [key, sheet] of Object.entries(cfg.sheets)) {
+  const level = sheet.level ?? key;
+  if (key === 'template') continue;
+  if (sheet.optional && !fs.existsSync(path.join(sheetsDir, sheet.file))) continue;
+  levels[level] ??= {};
   for (const id of sheet.ids) {
     const m = manifest[level]?.[id] ?? {};
     const ext = level === 'backdrop' ? 'webp' : 'svg';

@@ -27,6 +27,7 @@ from scipy.cluster.vq import kmeans2
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
+SHEETS = ROOT / "docs" / "design" / "avatar" / "sheets"
 CACHE = HERE / ".cache"
 PUBLIC = HERE.parent.parent / "public" / "avatar"
 CFG = json.loads((HERE / "ids.json").read_text())
@@ -233,7 +234,11 @@ def main(only: set[str] | None = None) -> None:
     manifest_path = CACHE / "manifest.json"
     manifest = json.loads(manifest_path.read_text()) if manifest_path.exists() else {}
     swatches = COLORS["clothes"]
-    for level, sheet in CFG["sheets"].items():
+    for key, sheet in CFG["sheets"].items():
+        level = sheet.get("level", key)
+        if sheet.get("optional") and not (SHEETS / sheet["file"]).exists():
+            print(f"{key}: {sheet['file']} not found, skipped")
+            continue
         if level == "template" or (only and level not in only):
             continue
         if level == "backdrop":

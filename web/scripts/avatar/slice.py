@@ -28,8 +28,15 @@ OUT_W, OUT_H = round(CANVAS["width"] * K), round(CANVAS["height"] * K)
 MARGIN = 0.3  # look this far into neighbouring cells for parts that stick out
 
 
+SHEET_SIZE = (2752, 1536)  # size of the template sheet; other sheets are scaled to it
+
+
 def load(name: str) -> np.ndarray:
-    return np.asarray(Image.open(SHEETS / name).convert("RGB")).astype(np.int16)
+    im = Image.open(SHEETS / name).convert("RGB")
+    if im.size != SHEET_SIZE:
+        print(f"{name}: {im.size[0]}x{im.size[1]}, scaled to {SHEET_SIZE[0]}x{SHEET_SIZE[1]} (use full-size downloads for best quality)")
+        im = im.resize(SHEET_SIZE, Image.LANCZOS)
+    return np.asarray(im).astype(np.int16)
 
 
 def background(a: np.ndarray) -> np.ndarray:
@@ -139,7 +146,11 @@ def main(only: set[str] | None = None) -> None:
         anchors[i] = ((xs.min() + xs.max()) / 2 + origin[0], ys.max() + origin[1])
     del tpl_bg
 
-    for level, sheet in CFG["sheets"].items():
+    for key, sheet in CFG["sheets"].items():
+        level = sheet.get("level", key)
+        if sheet.get("optional") and not (SHEETS / sheet["file"]).exists():
+            print(f"{key}: {sheet['file']} not found, skipped")
+            continue
         if level in ("template", "backdrop") or (only and level not in only):
             continue
         a = load(sheet["file"])

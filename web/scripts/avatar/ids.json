@@ -1,46 +1,138 @@
 {
   "comment": "Cell order matches the prompts in docs/design/avatar-prompts.md (1-4 top row, 5-8 bottom row). Re-run with: npm run avatar",
-  "canvas": { "width": 240, "height": 300, "feetY": 285, "centerX": 120, "unitsPerPx": 0.34 },
+  "canvas": {
+    "width": 240,
+    "height": 300,
+    "feetY": 285,
+    "centerX": 120,
+    "unitsPerPx": 0.34
+  },
   "sheets": {
-    "template": { "file": "00-template.jpg" },
+    "template": {
+      "file": "00-template.jpg"
+    },
     "species": {
       "file": "01-species.jpg",
-      "ids": ["bunny", "bear", "fox", "kitten", "dragon", "owl", "hedgehog", "fawn"],
+      "ids": [
+        "bunny",
+        "bear",
+        "fox",
+        "kitten",
+        "dragon",
+        "owl",
+        "hedgehog",
+        "fawn"
+      ],
+      "align": "figure"
+    },
+    "species-2": {
+      "file": "08-species-2.jpg",
+      "level": "species",
+      "optional": true,
+      "ids": [
+        "wolf",
+        "lion",
+        "tiger",
+        "dino",
+        "panda",
+        "monkey",
+        "rhino",
+        "yeti"
+      ],
       "align": "figure"
     },
     "outfit": {
       "file": "02-outfits.jpg",
-      "ids": ["tunic", "raincoat", "star-robe", "knight-tabard", "overalls", "moon-pajamas", "explorer-vest", "knit-sweater"],
+      "ids": [
+        "tunic",
+        "raincoat",
+        "star-robe",
+        "knight-tabard",
+        "overalls",
+        "moon-pajamas",
+        "explorer-vest",
+        "knit-sweater"
+      ],
       "align": "mannequin",
       "recolor": true
     },
     "headwear": {
       "file": "03-headwear.jpg",
-      "ids": ["cap", "wizard-hat", "flower-crown", "star-crown", "beret", "acorn-cap", "bow-headband", "goggles"],
+      "ids": [
+        "cap",
+        "wizard-hat",
+        "flower-crown",
+        "star-crown",
+        "beret",
+        "acorn-cap",
+        "bow-headband",
+        "goggles"
+      ],
       "align": "mannequin",
       "recolor": true,
-      "keepColors": ["flower-crown"]
+      "keepColors": [
+        "flower-crown"
+      ]
     },
     "accessory": {
       "file": "04-accessories.jpg",
-      "ids": ["scarf", "backpack", "cape", "satchel", "star-necklace", "star-wand", "lantern", "plush-star"],
+      "ids": [
+        "scarf",
+        "backpack",
+        "cape",
+        "satchel",
+        "star-necklace",
+        "star-wand",
+        "lantern",
+        "plush-star"
+      ],
       "align": "mannequin",
       "recolor": true,
-      "behind": ["backpack", "cape"]
+      "behind": [
+        "backpack",
+        "cape"
+      ]
     },
     "companion": {
       "file": "05-companions.jpg",
-      "ids": ["firefly", "cloud-puff", "star-sprite", "crystal-snail", "ladybug", "tiny-turtle", "mushroom-sprout", "pebble-chick"],
+      "ids": [
+        "firefly",
+        "cloud-puff",
+        "star-sprite",
+        "crystal-snail",
+        "ladybug",
+        "tiny-turtle",
+        "mushroom-sprout",
+        "pebble-chick"
+      ],
       "align": "mannequin"
     },
     "expression": {
       "file": "06-expressions.jpg",
-      "ids": ["calm", "worried", "brave", "happy", "sleepy", "surprised", "proud", "giggly"],
+      "ids": [
+        "calm",
+        "worried",
+        "brave",
+        "happy",
+        "sleepy",
+        "surprised",
+        "proud",
+        "giggly"
+      ],
       "align": "mannequin"
     },
     "backdrop": {
       "file": "07-backdrops.jpg",
-      "ids": ["moon-meadow", "mushroom-wood", "cloud-castle", "cozy-burrow", "starry-lake", "lighthouse-cove", "autumn-orchard", "snowy-pines"]
+      "ids": [
+        "moon-meadow",
+        "mushroom-wood",
+        "cloud-castle",
+        "cozy-burrow",
+        "starry-lake",
+        "lighthouse-cove",
+        "autumn-orchard",
+        "snowy-pines"
+      ]
     }
   }
 }

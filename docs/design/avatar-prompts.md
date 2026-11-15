@@ -283,3 +283,7 @@ web/components/character/art/generated.ts   сгенерированный мо�
 - Выравнивание: каждая клетка совмещается с манекеном листа 0 (сдвиг по маске серого), затем ставится на холст: ступни y = 285, центр x = 120, 0,34 единицы на пиксель листа.
 - Лица берутся из листа 6 (calm, worried, brave, happy используются по настроению страницы), код больше не рисует лицо.
 - Известное: у Moon Bunny кончики ушей обрезаны краем листа (ровный срез). Если мешает, перегенерировать клетку 1 листа 1 с запасом сверху.
+
+### Лист 8. Ещё 8 существ, «мальчиковые» (15 Nov, по просьбе Лиды)
+Файл `08-species-2.jpg`, приложить лист 0 и лист 1. Ids по клеткам: `wolf` Thunder Pup, `lion` Sun Cub, `tiger` Comet Tiger, `dino` Rocky Dino, `panda` Bamboo Panda, `monkey` Jungle Monkey, `rhino` Pebble Rhino, `yeti` Frost Yeti. Конвейер берёт лист автоматически, если файл есть (`ids.json` → `species-2`, уровень `species`); окрасы dusk/dawn в `colors.json`. Промпт как у листа 1, плюс: «a little bolder and sporty, like a brave little buddy for a boy», «NO dark patches around the eyes» и запас сверху («nothing touches the top edge»). Полный текст промпта в треде «Build new fantasy avatars into the app».
+Листы скачивать в полном размере; если размер другой, `slice.py` масштабирует лист к 2752×1536 и пишет предупреждение.
