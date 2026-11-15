@@ -61,3 +61,15 @@ describe('premium story voice (server)', async () => {
     expect(ttsCost(-1, 40)).toBe(0);
   });
 });
+
+describe('premium story voice formats', async () => {
+  const { pcmToWav, wantsPcm } = await import('@/lib/tts/server');
+  it('wraps Gemini PCM into a playable WAV', () => {
+    expect(wantsPcm('google/gemini-3.8-flash-tts')).toBe(true);
+    expect(wantsPcm('hexgrad/kokoro-82m')).toBe(false);
+    const wav = pcmToWav(Buffer.alloc(480));
+    expect(wav.subarray(0, 4).toString()).toBe('RIFF');
+    expect(wav.readUInt32LE(24)).toBe(24000);
+    expect(wav.length).toBe(524);
+  });
+});

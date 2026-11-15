@@ -18,7 +18,7 @@ export function GET() {
   return NextResponse.json({ enabled, voices: enabled ? voices : [] });
 }
 
-/** One sentence of the story as mp3. Never logs the text. */
+/** One sentence of the story as audio (mp3, or WAV for Gemini). Never logs the text. */
 export async function POST(req: NextRequest) {
   if (!env().tts.enabled) return apiError('not_found', 'Premium voice is off');
   const g = await guard(req, Body);
@@ -28,6 +28,6 @@ export async function POST(req: NextRequest) {
   const r = await synthesize(g.data.text, g.familyId, g.data.voice);
   if ('error' in r) return apiError('upstream_failed', r.error === 'budget' ? 'Daily voice budget reached' : 'Voice unavailable', 503);
   return new NextResponse(new Uint8Array(r.audio), {
-    headers: { 'Content-Type': 'audio/mpeg', 'Cache-Control': 'private, max-age=86400', 'X-Cache': r.cached ? 'hit' : 'miss' },
+    headers: { 'Content-Type': r.type, 'Cache-Control': 'private, max-age=86400', 'X-Cache': r.cached ? 'hit' : 'miss' },
   });
 }
