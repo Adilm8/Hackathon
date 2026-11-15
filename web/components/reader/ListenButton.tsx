@@ -6,11 +6,12 @@ import { RecordedNarrator } from '@/lib/speech/recorder';
 import type { Narrator } from '@/lib/speech/types';
 import { estimateWordStarts, mapWordIndex, splitWords, wordAtChar, wordAtTime } from '@/lib/speech/words';
 import { Button } from '@/components/ui/Button';
+import { RATES } from '@/lib/speech/voices';
+import { usePrefs } from '@/lib/store/prefs';
 
 /** Where the voice is: sentence and word of the shown text. `word` is null for a parent's recording (one take per page). */
 export type ReadPosition = { sentence: number; word: number | null };
 
-const RATE = 0.92;
 const noop = () => () => {};
 
 /**
@@ -20,8 +21,12 @@ const noop = () => () => {};
  * Render with `key={page.id}`: a new page unmounts the button, which stops the voice.
  */
 export function ListenButton({
-  sentences, shown, from = 0, onProgress, recordingKey, hasRecording = false, voiceName,
+  sentences, shown, from = 0, onProgress, recordingKey, hasRecording = false, voiceName, autoStart = false, onFinished,
 }: {
+  /** Read on: start speaking as soon as the button mounts (the page was turned by the voice). */
+  autoStart?: boolean;
+  /** The voice reached the end of the page by itself (not stopped by a tap). */
+  onFinished?: () => void;
   /** The voice starts at this sentence (the one on screen). */
   from?: number;
   /** Text for the voice (names by their pronunciation). */
@@ -41,9 +46,14 @@ export function ListenButton({
   const boundaries = useRef(false);
   const report = useRef(onProgress);
   const start = useRef(0);
+  const voiceURI = usePrefs((p) => p.voiceURI);
+  const RATE = RATES[usePrefs((p) => p.speechRate)] ?? RATES.normal;
+  const finished = useRef(onFinished);
+  const play = useRef<() => void>(() => {});
   useEffect(() => {
     report.current = onProgress;
-  }, [onProgress]);
+    finished.current = onFinished;
+  }, [onProgress, onFinished]);
 
   const stopTimer = () => {
     if (timer.current !== null) window.clearInterval(timer.current);
@@ -53,6 +63,11 @@ export function ListenButton({
   useEffect(() => {
     player.current = useRecording ? new RecordedNarrator(recordingKey!) : narrator;
   }, [useRecording, recordingKey]);
+  useEffect(() => {
+    if (!autoStart) return;
+    const t = window.setTimeout(() => play.current(), 350); // a short breath between pages
+    return () => window.clearTimeout(t);
+  }, [autoStart]);
   useEffect(
     () => () => {
       stopTimer();
@@ -62,7 +77,6 @@ export function ListenButton({
     },
     [],
   );
-  if (!available) return null;
 
   const shownCount = (i: number) => splitWords(shown[i] ?? '').length;
 
@@ -104,6 +118,30 @@ export function ListenButton({
     report.current(null);
   };
 
+  const playNow = () => {
+    setPlaying(true);
+    // A parent's recording is one take for the whole page, so it always starts at the top.
+    start.current = useRecording ? 0 : Math.min(from, sentences.length - 1);
+    const t0 = performance.now();
+    player.current.speak(sentences.slice(start.current), {
+      rate: useRecording ? undefined : RATE,
+      voiceURI: useRecording ? undefined : voiceURI,
+      onSentence,
+      onWord: useRecording ? undefined : onWord,
+      onEnd: () => {
+        stopTimer();
+        setPlaying(false);
+        report.current(null);
+        // An end within a second is a failure (blocked autoplay, no voice), not a read page: do not chain.
+        if (performance.now() - t0 > 1000) finished.current?.();
+      },
+    });
+  };
+
+  useEffect(() => {
+    play.current = playNow;
+  });
+  if (!available) return null;
   return (
     <Button
       variant="secondary"
@@ -112,19 +150,7 @@ export function ListenButton({
       className="px-4 sm:px-6"
       onClick={() => {
         if (playing) return stop();
-        setPlaying(true);
-        // A parent's recording is one take for the whole page, so it always starts at the top.
-        start.current = useRecording ? 0 : Math.min(from, sentences.length - 1);
-        player.current.speak(sentences.slice(start.current), {
-          rate: useRecording ? undefined : RATE,
-          onSentence,
-          onWord: useRecording ? undefined : onWord,
-          onEnd: () => {
-            stopTimer();
-            setPlaying(false);
-            report.current(null);
-          },
-        });
+        playNow();
       }}
     >
       <Icon name="volume-2" size={20} />

@@ -5,3 +5,4 @@ export { ValuesProfile, FAMILY_CHIPS } from './ValuesProfile';
 export { VoiceConsent } from './VoiceConsent';
 export { PalettePicker } from './PalettePicker';
 export { Reminders } from './Reminders';
+export { NarrationSettings } from './NarrationSettings';

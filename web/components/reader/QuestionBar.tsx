@@ -1,6 +1,6 @@
 'use client';
-import { useState, useSyncExternalStore } from 'react';
-import { BrowserListener, mayListenOnDevice } from '@/lib/speech/listener';
+import { useEffect, useRef, useState, useSyncExternalStore } from 'react';
+import { BrowserListener, hasRecognition, type ListenError, type ListenMode } from '@/lib/speech/listener';
 import { Icon } from '@/components/icons';
 import { Button } from '@/components/ui/Button';
 import { TextArea } from '@/components/ui/Field';
@@ -10,36 +10,49 @@ import { Sheet } from '@/components/ui/Sheet';
 const noop = () => () => {};
 
 export function QuestionBar({
-  buttons, asked, limit = 3, busy, childName, onAsk, voice = false,
+  buttons, asked, limit = 3, busy, childName, onAsk, voice = false, voiceMode = 'device',
 }: {
-  /** F18: the parent ticked the consent box in Settings. The mic shows only where recognition runs on the device. */
+  /** F18: the parent ticked the consent box in Settings. */
   voice?: boolean;
+  /** How the consent said speech is recognised (lib/speech/listener.ts). */
+  voiceMode?: ListenMode;
   buttons: { id: string; text: string }[]; asked: number; limit?: number; busy: boolean; childName: string;
   onAsk: (q: { text: string; buttonId?: string }) => void;
 }) {
   const [open, setOpen] = useState(false);
   const [text, setText] = useState('');
   // Only whether the API exists; the on-device check runs on the tap (it can crash some Chromium builds).
-  const mayListen = useSyncExternalStore(noop, mayListenOnDevice, () => false);
+  const hasApi = useSyncExternalStore(noop, hasRecognition, () => false);
   const [refused, setRefused] = useState(false);
-  const canListen = mayListen && !refused;
+  const canListen = hasApi && !refused;
   const [listening, setListening] = useState(false);
-  const [voiceError, setVoiceError] = useState<null | 'unheard' | 'unavailable'>(null);
+  const [voiceError, setVoiceError] = useState<ListenError | null>(null);
+  const listener = useRef<BrowserListener | null>(null);
+  useEffect(() => () => listener.current?.stop(), []);
+  useEffect(() => {
+    if (!open) listener.current?.stop();
+  }, [open]);
   async function listen() {
-    setVoiceError(null); setListening(true);
-    try {
-      const listener = new BrowserListener();
-      if (!(await listener.available())) {
-        setRefused(true);
-        setVoiceError('unavailable');
-        setListening(false);
-        return;
-      }
-      const t = await listener.listenOnce();
-      setText(t.slice(0, 120)); // shown for the parent to check and edit before sending
-    } catch {
-      setVoiceError('unheard');
+    if (listening) return listener.current?.stop(); // a second tap ends listening and keeps the words
+    setVoiceError(null);
+    const l = (listener.current = new BrowserListener(voiceMode));
+    // Browser mode starts inside the tap, with no await first: Safari needs the tap to open the mic.
+    if (voiceMode === 'device' && !(await l.available())) {
+      setRefused(true);
+      setVoiceError('unavailable');
+      return;
     }
+    setListening(true);
+    try {
+      // Shown for the grown-up to check and edit before sending.
+      const t = await l.listenOnce({ onInterim: (w) => setText(w.slice(0, 120)) });
+      setText(t.slice(0, 120));
+    } catch (e) {
+      const err = (typeof e === 'string' ? e : 'unheard') as ListenError;
+      setVoiceError(err);
+      if (err === 'dictation_off' || err === 'unavailable') setRefused(true);
+    }
+    listener.current = null;
     setListening(false);
   }
   if (asked >= limit)
@@ -92,12 +105,15 @@ export function QuestionBar({
           <label htmlFor="own-q" className="sr-only">Question</label>
           <TextArea id="own-q" maxLength={120} value={text} onChange={(e) => setText(e.target.value)} placeholder="Will the dentist be nice?" autoFocus />
           {voice && canListen && (
-            <Button variant="secondary" onClick={listen} disabled={listening} className="justify-self-start">
-              <Icon name="mic" size={18} /> {listening ? 'Listening…' : 'Say it'}
+            <Button variant={listening ? 'primary' : 'secondary'} onClick={listen} aria-pressed={listening} className="justify-self-start">
+              <Icon name={listening ? 'mic-off' : 'mic'} size={18} /> {listening ? 'Listening… tap to stop' : 'Say it'}
             </Button>
           )}
           {voiceError === 'unheard' && <p role="alert" className="text-sm text-danger">Could not hear that. Try again or type it.</p>}
+          {voiceError === 'denied' && <p role="alert" className="text-sm text-danger">Allow the microphone for this site to ask by voice, or type the question.</p>}
+          {voiceError === 'dictation_off' && <p role="alert" className="text-sm text-ink-soft">Turn on Dictation in the iPhone settings (General › Keyboard) to ask by voice, or type the question.</p>}
           {voiceError === 'unavailable' && <p role="alert" className="text-sm text-ink-soft">Asking by voice is not available on this device. Please type the question.</p>}
+          {!(voice && canListen) && !voiceError && <p className="text-xs text-ink-soft">Tip: the microphone on your keyboard can type it for you.</p>}
           <p className="text-right text-xs text-ink-soft">{text.length} / 120</p>
           <Button type="submit" size="l" disabled={!text.trim()}>Ask</Button>
         </form>
