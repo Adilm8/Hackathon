@@ -1,8 +1,10 @@
 'use client';
 /** Read-side hooks the screens use: "today" that reacts to the Demo clock, access, one event with its template. */
+import { useEffect } from 'react';
 import { clock } from '@/lib/engine/clock';
 import type { BigEvent, ChildProfile, EventTemplate } from '@/lib/engine/types';
 import { useChild } from './child';
+import { knownChildIds, switchChild } from './children';
 import { useEntitlements } from './entitlement';
 import { useEvents } from './events';
 import { useSettings } from './settings';
@@ -27,6 +29,11 @@ export function useEventCtx(id: string): EventCtx | null {
   const child = useChild((s) => s.child);
   const today = useToday();
   const hasAccess = useHasAccess(id);
-  if (!event || !child) return null;
+  // A big day of another child on this device: make that child active, so names and badges match.
+  const otherChild = !!event && !!child && event.childId !== child.id && knownChildIds().has(event.childId);
+  useEffect(() => {
+    if (otherChild && event) switchChild(event.childId, clock.today());
+  }, [otherChild, event]);
+  if (!event || !child || otherChild) return null;
   return { event, child, template: getTemplate(event.type), today, hasAccess };
 }

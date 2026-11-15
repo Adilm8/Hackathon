@@ -2,6 +2,7 @@
 /** Client-only hydration of every store; screens render a skeleton until `useHydrated()` is true (6.2). */
 import { useSyncExternalStore } from 'react';
 import { useChild } from './child';
+import { useRoster } from './children';
 import { useEntitlements } from './entitlement';
 import { useEvents } from './events';
 import { useSettings } from './settings';
@@ -16,6 +17,7 @@ export function hydrateStores(): Promise<void> {
       useChild.persist.rehydrate(),
       useEvents.persist.rehydrate(),
       useEntitlements.persist.rehydrate(),
+      useRoster.persist.rehydrate(),
     ]).then(() => {
       done = true;
       waiters.forEach((w) => w());

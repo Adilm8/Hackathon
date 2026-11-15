@@ -3,6 +3,7 @@
 import { clock } from '@/lib/engine/clock';
 import { api } from '@/lib/sync/api';
 import { buildSampleFamily } from './engine';
+import { buildSampleSibling } from '@/lib/engine/sample';
 import { clearWorkspaceKeys, seedWorkspace } from './seed';
 import { switchWorkspace, workspaceHasData } from './workspace';
 
@@ -11,8 +12,11 @@ export async function startSample(): Promise<void> {
   const today = clock.realToday();
   clearWorkspaceKeys('sample');
   const server = await api.createSample(today);
-  const doc = server?.doc ?? buildSampleFamily(today);
-  seedWorkspace('sample', doc, server?.entitlements ?? [], server?.version);
+  const base = server?.doc ?? buildSampleFamily(today);
+  // Max's sister Mia waits on the device, so the tour can show switching between children.
+  const mia = buildSampleSibling(today);
+  const doc = { ...base, events: [...base.events.filter((e) => e.id !== mia.event.id), mia.event] };
+  seedWorkspace('sample', doc, server?.entitlements ?? [], server?.version, [mia.child]);
   const upcoming = doc.events.filter((e) => e.date >= today).sort((a, b) => (a.date < b.date ? -1 : 1))[0];
   switchWorkspace('sample', upcoming ? `/event/${upcoming.id}` : '/home');
 }

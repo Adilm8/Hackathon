@@ -8,7 +8,7 @@ import { Screen } from '@/components/ui/Screen';
 import { chime } from '@/lib/fx/celebrate';
 import { clockText, ROUTINE, routineSteps, type RoutineStep } from '@/lib/home/library';
 import { useChild } from '@/lib/store/child';
-import { useEvents } from '@/lib/store/events';
+import { useEventsOfActiveChild } from '@/lib/store/children';
 import { useToday } from '@/lib/store/hooks';
 import { tonightChapter } from '@/lib/store/engine';
 import { usePrefs } from '@/lib/store/prefs';
@@ -24,7 +24,7 @@ type Run = { idx: number; endsAt: number; pausedLeft?: number } | { done: true }
 
 function Routine() {
   const child = useChild((s) => s.child);
-  const events = useEvents((s) => s.events);
+  const events = useEventsOfActiveChild();
   const today = useToday();
   const off = usePrefs((s) => s.routineOff);
   const toggleStep = usePrefs((s) => s.toggleRoutineStep);

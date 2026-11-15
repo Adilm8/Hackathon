@@ -120,3 +120,11 @@ Defaults chosen without Lida (to revisit):
 - `public/sw.js` (registered in production by `components/ui/ServiceWorker.tsx`): pages network first with the last cached copy offline, hashed build files, icons and scenes cache first, `/api` never cached. Bump `VERSION` in sw.js to drop old caches.
 - `components/home/InstallCard.tsx` on /home: the browser's install prompt where it exists, a "Share > Add to Home Screen" hint on iPhone/iPad Safari; hidden once installed or dismissed (`bds:install-dismissed`).
 - Badge page: "Share the good news" (`components/badges/ShareBadge.tsx`): system share sheet or copy; shares only the badge name and the app link, never the child's name.
+
+### Switching between children
+
+- The synced family document still holds one active child (SPEC 6.1/6.2 unchanged). Other children's full profiles (badges, memory) wait on the device in `bds:children` / `bds:sample:children` (`lib/store/children.ts`, tested in `tests/unit/children.test.ts`). Events already carry `childId`.
+- `components/home/ChildSwitcher.tsx` (two or more children): "Stories for" chips at the top of /home and in the parent panel, plus "Add a child". /home, Library, streak, stars, routine and badge suggestions show only the active child's big days (`useEventsOfActiveChild`); events of an unknown child stay with the active one.
+- Opening any event screen of another child (link, calendar reminder) makes that child active first (`useEventCtx`). Onboarding a new child keeps the current one, with badges, in the roster.
+- Sample: Max's sister Mia (6, first day at school in a week) is seeded on the device so the jury can try switching.
+- Not synced: the other children's profiles stay on this device (restore link / backup carry only the active child).

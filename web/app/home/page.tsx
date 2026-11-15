@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import { useSearchParams } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { Suspense } from 'react';
 import { Character } from '@/components/character';
 import { BadgeArt } from '@/components/badges';
@@ -8,6 +8,8 @@ import { EventIcon, Icon } from '@/components/icons';
 import { SideNav, TabBar, type HomeTab } from '@/components/home/HomeNav';
 import { CreateCard, LevelCard, RoutineCard, PlanCard, StreakCard, TasksCard, WeekReport } from '@/components/home/SideCards';
 import { StoryPath } from '@/components/home/StoryPath';
+import { ChildSwitcher } from '@/components/home/ChildSwitcher';
+import { switchChild, useEventsOfActiveChild } from '@/lib/store/children';
 import { InstallCard } from '@/components/home/InstallCard';
 import { ButtonLink } from '@/components/ui/Button';
 import { CreateStoryButton } from '@/components/ui/CreateStoryButton';
@@ -18,7 +20,6 @@ import type { BigEvent, ChildProfile, Workspace } from '@/lib/engine/types';
 import { buildPath, todayTasks } from '@/lib/home/path';
 import { levelFor, streakWithRest, totalStars, weekStrip, weekSummary } from '@/lib/home/progress';
 import { useChild } from '@/lib/store/child';
-import { useEvents } from '@/lib/store/events';
 import { useHasAccess, useToday } from '@/lib/store/hooks';
 import { countdownText, eventLabel, eventPhase, getTemplate, readProgress, tonightChapter } from '@/lib/store/engine';
 import { loadProfiles } from '@/lib/store/profiles';
@@ -61,9 +62,13 @@ function pickNearest(events: BigEvent[], today: string): BigEvent | null {
 
 function Home({ tab, eventParam }: { tab: HomeTab; eventParam: string | null }) {
   const child = useChild((s) => s.child);
-  const events = useEvents((s) => s.events);
+  const events = useEventsOfActiveChild();
   const today = useToday();
   const ws = getWorkspace();
+  const router = useRouter();
+  const onSwitch = (id: string) => {
+    if (switchChild(id, today)) router.replace(tab === 'path' ? '/home' : `/home?tab=${tab}`);
+  };
   const chosen = events.find((e) => e.id === eventParam) ?? pickNearest(events, today);
   const hasAccess = useHasAccess(chosen?.id);
 
@@ -79,6 +84,7 @@ function Home({ tab, eventParam }: { tab: HomeTab; eventParam: string | null }) 
   const label = eventLabel(chosen, getTemplate(chosen.type));
   return (
     <div className="flex flex-col gap-4">
+      <ChildSwitcher onSwitch={onSwitch} />
       <div className="flex items-center justify-between gap-2 lg:hidden">
         <Link href="/home?tab=child" className="inline-flex min-h-tap items-center gap-2 rounded-pill border border-line bg-surface px-3 text-sm font-bold">
           <Icon name="smile" size={18} /> {child.name}

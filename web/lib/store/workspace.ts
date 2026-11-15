@@ -24,7 +24,7 @@ export function prefixFor(ws: Workspace): string {
   return ws === 'sample' ? 'bds:sample:' : 'bds:';
 }
 
-export function storeKey(name: 'settings' | 'child' | 'events' | 'entitlement'): string {
+export function storeKey(name: 'settings' | 'child' | 'events' | 'entitlement' | 'children'): string {
   return `${prefixFor(getWorkspace())}${name}`;
 }
 

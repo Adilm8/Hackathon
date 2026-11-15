@@ -6,6 +6,7 @@
 import { FAMILY_DOC_SCHEMA_VERSION } from '@/lib/engine/schemas';
 import type { FamilyDoc } from '@/lib/engine/types';
 import { useChild } from './child';
+import { useRoster } from './children';
 import { useEntitlements } from './entitlement';
 import { useEvents } from './events';
 import { getUpdatedAt, subscribeTouch } from './meta';
@@ -38,6 +39,7 @@ export function clearLocalFamily(): void {
   useChild.getState().clear();
   useEvents.getState().clear();
   useEntitlements.getState().clear();
+  useRoster.getState().set([]);
 }
 
 /** Removes every `bds:` key from localStorage and sessionStorage (both workspaces). */

@@ -1,8 +1,12 @@
 'use client';
-import { useParams, useSearchParams } from 'next/navigation';
+import { useParams, useRouter, useSearchParams } from 'next/navigation';
 import { Suspense } from 'react';
 import { Icon } from '@/components/icons';
 import { PanelView } from '@/components/panel/PanelView';
+import { ChildSwitcher } from '@/components/home/ChildSwitcher';
+import { clock } from '@/lib/engine/clock';
+import { useEvents } from '@/lib/store/events';
+import { switchChild } from '@/lib/store/children';
 import { ButtonLink } from '@/components/ui/Button';
 import { PlanNotFound } from '@/components/ui/NotFound';
 import { Screen } from '@/components/ui/Screen';
@@ -26,12 +30,23 @@ export default function PanelPage() {
 function Panel({ id }: { id: string }) {
   const ctx = useEventCtx(id);
   const after = useSearchParams().get('after') === '1';
+  const router = useRouter();
+  const all = useEvents((s) => s.events);
   if (!ctx) return <PlanNotFound />;
+  // Another child: open the panel of that child's nearest big day (or home when there is none).
+  const onSwitch = (childId: string) => {
+    const today = clock.today();
+    const theirs = all.filter((e) => e.childId === childId).sort((a, b) => (a.date < b.date ? -1 : 1));
+    const next = theirs.find((e) => e.date >= today && !e.checkin) ?? theirs.at(-1);
+    if (!switchChild(childId, today)) return;
+    router.push(next ? `/event/${encodeURIComponent(next.id)}/panel` : '/home');
+  };
   const { event, child, template, hasAccess } = ctx;
   const p = readProgress(event);
   const asked = event.questions.filter((q) => q.category !== 'off_topic').length;
   return (
     <div className="flex flex-col gap-6">
+      <ChildSwitcher onSwitch={onSwitch} compact />
       <p className="text-sm font-bold text-ink-soft">
         {eventLabel(event, template)} · {p.read} of {p.total} evenings read · {asked} {asked === 1 ? 'question' : 'questions'}
       </p>
