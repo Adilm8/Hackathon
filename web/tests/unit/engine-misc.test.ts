@@ -156,7 +156,7 @@ describe('text helpers', () => {
   it('labels', () => {
     expect(eventLabel({ type: 'other', customLabel: 'Swim class' })).toBe('Swim class');
     expect(eventLabel({ type: 'dentist' })).toBe('Dentist visit');
-    expect(Object.keys(TEMPLATES)).toHaveLength(15);
+    expect(Object.keys(TEMPLATES)).toHaveLength(EVENT_TYPES.length);
     expect(TEMPLATES.flight.type).toBe('flight');
   });
 });

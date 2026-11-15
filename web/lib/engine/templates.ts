@@ -19,17 +19,32 @@ import sleepover from '@/content/events/sleepover.json';
 import babysitter from '@/content/events/babysitter.json';
 import swimming from '@/content/events/swimming.json';
 import party from '@/content/events/party.json';
+import tooth_loss from '@/content/events/tooth_loss.json';
+import surgery from '@/content/events/surgery.json';
+import potty from '@/content/events/potty.json';
+import daycare from '@/content/events/daycare.json';
+import new_school from '@/content/events/new_school.json';
+import camp from '@/content/events/camp.json';
+import sports from '@/content/events/sports.json';
 import other from '@/content/events/other.json';
 
 /** Every event type, in the order onboarding shows them; "other" stays last. */
 export const EVENT_TYPES: readonly EventType[] = [
   'dentist', 'doctor', 'shot', 'blood_test', 'hospital', 'haircut', 'school', 'babysitter', 'sleepover',
-  'party', 'swimming', 'flight', 'moving', 'sibling', 'other',
+  'party', 'swimming', 'flight', 'moving', 'sibling', 'tooth_loss',
+  'surgery', 'potty', 'daycare', 'new_school', 'camp', 'sports', 'other',
 ];
 
 const RAW: Record<EventType, unknown> = {
   dentist, school, flight, sibling, haircut, shot,
   doctor, blood_test, hospital, moving, sleepover, babysitter, swimming, party,
+  tooth_loss,
+  surgery,
+  potty,
+  daycare,
+  new_school,
+  camp,
+  sports,
   other,
 };
 

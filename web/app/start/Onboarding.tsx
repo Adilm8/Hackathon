@@ -39,7 +39,14 @@ const EVENT_CAPTION: Record<EventType, string> = {
   sibling: 'A baby is coming', haircut: 'Salon or barbershop', shot: 'Vaccine at the doctor',
   doctor: 'Yearly check-up', blood_test: 'Finger prick or arm', hospital: 'A night or more in hospital',
   moving: 'A new home', sleepover: 'A night at a friend\'s or grandma\'s', babysitter: 'A new sitter or nanny',
-  swimming: 'Pool and swim teacher', party: 'A friend\'s party', other: 'Anything else: a new club, a trip…',
+  swimming: 'Pool and swim teacher', party: 'A friend\'s party',
+  tooth_loss: 'A wobbly baby tooth',
+  surgery: 'Surgery with sleep medicine',
+  potty: 'Potty training',
+  daycare: 'Daycare or preschool start',
+  new_school: 'A new school or class',
+  camp: 'Day camp or overnight camp',
+  sports: 'A match, race or competition', other: 'Anything else: a new club, a trip…',
 };
 
 type StepId = 'gate' | 'who' | 'name' | 'age' | 'event' | 'genre' | 'date' | 'fears' | 'story' | 'character' | 'values';

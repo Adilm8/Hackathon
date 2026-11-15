@@ -1,0 +1,2463 @@
+{
+  "type": "daycare",
+  "version": 1,
+  "label": "New daycare or preschool",
+  "countdownLabel": "the first daycare day",
+  "beats": {
+    "what_happens": {
+      "title": "What happens at daycare",
+      "goals": [
+        "Daycare is a place to play and learn with other kids",
+        "The day has a shape: play, snack, outside, nap, stories",
+        "A grown-up always comes back at pick-up"
+      ],
+      "parentSkill": "Describe the day in order using activities, not times: play, snack, outside, nap, pick-up."
+    },
+    "who_is_there": {
+      "title": "Who is at daycare",
+      "goals": [
+        "Teachers look after the children and keep them safe",
+        "Other kids are new too",
+        "Teachers help with toilets, food and feelings"
+      ],
+      "parentSkill": "Learn the teacher's name and say it at home: \"Tomorrow Miss Ana will say hello.\""
+    },
+    "what_i_do": {
+      "title": "What I do at daycare",
+      "goals": [
+        "Hang the bag, say hello, do the goodbye ritual",
+        "Join in, or watch first",
+        "Ask for help with toilets, food and feelings"
+      ],
+      "parentSkill": "Create a short goodbye ritual (hug, kiss, wave at the window) and use it every day."
+    },
+    "if_scared": {
+      "title": "If I miss home",
+      "goals": [
+        "Missing a grown-up is normal",
+        "Crying is okay, and teachers help",
+        "Calm tools: heart on the hand, a photo, slow breaths"
+      ],
+      "parentSkill": "Name the feeling at drop-off: 'You'll miss me. I'll be back after nap.' Then leave calmly."
+    },
+    "rehearsal": {
+      "title": "Let's practise daycare",
+      "goals": [
+        "Play daycare with toys at home",
+        "Practise the goodbye ritual",
+        "End with the happy pick-up"
+      ],
+      "parentSkill": "Play daycare: toys are kids, your child is the teacher, and you practise goodbyes and pick-ups."
+    }
+  },
+  "steps": [
+    "Walk to daycare with a grown-up and a bag",
+    "Hang the bag and coat on my own hook",
+    "Say good morning to the teacher",
+    "Do the goodbye ritual and wave at the window",
+    "Play, have snack, go outside and have nap or quiet time",
+    "Sing songs and read stories in circle time",
+    "Pick-up time: a grown-up comes back"
+  ],
+  "sensory": [
+    "lots of children talking and laughing",
+    "bright toys and paintings on the walls",
+    "the smell of snack and crayons",
+    "a little cot or mat for nap time",
+    "a new hook with my name or picture",
+    "a squishy feeling in the tummy at goodbye"
+  ],
+  "honestyNotes": "Goodbyes can be hard and crying is common for the first days or weeks; never sneak away and never promise the child will not miss the parent. Always say when the grown-up comes back using the daily routine (after nap, after snack), not clock times.",
+  "questionButtons": [
+    {
+      "id": "back",
+      "text": "Will [[GROWNUP]] come back?",
+      "topic": "separation",
+      "fallbackAnswer": [
+        "Yes. [[GROWNUP]] always comes back at pick-up time.",
+        "Pick-up is after nap, or after afternoon snack."
+      ]
+    },
+    {
+      "id": "miss",
+      "text": "What if I miss [[GROWNUP]]?",
+      "topic": "separation",
+      "fallbackAnswer": [
+        "Missing [[GROWNUP]] is normal. You can press the heart on your hand.",
+        "A teacher can give you a cuddle too."
+      ]
+    },
+    {
+      "id": "teacher",
+      "text": "Who is the teacher?",
+      "topic": "strangers",
+      "fallbackAnswer": [
+        "A teacher is a grown-up whose job is looking after kids.",
+        "They will say good morning and learn your name."
+      ]
+    },
+    {
+      "id": "toilet",
+      "text": "What if I need the toilet?",
+      "topic": "body",
+      "fallbackAnswer": [
+        "Tell the teacher, I need the toilet. Teachers help with that every day.",
+        "It is good to ask."
+      ]
+    },
+    {
+      "id": "friends",
+      "text": "Will anyone play with me?",
+      "topic": "social",
+      "fallbackAnswer": [
+        "There are lots of kids, and some are new too.",
+        "You can play next to someone, or say, can I play?"
+      ]
+    },
+    {
+      "id": "nap",
+      "text": "Do I have to sleep there?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "There is a nap or quiet time on a little bed or mat.",
+        "You can bring your blanket from home, and resting is fine even without sleep."
+      ]
+    },
+    {
+      "id": "cry",
+      "text": "What if I cry?",
+      "topic": "love",
+      "fallbackAnswer": [
+        "Crying is okay. Lots of kids cry at goodbye.",
+        "Teachers know how to help, and feelings get smaller."
+      ]
+    },
+    {
+      "id": "food",
+      "text": "What will I eat?",
+      "topic": "body",
+      "fallbackAnswer": [
+        "There is snack time, and maybe lunch.",
+        "You can say no thank you, and eat what you like."
+      ]
+    },
+    {
+      "id": "loud",
+      "text": "What if it is too loud?",
+      "topic": "sensory",
+      "fallbackAnswer": [
+        "Daycare can be loud when everyone plays.",
+        "You can rest in a quiet corner or tell the teacher."
+      ]
+    },
+    {
+      "id": "what_do",
+      "text": "What will I do all day?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "Play, snack, outside time, nap and stories.",
+        "Then [[GROWNUP]] comes back."
+      ]
+    }
+  ],
+  "techniques": [
+    {
+      "id": "goodbye_ritual",
+      "label": "A goodbye ritual",
+      "how": "Do the same short goodbye every day: hug, kiss, wave at the window.",
+      "topics": [
+        "separation",
+        "love"
+      ]
+    },
+    {
+      "id": "heart_on_hand",
+      "label": "A heart on the hand",
+      "how": "Draw matching hearts on your hands to press when missing each other.",
+      "topics": [
+        "separation",
+        "love"
+      ]
+    },
+    {
+      "id": "family_photo",
+      "label": "A family photo",
+      "how": "Put a small family photo in the bag or cubby.",
+      "topics": [
+        "separation",
+        "love"
+      ]
+    },
+    {
+      "id": "picture_schedule",
+      "label": "Picture schedule",
+      "how": "Draw the day in pictures: play, snack, outside, nap, pick-up.",
+      "topics": [
+        "unknown",
+        "safety"
+      ]
+    },
+    {
+      "id": "visit_before",
+      "label": "Visiting first",
+      "how": "Visit the room, the hook and the toilets before the first day.",
+      "topics": [
+        "unknown",
+        "strangers",
+        "sensory"
+      ]
+    },
+    {
+      "id": "comfort_toy",
+      "label": "A comfort blanket or toy",
+      "how": "Pack a small blanket or toy for nap time.",
+      "topics": [
+        "separation",
+        "safety"
+      ]
+    },
+    {
+      "id": "ask_teacher",
+      "label": "Asking the teacher",
+      "how": "Practise the sentence, can you help me, please?",
+      "topics": [
+        "strangers",
+        "body",
+        "social"
+      ]
+    },
+    {
+      "id": "quiet_corner",
+      "label": "A quiet corner",
+      "how": "Ask the teacher where the quiet corner is for a rest.",
+      "topics": [
+        "sensory",
+        "social"
+      ]
+    },
+    {
+      "id": "deep_breaths",
+      "label": "Smell the flower, blow the candle",
+      "how": "Breathe in slowly through the nose and out like blowing a candle.",
+      "topics": [
+        "pain",
+        "sensory",
+        "safety"
+      ]
+    }
+  ],
+  "ritual": [
+    "Hang my bag on my hook",
+    "Hug, kiss, wave at the window",
+    "Play until pick-up time"
+  ],
+  "phrases": {
+    "pain": [
+      "If you get a bump, the teacher will help.",
+      "Tell a teacher if something hurts."
+    ],
+    "body": [
+      "Tell the teacher when you need the toilet.",
+      "You can eat what you like at snack."
+    ],
+    "sensory": [
+      "Daycare can be loud. The quiet corner helps.",
+      "Your blanket smells like home."
+    ],
+    "strangers": [
+      "The teacher's job is to look after you. Let's say good morning.",
+      "You can ask, can you help me, please?"
+    ],
+    "separation": [
+      "I'll be back after nap. I always come back.",
+      "Press the heart on your hand when you miss me."
+    ],
+    "unknown": [
+      "Play, snack, outside, nap, then pick-up.",
+      "First hang your bag, then we say goodbye."
+    ],
+    "safety": [
+      "The teachers keep everyone safe.",
+      "If you are not sure, ask a teacher."
+    ],
+    "social": [
+      "Some kids are new too.",
+      "You can play next to someone first."
+    ],
+    "love": [
+      "I love you, and I think of you all day.",
+      "I'm proud of you for trying."
+    ]
+  },
+  "topicWords": {
+    "pain": [
+      "hurt",
+      "bump",
+      "sore",
+      "ouch"
+    ],
+    "body": [
+      "toilet",
+      "tummy",
+      "snack",
+      "eat",
+      "nap",
+      "rest",
+      "tired"
+    ],
+    "sensory": [
+      "loud",
+      "busy",
+      "smell",
+      "squishy",
+      "quiet",
+      "bright",
+      "cuddle"
+    ],
+    "strangers": [
+      "teacher",
+      "teachers",
+      "goose teacher",
+      "miss feather",
+      "good morning"
+    ],
+    "separation": [
+      "comes back",
+      "come back",
+      "goodbye",
+      "miss",
+      "pick-up",
+      "heart",
+      "came back",
+      "right there",
+      "stay",
+      "close",
+      "with me",
+      "with you",
+      "together",
+      "back",
+      "hand",
+      "nearby"
+    ],
+    "unknown": [
+      "first",
+      "then",
+      "next",
+      "after",
+      "last",
+      "day",
+      "schedule",
+      "step",
+      "steps"
+    ],
+    "safety": [
+      "safe",
+      "help",
+      "helps",
+      "corner",
+      "careful",
+      "break",
+      "stop"
+    ],
+    "social": [
+      "kids",
+      "friend",
+      "friends",
+      "play",
+      "game",
+      "everyone",
+      "ducklings",
+      "children",
+      "people",
+      "others"
+    ],
+    "love": [
+      "love",
+      "hug",
+      "proud",
+      "kiss",
+      "cuddle"
+    ]
+  },
+  "backgrounds": [
+    "school",
+    "outside",
+    "home-evening",
+    "cosy-room"
+  ],
+  "fallbackPages": {
+    "story": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "Soon [[CHILD]] will start daycare.",
+              "kind": "describe"
+            },
+            {
+              "text": "Daycare is a place where kids play, learn and have fun while grown-ups are at work.",
+              "kind": "describe"
+            },
+            {
+              "text": "First [[CHILD]] and [[GROWNUP]] walk in together.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[CHILD]] hangs the bag on a hook with a name or a picture.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "separation",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Before bed, here is a story about a little duckling called Dot.",
+              "kind": "describe"
+            },
+            {
+              "text": "Dot was starting at the Pond Daycare.",
+              "kind": "describe"
+            },
+            {
+              "text": "First Mama Duck walked Dot to the big willow tree.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then Dot found a little hook with a picture of a leaf.",
+              "kind": "describe"
+            },
+            {
+              "text": "That is your hook, said the kind goose teacher.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next Dot played with pebbles and floating leaves.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that there was snack time, with crunchy seeds.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the ducklings had a nap in soft reeds.",
+              "kind": "describe"
+            },
+            {
+              "text": "When Dot woke up, there was a song about raindrops.",
+              "kind": "describe"
+            },
+            {
+              "text": "And then, Mama Duck came back, just as she said.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Next there is play time with blocks, paint and books.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that comes snack, outside time, and nap or quiet time.",
+              "kind": "describe"
+            },
+            {
+              "text": "There are songs and stories in circle time.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, at pick-up time, [[GROWNUP]] comes back.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can remember the day like a song: play, snack, outside, nap, pick-up.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Soon [[CHILD]] will start daycare.",
+              "kind": "describe"
+            },
+            {
+              "text": "Daycare is a place where kids play, learn and have fun while grown-ups are at work.",
+              "kind": "describe"
+            },
+            {
+              "text": "First [[CHILD]] and [[GROWNUP]] walk in together.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[CHILD]] hangs the bag on a hook with a name or a picture.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next there is play time with blocks, paint and books.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that comes snack, outside time, and nap or quiet time.",
+              "kind": "describe"
+            },
+            {
+              "text": "There are songs and stories in circle time.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, at pick-up time, [[GROWNUP]] comes back.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can remember the day like a song: play, snack, outside, nap, pick-up.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "At daycare there are teachers whose job is to look after children.",
+              "kind": "describe"
+            },
+            {
+              "text": "They keep kids safe, help with toilets, snack and coats, and give cuddles when kids are sad.",
+              "kind": "describe"
+            },
+            {
+              "text": "There are other kids too, and some of them are new.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids feel shy, and some feel excited.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Dot the duckling met the goose teacher, Miss Feather.",
+              "kind": "describe"
+            },
+            {
+              "text": "Miss Feather had soft grey wings and a warm voice.",
+              "kind": "describe"
+            },
+            {
+              "text": "Good morning, Dot, she said.",
+              "kind": "describe"
+            },
+            {
+              "text": "Dot hid behind Mama's wing a little.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then Dot saw a frog called Fin, sitting alone by the water.",
+              "kind": "describe"
+            },
+            {
+              "text": "Fin was new too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Dot and Fin played with pebbles side by side, without talking.",
+              "kind": "describe"
+            },
+            {
+              "text": "Later, Fin said, want to splash?",
+              "kind": "describe"
+            },
+            {
+              "text": "Dot nodded, and they splashed together.",
+              "kind": "describe"
+            },
+            {
+              "text": "When Dot felt sad, Miss Feather gave her a soft wing hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "strangers",
+            "separation",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "The teacher will say good morning and learn [[CHILD]]'s name.",
+              "kind": "describe"
+            },
+            {
+              "text": "Friends take a little time to make.",
+              "kind": "describe"
+            },
+            {
+              "text": "Playing side by side is a great start.",
+              "kind": "describe"
+            },
+            {
+              "text": "Teachers can help kids find a game together.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say, can you help me, please, to any teacher.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "school",
+          "addresses": [
+            "strangers",
+            "separation",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At daycare there are teachers whose job is to look after children.",
+              "kind": "describe"
+            },
+            {
+              "text": "They keep kids safe, help with toilets, snack and coats, and give cuddles when kids are sad.",
+              "kind": "describe"
+            },
+            {
+              "text": "There are other kids too, and some of them are new.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids feel shy, and some feel excited.",
+              "kind": "describe"
+            },
+            {
+              "text": "The teacher will say good morning and learn [[CHILD]]'s name.",
+              "kind": "describe"
+            },
+            {
+              "text": "Friends take a little time to make.",
+              "kind": "describe"
+            },
+            {
+              "text": "Playing side by side is a great start.",
+              "kind": "describe"
+            },
+            {
+              "text": "Teachers can help kids find a game together.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say, can you help me, please, to any teacher.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "In the morning [[CHILD]] hangs the bag on the hook.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[CHILD]] and [[GROWNUP]] do the goodbye ritual: a hug, a kiss and a wave.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] says, I will be back after nap, and leaves.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next [[CHILD]] can join a game, or watch first.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "school",
+          "addresses": [
+            "body",
+            "separation",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Dot the duckling had a goodbye ritual with Mama.",
+              "kind": "describe"
+            },
+            {
+              "text": "First a hug, then a beak kiss, then a wave at the window.",
+              "kind": "describe"
+            },
+            {
+              "text": "I will be back after nap, said Mama.",
+              "kind": "describe"
+            },
+            {
+              "text": "Dot waved and waved until Mama was gone.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then Dot watched the other ducklings building a stick house.",
+              "kind": "describe"
+            },
+            {
+              "text": "After a little while, Dot carried a stick over.",
+              "kind": "describe"
+            },
+            {
+              "text": "Thank you, said Fin the frog.",
+              "kind": "describe"
+            },
+            {
+              "text": "At snack time Dot ate the seeds she liked best.",
+              "kind": "describe"
+            },
+            {
+              "text": "At nap time, she cuddled her blanket from home.",
+              "kind": "describe"
+            },
+            {
+              "text": "When Dot felt a big feeling, she told Miss Feather.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "When the tummy says toilet, tell the teacher.",
+              "kind": "describe"
+            },
+            {
+              "text": "At snack time, eat what you like.",
+              "kind": "describe"
+            },
+            {
+              "text": "At nap time, cuddle the blanket from home.",
+              "kind": "describe"
+            },
+            {
+              "text": "When feelings get big, a teacher can help.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can wave at the window and then go to play.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "school",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the morning [[CHILD]] hangs the bag on the hook.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[CHILD]] and [[GROWNUP]] do the goodbye ritual: a hug, a kiss and a wave.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] says, I will be back after nap, and leaves.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next [[CHILD]] can join a game, or watch first.",
+              "kind": "describe"
+            },
+            {
+              "text": "When the tummy says toilet, tell the teacher.",
+              "kind": "describe"
+            },
+            {
+              "text": "At snack time, eat what you like.",
+              "kind": "describe"
+            },
+            {
+              "text": "At nap time, cuddle the blanket from home.",
+              "kind": "describe"
+            },
+            {
+              "text": "When feelings get big, a teacher can help.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can wave at the window and then go to play.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "school",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "At goodbye time, [[CHILD]] may feel sad or scared.",
+              "kind": "describe"
+            },
+            {
+              "text": "The tummy can feel squishy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Crying is okay, and lots of kids cry at goodbye.",
+              "kind": "describe"
+            },
+            {
+              "text": "Teachers know how to help, with cuddles and games.",
+              "kind": "describe"
+            },
+            {
+              "text": "Most kids feel better a little while after the goodbye.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "worried",
+          "background": "school",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Dot the duckling felt sad one morning.",
+              "kind": "describe"
+            },
+            {
+              "text": "She did not want Mama to go.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama did not say, you will not miss me.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama said, you may miss me, and I will be back after nap.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama drew a little heart on Dot's wing.",
+              "kind": "describe"
+            },
+            {
+              "text": "Press it when you miss me, said Mama.",
+              "kind": "describe"
+            },
+            {
+              "text": "Dot cried a little, and Miss Feather gave her a cuddle.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then Dot pressed the heart and took a slow breath.",
+              "kind": "describe"
+            },
+            {
+              "text": "Soon Fin the frog called, come and splash.",
+              "kind": "describe"
+            },
+            {
+              "text": "And after nap, Mama came back, just as she said.",
+              "kind": "describe"
+            },
+            {
+              "text": "Worried and brave can happen at the same time.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Daycare can be loud and busy sometimes.",
+              "kind": "describe"
+            },
+            {
+              "text": "A quiet corner is a good place for a rest.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] always comes back at pick-up time.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can press the heart on the hand and think of [[GROWNUP]].",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can take slow breaths, smell the flower and blow the candle.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "school",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At goodbye time, [[CHILD]] may feel sad or scared.",
+              "kind": "describe"
+            },
+            {
+              "text": "The tummy can feel squishy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Crying is okay, and lots of kids cry at goodbye.",
+              "kind": "describe"
+            },
+            {
+              "text": "Teachers know how to help, with cuddles and games.",
+              "kind": "describe"
+            },
+            {
+              "text": "Most kids feel better a little while after the goodbye.",
+              "kind": "describe"
+            },
+            {
+              "text": "Daycare can be loud and busy sometimes.",
+              "kind": "describe"
+            },
+            {
+              "text": "A quiet corner is a good place for a rest.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] always comes back at pick-up time.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can press the heart on the hand and think of [[GROWNUP]].",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can take slow breaths, smell the flower and blow the candle.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "school",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "Tonight [[CHILD]] can play daycare with toys.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can be the teacher, and the toys are the kids.",
+              "kind": "describe"
+            },
+            {
+              "text": "First the toys hang up their bags.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then they do a goodbye ritual: a hug, a kiss and a wave.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say the day out loud: play, snack, outside, nap, pick-up.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "school",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Dot the duckling played daycare at home.",
+              "kind": "describe"
+            },
+            {
+              "text": "She lined up her toy fish as the kids.",
+              "kind": "describe"
+            },
+            {
+              "text": "Good morning, everyone, said Dot, like Miss Feather.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the toy fish did a goodbye hug and wave.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next they played, had snack, and took a little nap.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pick-up time, called Dot, and the mama fish came back.",
+              "kind": "describe"
+            },
+            {
+              "text": "Everyone cheered.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama Duck laughed and joined in.",
+              "kind": "describe"
+            },
+            {
+              "text": "You know just how daycare goes, she said.",
+              "kind": "describe"
+            },
+            {
+              "text": "Dot tucked her blanket in her bag, ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "And Dot slept well that night.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Next the toys play, have snack and take a nap.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, it is pick-up time.",
+              "kind": "describe"
+            },
+            {
+              "text": "The grown-up toy comes back, and everyone cheers.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can play it again and again.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say the day out loud: play, snack, outside, nap, pick-up.",
+              "kind": "coach"
+            },
+            {
+              "text": "Step by step, it all gets a little easier.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "school",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight [[CHILD]] can play daycare with toys.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can be the teacher, and the toys are the kids.",
+              "kind": "describe"
+            },
+            {
+              "text": "First the toys hang up their bags.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then they do a goodbye ritual: a hug, a kiss and a wave.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next the toys play, have snack and take a nap.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, it is pick-up time.",
+              "kind": "describe"
+            },
+            {
+              "text": "The grown-up toy comes back, and everyone cheers.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can play it again and again.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say the day out loud: play, snack, outside, nap, pick-up.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "school",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        }
+      ]
+    },
+    "social": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "Soon I will start daycare.",
+              "kind": "describe"
+            },
+            {
+              "text": "Daycare is a place to play and learn.",
+              "kind": "describe"
+            },
+            {
+              "text": "Other kids go there too.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I walk in with [[GROWNUP]].",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I hang my bag on my own hook.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next I play with toys, blocks and paint.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can remember: play, snack, outside, nap, pick-up.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "body",
+            "separation",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Soon I will start daycare.",
+              "kind": "describe"
+            },
+            {
+              "text": "Daycare is a place to play and learn.",
+              "kind": "describe"
+            },
+            {
+              "text": "Other kids go there too.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I walk in with [[GROWNUP]].",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I hang my bag on my own hook.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next I play with toys, blocks and paint.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, I have snack.",
+              "kind": "describe"
+            },
+            {
+              "text": "I go outside to play.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I have a nap or quiet time.",
+              "kind": "describe"
+            },
+            {
+              "text": "We sing songs and read stories.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, [[GROWNUP]] comes back to pick me up.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "After that, I have snack.",
+              "kind": "describe"
+            },
+            {
+              "text": "I go outside to play.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I have a nap or quiet time.",
+              "kind": "describe"
+            },
+            {
+              "text": "We sing songs and read stories.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, [[GROWNUP]] comes back to pick me up.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can remember: play, snack, outside, nap, pick-up.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Soon I will start daycare.",
+              "kind": "describe"
+            },
+            {
+              "text": "Daycare is a place to play and learn.",
+              "kind": "describe"
+            },
+            {
+              "text": "Other kids go there too.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I walk in with [[GROWNUP]].",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I hang my bag on my own hook.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next I play with toys, blocks and paint.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can remember: play, snack, outside, nap, pick-up.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "body",
+            "separation",
+            "unknown",
+            "social"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "At daycare there are teachers.",
+              "kind": "describe"
+            },
+            {
+              "text": "Their job is to look after me.",
+              "kind": "describe"
+            },
+            {
+              "text": "They keep me safe.",
+              "kind": "describe"
+            },
+            {
+              "text": "They help with toilets, snack and coats.",
+              "kind": "describe"
+            },
+            {
+              "text": "They give cuddles when kids are sad.",
+              "kind": "describe"
+            },
+            {
+              "text": "There are other kids too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids are new, like me.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say, can you help me, please?",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At daycare there are teachers.",
+              "kind": "describe"
+            },
+            {
+              "text": "Their job is to look after me.",
+              "kind": "describe"
+            },
+            {
+              "text": "They keep me safe.",
+              "kind": "describe"
+            },
+            {
+              "text": "They help with toilets, snack and coats.",
+              "kind": "describe"
+            },
+            {
+              "text": "They give cuddles when kids are sad.",
+              "kind": "describe"
+            },
+            {
+              "text": "There are other kids too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids are new, like me.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids feel shy.",
+              "kind": "describe"
+            },
+            {
+              "text": "The teacher will learn my name.",
+              "kind": "describe"
+            },
+            {
+              "text": "Friends can take a little time.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can play next to someone.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Some kids feel shy.",
+              "kind": "describe"
+            },
+            {
+              "text": "The teacher will learn my name.",
+              "kind": "describe"
+            },
+            {
+              "text": "Friends can take a little time.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can play next to someone.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say, can you help me, please?",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "school",
+          "addresses": [
+            "strangers",
+            "unknown",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At daycare there are teachers.",
+              "kind": "describe"
+            },
+            {
+              "text": "Their job is to look after me.",
+              "kind": "describe"
+            },
+            {
+              "text": "They keep me safe.",
+              "kind": "describe"
+            },
+            {
+              "text": "They help with toilets, snack and coats.",
+              "kind": "describe"
+            },
+            {
+              "text": "They give cuddles when kids are sad.",
+              "kind": "describe"
+            },
+            {
+              "text": "There are other kids too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids are new, like me.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say, can you help me, please?",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "unknown"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "In the morning I hang my bag on my hook.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I do my goodbye with [[GROWNUP]].",
+              "kind": "describe"
+            },
+            {
+              "text": "A hug, a kiss and a wave.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] says when they come back.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next I can join a game.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can wave at the window and go to play.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "school",
+          "addresses": [
+            "separation",
+            "unknown",
+            "social",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the morning I hang my bag on my hook.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I do my goodbye with [[GROWNUP]].",
+              "kind": "describe"
+            },
+            {
+              "text": "A hug, a kiss and a wave.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] says when they come back.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next I can join a game.",
+              "kind": "describe"
+            },
+            {
+              "text": "Or I can watch first.",
+              "kind": "describe"
+            },
+            {
+              "text": "When I need the toilet, I tell the teacher.",
+              "kind": "describe"
+            },
+            {
+              "text": "At snack, I eat what I like.",
+              "kind": "describe"
+            },
+            {
+              "text": "At nap time, I cuddle my blanket.",
+              "kind": "describe"
+            },
+            {
+              "text": "If I feel sad, a teacher helps.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Or I can watch first.",
+              "kind": "describe"
+            },
+            {
+              "text": "When I need the toilet, I tell the teacher.",
+              "kind": "describe"
+            },
+            {
+              "text": "At snack, I eat what I like.",
+              "kind": "describe"
+            },
+            {
+              "text": "At nap time, I cuddle my blanket.",
+              "kind": "describe"
+            },
+            {
+              "text": "If I feel sad, a teacher helps.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can wave at the window and go to play.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "school",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the morning I hang my bag on my hook.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I do my goodbye with [[GROWNUP]].",
+              "kind": "describe"
+            },
+            {
+              "text": "A hug, a kiss and a wave.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] says when they come back.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next I can join a game.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can wave at the window and go to play.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "school",
+          "addresses": [
+            "separation",
+            "unknown",
+            "social",
+            "love"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "At goodbye, I may miss [[GROWNUP]].",
+              "kind": "describe"
+            },
+            {
+              "text": "My tummy can feel squishy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Crying is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "Lots of kids cry at goodbye.",
+              "kind": "describe"
+            },
+            {
+              "text": "The teachers help.",
+              "kind": "describe"
+            },
+            {
+              "text": "They give cuddles and play games.",
+              "kind": "describe"
+            },
+            {
+              "text": "After a while, I feel better.",
+              "kind": "describe"
+            },
+            {
+              "text": "Daycare can be loud.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can press the heart on my hand.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "worried",
+          "background": "school",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At goodbye, I may miss [[GROWNUP]].",
+              "kind": "describe"
+            },
+            {
+              "text": "My tummy can feel squishy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Crying is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "Lots of kids cry at goodbye.",
+              "kind": "describe"
+            },
+            {
+              "text": "The teachers help.",
+              "kind": "describe"
+            },
+            {
+              "text": "They give cuddles and play games.",
+              "kind": "describe"
+            },
+            {
+              "text": "After a while, I feel better.",
+              "kind": "describe"
+            },
+            {
+              "text": "Daycare can be loud.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can rest in a quiet corner.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] always comes back.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I can rest in a quiet corner.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] always comes back.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can press the heart on my hand.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "school",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At goodbye, I may miss [[GROWNUP]].",
+              "kind": "describe"
+            },
+            {
+              "text": "My tummy can feel squishy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Crying is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "Lots of kids cry at goodbye.",
+              "kind": "describe"
+            },
+            {
+              "text": "The teachers help.",
+              "kind": "describe"
+            },
+            {
+              "text": "They give cuddles and play games.",
+              "kind": "describe"
+            },
+            {
+              "text": "After a while, I feel better.",
+              "kind": "describe"
+            },
+            {
+              "text": "Daycare can be loud.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can press the heart on my hand.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "school",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "Tonight I can play daycare.",
+              "kind": "describe"
+            },
+            {
+              "text": "I am the teacher.",
+              "kind": "describe"
+            },
+            {
+              "text": "My toys are the kids.",
+              "kind": "describe"
+            },
+            {
+              "text": "First the toys hang their bags.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then they do a goodbye hug and wave.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next they play.",
+              "kind": "describe"
+            },
+            {
+              "text": "They have snack and a nap.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: play, snack, outside, nap, pick-up.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "school",
+          "addresses": [
+            "body",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight I can play daycare.",
+              "kind": "describe"
+            },
+            {
+              "text": "I am the teacher.",
+              "kind": "describe"
+            },
+            {
+              "text": "My toys are the kids.",
+              "kind": "describe"
+            },
+            {
+              "text": "First the toys hang their bags.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then they do a goodbye hug and wave.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next they play.",
+              "kind": "describe"
+            },
+            {
+              "text": "They have snack and a nap.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, it is pick-up time.",
+              "kind": "describe"
+            },
+            {
+              "text": "The grown-up toy comes back.",
+              "kind": "describe"
+            },
+            {
+              "text": "Everyone cheers.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can play it again.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "Step by step, it gets a little easier.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "body",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "After that, it is pick-up time.",
+              "kind": "describe"
+            },
+            {
+              "text": "The grown-up toy comes back.",
+              "kind": "describe"
+            },
+            {
+              "text": "Everyone cheers.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can play it again.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: play, snack, outside, nap, pick-up.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "school",
+          "addresses": [
+            "body",
+            "separation",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight I can play daycare.",
+              "kind": "describe"
+            },
+            {
+              "text": "I am the teacher.",
+              "kind": "describe"
+            },
+            {
+              "text": "My toys are the kids.",
+              "kind": "describe"
+            },
+            {
+              "text": "First the toys hang their bags.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then they do a goodbye hug and wave.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next they play.",
+              "kind": "describe"
+            },
+            {
+              "text": "They have snack and a nap.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: play, snack, outside, nap, pick-up.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "school",
+          "addresses": [
+            "body",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        }
+      ]
+    }
+  },
+  "badge": {
+    "id": "little_learner",
+    "label": "Little Learner"
+  },
+  "olderPages": {
+    "what_happens": {
+      "sentences": [
+        {
+          "text": "Daycare has a daily rhythm that repeats, so after a week [[CHILD]] will know what comes next.",
+          "kind": "describe"
+        },
+        {
+          "text": "Teachers plan activities that help kids grow, like painting, building and sharing.",
+          "kind": "describe"
+        },
+        {
+          "text": "Nap time lets small bodies rest so the afternoon is fun too.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[GROWNUP]] gets a report about the day and can talk about it at home.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can ask for a picture schedule of the day.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "school",
+      "addresses": [
+        "body",
+        "strangers",
+        "unknown",
+        "safety"
+      ]
+    },
+    "who_is_there": {
+      "sentences": [
+        {
+          "text": "Daycare teachers are trained in child safety and first aid, and they know every child in the room.",
+          "kind": "describe"
+        },
+        {
+          "text": "Some children cry at drop-off for a few days, and teachers know how to comfort them.",
+          "kind": "describe"
+        },
+        {
+          "text": "Kids this age often play side by side before they play together, which is how friendships start.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[GROWNUP]] can share [[CHILD]]'s comfort tips with the teacher.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can bring a family photo to look at during the day.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "school",
+      "addresses": [
+        "strangers",
+        "separation",
+        "unknown",
+        "safety"
+      ]
+    },
+    "what_i_do": {
+      "sentences": [
+        {
+          "text": "A short, cheerful goodbye is easier than a long one, even if there are tears.",
+          "kind": "describe"
+        },
+        {
+          "text": "Kids who know the plan for the day settle faster.",
+          "kind": "describe"
+        },
+        {
+          "text": "Joining in can start small: handing someone a block or sitting near a group.",
+          "kind": "describe"
+        },
+        {
+          "text": "Telling a teacher about hunger, thirst or the toilet is a big kid skill.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can choose one thing to try each day.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "brave",
+      "background": "school",
+      "addresses": [
+        "body",
+        "strangers",
+        "separation",
+        "unknown"
+      ]
+    },
+    "if_scared": {
+      "sentences": [
+        {
+          "text": "Missing a parent is a sign of a strong bond, not a problem.",
+          "kind": "describe"
+        },
+        {
+          "text": "The first two weeks are usually the hardest, and most kids settle after that.",
+          "kind": "describe"
+        },
+        {
+          "text": "Tiredness and hunger can make feelings bigger, so rest and snack help.",
+          "kind": "describe"
+        },
+        {
+          "text": "If [[CHILD]] has a hard day, telling [[GROWNUP]] at home helps the teacher help more.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can choose a small comfort item for the bag.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "worried",
+      "background": "school",
+      "addresses": [
+        "body",
+        "strangers",
+        "separation",
+        "unknown"
+      ]
+    },
+    "rehearsal": {
+      "sentences": [
+        {
+          "text": "Visiting the daycare before the first day helps a lot: seeing the room, the hook and the toilets.",
+          "kind": "describe"
+        },
+        {
+          "text": "Reading a book about daycare together makes the day familiar.",
+          "kind": "describe"
+        },
+        {
+          "text": "Practising short separations, like a grandparent visit, builds confidence.",
+          "kind": "describe"
+        },
+        {
+          "text": "A pick-up treat ritual gives something to look forward to.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can pack the bag the night before.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "happy",
+      "background": "school",
+      "addresses": [
+        "body",
+        "separation",
+        "unknown",
+        "safety"
+      ]
+    }
+  }
+}

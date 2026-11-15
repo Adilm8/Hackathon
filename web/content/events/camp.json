@@ -1,0 +1,2454 @@
+{
+  "type": "camp",
+  "version": 1,
+  "label": "Summer camp",
+  "countdownLabel": "the first day of camp",
+  "beats": {
+    "what_happens": {
+      "title": "What happens at camp",
+      "goals": [
+        "Camp is a place for outdoor fun with a group",
+        "Counselors lead activities all day",
+        "Day camp goes home, overnight camp sleeps in cabins"
+      ],
+      "parentSkill": "Look at the camp schedule together and pick the activity your child is most curious about."
+    },
+    "who_is_there": {
+      "title": "Who is at camp",
+      "goals": [
+        "Counselors lead and look after the group",
+        "Other campers are new too",
+        "Nurses and directors help when needed"
+      ],
+      "parentSkill": "Tell your child the counselor is the first person to go to for anything, from a scraped knee to a sad feeling."
+    },
+    "what_i_do": {
+      "title": "What I do at camp",
+      "goals": [
+        "Join activities, or watch first",
+        "Drink water, wear sunscreen and stay with the group",
+        "Ask for help any time"
+      ],
+      "parentSkill": "Pack together and label everything, so your child knows what is in the bag."
+    },
+    "if_scared": {
+      "title": "If I miss home",
+      "goals": [
+        "Homesickness is normal and passes",
+        "Activities can feel hard at first",
+        "Calm tools: a letter from home, a busy activity, talking to a counselor"
+      ],
+      "parentSkill": "Name homesickness before camp: 'You might miss home. That means you love home. It gets easier when you get busy.'"
+    },
+    "rehearsal": {
+      "title": "Let's get ready for camp",
+      "goals": [
+        "Pack the bag together",
+        "Practise a name game and a camp song",
+        "Plan a note from home"
+      ],
+      "parentSkill": "Do a practice camp day in the garden or park: snack, game, water break and a song."
+    }
+  },
+  "steps": [
+    "Pack the camp bag with clothes, sunscreen and a water bottle",
+    "Arrive at camp and check in with a counselor",
+    "Meet the group and learn the names",
+    "Do activities like swimming, crafts, games and hikes",
+    "Eat lunch with the group",
+    "Rest, play and sing camp songs",
+    "Go home, or sleep in a cabin at an overnight camp"
+  ],
+  "sensory": [
+    "warm sun and the smell of sunscreen",
+    "grass, dirt and pine trees",
+    "loud camp songs and cheers",
+    "a cabin bunk bed that creaks",
+    "bug spray and buzzing insects",
+    "a busy dining hall"
+  ],
+  "honestyNotes": "Homesickness is very common, especially at overnight camp; never promise the child will not miss home, and never promise a pick-up 'any time' unless the family means it. Activities can feel hard at first. Let the parent say if it is day camp or overnight camp.",
+  "questionButtons": [
+    {
+      "id": "miss",
+      "text": "What if I miss home?",
+      "topic": "separation",
+      "fallbackAnswer": [
+        "Lots of campers miss home, and that is normal.",
+        "Reading your note from home and getting busy can help."
+      ]
+    },
+    {
+      "id": "friends",
+      "text": "Will I make friends?",
+      "topic": "social",
+      "fallbackAnswer": [
+        "Many campers are new, and friends at camp often happen fast.",
+        "You can start with the name game."
+      ]
+    },
+    {
+      "id": "who",
+      "text": "Who looks after me?",
+      "topic": "strangers",
+      "fallbackAnswer": [
+        "Counselors look after your group all day.",
+        "There is a camp nurse too."
+      ]
+    },
+    {
+      "id": "swim",
+      "text": "Do I have to swim in the lake?",
+      "topic": "safety",
+      "fallbackAnswer": [
+        "Lifeguards watch the water, and kids swim where it is right for them.",
+        "You can say, I want to stay where I can stand."
+      ]
+    },
+    {
+      "id": "bugs",
+      "text": "Will there be bugs?",
+      "topic": "sensory",
+      "fallbackAnswer": [
+        "Yes, camp is outside, so there are bugs.",
+        "Bug spray helps, and most bugs just buzz by."
+      ]
+    },
+    {
+      "id": "sleep",
+      "text": "Where will I sleep?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "At day camp you sleep at home.",
+        "At overnight camp, you sleep in a cabin with your group and a counselor."
+      ]
+    },
+    {
+      "id": "call",
+      "text": "Can I call home?",
+      "topic": "separation",
+      "fallbackAnswer": [
+        "[[GROWNUP]] and the camp will tell you the plan for calls or letters.",
+        "The counselor can always reach [[GROWNUP]] if needed."
+      ],
+      "ages": [
+        6,
+        12
+      ]
+    },
+    {
+      "id": "hard",
+      "text": "What if an activity is too hard?",
+      "topic": "safety",
+      "fallbackAnswer": [
+        "You can watch first, or try a little bit.",
+        "Counselors help, and it is okay to say, not today."
+      ]
+    },
+    {
+      "id": "food",
+      "text": "What if I don't like the food?",
+      "topic": "body",
+      "fallbackAnswer": [
+        "There are usually a few choices, and you can say no thank you.",
+        "Drinking water is important too."
+      ]
+    },
+    {
+      "id": "hurt",
+      "text": "What if I get hurt?",
+      "topic": "pain",
+      "fallbackAnswer": [
+        "Bumps and scrapes happen at camp. Tell your counselor straight away.",
+        "The camp nurse has bandages and helps."
+      ]
+    }
+  ],
+  "techniques": [
+    {
+      "id": "pocket_note",
+      "label": "A note from home",
+      "how": "Hide a short note in the bag to read when missing home.",
+      "topics": [
+        "separation",
+        "love"
+      ]
+    },
+    {
+      "id": "name_game",
+      "label": "Practising the name game",
+      "how": "Practise saying your name and one thing you like.",
+      "topics": [
+        "social",
+        "strangers"
+      ]
+    },
+    {
+      "id": "watch_first",
+      "label": "Watching first",
+      "how": "Watch an activity first, then try a small part.",
+      "topics": [
+        "safety",
+        "social",
+        "unknown"
+      ]
+    },
+    {
+      "id": "water_breaks",
+      "label": "Water breaks",
+      "how": "Drink water at every activity change.",
+      "topics": [
+        "body",
+        "safety"
+      ]
+    },
+    {
+      "id": "tell_counselor",
+      "label": "Telling the counselor",
+      "how": "Go to the counselor for any problem, big or small.",
+      "topics": [
+        "strangers",
+        "pain",
+        "safety"
+      ]
+    },
+    {
+      "id": "busy_cure",
+      "label": "Getting busy",
+      "how": "When homesick, join the next activity; busy helps feelings shrink.",
+      "topics": [
+        "separation",
+        "social"
+      ]
+    },
+    {
+      "id": "practice_night",
+      "label": "A practice night away",
+      "how": "Before overnight camp, try a night at a relative's house.",
+      "topics": [
+        "separation",
+        "unknown"
+      ]
+    },
+    {
+      "id": "bug_spray",
+      "label": "Bug spray and sunscreen",
+      "how": "Put on bug spray and sunscreen together each morning.",
+      "topics": [
+        "sensory",
+        "body"
+      ]
+    },
+    {
+      "id": "deep_breaths",
+      "label": "Smell the flower, blow the candle",
+      "how": "Breathe in slowly through the nose and out like blowing a candle.",
+      "topics": [
+        "pain",
+        "sensory",
+        "safety"
+      ]
+    }
+  ],
+  "ritual": [
+    "Sunscreen, hat, water bottle",
+    "Say my name in the name game",
+    "Try one new thing"
+  ],
+  "phrases": {
+    "pain": [
+      "If you get a scrape, tell your counselor. The nurse helps.",
+      "Bumps happen at camp, and they get better."
+    ],
+    "body": [
+      "Drink water at every break.",
+      "Sunscreen keeps your skin happy."
+    ],
+    "sensory": [
+      "Bugs buzz, and most of them just fly by.",
+      "Camp songs are loud and silly."
+    ],
+    "strangers": [
+      "Your counselor's job is to look after you.",
+      "You can tell a counselor anything."
+    ],
+    "separation": [
+      "Missing home is normal. It means you love home.",
+      "Read your note when you miss me."
+    ],
+    "unknown": [
+      "Check in, meet your group, then the first activity.",
+      "You can ask, what are we doing next?"
+    ],
+    "safety": [
+      "Stay with your group.",
+      "Lifeguards watch the water."
+    ],
+    "social": [
+      "Lots of campers are new.",
+      "Try the name game."
+    ],
+    "love": [
+      "I'm proud of you for trying camp.",
+      "I love you, and I will be here."
+    ]
+  },
+  "topicWords": {
+    "pain": [
+      "hurt",
+      "scrape",
+      "sore",
+      "bump",
+      "bumps",
+      "bites",
+      "ouch",
+      "aches"
+    ],
+    "body": [
+      "water",
+      "sunscreen",
+      "tummy",
+      "toilet",
+      "lunch",
+      "food",
+      "eat"
+    ],
+    "sensory": [
+      "bugs",
+      "bug",
+      "sun",
+      "loud",
+      "songs",
+      "song",
+      "smell",
+      "heat",
+      "buzz",
+      "buzzing"
+    ],
+    "strangers": [
+      "counselor",
+      "counselors",
+      "nurse",
+      "juniper",
+      "lifeguards"
+    ],
+    "separation": [
+      "homesick",
+      "miss",
+      "home",
+      "note",
+      "family",
+      "right there",
+      "stay",
+      "close",
+      "with me",
+      "with you",
+      "together",
+      "comes back",
+      "back",
+      "hand",
+      "nearby"
+    ],
+    "unknown": [
+      "first",
+      "then",
+      "next",
+      "after",
+      "last",
+      "plan",
+      "new",
+      "step",
+      "steps"
+    ],
+    "safety": [
+      "safe",
+      "group",
+      "help",
+      "rules",
+      "watch first",
+      "careful",
+      "break",
+      "stop"
+    ],
+    "social": [
+      "friend",
+      "friends",
+      "campers",
+      "kids",
+      "team",
+      "name game",
+      "children",
+      "people",
+      "everyone",
+      "others"
+    ],
+    "love": [
+      "love",
+      "hug",
+      "proud",
+      "cuddle"
+    ]
+  },
+  "backgrounds": [
+    "outside",
+    "cosy-room",
+    "home-evening"
+  ],
+  "fallbackPages": {
+    "story": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "Soon [[CHILD]] will go to summer camp.",
+              "kind": "describe"
+            },
+            {
+              "text": "Camp is a place where kids play outside, try new things and make friends.",
+              "kind": "describe"
+            },
+            {
+              "text": "First [[CHILD]] checks in and meets a counselor.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the group learns each other's names with a fun game.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "strangers",
+            "unknown",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Before bed, here is a story about a young raccoon called Rory.",
+              "kind": "describe"
+            },
+            {
+              "text": "Rory was going to Camp Pinecone by the lake.",
+              "kind": "describe"
+            },
+            {
+              "text": "First Rory met the counselor, a tall deer called Juniper.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the group played a name game, clap, clap, Rory!",
+              "kind": "describe"
+            },
+            {
+              "text": "Next they made bead bracelets and splashed in the shallow lake.",
+              "kind": "describe"
+            },
+            {
+              "text": "After lunch, they rested in the shade.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then they went on a short hike and found a feather.",
+              "kind": "describe"
+            },
+            {
+              "text": "In the evening, they sang a silly song about a moose.",
+              "kind": "describe"
+            },
+            {
+              "text": "Rory's tummy hurt from laughing.",
+              "kind": "describe"
+            },
+            {
+              "text": "Camp felt big and new, and also fun.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "strangers"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Next there are activities, like crafts, swimming, sports and hikes.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that comes lunch, a rest and more games.",
+              "kind": "describe"
+            },
+            {
+              "text": "There are camp songs and cheers.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, at day camp everyone goes home, and at overnight camp everyone sleeps in cabins.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can ask the counselor, what are we doing next?",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Soon [[CHILD]] will go to summer camp.",
+              "kind": "describe"
+            },
+            {
+              "text": "Camp is a place where kids play outside, try new things and make friends.",
+              "kind": "describe"
+            },
+            {
+              "text": "First [[CHILD]] checks in and meets a counselor.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the group learns each other's names with a fun game.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next there are activities, like crafts, swimming, sports and hikes.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that comes lunch, a rest and more games.",
+              "kind": "describe"
+            },
+            {
+              "text": "There are camp songs and cheers.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, at day camp everyone goes home, and at overnight camp everyone sleeps in cabins.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can ask the counselor, what are we doing next?",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "At camp, counselors look after each group.",
+              "kind": "describe"
+            },
+            {
+              "text": "Counselors are young grown-ups who love the outdoors and games.",
+              "kind": "describe"
+            },
+            {
+              "text": "They know the rules and keep everyone safe.",
+              "kind": "describe"
+            },
+            {
+              "text": "There is a camp nurse for bumps, bites and tummy aches.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "pain",
+            "body",
+            "strangers",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Rory the raccoon met the camp helpers.",
+              "kind": "describe"
+            },
+            {
+              "text": "Juniper the deer was the group counselor.",
+              "kind": "describe"
+            },
+            {
+              "text": "If you need anything, come to me, said Juniper.",
+              "kind": "describe"
+            },
+            {
+              "text": "The camp nurse was a gentle tortoise with a bag of bandages.",
+              "kind": "describe"
+            },
+            {
+              "text": "Rory's group had a beaver, two rabbits and a quiet otter.",
+              "kind": "describe"
+            },
+            {
+              "text": "The otter looked nervous, just like Rory felt.",
+              "kind": "describe"
+            },
+            {
+              "text": "At crafts, Rory passed the otter some beads.",
+              "kind": "describe"
+            },
+            {
+              "text": "Thanks, said the otter, I am Ollie.",
+              "kind": "describe"
+            },
+            {
+              "text": "By lunch, Rory and Ollie were sitting together.",
+              "kind": "describe"
+            },
+            {
+              "text": "The group made up a team cheer.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "strangers",
+            "separation",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "The other campers are kids of a similar age.",
+              "kind": "describe"
+            },
+            {
+              "text": "Many of them are new too, and some are nervous.",
+              "kind": "describe"
+            },
+            {
+              "text": "Friends at camp can happen fast, over a craft or a game.",
+              "kind": "describe"
+            },
+            {
+              "text": "A cabin or group becomes like a little team.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can tell a counselor anything, a sore knee or a sad feeling.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "outside",
+          "addresses": [
+            "pain",
+            "strangers",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At camp, counselors look after each group.",
+              "kind": "describe"
+            },
+            {
+              "text": "Counselors are young grown-ups who love the outdoors and games.",
+              "kind": "describe"
+            },
+            {
+              "text": "They know the rules and keep everyone safe.",
+              "kind": "describe"
+            },
+            {
+              "text": "There is a camp nurse for bumps, bites and tummy aches.",
+              "kind": "describe"
+            },
+            {
+              "text": "The other campers are kids of a similar age.",
+              "kind": "describe"
+            },
+            {
+              "text": "Many of them are new too, and some are nervous.",
+              "kind": "describe"
+            },
+            {
+              "text": "Friends at camp can happen fast, over a craft or a game.",
+              "kind": "describe"
+            },
+            {
+              "text": "A cabin or group becomes like a little team.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can tell a counselor anything, a sore knee or a sad feeling.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "pain",
+            "body",
+            "strangers",
+            "unknown"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "At camp, [[CHILD]] stays with the group and the counselor.",
+              "kind": "describe"
+            },
+            {
+              "text": "Drinking water and wearing sunscreen keeps the body happy in the sun.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can join activities, or watch first and join later.",
+              "kind": "describe"
+            },
+            {
+              "text": "Trying something new, like archery or canoeing, is part of camp.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Rory the raccoon had a camp day plan.",
+              "kind": "describe"
+            },
+            {
+              "text": "Stay with the group, drink water, and try one new thing.",
+              "kind": "describe"
+            },
+            {
+              "text": "In the morning, Rory filled the water bottle at the tap.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the group went to archery.",
+              "kind": "describe"
+            },
+            {
+              "text": "Rory watched first, then tried, and the arrow went into the grass.",
+              "kind": "describe"
+            },
+            {
+              "text": "Try again, said Juniper, and the next one hit the edge of the target.",
+              "kind": "describe"
+            },
+            {
+              "text": "Rory cheered.",
+              "kind": "describe"
+            },
+            {
+              "text": "At lunch, Rory sat with Ollie the otter.",
+              "kind": "describe"
+            },
+            {
+              "text": "At rest time, Rory drew a picture of the lake.",
+              "kind": "describe"
+            },
+            {
+              "text": "When Rory needed the toilet, Rory told Juniper.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At lunch, sit with the group and eat what you like.",
+              "kind": "describe"
+            },
+            {
+              "text": "At rest time, read, draw or just relax.",
+              "kind": "describe"
+            },
+            {
+              "text": "When the body needs the toilet, tell the counselor.",
+              "kind": "describe"
+            },
+            {
+              "text": "If something feels hard, ask for help.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can choose one new thing to try each day.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "strangers",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At camp, [[CHILD]] stays with the group and the counselor.",
+              "kind": "describe"
+            },
+            {
+              "text": "Drinking water and wearing sunscreen keeps the body happy in the sun.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can join activities, or watch first and join later.",
+              "kind": "describe"
+            },
+            {
+              "text": "Trying something new, like archery or canoeing, is part of camp.",
+              "kind": "describe"
+            },
+            {
+              "text": "At lunch, sit with the group and eat what you like.",
+              "kind": "describe"
+            },
+            {
+              "text": "At rest time, read, draw or just relax.",
+              "kind": "describe"
+            },
+            {
+              "text": "When the body needs the toilet, tell the counselor.",
+              "kind": "describe"
+            },
+            {
+              "text": "If something feels hard, ask for help.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can choose one new thing to try each day.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "At camp, some kids feel homesick.",
+              "kind": "describe"
+            },
+            {
+              "text": "Homesick means missing home and family.",
+              "kind": "describe"
+            },
+            {
+              "text": "It often comes at quiet times, like rest or bedtime.",
+              "kind": "describe"
+            },
+            {
+              "text": "Homesickness is normal, and it usually gets smaller when the body is busy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some activities can feel scary or hard, like deep water or high ropes.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "worried",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "separation",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Rory the raccoon felt homesick at rest time.",
+              "kind": "describe"
+            },
+            {
+              "text": "Rory missed Mama and the cosy den.",
+              "kind": "describe"
+            },
+            {
+              "text": "Rory's eyes got wet.",
+              "kind": "describe"
+            },
+            {
+              "text": "Juniper the deer sat beside Rory.",
+              "kind": "describe"
+            },
+            {
+              "text": "Juniper did not say, you will not miss home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Juniper said, lots of campers miss home, and it means you love your family.",
+              "kind": "describe"
+            },
+            {
+              "text": "Rory found the little note Mama had packed.",
+              "kind": "describe"
+            },
+            {
+              "text": "It said, I am proud of you, have fun.",
+              "kind": "describe"
+            },
+            {
+              "text": "Rory took a slow breath.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then Ollie called, come on, we are making a dam.",
+              "kind": "describe"
+            },
+            {
+              "text": "Worried and brave can happen at the same time.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "strangers",
+            "separation",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Saying, I want to watch first, is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bugs, heat and loud noises can feel like a lot sometimes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Counselors know how to help.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can read the note from home and take slow breaths.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can tell a counselor, I miss home.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At camp, some kids feel homesick.",
+              "kind": "describe"
+            },
+            {
+              "text": "Homesick means missing home and family.",
+              "kind": "describe"
+            },
+            {
+              "text": "It often comes at quiet times, like rest or bedtime.",
+              "kind": "describe"
+            },
+            {
+              "text": "Homesickness is normal, and it usually gets smaller when the body is busy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some activities can feel scary or hard, like deep water or high ropes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Saying, I want to watch first, is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bugs, heat and loud noises can feel like a lot sometimes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Counselors know how to help.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can read the note from home and take slow breaths.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can tell a counselor, I miss home.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "Tonight [[CHILD]] and [[GROWNUP]] can get ready for camp.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, pack the bag: sunscreen, hat, water bottle and clothes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[CHILD]] practises a name game: my name is [[CHILD]], and I like ice cream.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, learn a silly camp song together.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say: my name is [[CHILD]], and I like something fun.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Rory the raccoon packed for camp with Papa.",
+              "kind": "describe"
+            },
+            {
+              "text": "In went the hat, the water bottle and the sunscreen.",
+              "kind": "describe"
+            },
+            {
+              "text": "Papa slipped a little note into a side pocket.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then they practised the name game.",
+              "kind": "describe"
+            },
+            {
+              "text": "I am Rory, and I like blueberries, said Rory.",
+              "kind": "describe"
+            },
+            {
+              "text": "I am Papa, and I like naps, said Papa, and they giggled.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next they sang a silly moose song, very loudly.",
+              "kind": "describe"
+            },
+            {
+              "text": "Rory laid out the clothes for the morning.",
+              "kind": "describe"
+            },
+            {
+              "text": "Papa said, you are ready, little camper.",
+              "kind": "describe"
+            },
+            {
+              "text": "Rory smiled and yawned.",
+              "kind": "describe"
+            },
+            {
+              "text": "And Rory slept well that night.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "After that, [[GROWNUP]] writes a little note to hide in the bag.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, picture the first day: check in, meet the counselor, play a game.",
+              "kind": "describe"
+            },
+            {
+              "text": "Getting ready makes camp feel less new.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say: my name is [[CHILD]], and I like something fun.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "outside",
+          "addresses": [
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight [[CHILD]] and [[GROWNUP]] can get ready for camp.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, pack the bag: sunscreen, hat, water bottle and clothes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[CHILD]] practises a name game: my name is [[CHILD]], and I like ice cream.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, learn a silly camp song together.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, [[GROWNUP]] writes a little note to hide in the bag.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, picture the first day: check in, meet the counselor, play a game.",
+              "kind": "describe"
+            },
+            {
+              "text": "Getting ready makes camp feel less new.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say: my name is [[CHILD]], and I like something fun.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        }
+      ]
+    },
+    "social": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "Soon I will go to camp.",
+              "kind": "describe"
+            },
+            {
+              "text": "At camp, kids play outside.",
+              "kind": "describe"
+            },
+            {
+              "text": "We try new things.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I check in.",
+              "kind": "describe"
+            },
+            {
+              "text": "I meet my counselor.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then my group plays a name game.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next we do crafts, sports or swimming.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask, what are we doing next?",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "strangers",
+            "unknown",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Soon I will go to camp.",
+              "kind": "describe"
+            },
+            {
+              "text": "At camp, kids play outside.",
+              "kind": "describe"
+            },
+            {
+              "text": "We try new things.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I check in.",
+              "kind": "describe"
+            },
+            {
+              "text": "I meet my counselor.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then my group plays a name game.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next we do crafts, sports or swimming.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, we eat lunch.",
+              "kind": "describe"
+            },
+            {
+              "text": "We rest and play more games.",
+              "kind": "describe"
+            },
+            {
+              "text": "We sing camp songs.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, I go home or sleep in a cabin.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "After that, we eat lunch.",
+              "kind": "describe"
+            },
+            {
+              "text": "We rest and play more games.",
+              "kind": "describe"
+            },
+            {
+              "text": "We sing camp songs.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, I go home or sleep in a cabin.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask, what are we doing next?",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Soon I will go to camp.",
+              "kind": "describe"
+            },
+            {
+              "text": "At camp, kids play outside.",
+              "kind": "describe"
+            },
+            {
+              "text": "We try new things.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I check in.",
+              "kind": "describe"
+            },
+            {
+              "text": "I meet my counselor.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then my group plays a name game.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next we do crafts, sports or swimming.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask, what are we doing next?",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "strangers",
+            "unknown",
+            "safety",
+            "social"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "At camp there are counselors.",
+              "kind": "describe"
+            },
+            {
+              "text": "Counselors look after my group.",
+              "kind": "describe"
+            },
+            {
+              "text": "They know the rules.",
+              "kind": "describe"
+            },
+            {
+              "text": "They keep everyone safe.",
+              "kind": "describe"
+            },
+            {
+              "text": "There is a camp nurse too.",
+              "kind": "describe"
+            },
+            {
+              "text": "The nurse helps with bumps and bites.",
+              "kind": "describe"
+            },
+            {
+              "text": "Other campers are kids like me.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can tell a counselor anything.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "pain",
+            "strangers",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At camp there are counselors.",
+              "kind": "describe"
+            },
+            {
+              "text": "Counselors look after my group.",
+              "kind": "describe"
+            },
+            {
+              "text": "They know the rules.",
+              "kind": "describe"
+            },
+            {
+              "text": "They keep everyone safe.",
+              "kind": "describe"
+            },
+            {
+              "text": "There is a camp nurse too.",
+              "kind": "describe"
+            },
+            {
+              "text": "The nurse helps with bumps and bites.",
+              "kind": "describe"
+            },
+            {
+              "text": "Other campers are kids like me.",
+              "kind": "describe"
+            },
+            {
+              "text": "Many of them are new.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some feel nervous too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Friends can happen fast at camp.",
+              "kind": "describe"
+            },
+            {
+              "text": "My group becomes a team.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "Step by step, it gets a little easier.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "pain",
+            "strangers",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Many of them are new.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some feel nervous too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Friends can happen fast at camp.",
+              "kind": "describe"
+            },
+            {
+              "text": "My group becomes a team.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can tell a counselor anything.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "outside",
+          "addresses": [
+            "strangers",
+            "unknown",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At camp there are counselors.",
+              "kind": "describe"
+            },
+            {
+              "text": "Counselors look after my group.",
+              "kind": "describe"
+            },
+            {
+              "text": "They know the rules.",
+              "kind": "describe"
+            },
+            {
+              "text": "They keep everyone safe.",
+              "kind": "describe"
+            },
+            {
+              "text": "There is a camp nurse too.",
+              "kind": "describe"
+            },
+            {
+              "text": "The nurse helps with bumps and bites.",
+              "kind": "describe"
+            },
+            {
+              "text": "Other campers are kids like me.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can tell a counselor anything.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "pain",
+            "strangers",
+            "unknown",
+            "safety"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "At camp I stay with my group.",
+              "kind": "describe"
+            },
+            {
+              "text": "I drink water.",
+              "kind": "describe"
+            },
+            {
+              "text": "I wear sunscreen.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can join the activities.",
+              "kind": "describe"
+            },
+            {
+              "text": "Or I can watch first.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can try something new.",
+              "kind": "describe"
+            },
+            {
+              "text": "At lunch I sit with my group.",
+              "kind": "describe"
+            },
+            {
+              "text": "At rest time I read or draw.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can try one new thing each day.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At camp I stay with my group.",
+              "kind": "describe"
+            },
+            {
+              "text": "I drink water.",
+              "kind": "describe"
+            },
+            {
+              "text": "I wear sunscreen.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can join the activities.",
+              "kind": "describe"
+            },
+            {
+              "text": "Or I can watch first.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can try something new.",
+              "kind": "describe"
+            },
+            {
+              "text": "At lunch I sit with my group.",
+              "kind": "describe"
+            },
+            {
+              "text": "At rest time I read or draw.",
+              "kind": "describe"
+            },
+            {
+              "text": "When I need the toilet, I tell the counselor.",
+              "kind": "describe"
+            },
+            {
+              "text": "If something is hard, I ask for help.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "When I need the toilet, I tell the counselor.",
+              "kind": "describe"
+            },
+            {
+              "text": "If something is hard, I ask for help.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can try one new thing each day.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "strangers",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At camp I stay with my group.",
+              "kind": "describe"
+            },
+            {
+              "text": "I drink water.",
+              "kind": "describe"
+            },
+            {
+              "text": "I wear sunscreen.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can join the activities.",
+              "kind": "describe"
+            },
+            {
+              "text": "Or I can watch first.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can try something new.",
+              "kind": "describe"
+            },
+            {
+              "text": "At lunch I sit with my group.",
+              "kind": "describe"
+            },
+            {
+              "text": "At rest time I read or draw.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can try one new thing each day.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "At camp, I may feel homesick.",
+              "kind": "describe"
+            },
+            {
+              "text": "Homesick means missing home.",
+              "kind": "describe"
+            },
+            {
+              "text": "It can come at quiet times.",
+              "kind": "describe"
+            },
+            {
+              "text": "Homesickness is normal.",
+              "kind": "describe"
+            },
+            {
+              "text": "It gets smaller when I am busy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some things can feel hard.",
+              "kind": "describe"
+            },
+            {
+              "text": "Deep water or high ropes can feel scary.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can read my note from home.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "worried",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At camp, I may feel homesick.",
+              "kind": "describe"
+            },
+            {
+              "text": "Homesick means missing home.",
+              "kind": "describe"
+            },
+            {
+              "text": "It can come at quiet times.",
+              "kind": "describe"
+            },
+            {
+              "text": "Homesickness is normal.",
+              "kind": "describe"
+            },
+            {
+              "text": "It gets smaller when I am busy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some things can feel hard.",
+              "kind": "describe"
+            },
+            {
+              "text": "Deep water or high ropes can feel scary.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can watch first.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bugs and heat can feel like a lot.",
+              "kind": "describe"
+            },
+            {
+              "text": "Counselors know how to help.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I can watch first.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bugs and heat can feel like a lot.",
+              "kind": "describe"
+            },
+            {
+              "text": "Counselors know how to help.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can read my note from home.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can tell a counselor, I miss home.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At camp, I may feel homesick.",
+              "kind": "describe"
+            },
+            {
+              "text": "Homesick means missing home.",
+              "kind": "describe"
+            },
+            {
+              "text": "It can come at quiet times.",
+              "kind": "describe"
+            },
+            {
+              "text": "Homesickness is normal.",
+              "kind": "describe"
+            },
+            {
+              "text": "It gets smaller when I am busy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some things can feel hard.",
+              "kind": "describe"
+            },
+            {
+              "text": "Deep water or high ropes can feel scary.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can read my note from home.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can tell a counselor, I miss home.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "Tonight I get ready for camp.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I pack my bag.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sunscreen, hat and water bottle.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I practise the name game.",
+              "kind": "describe"
+            },
+            {
+              "text": "My name is me, and I like something fun.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next we learn a silly song.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say my name and one thing I like.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight I get ready for camp.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I pack my bag.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sunscreen, hat and water bottle.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I practise the name game.",
+              "kind": "describe"
+            },
+            {
+              "text": "My name is me, and I like something fun.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next we learn a silly song.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, [[GROWNUP]] writes a note.",
+              "kind": "describe"
+            },
+            {
+              "text": "The note goes in my bag.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, I picture the first day.",
+              "kind": "describe"
+            },
+            {
+              "text": "Check in, meet the counselor, play.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "After that, [[GROWNUP]] writes a note.",
+              "kind": "describe"
+            },
+            {
+              "text": "The note goes in my bag.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, I picture the first day.",
+              "kind": "describe"
+            },
+            {
+              "text": "Check in, meet the counselor, play.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say my name and one thing I like.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "outside",
+          "addresses": [
+            "strangers",
+            "separation",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight I get ready for camp.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I pack my bag.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sunscreen, hat and water bottle.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I practise the name game.",
+              "kind": "describe"
+            },
+            {
+              "text": "My name is me, and I like something fun.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next we learn a silly song.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say my name and one thing I like.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "unknown",
+            "social"
+          ]
+        }
+      ]
+    }
+  },
+  "badge": {
+    "id": "happy_camper",
+    "label": "Happy Camper"
+  },
+  "olderPages": {
+    "what_happens": {
+      "sentences": [
+        {
+          "text": "Camp is designed to stretch kids a little: new activities, new people and more independence.",
+          "kind": "describe"
+        },
+        {
+          "text": "Counselors are trained to keep groups safe, run activities and help with homesickness.",
+          "kind": "describe"
+        },
+        {
+          "text": "Overnight camp adds cabins, campfires and sometimes no phones, which feels strange at first and often becomes the best part.",
+          "kind": "describe"
+        },
+        {
+          "text": "Most kids say the first day is the hardest.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can choose one new activity to try that week.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "outside",
+      "addresses": [
+        "strangers",
+        "separation",
+        "unknown",
+        "safety"
+      ]
+    },
+    "who_is_there": {
+      "sentences": [
+        {
+          "text": "Counselors are often older teens or young adults who went to camp themselves.",
+          "kind": "describe"
+        },
+        {
+          "text": "Camps have directors, nurses and lifeguards, and they all talk to each other.",
+          "kind": "describe"
+        },
+        {
+          "text": "Groups are usually by age, so campers have things in common.",
+          "kind": "describe"
+        },
+        {
+          "text": "Making friends at camp is easier because everyone starts at the same time.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can share one fun fact during the name game.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "outside",
+      "addresses": [
+        "strangers",
+        "safety",
+        "social"
+      ]
+    },
+    "what_i_do": {
+      "sentences": [
+        {
+          "text": "Staying with the group and following the buddy system is how camps keep track of everyone.",
+          "kind": "describe"
+        },
+        {
+          "text": "Hydration and sun protection matter more than kids think; headaches often mean thirst.",
+          "kind": "describe"
+        },
+        {
+          "text": "New activities can feel awkward the first time and fun by the third.",
+          "kind": "describe"
+        },
+        {
+          "text": "Being kind to a camper who is alone is how many camp friendships start.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can keep a camp journal with one highlight a day.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "brave",
+      "background": "outside",
+      "addresses": [
+        "sensory",
+        "separation",
+        "unknown",
+        "safety"
+      ]
+    },
+    "if_scared": {
+      "sentences": [
+        {
+          "text": "Almost every camper feels homesick at some point; counselors expect it and have tricks for it.",
+          "kind": "describe"
+        },
+        {
+          "text": "Homesickness usually peaks in the first day or two and at bedtime.",
+          "kind": "describe"
+        },
+        {
+          "text": "Keeping busy, writing a letter home and talking about it all help.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] and [[GROWNUP]] can agree a plan before camp about calls or letters, so there are no surprises.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can count the activities left in the day instead of the days left at camp.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "worried",
+      "background": "outside",
+      "addresses": [
+        "strangers",
+        "separation",
+        "unknown",
+        "safety"
+      ]
+    },
+    "rehearsal": {
+      "sentences": [
+        {
+          "text": "Packing your own bag, with a list, makes it easier to find things at camp.",
+          "kind": "describe"
+        },
+        {
+          "text": "For overnight camp, practising a night away at a relative's house first builds confidence.",
+          "kind": "describe"
+        },
+        {
+          "text": "Pre-addressed envelopes make writing home simple.",
+          "kind": "describe"
+        },
+        {
+          "text": "Talking to a kid who has been to that camp can answer the real questions.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can pick one goal for camp, like learning to paddle a canoe.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "happy",
+      "background": "outside",
+      "addresses": [
+        "separation",
+        "unknown"
+      ]
+    }
+  }
+}

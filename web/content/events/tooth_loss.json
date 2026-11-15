@@ -1,0 +1,2485 @@
+{
+  "type": "tooth_loss",
+  "version": 1,
+  "label": "Losing a tooth",
+  "countdownLabel": "the wobbly tooth",
+  "beats": {
+    "what_happens": {
+      "title": "Why teeth get wobbly",
+      "goals": [
+        "Baby teeth make room for big teeth",
+        "A wobbly tooth gets looser a little each day",
+        "It comes out when it is ready"
+      ],
+      "parentSkill": "Show your child a picture of baby teeth and grown-up teeth and explain that the new tooth pushes from below."
+    },
+    "who_is_there": {
+      "title": "Who helps with a wobbly tooth",
+      "goals": [
+        "[[GROWNUP]] is there to help and to look",
+        "The dentist checks teeth and knows about wobbly ones",
+        "Friends at school lose teeth too"
+      ],
+      "parentSkill": "Tell your child about your own first lost tooth, or ask a grandparent to tell theirs."
+    },
+    "what_i_do": {
+      "title": "What I do with a wobbly tooth",
+      "goals": [
+        "Wiggle gently, never pull hard",
+        "Keep brushing and eating",
+        "When it comes out: rinse, hold a tissue, keep the tooth"
+      ],
+      "parentSkill": "Agree on a plan for when the tooth falls out: rinse, tissue, and a small box or envelope for the tooth."
+    },
+    "if_scared": {
+      "title": "If the wobbly tooth feels strange",
+      "goals": [
+        "It can feel strange, sore or tickly",
+        "A little blood is normal and stops soon",
+        "Calm tools: slow breaths, cool water, a hug"
+      ],
+      "parentSkill": "Name the feeling and the fact: 'It feels strange. A little blood is normal, and it stops soon.'"
+    },
+    "rehearsal": {
+      "title": "Let's practise the tooth plan",
+      "goals": [
+        "Say the tooth plan out loud: rinse, tissue, box",
+        "Practise with a toy that has a pretend wobbly tooth",
+        "End with a big smile in the mirror"
+      ],
+      "parentSkill": "Let your child be the dentist and check a toy's wobbly tooth, then switch roles."
+    }
+  },
+  "steps": [
+    "Notice a tooth that wiggles",
+    "Wiggle it gently with a clean finger or the tongue",
+    "Keep eating soft and crunchy food as usual",
+    "The tooth gets looser day by day",
+    "The tooth comes out, maybe while eating or brushing",
+    "Rinse the mouth with water and hold a tissue on the gap",
+    "Keep the tooth safe and look at the new gap in the mirror"
+  ],
+  "sensory": [
+    "a wiggly feeling when the tongue pushes the tooth",
+    "a tiny taste of metal when it comes out",
+    "a little bit of blood on a tissue",
+    "a soft, squishy gap where the tooth was",
+    "a whistle when talking through the gap",
+    "the hard edge of a new tooth coming in"
+  ],
+  "honestyNotes": "A wobbly tooth can feel sore or strange, and there may be a little blood when it comes out. Never say it will feel like nothing; say it can sting for a moment and stops soon. Never force a tooth out. If a family tradition (a tooth fairy or another) is used, let the parent decide what to say.",
+  "questionButtons": [
+    {
+      "id": "hurt",
+      "text": "Will it hurt?",
+      "topic": "pain",
+      "fallbackAnswer": [
+        "A wobbly tooth can feel sore, and it may sting for a moment when it comes out.",
+        "Then it stops, and cool water helps."
+      ]
+    },
+    {
+      "id": "blood",
+      "text": "Will there be blood?",
+      "topic": "body",
+      "fallbackAnswer": [
+        "Maybe a little, and that is normal.",
+        "A clean tissue on the gap helps it stop soon."
+      ]
+    },
+    {
+      "id": "why",
+      "text": "Why is my tooth wobbly?",
+      "topic": "body",
+      "fallbackAnswer": [
+        "A new big tooth is growing underneath and pushes the baby tooth out.",
+        "It means you are growing."
+      ]
+    },
+    {
+      "id": "pull",
+      "text": "Should I pull it out?",
+      "topic": "safety",
+      "fallbackAnswer": [
+        "No need to pull hard. You can wiggle it gently, and it comes out when it is ready.",
+        "If it is very loose, [[GROWNUP]] can help."
+      ]
+    },
+    {
+      "id": "swallow",
+      "text": "What if I swallow it?",
+      "topic": "body",
+      "fallbackAnswer": [
+        "A baby tooth is tiny, and if you swallow it, it just passes through your body.",
+        "It is okay, and you can still tell everyone you lost a tooth."
+      ]
+    },
+    {
+      "id": "new_tooth",
+      "text": "When does the new tooth come?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "The new tooth often peeks through in a few weeks, sometimes a bit longer.",
+        "You can check in the mirror every week."
+      ]
+    },
+    {
+      "id": "school",
+      "text": "What if it falls out at school?",
+      "topic": "separation",
+      "fallbackAnswer": [
+        "Tell your teacher. Teachers help with lost teeth all the time.",
+        "They can give you a tissue and an envelope for the tooth."
+      ]
+    },
+    {
+      "id": "look",
+      "text": "Will I look funny with a gap?",
+      "topic": "social",
+      "fallbackAnswer": [
+        "You will have a gap smile, like lots of kids your age.",
+        "Gaps are a sign you are growing, and the new tooth will fill it."
+      ]
+    },
+    {
+      "id": "eat",
+      "text": "Can I still eat?",
+      "topic": "body",
+      "fallbackAnswer": [
+        "Yes. You can eat on the other side if the tooth feels sore.",
+        "Crunchy apples can even help it along."
+      ],
+      "ages": [
+        4,
+        12
+      ]
+    },
+    {
+      "id": "fairy",
+      "text": "What do we do with my tooth?",
+      "topic": "love",
+      "fallbackAnswer": [
+        "[[GROWNUP]] will tell you what our family does with lost teeth.",
+        "Some families keep them in a box, and some have a special story about them."
+      ]
+    },
+    {
+      "id": "dentist",
+      "text": "Do I need to see the dentist?",
+      "topic": "strangers",
+      "fallbackAnswer": [
+        "Usually not for a wobbly tooth. The dentist checks your teeth at your normal check-up.",
+        "If it is very sore, the dentist can help."
+      ],
+      "ages": [
+        6,
+        12
+      ]
+    }
+  ],
+  "techniques": [
+    {
+      "id": "gentle_wiggle",
+      "label": "Gentle wiggles",
+      "how": "Wiggle the tooth gently with the tongue, never pull hard.",
+      "topics": [
+        "safety",
+        "pain",
+        "body"
+      ]
+    },
+    {
+      "id": "tooth_plan",
+      "label": "The tooth plan",
+      "how": "Rinse, tissue, box, smile: say the plan together so a surprise tooth is easy.",
+      "topics": [
+        "unknown",
+        "safety"
+      ]
+    },
+    {
+      "id": "cool_water",
+      "label": "Cool water rinse",
+      "how": "Rinse the mouth with cool water when the tooth comes out.",
+      "topics": [
+        "pain",
+        "sensory",
+        "body"
+      ]
+    },
+    {
+      "id": "tooth_box",
+      "label": "A tooth box",
+      "how": "Pick a little box or envelope for the tooth before it comes out.",
+      "topics": [
+        "unknown",
+        "love"
+      ]
+    },
+    {
+      "id": "mirror_check",
+      "label": "Mirror check",
+      "how": "Look at the wobbly tooth and the gap in the mirror together.",
+      "topics": [
+        "body",
+        "sensory"
+      ]
+    },
+    {
+      "id": "deep_breaths",
+      "label": "Smell the flower, blow the candle",
+      "how": "Breathe in slowly through the nose and out like blowing a candle.",
+      "topics": [
+        "pain",
+        "sensory",
+        "safety"
+      ]
+    },
+    {
+      "id": "look_away",
+      "label": "Looking away from the tissue",
+      "how": "Let your child look away from the tissue if blood feels yucky.",
+      "topics": [
+        "sensory",
+        "body"
+      ]
+    },
+    {
+      "id": "teacher_plan",
+      "label": "Telling the teacher",
+      "how": "Tell the teacher about the wobbly tooth and pack a small envelope.",
+      "topics": [
+        "separation",
+        "strangers",
+        "social"
+      ]
+    },
+    {
+      "id": "gap_photo",
+      "label": "A gap smile photo",
+      "how": "Take a photo of the new gap smile for the family.",
+      "topics": [
+        "social",
+        "love"
+      ]
+    }
+  ],
+  "ritual": [
+    "Wiggle gently",
+    "Rinse, tissue, tooth box",
+    "Big gap smile in the mirror"
+  ],
+  "phrases": {
+    "pain": [
+      "It may sting for a moment, and then it stops.",
+      "Cool water can help."
+    ],
+    "body": [
+      "A new big tooth is growing underneath.",
+      "A little blood is normal and stops soon."
+    ],
+    "sensory": [
+      "Your tongue will keep finding the gap. That is normal.",
+      "It feels strange, and it is okay."
+    ],
+    "strangers": [
+      "The dentist knows all about wobbly teeth.",
+      "Your teacher can help if it falls out at school."
+    ],
+    "separation": [
+      "I'm right here to help with your tooth.",
+      "If it comes out at school, your teacher will help."
+    ],
+    "unknown": [
+      "First rinse, then a tissue, then the tooth box.",
+      "It comes out when it is ready."
+    ],
+    "safety": [
+      "Wiggle gently, never pull hard.",
+      "If it is very sore, we can ask the dentist."
+    ],
+    "social": [
+      "Lots of kids have gaps right now.",
+      "Your friends lose teeth too."
+    ],
+    "love": [
+      "I love your gap smile.",
+      "I'm proud of you for growing."
+    ]
+  },
+  "topicWords": {
+    "pain": [
+      "hurt",
+      "sore",
+      "sting",
+      "ouch"
+    ],
+    "body": [
+      "tooth",
+      "teeth",
+      "gum",
+      "blood",
+      "gap",
+      "grow",
+      "growing",
+      "root"
+    ],
+    "sensory": [
+      "wiggle",
+      "wiggly",
+      "wobbly",
+      "squishy",
+      "taste",
+      "feel",
+      "feels",
+      "strange",
+      "tongue",
+      "mirror"
+    ],
+    "strangers": [
+      "dentist",
+      "teacher",
+      "tooth doctor"
+    ],
+    "separation": [
+      "right there",
+      "with me",
+      "helps me",
+      "tell",
+      "stay",
+      "close",
+      "with you",
+      "together",
+      "comes back",
+      "back",
+      "hand",
+      "nearby"
+    ],
+    "unknown": [
+      "first",
+      "then",
+      "next",
+      "after",
+      "last",
+      "plan",
+      "step",
+      "steps"
+    ],
+    "safety": [
+      "gently",
+      "gentle",
+      "safe",
+      "pull",
+      "careful",
+      "break",
+      "stop",
+      "help"
+    ],
+    "social": [
+      "kids",
+      "friend",
+      "friends",
+      "school",
+      "everyone",
+      "children",
+      "people",
+      "others"
+    ],
+    "love": [
+      "love",
+      "hug",
+      "proud",
+      "cuddle"
+    ]
+  },
+  "backgrounds": [
+    "home-evening",
+    "dentist",
+    "cosy-room",
+    "outside"
+  ],
+  "fallbackPages": {
+    "story": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "[[CHILD]] has a wobbly tooth.",
+              "kind": "describe"
+            },
+            {
+              "text": "It moves a little when the tongue pushes it.",
+              "kind": "describe"
+            },
+            {
+              "text": "This is a baby tooth, the kind every child has.",
+              "kind": "describe"
+            },
+            {
+              "text": "Under it, a new big tooth is growing.",
+              "kind": "describe"
+            },
+            {
+              "text": "The big tooth pushes up slowly, and the baby tooth gets looser.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Before bed, here is a story about a little squirrel called Pip.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pip had a front tooth that went wiggle, wiggle.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pip felt worried and asked Grandma Squirrel, is my tooth broken?",
+              "kind": "describe"
+            },
+            {
+              "text": "Grandma smiled and said, no, little one, it is getting ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "A new strong tooth is growing underneath, just right for big nuts.",
+              "kind": "describe"
+            },
+            {
+              "text": "Every day, Pip wiggled the tooth gently with a tongue.",
+              "kind": "describe"
+            },
+            {
+              "text": "First it moved a tiny bit, then a little more, then a lot.",
+              "kind": "describe"
+            },
+            {
+              "text": "One morning Pip bit a soft berry, and pop, out came the tooth.",
+              "kind": "describe"
+            },
+            {
+              "text": "There was a gap, and Pip looked in a puddle and grinned.",
+              "kind": "describe"
+            },
+            {
+              "text": "Soon the new tooth came, step by step.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "sensory",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "First it wiggles a tiny bit, then a bit more each day.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next it hangs on by a little thread.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, one day, it comes out, maybe while eating an apple or brushing teeth.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then there is a gap, and soon the new tooth peeks through.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can wiggle it gently with the tongue, and wait for the tooth to be ready.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "[[CHILD]] has a wobbly tooth.",
+              "kind": "describe"
+            },
+            {
+              "text": "It moves a little when the tongue pushes it.",
+              "kind": "describe"
+            },
+            {
+              "text": "This is a baby tooth, the kind every child has.",
+              "kind": "describe"
+            },
+            {
+              "text": "Under it, a new big tooth is growing.",
+              "kind": "describe"
+            },
+            {
+              "text": "The big tooth pushes up slowly, and the baby tooth gets looser.",
+              "kind": "describe"
+            },
+            {
+              "text": "First it wiggles a tiny bit, then a bit more each day.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next it hangs on by a little thread.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, one day, it comes out, maybe while eating an apple or brushing teeth.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then there is a gap, and soon the new tooth peeks through.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can wiggle it gently with the tongue, and wait for the tooth to be ready.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "unknown",
+            "safety"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "[[GROWNUP]] is there to help with the wobbly tooth.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can show [[GROWNUP]] how much it moves.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] can look and say, yes, it is getting ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "The dentist knows all about wobbly teeth too.",
+              "kind": "describe"
+            },
+            {
+              "text": "At a check-up, the dentist counts teeth and looks at the new ones coming.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Pip the squirrel ran to show the tooth to everyone.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama Squirrel looked closely and said, it is wiggling nicely.",
+              "kind": "describe"
+            },
+            {
+              "text": "The owl, who was the forest tooth doctor, said, hoo, that is a healthy wobbly tooth.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then Pip met a rabbit friend at school.",
+              "kind": "describe"
+            },
+            {
+              "text": "The rabbit grinned, and Pip saw a big gap.",
+              "kind": "describe"
+            },
+            {
+              "text": "I lost one last week, said the rabbit.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pip met a hedgehog with a gap too, and a mouse with two gaps.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pip felt better, because everyone was losing teeth.",
+              "kind": "describe"
+            },
+            {
+              "text": "Even Grandma said, I lost my baby teeth long, long ago.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Friends at school lose teeth too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids have gaps in their smiles right now.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grown-ups lost their baby teeth when they were little, too.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can tell [[GROWNUP]] when the tooth feels sore, so [[GROWNUP]] can help.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "[[GROWNUP]] is there to help with the wobbly tooth.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can show [[GROWNUP]] how much it moves.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] can look and say, yes, it is getting ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "The dentist knows all about wobbly teeth too.",
+              "kind": "describe"
+            },
+            {
+              "text": "At a check-up, the dentist counts teeth and looks at the new ones coming.",
+              "kind": "describe"
+            },
+            {
+              "text": "Friends at school lose teeth too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids have gaps in their smiles right now.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grown-ups lost their baby teeth when they were little, too.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can tell [[GROWNUP]] when the tooth feels sore, so [[GROWNUP]] can help.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "strangers"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "[[CHILD]] can wiggle the tooth gently with the tongue or a clean finger.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pulling hard is not a good idea, because the tooth comes out when it is ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] keeps brushing, softly around the wobbly tooth.",
+              "kind": "describe"
+            },
+            {
+              "text": "Eating is fine, and crunchy apples can help it along.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Pip the squirrel made a tooth plan with Mama.",
+              "kind": "describe"
+            },
+            {
+              "text": "Wiggle gently, said Mama, and do not pull hard.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pip brushed every morning and every night, softly around the wobbly tooth.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pip crunched nuts on the other side.",
+              "kind": "describe"
+            },
+            {
+              "text": "One day, while eating a berry, pop, the tooth came out.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pip remembered the plan.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, rinse with cool water from the stream.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then hold a soft leaf on the gap.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, put the tooth in a little acorn cup.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pip looked at the tiny white tooth and felt very proud.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "sensory",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "When the tooth comes out, first rinse the mouth with water.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then hold a clean tissue on the gap for a little while.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, keep the tooth safe in a little box.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, look in the mirror at the new gap.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can tell [[GROWNUP]] straight away, and they can look at the tooth together.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "[[CHILD]] can wiggle the tooth gently with the tongue or a clean finger.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pulling hard is not a good idea, because the tooth comes out when it is ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] keeps brushing, softly around the wobbly tooth.",
+              "kind": "describe"
+            },
+            {
+              "text": "Eating is fine, and crunchy apples can help it along.",
+              "kind": "describe"
+            },
+            {
+              "text": "When the tooth comes out, first rinse the mouth with water.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then hold a clean tissue on the gap for a little while.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, keep the tooth safe in a little box.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, look in the mirror at the new gap.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can tell [[GROWNUP]] straight away, and they can look at the tooth together.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "A wobbly tooth can feel strange.",
+              "kind": "describe"
+            },
+            {
+              "text": "It can feel sore when eating something hard.",
+              "kind": "describe"
+            },
+            {
+              "text": "When it comes out, it may sting for a moment.",
+              "kind": "describe"
+            },
+            {
+              "text": "There can be a little blood, and that is normal.",
+              "kind": "describe"
+            },
+            {
+              "text": "A tissue and cool water help it stop soon.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "worried",
+          "background": "home-evening",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Pip the squirrel felt a little scared.",
+              "kind": "describe"
+            },
+            {
+              "text": "What if it hurts, Pip asked.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama did not say, you will feel nothing.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama said, it may sting for a moment, and then it stops.",
+              "kind": "describe"
+            },
+            {
+              "text": "There may be a tiny bit of red, and that is normal.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pip took a slow breath, like smelling a flower.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then Pip blew out, like blowing a candle.",
+              "kind": "describe"
+            },
+            {
+              "text": "When the tooth came out, it stung a little.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pip held a leaf on the gap, and soon it stopped.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama gave Pip a big hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "Worried and brave can happen at the same time.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "The gap feels squishy, and the tongue keeps finding it.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids feel excited, and some feel worried.",
+              "kind": "describe"
+            },
+            {
+              "text": "Both feelings are okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can take slow breaths, smell the flower and blow the candle.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can ask [[GROWNUP]] for a hug.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "social",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "A wobbly tooth can feel strange.",
+              "kind": "describe"
+            },
+            {
+              "text": "It can feel sore when eating something hard.",
+              "kind": "describe"
+            },
+            {
+              "text": "When it comes out, it may sting for a moment.",
+              "kind": "describe"
+            },
+            {
+              "text": "There can be a little blood, and that is normal.",
+              "kind": "describe"
+            },
+            {
+              "text": "A tissue and cool water help it stop soon.",
+              "kind": "describe"
+            },
+            {
+              "text": "The gap feels squishy, and the tongue keeps finding it.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids feel excited, and some feel worried.",
+              "kind": "describe"
+            },
+            {
+              "text": "Both feelings are okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can take slow breaths, smell the flower and blow the candle.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can ask [[GROWNUP]] for a hug.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "safety"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "Tonight [[CHILD]] and [[GROWNUP]] can practise the tooth plan.",
+              "kind": "describe"
+            },
+            {
+              "text": "A toy can have a pretend wobbly tooth.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] looks in the toy's mouth and says, it is getting ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, the toy wiggles the tooth gently.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say the plan out loud: rinse, tissue, box, smile.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Pip the squirrel played tooth doctor with a toy bear.",
+              "kind": "describe"
+            },
+            {
+              "text": "Open wide, said Pip, and looked in.",
+              "kind": "describe"
+            },
+            {
+              "text": "Your tooth is wobbly and getting ready, said Pip kindly.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then Pip showed the bear the tooth plan.",
+              "kind": "describe"
+            },
+            {
+              "text": "First rinse, then hold a leaf, then keep the tooth in an acorn cup.",
+              "kind": "describe"
+            },
+            {
+              "text": "The bear grinned with a pretend gap.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pip laughed and grinned too, with a real gap.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama Squirrel clapped her paws.",
+              "kind": "describe"
+            },
+            {
+              "text": "You know just what to do, she said.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pip curled up, proud and ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "And Pip slept well that night.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Then, pop, the pretend tooth comes out.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, rinse with pretend water and hold a tissue.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, keep the tooth in a little box.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, the toy smiles in the mirror with a new gap.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say the plan out loud: rinse, tissue, box, smile.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight [[CHILD]] and [[GROWNUP]] can practise the tooth plan.",
+              "kind": "describe"
+            },
+            {
+              "text": "A toy can have a pretend wobbly tooth.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] looks in the toy's mouth and says, it is getting ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, the toy wiggles the tooth gently.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then, pop, the pretend tooth comes out.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, rinse with pretend water and hold a tissue.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, keep the tooth in a little box.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, the toy smiles in the mirror with a new gap.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say the plan out loud: rinse, tissue, box, smile.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "unknown",
+            "safety"
+          ]
+        }
+      ]
+    },
+    "social": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "I have a wobbly tooth.",
+              "kind": "describe"
+            },
+            {
+              "text": "It moves when my tongue pushes it.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is a baby tooth.",
+              "kind": "describe"
+            },
+            {
+              "text": "Every kid has baby teeth.",
+              "kind": "describe"
+            },
+            {
+              "text": "A new big tooth is growing under it.",
+              "kind": "describe"
+            },
+            {
+              "text": "The big tooth pushes up, and the baby tooth gets loose.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can wiggle it gently with my tongue.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I have a wobbly tooth.",
+              "kind": "describe"
+            },
+            {
+              "text": "It moves when my tongue pushes it.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is a baby tooth.",
+              "kind": "describe"
+            },
+            {
+              "text": "Every kid has baby teeth.",
+              "kind": "describe"
+            },
+            {
+              "text": "A new big tooth is growing under it.",
+              "kind": "describe"
+            },
+            {
+              "text": "The big tooth pushes up, and the baby tooth gets loose.",
+              "kind": "describe"
+            },
+            {
+              "text": "First it wiggles a little.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then it wiggles more each day.",
+              "kind": "describe"
+            },
+            {
+              "text": "One day it will come out.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then there is a gap in my smile.",
+              "kind": "describe"
+            },
+            {
+              "text": "Later a new tooth grows in the gap.",
+              "kind": "describe"
+            },
+            {
+              "text": "This happens to all kids, step by step.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "First it wiggles a little.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then it wiggles more each day.",
+              "kind": "describe"
+            },
+            {
+              "text": "One day it will come out.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then there is a gap in my smile.",
+              "kind": "describe"
+            },
+            {
+              "text": "Later a new tooth grows in the gap.",
+              "kind": "describe"
+            },
+            {
+              "text": "This happens to all kids, step by step.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can wiggle it gently with my tongue.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I have a wobbly tooth.",
+              "kind": "describe"
+            },
+            {
+              "text": "It moves when my tongue pushes it.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is a baby tooth.",
+              "kind": "describe"
+            },
+            {
+              "text": "Every kid has baby teeth.",
+              "kind": "describe"
+            },
+            {
+              "text": "A new big tooth is growing under it.",
+              "kind": "describe"
+            },
+            {
+              "text": "The big tooth pushes up, and the baby tooth gets loose.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can wiggle it gently with my tongue.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "unknown",
+            "safety"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "[[GROWNUP]] helps me with my wobbly tooth.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can show [[GROWNUP]] how much it moves.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] can look in my mouth.",
+              "kind": "describe"
+            },
+            {
+              "text": "The dentist knows about wobbly teeth.",
+              "kind": "describe"
+            },
+            {
+              "text": "The dentist counts my teeth at a check-up.",
+              "kind": "describe"
+            },
+            {
+              "text": "Kids at school lose teeth too.",
+              "kind": "describe"
+            },
+            {
+              "text": "If my tooth feels sore, I can tell [[GROWNUP]].",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "strangers"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "[[GROWNUP]] helps me with my wobbly tooth.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can show [[GROWNUP]] how much it moves.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] can look in my mouth.",
+              "kind": "describe"
+            },
+            {
+              "text": "The dentist knows about wobbly teeth.",
+              "kind": "describe"
+            },
+            {
+              "text": "The dentist counts my teeth at a check-up.",
+              "kind": "describe"
+            },
+            {
+              "text": "Kids at school lose teeth too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids have gaps in their smiles.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grown-ups lost baby teeth when they were little.",
+              "kind": "describe"
+            },
+            {
+              "text": "Lots of people have had a wobbly tooth.",
+              "kind": "describe"
+            },
+            {
+              "text": "I am not the only one.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is a normal part of growing.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Some kids have gaps in their smiles.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grown-ups lost baby teeth when they were little.",
+              "kind": "describe"
+            },
+            {
+              "text": "Lots of people have had a wobbly tooth.",
+              "kind": "describe"
+            },
+            {
+              "text": "I am not the only one.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is a normal part of growing.",
+              "kind": "describe"
+            },
+            {
+              "text": "If my tooth feels sore, I can tell [[GROWNUP]].",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "[[GROWNUP]] helps me with my wobbly tooth.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can show [[GROWNUP]] how much it moves.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] can look in my mouth.",
+              "kind": "describe"
+            },
+            {
+              "text": "The dentist knows about wobbly teeth.",
+              "kind": "describe"
+            },
+            {
+              "text": "The dentist counts my teeth at a check-up.",
+              "kind": "describe"
+            },
+            {
+              "text": "Kids at school lose teeth too.",
+              "kind": "describe"
+            },
+            {
+              "text": "If my tooth feels sore, I can tell [[GROWNUP]].",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "strangers"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "I can wiggle my tooth gently.",
+              "kind": "describe"
+            },
+            {
+              "text": "I use my tongue or a clean finger.",
+              "kind": "describe"
+            },
+            {
+              "text": "I do not pull hard.",
+              "kind": "describe"
+            },
+            {
+              "text": "The tooth comes out when it is ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "I keep brushing my teeth.",
+              "kind": "describe"
+            },
+            {
+              "text": "I brush softly near the wobbly tooth.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can tell [[GROWNUP]] when it comes out.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I can wiggle my tooth gently.",
+              "kind": "describe"
+            },
+            {
+              "text": "I use my tongue or a clean finger.",
+              "kind": "describe"
+            },
+            {
+              "text": "I do not pull hard.",
+              "kind": "describe"
+            },
+            {
+              "text": "The tooth comes out when it is ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "I keep brushing my teeth.",
+              "kind": "describe"
+            },
+            {
+              "text": "I brush softly near the wobbly tooth.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can still eat my food.",
+              "kind": "describe"
+            },
+            {
+              "text": "When the tooth comes out, first I rinse with water.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I hold a tissue on the gap.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next I keep the tooth in a little box.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, I look at my new smile.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I can still eat my food.",
+              "kind": "describe"
+            },
+            {
+              "text": "When the tooth comes out, first I rinse with water.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I hold a tissue on the gap.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next I keep the tooth in a little box.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, I look at my new smile.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can tell [[GROWNUP]] when it comes out.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I can wiggle my tooth gently.",
+              "kind": "describe"
+            },
+            {
+              "text": "I use my tongue or a clean finger.",
+              "kind": "describe"
+            },
+            {
+              "text": "I do not pull hard.",
+              "kind": "describe"
+            },
+            {
+              "text": "The tooth comes out when it is ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "I keep brushing my teeth.",
+              "kind": "describe"
+            },
+            {
+              "text": "I brush softly near the wobbly tooth.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can tell [[GROWNUP]] when it comes out.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "My wobbly tooth can feel strange.",
+              "kind": "describe"
+            },
+            {
+              "text": "It can feel sore when I eat something hard.",
+              "kind": "describe"
+            },
+            {
+              "text": "When it comes out, it may sting a little.",
+              "kind": "describe"
+            },
+            {
+              "text": "There may be a little blood.",
+              "kind": "describe"
+            },
+            {
+              "text": "That is normal.",
+              "kind": "describe"
+            },
+            {
+              "text": "Cool water and a tissue help.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "worried",
+          "background": "home-evening",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "My wobbly tooth can feel strange.",
+              "kind": "describe"
+            },
+            {
+              "text": "It can feel sore when I eat something hard.",
+              "kind": "describe"
+            },
+            {
+              "text": "When it comes out, it may sting a little.",
+              "kind": "describe"
+            },
+            {
+              "text": "There may be a little blood.",
+              "kind": "describe"
+            },
+            {
+              "text": "That is normal.",
+              "kind": "describe"
+            },
+            {
+              "text": "Cool water and a tissue help.",
+              "kind": "describe"
+            },
+            {
+              "text": "It stops soon.",
+              "kind": "describe"
+            },
+            {
+              "text": "The gap feels squishy.",
+              "kind": "describe"
+            },
+            {
+              "text": "My tongue keeps finding the gap.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids feel excited.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids feel worried.",
+              "kind": "describe"
+            },
+            {
+              "text": "Both feelings are okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "It stops soon.",
+              "kind": "describe"
+            },
+            {
+              "text": "The gap feels squishy.",
+              "kind": "describe"
+            },
+            {
+              "text": "My tongue keeps finding the gap.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids feel excited.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids feel worried.",
+              "kind": "describe"
+            },
+            {
+              "text": "Both feelings are okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can ask [[GROWNUP]] for a hug.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "My wobbly tooth can feel strange.",
+              "kind": "describe"
+            },
+            {
+              "text": "It can feel sore when I eat something hard.",
+              "kind": "describe"
+            },
+            {
+              "text": "When it comes out, it may sting a little.",
+              "kind": "describe"
+            },
+            {
+              "text": "There may be a little blood.",
+              "kind": "describe"
+            },
+            {
+              "text": "That is normal.",
+              "kind": "describe"
+            },
+            {
+              "text": "Cool water and a tissue help.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can ask [[GROWNUP]] for a hug.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "unknown"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "Tonight I can practise my tooth plan.",
+              "kind": "describe"
+            },
+            {
+              "text": "My toy has a pretend wobbly tooth.",
+              "kind": "describe"
+            },
+            {
+              "text": "I look in the toy's mouth.",
+              "kind": "describe"
+            },
+            {
+              "text": "I say, it is getting ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "First the toy wiggles the tooth.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then, pop, the tooth comes out.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say my plan: rinse, tissue, box, smile.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight I can practise my tooth plan.",
+              "kind": "describe"
+            },
+            {
+              "text": "My toy has a pretend wobbly tooth.",
+              "kind": "describe"
+            },
+            {
+              "text": "I look in the toy's mouth.",
+              "kind": "describe"
+            },
+            {
+              "text": "I say, it is getting ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "First the toy wiggles the tooth.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then, pop, the tooth comes out.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next I rinse with pretend water.",
+              "kind": "describe"
+            },
+            {
+              "text": "I hold a tissue on the gap.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that I put the tooth in a little box.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, the toy smiles in the mirror.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can smile in the mirror too.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Next I rinse with pretend water.",
+              "kind": "describe"
+            },
+            {
+              "text": "I hold a tissue on the gap.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that I put the tooth in a little box.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, the toy smiles in the mirror.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can smile in the mirror too.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say my plan: rinse, tissue, box, smile.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight I can practise my tooth plan.",
+              "kind": "describe"
+            },
+            {
+              "text": "My toy has a pretend wobbly tooth.",
+              "kind": "describe"
+            },
+            {
+              "text": "I look in the toy's mouth.",
+              "kind": "describe"
+            },
+            {
+              "text": "I say, it is getting ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "First the toy wiggles the tooth.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then, pop, the tooth comes out.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say my plan: rinse, tissue, box, smile.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "unknown",
+            "social"
+          ]
+        }
+      ]
+    }
+  },
+  "badge": {
+    "id": "gap_tooth_grin",
+    "label": "Gap Tooth Grin"
+  },
+  "olderPages": {
+    "what_happens": {
+      "sentences": [
+        {
+          "text": "Most kids lose their first baby tooth around age six, and they keep losing them until about twelve.",
+          "kind": "describe"
+        },
+        {
+          "text": "The roots of a baby tooth slowly melt away as the adult tooth pushes up, so the tooth stays only in the gum.",
+          "kind": "describe"
+        },
+        {
+          "text": "That is why it gets wobbly and then comes out.",
+          "kind": "describe"
+        },
+        {
+          "text": "Adult teeth are bigger and need to last a whole life.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can keep them strong by brushing twice a day.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "home-evening",
+      "addresses": [
+        "body",
+        "sensory",
+        "separation",
+        "unknown"
+      ]
+    },
+    "who_is_there": {
+      "sentences": [
+        {
+          "text": "Dentists keep an eye on how adult teeth come in, because sometimes a new tooth grows behind a baby tooth that has not fallen out yet.",
+          "kind": "describe"
+        },
+        {
+          "text": "That is called a shark tooth, and it is common.",
+          "kind": "describe"
+        },
+        {
+          "text": "If a tooth is very sore or a new tooth looks crooked, the dentist can help.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can ask the dentist any question about teeth.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can tell [[GROWNUP]] if anything feels strange.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "home-evening",
+      "addresses": [
+        "pain",
+        "body",
+        "sensory",
+        "strangers"
+      ]
+    },
+    "what_i_do": {
+      "sentences": [
+        {
+          "text": "A loose tooth can come out at school, at dinner or even in sleep, and that is fine.",
+          "kind": "describe"
+        },
+        {
+          "text": "The gap may bleed a little for a few minutes, and pressing a clean tissue on it helps it stop.",
+          "kind": "describe"
+        },
+        {
+          "text": "If the tooth gets swallowed, it is tiny and simply passes through the body.",
+          "kind": "describe"
+        },
+        {
+          "text": "Brushing gently keeps the gap clean while the new tooth grows.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can pack a small tooth envelope for school, just in case.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "brave",
+      "background": "home-evening",
+      "addresses": [
+        "body",
+        "safety",
+        "social"
+      ]
+    },
+    "if_scared": {
+      "sentences": [
+        {
+          "text": "It is normal to feel uneasy about blood, even a little.",
+          "kind": "describe"
+        },
+        {
+          "text": "Baby tooth gaps bleed only a tiny bit because the root has already melted away.",
+          "kind": "describe"
+        },
+        {
+          "text": "The sting is short, and most kids say it felt less than they expected.",
+          "kind": "describe"
+        },
+        {
+          "text": "If a tooth is sore for many days, the dentist can check it.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can look away from the tissue and breathe out slowly if blood feels yucky.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "worried",
+      "background": "home-evening",
+      "addresses": [
+        "pain",
+        "body",
+        "sensory",
+        "strangers"
+      ]
+    },
+    "rehearsal": {
+      "sentences": [
+        {
+          "text": "A plan makes surprises easier.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can decide where the tooth box lives and what to do if the tooth comes out at school.",
+          "kind": "describe"
+        },
+        {
+          "text": "Some kids keep a tooth diary with the date of each lost tooth and a picture of the gap.",
+          "kind": "describe"
+        },
+        {
+          "text": "Some families have a tooth fairy tradition, and some do not, and both are fine.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can make a tooth chart and colour each tooth as it comes out.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "happy",
+      "background": "home-evening",
+      "addresses": [
+        "body",
+        "unknown",
+        "social"
+      ]
+    }
+  }
+}

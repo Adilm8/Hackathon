@@ -10,6 +10,13 @@ export type ISODate = string;
 export type EventType =
   | 'dentist' | 'school' | 'flight' | 'sibling' | 'haircut' | 'shot'
   | 'doctor' | 'blood_test' | 'hospital' | 'moving' | 'sleepover' | 'babysitter' | 'swimming' | 'party'
+  | 'tooth_loss'
+  | 'surgery'
+  | 'potty'
+  | 'daycare'
+  | 'new_school'
+  | 'camp'
+  | 'sports'
   | 'other';
 export type Beat = 'what_happens' | 'who_is_there' | 'what_i_do' | 'if_scared' | 'rehearsal';
 export type Topic =

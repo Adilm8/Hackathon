@@ -11,6 +11,13 @@ export const ISODateSchema = z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'expected Y
 export const EventTypeEnum = z.enum([
   'dentist', 'school', 'flight', 'sibling', 'haircut', 'shot',
   'doctor', 'blood_test', 'hospital', 'moving', 'sleepover', 'babysitter', 'swimming', 'party',
+  'tooth_loss',
+  'surgery',
+  'potty',
+  'daycare',
+  'new_school',
+  'camp',
+  'sports',
   'other',
 ]);
 export const BeatEnum = z.enum(['what_happens', 'who_is_there', 'what_i_do', 'if_scared', 'rehearsal']);

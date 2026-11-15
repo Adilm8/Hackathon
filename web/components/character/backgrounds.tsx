@@ -53,7 +53,14 @@ export function getBackground(id: BackgroundId): Background {
 const EVENT_SCENE: Record<EventType, KnownBackgroundId> = {
   dentist: 'dentist', school: 'school', flight: 'flight', sibling: 'sibling', haircut: 'haircut', shot: 'shot',
   doctor: 'shot', blood_test: 'shot', hospital: 'shot', moving: 'outside', sleepover: 'cosy-room',
-  babysitter: 'home-evening', swimming: 'outside', party: 'home-evening', other: 'outside',
+  babysitter: 'home-evening', swimming: 'outside', party: 'home-evening', tooth_loss: 'home-evening',
+  surgery: 'shot',
+  potty: 'home-evening',
+  daycare: 'school',
+  new_school: 'school',
+  camp: 'outside',
+  sports: 'outside',
+  other: 'outside',
 };
 
 /** The main scene of an event type; "other" uses the neutral outside-a-building scene. */

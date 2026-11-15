@@ -12,7 +12,7 @@ export type IconName =
   | 'heart-pulse' | 'droplet' | 'hospital' | 'house' | 'moon-star' | 'users' | 'waves' | 'cake'
   | 'flame' | 'trophy' | 'crown' | 'target' | 'settings'
   | 'x' | 'chevron-up' | 'chevron-down' | 'maximize' | 'minimize'
-  | 'snowflake' | 'share-2' | 'timer' | 'library-big' | 'play' | 'pause' | 'rotate-ccw' | 'bath' | 'shirt' | 'lamp' | 'smartphone';
+  | 'snowflake' | 'share-2' | 'timer' | 'library-big' | 'play' | 'pause' | 'rotate-ccw' | 'bath' | 'shirt' | 'lamp' | 'smartphone' | 'medal' | 'tent' | 'blocks' | 'toilet' | 'bandage';
 
 export interface IconProps extends Omit<SVGProps<SVGSVGElement>, 'name'> {
   name: IconName;
@@ -60,6 +60,13 @@ export const EVENT_ICON: Record<EventType, IconName> = {
   babysitter: 'users',
   swimming: 'waves',
   party: 'cake',
+  tooth_loss: 'smile-plus',
+  surgery: 'bandage',
+  potty: 'toilet',
+  daycare: 'blocks',
+  new_school: 'backpack',
+  camp: 'tent',
+  sports: 'medal',
   other: 'sparkles',
 };
 
@@ -78,6 +85,13 @@ export const EVENT_LABEL: Record<EventType, string> = {
   babysitter: 'New babysitter',
   swimming: 'First swimming lesson',
   party: 'Birthday party',
+  tooth_loss: 'Losing a tooth',
+  surgery: 'Operation',
+  potty: 'Big kid toilet',
+  daycare: 'New daycare',
+  new_school: 'Changing schools',
+  camp: 'Summer camp',
+  sports: 'Sports game',
   other: 'Another big day',
 };
 

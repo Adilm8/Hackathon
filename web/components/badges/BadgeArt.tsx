@@ -19,6 +19,13 @@ const RIBBON: Record<EventType, string> = {
   babysitter: '#d46bb3',
   swimming: '#2bb5d6',
   party: '#f06c9b',
+  tooth_loss: '#f2a93b',
+  surgery: '#4f8fd9',
+  potty: '#7cc36b',
+  daycare: '#f07a5a',
+  new_school: '#d9534f',
+  camp: '#4caf7a',
+  sports: '#e8a33d',
   other: '#6b6a7b',
 };
 
@@ -38,6 +45,13 @@ export const BADGE_LABEL: Record<EventType, string> = {
   babysitter: 'Brave Goodbye',
   swimming: 'Splash Star',
   party: 'Party Star',
+  tooth_loss: 'Gap Tooth Grin',
+  surgery: 'Brave Sleeper',
+  potty: 'Potty Champion',
+  daycare: 'Little Learner',
+  new_school: 'New Class Hero',
+  camp: 'Happy Camper',
+  sports: 'Team Player',
   other: 'Brave Heart',
 };
 
