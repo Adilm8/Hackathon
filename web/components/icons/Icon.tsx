@@ -10,7 +10,8 @@ export type IconName =
   | 'hand' | 'ear' | 'wind' | 'circle-help' | 'arrow-right' | 'lock' | 'volume-2' | 'pencil'
   | 'door-open' | 'ticket' | 'luggage' | 'mic' | 'mic-off' | 'smile-plus' | 'cookie'
   | 'heart-pulse' | 'droplet' | 'hospital' | 'house' | 'moon-star' | 'users' | 'waves' | 'cake'
-  | 'flame' | 'trophy' | 'crown' | 'target' | 'settings';
+  | 'flame' | 'trophy' | 'crown' | 'target' | 'settings'
+  | 'snowflake' | 'share-2' | 'timer' | 'library-big' | 'play' | 'pause' | 'rotate-ccw' | 'bath' | 'shirt' | 'lamp' | 'smartphone';
 
 export interface IconProps extends Omit<SVGProps<SVGSVGElement>, 'name'> {
   name: IconName;

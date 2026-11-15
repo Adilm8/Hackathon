@@ -97,3 +97,9 @@ Defaults chosen without Lida (to revisit):
 - Middle: a header card for the chosen big day (`?event=` switches between open ones) and the story path (`components/home/StoryPath.tsx`): one node per chapter, then the big day, the check-in and the badge; the first unfinished node is bigger, ringed, with a "Start" / "Unlock" / "Opens Wednesday" bubble and the child's story friend beside it. Node states come from `lib/home/path.ts` (tested in `tests/unit/home-path.test.ts`).
 - Right from 1280 px (below the path on smaller screens): today's tasks (read tonight's chapter, ask a question, day card, check-in), the evenings-in-a-row streak with the latest badges, the Big Day Pass offer while the big day is not unlocked, and "Create your own story".
 - The Child section lists other children saved on this device; "make a story for Leo" opens onboarding at the big day with Leo filled in (`/start?again=1&child=<id>`).
+
+### Motivation on /home (benchmark, docs/benchmark.md)
+
+- `lib/home/progress.ts` (tested in `tests/unit/home-progress.test.ts`): the streak forgives one missed evening a week ("rest evening", snowflake), a seven-dot week strip, stars (chapter 10, question 5, check-in 20, badge 30) and seven levels with generic names, and the parent's "This week" report.
+- Right column: streak card with the week strip, then the level card. Child tab: "This week with Max" and the level.
+- Defaults to revisit with Lida: star values, level names and thresholds, one rest evening per seven days.

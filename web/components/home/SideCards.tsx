@@ -1,11 +1,12 @@
 'use client';
 import Link from 'next/link';
 import { BadgeArt } from '@/components/badges';
-import { Icon } from '@/components/icons';
+import { Icon, type IconName } from '@/components/icons';
 import { ButtonLink } from '@/components/ui/Button';
 import { CreateStoryButton } from '@/components/ui/CreateStoryButton';
 import type { BigEvent, ChildProfile, Workspace } from '@/lib/engine/types';
 import type { DayTask } from '@/lib/home/path';
+import type { Level, Streak, WeekDay, WeekSummary } from '@/lib/home/progress';
 
 const card = 'rounded-card border border-line bg-surface p-5 shadow-step';
 
@@ -37,8 +38,9 @@ export function PlanCard({ event, hasAccess, label }: { event: BigEvent | null; 
   );
 }
 
-export function StreakCard({ streak, child }: { streak: number; child: ChildProfile }) {
+export function StreakCard({ streak, week, child }: { streak: Streak; week: WeekDay[]; child: ChildProfile }) {
   const shown = child.badges.slice(-3).reverse();
+  const n = streak.count;
   return (
     <section className={`${card} flex flex-col gap-4`} aria-labelledby="streak-h">
       <div className="flex items-center justify-between">
@@ -46,17 +48,23 @@ export function StreakCard({ streak, child }: { streak: number; child: ChildProf
         <Link href="/home?tab=badges" className="text-sm font-extrabold uppercase text-primary-text">Badges</Link>
       </div>
       <div className="flex items-center gap-3">
-        <span className={`flex size-12 items-center justify-center rounded-pill ${streak > 0 ? 'bg-accent text-accent-ink' : 'bg-surface-2 text-ink-soft'}`}>
+        <span className={`flex size-12 items-center justify-center rounded-pill ${n > 0 ? 'bg-accent text-accent-ink' : 'bg-surface-2 text-ink-soft'}`}>
           <Icon name="flame" size={28} />
         </span>
         <p className="flex-1 text-sm">
-          {streak > 0 ? (
-            <><strong className="text-lg">{streak}</strong> {streak === 1 ? 'evening' : 'evenings'} in a row. Keep it going tonight.</>
+          {n > 0 ? (
+            <><strong className="text-lg">{n}</strong> {n === 1 ? 'evening' : 'evenings'} in a row. Keep it going tonight.</>
           ) : (
             'Read a chapter tonight to start a streak.'
           )}
         </p>
       </div>
+      <WeekStrip week={week} />
+      {streak.rested.length > 0 && (
+        <p className="flex items-center gap-2 text-xs text-ink-soft">
+          <Icon name="snowflake" size={16} /> A missed evening was a rest evening, so the streak kept going. One rest a week.
+        </p>
+      )}
       {shown.length > 0 ? (
         <ul className="flex gap-3" aria-label="Latest badges">
           {shown.map((b) => (
@@ -67,6 +75,96 @@ export function StreakCard({ streak, child }: { streak: number; child: ChildProf
       ) : (
         <p className="text-xs text-ink-soft">The first badge comes after the big day&apos;s check-in.</p>
       )}
+    </section>
+  );
+}
+
+const DAY_LABEL: Record<WeekDay['state'], string> = {
+  read: 'story read', rest: 'rest evening', missed: 'no story', tonight: 'tonight, not read yet', none: 'no story',
+};
+
+/** Seven dots, oldest first: read, rest (snowflake), missed, tonight (ringed). */
+export function WeekStrip({ week }: { week: WeekDay[] }) {
+  return (
+    <ol className="flex justify-between gap-1" aria-label="The last seven evenings">
+      {week.map((d) => (
+        <li key={d.date} className="flex flex-col items-center gap-1">
+          <span className="text-xs font-bold text-ink-soft" aria-hidden>{d.letter}</span>
+          <span
+            className={`flex size-8 items-center justify-center rounded-pill ${
+              d.state === 'read' ? 'bg-accent text-accent-ink'
+                : d.state === 'rest' ? 'bg-surface-2 text-primary-text'
+                  : d.state === 'tonight' ? 'border-2 border-dashed border-accent text-ink-soft'
+                    : 'bg-surface-2 text-ink-soft'
+            }`}
+          >
+            {d.state === 'read' && <Icon name="flame" size={16} />}
+            {d.state === 'rest' && <Icon name="snowflake" size={16} />}
+            <span className="sr-only">{d.name}: {DAY_LABEL[d.state]}</span>
+          </span>
+        </li>
+      ))}
+    </ol>
+  );
+}
+
+/** Stars and the level, with the bar to the next level. */
+export function LevelCard({ level, name }: { level: Level; name: string }) {
+  return (
+    <section className={`${card} flex flex-col gap-3`} aria-labelledby="level-h">
+      <div className="flex items-center gap-3">
+        <span className="flex size-12 shrink-0 items-center justify-center rounded-pill bg-primary text-primary-ink"><Icon name="star" size={26} /></span>
+        <div className="flex-1">
+          <p className="text-xs font-extrabold uppercase tracking-wide text-ink-soft">Level {level.number}</p>
+          <h2 id="level-h" className="text-lg font-extrabold leading-tight">{level.name}</h2>
+        </div>
+        <p className="text-right text-sm font-bold"><strong className="text-lg">{level.stars}</strong><br /><span className="text-xs text-ink-soft">stars</span></p>
+      </div>
+      <div
+        role="progressbar" aria-valuemin={0} aria-valuemax={100} aria-valuenow={Math.round(level.progress * 100)}
+        aria-label={level.next ? `Stars to ${level.nextName}` : 'Top level'}
+        className="h-3 overflow-hidden rounded-pill bg-surface-2"
+      >
+        <span className="block h-full rounded-pill bg-primary transition-[width]" style={{ width: `${Math.round(level.progress * 100)}%` }} />
+      </div>
+      <p className="text-xs text-ink-soft">
+        {level.next ? `${level.next - level.stars} more stars to ${level.nextName}.` : `${name} reached the top level. Wonderful!`}{' '}
+        Stars come from reading together, asking questions and telling how the big day went.
+      </p>
+    </section>
+  );
+}
+
+/** The parent's weekly report. */
+export function WeekReport({ week, name }: { week: WeekSummary; name: string }) {
+  const items: { label: string; value: number; icon: IconName }[] = [
+    { label: week.evenings === 1 ? 'story evening' : 'story evenings', value: week.evenings, icon: 'moon-star' },
+    { label: week.chapters === 1 ? 'chapter read' : 'chapters read', value: week.chapters, icon: 'book-open' },
+    { label: week.questions === 1 ? 'question asked' : 'questions asked', value: week.questions, icon: 'circle-help' },
+    { label: 'stars earned', value: week.stars, icon: 'star' },
+  ];
+  return (
+    <section className={`${card} flex flex-col gap-4`} aria-labelledby="week-h">
+      <div>
+        <h2 id="week-h" className="text-lg font-extrabold">This week with {name}</h2>
+        <p className="text-xs text-ink-soft">The last seven days, on this device.</p>
+      </div>
+      <ul className="grid grid-cols-2 gap-3">
+        {items.map((i) => (
+          <li key={i.label} className="flex items-center gap-3 rounded-card bg-surface-2 p-3">
+            <Icon name={i.icon} size={22} className="shrink-0 text-primary-text" />
+            <span className="flex flex-col leading-tight"><strong className="text-lg">{i.value}</strong><span className="text-xs text-ink-soft">{i.label}</span></span>
+          </li>
+        ))}
+      </ul>
+      <p className="text-sm">
+        {week.evenings >= 3
+          ? `A steady routine. Short evenings like these are what help ${name} feel ready.`
+          : week.evenings > 0
+            ? `A good start. A few short evenings before the big day help the most.`
+            : `No story this week yet. Tonight's chapter takes about three minutes.`}
+        {week.badges > 0 && ` And ${week.badges === 1 ? 'a new badge' : `${week.badges} new badges`}!`}
+      </p>
     </section>
   );
 }

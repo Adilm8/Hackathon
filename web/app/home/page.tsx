@@ -6,7 +6,7 @@ import { Character } from '@/components/character';
 import { BadgeArt } from '@/components/badges';
 import { EventIcon, Icon } from '@/components/icons';
 import { SideNav, TabBar, type HomeTab } from '@/components/home/HomeNav';
-import { CreateCard, PlanCard, StreakCard, TasksCard } from '@/components/home/SideCards';
+import { CreateCard, LevelCard, PlanCard, StreakCard, TasksCard, WeekReport } from '@/components/home/SideCards';
 import { StoryPath } from '@/components/home/StoryPath';
 import { ButtonLink } from '@/components/ui/Button';
 import { CreateStoryButton } from '@/components/ui/CreateStoryButton';
@@ -14,7 +14,8 @@ import { EmptyState } from '@/components/ui/EmptyState';
 import { Screen } from '@/components/ui/Screen';
 import { dateLabel } from '@/lib/engine/clock';
 import type { BigEvent, ChildProfile, Workspace } from '@/lib/engine/types';
-import { buildPath, readingStreak, todayTasks } from '@/lib/home/path';
+import { buildPath, todayTasks } from '@/lib/home/path';
+import { levelFor, streakWithRest, totalStars, weekStrip, weekSummary } from '@/lib/home/progress';
 import { useChild } from '@/lib/store/child';
 import { useEvents } from '@/lib/store/events';
 import { useHasAccess, useToday } from '@/lib/store/hooks';
@@ -89,11 +90,12 @@ function Home({ tab, eventParam }: { tab: HomeTab; eventParam: string | null }) 
           {tab === 'path' && <PathTab event={chosen} events={events} child={child} today={today} hasAccess={hasAccess} />}
           {tab === 'days' && <DaysTab events={events} today={today} workspace={ws} />}
           {tab === 'badges' && <BadgesTab child={child} events={events} today={today} />}
-          {tab === 'child' && <ChildTab child={child} />}
+          {tab === 'child' && <ChildTab child={child} events={events} today={today} />}
         </div>
         <aside className={`${tab === 'path' ? 'flex' : 'hidden xl:flex'} flex-col gap-4 lg:col-start-2 xl:col-start-3 xl:row-start-1`} aria-label="Today">
           <TasksCard tasks={todayTasks(chosen, today)} />
-          <StreakCard streak={readingStreak(events, today)} child={child} />
+          <StreakCard streak={streakWithRest(events, today)} week={weekStrip(events, today)} child={child} />
+          <LevelCard level={levelFor(totalStars(events, child))} name={child.name} />
           <PlanCard event={chosen} hasAccess={hasAccess} label={label} />
           <CreateCard workspace={ws} />
         </aside>
@@ -204,7 +206,7 @@ function BadgesTab({ child, events, today }: { child: ChildProfile; events: BigE
   );
 }
 
-function ChildTab({ child }: { child: ChildProfile }) {
+function ChildTab({ child, events, today }: { child: ChildProfile; events: BigEvent[]; today: string }) {
   const others = loadProfiles().filter((p) => p.childId !== child.id && p.name.toLowerCase() !== child.name.toLowerCase());
   return (
     <>
@@ -218,6 +220,8 @@ function ChildTab({ child }: { child: ChildProfile }) {
           </ButtonLink>
         </div>
       </section>
+      <WeekReport week={weekSummary(events, child, today)} name={child.name} />
+      <LevelCard level={levelFor(totalStars(events, child))} name={child.name} />
       <section aria-labelledby="saved" className="flex flex-col gap-3">
         <h2 id="saved" className="text-lg font-extrabold">Other children on this device</h2>
         {others.length === 0 && <p className="text-sm text-ink-soft">When you make a story for another child, they are saved here, so you never type them again.</p>}
