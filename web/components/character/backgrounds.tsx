@@ -67,6 +67,13 @@ const EVENT_SCENE: Record<EventType, KnownBackgroundId> = {
   holiday: 'home-evening',
   halloween: 'outside',
   playdate: 'home-evening',
+  eye_exam: 'dentist',
+  big_bed: 'cosy-room',
+  test_day: 'school',
+  two_homes: 'home-evening',
+  new_pet: 'home-evening',
+  pet_loss: 'cosy-room',
+  parent_trip: 'home-evening',
   other: 'outside',
 };
 

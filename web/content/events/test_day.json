@@ -1,0 +1,2466 @@
+{
+  "type": "test_day",
+  "version": 1,
+  "label": "Big test at school",
+  "countdownLabel": "the big test",
+  "beats": {
+    "what_happens": {
+      "title": "What happens on test day",
+      "goals": [
+        "A test shows what has been learned so far",
+        "It has instructions, questions and time",
+        "It is one day, not the whole story"
+      ],
+      "parentSkill": "Explain what kind of test it is and what happens with the results."
+    },
+    "who_is_there": {
+      "title": "Who is there on test day",
+      "goals": [
+        "The teacher supervises and helps with instructions",
+        "Classmates are doing the same test",
+        "Family supports, whatever the result"
+      ],
+      "parentSkill": "Tell your child your love does not depend on the score, and say it before and after."
+    },
+    "what_i_do": {
+      "title": "What I do during the test",
+      "goals": [
+        "Read carefully, answer what I know first",
+        "Skip and come back to hard ones",
+        "Check my work if there is time"
+      ],
+      "parentSkill": "Teach the \"know, skip, come back, check\" strategy with a practice sheet."
+    },
+    "if_scared": {
+      "title": "If I feel test nerves",
+      "goals": [
+        "Test nerves are normal",
+        "A blank mind can come back with a breath",
+        "Calm tools: breathing, skipping, positive self-talk"
+      ],
+      "parentSkill": "Name the nerves and give one tool: 'Nervous is normal. If your mind goes blank, breathe out slowly and skip to the next one.'"
+    },
+    "rehearsal": {
+      "title": "Let's get ready for the test",
+      "goals": [
+        "Review in short sessions",
+        "Practise the test strategy",
+        "Plan sleep, breakfast and the bag"
+      ],
+      "parentSkill": "Do a short, relaxed practice quiz with a timer, then celebrate the effort."
+    }
+  },
+  "steps": [
+    "Review a little each day before the test",
+    "Sleep well and eat breakfast on test day",
+    "Bring pencils, an eraser and a water bottle",
+    "Listen to the teacher's instructions",
+    "Read each question carefully and answer the ones I know first",
+    "Come back to the hard ones and check my work",
+    "Hand in the test and take a breath"
+  ],
+  "sensory": [
+    "a quiet classroom",
+    "the scratch of pencils",
+    "a clock ticking",
+    "butterflies in the tummy",
+    "a racing heart before starting",
+    "a pencil that feels sweaty in the hand"
+  ],
+  "honestyNotes": "Tests can feel stressful and a child may not know every answer; never promise a good grade or that it will be easy. A test measures what has been learned so far, not a child's worth. Praise preparation and effort. Let the parent say what the test is for.",
+  "questionButtons": [
+    {
+      "id": "fail",
+      "text": "What if I fail?",
+      "topic": "love",
+      "fallbackAnswer": [
+        "A test shows what to practise next. It does not decide who you are.",
+        "[[GROWNUP]] is proud of your effort, whatever the result."
+      ]
+    },
+    {
+      "id": "blank",
+      "text": "What if my mind goes blank?",
+      "topic": "body",
+      "fallbackAnswer": [
+        "Breathe out slowly. It often comes back.",
+        "Skip to the next question and come back later."
+      ]
+    },
+    {
+      "id": "time",
+      "text": "What if I run out of time?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "Answer what you know first, and keep an eye on the clock.",
+        "Do your best in the time you have."
+      ]
+    },
+    {
+      "id": "dont_know",
+      "text": "What if I don't know an answer?",
+      "topic": "safety",
+      "fallbackAnswer": [
+        "Nobody knows every answer. Skip it and come back.",
+        "Make your best guess if that is allowed."
+      ]
+    },
+    {
+      "id": "teacher",
+      "text": "Can the teacher help me?",
+      "topic": "strangers",
+      "fallbackAnswer": [
+        "The teacher can explain the instructions or what a question means.",
+        "They cannot give answers, and that is fair for everyone."
+      ]
+    },
+    {
+      "id": "others",
+      "text": "What if my friends do better?",
+      "topic": "social",
+      "fallbackAnswer": [
+        "Everyone is learning different things at different speeds.",
+        "Your goal is your own best, not someone else's."
+      ]
+    },
+    {
+      "id": "nervous",
+      "text": "Why do I feel nervous?",
+      "topic": "body",
+      "fallbackAnswer": [
+        "Nerves are your body getting ready. Lots of kids feel them.",
+        "Slow breaths help them settle."
+      ]
+    },
+    {
+      "id": "quiet",
+      "text": "Why is it so quiet?",
+      "topic": "sensory",
+      "fallbackAnswer": [
+        "Tests are quiet so everyone can think.",
+        "Pencils scratching and a clock ticking are normal sounds."
+      ]
+    },
+    {
+      "id": "why_test",
+      "text": "Why do we have tests?",
+      "topic": "other",
+      "fallbackAnswer": [
+        "Tests help teachers see what to teach next.",
+        "They also help you see how much you have learned."
+      ]
+    },
+    {
+      "id": "tell",
+      "text": "Will [[GROWNUP]] be upset?",
+      "topic": "separation",
+      "fallbackAnswer": [
+        "[[GROWNUP]] wants to know how you felt and what you tried.",
+        "Your effort matters more than the score."
+      ]
+    }
+  ],
+  "techniques": [
+    {
+      "id": "know_skip_check",
+      "label": "Know, skip, come back, check",
+      "how": "Answer known questions first, skip hard ones, come back, check.",
+      "topics": [
+        "unknown",
+        "safety"
+      ]
+    },
+    {
+      "id": "spaced_review",
+      "label": "Short daily review",
+      "how": "Review for a few minutes each day instead of cramming.",
+      "topics": [
+        "unknown",
+        "body"
+      ]
+    },
+    {
+      "id": "practice_quiz",
+      "label": "A practice quiz",
+      "how": "Do a relaxed practice quiz with a timer at home.",
+      "topics": [
+        "unknown",
+        "sensory"
+      ]
+    },
+    {
+      "id": "self_talk",
+      "label": "Kind self-talk",
+      "how": "Practise: I can do hard things, one question at a time.",
+      "topics": [
+        "love",
+        "safety"
+      ]
+    },
+    {
+      "id": "worry_write",
+      "label": "Writing worries down",
+      "how": "Write worries on paper for a minute before the test.",
+      "topics": [
+        "pain",
+        "body"
+      ]
+    },
+    {
+      "id": "sleep_breakfast",
+      "label": "Sleep and breakfast",
+      "how": "Go to bed early and eat a good breakfast.",
+      "topics": [
+        "body"
+      ]
+    },
+    {
+      "id": "ask_teacher",
+      "label": "Asking the teacher",
+      "how": "Practise raising a hand to ask what a question means.",
+      "topics": [
+        "strangers",
+        "social"
+      ]
+    },
+    {
+      "id": "effort_praise",
+      "label": "Praising effort",
+      "how": "Praise preparation and effort, not the score.",
+      "topics": [
+        "love",
+        "separation",
+        "social"
+      ]
+    },
+    {
+      "id": "deep_breaths",
+      "label": "Smell the flower, blow the candle",
+      "how": "Breathe in slowly through the nose and out like blowing a candle.",
+      "topics": [
+        "pain",
+        "sensory",
+        "safety",
+        "body"
+      ]
+    }
+  ],
+  "ritual": [
+    "Sleep early, eat breakfast",
+    "Read, know, skip, come back, check",
+    "Hand in, big breath, well done"
+  ],
+  "phrases": {
+    "pain": [
+      "If your head feels tight, breathe out slowly.",
+      "Take a short break and a sip of water."
+    ],
+    "body": [
+      "Nerves are your body getting ready.",
+      "Sleep and breakfast help your brain."
+    ],
+    "sensory": [
+      "It's quiet so everyone can think.",
+      "The clock ticking is just a clock."
+    ],
+    "strangers": [
+      "The teacher can explain what a question means.",
+      "Raise your hand if you are unsure."
+    ],
+    "separation": [
+      "I'll be thinking of you, and I'm proud already.",
+      "Tell me how it felt after."
+    ],
+    "unknown": [
+      "Read, know, skip, come back, check.",
+      "Answer what you know first."
+    ],
+    "safety": [
+      "Nobody knows every answer.",
+      "Skip it and come back."
+    ],
+    "social": [
+      "Your best is what counts, not someone else's.",
+      "Lots of kids feel nervous too."
+    ],
+    "love": [
+      "I love you whatever the score.",
+      "I'm proud of how you prepared."
+    ]
+  },
+  "topicWords": {
+    "pain": [
+      "hurt",
+      "tight",
+      "sore",
+      "headache",
+      "worries"
+    ],
+    "body": [
+      "tummy",
+      "heart",
+      "hands",
+      "brain",
+      "mind",
+      "breakfast",
+      "sleep",
+      "butterflies",
+      "paws"
+    ],
+    "sensory": [
+      "quiet",
+      "quietly",
+      "clock",
+      "ticking",
+      "scratch",
+      "scratching",
+      "sweaty",
+      "race",
+      "racing"
+    ],
+    "strangers": [
+      "teacher",
+      "teachers",
+      "teacher otter"
+    ],
+    "separation": [
+      "at home",
+      "proud of",
+      "thinking of you",
+      "whatever",
+      "right there",
+      "stay",
+      "close",
+      "with me",
+      "with you",
+      "together",
+      "comes back",
+      "back",
+      "hand",
+      "nearby"
+    ],
+    "unknown": [
+      "first",
+      "then",
+      "next",
+      "after",
+      "last",
+      "plan",
+      "time",
+      "instructions",
+      "step",
+      "steps"
+    ],
+    "safety": [
+      "skip",
+      "guess",
+      "check",
+      "ask",
+      "blank",
+      "safe",
+      "careful",
+      "break",
+      "stop",
+      "help"
+    ],
+    "social": [
+      "classmates",
+      "kids",
+      "friends",
+      "everyone",
+      "friend",
+      "children",
+      "people",
+      "others"
+    ],
+    "love": [
+      "love",
+      "loves",
+      "hug",
+      "proud",
+      "cuddle"
+    ]
+  },
+  "backgrounds": [
+    "school",
+    "home-evening",
+    "cosy-room",
+    "outside"
+  ],
+  "fallbackPages": {
+    "story": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "Soon [[CHILD]] will have a big test at school.",
+              "kind": "describe"
+            },
+            {
+              "text": "A test is a way for teachers to see what kids have learned so far.",
+              "kind": "describe"
+            },
+            {
+              "text": "It also shows what to practise next.",
+              "kind": "describe"
+            },
+            {
+              "text": "First [[CHILD]] sits at the desk with pencils and an eraser.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "strangers",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Before bed, here is a story about a young beaver called Bea.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bea had a big building test at Beaver School.",
+              "kind": "describe"
+            },
+            {
+              "text": "She had to show how to build a strong little dam.",
+              "kind": "describe"
+            },
+            {
+              "text": "All week she practised a little each day.",
+              "kind": "describe"
+            },
+            {
+              "text": "On test day, she ate a good breakfast of bark.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then Teacher Otter explained: build a dam that holds back the stream.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bea's paws shook a bit.",
+              "kind": "describe"
+            },
+            {
+              "text": "She started with the part she knew best, the big logs.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then she tried the tricky part, the mud.",
+              "kind": "describe"
+            },
+            {
+              "text": "When the time was up, her dam leaked a little, but it held.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Then the teacher explains the instructions.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next everyone reads the questions and writes answers.",
+              "kind": "describe"
+            },
+            {
+              "text": "There is a time limit, and the teacher says how long.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, the tests are handed in, and it is done.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can listen carefully to the instructions and ask if something is unclear.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "strangers",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Soon [[CHILD]] will have a big test at school.",
+              "kind": "describe"
+            },
+            {
+              "text": "A test is a way for teachers to see what kids have learned so far.",
+              "kind": "describe"
+            },
+            {
+              "text": "It also shows what to practise next.",
+              "kind": "describe"
+            },
+            {
+              "text": "First [[CHILD]] sits at the desk with pencils and an eraser.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the teacher explains the instructions.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next everyone reads the questions and writes answers.",
+              "kind": "describe"
+            },
+            {
+              "text": "There is a time limit, and the teacher says how long.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, the tests are handed in, and it is done.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can listen carefully to the instructions and ask if something is unclear.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "strangers",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "On test day, the teacher is in the room.",
+              "kind": "describe"
+            },
+            {
+              "text": "The teacher explains, keeps time and answers questions about the instructions.",
+              "kind": "describe"
+            },
+            {
+              "text": "The teacher cannot give answers, but can explain what a question means.",
+              "kind": "describe"
+            },
+            {
+              "text": "Classmates are doing the same test.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can raise a hand and ask, what does this question mean?",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "strangers",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Bea the beaver looked around the riverbank.",
+              "kind": "describe"
+            },
+            {
+              "text": "Teacher Otter sat on a rock, watching the time.",
+              "kind": "describe"
+            },
+            {
+              "text": "If you have a question about the task, raise your paw, she said.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next to Bea, a young muskrat was chewing his lip.",
+              "kind": "describe"
+            },
+            {
+              "text": "Across the stream, two beavers were whispering, quietly, no talking.",
+              "kind": "describe"
+            },
+            {
+              "text": "Everyone was working on their own little dam.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bea raised her paw.",
+              "kind": "describe"
+            },
+            {
+              "text": "Does the dam have to be wide, she asked.",
+              "kind": "describe"
+            },
+            {
+              "text": "As wide as your stream, said Teacher Otter.",
+              "kind": "describe"
+            },
+            {
+              "text": "At home, Mama said, I am proud you tried your best.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Many of them feel nervous too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Everyone works quietly at their own desk.",
+              "kind": "describe"
+            },
+            {
+              "text": "At home, [[GROWNUP]] is proud of the effort.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves [[CHILD]] whatever the result.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can raise a hand and ask, what does this question mean?",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "school",
+          "addresses": [
+            "sensory",
+            "separation",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "On test day, the teacher is in the room.",
+              "kind": "describe"
+            },
+            {
+              "text": "The teacher explains, keeps time and answers questions about the instructions.",
+              "kind": "describe"
+            },
+            {
+              "text": "The teacher cannot give answers, but can explain what a question means.",
+              "kind": "describe"
+            },
+            {
+              "text": "Classmates are doing the same test.",
+              "kind": "describe"
+            },
+            {
+              "text": "Many of them feel nervous too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Everyone works quietly at their own desk.",
+              "kind": "describe"
+            },
+            {
+              "text": "At home, [[GROWNUP]] is proud of the effort.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves [[CHILD]] whatever the result.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can raise a hand and ask, what does this question mean?",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "During the test, [[CHILD]] reads each question carefully.",
+              "kind": "describe"
+            },
+            {
+              "text": "Answer the questions you know first.",
+              "kind": "describe"
+            },
+            {
+              "text": "If a question is hard, skip it and come back later.",
+              "kind": "describe"
+            },
+            {
+              "text": "Show your thinking if the test asks for it.",
+              "kind": "describe"
+            },
+            {
+              "text": "Watch the time, but do not rush.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say: read, know, skip, come back, check.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "school",
+          "addresses": [
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Bea the beaver had a plan for the test.",
+              "kind": "describe"
+            },
+            {
+              "text": "Read the task twice.",
+              "kind": "describe"
+            },
+            {
+              "text": "Start with what you know.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bea placed the big logs first, because she knew that well.",
+              "kind": "describe"
+            },
+            {
+              "text": "The mud part was hard.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bea skipped it and did the stones next.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then she came back to the mud, slowly, paw by paw.",
+              "kind": "describe"
+            },
+            {
+              "text": "Near the end, Bea checked every log.",
+              "kind": "describe"
+            },
+            {
+              "text": "She found one wobbly log and fixed it.",
+              "kind": "describe"
+            },
+            {
+              "text": "When the time was up, she took a big breath.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "If there is time at the end, check your answers.",
+              "kind": "describe"
+            },
+            {
+              "text": "Making a guess is better than leaving it blank, if allowed.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then hand in the test and take a deep breath.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say: read, know, skip, come back, check.",
+              "kind": "coach"
+            },
+            {
+              "text": "Step by step, it all gets a little easier.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "school",
+          "addresses": [
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "During the test, [[CHILD]] reads each question carefully.",
+              "kind": "describe"
+            },
+            {
+              "text": "Answer the questions you know first.",
+              "kind": "describe"
+            },
+            {
+              "text": "If a question is hard, skip it and come back later.",
+              "kind": "describe"
+            },
+            {
+              "text": "Show your thinking if the test asks for it.",
+              "kind": "describe"
+            },
+            {
+              "text": "Watch the time, but do not rush.",
+              "kind": "describe"
+            },
+            {
+              "text": "If there is time at the end, check your answers.",
+              "kind": "describe"
+            },
+            {
+              "text": "Making a guess is better than leaving it blank, if allowed.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then hand in the test and take a deep breath.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say: read, know, skip, come back, check.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "school",
+          "addresses": [
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "Before a test, the tummy may feel full of butterflies.",
+              "kind": "describe"
+            },
+            {
+              "text": "The heart may race, and the hands may feel sweaty.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes the mind goes blank for a moment.",
+              "kind": "describe"
+            },
+            {
+              "text": "This is called test nerves, and lots of kids get them.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "worried",
+          "background": "school",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Bea the beaver felt test nerves.",
+              "kind": "describe"
+            },
+            {
+              "text": "Her paws felt sweaty, and her mind went blank.",
+              "kind": "describe"
+            },
+            {
+              "text": "I forgot everything, she whispered.",
+              "kind": "describe"
+            },
+            {
+              "text": "At home, Mama did not say, you will get top marks.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama said, nerves are normal, and a breath can bring the thinking back.",
+              "kind": "describe"
+            },
+            {
+              "text": "On test day, Bea remembered.",
+              "kind": "describe"
+            },
+            {
+              "text": "She smelled a flower slowly and blew a candle.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then she told herself, one log at a time.",
+              "kind": "describe"
+            },
+            {
+              "text": "Her mind cleared, and she remembered the first step.",
+              "kind": "describe"
+            },
+            {
+              "text": "She kept going.",
+              "kind": "describe"
+            },
+            {
+              "text": "Worried and brave can happen at the same time.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "A slow breath helps the brain think again.",
+              "kind": "describe"
+            },
+            {
+              "text": "Skipping a hard question and coming back helps too.",
+              "kind": "describe"
+            },
+            {
+              "text": "One test does not decide how smart someone is.",
+              "kind": "describe"
+            },
+            {
+              "text": "Nerves usually shrink once the test starts.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can take slow breaths, smell the flower and blow the candle.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can say to themself, I can do hard things, one question at a time.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "school",
+          "addresses": [
+            "body",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Before a test, the tummy may feel full of butterflies.",
+              "kind": "describe"
+            },
+            {
+              "text": "The heart may race, and the hands may feel sweaty.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes the mind goes blank for a moment.",
+              "kind": "describe"
+            },
+            {
+              "text": "This is called test nerves, and lots of kids get them.",
+              "kind": "describe"
+            },
+            {
+              "text": "A slow breath helps the brain think again.",
+              "kind": "describe"
+            },
+            {
+              "text": "Skipping a hard question and coming back helps too.",
+              "kind": "describe"
+            },
+            {
+              "text": "One test does not decide how smart someone is.",
+              "kind": "describe"
+            },
+            {
+              "text": "Nerves usually shrink once the test starts.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can take slow breaths, smell the flower and blow the candle.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can say to themself, I can do hard things, one question at a time.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "school",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "Tonight [[CHILD]] and [[GROWNUP]] can get ready for the test.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, a short review of the main ideas, not too long.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then a mini practice quiz with a timer.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] practises the plan: read, know, skip, come back, check.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say: I prepared, and I will do my best.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "school",
+          "addresses": [
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Bea the beaver got ready with Papa.",
+              "kind": "describe"
+            },
+            {
+              "text": "They reviewed the steps of dam building, quickly, like a song.",
+              "kind": "describe"
+            },
+            {
+              "text": "Logs, stones, mud, check.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then Papa set a little sand timer for a practice.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bea built a tiny dam with twigs.",
+              "kind": "describe"
+            },
+            {
+              "text": "When the twig was tricky, she skipped it and came back.",
+              "kind": "describe"
+            },
+            {
+              "text": "Papa clapped.",
+              "kind": "describe"
+            },
+            {
+              "text": "They packed her tool bag and set out bark for breakfast.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then Papa said, sleep helps your brain hold on to things.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bea curled up early.",
+              "kind": "describe"
+            },
+            {
+              "text": "And Bea slept well that night.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Next they pack the bag with pencils, an eraser and water.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, they plan breakfast for the morning.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, early to bed, because sleep helps the brain remember.",
+              "kind": "describe"
+            },
+            {
+              "text": "Preparing is the best way to feel ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say: I prepared, and I will do my best.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "school",
+          "addresses": [
+            "body",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight [[CHILD]] and [[GROWNUP]] can get ready for the test.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, a short review of the main ideas, not too long.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then a mini practice quiz with a timer.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] practises the plan: read, know, skip, come back, check.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next they pack the bag with pencils, an eraser and water.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, they plan breakfast for the morning.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, early to bed, because sleep helps the brain remember.",
+              "kind": "describe"
+            },
+            {
+              "text": "Preparing is the best way to feel ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say: I prepared, and I will do my best.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "school",
+          "addresses": [
+            "body",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        }
+      ]
+    },
+    "social": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "Soon I have a big test.",
+              "kind": "describe"
+            },
+            {
+              "text": "A test shows what I have learned so far.",
+              "kind": "describe"
+            },
+            {
+              "text": "It shows what to practise next.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I sit at my desk.",
+              "kind": "describe"
+            },
+            {
+              "text": "I have pencils and an eraser.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the teacher explains.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask if something is unclear.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "strangers",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Soon I have a big test.",
+              "kind": "describe"
+            },
+            {
+              "text": "A test shows what I have learned so far.",
+              "kind": "describe"
+            },
+            {
+              "text": "It shows what to practise next.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I sit at my desk.",
+              "kind": "describe"
+            },
+            {
+              "text": "I have pencils and an eraser.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the teacher explains.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next I read the questions.",
+              "kind": "describe"
+            },
+            {
+              "text": "I write my answers.",
+              "kind": "describe"
+            },
+            {
+              "text": "There is a time limit.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, I hand in my test.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then it is done.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "strangers",
+            "separation",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Next I read the questions.",
+              "kind": "describe"
+            },
+            {
+              "text": "I write my answers.",
+              "kind": "describe"
+            },
+            {
+              "text": "There is a time limit.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, I hand in my test.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then it is done.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask if something is unclear.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "separation",
+            "unknown",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Soon I have a big test.",
+              "kind": "describe"
+            },
+            {
+              "text": "A test shows what I have learned so far.",
+              "kind": "describe"
+            },
+            {
+              "text": "It shows what to practise next.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I sit at my desk.",
+              "kind": "describe"
+            },
+            {
+              "text": "I have pencils and an eraser.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the teacher explains.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask if something is unclear.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "strangers",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "The teacher is in the room.",
+              "kind": "describe"
+            },
+            {
+              "text": "The teacher explains and keeps time.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask about the instructions.",
+              "kind": "describe"
+            },
+            {
+              "text": "The teacher cannot give answers.",
+              "kind": "describe"
+            },
+            {
+              "text": "The teacher can explain a question.",
+              "kind": "describe"
+            },
+            {
+              "text": "My classmates do the same test.",
+              "kind": "describe"
+            },
+            {
+              "text": "Many feel nervous too.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can raise my hand and ask.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "strangers",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "The teacher is in the room.",
+              "kind": "describe"
+            },
+            {
+              "text": "The teacher explains and keeps time.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask about the instructions.",
+              "kind": "describe"
+            },
+            {
+              "text": "The teacher cannot give answers.",
+              "kind": "describe"
+            },
+            {
+              "text": "The teacher can explain a question.",
+              "kind": "describe"
+            },
+            {
+              "text": "My classmates do the same test.",
+              "kind": "describe"
+            },
+            {
+              "text": "Many feel nervous too.",
+              "kind": "describe"
+            },
+            {
+              "text": "We work quietly.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of my effort.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me whatever happens.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "Step by step, it gets a little easier.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "We work quietly.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of my effort.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me whatever happens.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can raise my hand and ask.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "school",
+          "addresses": [
+            "sensory",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "The teacher is in the room.",
+              "kind": "describe"
+            },
+            {
+              "text": "The teacher explains and keeps time.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask about the instructions.",
+              "kind": "describe"
+            },
+            {
+              "text": "The teacher cannot give answers.",
+              "kind": "describe"
+            },
+            {
+              "text": "The teacher can explain a question.",
+              "kind": "describe"
+            },
+            {
+              "text": "My classmates do the same test.",
+              "kind": "describe"
+            },
+            {
+              "text": "Many feel nervous too.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can raise my hand and ask.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "strangers",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "I read each question carefully.",
+              "kind": "describe"
+            },
+            {
+              "text": "I answer what I know first.",
+              "kind": "describe"
+            },
+            {
+              "text": "If a question is hard, I skip it.",
+              "kind": "describe"
+            },
+            {
+              "text": "I come back later.",
+              "kind": "describe"
+            },
+            {
+              "text": "I show my thinking.",
+              "kind": "describe"
+            },
+            {
+              "text": "I watch the time.",
+              "kind": "describe"
+            },
+            {
+              "text": "I do not rush.",
+              "kind": "describe"
+            },
+            {
+              "text": "If there is time, I check.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: read, know, skip, come back, check.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "school",
+          "addresses": [
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I read each question carefully.",
+              "kind": "describe"
+            },
+            {
+              "text": "I answer what I know first.",
+              "kind": "describe"
+            },
+            {
+              "text": "If a question is hard, I skip it.",
+              "kind": "describe"
+            },
+            {
+              "text": "I come back later.",
+              "kind": "describe"
+            },
+            {
+              "text": "I show my thinking.",
+              "kind": "describe"
+            },
+            {
+              "text": "I watch the time.",
+              "kind": "describe"
+            },
+            {
+              "text": "I do not rush.",
+              "kind": "describe"
+            },
+            {
+              "text": "If there is time, I check.",
+              "kind": "describe"
+            },
+            {
+              "text": "A guess is better than a blank.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I take a deep breath.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "separation",
+            "unknown",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "A guess is better than a blank.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I take a deep breath.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: read, know, skip, come back, check.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "school",
+          "addresses": [
+            "separation",
+            "unknown",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I read each question carefully.",
+              "kind": "describe"
+            },
+            {
+              "text": "I answer what I know first.",
+              "kind": "describe"
+            },
+            {
+              "text": "If a question is hard, I skip it.",
+              "kind": "describe"
+            },
+            {
+              "text": "I come back later.",
+              "kind": "describe"
+            },
+            {
+              "text": "I show my thinking.",
+              "kind": "describe"
+            },
+            {
+              "text": "I watch the time.",
+              "kind": "describe"
+            },
+            {
+              "text": "I do not rush.",
+              "kind": "describe"
+            },
+            {
+              "text": "If there is time, I check.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: read, know, skip, come back, check.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "school",
+          "addresses": [
+            "separation",
+            "unknown",
+            "safety",
+            "social"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "Before a test, I may feel butterflies.",
+              "kind": "describe"
+            },
+            {
+              "text": "My heart may race.",
+              "kind": "describe"
+            },
+            {
+              "text": "My hands may feel sweaty.",
+              "kind": "describe"
+            },
+            {
+              "text": "My mind may go blank.",
+              "kind": "describe"
+            },
+            {
+              "text": "Lots of kids get test nerves.",
+              "kind": "describe"
+            },
+            {
+              "text": "A slow breath helps me think.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can skip a hard question.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "worried",
+          "background": "school",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Before a test, I may feel butterflies.",
+              "kind": "describe"
+            },
+            {
+              "text": "My heart may race.",
+              "kind": "describe"
+            },
+            {
+              "text": "My hands may feel sweaty.",
+              "kind": "describe"
+            },
+            {
+              "text": "My mind may go blank.",
+              "kind": "describe"
+            },
+            {
+              "text": "Lots of kids get test nerves.",
+              "kind": "describe"
+            },
+            {
+              "text": "A slow breath helps me think.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can skip a hard question.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can come back later.",
+              "kind": "describe"
+            },
+            {
+              "text": "One test does not decide how smart I am.",
+              "kind": "describe"
+            },
+            {
+              "text": "Nerves shrink once I start.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I can come back later.",
+              "kind": "describe"
+            },
+            {
+              "text": "One test does not decide how smart I am.",
+              "kind": "describe"
+            },
+            {
+              "text": "Nerves shrink once I start.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can say, one question at a time.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "school",
+          "addresses": [
+            "separation",
+            "unknown",
+            "social",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Before a test, I may feel butterflies.",
+              "kind": "describe"
+            },
+            {
+              "text": "My heart may race.",
+              "kind": "describe"
+            },
+            {
+              "text": "My hands may feel sweaty.",
+              "kind": "describe"
+            },
+            {
+              "text": "My mind may go blank.",
+              "kind": "describe"
+            },
+            {
+              "text": "Lots of kids get test nerves.",
+              "kind": "describe"
+            },
+            {
+              "text": "A slow breath helps me think.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can skip a hard question.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can say, one question at a time.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "school",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "Tonight I get ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "First a short review.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then a mini practice quiz.",
+              "kind": "describe"
+            },
+            {
+              "text": "I practise my plan.",
+              "kind": "describe"
+            },
+            {
+              "text": "Read, know, skip, come back, check.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next I pack my bag.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pencils, eraser and water.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, we plan breakfast.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: I prepared, and I will do my best.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "school",
+          "addresses": [
+            "body",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight I get ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "First a short review.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then a mini practice quiz.",
+              "kind": "describe"
+            },
+            {
+              "text": "I practise my plan.",
+              "kind": "describe"
+            },
+            {
+              "text": "Read, know, skip, come back, check.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next I pack my bag.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pencils, eraser and water.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, we plan breakfast.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, early to bed.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sleep helps my brain.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "Step by step, it gets a little easier.",
+              "kind": "describe"
+            },
+            {
+              "text": "New things feel strange at first, and then they feel normal.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "body",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Last, early to bed.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sleep helps my brain.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: I prepared, and I will do my best.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "school",
+          "addresses": [
+            "body",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight I get ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "First a short review.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then a mini practice quiz.",
+              "kind": "describe"
+            },
+            {
+              "text": "I practise my plan.",
+              "kind": "describe"
+            },
+            {
+              "text": "Read, know, skip, come back, check.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next I pack my bag.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pencils, eraser and water.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, we plan breakfast.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: I prepared, and I will do my best.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "school",
+          "addresses": [
+            "body",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        }
+      ]
+    }
+  },
+  "badge": {
+    "id": "calm_thinker",
+    "label": "Calm Thinker"
+  },
+  "olderPages": {
+    "what_happens": {
+      "sentences": [
+        {
+          "text": "Tests help teachers adjust lessons, so results guide learning, not just grades.",
+          "kind": "describe"
+        },
+        {
+          "text": "Standardised tests compare across many schools and are only one piece of information.",
+          "kind": "describe"
+        },
+        {
+          "text": "Most tests have easier and harder questions, so nobody is expected to know everything.",
+          "kind": "describe"
+        },
+        {
+          "text": "Good test strategy is a skill that can be learned, like reading all instructions first.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can ask the teacher what topics the test covers.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "school",
+      "addresses": [
+        "strangers",
+        "unknown",
+        "safety"
+      ]
+    },
+    "who_is_there": {
+      "sentences": [
+        {
+          "text": "Teachers want students to show what they know, so they help with confusing wording.",
+          "kind": "describe"
+        },
+        {
+          "text": "Comparing scores with friends can add pressure; it is fine to keep yours private.",
+          "kind": "describe"
+        },
+        {
+          "text": "Some students get extra time or a quiet room if they need it, and that is fair.",
+          "kind": "describe"
+        },
+        {
+          "text": "A test is about the material, not about who is smart.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can talk to the teacher before the test about any worries.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "school",
+      "addresses": [
+        "pain",
+        "sensory",
+        "strangers",
+        "unknown"
+      ]
+    },
+    "what_i_do": {
+      "sentences": [
+        {
+          "text": "Answering easy questions first builds momentum and saves time for hard ones.",
+          "kind": "describe"
+        },
+        {
+          "text": "Underlining key words in a question avoids misreading.",
+          "kind": "describe"
+        },
+        {
+          "text": "For multiple choice, crossing out wrong options improves your odds.",
+          "kind": "describe"
+        },
+        {
+          "text": "Checking work catches small mistakes like copying a number wrong.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can practise with a timer at home to get used to the pace.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "brave",
+      "background": "school",
+      "addresses": [
+        "separation",
+        "unknown",
+        "safety"
+      ]
+    },
+    "if_scared": {
+      "sentences": [
+        {
+          "text": "Stress hormones can briefly block memory retrieval, which is why breathing out slowly helps unlock it.",
+          "kind": "describe"
+        },
+        {
+          "text": "Writing worries down for a minute before a test has been shown to improve performance.",
+          "kind": "describe"
+        },
+        {
+          "text": "Perfectionism makes nerves worse; aiming for your best, not perfect, helps.",
+          "kind": "describe"
+        },
+        {
+          "text": "If nerves feel overwhelming often, [[GROWNUP]] and the teacher can make a plan together.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can write one encouraging sentence on a sticky note to read before starting.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "worried",
+      "background": "school",
+      "addresses": [
+        "pain",
+        "strangers",
+        "separation",
+        "unknown"
+      ]
+    },
+    "rehearsal": {
+      "sentences": [
+        {
+          "text": "Spacing review over several days beats cramming the night before, because the brain stores memories while resting between sessions.",
+          "kind": "describe"
+        },
+        {
+          "text": "Testing yourself, like flashcards, works better than rereading notes.",
+          "kind": "describe"
+        },
+        {
+          "text": "Sleep consolidates memory, so staying up late can backfire.",
+          "kind": "describe"
+        },
+        {
+          "text": "A balanced breakfast steadies energy and focus.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can make a one-page summary of the key facts.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "happy",
+      "background": "school",
+      "addresses": [
+        "body",
+        "separation",
+        "safety"
+      ]
+    }
+  }
+}

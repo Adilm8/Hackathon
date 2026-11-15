@@ -12,7 +12,7 @@ export type IconName =
   | 'heart-pulse' | 'droplet' | 'hospital' | 'house' | 'moon-star' | 'users' | 'waves' | 'cake'
   | 'flame' | 'trophy' | 'crown' | 'target' | 'settings'
   | 'x' | 'chevron-up' | 'chevron-down' | 'maximize' | 'minimize'
-  | 'snowflake' | 'share-2' | 'timer' | 'library-big' | 'play' | 'pause' | 'rotate-ccw' | 'bath' | 'shirt' | 'lamp' | 'smartphone' | 'puzzle' | 'ghost' | 'gift' | 'car-front' | 'bike' | 'music' | 'drama' | 'medal' | 'tent' | 'blocks' | 'toilet' | 'bandage';
+  | 'snowflake' | 'share-2' | 'timer' | 'library-big' | 'play' | 'pause' | 'rotate-ccw' | 'bath' | 'shirt' | 'lamp' | 'smartphone' | 'briefcase' | 'heart-handshake' | 'paw-print' | 'house-plus' | 'notebook-pen' | 'bed-single' | 'glasses' | 'puzzle' | 'ghost' | 'gift' | 'car-front' | 'bike' | 'music' | 'drama' | 'medal' | 'tent' | 'blocks' | 'toilet' | 'bandage';
 
 export interface IconProps extends Omit<SVGProps<SVGSVGElement>, 'name'> {
   name: IconName;
@@ -74,6 +74,13 @@ export const EVENT_ICON: Record<EventType, IconName> = {
   holiday: 'gift',
   halloween: 'ghost',
   playdate: 'puzzle',
+  eye_exam: 'glasses',
+  big_bed: 'bed-single',
+  test_day: 'notebook-pen',
+  two_homes: 'house-plus',
+  new_pet: 'paw-print',
+  pet_loss: 'heart-handshake',
+  parent_trip: 'briefcase',
   other: 'sparkles',
 };
 
@@ -106,6 +113,13 @@ export const EVENT_LABEL: Record<EventType, string> = {
   holiday: 'Family holiday',
   halloween: 'Halloween',
   playdate: 'First playdate',
+  eye_exam: 'Eye test',
+  big_bed: 'Big bed',
+  test_day: 'Big test',
+  two_homes: 'Two homes',
+  new_pet: 'New pet',
+  pet_loss: 'Saying goodbye to a pet',
+  parent_trip: 'Grown-up goes away',
   other: 'Another big day',
 };
 

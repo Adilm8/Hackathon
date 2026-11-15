@@ -53,7 +53,14 @@ const EVENT_CAPTION: Record<EventType, string> = {
   road_trip: 'Hours in the car',
   holiday: 'Thanksgiving, Christmas, Eid…',
   halloween: 'Costumes and trick-or-treat',
-  playdate: 'A friend comes to play', other: 'Anything else: a new club, a trip…',
+  playdate: 'A friend comes to play',
+  eye_exam: 'Eye doctor or new glasses',
+  big_bed: 'Own bed or own room',
+  test_day: 'A test or exam at school',
+  two_homes: 'Parents living apart',
+  new_pet: 'A puppy, kitten or other pet',
+  pet_loss: 'When a pet dies',
+  parent_trip: 'A work trip or time apart', other: 'Anything else: a new club, a trip…',
 };
 
 type StepId = 'gate' | 'who' | 'name' | 'age' | 'event' | 'genre' | 'date' | 'fears' | 'story' | 'character' | 'values';

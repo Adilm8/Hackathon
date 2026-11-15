@@ -24,6 +24,13 @@ export type EventType =
   | 'holiday'
   | 'halloween'
   | 'playdate'
+  | 'eye_exam'
+  | 'big_bed'
+  | 'test_day'
+  | 'two_homes'
+  | 'new_pet'
+  | 'pet_loss'
+  | 'parent_trip'
   | 'other';
 export type Beat = 'what_happens' | 'who_is_there' | 'what_i_do' | 'if_scared' | 'rehearsal';
 export type Topic =

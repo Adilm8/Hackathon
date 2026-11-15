@@ -33,13 +33,20 @@ import road_trip from '@/content/events/road_trip.json';
 import holiday from '@/content/events/holiday.json';
 import halloween from '@/content/events/halloween.json';
 import playdate from '@/content/events/playdate.json';
+import eye_exam from '@/content/events/eye_exam.json';
+import big_bed from '@/content/events/big_bed.json';
+import test_day from '@/content/events/test_day.json';
+import two_homes from '@/content/events/two_homes.json';
+import new_pet from '@/content/events/new_pet.json';
+import pet_loss from '@/content/events/pet_loss.json';
+import parent_trip from '@/content/events/parent_trip.json';
 import other from '@/content/events/other.json';
 
 /** Every event type, in the order onboarding shows them; "other" stays last. */
 export const EVENT_TYPES: readonly EventType[] = [
   'dentist', 'doctor', 'shot', 'blood_test', 'hospital', 'haircut', 'school', 'babysitter', 'sleepover',
   'party', 'swimming', 'flight', 'moving', 'sibling', 'tooth_loss',
-  'surgery', 'potty', 'daycare', 'new_school', 'camp', 'sports', 'performance', 'new_class', 'bike', 'road_trip', 'holiday', 'halloween', 'playdate', 'other',
+  'surgery', 'potty', 'daycare', 'new_school', 'camp', 'sports', 'performance', 'new_class', 'bike', 'road_trip', 'holiday', 'halloween', 'playdate', 'eye_exam', 'big_bed', 'test_day', 'two_homes', 'new_pet', 'pet_loss', 'parent_trip', 'other',
 ];
 
 const RAW: Record<EventType, unknown> = {
@@ -59,6 +66,13 @@ const RAW: Record<EventType, unknown> = {
   holiday,
   halloween,
   playdate,
+  eye_exam,
+  big_bed,
+  test_day,
+  two_homes,
+  new_pet,
+  pet_loss,
+  parent_trip,
   other,
 };
 

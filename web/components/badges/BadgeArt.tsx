@@ -33,6 +33,13 @@ const RIBBON: Record<EventType, string> = {
   holiday: '#e0654f',
   halloween: '#f08a24',
   playdate: '#e86fa0',
+  eye_exam: '#3a9bd9',
+  big_bed: '#7a6be0',
+  test_day: '#5c7fb8',
+  two_homes: '#c77d5a',
+  new_pet: '#d99a3d',
+  pet_loss: '#8a7fb8',
+  parent_trip: '#4f9fa8',
   other: '#6b6a7b',
 };
 
@@ -66,6 +73,13 @@ export const BADGE_LABEL: Record<EventType, string> = {
   holiday: 'Family Heart',
   halloween: 'Spooky Brave',
   playdate: 'Good Friend',
+  eye_exam: 'Sharp Eyes',
+  big_bed: 'Own Bed Star',
+  test_day: 'Calm Thinker',
+  two_homes: 'Two Homes Heart',
+  new_pet: 'Pet Pal',
+  pet_loss: 'Loving Memory',
+  parent_trip: 'Countdown Champ',
   other: 'Brave Heart',
 };
 

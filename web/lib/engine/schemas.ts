@@ -25,6 +25,13 @@ export const EventTypeEnum = z.enum([
   'holiday',
   'halloween',
   'playdate',
+  'eye_exam',
+  'big_bed',
+  'test_day',
+  'two_homes',
+  'new_pet',
+  'pet_loss',
+  'parent_trip',
   'other',
 ]);
 export const BeatEnum = z.enum(['what_happens', 'who_is_there', 'what_i_do', 'if_scared', 'rehearsal']);
