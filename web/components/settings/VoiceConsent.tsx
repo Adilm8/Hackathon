@@ -54,9 +54,9 @@ export function VoiceConsent({
                 onChange(today(), status === 'available' ? 'device' : 'browser');
               }} />
             <span>
-              <span className="block font-bold text-ink">Let a grown-up ask questions by voice</span>
+              <span className="block font-bold text-ink">Ask questions by voice</span>
               <span className="text-sm text-ink-soft">
-                Say your child&apos;s question and check the words before they are sent. Where your device can, speech is turned into
+                You, or your child next to you, can say the question. A grown-up checks the words before they are sent. Where your device can, speech is turned into
                 text on the device. Otherwise {vendor === 'your browser maker' ? 'your browser maker' : vendor}&apos;s speech service hears the
                 audio to turn it into text, as with keyboard dictation. We never record, store or send the audio ourselves.
               </span>

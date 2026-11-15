@@ -16,6 +16,11 @@ import { getSample, SAMPLE_TRANSCRIPT } from './voiceSample';
 
 /** The parent's cloned voice (demo): a voice id the client may send when the family saved a sample. */
 export const PARENT_VOICE = 'parent';
+/** null for a character voice; '' for "parent" (the first saved voice); else the saved voice's id. */
+export function parentVoiceId(voice: string | undefined | null): string | null {
+  if (voice === PARENT_VOICE) return '';
+  return voice?.startsWith(`${PARENT_VOICE}:`) ? voice.slice(PARENT_VOICE.length + 1) : null;
+}
 
 export const TTS_MAX_CHARS = 400;
 
@@ -99,8 +104,10 @@ export async function synthesize(text: string, familyId: string | null, wantedVo
   if (!tts.enabled) return { error: 'disabled' };
   void sweepOldAudio();
   // The parent's voice: the family's own sample goes with every sentence (stateless cloning).
-  const sample = wantedVoice === PARENT_VOICE && familyId ? await getSample(familyId) : null;
-  if (wantedVoice === PARENT_VOICE && !sample) return { error: 'no_sample' };
+  // "parent" is the family's first saved voice, "parent:<id>" one of the others.
+  const parentId = parentVoiceId(wantedVoice);
+  const sample = parentId !== null && familyId ? await getSample(familyId, parentId || undefined) : null;
+  if (parentId !== null && !sample) return { error: 'no_sample' };
   const { model, voice } = sample
     ? { model: tts.cloneModel, voice: '' }
     : splitVoice(resolveVoice(wantedVoice, tts.voices), tts.model);

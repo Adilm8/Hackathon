@@ -90,7 +90,7 @@ export function QuestionBar({
           </button>
         ))}
       </div>
-      <Sheet open={open} onOpenChange={setOpen} title={`What did ${childName} ask?`} description="Type it the way your child said it. Only the question is sent, never the name.">
+      <Sheet open={open} onOpenChange={setOpen} title={`What did ${childName} ask?`} description={voice ? "Type it or say it: you, or your child next to you. Check the words, then tap Ask. Only the question is sent, never the name." : "Type it the way your child said it. Only the question is sent, never the name."}>
         <form
           className="flex flex-col gap-3"
           onSubmit={(e) => {

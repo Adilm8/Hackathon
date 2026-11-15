@@ -127,3 +127,62 @@ describe('parent voice sample', async () => {
     expect(checkWav(Buffer.from('not a wav at all, definitely not a riff header here......'))).toEqual({ error: 'format' });
   });
 });
+
+describe('several family voices', async () => {
+  const fs = await import('node:fs/promises');
+  const os = await import('node:os');
+  const path = await import('node:path');
+  const { resetEnvCache } = await import('@/lib/env');
+  const { encodeWav } = await import('@/lib/speech/wav');
+  const vs = await import('@/lib/tts/voiceSample');
+  const { parentVoiceId } = await import('@/lib/tts/server');
+  const wav = Buffer.from(encodeWav(new Float32Array(16000 * 12).fill(0.1), 16000));
+
+  it('saves up to MAX_VOICES named voices, lists, reads and deletes each', async () => {
+    const dir = await fs.mkdtemp(path.join(os.tmpdir(), 'bds-voices-'));
+    process.env.TTS_CACHE_DIR = dir;
+    resetEnvCache();
+    try {
+      const fam = 'fam-1';
+      const mom = await vs.saveSample(fam, wav, '2026-11-15', ' Mom <b> ');
+      const dad = await vs.saveSample(fam, wav, '2026-11-15', 'Dad');
+      expect(mom?.name).toBe('Mom b');
+      expect((await vs.listSamples(fam)).map((v) => v.name)).toEqual(['Mom b', 'Dad']);
+      expect(await vs.getSample(fam, dad!.id)).not.toBeNull();
+      expect((await vs.getSample(fam))?.wav.length).toBe(wav.length);
+      for (let i = 2; i < vs.MAX_VOICES; i++) await vs.saveSample(fam, wav, '2026-11-15', `V${i}`);
+      expect(await vs.saveSample(fam, wav, '2026-11-15', 'One too many')).toBeNull();
+      await vs.deleteSample(fam, mom!.id);
+      expect((await vs.listSamples(fam)).some((v) => v.id === mom!.id)).toBe(false);
+      expect(await vs.listSamples('other')).toEqual([]);
+      await vs.deleteSample(fam);
+      expect(await vs.listSamples(fam)).toEqual([]);
+    } finally {
+      delete process.env.TTS_CACHE_DIR;
+      resetEnvCache();
+      await fs.rm(dir, { recursive: true, force: true });
+    }
+  });
+  it('reads the old single voice file as the voice "main"', async () => {
+    const dir = await fs.mkdtemp(path.join(os.tmpdir(), 'bds-voices-'));
+    process.env.TTS_CACHE_DIR = dir;
+    resetEnvCache();
+    try {
+      await fs.mkdir(path.join(dir, 'voices'), { recursive: true });
+      await fs.writeFile(path.join(dir, 'voices', 'fam-2.wav'), wav);
+      expect((await vs.listSamples('fam-2')).map((v) => [v.id, v.name])).toEqual([['main', 'My voice']]);
+      await vs.deleteSample('fam-2', 'main');
+      expect(await vs.listSamples('fam-2')).toEqual([]);
+    } finally {
+      delete process.env.TTS_CACHE_DIR;
+      resetEnvCache();
+      await fs.rm(dir, { recursive: true, force: true });
+    }
+  });
+  it('tells a family voice id from a character voice', () => {
+    expect(parentVoiceId('parent')).toBe('');
+    expect(parentVoiceId('parent:ab12cd')).toBe('ab12cd');
+    expect(parentVoiceId('af_bella')).toBeNull();
+    expect(parentVoiceId(undefined)).toBeNull();
+  });
+});
