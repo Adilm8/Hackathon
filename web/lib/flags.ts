@@ -14,6 +14,8 @@ export const flags = {
   exportImport: true,
   /** Painted scene pictures (lib/illustrations); open to every level in the MVP like the premium voice. */
   illustratedScenes: true,
+  /** Cartoon mode: the chapter as a narrated full-screen slideshow (components/reader/CartoonPlayer.tsx). */
+  cartoonMode: true,
 } as const;
 
 export type FlagName = keyof typeof flags;
