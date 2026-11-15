@@ -26,6 +26,11 @@ const TIME: { id: TimeTarget; label: string }[] = [
 
 const OPEN_KEY = 'bds:sample:demo-open';
 
+/** Screens laid out as one screen without page scroll (the reader, AppShell `fit`). */
+function isFitScreen(pathname: string): boolean {
+  return /\/read\/[^/]+$/.test(pathname);
+}
+
 /**
  * The Demo bar (docs/SPEC.md 4.3, 5.1): a collapsible strip at the bottom of every sample screen
  * with the six-step guided tour, time travel and the access buttons. It only moves "today" and
@@ -46,7 +51,10 @@ export function DemoBar({ workspace }: { workspace: Workspace }) {
     try {
       const saved = window.localStorage.getItem(OPEN_KEY);
       // First visit: open on wide screens; on a phone the strip with "Next step" is enough.
-      return saved === null ? window.matchMedia('(min-width: 768px)').matches : saved === '1';
+      // The reader is one screen without scroll: an open bar would squeeze the story, so it starts folded there.
+      if (isFitScreen(pathname)) return false;
+      // First visit opens only on big screens; on laptops (768-900 px tall) it would cover half the page.
+      return saved === null ? window.matchMedia('(min-width: 768px) and (min-height: 900px)').matches : saved === '1';
     } catch {
       return false;
     }
@@ -63,6 +71,7 @@ export function DemoBar({ workspace }: { workspace: Workspace }) {
     setOpen(false);
   }
 
+  const fit = isFitScreen(pathname);
   const onScreenId = /^\/event\/([^/]+)/.exec(pathname)?.[1];
   const event = demoEvent(events, clock.realToday(), onScreenId ? decodeURIComponent(onScreenId) : undefined);
 
@@ -189,7 +198,9 @@ export function DemoBar({ workspace }: { workspace: Workspace }) {
         )}
         {!open && note && <p role="status" className="pb-1 text-xs font-bold">{note}</p>}
         {open && (
-          <div className="flex max-h-[45dvh] flex-col gap-3 overflow-y-auto overscroll-contain pb-2">
+          // On the reader the open bar floats over the story instead of taking height from it.
+          <div className={fit ? 'absolute inset-x-0 bottom-full border-t-2 border-accent bg-surface shadow-pop' : ''}>
+          <div className={`flex flex-col gap-3 overflow-y-auto overscroll-contain pb-2 ${fit ? 'mx-auto max-h-[60dvh] max-w-5xl px-4 pt-3' : 'max-h-[45dvh]'}`}>
             {sample && (
               <ol aria-label="Guided tour" className="grid gap-1 sm:grid-cols-2">
                 {steps.map((s, i) => (
@@ -280,6 +291,7 @@ export function DemoBar({ workspace }: { workspace: Workspace }) {
               </div>
             )}
             {note && <p role="status" className="text-sm font-bold">{note}</p>}
+          </div>
           </div>
         )}
       </div>
