@@ -5,6 +5,7 @@ import { useEffect, useState, type ReactNode } from 'react';
 import { SubscriptionCard } from '@/components/paywall/SubscriptionCard';
 import { ExportImport, NarrationSettings, PalettePicker, Reminders, RestoreLink, StyleToggle, ValuesProfile, VoiceConsent } from '@/components/settings';
 import { clock } from '@/lib/engine/clock';
+import { CHILD_AGES } from '@/lib/engine/plan';
 import { DEFAULT_PALETTE, isNight } from '@/lib/theme';
 import { clearDeviceData } from '@/lib/storage/clear';
 import { Button, ButtonLink } from '@/components/ui/Button';
@@ -92,7 +93,7 @@ export function SettingsView() {
             <div>
               <p className="mb-2 text-sm font-bold">Age</p>
               <div className="flex flex-wrap gap-2">
-                {([3, 4, 5, 6, 7, 8] as const).map((a) => <Chip key={a} selected={child.age === a} onToggle={() => updateChild({ age: a })}>{a}</Chip>)}
+                {CHILD_AGES.map((a) => <Chip key={a} selected={child.age === a} onToggle={() => updateChild({ age: a })}>{a}</Chip>)}
               </div>
             </div>
             <div>
@@ -144,6 +145,13 @@ export function SettingsView() {
           hint="A clearer font with more space between letters and words. Helps early and struggling readers."
           checked={prefs.easyRead} onChange={prefs.setEasyRead}
         />
+        {isOn('illustratedScenes') && (
+          <Toggle
+            id="illustrated" label="Painted pictures"
+            hint="Each chapter shows its own painted scene. Turn off for the simple drawn scenes."
+            checked={prefs.illustrated} onChange={prefs.setIllustrated}
+          />
+        )}
         <Toggle
           id="sounds" label="Sounds"
           hint="A soft chime when a chapter ends or a badge is earned."

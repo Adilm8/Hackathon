@@ -4,7 +4,7 @@
  */
 import { addDays, compareDates, diffDays, weekdayLabel } from './clock';
 import { getTemplate } from './templates';
-import type { Beat, BigEvent, Chapter, EventTemplate, EventType, ISODate, PlacePhoto, StoryLength, StoryPrefs, Topic } from './types';
+import type { Beat, BigEvent, Chapter, ChildAge, EventTemplate, EventType, ISODate, PlacePhoto, StoryLength, StoryPrefs, Topic } from './types';
 
 export const BEATS: readonly Beat[] = ['what_happens', 'who_is_there', 'what_i_do', 'if_scared', 'rehearsal'];
 export const MAX_DAYS_AHEAD = 60;
@@ -215,12 +215,8 @@ export function chapterStatus(chapter: Chapter, _event: BigEvent, today: ISODate
 export function canReadAhead(chapter: Chapter, event: BigEvent, today: ISODate, hasAccess: boolean): boolean {
   if (!hasAccess) return false;
   if (chapterStatus(chapter, event, today, hasAccess) !== 'locked') return false;
-  const aheadRead = event.chapters.some((c) => c.index > 1 && c.readOn && compareDates(c.date, today) > 0);
-  if (aheadRead) return false;
-  const firstLocked = event.chapters
-    .filter((c) => chapterStatus(c, event, today, hasAccess) === 'locked')
-    .sort((a, b) => a.index - b.index)[0];
-  return firstLocked?.index === chapter.index;
+  // A parent may skip the waiting days, but the story stays in order: every earlier chapter is read first.
+  return event.chapters.every((c) => c.index >= chapter.index || !!c.readOn);
 }
 
 /** May the reader open this chapter now (read, today, catch up, or read ahead)? */
@@ -279,13 +275,29 @@ export function readProgress(event: Pick<BigEvent, 'chapters'>): { read: number;
 /** Pages per chapter by the parent's story length: about 1, 2-3 and 4-5 minutes read aloud. */
 export const PAGES_BY_LENGTH: Record<StoryLength, number> = { short: 3, standard: 5, long: 7 };
 
+/** Ages a parent can choose (onboarding, Settings). */
+export const CHILD_AGES: readonly ChildAge[] = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+
 /** Pages per chapter and words per page by age (5.2) and story length (Story options). */
 export function pageTargets(age: number, length: StoryLength = 'standard'): { pages: number; minWords: number; maxWords: number } {
   // Standard: about 2-3 minutes read aloud per chapter (300-500 words), still in short sentences.
   const pages = PAGES_BY_LENGTH[length] ?? 5;
+  if (age <= 2) return { pages, minWords: 40, maxWords: 60 };
   if (age <= 4) return { pages, minWords: 60, maxWords: 80 };
   if (age <= 6) return { pages, minWords: 70, maxWords: 90 };
-  return { pages, minWords: 85, maxWords: 110 };
+  if (age <= 8) return { pages, minWords: 85, maxWords: 110 };
+  if (age <= 10) return { pages, minWords: 100, maxWords: 130 };
+  return { pages, minWords: 110, maxWords: 150 };
+}
+
+/** Reading level of the story text by age, for the chapter prompt. */
+export function readingLevel(age: number): { sentences: string; style: string } {
+  if (age <= 2) return { sentences: '6-10', style: 'Very short sentences of 3-7 words, everyday words a toddler knows, gentle repetition, one idea per sentence.' };
+  if (age <= 4) return { sentences: '8-12', style: 'Short sentences of 5-9 words, simple everyday words, some repetition.' };
+  if (age <= 6) return { sentences: '8-14', style: 'Short sentences, simple words; explain any new word in the same sentence.' };
+  if (age <= 8) return { sentences: '8-14', style: 'Clear sentences of up to 14 words; a few new words, each explained.' };
+  if (age <= 10) return { sentences: '9-14', style: 'Natural sentences of up to 18 words, real names for things with short explanations; never babyish.' };
+  return { sentences: '9-14', style: 'Natural sentences, a respectful tone for a pre-teen, real words and a bit of the "why"; never babyish, the Story friend is a companion, not a nursery character.' };
 }
 
 /** Events sorted for the home screen: upcoming first by date, then past events newest first. */

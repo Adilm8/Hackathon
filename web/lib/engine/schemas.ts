@@ -5,9 +5,15 @@
  */
 import { z } from 'zod';
 import type * as T from './types';
+import { CHILD_NAME_PATTERN, NAME_MAX, normalizeChildName } from '../childName';
 
 // ---------- enums ----------
-export const ISODateSchema = z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'expected YYYY-MM-DD');
+/** A real calendar day: 2026-02-31 and 2026-13-01 are refused, not silently rolled over. */
+export const ISODateSchema = z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'expected YYYY-MM-DD').refine((s) => {
+  const [y, m, d] = s.split('-').map(Number);
+  const t = new Date(Date.UTC(y, m - 1, d));
+  return y >= 2000 && y <= 2100 && t.getUTCMonth() === m - 1 && t.getUTCDate() === d;
+}, 'not a real date');
 export const EventTypeEnum = z.enum([
   'dentist', 'school', 'flight', 'sibling', 'haircut', 'shot',
   'doctor', 'blood_test', 'hospital', 'moving', 'sleepover', 'babysitter', 'swimming', 'party',
@@ -38,6 +44,7 @@ export const CompanionEnum = z.enum([
   'none', 'firefly', 'cloud-puff', 'star-sprite', 'crystal-snail', 'ladybug', 'tiny-turtle', 'mushroom-sprout', 'pebble-chick',
 ]);
 export const FurVariantEnum = z.enum(['classic', 'dusk', 'dawn']);
+export const CharacterSizeEnum = z.enum(['s', 'm', 'l']);
 export const PronounEnum = z.enum(['he', 'she', 'they']);
 export const QuestionCategoryEnum = z.enum(['on_topic', 'off_topic', 'sensitive', 'unsafe']);
 export const StoredQuestionCategoryEnum = z.enum(['on_topic', 'off_topic', 'sensitive']);
@@ -66,6 +73,7 @@ export const CharacterSchema = z.strictObject({
   headwear: HeadwearEnum.optional(),
   companion: CompanionEnum.optional(),
   fur: FurVariantEnum.optional(),
+  size: CharacterSizeEnum.optional(),
 });
 
 export const ValuesProfileSchema = z.strictObject({
@@ -94,16 +102,17 @@ export const BadgeSchema = z.strictObject({
 /** First name or nickname: one word, letters only, no surname (D14). */
 export const ChildNameSchema = z
   .string()
-  .trim()
-  .min(1)
-  .max(20)
-  .regex(/^[\p{L}][\p{L}'-]*$/u, 'one word, letters only');
+  .transform((s) => normalizeChildName(s))
+  .pipe(z.string().min(1).refine((s) => [...s].length <= NAME_MAX, 'at most 20 characters').regex(CHILD_NAME_PATTERN, 'one word, letters only'));
 
 export const ChildProfileSchema = z.strictObject({
   id,
   name: ChildNameSchema,
   pronunciation: z.string().max(40).optional(),
-  age: z.union([z.literal(3), z.literal(4), z.literal(5), z.literal(6), z.literal(7), z.literal(8)]),
+  age: z.union([
+    z.literal(2), z.literal(3), z.literal(4), z.literal(5), z.literal(6), z.literal(7),
+    z.literal(8), z.literal(9), z.literal(10), z.literal(11), z.literal(12),
+  ]),
   pronoun: PronounEnum.optional(),
   character: CharacterSchema,
   values: ValuesProfileSchema,
@@ -253,7 +262,7 @@ export const StoryContextSchema = z.strictObject({
     templateVersion: z.number().int().min(1),
   }),
   child: z.strictObject({
-    age: z.number().int().min(3).max(8),
+    age: z.number().int().min(2).max(12),
     pronoun: PronounEnum.optional(),
     character: CharacterSchema,
   }),
@@ -354,6 +363,7 @@ export const EventTemplateSchema = z.strictObject({
     story: beatRecord(z.array(TemplatePage).min(1)),
     social: beatRecord(z.array(TemplatePage).min(1)),
   }),
+  olderPages: beatRecord(TemplatePage).optional(),
   badge: z.strictObject({ id: z.string().min(1), label: z.string().min(1) }),
 });
 

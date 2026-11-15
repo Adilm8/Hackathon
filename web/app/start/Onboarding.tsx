@@ -22,7 +22,7 @@ import { speakOnce } from '@/lib/speech/narrator';
 import { useChild } from '@/lib/store/child';
 import { useEvents } from '@/lib/store/events';
 import { useSettings } from '@/lib/store/settings';
-import { createEvent, EVENT_TYPES, FEAR_OPTIONS, getTemplate, isQuickPrep, maxChapters, validateEventDate } from '@/lib/store/engine';
+import { CHILD_AGES, createEvent, EVENT_TYPES, FEAR_OPTIONS, getTemplate, isQuickPrep, maxChapters, validateEventDate } from '@/lib/store/engine';
 import { GenrePicker } from '@/components/story/GenrePicker';
 import { StoryOptions } from '@/components/story/StoryOptions';
 import { cleanStoryText } from '@/lib/store/storyPrefs';
@@ -33,6 +33,7 @@ import { newId } from '@/lib/store/id';
 import { childNameError } from '@/lib/childName';
 import { stashActiveFor } from '@/lib/store/children';
 import { firstNameOnly, loadProfiles, removeProfile, saveProfile, type SavedProfile } from '@/lib/store/profiles';
+import { planHref } from '@/lib/home/path';
 
 const EVENT_CAPTION: Record<EventType, string> = {
   dentist: 'Check-up or cleaning', school: 'Preschool, kindergarten, school', flight: 'Airport and plane',
@@ -171,7 +172,7 @@ export function Onboarding() {
       story: cleanStoryText(d.story, child.name, child.pronunciation),
     });
     useEvents.getState().addEvent(event);
-    router.push(`/event/${event.id}`);
+    router.push(planHref(event.id));
   };
 
   const guide = <Character character={d.character} mood={step === 'fears' ? 'worried' : 'happy'} size={72} decorative />;
@@ -266,8 +267,8 @@ export function Onboarding() {
 
         {step === 'age' && (
           <>
-            <div role="radiogroup" aria-label="Age" className="grid grid-cols-3 gap-3">
-              {[3, 4, 5, 6, 7, 8].map((a) => (
+            <div role="radiogroup" aria-label="Age" className="grid grid-cols-4 gap-3 sm:grid-cols-6">
+              {CHILD_AGES.map((a) => (
                 <ChoiceCard key={a} selected={d.age === a} onSelect={() => set({ age: a })} title={`${a}`} caption="years" className="justify-center" />
               ))}
             </div>

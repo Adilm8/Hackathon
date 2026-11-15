@@ -2,7 +2,7 @@
 
 **Bedtime stories that get a child ready for a big day, and show the parent what to say.**
 
-Short personalised stories for children aged 3 to 8 before a dentist visit, a first day at school, a flight or any of 15 big days. Each evening brings one chapter, the child's own questions are answered inside the story, and the parent sees what worries the child and the words that help.
+Short personalised stories for children aged 2 to 12 (core age 3 to 8) before a dentist visit, a first day at school, a flight or any of 15 big days. Each evening brings one chapter, the child's own questions are answered inside the story, and the parent sees what worries the child and the words that help.
 
 **Live app: [bigdaystories.up.railway.app](https://bigdaystories.up.railway.app)** · no sign-up needed · tap **Try a sample** for the 3-minute jury tour
 
@@ -46,7 +46,7 @@ Sarah's son Max is 4. On Friday he sees the dentist, and last time he screamed i
 ## How it works
 
 1. **The parent describes the big day**: what it is, when, the child's first name or nickname, age, and what worries them. The app builds a plan of evening chapters with a countdown ("5 sleeps until the dentist").
-2. **Every evening the child reads one chapter with a story friend**. When the child asks "Will it hurt?", the next page of the story answers that question. The parent panel shows what is on the child's mind and the words to say.
+2. **Every evening the child reads one chapter with a story friend** (a parent can also start the next chapter right away once the earlier ones are read). When the child asks "Will it hurt?", the next page of the story answers that question. The parent panel shows what is on the child's mind and the words to say.
 3. **On the day and after it**: a "first, then" card for the morning (printable A5 PDF), a 30-second check-in, a bravery badge, and the next big day with the form already filled in. The app remembers what helped this child and uses it next time.
 
 ## Features
@@ -197,7 +197,9 @@ Full specification: [docs/SPEC.md](docs/SPEC.md). One-page summary: [docs/archit
 | Premium voice is unavailable | The device voice reads the page instead; audio is cached, the next sentences are loaded ahead |
 | The network drops | The PWA keeps working from the local copy and syncs with retries when the connection is back; a conflict keeps the newer copy |
 | Stripe is not reachable | The paywall shows a clear message; access is granted only after the server verifies the payment, never by the browser |
-| A health check is needed | `GET /api/health` reports the database, the AI provider, budget left and any paused models; Railway restarts the service on failure |
+| A health check is needed | `GET /api/health` reports every dependency as ok, off, degraded or down with the fallback in use; Railway restarts the service on failure |
+
+The full table of failures, edge cases and fallbacks (AI, voice, voice clone, pictures, Stripe, database, push, offline, iOS Safari, odd input) is in [docs/reliability.md](docs/reliability.md).
 
 ## Safety and privacy
 

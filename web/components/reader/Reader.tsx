@@ -4,7 +4,8 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
-import { Character } from '@/components/character';
+import { backgroundForEvent, Character } from '@/components/character';
+import { beatForPage, illustrationKey, illustrationSrc } from '@/lib/illustrations';
 import { Icon } from '@/components/icons';
 import { PanelView } from '@/components/panel/PanelView';
 import { Button, ButtonLink } from '@/components/ui/Button';
@@ -14,6 +15,8 @@ import { ProgressBar } from '@/components/ui/ProgressBar';
 import { Skeleton } from '@/components/ui/Skeleton';
 import { clock } from '@/lib/engine/clock';
 import type { Page, Question } from '@/lib/engine/types';
+import { CHARACTER_SIZES, normalizeCharacter, resolveCharacter, SIZE_NAME } from '@/lib/engine/character';
+import { useChild } from '@/lib/store/child';
 import { useEvents } from '@/lib/store/events';
 import { useEventCtx } from '@/lib/store/hooks';
 import { newId } from '@/lib/store/id';
@@ -37,6 +40,7 @@ import { AskGrownUp, ParentCheck } from './ParentCheck';
 import { useParentGate } from './ParentGate';
 import { QuestionBar } from './QuestionBar';
 import { SafeMessage } from './SafeMessage';
+import { planHref } from '@/lib/home/path';
 
 type Mode = { kind: 'read' } | { kind: 'check'; q: Question; draft?: string; parent?: boolean } | { kind: 'unsafe' } | { kind: 'end' };
 
@@ -59,6 +63,7 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
   // Read on: the voice turned the page, so the next page starts speaking by itself.
   const [autoListen, setAutoListen] = useState(false);
   const readOn = usePrefs((p) => p.readOn);
+  const illustrated = usePrefs((p) => p.illustrated) && isOn('illustratedScenes');
   const panel = usePanelOpen();
   // Full screen: only the story on screen (lib/reader/immersive.ts). Leaving it needs no grown-up;
   // leaving the reader still does (the door button).
@@ -90,7 +95,7 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
   useEffect(() => {
     if (!ctx || !chapter) return;
     if (needsPay) router.replace(`/event/${eventId}/paywall`);
-    else if (!allowed) router.replace(`/event/${eventId}`);
+    else if (!allowed) router.replace(planHref(eventId));
   }, [ctx, chapter, allowed, needsPay, router, eventId]);
 
   // Generate once; a stored chapter is never generated again (4.7).
@@ -124,7 +129,7 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
       <EmptyState
         title="This chapter isn't in the plan"
         text={`The plan for this big day has ${ctx.event.chapters.length} ${ctx.event.chapters.length === 1 ? 'chapter' : 'chapters'}.`}
-        action={<ButtonLink href={`/event/${eventId}`}>Back to the plan</ButtonLink>}
+        action={<ButtonLink href={planHref(eventId)}>Back to the plan</ButtonLink>}
       />
     );
   if (!allowed) return <Skeleton className="h-96" />;
@@ -133,6 +138,9 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
   const asked = questionsInChapter(event, index);
   const storyPages = pages.filter((p) => p.kind === 'story');
   const isLast = pageIdx >= pages.length - 1;
+  const illustration = illustrated && page
+    ? illustrationSrc(illustrationKey(event.type, page.background, backgroundForEvent(event.type), beatForPage(chapter.beats, pageIdx, pages.length)))
+    : null;
 
   const sentenceCount = page?.sentences.length ?? 1;
   const lastSentence = step >= sentenceCount - 1;
@@ -266,7 +274,7 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
         <div className="min-h-0 flex-1">
           <PageView
             page={page} character={child.character} render={render} textSize={textSize} night={night}
-            step={step} position={position} updatedText={updatedText}
+            step={step} position={position} updatedText={updatedText} illustration={illustration}
             extra={photos ? <PagePhotos photos={event.photos} /> : undefined}
           />
         </div>
@@ -299,7 +307,8 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
       <ButtonLink href={`/event/${eventId}/panel`} variant="ghost" className="mt-3">Open the full panel</ButtonLink>
     </>
   );
-  const iconBtn = 'inline-flex size-tap shrink-0 items-center justify-center rounded-pill hover:bg-surface-2';
+  // Eight buttons share the row: a touch smaller on the narrowest phones so none is cut off.
+  const iconBtn = 'inline-flex size-tap max-[400px]:size-10 shrink-0 items-center justify-center rounded-pill hover:bg-surface-2';
   return (
     <div className="flex min-h-0 flex-1 gap-6">
       <div className="flex min-w-0 flex-1 flex-col gap-2">
@@ -307,8 +316,8 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
         <p className="line-clamp-2 text-xs font-bold text-ink-soft sm:hidden">
           {total === 1 ? 'Quick prep' : `Chapter ${index} of ${total}`} · {chapter.title}
         </p>
-        <div className="flex items-center gap-1 sm:gap-2">
-          <button type="button" onClick={() => guard(() => router.push(`/event/${eventId}`))} aria-label="Back to the plan" className={iconBtn}>
+        <div className="flex items-center gap-0 min-[400px]:gap-1 sm:gap-2">
+          <button type="button" onClick={() => guard(() => router.push(planHref(eventId)))} aria-label="Back to the plan" className={iconBtn}>
             <Icon name="door-open" size={22} />
           </button>
           <div className="min-w-0 flex-1">
@@ -325,6 +334,7 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
           >
             Aa
           </button>
+          <FriendSizeButton className={iconBtn} />
           <button
             type="button"
             onClick={() => useSettings.getState().setNightMode(night ? 'off' : 'on')}
@@ -440,7 +450,27 @@ function ChapterEnd({ ctx, index, total, onReread }: { ctx: NonNullable<ReturnTy
         </ButtonLink>
         <Button variant="secondary" size="l" onClick={onReread}>Read it again</Button>
       </div>
-      <Link href={`/event/${event.id}`} className="inline-flex min-h-tap items-center font-bold text-primary-text underline">Back to the plan</Link>
+      <Link href={planHref(event.id)} className="inline-flex min-h-tap items-center font-bold text-primary-text underline">Back to the plan</Link>
     </section>
+  );
+}
+
+/** Cycles the Story friend's size over the scene (S, M, L); saved on the child's character. */
+function FriendSizeButton({ className }: { className: string }) {
+  const character = useChild((s) => s.child?.character);
+  if (!character) return null;
+  const size = resolveCharacter(character).size;
+  const next = CHARACTER_SIZES[(CHARACTER_SIZES.indexOf(size) + 1) % CHARACTER_SIZES.length];
+  return (
+    <button
+      type="button"
+      onClick={() => useChild.getState().updateChild({ character: normalizeCharacter({ ...character, size: next }) })}
+      aria-label={`Story friend size: ${SIZE_NAME[size]}. Tap for ${SIZE_NAME[next]}`}
+      title={`Story friend size: ${SIZE_NAME[size]}`}
+      className={`${className} gap-0.5`}
+    >
+      <Icon name="smile" size={18} />
+      <span className="text-xs font-extrabold">{size.toUpperCase()}</span>
+    </button>
   );
 }

@@ -5,6 +5,7 @@
 import { pickDayTechnique } from './memory';
 import { storyPageId } from './state';
 import { topTopics } from './topics';
+import { fallbackPagesForAge } from './ageText';
 import { pageTargets } from './plan';
 import { pagesWithoutAvoided } from './storyPrefs';
 import type { Beat, BigEvent, Chapter, ChildProfile, EventTemplate, Page, RitualCard, Sentence, StoryPrefs, StyleMode, Topic } from './types';
@@ -35,7 +36,7 @@ export function fallbackPages(
   story?: Pick<StoryPrefs, 'length' | 'avoidWords'>,
 ): Page[] {
   const MAX_PAGES = pageTargets(age, story?.length).pages;
-  const lists = beats.map((b) => template.fallbackPages[styleMode][b]);
+  const lists = beats.map((b) => fallbackPagesForAge(template, b, styleMode, age));
   const picked: { beat: number; i: number }[] = [];
   const longest = Math.max(0, ...lists.map((l) => l.length));
   for (let i = 0; i < longest && picked.length < MAX_PAGES; i++)
@@ -45,12 +46,30 @@ export function fallbackPages(
     const p = lists[beat][i];
     return { sentences: p.sentences.map((s) => ({ ...s })), mood: p.mood, background: p.background, addresses: [...p.addresses] };
   });
-  return pagesWithoutAvoided(pages, story?.avoidWords).map((p, n) => ({
+  let kept = pagesWithoutAvoided(pages, story?.avoidWords);
+  // Every sentence held an avoided word (or the template has no pages for these beats):
+  // one calm page rather than an empty chapter, which the reader cannot show.
+  if (!kept.length) kept = [lastResortPage(pages[0]?.background ?? lists.flat()[0]?.background ?? 'cosy-room')];
+  return kept.map((p, n) => ({
     id: storyPageId(chapterIndex, n + 1),
     kind: 'story',
     ...p,
     source: 'fallback',
   }));
+}
+
+/** Neutral page with no event words, used only when nothing else is left to show. */
+export function lastResortPage(background: Page['background']): Omit<Page, 'id' | 'kind' | 'source'> {
+  return {
+    sentences: [
+      { text: 'It was a calm and cozy evening.', kind: 'describe' },
+      { text: "Let's take a slow breath in, and a slow breath out.", kind: 'coach' },
+      { text: 'Tomorrow is a new day, and we will be ready for it together.', kind: 'describe' },
+    ],
+    mood: 'calm',
+    background,
+    addresses: [],
+  };
 }
 
 /** Summary of a fallback chapter, fed to later chapters (≤ 200 chars). */

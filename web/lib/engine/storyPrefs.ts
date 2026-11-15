@@ -94,15 +94,19 @@ export function avoidPattern(words: readonly string[]): RegExp | null {
   return new RegExp(`(^|[^\\p{L}])(${parts.join('|')})(e?s)?(?=$|[^\\p{L}])`, 'iu');
 }
 
+/** [[CHILD]] and [[GROWNUP]] are filled in later; their token names must not count as words. */
+const TOKENS = /\[\[[A-Z_]+\]\]/g;
+const spoken = (text: string) => text.replace(TOKENS, ' ');
+
 export function hasAvoidedWord(text: string, words: readonly string[] | undefined): boolean {
   const re = words?.length ? avoidPattern(words) : null;
-  return !!re && re.test(text);
+  return !!re && re.test(spoken(text));
 }
 
 /** Sentences without any avoided word. */
 export function withoutAvoided<S extends Pick<Sentence, 'text'>>(sentences: S[], words: readonly string[] | undefined): S[] {
   const re = words?.length ? avoidPattern(words) : null;
-  return re ? sentences.filter((s) => !re.test(s.text)) : sentences;
+  return re ? sentences.filter((s) => !re.test(spoken(s.text))) : sentences;
 }
 
 /** Fallback pages with the avoided sentences taken out; a page left empty is dropped. */
