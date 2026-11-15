@@ -12,7 +12,7 @@ export type IconName =
   | 'heart-pulse' | 'droplet' | 'hospital' | 'house' | 'moon-star' | 'users' | 'waves' | 'cake'
   | 'flame' | 'trophy' | 'crown' | 'target' | 'settings'
   | 'x' | 'chevron-up' | 'chevron-down' | 'maximize' | 'minimize'
-  | 'snowflake' | 'share-2' | 'timer' | 'library-big' | 'play' | 'pause' | 'rotate-ccw' | 'bath' | 'shirt' | 'lamp' | 'smartphone' | 'medal' | 'tent' | 'blocks' | 'toilet' | 'bandage';
+  | 'snowflake' | 'share-2' | 'timer' | 'library-big' | 'play' | 'pause' | 'rotate-ccw' | 'bath' | 'shirt' | 'lamp' | 'smartphone' | 'puzzle' | 'ghost' | 'gift' | 'car-front' | 'bike' | 'music' | 'drama' | 'medal' | 'tent' | 'blocks' | 'toilet' | 'bandage';
 
 export interface IconProps extends Omit<SVGProps<SVGSVGElement>, 'name'> {
   name: IconName;
@@ -67,6 +67,13 @@ export const EVENT_ICON: Record<EventType, IconName> = {
   new_school: 'backpack',
   camp: 'tent',
   sports: 'medal',
+  performance: 'drama',
+  new_class: 'music',
+  bike: 'bike',
+  road_trip: 'car-front',
+  holiday: 'gift',
+  halloween: 'ghost',
+  playdate: 'puzzle',
   other: 'sparkles',
 };
 
@@ -92,6 +99,13 @@ export const EVENT_LABEL: Record<EventType, string> = {
   new_school: 'Changing schools',
   camp: 'Summer camp',
   sports: 'Sports game',
+  performance: 'Show or recital',
+  new_class: 'New class or club',
+  bike: 'Learning to ride a bike',
+  road_trip: 'Long car trip',
+  holiday: 'Family holiday',
+  halloween: 'Halloween',
+  playdate: 'First playdate',
   other: 'Another big day',
 };
 

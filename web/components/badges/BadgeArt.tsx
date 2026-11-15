@@ -26,6 +26,13 @@ const RIBBON: Record<EventType, string> = {
   new_school: '#d9534f',
   camp: '#4caf7a',
   sports: '#e8a33d',
+  performance: '#b05fd6',
+  new_class: '#5aa9e6',
+  bike: '#3fae9b',
+  road_trip: '#6b8bd6',
+  holiday: '#e0654f',
+  halloween: '#f08a24',
+  playdate: '#e86fa0',
   other: '#6b6a7b',
 };
 
@@ -52,6 +59,13 @@ export const BADGE_LABEL: Record<EventType, string> = {
   new_school: 'New Class Hero',
   camp: 'Happy Camper',
   sports: 'Team Player',
+  performance: 'Stage Star',
+  new_class: 'Try It Star',
+  bike: 'Wheel Hero',
+  road_trip: 'Road Explorer',
+  holiday: 'Family Heart',
+  halloween: 'Spooky Brave',
+  playdate: 'Good Friend',
   other: 'Brave Heart',
 };
 

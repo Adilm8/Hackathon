@@ -18,6 +18,13 @@ export const EventTypeEnum = z.enum([
   'new_school',
   'camp',
   'sports',
+  'performance',
+  'new_class',
+  'bike',
+  'road_trip',
+  'holiday',
+  'halloween',
+  'playdate',
   'other',
 ]);
 export const BeatEnum = z.enum(['what_happens', 'who_is_there', 'what_i_do', 'if_scared', 'rehearsal']);

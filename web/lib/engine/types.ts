@@ -17,6 +17,13 @@ export type EventType =
   | 'new_school'
   | 'camp'
   | 'sports'
+  | 'performance'
+  | 'new_class'
+  | 'bike'
+  | 'road_trip'
+  | 'holiday'
+  | 'halloween'
+  | 'playdate'
   | 'other';
 export type Beat = 'what_happens' | 'who_is_there' | 'what_i_do' | 'if_scared' | 'rehearsal';
 export type Topic =

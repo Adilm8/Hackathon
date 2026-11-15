@@ -46,7 +46,14 @@ const EVENT_CAPTION: Record<EventType, string> = {
   daycare: 'Daycare or preschool start',
   new_school: 'A new school or class',
   camp: 'Day camp or overnight camp',
-  sports: 'A match, race or competition', other: 'Anything else: a new club, a trip…',
+  sports: 'A match, race or competition',
+  performance: 'Stage, concert or school play',
+  new_class: 'Dance, karate, music…',
+  bike: 'Balance bike or pedals',
+  road_trip: 'Hours in the car',
+  holiday: 'Thanksgiving, Christmas, Eid…',
+  halloween: 'Costumes and trick-or-treat',
+  playdate: 'A friend comes to play', other: 'Anything else: a new club, a trip…',
 };
 
 type StepId = 'gate' | 'who' | 'name' | 'age' | 'event' | 'genre' | 'date' | 'fears' | 'story' | 'character' | 'values';

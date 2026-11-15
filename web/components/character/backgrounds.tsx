@@ -60,6 +60,13 @@ const EVENT_SCENE: Record<EventType, KnownBackgroundId> = {
   new_school: 'school',
   camp: 'outside',
   sports: 'outside',
+  performance: 'school',
+  new_class: 'school',
+  bike: 'outside',
+  road_trip: 'outside',
+  holiday: 'home-evening',
+  halloween: 'outside',
+  playdate: 'home-evening',
   other: 'outside',
 };
 

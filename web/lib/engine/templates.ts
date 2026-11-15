@@ -26,13 +26,20 @@ import daycare from '@/content/events/daycare.json';
 import new_school from '@/content/events/new_school.json';
 import camp from '@/content/events/camp.json';
 import sports from '@/content/events/sports.json';
+import performance from '@/content/events/performance.json';
+import new_class from '@/content/events/new_class.json';
+import bike from '@/content/events/bike.json';
+import road_trip from '@/content/events/road_trip.json';
+import holiday from '@/content/events/holiday.json';
+import halloween from '@/content/events/halloween.json';
+import playdate from '@/content/events/playdate.json';
 import other from '@/content/events/other.json';
 
 /** Every event type, in the order onboarding shows them; "other" stays last. */
 export const EVENT_TYPES: readonly EventType[] = [
   'dentist', 'doctor', 'shot', 'blood_test', 'hospital', 'haircut', 'school', 'babysitter', 'sleepover',
   'party', 'swimming', 'flight', 'moving', 'sibling', 'tooth_loss',
-  'surgery', 'potty', 'daycare', 'new_school', 'camp', 'sports', 'other',
+  'surgery', 'potty', 'daycare', 'new_school', 'camp', 'sports', 'performance', 'new_class', 'bike', 'road_trip', 'holiday', 'halloween', 'playdate', 'other',
 ];
 
 const RAW: Record<EventType, unknown> = {
@@ -45,6 +52,13 @@ const RAW: Record<EventType, unknown> = {
   new_school,
   camp,
   sports,
+  performance,
+  new_class,
+  bike,
+  road_trip,
+  holiday,
+  halloween,
+  playdate,
   other,
 };
 

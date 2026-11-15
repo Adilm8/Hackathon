@@ -1,0 +1,2473 @@
+{
+  "type": "holiday",
+  "version": 1,
+  "label": "Family holiday gathering",
+  "countdownLabel": "the family holiday",
+  "beats": {
+    "what_happens": {
+      "title": "What happens at the family holiday",
+      "goals": [
+        "A holiday gathering brings family together",
+        "There is food, traditions and lots of people",
+        "The routine is different for a day or two"
+      ],
+      "parentSkill": "Name the holiday and tell your child one tradition your family does."
+    },
+    "who_is_there": {
+      "title": "Who will be there",
+      "goals": [
+        "Relatives, some well known, some not",
+        "Hugs are a choice",
+        "Cousins and other kids can be play partners"
+      ],
+      "parentSkill": "Look at photos of the relatives together and practise names; agree that a wave or a high five is fine instead of a hug."
+    },
+    "what_i_do": {
+      "title": "What I do at the gathering",
+      "goals": [
+        "Greet in my own way",
+        "Help with a small job",
+        "Take a quiet break when needed"
+      ],
+      "parentSkill": "Give your child a small job, like handing out napkins, and agree a quiet spot for breaks."
+    },
+    "if_scared": {
+      "title": "If it feels like too much",
+      "goals": [
+        "Holidays can feel loud and busy",
+        "Feeling shy or overwhelmed is okay",
+        "Calm tools: quiet break, signal, slow breaths"
+      ],
+      "parentSkill": "Name the overwhelm: 'It's a lot of people. Let's take a break together.'"
+    },
+    "rehearsal": {
+      "title": "Let's get ready for the holiday",
+      "goals": [
+        "Look at photos and practise names",
+        "Practise greetings and the break signal",
+        "Choose a job and a comfort item"
+      ],
+      "parentSkill": "Play a pretend arrival: toys are relatives, your child chooses a greeting for each."
+    }
+  },
+  "steps": [
+    "Get ready with special clothes or decorations",
+    "Travel to the family home or welcome guests",
+    "Say hello to relatives, maybe with hugs",
+    "Help with a small job, like setting the table",
+    "Share a big meal and family traditions",
+    "Play, open gifts or sing, if the family does that",
+    "Say goodbye and go to bed later than usual"
+  ],
+  "sensory": [
+    "lots of voices talking at once",
+    "smells of cooking and baking",
+    "twinkly lights or candles",
+    "new or itchy special clothes",
+    "a busy, warm house",
+    "loud laughter and music"
+  ],
+  "honestyNotes": "Holidays can be loud, long and overwhelming, and a child may not know every relative; never force hugs or kisses and never promise everyone will get along. Routines change and bedtimes are late. Use the family's own holiday name and traditions; keep it inclusive of any faith or culture.",
+  "questionButtons": [
+    {
+      "id": "hug",
+      "text": "Do I have to hug everyone?",
+      "topic": "safety",
+      "fallbackAnswer": [
+        "No. You can choose a hug, a high five or a wave.",
+        "[[GROWNUP]] will help if someone forgets to ask."
+      ]
+    },
+    {
+      "id": "who",
+      "text": "Who will be there?",
+      "topic": "strangers",
+      "fallbackAnswer": [
+        "[[GROWNUP]] will tell you which relatives are coming.",
+        "We can look at photos and practise names."
+      ]
+    },
+    {
+      "id": "loud",
+      "text": "What if it is too loud?",
+      "topic": "sensory",
+      "fallbackAnswer": [
+        "Gatherings can be loud. You can take a quiet break with [[GROWNUP]].",
+        "We can agree a special signal."
+      ]
+    },
+    {
+      "id": "food",
+      "text": "What if I don't like the food?",
+      "topic": "body",
+      "fallbackAnswer": [
+        "You can try a little, or say no thank you.",
+        "There will be something you like."
+      ]
+    },
+    {
+      "id": "stay",
+      "text": "Will [[GROWNUP]] stay with me?",
+      "topic": "separation",
+      "fallbackAnswer": [
+        "Yes, [[GROWNUP]] will be there the whole time.",
+        "You can always find [[GROWNUP]] if you need help."
+      ]
+    },
+    {
+      "id": "when_home",
+      "text": "When do we go home?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "[[GROWNUP]] will tell you the plan, maybe after the meal or after games.",
+        "Bedtime may be late, and that is okay for a special day."
+      ]
+    },
+    {
+      "id": "gifts",
+      "text": "Will there be presents?",
+      "topic": "love",
+      "fallbackAnswer": [
+        "It depends on our family's traditions.",
+        "The best part is being together."
+      ]
+    },
+    {
+      "id": "why",
+      "text": "Why do we celebrate?",
+      "topic": "other",
+      "fallbackAnswer": [
+        "[[GROWNUP]] can tell you the story of our holiday.",
+        "Every family has its own traditions."
+      ]
+    },
+    {
+      "id": "cousins",
+      "text": "What if my cousins don't play with me?",
+      "topic": "social",
+      "fallbackAnswer": [
+        "You can ask, can I play too?",
+        "Or you can help a grown-up or play with [[GROWNUP]]."
+      ]
+    },
+    {
+      "id": "missing",
+      "text": "Why is someone missing?",
+      "topic": "love",
+      "fallbackAnswer": [
+        "[[GROWNUP]] can tell you about anyone who can't come this year.",
+        "It is okay to miss them, and we can remember them together."
+      ],
+      "ages": [
+        5,
+        12
+      ]
+    },
+    {
+      "id": "clothes",
+      "text": "Why do I have to wear special clothes?",
+      "topic": "sensory",
+      "fallbackAnswer": [
+        "Special clothes are a way of making the day feel special.",
+        "If they feel itchy, tell [[GROWNUP]], and we can find a comfy layer."
+      ],
+      "ages": [
+        3,
+        12
+      ]
+    }
+  ],
+  "techniques": [
+    {
+      "id": "greeting_choice",
+      "label": "Choosing a greeting",
+      "how": "Let your child choose a hug, a high five or a wave.",
+      "topics": [
+        "safety",
+        "strangers"
+      ]
+    },
+    {
+      "id": "photo_names",
+      "label": "Photo names",
+      "how": "Look at photos of relatives and practise names.",
+      "topics": [
+        "strangers",
+        "unknown"
+      ]
+    },
+    {
+      "id": "special_signal",
+      "label": "A special signal",
+      "how": "Agree a signal for a quiet break.",
+      "topics": [
+        "sensory",
+        "separation"
+      ]
+    },
+    {
+      "id": "quiet_spot",
+      "label": "A quiet spot",
+      "how": "Find a quiet room or corner for breaks.",
+      "topics": [
+        "sensory",
+        "safety"
+      ]
+    },
+    {
+      "id": "small_job",
+      "label": "A small job",
+      "how": "Give your child a job like napkins or greeting at the door.",
+      "topics": [
+        "social",
+        "unknown"
+      ]
+    },
+    {
+      "id": "comfy_layer",
+      "label": "A comfy layer",
+      "how": "Wear something soft under special clothes.",
+      "topics": [
+        "sensory",
+        "body"
+      ]
+    },
+    {
+      "id": "try_a_bite",
+      "label": "One small bite",
+      "how": "Try a tiny bite of a new dish, no pressure.",
+      "topics": [
+        "body"
+      ]
+    },
+    {
+      "id": "comfort_toy",
+      "label": "A comfort toy",
+      "how": "Bring a toy or a book for the slow parts.",
+      "topics": [
+        "separation",
+        "love"
+      ]
+    },
+    {
+      "id": "deep_breaths",
+      "label": "Smell the flower, blow the candle",
+      "how": "Breathe in slowly through the nose and out like blowing a candle.",
+      "topics": [
+        "pain",
+        "sensory",
+        "safety"
+      ]
+    }
+  ],
+  "ritual": [
+    "Hello my way: hug, high five or wave",
+    "Help with one small job",
+    "Quiet break when I need it"
+  ],
+  "phrases": {
+    "pain": [
+      "If your clothes hurt or itch, tell me.",
+      "If your tummy feels too full, take a break."
+    ],
+    "body": [
+      "You can try a little and say no thank you.",
+      "Late nights make bodies tired. That is okay."
+    ],
+    "sensory": [
+      "It's loud. Let's take a quiet break.",
+      "The lights and smells are part of the holiday."
+    ],
+    "strangers": [
+      "That's Great-Aunt Rose. She's family.",
+      "You can choose how to say hello."
+    ],
+    "separation": [
+      "I'm right here the whole time.",
+      "Use our signal, and I will come."
+    ],
+    "unknown": [
+      "First hello, then dinner, then games.",
+      "We will go home after dessert."
+    ],
+    "safety": [
+      "You never have to hug if you do not want to.",
+      "You can always come to me."
+    ],
+    "social": [
+      "Your cousins might like to play.",
+      "You can ask, can I play too?"
+    ],
+    "love": [
+      "I love sharing our traditions with you.",
+      "I'm proud of you."
+    ]
+  },
+  "topicWords": {
+    "pain": [
+      "hurt",
+      "itch",
+      "itchy",
+      "tight",
+      "sore",
+      "hot"
+    ],
+    "body": [
+      "food",
+      "meal",
+      "eat",
+      "tummy",
+      "tired",
+      "bread",
+      "soup",
+      "cake",
+      "bedtime"
+    ],
+    "sensory": [
+      "loud",
+      "voices",
+      "smells",
+      "smell",
+      "lights",
+      "bright",
+      "lanterns",
+      "music",
+      "singing",
+      "scarf",
+      "clothes"
+    ],
+    "strangers": [
+      "relatives",
+      "aunties",
+      "uncles",
+      "great-aunt",
+      "grandparents",
+      "guests",
+      "hello"
+    ],
+    "separation": [
+      "whole time",
+      "close by",
+      "together",
+      "with me",
+      "stayed",
+      "right there",
+      "stay",
+      "close",
+      "with you",
+      "comes back",
+      "back",
+      "hand",
+      "nearby"
+    ],
+    "unknown": [
+      "first",
+      "then",
+      "next",
+      "after",
+      "last",
+      "plan",
+      "step",
+      "steps"
+    ],
+    "safety": [
+      "choose",
+      "high five",
+      "wave",
+      "break",
+      "quiet",
+      "signal",
+      "safe",
+      "careful",
+      "stop",
+      "help"
+    ],
+    "social": [
+      "cousins",
+      "cousin",
+      "family",
+      "play",
+      "everyone",
+      "kids",
+      "friend",
+      "friends",
+      "children",
+      "people",
+      "others"
+    ],
+    "love": [
+      "love",
+      "hug",
+      "proud",
+      "traditions",
+      "cuddle"
+    ]
+  },
+  "backgrounds": [
+    "home-evening",
+    "cosy-room",
+    "outside"
+  ],
+  "fallbackPages": {
+    "story": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "Soon [[CHILD]] will go to a family holiday gathering.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is a special day when family comes together.",
+              "kind": "describe"
+            },
+            {
+              "text": "First [[CHILD]] gets ready, maybe in special clothes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the family travels, or guests arrive at home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next everyone says hello, and there may be relatives who visit only sometimes.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Before bed, here is a story about a little mole called Milo.",
+              "kind": "describe"
+            },
+            {
+              "text": "It was Lantern Night, when all the moles gathered.",
+              "kind": "describe"
+            },
+            {
+              "text": "First Milo put on his best red scarf.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the family walked through the tunnels to Grandma Mole's burrow.",
+              "kind": "describe"
+            },
+            {
+              "text": "Inside, it was warm and full of voices.",
+              "kind": "describe"
+            },
+            {
+              "text": "Aunties, uncles and cousins Milo hardly knew were everywhere.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next they all lit little lanterns together.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, there was a long table of root soup and berry cake.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grandpa told the old story of the first lantern.",
+              "kind": "describe"
+            },
+            {
+              "text": "It was late when Milo yawned and the family went home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "After that comes a big meal and family traditions.",
+              "kind": "describe"
+            },
+            {
+              "text": "There may be games, songs, gifts or prayers, whatever the family does.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, it is time to say goodbye, and bedtime is later than usual.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can ask [[GROWNUP]], what happens first, and what comes next?",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "unknown",
+            "social",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Soon [[CHILD]] will go to a family holiday gathering.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is a special day when family comes together.",
+              "kind": "describe"
+            },
+            {
+              "text": "First [[CHILD]] gets ready, maybe in special clothes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the family travels, or guests arrive at home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next everyone says hello, and there may be relatives who visit only sometimes.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that comes a big meal and family traditions.",
+              "kind": "describe"
+            },
+            {
+              "text": "There may be games, songs, gifts or prayers, whatever the family does.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, it is time to say goodbye, and bedtime is later than usual.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can ask [[GROWNUP]], what happens first, and what comes next?",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "At the gathering, there may be grandparents, aunties, uncles and cousins.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some are well known, and some are new or faraway relatives.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some relatives like to hug or kiss.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can choose a hug, a high five or a wave.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say, I would like a high five instead, please.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "strangers",
+            "safety",
+            "social",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Milo the mole met lots of relatives.",
+              "kind": "describe"
+            },
+            {
+              "text": "Great-Aunt Moss wanted a big squishy hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "Milo felt shy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama whispered, you can choose a hug, a high five or a wave.",
+              "kind": "describe"
+            },
+            {
+              "text": "Milo gave Great-Aunt Moss a high five.",
+              "kind": "describe"
+            },
+            {
+              "text": "She laughed and said, what a strong paw.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then Milo met cousin Pip, who had a ball made of moss.",
+              "kind": "describe"
+            },
+            {
+              "text": "Want to play, asked Pip.",
+              "kind": "describe"
+            },
+            {
+              "text": "They rolled the ball down the tunnel and giggled.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama stayed close by, chatting and watching.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "strangers",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Cousins and other kids may want to play.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grown-ups talk a lot and laugh loudly.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] will be there the whole time.",
+              "kind": "describe"
+            },
+            {
+              "text": "Family is happy to see each other.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say, I would like a high five instead, please.",
+              "kind": "coach"
+            },
+            {
+              "text": "Step by step, it all gets a little easier.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "sensory",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At the gathering, there may be grandparents, aunties, uncles and cousins.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some are well known, and some are new or faraway relatives.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some relatives like to hug or kiss.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can choose a hug, a high five or a wave.",
+              "kind": "describe"
+            },
+            {
+              "text": "Cousins and other kids may want to play.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grown-ups talk a lot and laugh loudly.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] will be there the whole time.",
+              "kind": "describe"
+            },
+            {
+              "text": "Family is happy to see each other.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say, I would like a high five instead, please.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "separation",
+            "safety"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "When arriving, [[CHILD]] says hello in a chosen way.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can help with a small job, like setting napkins or carrying bread.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the meal, try a little of the special food, or eat what you like.",
+              "kind": "describe"
+            },
+            {
+              "text": "Saying please and thank you makes relatives smile.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "strangers",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Milo the mole had a job.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grandma said, can you put a leaf napkin by every bowl?",
+              "kind": "describe"
+            },
+            {
+              "text": "Milo walked round the long table, one, two, three, all the way to twenty.",
+              "kind": "describe"
+            },
+            {
+              "text": "Thank you, Milo, said Grandma.",
+              "kind": "describe"
+            },
+            {
+              "text": "At dinner, Milo tried a tiny bit of the spicy root soup.",
+              "kind": "describe"
+            },
+            {
+              "text": "It was too hot, so he had bread and cake instead.",
+              "kind": "describe"
+            },
+            {
+              "text": "Later the burrow got very loud with singing.",
+              "kind": "describe"
+            },
+            {
+              "text": "Milo tugged Mama's ear twice, their special signal.",
+              "kind": "describe"
+            },
+            {
+              "text": "They went to a quiet nook and sat together.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then Milo was ready to join again.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Playing with cousins is fun.",
+              "kind": "describe"
+            },
+            {
+              "text": "When it gets too loud or busy, take a quiet break.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] and [[GROWNUP]] can agree a quiet spot.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the end, say goodbye and thank you.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can use the special signal when a quiet break is needed.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "sensory",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "When arriving, [[CHILD]] says hello in a chosen way.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can help with a small job, like setting napkins or carrying bread.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the meal, try a little of the special food, or eat what you like.",
+              "kind": "describe"
+            },
+            {
+              "text": "Saying please and thank you makes relatives smile.",
+              "kind": "describe"
+            },
+            {
+              "text": "Playing with cousins is fun.",
+              "kind": "describe"
+            },
+            {
+              "text": "When it gets too loud or busy, take a quiet break.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] and [[GROWNUP]] can agree a quiet spot.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the end, say goodbye and thank you.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can use the special signal when a quiet break is needed.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "safety"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "Holiday gatherings can feel like a lot.",
+              "kind": "describe"
+            },
+            {
+              "text": "There may be many voices, strong smells and bright lights.",
+              "kind": "describe"
+            },
+            {
+              "text": "Special clothes can feel itchy or tight.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bedtime is late, and bodies get tired.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids feel shy around relatives.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can take slow breaths, smell the flower and blow the candle.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "worried",
+          "background": "home-evening",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "strangers"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Milo the mole felt overwhelmed.",
+              "kind": "describe"
+            },
+            {
+              "text": "Everyone was talking at once, and the lanterns were bright.",
+              "kind": "describe"
+            },
+            {
+              "text": "His scarf felt itchy, and he was very tired.",
+              "kind": "describe"
+            },
+            {
+              "text": "Milo's eyes filled with tears.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama did not say, it is a happy day, so smile.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama said, it is a lot, isn't it, let's have a quiet moment.",
+              "kind": "describe"
+            },
+            {
+              "text": "They went to a little nook, and Milo took off his scarf.",
+              "kind": "describe"
+            },
+            {
+              "text": "He smelled a flower slowly, and blew a candle.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama hummed a soft song.",
+              "kind": "describe"
+            },
+            {
+              "text": "After a while, Milo felt calmer.",
+              "kind": "describe"
+            },
+            {
+              "text": "Worried and brave can happen at the same time.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Sometimes grown-ups disagree or get loud.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to need a break.",
+              "kind": "describe"
+            },
+            {
+              "text": "Big feelings can happen on special days.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can take slow breaths, smell the flower and blow the candle.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can tell [[GROWNUP]], I need a quiet break.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "sensory",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Holiday gatherings can feel like a lot.",
+              "kind": "describe"
+            },
+            {
+              "text": "There may be many voices, strong smells and bright lights.",
+              "kind": "describe"
+            },
+            {
+              "text": "Special clothes can feel itchy or tight.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bedtime is late, and bodies get tired.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids feel shy around relatives.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes grown-ups disagree or get loud.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to need a break.",
+              "kind": "describe"
+            },
+            {
+              "text": "Big feelings can happen on special days.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can take slow breaths, smell the flower and blow the candle.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can tell [[GROWNUP]], I need a quiet break.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "strangers"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "Tonight [[CHILD]] and [[GROWNUP]] can get ready for the holiday.",
+              "kind": "describe"
+            },
+            {
+              "text": "First they look at photos of the relatives and say the names.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then they play pretend arrival with toys as relatives.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] chooses a hug, a high five or a wave for each toy.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "strangers",
+            "unknown",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Milo the mole practised with Papa.",
+              "kind": "describe"
+            },
+            {
+              "text": "They looked at drawings of all the relatives.",
+              "kind": "describe"
+            },
+            {
+              "text": "This is Great-Aunt Moss, and this is cousin Pip, said Papa.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then Papa pretended to be Great-Aunt Moss.",
+              "kind": "describe"
+            },
+            {
+              "text": "Give me a squishy hug, said Papa in a wobbly voice.",
+              "kind": "describe"
+            },
+            {
+              "text": "Milo laughed and gave a high five.",
+              "kind": "describe"
+            },
+            {
+              "text": "They practised the special signal, two tugs on the ear.",
+              "kind": "describe"
+            },
+            {
+              "text": "Milo chose his job: napkins.",
+              "kind": "describe"
+            },
+            {
+              "text": "He packed his little book in his bag.",
+              "kind": "describe"
+            },
+            {
+              "text": "He felt ready for Lantern Night.",
+              "kind": "describe"
+            },
+            {
+              "text": "And Milo slept well that night.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "strangers",
+            "unknown",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Next they practise the special signal for a quiet break.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, [[CHILD]] chooses a small job to do.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, they pack a comfort toy or a book.",
+              "kind": "describe"
+            },
+            {
+              "text": "Being ready makes the day more fun.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say: hello my way, help, break, goodbye.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "strangers",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight [[CHILD]] and [[GROWNUP]] can get ready for the holiday.",
+              "kind": "describe"
+            },
+            {
+              "text": "First they look at photos of the relatives and say the names.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then they play pretend arrival with toys as relatives.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] chooses a hug, a high five or a wave for each toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next they practise the special signal for a quiet break.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, [[CHILD]] chooses a small job to do.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, they pack a comfort toy or a book.",
+              "kind": "describe"
+            },
+            {
+              "text": "Being ready makes the day more fun.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say: hello my way, help, break, goodbye.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "strangers",
+            "unknown",
+            "safety",
+            "social"
+          ]
+        }
+      ]
+    },
+    "social": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "Soon we have a family holiday.",
+              "kind": "describe"
+            },
+            {
+              "text": "Family comes together.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I get ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may wear special clothes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then we travel, or guests come to us.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next everyone says hello.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some relatives I see only sometimes.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask what happens next.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Soon we have a family holiday.",
+              "kind": "describe"
+            },
+            {
+              "text": "Family comes together.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I get ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may wear special clothes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then we travel, or guests come to us.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next everyone says hello.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some relatives I see only sometimes.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, we have a big meal.",
+              "kind": "describe"
+            },
+            {
+              "text": "We do our family traditions.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, we say goodbye.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bedtime is later than usual.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "Step by step, it gets a little easier.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "After that, we have a big meal.",
+              "kind": "describe"
+            },
+            {
+              "text": "We do our family traditions.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, we say goodbye.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bedtime is later than usual.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask what happens next.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "unknown",
+            "social",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Soon we have a family holiday.",
+              "kind": "describe"
+            },
+            {
+              "text": "Family comes together.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I get ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may wear special clothes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then we travel, or guests come to us.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next everyone says hello.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some relatives I see only sometimes.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask what happens next.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "Many relatives will be there.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grandparents, aunties, uncles and cousins.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some I know well.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some I do not know yet.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some like to hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can choose a hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can choose a high five or a wave.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say, a high five instead, please.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "strangers",
+            "safety",
+            "social",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Many relatives will be there.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grandparents, aunties, uncles and cousins.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some I know well.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some I do not know yet.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some like to hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can choose a hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can choose a high five or a wave.",
+              "kind": "describe"
+            },
+            {
+              "text": "Cousins may want to play.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grown-ups talk and laugh a lot.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] will be there the whole time.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "strangers",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Cousins may want to play.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grown-ups talk and laugh a lot.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] will be there the whole time.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say, a high five instead, please.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "separation",
+            "unknown",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Many relatives will be there.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grandparents, aunties, uncles and cousins.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some I know well.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some I do not know yet.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some like to hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can choose a hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can choose a high five or a wave.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say, a high five instead, please.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "strangers",
+            "unknown",
+            "safety",
+            "social"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "When we arrive, I say hello my way.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can help with a small job.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can set napkins.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the meal, I try a little.",
+              "kind": "describe"
+            },
+            {
+              "text": "Or I eat what I like.",
+              "kind": "describe"
+            },
+            {
+              "text": "I say please and thank you.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can use our special signal for a break.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "strangers",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "When we arrive, I say hello my way.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can help with a small job.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can set napkins.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the meal, I try a little.",
+              "kind": "describe"
+            },
+            {
+              "text": "Or I eat what I like.",
+              "kind": "describe"
+            },
+            {
+              "text": "I say please and thank you.",
+              "kind": "describe"
+            },
+            {
+              "text": "I play with my cousins.",
+              "kind": "describe"
+            },
+            {
+              "text": "If it gets too loud, I take a break.",
+              "kind": "describe"
+            },
+            {
+              "text": "We have a quiet spot.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the end, I say goodbye.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I play with my cousins.",
+              "kind": "describe"
+            },
+            {
+              "text": "If it gets too loud, I take a break.",
+              "kind": "describe"
+            },
+            {
+              "text": "We have a quiet spot.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the end, I say goodbye.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can use our special signal for a break.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "sensory",
+            "unknown",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "When we arrive, I say hello my way.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can help with a small job.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can set napkins.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the meal, I try a little.",
+              "kind": "describe"
+            },
+            {
+              "text": "Or I eat what I like.",
+              "kind": "describe"
+            },
+            {
+              "text": "I say please and thank you.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can use our special signal for a break.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "strangers",
+            "unknown",
+            "safety"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "Holidays can feel like a lot.",
+              "kind": "describe"
+            },
+            {
+              "text": "Many voices talk at once.",
+              "kind": "describe"
+            },
+            {
+              "text": "There are strong smells.",
+              "kind": "describe"
+            },
+            {
+              "text": "There are bright lights.",
+              "kind": "describe"
+            },
+            {
+              "text": "My clothes may feel itchy.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel tired.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel shy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grown-ups may be loud.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "worried",
+          "background": "home-evening",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Holidays can feel like a lot.",
+              "kind": "describe"
+            },
+            {
+              "text": "Many voices talk at once.",
+              "kind": "describe"
+            },
+            {
+              "text": "There are strong smells.",
+              "kind": "describe"
+            },
+            {
+              "text": "There are bright lights.",
+              "kind": "describe"
+            },
+            {
+              "text": "My clothes may feel itchy.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel tired.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel shy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grown-ups may be loud.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to need a break.",
+              "kind": "describe"
+            },
+            {
+              "text": "Big feelings can happen on special days.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "Step by step, it gets a little easier.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "It is okay to need a break.",
+              "kind": "describe"
+            },
+            {
+              "text": "Big feelings can happen on special days.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can tell [[GROWNUP]], I need a quiet break.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "safety",
+            "social",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Holidays can feel like a lot.",
+              "kind": "describe"
+            },
+            {
+              "text": "Many voices talk at once.",
+              "kind": "describe"
+            },
+            {
+              "text": "There are strong smells.",
+              "kind": "describe"
+            },
+            {
+              "text": "There are bright lights.",
+              "kind": "describe"
+            },
+            {
+              "text": "My clothes may feel itchy.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel tired.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel shy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grown-ups may be loud.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can tell [[GROWNUP]], I need a quiet break.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "unknown"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "Tonight I get ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "First we look at photos.",
+              "kind": "describe"
+            },
+            {
+              "text": "I say the names.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then we play pretend arrival.",
+              "kind": "describe"
+            },
+            {
+              "text": "My toys are the relatives.",
+              "kind": "describe"
+            },
+            {
+              "text": "I choose a hug, a high five or a wave.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next we practise the special signal.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: hello my way, help, break, goodbye.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "strangers",
+            "unknown",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight I get ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "First we look at photos.",
+              "kind": "describe"
+            },
+            {
+              "text": "I say the names.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then we play pretend arrival.",
+              "kind": "describe"
+            },
+            {
+              "text": "My toys are the relatives.",
+              "kind": "describe"
+            },
+            {
+              "text": "I choose a hug, a high five or a wave.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next we practise the special signal.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, I choose a job.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, I pack a comfort toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "I feel ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "strangers",
+            "unknown",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "After that, I choose a job.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, I pack a comfort toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "I feel ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: hello my way, help, break, goodbye.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "strangers",
+            "unknown",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight I get ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "First we look at photos.",
+              "kind": "describe"
+            },
+            {
+              "text": "I say the names.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then we play pretend arrival.",
+              "kind": "describe"
+            },
+            {
+              "text": "My toys are the relatives.",
+              "kind": "describe"
+            },
+            {
+              "text": "I choose a hug, a high five or a wave.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next we practise the special signal.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: hello my way, help, break, goodbye.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "strangers",
+            "unknown",
+            "safety",
+            "social"
+          ]
+        }
+      ]
+    }
+  },
+  "badge": {
+    "id": "family_heart",
+    "label": "Family Heart"
+  },
+  "olderPages": {
+    "what_happens": {
+      "sentences": [
+        {
+          "text": "Holidays mark something important to a family, a season, a story, a faith or a memory.",
+          "kind": "describe"
+        },
+        {
+          "text": "Traditions are passed down, and each family adds its own twist.",
+          "kind": "describe"
+        },
+        {
+          "text": "Gatherings can be long, so planning breaks matters.",
+          "kind": "describe"
+        },
+        {
+          "text": "Relatives often want to hear what kids have been up to.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can ask an older relative how the holiday was when they were young.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "home-evening",
+      "addresses": [
+        "strangers",
+        "unknown",
+        "safety",
+        "social"
+      ]
+    },
+    "who_is_there": {
+      "sentences": [
+        {
+          "text": "Big families can have complicated feelings between grown-ups, and that is not a kid's job to fix.",
+          "kind": "describe"
+        },
+        {
+          "text": "Asking a relative a question about themselves is an easy conversation starter.",
+          "kind": "describe"
+        },
+        {
+          "text": "Older cousins can be great company and helpers.",
+          "kind": "describe"
+        },
+        {
+          "text": "Body autonomy means everyone chooses how they say hello, kids included.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can prepare one thing to share, like a drawing or a story from school.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "home-evening",
+      "addresses": [
+        "strangers",
+        "safety",
+        "social"
+      ]
+    },
+    "what_i_do": {
+      "sentences": [
+        {
+          "text": "Helping with jobs is a good way to feel useful when you don't know everyone.",
+          "kind": "describe"
+        },
+        {
+          "text": "Trying new dishes politely, even a small bite, is a way of respecting the cook.",
+          "kind": "describe"
+        },
+        {
+          "text": "Breaks are normal; even grown-ups step outside for air.",
+          "kind": "describe"
+        },
+        {
+          "text": "Thanking the hosts at the end means a lot to them.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can be the family photographer for the day.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "brave",
+      "background": "home-evening",
+      "addresses": [
+        "unknown",
+        "safety",
+        "social"
+      ]
+    },
+    "if_scared": {
+      "sentences": [
+        {
+          "text": "Special days come with high expectations, which can make normal feelings seem worse.",
+          "kind": "describe"
+        },
+        {
+          "text": "Sensory overload from noise and crowds is real and affects grown-ups too.",
+          "kind": "describe"
+        },
+        {
+          "text": "Missing someone who is not there, or who has died, can feel strong on holidays.",
+          "kind": "describe"
+        },
+        {
+          "text": "Family tension between adults is never a child's fault.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can plan a short walk outside with [[GROWNUP]] during the day.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "worried",
+      "background": "home-evening",
+      "addresses": [
+        "unknown",
+        "social"
+      ]
+    },
+    "rehearsal": {
+      "sentences": [
+        {
+          "text": "Knowing who will be there and what will happen makes a long day easier.",
+          "kind": "describe"
+        },
+        {
+          "text": "Preparing a couple of answers to common questions, like how is school, helps with small talk.",
+          "kind": "describe"
+        },
+        {
+          "text": "Bringing something to do, like a book or a card game, fills the slow parts.",
+          "kind": "describe"
+        },
+        {
+          "text": "Agreeing on a leave time sets expectations.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can make a card or a small gift for the host.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "happy",
+      "background": "home-evening",
+      "addresses": [
+        "safety"
+      ]
+    }
+  }
+}
