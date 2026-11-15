@@ -104,8 +104,8 @@ Planned by tier in SPEC section 17.
 | Idea | Source | Notes |
 |---|---|---|
 | Voice generation and recognition through ElevenLabs (story narration, the child's spoken questions) | Lida, Nov 15; SPEC 17.1 | Budget approved by Lida first. Check child-voice data rules (COPPA biometrics, N5) and ElevenLabs data retention |
-| Named subscription levels (Gold, Platinum, Diamond next to the one-time Big Day Pass) with features locked by level | SPEC D15, K12, 17.2 | Everything is open in the MVP |
-| Generated pictures inside stories | SPEC D10, 17.2 | Candidate for a higher tier |
+| Three subscription levels (Free, Big Day Pass, Gold) with Gold extras locked by capability | SPEC 10.1, 17.2 | Done 15 Nov |
+| Generated pictures inside stories | SPEC D10, 17.2 | Painted scene pictures ship in Gold |
 | Sign-in by email, several children | ТЗ roadmap, SPEC 17 | |
 | Prompt review with a child psychologist; COPPA lawyer before a pilot | ТЗ roadmap, research | |
 | Note for the teacher or doctor; share link for grandma or nanny | ТЗ roadmap, months 2–3 | |

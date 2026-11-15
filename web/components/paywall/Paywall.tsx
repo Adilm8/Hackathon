@@ -7,7 +7,7 @@ import { clock } from '@/lib/engine/clock';
 import type { Workspace } from '@/lib/engine/types';
 import { isOn } from '@/lib/flags';
 import { paymentsApi } from '@/lib/payments/client';
-import { PLANS, formatUsd, isSubscription, renewalTerms, type CheckoutPlan } from '@/lib/payments/plans';
+import { LEVELS, PLANS, formatUsd, isSubscription, renewalTerms, type CheckoutPlan } from '@/lib/payments/plans';
 import { PlanCard } from './PlanCard';
 import { PlanTimeline } from './PlanTimeline';
 import { TestCardBox } from './TestCardBox';
@@ -29,10 +29,12 @@ export interface PaywallProps {
   demoSlot?: ReactNode;
   /** Redirect hook (tests). */
   onRedirect?: (url: string) => void;
+  /** Came for a Gold extra (pictures, premium voice): only the Gold card is offered. */
+  goldOnly?: boolean;
 }
 
 /**
- * Paywall (docs/SPEC.md 4.11, 10). Two large options (Big Day Pass, Gold yearly) and a
+ * Paywall (docs/SPEC.md 4.11, 10). Three levels (Free, Big Day Pass, Gold), two large options (Big Day Pass, Gold yearly) and a
  * small monthly line, a timeline with real dates, honest auto-renewal terms with a
  * required consent, the test card box. No timers, no pressure copy (N12).
  */
@@ -46,6 +48,7 @@ export function Paywall({
   backHref,
   demoSlot,
   onRedirect,
+  goldOnly = false,
 }: PaywallProps) {
   const monthly = isOn('monthlyPlan');
   const [plan, setPlan] = useState<CheckoutPlan>('year');
@@ -87,13 +90,14 @@ export function Paywall({
     <div className="mx-auto flex max-w-3xl flex-col gap-6">
       <header className="flex flex-col gap-2 text-center">
         <h1 className="font-display text-xl font-extrabold leading-tight sm:text-2xl">
-          Keep {name}&apos;s story going
+          {goldOnly ? `Make every big day richer for ${name}` : <>Keep {name}&apos;s story going</>}
         </h1>
         <p className="text-base text-ink-soft">
-          {questionsAsked > 0
+          {goldOnly ? 'Gold adds painted pictures, Cartoon mode, the Moon Storyteller voice and stories in your own voice, for every big day.' : null}
+          {!goldOnly && questionsAsked > 0
             ? `${name === 'your child' ? 'Your child' : name} asked ${questionsAsked} ${questionsAsked === 1 ? 'question' : 'questions'} in chapter 1. `
             : ''}
-          Unlock {more} and the event-day card.
+          {!goldOnly && <>Unlock {more} and the event-day card.</>}
         </p>
       </header>
 
@@ -103,8 +107,8 @@ export function Paywall({
         </p>
       )}
 
-      <div role="radiogroup" aria-label="Choose a plan" className="grid gap-5 pt-2 sm:grid-cols-2">
-        <PlanCard
+      <div role="radiogroup" aria-label="Choose a plan" className={`grid gap-5 pt-2 ${goldOnly ? 'mx-auto w-full max-w-md' : 'sm:grid-cols-2'}`}>
+        {!goldOnly && <PlanCard
           name={PLANS.event.name}
           price={formatUsd(PLANS.event.amountCents)}
           per="once"
@@ -112,7 +116,7 @@ export function Paywall({
           perks={PLANS.event.perks}
           selected={plan === 'event'}
           onSelect={() => choose('event')}
-        />
+        />}
         <PlanCard
           name={PLANS.year.name}
           price={plan === 'month' ? formatUsd(PLANS.month.amountCents) : formatUsd(PLANS.year.amountCents)}
@@ -144,6 +148,32 @@ export function Paywall({
           )}
         </PlanCard>
       </div>
+
+      <details className="rounded-card border border-line bg-surface p-4 text-sm">
+        <summary className="min-h-tap cursor-pointer font-bold">Compare Free, {PLANS.event.name} and {PLANS.year.name}</summary>
+        <div className="mt-3 overflow-x-auto">
+          <table className="w-full min-w-[30rem] border-collapse text-left">
+            <thead>
+              <tr className="border-b border-line">
+                <th scope="col" className="py-2 pr-2 font-bold">What you get</th>
+                <th scope="col" className="px-2 py-2 font-bold">Free</th>
+                <th scope="col" className="px-2 py-2 font-bold">{PLANS.event.name}</th>
+                <th scope="col" className="px-2 py-2 font-bold">{PLANS.year.name}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {LEVELS.map((r) => (
+                <tr key={r.feature} className="border-b border-line last:border-0">
+                  <th scope="row" className="py-2 pr-2 font-normal">{r.feature}</th>
+                  {[r.free, r.pass, r.gold].map((v, i) => (
+                    <td key={i} className={`px-2 py-2 ${v === '-' ? 'text-ink-soft' : 'font-bold'}`}>{v === '-' ? <span aria-label="no">–</span> : v}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </details>
 
       <PlanTimeline plan={plan} today={today} />
 

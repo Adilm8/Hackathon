@@ -9,6 +9,8 @@ import { RATES, type RateName } from '@/lib/speech/voices';
 import { usePrefs } from '@/lib/store/prefs';
 import { familyVoiceId, ParentVoiceClone, type FamilyVoice } from './ParentVoiceClone';
 import { Segmented } from './Segmented';
+import { GoldNote } from '@/components/paywall/GoldNote';
+import { useGoldExtra } from '@/lib/store/hooks';
 
 const noop = () => () => {};
 const none: SpeechSynthesisVoice[] = [];
@@ -35,9 +37,14 @@ export function NarrationSettings() {
     return () => { live = false; };
   }, []);
   const [family, setFamily] = useState<FamilyVoice[]>([]);
+  const goldVoice = useGoldExtra('voice.premium');
+  const goldClone = useGoldExtra('voice.clone');
   const premium = characters.length > 0;
+  // Gold voices (Moon Storyteller) are offered only with Gold (SPEC 10.1).
+  const offered = characters.filter((c) => goldVoice || !c.gold);
+  const lockedGold = characters.some((c) => c.gold) && !goldVoice;
   // The family's cloned voices (demo) join the characters once saved.
-  const all = [...characters, ...family.map((v) => ({ id: familyVoiceId(v), label: v.name }))];
+  const all = [...offered, ...(goldClone ? family.map((v) => ({ id: familyVoiceId(v), label: v.name })) : [])];
   const character = all.find((c) => c.id === characterVoice)?.id ?? all[0]?.id ?? '';
   const hearCharacter = (id: string) =>
     cloudNarrator.speak([SAMPLE], { voiceURI: id, rate: RATES[speechRate], onSentence: () => {}, onEnd: () => {} });
@@ -68,7 +75,10 @@ export function NarrationSettings() {
           </Button>
         </div>
       )}
-      {premium && storyVoice === 'premium' && (
+      {premium && storyVoice === 'premium' && (!goldClone || lockedGold) && (
+        <GoldNote what={lockedGold ? 'Moon Storyteller voice and the story read in your own voice.' : 'The story read in your own voice.'} />
+      )}
+      {premium && storyVoice === 'premium' && goldClone && (
         <ParentVoiceClone
           onChange={(voices, added) => {
             setFamily(voices);

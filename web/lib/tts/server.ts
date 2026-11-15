@@ -53,6 +53,12 @@ export function priceFor(model: string, fallback: number): number {
   return PRICES.find(([re]) => re.test(model))?.[1] ?? fallback;
 }
 
+/** Voices whose model costs at least this per million characters (ElevenLabs) are a Gold extra (SPEC 10.1). */
+export const GOLD_VOICE_PRICE = 40;
+export function isGoldVoice(id: string, defaultModel: string): boolean {
+  return priceFor(splitVoice(id, defaultModel).model, 0) >= GOLD_VOICE_PRICE;
+}
+
 /** Cost of one request in USD at the given price. */
 export function ttsCost(chars: number, pricePerMChars: number): number {
   return (Math.max(0, chars) * Math.max(0, pricePerMChars)) / 1_000_000;

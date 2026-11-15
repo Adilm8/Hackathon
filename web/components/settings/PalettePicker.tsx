@@ -56,7 +56,7 @@ export function PalettePicker({
             </Chip>
           ))}
         </div>
-        <p className="mt-2 text-xs text-ink-soft">Auto follows your device's dark mode and turns night colours on after 7 pm. Night colours are softer for bedtime reading and apply to every screen, with the palette you picked. The sun/moon button at the top switches them too.</p>
+        <p className="mt-2 text-xs text-ink-soft">Auto follows your device&apos;s dark mode and turns night colours on after 7 pm. Night colours are softer for bedtime reading and apply to every screen, with the palette you picked. The sun/moon button at the top switches them too.</p>
       </div>
     </div>
   );

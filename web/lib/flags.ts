@@ -12,7 +12,7 @@ export const flags = {
   restoreLink: true,
   monthlyPlan: true,
   exportImport: true,
-  /** Painted scene pictures (lib/illustrations); open to every level in the MVP like the premium voice. */
+  /** Painted scene pictures (lib/illustrations); a Gold extra (SPEC 10.1, capability scenes.pictures). */
   illustratedScenes: true,
   /** Cartoon mode: the chapter as a narrated full-screen slideshow (components/reader/CartoonPlayer.tsx). */
   cartoonMode: true,

@@ -11,7 +11,7 @@ import { grantPaidAccess, listEntitlements } from '../db/entitlements';
 import { entitlements } from '../db/schema';
 import type { Entitlement } from '../engine/types';
 import { gateway, type CheckoutInfo, type SubscriptionInfo } from './gateway';
-import { PLANS } from './plans';
+import { GOLD_EXTRAS, hasGoldExtra, PLANS } from './plans';
 
 const DAY = 86_400_000;
 export const REFRESH_WINDOW_MS = 3 * DAY;
@@ -110,4 +110,14 @@ export async function customerOf(familyId: string): Promise<string | null> {
     .orderBy(desc(entitlements.createdAt))
     .limit(1);
   return row?.customer ?? null;
+}
+
+/** Whether the family has a Gold extra right now (premium voice, voice clone). Never throws: false on a database error. */
+export async function familyHasExtra(familyId: string, cap: (typeof GOLD_EXTRAS)[number], now = Date.now()): Promise<boolean> {
+  try {
+    return hasGoldExtra(await accessFor(familyId, now), cap, now);
+  } catch (e) {
+    console.warn('[payments] access lookup failed:', (e as Error).message);
+    return false;
+  }
 }

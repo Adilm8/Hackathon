@@ -10,6 +10,9 @@ import { useEvents } from './events';
 import { useSettings } from './settings';
 import { nowMs } from './time';
 import { getTemplate, hasEventAccess } from './engine';
+import { GOLD_EXTRAS, hasGoldExtra } from '@/lib/payments/plans';
+
+type GoldExtra = (typeof GOLD_EXTRAS)[number];
 
 /** clock.today(), re-rendered when the Demo bar moves the clock. */
 export function useToday(): string {
@@ -36,4 +39,16 @@ export function useEventCtx(id: string): EventCtx | null {
   }, [otherChild, event]);
   if (!event || !child || otherChild) return null;
   return { event, child, template: getTemplate(event.type), today, hasAccess };
+}
+
+/** A Gold-only extra (docs/SPEC.md 10.1): painted pictures, Cartoon mode, premium voice, voice clone. */
+export function useGoldExtra(cap: GoldExtra): boolean {
+  const list = useEntitlements((s) => s.list);
+  return hasGoldExtra(list, cap, nowMs());
+}
+
+/** Where "Get Gold" goes: the Gold paywall of the newest big day of this child, or none. */
+export function useGoldHref(): string | null {
+  const id = useEvents((s) => s.events[s.events.length - 1]?.id);
+  return id ? `/event/${encodeURIComponent(id)}/paywall?gold=1` : null;
 }

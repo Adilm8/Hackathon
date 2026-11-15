@@ -18,7 +18,7 @@ import type { Page, Question } from '@/lib/engine/types';
 import { CHARACTER_SIZES, normalizeCharacter, resolveCharacter, SIZE_NAME } from '@/lib/engine/character';
 import { useChild } from '@/lib/store/child';
 import { useEvents } from '@/lib/store/events';
-import { useEventCtx } from '@/lib/store/hooks';
+import { useEventCtx, useGoldExtra } from '@/lib/store/hooks';
 import { newId } from '@/lib/store/id';
 import { usePrefs } from '@/lib/store/prefs';
 import { useSettings } from '@/lib/store/settings';
@@ -70,12 +70,16 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
   const [autoListen, setAutoListen] = useState(false);
   const readOn = usePrefs((p) => p.readOn);
   const setVoice = usePrefs((p) => p.setVoice);
-  const illustrated = usePrefs((p) => p.illustrated) && isOn('illustratedScenes');
+  // Painted pictures are a Gold extra (SPEC 10.1); without Gold the drawn scenes show.
+  const pictures = useGoldExtra('scenes.pictures');
+  const illustrated = usePrefs((p) => p.illustrated) && isOn('illustratedScenes') && pictures;
   const panel = usePanelOpen();
   // Full screen: only the story on screen (lib/reader/immersive.ts). Leaving it needs no grown-up;
   // leaving the reader still does (the door button).
   const immersive = useImmersive();
   const [cartoon, setCartoon] = useState(false);
+  // Cartoon mode is a Gold extra (SPEC 10.1, capability scenes.cartoon).
+  const cartoonOk = useGoldExtra('scenes.cartoon');
   const { guard, gate } = useParentGate();
   // The header logo leaves the reader too, through the same grown-up gate as the door button.
   useEffect(() => {
@@ -324,7 +328,7 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
           <PageView
             page={page} character={child.character} render={render} textSize={textSize} night={night}
             step={step} position={position} updatedText={updatedText} illustration={illustration}
-            onCartoon={isOn('cartoonMode') ? () => setCartoon(true) : undefined}
+            onCartoon={isOn('cartoonMode') && cartoonOk ? () => setCartoon(true) : undefined}
             extra={photos ? <PagePhotos photos={event.photos} /> : undefined}
           />
         </div>

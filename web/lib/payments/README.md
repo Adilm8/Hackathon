@@ -6,7 +6,7 @@ Spec: `docs/SPEC.md` sections 4.11, 9 (checkout, verify, portal, webhook), 10, 1
 
 | File | What it does |
 |---|---|
-| `plans.ts` | Prices, names, renewal terms, capability check (`hasCapability`). Shared by server and screens |
+| `plans.ts` | Three levels (Free, Big Day Pass, Gold), prices, names, renewal terms, capability check (`hasCapability`, `hasGoldExtra`, `LEVELS` table). Shared by server and screens |
 | `gateway.ts` | Official `stripe` SDK (hosted Checkout, inline `price_data`, portal configuration created by code) and a mock gateway |
 | `access.ts` | Paid Checkout Session → access row (`grantPaidAccess`), subscription refresh, `accessFor(familyId)` |
 | `server.ts` | Base URL, session look-up, error mapping for the routes |

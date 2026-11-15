@@ -1,4 +1,6 @@
 'use client';
+import { GoldNote } from '@/components/paywall/GoldNote';
+import { useGoldExtra } from '@/lib/store/hooks';
 import { childNameError } from '@/lib/childName';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState, type ReactNode } from 'react';
@@ -47,6 +49,7 @@ export function SettingsView() {
   const updateChild = useChild((s) => s.updateChild);
   const settings = useSettings();
   const prefs = usePrefs();
+  const pictures = useGoldExtra('scenes.pictures');
   const ents = useEntitlements((s) => s.list);
   const router = useRouter();
   const sample = getWorkspace() === 'sample';
@@ -154,7 +157,8 @@ export function SettingsView() {
           hint="A clearer font with more space between letters and words. Helps early and struggling readers."
           checked={prefs.easyRead} onChange={prefs.setEasyRead}
         />
-        {isOn('illustratedScenes') && (
+        {isOn('illustratedScenes') && !pictures && <GoldNote what="Painted pictures and Cartoon mode for every chapter." />}
+        {isOn('illustratedScenes') && pictures && (
           <Toggle
             id="illustrated" label="Painted pictures"
             hint="Each chapter shows its own painted scene. Turn off for the simple drawn scenes."
