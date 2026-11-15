@@ -55,6 +55,13 @@ export function DemoBar({ workspace }: { workspace: Workspace }) {
   const [busy, setBusy] = useState<string | null>(null);
   const [note, setNote] = useState<string | null>(null);
 
+  // A new screen starts with the bar folded, so the open tour never covers the page it led to.
+  const [shownOn, setShownOn] = useState(pathname);
+  if (shownOn !== pathname) {
+    setShownOn(pathname);
+    setOpen(false);
+  }
+
   const onScreenId = /^\/event\/([^/]+)/.exec(pathname)?.[1];
   const event = demoEvent(events, clock.realToday(), onScreenId ? decodeURIComponent(onScreenId) : undefined);
 
@@ -80,6 +87,8 @@ export function DemoBar({ workspace }: { workspace: Workspace }) {
 
   if (!sample && !timeOnly) return null;
   if (!event) return null;
+  // The onboarding form is a real family's first step; tour hints there only confuse.
+  if (pathname.startsWith('/start')) return null;
 
   const setOpenSaved = (v: boolean) => {
     setOpen(v);
@@ -130,10 +139,17 @@ export function DemoBar({ workspace }: { workspace: Workspace }) {
     <div className="no-print sticky bottom-0 z-30 border-t-2 border-accent bg-surface text-ink shadow-pop" role="region" aria-label="Demo bar">
       <div className="mx-auto max-w-5xl px-4 py-2">
         <div className="flex items-center gap-2">
-          <button type="button" onClick={toggle} aria-expanded={open} className="inline-flex min-h-tap min-w-0 flex-1 items-center gap-2 text-left text-sm font-extrabold">
+          <button
+            type="button"
+            onClick={toggle}
+            aria-expanded={open}
+            aria-label={`${sample ? `Demo tour, ${doneCount} of 6 steps done` : 'Demo clock'}. ${open ? 'Hide' : 'Show'} the demo controls`}
+            className="inline-flex min-h-tap min-w-0 flex-1 items-center gap-2 text-left text-sm font-extrabold"
+          >
             <Icon name="sparkles" size={18} />
             <span className="whitespace-nowrap">{sample ? `Demo ${doneCount}/6` : 'Demo clock'}</span>
-            <span className="truncate font-bold text-ink-soft">
+            {/* Phones: the status line is in the open bar; the folded strip keeps room for "Next step". */}
+            <span className={`truncate font-bold text-ink-soft ${open || override || demo ? '' : 'max-sm:hidden'}`}>
               · {override ? `Today: ${dateLabel(today, { weekday: true })}` : 'Real today'}
               {demo ? ' · Demo access' : ''}
             </span>
@@ -172,7 +188,7 @@ export function DemoBar({ workspace }: { workspace: Workspace }) {
         )}
         {!open && note && <p role="status" className="pb-1 text-xs font-bold">{note}</p>}
         {open && (
-          <div className="flex max-h-[55dvh] flex-col gap-3 overflow-y-auto pb-2">
+          <div className="flex max-h-[45dvh] flex-col gap-3 overflow-y-auto overscroll-contain pb-2">
             {sample && (
               <ol aria-label="Guided tour" className="grid gap-1 sm:grid-cols-2">
                 {steps.map((s, i) => (

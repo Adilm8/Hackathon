@@ -19,12 +19,12 @@ export function RedirectIfData() {
 export function LandingActions() {
   const [busy, setBusy] = useState(false);
   return (
-    <div className="flex flex-col gap-3 sm:flex-row">
-      <ButtonLink href="/start" size="l" className="sm:w-auto">Start for free</ButtonLink>
+    <div className="flex flex-col gap-3 min-[480px]:flex-row">
+      <ButtonLink href="/start" size="l" className="whitespace-nowrap min-[480px]:w-auto min-[480px]:flex-1 min-[480px]:px-6">Start for free</ButtonLink>
       <Button
         variant="secondary"
         size="l"
-        className="sm:w-auto"
+        className="whitespace-nowrap min-[480px]:w-auto min-[480px]:flex-1 min-[480px]:px-6"
         disabled={busy}
         onClick={async () => {
           setBusy(true);

@@ -17,18 +17,23 @@ export function TestCardBox() {
     }
   }
   return (
-    <div className="flex flex-wrap items-center gap-3 rounded-card border-2 border-dashed border-line bg-surface-2 p-4 text-sm">
-      <span className="rounded-pill bg-accent px-2 py-0.5 text-xs font-extrabold text-accent-ink">Test mode</span>
-      <span className="min-w-0 flex-1">
-        No real money. Use card <span className="whitespace-nowrap font-mono font-bold">{CARD}</span>, any future date, any CVC.
-      </span>
-      <button
-        type="button"
-        onClick={copy}
-        className="inline-flex min-h-tap items-center rounded-pill border-2 border-line px-4 font-bold hover:bg-surface"
-      >
-        <span aria-live="polite">{copied ? 'Copied' : 'Copy'}</span>
-      </button>
+    <div className="flex flex-col gap-3 rounded-card border-2 border-dashed border-line bg-surface-2 p-4 text-sm">
+      <div className="flex items-center justify-between gap-3">
+        <span className="rounded-pill bg-accent px-2 py-0.5 text-xs font-extrabold text-accent-ink">Test mode</span>
+        <span className="text-xs font-bold text-ink-soft">No real money</span>
+      </div>
+      <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2 rounded-field border border-line bg-surface px-4 py-2">
+        <span className="whitespace-nowrap font-mono text-base font-bold tracking-wide tabular-nums">{CARD}</span>
+        <button
+          type="button"
+          onClick={copy}
+          aria-label={copied ? 'Card number copied' : 'Copy the test card number'}
+          className="inline-flex min-h-tap shrink-0 items-center rounded-pill border-2 border-line px-4 font-bold hover:bg-surface-2"
+        >
+          <span aria-live="polite">{copied ? 'Copied' : 'Copy'}</span>
+        </button>
+      </div>
+      <p className="text-ink-soft">Any future date, any CVC, any ZIP.</p>
     </div>
   );
 }

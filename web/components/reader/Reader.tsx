@@ -260,12 +260,16 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
   return (
     <div className="flex min-h-0 flex-1 gap-6">
       <div className="flex min-w-0 flex-1 flex-col gap-2">
+        {/* Phones: the icon row leaves no room, so the chapter name gets its own line. */}
+        <p className="line-clamp-2 text-xs font-bold text-ink-soft sm:hidden">
+          {total === 1 ? 'Quick prep' : `Chapter ${index} of ${total}`} · {chapter.title}
+        </p>
         <div className="flex items-center gap-1 sm:gap-2">
           <Link href={`/event/${eventId}`} aria-label="Back to the plan" className={iconBtn}>
             <Icon name="door-open" size={22} />
           </Link>
           <div className="min-w-0 flex-1">
-            <p className="truncate text-xs font-bold text-ink-soft">
+            <p className="truncate text-xs font-bold text-ink-soft max-sm:hidden">
               {total === 1 ? 'Quick prep' : `Chapter ${index} of ${total}`} · {chapter.title}
             </p>
             <ProgressBar value={mode.kind === 'end' ? storyPages.length : Math.min(pageIdx + 1, pages.length || 1)} max={Math.max(pages.length, 1)} label={`Chapter ${index} of ${total}, page ${pageIdx + 1}`} />

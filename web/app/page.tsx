@@ -25,8 +25,8 @@ export default function Landing() {
       <Suspense>
         <RedirectIfData />
       </Suspense>
-      <section className="grid items-center gap-8 py-4 sm:grid-cols-[1.05fr_1fr] sm:py-10">
-        <div className="sm:order-2">
+      <section className="grid items-center gap-8 py-4 sm:py-10 lg:grid-cols-[1.05fr_1fr]">
+        <div className="order-2">
           <div className="relative mx-auto max-w-sm rounded-card border border-line bg-surface p-4 shadow-pop">
             <div className="flex items-center justify-between gap-2 pb-3">
               <span className="rounded-pill bg-surface-2 px-3 py-1 text-xs font-extrabold text-primary-text">Chapter 1 · Tonight</span>
@@ -46,11 +46,11 @@ export default function Landing() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-5">
+        <div className="order-1 flex flex-col gap-5">
           <span className="self-start rounded-pill bg-surface-2 px-3 py-1 text-xs font-extrabold uppercase tracking-wide text-primary-text">
             For ages 3 to 8 · 5-evening prep
           </span>
-          <h1 className="font-display text-2xl font-extrabold leading-tight sm:text-3xl">
+          <h1 className="text-balance font-display text-2xl font-extrabold leading-tight sm:text-3xl">
             Big day coming up? Get your child ready in 5 evenings
           </h1>
           <p className="text-base text-ink-soft">
