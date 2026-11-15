@@ -12,7 +12,7 @@ Built for Business Cup 2.0 (Nazarbayev University, November 14-15, 2026). Track:
   <img src="docs/media/gifs/tour-fast.gif" width="720" alt="The jury tour: sample family, reader, a question changes the next page, parent panel, paywall, event-day card, check-in and badge">
 </p>
 
-Full walkthrough video: [laptop](docs/media/video/demo-walkthrough.mp4) · [phone](docs/media/video/demo-walkthrough-phone.mp4)
+Full walkthrough video: [laptop](docs/media/video/demo-walkthrough.mp4) · [phone](docs/media/video/demo-walkthrough-phone.mp4) · Pitch deck: [PDF](docs/pitch/deck/big-day-stories-deck-en.pdf)
 
 ---
 
