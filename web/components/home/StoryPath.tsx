@@ -66,7 +66,7 @@ export function StoryPath({ nodes, child }: { nodes: PathNode[]; child: ChildPro
 function Bubble({ node }: { node: PathNode }) {
   const text = node.state === 'open' ? 'Start' : node.state === 'pay' ? 'Unlock' : node.hint;
   return (
-    <span className="relative mb-2 whitespace-nowrap rounded-card border-2 border-line bg-surface px-3 py-1.5 text-sm font-extrabold uppercase tracking-wide text-primary-text shadow-step">
+    <span className="relative mb-2 whitespace-nowrap rounded-card border-2 border-line bg-surface px-3 py-1.5 text-sm font-extrabold text-primary-text shadow-step">
       {text}
       <span aria-hidden className="absolute -bottom-[7px] left-1/2 size-3 -translate-x-1/2 rotate-45 border-b-2 border-r-2 border-line bg-surface" />
     </span>

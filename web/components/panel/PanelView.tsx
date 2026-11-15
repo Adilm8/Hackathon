@@ -55,7 +55,7 @@ export function TopicList({ rows, render, compact }: { rows: Summary['rows']; re
 export function PhraseCard({ phrases }: { phrases: string[] }) {
   return (
     <div className="mt-3 rounded-field bg-surface-2 p-3">
-      <p className="text-xs font-extrabold uppercase tracking-wide text-ink-soft">You can say</p>
+      <p className="text-sm font-extrabold text-ink-soft">You can say</p>
       <ul className="mt-1 flex flex-col gap-1 text-sm font-bold">{phrases.map((p) => <li key={p}>{p}</li>)}</ul>
     </div>
   );
@@ -82,7 +82,7 @@ export function SkillLine({ text }: { text: string }) {
 function TechniqueCard({ t }: { t: { label: string; how: string } }) {
   return (
     <div className="rounded-card border border-line bg-surface p-4">
-      <p className="text-xs font-extrabold uppercase tracking-wide text-ink-soft">For the big day</p>
+      <p className="text-sm font-extrabold text-ink-soft">For the big day</p>
       <p className="mt-1 text-base font-extrabold">{t.label}</p>
       <p className="text-sm text-ink-soft">{t.how}</p>
     </div>

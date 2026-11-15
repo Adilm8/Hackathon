@@ -153,7 +153,7 @@ export function DemoBar({ workspace }: { workspace: Workspace }) {
               · {override ? `Today: ${dateLabel(today, { weekday: true })}` : 'Real today'}
               {demo ? ' · Demo access' : ''}
             </span>
-            <span aria-hidden className="ml-auto pl-1 text-ink-soft">{open ? '▾' : '▴'}</span>
+            <Icon name={open ? 'chevron-down' : 'chevron-up'} size={18} className="ml-auto shrink-0 text-ink-soft" />
           </button>
           {!open && nextStep && !onStepPage && (
             <Link

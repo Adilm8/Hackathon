@@ -91,7 +91,7 @@ function Home({ tab, eventParam }: { tab: HomeTab; eventParam: string | null }) 
         <Link href="/home?tab=child" className="inline-flex min-h-tap items-center gap-2 rounded-pill border border-line bg-surface px-3 text-sm font-bold">
           <Icon name="smile" size={18} /> {child.name}
         </Link>
-        <Link href={`/event/${chosen.id}/panel`} className="inline-flex min-h-tap items-center gap-1.5 rounded-pill border border-line bg-surface px-3 text-xs font-extrabold uppercase">
+        <Link href={`/event/${chosen.id}/panel`} className="inline-flex min-h-tap items-center gap-1.5 rounded-pill border border-line bg-surface px-3 text-sm font-extrabold">
           <Icon name="hand-heart" size={16} /> Parent panel
         </Link>
       </div>
@@ -130,14 +130,14 @@ function PathTab({ event, events, child, today, hasAccess }: { event: BigEvent; 
       : ch ? `Tonight: chapter ${ch.index} of ${p.total}` : `${p.read} of ${p.total} chapters read`;
   return (
     <>
-      <header className="flex flex-wrap items-center gap-3 rounded-card bg-primary p-4 text-primary-ink shadow-step-primary sm:p-5">
+      <header className="grid grid-cols-[auto_minmax(0,1fr)] items-center gap-x-3 gap-y-4 rounded-card bg-primary p-4 text-primary-ink shadow-step-primary sm:flex sm:p-5">
         <span className="flex size-12 shrink-0 items-center justify-center rounded-pill bg-primary-ink/15"><EventIcon type={event.type} size={28} /></span>
         <div className="min-w-0 flex-1">
-          <p className="text-xs font-extrabold uppercase tracking-wide opacity-85">{child.name}&apos;s big day · {dateLabel(event.date, { weekday: true })}</p>
-          <h1 className="font-display text-lg font-extrabold leading-tight sm:text-xl">{label}</h1>
+          <h1 className="font-display text-xl font-extrabold leading-tight">{label}</h1>
           <p className="text-base font-bold leading-snug">{status}</p>
+          <p className="text-sm font-bold opacity-85">{child.name}&apos;s big day · {dateLabel(event.date, { weekday: true })}</p>
         </div>
-        <Link href={`/event/${event.id}`} className="inline-flex min-h-tap items-center gap-2 rounded-card border-2 border-primary-ink/30 px-3 text-sm font-extrabold uppercase hover:bg-primary-ink/10">
+        <Link href={`/event/${event.id}`} className="col-span-2 inline-flex min-h-tap items-center justify-center gap-2 whitespace-nowrap rounded-pill border-2 border-primary-ink/40 px-4 text-sm font-extrabold hover:bg-primary-ink/10 sm:col-span-1">
           <Icon name="book-open" size={18} /> Plan &amp; reminders
         </Link>
       </header>
@@ -318,7 +318,7 @@ function LibraryRow({ item, events }: { item: LibraryItem; events: BigEvent[] })
           <span className="truncate font-extrabold">{item.title || `Chapter ${item.chapter}`}</span>
           <span className="text-xs text-ink-soft">{label} · chapter {item.chapter} · read {dateLabel(item.readOn)}</span>
         </span>
-        <span className="hidden text-sm font-extrabold uppercase text-primary-text sm:inline">Read again</span>
+        <span className="hidden text-sm font-extrabold text-primary-text sm:inline">Read again</span>
       </Link>
       <button
         type="button"

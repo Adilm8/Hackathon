@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/Button';
 import { TextArea } from '@/components/ui/Field';
+import { Icon } from '@/components/icons';
 
 /** Parent check for sensitive questions (4.9): the child hears nothing until the parent decides. */
 export function ParentCheck({
@@ -13,7 +14,9 @@ export function ParentCheck({
   const [text, setText] = useState(draft ?? '');
   return (
     <section aria-label="Parent check" className="flex flex-col gap-4 rounded-card border border-line bg-surface p-5 text-ink shadow-pop">
-      <p className="text-xs font-extrabold uppercase tracking-wide text-accent">Only you see this</p>
+      <p className="inline-flex items-center gap-1.5 self-start rounded-pill bg-accent px-3 py-1 text-xs font-extrabold text-accent-ink">
+        <Icon name="shield-check" size={16} /> Only you see this
+      </p>
       <h2 className="text-lg font-extrabold">Your child asked: “{question}”</h2>
       {draft ? (
         editing ? (

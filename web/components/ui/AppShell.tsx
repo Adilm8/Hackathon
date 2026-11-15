@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { ReactNode } from 'react';
+import { Icon } from '@/components/icons';
 
 /**
  * Frame of every screen (docs/SPEC.md 4.2): header with the child's name and a settings
@@ -40,7 +41,7 @@ export function AppShell({
     <div data-room={room} className={`flex flex-col bg-bg text-ink ${fit ? 'h-dvh overflow-hidden' : 'min-h-dvh'}`}>
       <header className="no-print sticky top-0 z-20 border-b border-line bg-bg/95 backdrop-blur">
         <div className={`mx-auto flex h-14 items-center gap-3 px-4 ${wide ? 'max-w-6xl' : 'max-w-5xl'}`}>
-          <Link href="/?landing=1" className="whitespace-nowrap font-display text-base font-extrabold sm:text-lg">
+          <Link href="/?landing=1" className="inline-flex min-h-tap items-center whitespace-nowrap font-display text-base font-extrabold sm:text-lg">
             Big Day Stories
           </Link>
           {isSample &&
@@ -52,7 +53,7 @@ export function AppShell({
                 className="inline-flex min-h-tap items-center"
               >
                 <span className="inline-flex items-center gap-1 whitespace-nowrap rounded-pill bg-accent px-2 py-0.5 text-xs font-bold text-accent-ink">
-                  Sample data <span aria-hidden>×</span>
+                  Sample data <Icon name="x" size={14} strokeWidth={2.5} />
                 </span>
               </button>
             ) : (

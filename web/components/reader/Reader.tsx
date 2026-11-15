@@ -320,8 +320,8 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
           <Dialog.Content className="fixed inset-y-0 right-0 z-50 w-[min(92vw,380px)] overflow-y-auto border-l border-line bg-bg p-5 text-ink shadow-pop xl:hidden">
             <Dialog.Title className="sr-only">Parent panel</Dialog.Title>
             <Dialog.Description className="sr-only">What&apos;s on {child.name}&apos;s mind, for the parent.</Dialog.Description>
-            <Dialog.Close aria-label="Close the parent panel" className={`${iconBtn} float-right -mr-2 -mt-2 text-2xl font-bold`}>
-              <span aria-hidden>×</span>
+            <Dialog.Close aria-label="Close the parent panel" className={`${iconBtn} float-right -mr-2 -mt-2`}>
+              <Icon name="x" size={22} />
             </Dialog.Close>
             {panelBody}
           </Dialog.Content>
