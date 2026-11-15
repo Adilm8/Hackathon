@@ -26,7 +26,7 @@ export async function POST(req: NextRequest) {
   // A chapter is about 40 sentences; 120 a minute leaves room to skip back and forth.
   if (!allow(`tts:${g.familyId}`, 120, 60_000)) return apiError('rate_limited', 'Too many requests, wait a minute');
   const r = await synthesize(g.data.text, g.familyId, g.data.voice);
-  if ('error' in r) return apiError('upstream_failed', r.error === 'budget' ? 'Daily voice budget reached' : 'Voice unavailable', 503);
+  if ('error' in r) return apiError('upstream_failed', r.error === 'budget' ? 'Daily voice budget reached' : r.error === 'no_sample' ? 'No saved voice' : 'Voice unavailable', 503);
   return new NextResponse(new Uint8Array(r.audio), {
     headers: { 'Content-Type': r.type, 'Cache-Control': 'private, max-age=86400', 'X-Cache': r.cached ? 'hit' : 'miss' },
   });
