@@ -6,7 +6,7 @@ import { Character } from '@/components/character';
 import { BadgeArt } from '@/components/badges';
 import { EventIcon, Icon } from '@/components/icons';
 import { SideNav, TabBar, type HomeTab } from '@/components/home/HomeNav';
-import { CreateCard, LevelCard, PlanCard, StreakCard, TasksCard, WeekReport } from '@/components/home/SideCards';
+import { CreateCard, LevelCard, RoutineCard, PlanCard, StreakCard, TasksCard, WeekReport } from '@/components/home/SideCards';
 import { StoryPath } from '@/components/home/StoryPath';
 import { ButtonLink } from '@/components/ui/Button';
 import { CreateStoryButton } from '@/components/ui/CreateStoryButton';
@@ -21,9 +21,11 @@ import { useEvents } from '@/lib/store/events';
 import { useHasAccess, useToday } from '@/lib/store/hooks';
 import { countdownText, eventLabel, eventPhase, getTemplate, readProgress, tonightChapter } from '@/lib/store/engine';
 import { loadProfiles } from '@/lib/store/profiles';
+import { usePrefs } from '@/lib/store/prefs';
+import { libraryItems, type LibraryItem } from '@/lib/home/library';
 import { getWorkspace } from '@/lib/store/workspace';
 
-const TABS: HomeTab[] = ['path', 'days', 'badges', 'child'];
+const TABS: HomeTab[] = ['path', 'days', 'library', 'badges', 'child'];
 
 /** The parent's home (docs/SPEC.md 4.4): sections on the left, the story path in the middle, today's cards on the right. */
 export default function HomePage() {
@@ -89,6 +91,7 @@ function Home({ tab, eventParam }: { tab: HomeTab; eventParam: string | null }) 
         <div className="flex min-w-0 flex-col gap-6 lg:col-start-2 lg:row-start-1">
           {tab === 'path' && <PathTab event={chosen} events={events} child={child} today={today} hasAccess={hasAccess} />}
           {tab === 'days' && <DaysTab events={events} today={today} workspace={ws} />}
+          {tab === 'library' && <LibraryTab events={events} child={child} />}
           {tab === 'badges' && <BadgesTab child={child} events={events} today={today} />}
           {tab === 'child' && <ChildTab child={child} events={events} today={today} />}
         </div>
@@ -96,6 +99,7 @@ function Home({ tab, eventParam }: { tab: HomeTab; eventParam: string | null }) 
           <TasksCard tasks={todayTasks(chosen, today)} />
           <StreakCard streak={streakWithRest(events, today)} week={weekStrip(events, today)} child={child} />
           <LevelCard level={levelFor(totalStars(events, child))} name={child.name} />
+          <RoutineCard name={child.name} />
           <PlanCard event={chosen} hasAccess={hasAccess} label={label} />
           <CreateCard workspace={ws} />
         </aside>
@@ -255,5 +259,66 @@ function EventRow({ event, today }: { event: BigEvent; today: string }) {
       </span>
       <Icon name="arrow-right" size={20} />
     </Link>
+  );
+}
+
+function LibraryTab({ events, child }: { events: BigEvent[]; child: ChildProfile }) {
+  const favorites = usePrefs((s) => s.favorites);
+  const items = libraryItems(events, favorites);
+  const favs = items.filter((i) => i.favorite);
+  return (
+    <>
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <h1 className="font-display text-xl font-extrabold">{child.name}&apos;s story library</h1>
+        <ButtonLink href="/routine" variant="secondary" className="sm:w-auto"><Icon name="timer" size={18} /> Bedtime routine</ButtonLink>
+      </div>
+      {items.length === 0 && (
+        <EmptyState
+          title="No chapters read yet"
+          text="Every chapter you read together lands here, so you can read a favourite again on any evening."
+          action={<ButtonLink href="/home">Go to tonight&apos;s chapter</ButtonLink>}
+        />
+      )}
+      {favs.length > 0 && (
+        <section aria-labelledby="favs" className="flex flex-col gap-3">
+          <h2 id="favs" className="text-lg font-extrabold">Favourites</h2>
+          {favs.map((i) => <LibraryRow key={i.key} item={i} events={events} />)}
+        </section>
+      )}
+      {items.length > 0 && (
+        <section aria-labelledby="all" className="flex flex-col gap-3">
+          <h2 id="all" className="text-lg font-extrabold">All chapters read</h2>
+          <p className="text-sm text-ink-soft">Reading a story again is good: children feel safe with what they already know. Tap the heart to keep a chapter at the top.</p>
+          {items.map((i) => <LibraryRow key={i.key} item={i} events={events} />)}
+        </section>
+      )}
+    </>
+  );
+}
+
+function LibraryRow({ item, events }: { item: LibraryItem; events: BigEvent[] }) {
+  const toggle = usePrefs((s) => s.toggleFavorite);
+  const ev = events.find((e) => e.id === item.eventId)!;
+  const label = eventLabel(ev, getTemplate(ev.type));
+  return (
+    <div className="flex items-center gap-2 rounded-card border border-line bg-surface p-3 shadow-step">
+      <Link href={`/event/${encodeURIComponent(item.eventId)}/read/${item.chapter}`} className="flex min-h-tap flex-1 items-center gap-3 rounded-card hover:bg-surface-2">
+        <span className="flex size-12 shrink-0 items-center justify-center rounded-pill bg-surface-2"><EventIcon type={item.eventType} size={24} /></span>
+        <span className="flex min-w-0 flex-1 flex-col">
+          <span className="truncate font-extrabold">{item.title || `Chapter ${item.chapter}`}</span>
+          <span className="text-xs text-ink-soft">{label} · chapter {item.chapter} · read {dateLabel(item.readOn)}</span>
+        </span>
+        <span className="hidden text-sm font-extrabold uppercase text-primary-text sm:inline">Read again</span>
+      </Link>
+      <button
+        type="button"
+        onClick={() => toggle(item.eventId, item.chapter)}
+        aria-pressed={item.favorite}
+        aria-label={item.favorite ? `Remove ${item.title || `chapter ${item.chapter}`} from favourites` : `Add ${item.title || `chapter ${item.chapter}`} to favourites`}
+        className={`flex size-11 shrink-0 items-center justify-center rounded-pill ${item.favorite ? 'bg-accent text-accent-ink' : 'text-ink-soft hover:bg-surface-2'}`}
+      >
+        <Icon name="heart" size={22} />
+      </button>
+    </div>
   );
 }

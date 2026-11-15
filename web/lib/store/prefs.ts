@@ -15,12 +15,15 @@ export interface Prefs {
   easyRead: boolean;
   /** Favourite chapters, "<eventId>#<chapter>". */
   favorites: string[];
+  /** Bedtime routine steps the parent switched off. */
+  routineOff: string[];
 }
 
 interface PrefsState extends Prefs {
   setSound(v: boolean): void;
   setEasyRead(v: boolean): void;
   toggleFavorite(eventId: string, chapter: number): void;
+  toggleRoutineStep(id: string): void;
 }
 
 export const favKey = (eventId: string, chapter: number) => `${eventId}#${chapter}`;
@@ -31,6 +34,8 @@ export const usePrefs = create<PrefsState>()(
       sound: true,
       easyRead: false,
       favorites: [],
+      routineOff: [],
+      toggleRoutineStep: (id) => set((s) => ({ routineOff: s.routineOff.includes(id) ? s.routineOff.filter((x) => x !== id) : [...s.routineOff, id] })),
       setSound: (sound) => set({ sound }),
       setEasyRead: (easyRead) => set({ easyRead }),
       toggleFavorite: (eventId, chapter) =>
@@ -44,7 +49,7 @@ export const usePrefs = create<PrefsState>()(
       storage: jsonStorage,
       version: 1,
       skipHydration: true,
-      partialize: (s) => ({ sound: s.sound, easyRead: s.easyRead, favorites: s.favorites }),
+      partialize: (s) => ({ sound: s.sound, easyRead: s.easyRead, favorites: s.favorites, routineOff: s.routineOff }),
     },
   ),
 );
