@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { Icon } from '@/components/icons';
+import { Icon, IconChip } from '@/components/icons';
 import { Button } from '@/components/ui/Button';
 
 interface InstallEvent extends Event {
@@ -60,7 +60,7 @@ export function InstallCard() {
   return (
     <section className="flex flex-col gap-3 rounded-card border border-line bg-surface p-5 shadow-step" aria-labelledby="install-h">
       <div className="flex items-start gap-3">
-        <span className="flex size-10 shrink-0 items-center justify-center rounded-pill bg-surface-2 text-primary-text"><Icon name="smartphone" size={22} /></span>
+        <IconChip name="smartphone" size={22} chip={40} />
         <div className="flex-1">
           <h2 id="install-h" className="font-extrabold">Keep it on your home screen</h2>
           <p className="text-xs text-ink-soft">

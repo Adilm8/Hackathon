@@ -1,11 +1,14 @@
 'use client';
 import Link from 'next/link';
 import { Character } from '@/components/character';
-import { Icon, type IconName } from '@/components/icons';
+import { Icon } from '@/components/icons';
+import { PathArt, type PathArtName } from '@/components/icons/PathArt';
 import type { ChildProfile } from '@/lib/engine/types';
 import { currentNodeIndex, type NodeKind, type PathNode } from '@/lib/home/path';
 
-const KIND_ICON: Record<NodeKind, IconName> = { chapter: 'book-open', day: 'sun', checkin: 'smile', badge: 'trophy' };
+const KIND_ART: Record<NodeKind, PathArtName> = { chapter: 'book', day: 'sun', checkin: 'smile', badge: 'trophy' };
+/** Colour of an open node per kind; chapters keep the palette's primary. */
+const KIND_BG: Record<NodeKind, string> = { chapter: 'var(--primary)', day: '#3aa0e0', checkin: '#ec5f9a', badge: '#9b6be8' };
 
 /** Sideways shift of node k, so the trail winds like a path (px). */
 const shift = (k: number) => Math.round(Math.sin(k * 0.95) * 64);
@@ -92,33 +95,34 @@ function Bubble({ node }: { node: PathNode }) {
 
 function Node({ node, current, onLocked }: { node: PathNode; current: boolean; onLocked?: (node: PathNode) => void }) {
   const size = current ? 'size-20' : 'size-16';
-  const look =
-    node.state === 'done'
-      ? 'bg-success text-success-ink shadow-[0_5px_0_color-mix(in_srgb,var(--success)_70%,black)]'
-      : node.state === 'open'
-        ? 'bg-primary text-primary-ink shadow-[0_5px_0_var(--primary-press)]'
-        : node.state === 'pay'
-          ? 'bg-accent text-accent-ink shadow-[0_5px_0_color-mix(in_srgb,var(--accent)_70%,black)]'
-          : 'bg-surface-2 text-ink-soft shadow-[0_5px_0_var(--line)]';
-  const icon: IconName = node.state === 'done' && node.kind === 'chapter' ? 'check' : node.state === 'pay' ? 'lock' : KIND_ICON[node.kind];
-  const inner = <Icon name={icon} size={current ? 34 : 28} />;
+  const bg =
+    node.state === 'done' ? 'var(--success)' : node.state === 'open' ? KIND_BG[node.kind] : node.state === 'pay' ? 'var(--accent)' : 'var(--surface-2)';
+  const press =
+    node.state === 'open' && node.kind === 'chapter'
+      ? 'var(--primary-press)'
+      : node.state === 'locked'
+        ? 'var(--line)'
+        : `color-mix(in srgb, ${bg} 70%, black)`;
+  const look = { background: bg, boxShadow: `0 5px 0 ${press}` };
+  const art: PathArtName = node.state === 'done' && node.kind === 'chapter' ? 'check' : node.state === 'pay' ? 'lock' : KIND_ART[node.kind];
+  const inner = <PathArt name={art} size={current ? 50 : 40} muted={node.state === 'locked'} />;
   const label = `${node.title}: ${node.hint}`;
   const ring = current ? 'ring-4 ring-primary/25 ring-offset-4 ring-offset-bg' : '';
-  const cls = `flex ${size} items-center justify-center rounded-pill ${look} ${ring} transition-transform active:translate-y-[3px]`;
+  const cls = `flex ${size} items-center justify-center rounded-pill ${ring} transition-transform active:translate-y-[3px]`;
   if (!node.href && onLocked && node.kind === 'chapter')
     return (
-      <button type="button" aria-label={label} title={node.hint} onClick={() => onLocked(node)} className={cls}>
+      <button type="button" aria-label={label} title={node.hint} onClick={() => onLocked(node)} className={cls} style={look}>
         {inner}
       </button>
     );
   if (!node.href)
     return (
-      <span role="img" aria-label={label} title={node.hint} className={`${cls} cursor-not-allowed`}>
+      <span role="img" aria-label={label} title={node.hint} className={`${cls} cursor-not-allowed`} style={look}>
         {inner}
       </span>
     );
   return (
-    <Link href={node.href} aria-label={label} aria-current={current ? 'step' : undefined} className={`${cls} hover:brightness-105`}>
+    <Link href={node.href} aria-label={label} aria-current={current ? 'step' : undefined} className={`${cls} hover:brightness-105`} style={look}>
       {inner}
     </Link>
   );

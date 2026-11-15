@@ -34,7 +34,7 @@ export function SideNav({ tab, panelHref, workspace }: { tab: HomeTab; panelHref
             className={`flex min-h-tap items-center gap-3 rounded-card border-2 px-3 py-2 text-sm font-extrabold
               ${on ? 'border-primary bg-surface-2 text-primary-text' : 'border-transparent text-ink-soft hover:bg-surface-2'}`}
           >
-            <Icon name={it.icon} size={24} /> {it.label}
+            <Icon name={it.icon} size={24} tone="auto" /> {it.label}
           </Link>
         );
       })}
@@ -73,7 +73,7 @@ export function TabBar({ tab, workspace }: { tab: HomeTab; workspace: Workspace 
         className={`flex min-h-tap flex-1 flex-col items-center justify-center gap-0.5 text-[11px] font-extrabold ${on ? 'text-primary-text' : 'text-ink-soft'}`}
       >
         <span className={`flex h-8 w-12 items-center justify-center rounded-pill ${on ? 'bg-surface-2' : ''}`}>
-          <Icon name={it.icon} size={22} />
+          <Icon name={it.icon} size={22} tone="auto" />
         </span>
         {it.label}
       </Link>

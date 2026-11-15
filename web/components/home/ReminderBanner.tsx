@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { Icon } from '@/components/icons';
+import { Icon, IconChip } from '@/components/icons';
 import type { BigEvent } from '@/lib/engine/types';
 import { refreshPush } from '@/lib/push/client';
 import { computeReminders, dueNow } from '@/lib/push/reminders';
@@ -32,9 +32,7 @@ export function ReminderBanner({ events, today }: { events: BigEvent[]; today: s
       role="status"
       className="flex min-h-tap items-center gap-3 rounded-card border-2 border-accent bg-surface p-3 shadow-step hover:bg-surface-2"
     >
-      <span className="flex size-10 shrink-0 items-center justify-center rounded-pill bg-accent text-accent-ink">
-        <Icon name={r.kind === 'chapter' ? 'moon-star' : r.kind === 'day' ? 'sun' : 'smile'} size={22} />
-      </span>
+      <IconChip name={r.kind === 'chapter' ? 'moon-star' : r.kind === 'day' ? 'sun' : 'smile'} size={22} chip={40} />
       <span className="flex flex-1 flex-col">
         <span className="font-extrabold">{r.title}</span>
         <span className="text-sm text-ink-soft">{r.body}</span>
