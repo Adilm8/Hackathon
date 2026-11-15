@@ -226,7 +226,7 @@ Three steps with a progress bar. Only name, age, event and date are required; er
 |---|---|---|
 | 1. Child | First name or nickname (required, one word of 1–20 letters, hyphen and apostrophe allowed; helper text: "A nickname works too. Please don't add a last name."); "How is it pronounced?" (optional, ≤ 30) with a **Hear it** button that speaks the pronunciation; age 3–8 (required); pronoun he / she / they (optional) | No surname, address, school or photo of the child is asked. Helper text says the name is never sent to an AI provider |
 | 2. Event | One of 6 events or "Other" (then a label ≤ 40 chars); date (required); up to 3 fears from a list; "Something else" (≤ 40 chars) | Date before today, or more than 60 days ahead → error under the field. Today and tomorrow are allowed and show a "Quick prep" note (5.2) |
-| 3. Character and values | Character builder with live preview: animal (4) × colour (6) × accessory (3); values profile: tone secular / religious; body words anatomical / family words; who is at home (chips: Mom, Dad, Mama, Papa, Mommy, Daddy, Grandma, Grandpa, Nana, Stepmom, Stepdad, Aunt, Uncle); "Social story style" toggle with a one-line explanation; up to 3 photos of the place (11.5) | All optional. Defaults: bunny, blue, cap; secular; anatomical; nobody selected (stories then say "your grown-up"); style "story" |
+| 3. Character and values | Story friend builder with live preview (tabs Friend / Colours / Clothes / Hats / Extras / Buddy): species (8) × fur (3) × outfit colour (8) × outfit (8) × headwear (8 + none) × accessory (8 + none) × companion (8 + none); values profile: tone secular / religious; body words anatomical / family words; who is at home (chips: Mom, Dad, Mama, Papa, Mommy, Daddy, Grandma, Grandpa, Nana, Stepmom, Stepdad, Aunt, Uncle); "Social story style" toggle with a one-line explanation; up to 3 photos of the place (11.5) | All optional. Defaults: bunny, blue, cap; secular; anatomical; nobody selected (stories then say "your grown-up"); style "story" |
 
 Fear list (label → topic): "It might hurt" → pain; "Being away from me" → separation; "Not knowing what will happen" → unknown; "Unfamiliar adults" → strangers; "Loud noises, bright lights, smells" → sensory; "Something going wrong" → safety; "Other kids" → social; "Being touched or undressed" → body.
 
@@ -451,7 +451,17 @@ export type TextSource = 'llm' | 'fallback';
 /** Scene id; must exist in components/character/backgrounds registry. */
 export type BackgroundId = string;
 
-export interface Character { animal: Animal; color: CharacterColor; accessory: Accessory }
+export interface Character {
+  animal: Animal;            // bunny bear fox kitten dragon owl hedgehog fawn
+  color: CharacterColor;     // outfit colour: blue green yellow red purple orange teal pink
+  accessory: Accessory;      // none scarf backpack cape satchel star-necklace star-wand lantern plush-star; legacy 'cap' = headwear cap
+  outfit?: Outfit;           // default tunic
+  headwear?: Headwear;       // default none (cap when accessory is the legacy 'cap')
+  companion?: Companion;     // default none
+  fur?: FurVariant;          // classic dusk dawn, default classic
+}
+// Story friend 2.0 fields are optional so profiles saved before keep working;
+// lib/engine/character.ts resolveCharacter() is the one place that fills and translates them.
 
 export interface ValuesProfile {
   tone: 'secular' | 'religious';
@@ -766,7 +776,7 @@ The parent panel needs no call.
 
 ```
 You write gentle preparation stories for a child aged {age} who is about to face: {eventLabel}.
-An adult reads the story aloud. The hero is a {color} {animal} with a {accessory}. The hero's name is
+An adult reads the story aloud. The hero is {describeCharacter(character)}, e.g. "a fox in a purple star robe with a wizard hat and a lantern, with a little firefly friend". The hero's name is
 written exactly as [[CHILD]]; never invent or guess a real name. {pronounRule}
 Rules:
 1. Be honest. Never promise "it won't hurt" or "nothing bad will happen". Honesty notes: {honestyNotes}
@@ -1081,7 +1091,7 @@ Stores in `lib/store/` are the only place components read or write family data. 
 
 ### 11.4 Character and scenes
 
-- **Character**: one SVG component built from parts: animal (bunny, bear, fox, kitten: ears, tail, muzzle), colour (6, applied to clothes and accessory), accessory (cap, scarf, backpack), mood (calm, worried, brave, happy: eyes, brows, mouth, arm pose). The same character appears in the builder preview, the reader, the ritual card, the badge and the PDF. It never changes between pages, which is the complaint about AI storybooks we answer.
+- **Character (Story friend 2.0, art set "Moonlit Meadow")**: one SVG that stacks traced layers from `public/avatar` on a shared 240×300 canvas: species (8, three fur variants), outfit (8, recoloured to 8 colours), headwear, accessory, companion, and a face per mood (calm, worried, brave, happy). The layers come from image sheets in `docs/design/avatar/sheets` through the re-runnable pipeline `web/scripts/avatar` (`npm run avatar`), see docs/design/avatar-prompts.md section 6. The same character appears in the builder preview, the reader, the ritual card, the badge and the PDF. It never changes between pages, which is the complaint about AI storybooks we answer.
 - **Scenes**: at least 9 backgrounds: one main scene for each of the six events and three neutral ones (home in the evening, outside a building, a cosy room) for "Other" and for pages away from the event. A registry maps `BackgroundId` to the image; templates list which ids the LLM may choose. More scenes per event can be added without code changes.
 - Scenes are static files produced once at development time (drawn as SVG or generated and then committed as optimised WebP, at most 150 KB each). Nothing is generated at run time in the MVP. Generating the final character art and scenes is a separate task with its own approved budget (D10).
 

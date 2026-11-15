@@ -4,6 +4,7 @@
  * photo captions, questions) is cleaned by lib/safety/filters and placed inside <data> blocks.
  * The child's name never appears: the hero is always written as [[CHILD]].
  */
+import { describeCharacter } from '../../engine/character';
 import type { EventTemplate, StoryContext, Topic } from '../../engine/types';
 import { dataBlock } from '../../safety/filters';
 import { findTechniqueAnywhere, pageTargets } from '../deps';
@@ -58,7 +59,7 @@ export function buildSystemPrompt(ctx: StoryContext, template: EventTemplate): s
 
   return [
     `You write gentle preparation stories for a child aged ${ctx.child.age} who is about to face: ${eventLabel(ctx, template)}.`,
-    `An adult reads the story aloud. The hero is a ${c.color} ${c.animal} with a ${c.accessory}. The hero's name is written exactly as [[CHILD]]; never invent or guess a real name. ${pronounRule(ctx)}`,
+    `An adult reads the story aloud. The hero is ${describeCharacter(c)}. The hero's name is written exactly as [[CHILD]]; never invent or guess a real name. ${pronounRule(ctx)}`,
     'Rules:',
     `1. Be honest. Never promise "it won't hurt" or "nothing bad will happen". Honesty notes: ${template.honestyNotes}`,
     `2. Short sentences. ${pages} pages, ${minWords}-${maxWords} words each (8-14 sentences per page), so the chapter takes 2-3 minutes to read aloud. No scary imagery, villains or danger.`,

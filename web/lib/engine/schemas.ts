@@ -20,9 +20,21 @@ export const TopicEnum = z.enum([
 ]);
 export const MoodEnum = z.enum(['calm', 'worried', 'brave', 'happy']);
 export const StyleModeEnum = z.enum(['story', 'social']);
-export const AnimalEnum = z.enum(['bunny', 'bear', 'fox', 'kitten']);
-export const CharacterColorEnum = z.enum(['blue', 'green', 'yellow', 'red', 'purple', 'orange']);
-export const AccessoryEnum = z.enum(['cap', 'scarf', 'backpack']);
+export const AnimalEnum = z.enum(['bunny', 'bear', 'fox', 'kitten', 'dragon', 'owl', 'hedgehog', 'fawn']);
+export const CharacterColorEnum = z.enum(['blue', 'green', 'yellow', 'red', 'purple', 'orange', 'teal', 'pink']);
+export const AccessoryEnum = z.enum([
+  'none', 'cap', 'scarf', 'backpack', 'cape', 'satchel', 'star-necklace', 'star-wand', 'lantern', 'plush-star',
+]);
+export const OutfitEnum = z.enum([
+  'tunic', 'raincoat', 'star-robe', 'knight-tabard', 'overalls', 'moon-pajamas', 'explorer-vest', 'knit-sweater',
+]);
+export const HeadwearEnum = z.enum([
+  'none', 'cap', 'wizard-hat', 'flower-crown', 'star-crown', 'beret', 'acorn-cap', 'bow-headband', 'goggles',
+]);
+export const CompanionEnum = z.enum([
+  'none', 'firefly', 'cloud-puff', 'star-sprite', 'crystal-snail', 'ladybug', 'tiny-turtle', 'mushroom-sprout', 'pebble-chick',
+]);
+export const FurVariantEnum = z.enum(['classic', 'dusk', 'dawn']);
 export const PronounEnum = z.enum(['he', 'she', 'they']);
 export const QuestionCategoryEnum = z.enum(['on_topic', 'off_topic', 'sensitive', 'unsafe']);
 export const StoredQuestionCategoryEnum = z.enum(['on_topic', 'off_topic', 'sensitive']);
@@ -39,6 +51,10 @@ export const CharacterSchema = z.strictObject({
   animal: AnimalEnum,
   color: CharacterColorEnum,
   accessory: AccessoryEnum,
+  outfit: OutfitEnum.optional(),
+  headwear: HeadwearEnum.optional(),
+  companion: CompanionEnum.optional(),
+  fur: FurVariantEnum.optional(),
 });
 
 export const ValuesProfileSchema = z.strictObject({

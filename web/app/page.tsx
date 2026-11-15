@@ -1,5 +1,10 @@
 import { Suspense } from 'react';
 import { Character } from '@/components/character';
+import type { Character as CharacterT } from '@/lib/engine/types';
+
+const SHOWCASE: CharacterT = {
+  animal: 'dragon', color: 'purple', outfit: 'star-robe', headwear: 'wizard-hat', accessory: 'star-wand', companion: 'firefly', fur: 'classic',
+};
 import { EventIcon } from '@/components/icons';
 import { AppShell } from '@/components/ui/AppShell';
 import { LandingActions, RedirectIfData } from '@/components/landing/LandingActions';
@@ -34,7 +39,7 @@ export default function Landing() {
             </div>
             <div className="flex items-center gap-4 rounded-card bg-surface-2 p-4">
               <div className="w-24 shrink-0">
-                <Character character={{ animal: 'bunny', color: 'blue', accessory: 'cap' }} mood="happy" />
+                <Character character={SHOWCASE} mood="happy" />
               </div>
               <p className="text-sm font-bold leading-snug text-ink">
                 &ldquo;Tomorrow we visit the friendly dentist chair. First we count your teeth, then you pick a sticker!&rdquo;

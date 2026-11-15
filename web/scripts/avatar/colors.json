@@ -1,0 +1,84 @@
+{
+ "comment": "Colour tables for the avatar pipeline. key = the indigo tones the sheets use for recolourable items; clothes = outfit colour swatches (light/main/dark); fur = target main fur for the two magic fur variants of each species.",
+ "key": {
+  "light": "#aeb6ff",
+  "main": "#5b6cff",
+  "dark": "#3f4bc0"
+ },
+ "clothes": {
+  "blue": {
+   "light": "#a5aeff",
+   "main": "#5b6cff",
+   "dark": "#4d58c4"
+  },
+  "green": {
+   "light": "#94dbbf",
+   "main": "#3dbe8b",
+   "dark": "#389273"
+  },
+  "yellow": {
+   "light": "#ffe194",
+   "main": "#ffc93c",
+   "dark": "#bf993b"
+  },
+  "red": {
+   "light": "#f1a2a5",
+   "main": "#e5565b",
+   "dark": "#ad4951"
+  },
+  "purple": {
+   "light": "#c8aef2",
+   "main": "#9b6be8",
+   "dark": "#7958b4"
+  },
+  "orange": {
+   "light": "#ffbf94",
+   "main": "#ff8a3d",
+   "dark": "#bf6d3c"
+  },
+  "teal": {
+   "light": "#8ad5dc",
+   "main": "#2bb3c0",
+   "dark": "#2b8a98"
+  },
+  "pink": {
+   "light": "#f8b6cf",
+   "main": "#f27aa8",
+   "dark": "#b66287"
+  }
+ },
+ "fur": {
+  "bunny": {
+   "dusk": "#c9d2ff",
+   "dawn": "#ffd2de"
+  },
+  "bear": {
+   "dusk": "#a3abcf",
+   "dawn": "#e9a08c"
+  },
+  "fox": {
+   "dusk": "#86a2f2",
+   "dawn": "#f27c9c"
+  },
+  "kitten": {
+   "dusk": "#7f8ed9",
+   "dawn": "#f5ad66"
+  },
+  "dragon": {
+   "dusk": "#7fb0f0",
+   "dawn": "#f5a3c0"
+  },
+  "owl": {
+   "dusk": "#6f7abd",
+   "dawn": "#d8a07a"
+  },
+  "hedgehog": {
+   "dusk": "#9a8be0",
+   "dawn": "#f0a35e"
+  },
+  "fawn": {
+   "dusk": "#a7b4cf",
+   "dawn": "#f0a0a8"
+  }
+ }
+}
