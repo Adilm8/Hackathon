@@ -1,7 +1,8 @@
 'use client';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { celebrateOnce } from '@/lib/fx/celebrate';
 import { BadgeArt } from '@/components/badges';
 import { Character } from '@/components/character';
 import { EventIcon, Icon } from '@/components/icons';
@@ -50,6 +51,7 @@ function BadgeScreen({ id }: { id: string }) {
 
   return (
     <div className="mx-auto flex max-w-xl flex-col gap-6">
+      <CelebrateOnce id={`badge:${badge.eventId}`} />
       <section className="flex flex-col items-center gap-3 text-center">
         <div className="relative">
           <BadgeArt eventType={badge.eventType} size={160} label={badge.label} />
@@ -128,4 +130,10 @@ function HomeScreenHint() {
       Add Big Day Stories to your Home Screen so your plan stays on this phone: tap Share, then “Add to Home Screen”.
     </p>
   );
+}
+
+/** Confetti and the chime the first time the badge opens in this tab. */
+function CelebrateOnce({ id }: { id: string }) {
+  useEffect(() => celebrateOnce(id), [id]);
+  return null;
 }

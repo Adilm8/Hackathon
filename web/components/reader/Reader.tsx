@@ -1,4 +1,5 @@
 'use client';
+import { celebrate } from '@/lib/fx/celebrate';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
@@ -126,6 +127,7 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
     st.markChapterRead(eventId, index, clock.today());
     setNavTick((n) => n + 1);
     setMode({ kind: 'end' });
+    celebrate();
     scrollBox.current?.scrollTo({ top: 0 });
   };
   const prev = () => {

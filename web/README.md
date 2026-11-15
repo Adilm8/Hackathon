@@ -103,3 +103,8 @@ Defaults chosen without Lida (to revisit):
 - `lib/home/progress.ts` (tested in `tests/unit/home-progress.test.ts`): the streak forgives one missed evening a week ("rest evening", snowflake), a seven-dot week strip, stars (chapter 10, question 5, check-in 20, badge 30) and seven levels with generic names, and the parent's "This week" report.
 - Right column: streak card with the week strip, then the level card. Child tab: "This week with Max" and the level.
 - Defaults to revisit with Lida: star values, level names and thresholds, one rest evening per seven days.
+
+### Celebrations, sounds, easy-read letters
+
+- `lib/fx/celebrate.ts`: confetti (CSS, skipped with reduced motion) and a soft three-note chime (Web Audio, no files) when a chapter ends and the first time a badge opens in a tab.
+- `lib/store/prefs.ts` (`bds:prefs`, this device only, outside the SPEC 6.1 Settings contract): Sounds, Easy-read letters, favourite chapters. `components/ui/PrefsSync.tsx` loads it and sets `<html data-font="easy">`, which swaps the body font to Atkinson Hyperlegible (OFL, next/font) with wider letter and word spacing. Switches in Settings > Reading.

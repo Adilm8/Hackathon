@@ -18,7 +18,9 @@ import { isOn } from '@/lib/flags';
 import { useChild } from '@/lib/store/child';
 import { useEntitlements } from '@/lib/store/entitlement';
 import { getFamilyDoc, replaceFamilyDoc, wipeAllBrowserKeys } from '@/lib/store/family';
+import { usePrefs } from '@/lib/store/prefs';
 import { useSettings } from '@/lib/store/settings';
+import { Toggle } from '@/components/ui/Toggle';
 import { exitSample } from '@/lib/store/sample';
 import { getWorkspace } from '@/lib/store/workspace';
 import { api } from '@/lib/sync/api';
@@ -38,6 +40,7 @@ export function SettingsView() {
   const child = useChild((s) => s.child);
   const updateChild = useChild((s) => s.updateChild);
   const settings = useSettings();
+  const prefs = usePrefs();
   const ents = useEntitlements((s) => s.list);
   const router = useRouter();
   const sample = getWorkspace() === 'sample';
@@ -120,6 +123,16 @@ export function SettingsView() {
             {(['m', 'l', 'xl'] as const).map((s) => <Chip key={s} selected={settings.textSize === s} onToggle={() => settings.setTextSize(s)}>{s === 'm' ? 'Medium' : s === 'l' ? 'Large' : 'Extra large'}</Chip>)}
           </div>
         </div>
+        <Toggle
+          id="easy-read" label="Easy-read letters"
+          hint="A clearer font with more space between letters and words. Helps early and struggling readers."
+          checked={prefs.easyRead} onChange={prefs.setEasyRead}
+        />
+        <Toggle
+          id="sounds" label="Sounds"
+          hint="A soft chime when a chapter ends or a badge is earned."
+          checked={prefs.sound} onChange={prefs.setSound}
+        />
         {isOn('voiceQuestion') && (
           <ErrorBoundary fallback={<p className="text-sm text-ink-soft">Voice options are not available in this browser. You can always type the question.</p>}>
             <VoiceConsent consentOn={settings.voiceQuestionConsentOn} onChange={settings.setVoiceConsent} workspace={getWorkspace()} />

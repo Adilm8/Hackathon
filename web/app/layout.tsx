@@ -1,10 +1,13 @@
 import type { Metadata, Viewport } from 'next';
-import { Baloo_2, Nunito } from 'next/font/google';
+import { Atkinson_Hyperlegible, Baloo_2, Nunito } from 'next/font/google';
 import './globals.css';
+import { PrefsSync } from '@/components/ui/PrefsSync';
 import { ThemeSync } from '@/components/ui/ThemeSync';
 import { THEME_BOOT_SCRIPT } from '@/lib/theme';
 
 const nunito = Nunito({ variable: '--font-nunito', subsets: ['latin'], display: 'swap' });
+// Easy-read letters (Settings > Reading), SIL Open Font License.
+const easy = Atkinson_Hyperlegible({ variable: '--font-easy', subsets: ['latin'], weight: ['400', '700'], display: 'swap', preload: false });
 const baloo = Baloo_2({ variable: '--font-baloo', subsets: ['latin'], weight: ['700', '800'], display: 'swap' });
 
 /** Absolute base for the share image (opengraph-image.png). Empty locally = Next falls back to localhost. */
@@ -32,13 +35,14 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" data-palette="warm" data-mode="light" suppressHydrationWarning className={`${nunito.variable} ${baloo.variable} h-full antialiased`}>
+    <html lang="en" data-palette="warm" data-mode="light" suppressHydrationWarning className={`${nunito.variable} ${baloo.variable} ${easy.variable} h-full antialiased`}>
       <head>
         {/* Applies the saved colours before the first paint (no flash of the default palette). */}
         <script dangerouslySetInnerHTML={{ __html: THEME_BOOT_SCRIPT }} />
       </head>
       <body className="min-h-full flex flex-col bg-bg text-ink">
         <ThemeSync />
+        <PrefsSync />
         {children}
       </body>
     </html>
