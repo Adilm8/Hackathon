@@ -23,6 +23,19 @@ const envFile = typeof args.env === 'string' ? args.env : '.env.local';
 const out = path.resolve(typeof args.out === 'string' ? args.out : '.data/voice-test');
 const budget = Number(args.budget || 0.5);
 const dry = !!args.dry;
+/** --only <regex>: test only the models whose id matches (a second round). */
+const only = typeof args.only === 'string' ? new RegExp(args.only, 'i') : null;
+/** --round <letter>: a second round keeps the first round's files; its files and pages get this prefix. */
+const prefix = typeof args.round === 'string' ? `${args.round}-` : '';
+
+/** 16-bit mono PCM to a WAV file. */
+function pcmToWav(pcm, rate = 24000) {
+  const h = Buffer.alloc(44);
+  h.write('RIFF', 0); h.writeUInt32LE(36 + pcm.length, 4); h.write('WAVE', 8); h.write('fmt ', 12);
+  h.writeUInt32LE(16, 16); h.writeUInt16LE(1, 20); h.writeUInt16LE(1, 22); h.writeUInt32LE(rate, 24);
+  h.writeUInt32LE(rate * 2, 28); h.writeUInt16LE(2, 32); h.writeUInt16LE(16, 34); h.write('data', 36); h.writeUInt32LE(pcm.length, 40);
+  return Buffer.concat([h, pcm]);
+}
 
 function readKey() {
   if (process.env.OPENROUTER_API_KEY) return process.env.OPENROUTER_API_KEY;
@@ -45,11 +58,14 @@ const CANDIDATES = [
   { match: /fish.*s2\.1-pro(?!.*free)/i, voices: [''] },
   { match: /kokoro/i, voices: ['af_heart', 'af_bella', 'bf_emma', 'am_michael'] },
   { match: /voxtral/i, voices: ['', 'en_paul_neutral'] },
-  { match: /eleven.*flash.*2\.5/i, voices: [''] },
-  { match: /eleven.*v3/i, voices: [''] },
-  { match: /gemini.*flash.*tts(?!.*lite)/i, voices: ['Kore', 'Aoede', 'Puck', 'Sulafat'] },
+  // ElevenLabs and Microsoft need an explicit voice. ElevenLabs premade voices: Rachel, Charlotte, Lily, Brian.
+  { match: /^elevenlabs\/eleven-flash-v2\.5$/i, voices: ['21m00Tcm4TlvDq8ikWAM', 'XB0fDUnXU5powFXDhCwa', 'pFZP5JQG7iQjIQuC4Bku', 'nPczCjzI2devNBz1zQrb'] },
+  { match: /^elevenlabs\/eleven-v3$/i, voices: ['21m00Tcm4TlvDq8ikWAM', 'pFZP5JQG7iQjIQuC4Bku'] },
+  // Gemini TTS answers with raw PCM only; it is wrapped into WAV here.
+  { match: /^google\/gemini-3\.8-flash-tts$/i, voices: ['Kore', 'Aoede', 'Puck', 'Sulafat'], pcm: true },
   { match: /gpt-4o-mini-tts/i, voices: ['coral', 'sage', 'fable'] },
-  { match: /mai-voice-2(?!.*flash)/i, voices: [''] },
+  { match: /^microsoft\/mai-voice-2\.1$/i, voices: ['en-US-Ava:MAI-Voice-1', 'en-US-AvaMultilingualNeural', 'Jasper'] },
+  { match: /^x-ai\/grok-voice-tts-1\.0$/i, voices: ['Ara', 'Eve'] },
 ];
 const CLONE_MODELS = /voxtral|mai-voice-2|gemini.*flash.*tts/i;
 
@@ -90,7 +106,8 @@ async function main() {
   for (const c of CANDIDATES) {
     const m = models.find((x) => c.match.test(x.id));
     if (!m) continue;
-    for (const voice of c.voices) jobs.push({ model: m.id, voice, cost: pricePerChar(m) * PASSAGE.length });
+    if (only && !only.test(m.id)) continue;
+    for (const voice of c.voices) jobs.push({ model: m.id, voice, pcm: !!c.pcm, cost: pricePerChar(m) * PASSAGE.length });
   }
   const clone = typeof args.clone === 'string' ? args.clone : null;
   if (clone) {
@@ -113,7 +130,7 @@ async function main() {
       continue;
     }
     const body = {
-      model: j.model, input: PASSAGE, response_format: 'mp3', ...(j.voice ? { voice: j.voice } : {}),
+      model: j.model, input: PASSAGE, response_format: j.pcm ? 'pcm' : 'mp3', ...(j.voice ? { voice: j.voice } : {}),
       instructions: 'Warm, calm bedtime-story narration for a young child.', provider: { data_collection: 'deny' },
     };
     if (j.clone) {
@@ -136,8 +153,9 @@ async function main() {
       continue;
     }
     spent += j.cost;
-    const file = `${String(done.length + 1).padStart(2, '0')}.mp3`;
-    writeFileSync(path.join(out, file), Buffer.from(await r.arrayBuffer()));
+    const bytes = Buffer.from(await r.arrayBuffer());
+    const file = `${prefix}${String(done.length + 1).padStart(2, '0')}.${j.pcm ? 'wav' : 'mp3'}`;
+    writeFileSync(path.join(out, file), j.pcm ? pcmToWav(bytes) : bytes);
     done.push({ file, label, ms, cost: j.cost });
     console.log(`ok   ${label} ${ms} ms ≈ $${j.cost.toFixed(4)}`);
   }
@@ -147,9 +165,9 @@ async function main() {
     .map((d) => ({ ...d, r: Math.random() }))
     .sort((a, b) => a.r - b.r)
     .map((d, i) => ({ letter: String.fromCharCode(65 + i), label: d.label, ms: d.ms, cost: d.cost, file: d.file }));
-  writeFileSync(path.join(out, 'key.json'), JSON.stringify(letters, null, 2));
+  writeFileSync(path.join(out, `${prefix}key.json`), JSON.stringify(letters, null, 2));
   writeFileSync(
-    path.join(out, 'index.html'),
+    path.join(out, `${prefix}index.html`),
     `<!doctype html><meta charset="utf-8"><title>Voice test</title>
 <style>body{font:16px system-ui;max-width:640px;margin:2rem auto;padding:0 1rem}li{margin:1rem 0}</style>
 <h1>Voice test (blind)</h1><p>${PASSAGE}</p><p>Listen, note your favourites, then open key.json to see which model each letter is.</p>
@@ -157,7 +175,7 @@ async function main() {
 ${letters.map((d) => `<li><audio controls preload="none" src="${d.file}"></audio></li>`).join('\n')}
 </ol>`,
   );
-  console.log(`\n${done.length} samples, estimated spend $${spent.toFixed(4)} of $${budget}. Open ${path.join(out, 'index.html')}`);
+  console.log(`\n${done.length} samples, estimated spend $${spent.toFixed(4)} of $${budget}. Open ${path.join(out, `${prefix}index.html`)}`);
 }
 
 main().catch((e) => {
