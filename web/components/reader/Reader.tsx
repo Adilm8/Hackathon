@@ -185,6 +185,8 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
       void deleteRecording(recordingKey(getWorkspace(), eventId, index, nextStory.id)).catch(() => {});
     }
     turn(pageIdx + 1, 0);
+    // Read on also reads the answer aloud: the question by voice, the answer by voice (SPEC 17.1 spoken answers).
+    if (readOn) setAutoListen(true);
   };
 
   const updatedText = (() => {
@@ -251,7 +253,7 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
             sentences={page.sentences.map((s) => renderText(s.text, child, { speak: true, pronunciation: child.pronunciation }))}
             shown={page.sentences.map((s) => render(s.text))} onProgress={onProgress}
             recordingKey={isOn('parentVoice') ? recKey : undefined} hasRecording={recs.key === recKey && recs.has} voiceName={child.values.family[0]}
-            autoStart={autoListen} onFinished={readOnNext} />
+            autoStart={autoListen} onFinished={readOnNext} night={night} />
           <Button className="flex-1" onClick={next}>
             {lastSentence && isLast ? 'Finish' : lastSentence && page.kind === 'answer' ? 'Back to the story' : 'Next'}
           </Button>

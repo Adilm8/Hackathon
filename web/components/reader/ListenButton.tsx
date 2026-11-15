@@ -22,8 +22,10 @@ const noop = () => () => {};
  * Render with `key={page.id}`: a new page unmounts the button, which stops the voice.
  */
 export function ListenButton({
-  sentences, shown, from = 0, onProgress, recordingKey, hasRecording = false, voiceName, autoStart = false, onFinished,
+  sentences, shown, from = 0, onProgress, recordingKey, hasRecording = false, voiceName, autoStart = false, onFinished, night = false,
 }: {
+  /** Night scenes: the voice reads about 10% slower, for winding down (SPEC 17.1 adaptation). */
+  night?: boolean;
   /** Read on: start speaking as soon as the button mounts (the page was turned by the voice). */
   autoStart?: boolean;
   /** The voice reached the end of the page by itself (not stopped by a tap). */
@@ -48,7 +50,7 @@ export function ListenButton({
   const report = useRef(onProgress);
   const start = useRef(0);
   const voiceURI = usePrefs((p) => p.voiceURI);
-  const RATE = RATES[usePrefs((p) => p.speechRate)] ?? RATES.normal;
+  const RATE = (RATES[usePrefs((p) => p.speechRate)] ?? RATES.normal) * (night ? 0.9 : 1);
   const finished = useRef(onFinished);
   const play = useRef<() => void>(() => {});
   useEffect(() => {

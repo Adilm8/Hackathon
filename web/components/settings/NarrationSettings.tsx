@@ -94,7 +94,7 @@ export function NarrationSettings() {
       />
       <Toggle
         id="read-on" label="Read on"
-        hint="When Listen reaches the end of a page, turn the page and keep reading until the chapter ends."
+        hint="When Listen reaches the end of a page, turn the page and keep reading until the chapter ends. Answers to questions are read aloud too. At night the voice reads a little slower."
         checked={readOn} onChange={(v) => setVoice({ readOn: v })}
       />
     </div>

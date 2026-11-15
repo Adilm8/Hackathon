@@ -78,15 +78,29 @@ export class CloudNarrator implements Narrator {
         }
         return opts.onEnd();
       }
-      if (i + 1 < sentences.length) void audioUrl(sentences[i + 1], opts.voiceURI);
+      // The next two sentences load while this one plays, so there is no gap between them.
+      for (const k of [i + 1, i + 2]) if (k < sentences.length) void audioUrl(sentences[k], opts.voiceURI);
       el.src = url;
       el.playbackRate = opts.rate ? opts.rate / 0.92 : 1; // 0.92 is "Normal" for the device voice
       el.onended = () => void playAt(i + 1);
       el.onerror = () => token === this.token && opts.onEnd();
       opts.onSentence(i);
+      if (i === 0) this.mediaSession();
       await el.play().catch(() => token === this.token && opts.onEnd());
     };
     void playAt(0);
+  }
+  /** Lock-screen and headphone controls (Media Session API) while the story voice plays. */
+  private mediaSession(): void {
+    const ms = typeof navigator !== 'undefined' ? navigator.mediaSession : undefined;
+    if (!ms || typeof MediaMetadata === 'undefined') return;
+    try {
+      ms.metadata = new MediaMetadata({ title: 'Bedtime story', artist: 'Big Day Stories', artwork: [{ src: '/icons/icon-192.png', sizes: '192x192', type: 'image/png' }] });
+      ms.setActionHandler('play', () => this.resume());
+      ms.setActionHandler('pause', () => this.pause());
+    } catch {
+      /* not supported here */
+    }
   }
   pause(): void {
     if (this.fallback) return deviceNarrator.pause();
