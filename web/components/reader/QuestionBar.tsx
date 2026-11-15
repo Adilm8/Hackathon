@@ -56,11 +56,10 @@ export function QuestionBar({
   );
   return (
     <section aria-label={`Questions ${childName} can ask`} className="flex min-w-0 flex-col gap-1.5">
-      <div className="flex shrink-0 items-baseline justify-between gap-2 lg:items-center lg:justify-start lg:gap-3">
+      <div className="flex shrink-0 items-center justify-between gap-2 lg:justify-start lg:gap-3">
         <h2 className="text-sm font-extrabold">Did {childName} ask something?</h2>
         <span className="whitespace-nowrap text-xs font-bold text-ink-soft"><span className="lg:hidden">{asked}/{limit} tonight</span><span className="max-lg:hidden">{asked} of {limit} questions tonight</span></span>
-        {/* Wide screens: on the title row, so the question chips get a row of their own. */}
-        <span className="ml-auto max-lg:hidden">{askOwn}</span>
+        <span className="ml-auto">{askOwn}</span>
       </div>
       {/* Phones: one row that scrolls sideways. Wide screens: the chips wrap on their own row, none is cut off. */}
       <div className="question-row -mx-4 flex min-w-0 snap-x gap-2 overflow-x-auto px-4 py-1 lg:mx-0 lg:flex-wrap lg:overflow-visible lg:px-0">
@@ -75,8 +74,6 @@ export function QuestionBar({
             <Icon name="circle-help" size={18} /> {b.text}
           </button>
         ))}
-        {/* Phones: last in the sideways row. */}
-        <span className="contents lg:hidden">{askOwn}</span>
       </div>
       <Sheet open={open} onOpenChange={setOpen} title={`What did ${childName} ask?`} description="Type it the way your child said it. Only the question is sent, never the name.">
         <form

@@ -139,6 +139,7 @@ function Form({ ctx }: { ctx: EventCtx }) {
 
       {error && <p role="alert" className="text-sm font-bold text-danger">{error}</p>}
       <Button size="l" onClick={save}>{prev ? 'Save again' : 'Save'}</Button>
+      <ButtonLink href={`/event/${encodeURIComponent(event.id)}`} variant="ghost">Back to the plan</ButtonLink>
     </div>
   );
 }

@@ -149,6 +149,7 @@ function LockedDay({ ctx }: { ctx: EventCtx }) {
       <Link href={`${base}/checkin`} className="mx-auto inline-flex min-h-tap items-center px-4 font-bold text-primary-text underline">
         Already back? Tell us how it went
       </Link>
+      <ButtonLink href={base} variant="ghost">Back to the plan</ButtonLink>
     </div>
   );
 }

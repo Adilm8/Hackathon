@@ -333,10 +333,15 @@ export function Onboarding() {
         )}
       </div>
 
-      <div className="sticky bottom-0 -mx-4 border-t border-line bg-bg px-4 py-4">
-        <Button size="l" onClick={next}>
+      <div className="sticky bottom-0 -mx-4 flex flex-col gap-2 border-t border-line bg-bg px-4 py-4 sm:flex-row">
+        <Button size="l" className="flex-1" onClick={next}>
           {i === steps.length - 1 ? 'Make the plan' : 'Continue'}
         </Button>
+        {step === 'character' && (
+          <Button size="l" variant="secondary" onClick={finish}>
+            Skip &amp; make plan
+          </Button>
+        )}
       </div>
     </div>
   );

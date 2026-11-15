@@ -25,16 +25,36 @@ export default function Landing() {
       <Suspense>
         <RedirectIfData />
       </Suspense>
-      <section className="grid items-center gap-8 py-4 sm:grid-cols-[1fr_1.1fr] sm:py-10">
-        <div className="mx-auto w-48 sm:order-2 sm:w-72">
-          <Character character={{ animal: 'bunny', color: 'blue', accessory: 'cap' }} mood="happy" />
+      <section className="grid items-center gap-8 py-4 sm:grid-cols-[1.05fr_1fr] sm:py-10">
+        <div className="sm:order-2">
+          <div className="relative mx-auto max-w-sm rounded-card border border-line bg-surface p-4 shadow-pop">
+            <div className="flex items-center justify-between gap-2 pb-3">
+              <span className="rounded-pill bg-surface-2 px-3 py-1 text-xs font-extrabold text-primary-text">Chapter 1 · Tonight</span>
+              <span className="rounded-pill bg-accent px-2.5 py-0.5 text-[11px] font-extrabold text-accent-ink">Preview</span>
+            </div>
+            <div className="flex items-center gap-4 rounded-card bg-surface-2 p-4">
+              <div className="w-24 shrink-0">
+                <Character character={{ animal: 'bunny', color: 'blue', accessory: 'cap' }} mood="happy" />
+              </div>
+              <p className="text-sm font-bold leading-snug text-ink">
+                &ldquo;Tomorrow we visit the friendly dentist chair. First we count your teeth, then you pick a sticker!&rdquo;
+              </p>
+            </div>
+            <div className="mt-3 flex flex-wrap items-center justify-between gap-2 rounded-card border border-dashed border-primary/50 bg-bg px-3 py-2 text-xs font-bold">
+              <span className="text-ink-soft">Child asked: &ldquo;Will it hurt?&rdquo;</span>
+              <span className="text-primary-text">Answered on page 2 →</span>
+            </div>
+          </div>
         </div>
         <div className="flex flex-col gap-5">
+          <span className="self-start rounded-pill bg-surface-2 px-3 py-1 text-xs font-extrabold uppercase tracking-wide text-primary-text">
+            For ages 3 to 8 · 5-evening prep
+          </span>
           <h1 className="font-display text-2xl font-extrabold leading-tight sm:text-3xl">
             Big day coming up? Get your child ready in 5 evenings
           </h1>
           <p className="text-base text-ink-soft">
-            A short story each night, read aloud by you, that answers your child&apos;s own questions. For kids 3 to 8.
+            A short story each night, read aloud by you, that answers your child&apos;s own questions inside the story.
           </p>
           <LandingActions />
           <p className="text-sm text-ink-soft">

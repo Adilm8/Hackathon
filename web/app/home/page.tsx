@@ -74,20 +74,30 @@ function Home({ tab, eventParam }: { tab: HomeTab; eventParam: string | null }) 
 
   const label = eventLabel(chosen, getTemplate(chosen.type));
   return (
-    <div className="grid gap-6 lg:grid-cols-[210px_minmax(0,1fr)] xl:grid-cols-[210px_minmax(0,1fr)_300px]">
-      <SideNav tab={tab} panelHref={`/event/${chosen.id}/panel`} workspace={ws} />
-      <div className="flex min-w-0 flex-col gap-6 lg:col-start-2 lg:row-start-1">
-        {tab === 'path' && <PathTab event={chosen} events={events} child={child} today={today} hasAccess={hasAccess} />}
-        {tab === 'days' && <DaysTab events={events} today={today} workspace={ws} />}
-        {tab === 'badges' && <BadgesTab child={child} events={events} today={today} />}
-        {tab === 'child' && <ChildTab child={child} />}
+    <div className="flex flex-col gap-4">
+      <div className="flex items-center justify-between gap-2 lg:hidden">
+        <Link href="/home?tab=child" className="inline-flex min-h-tap items-center gap-2 rounded-pill border border-line bg-surface px-3 text-sm font-bold">
+          <Icon name="smile" size={18} /> {child.name}
+        </Link>
+        <Link href={`/event/${chosen.id}/panel`} className="inline-flex min-h-tap items-center gap-1.5 rounded-pill border border-line bg-surface px-3 text-xs font-extrabold uppercase">
+          <Icon name="hand-heart" size={16} /> Parent panel
+        </Link>
       </div>
-      <aside className={`${tab === 'path' ? 'flex' : 'hidden xl:flex'} flex-col gap-4 lg:col-start-2 xl:col-start-3 xl:row-start-1`} aria-label="Today">
-        <TasksCard tasks={todayTasks(chosen, today)} />
-        <StreakCard streak={readingStreak(events, today)} child={child} />
-        <PlanCard event={chosen} hasAccess={hasAccess} label={label} />
-        <CreateCard workspace={ws} />
-      </aside>
+      <div className="grid gap-6 lg:grid-cols-[210px_minmax(0,1fr)] xl:grid-cols-[210px_minmax(0,1fr)_300px]">
+        <SideNav tab={tab} panelHref={`/event/${chosen.id}/panel`} workspace={ws} />
+        <div className="flex min-w-0 flex-col gap-6 lg:col-start-2 lg:row-start-1">
+          {tab === 'path' && <PathTab event={chosen} events={events} child={child} today={today} hasAccess={hasAccess} />}
+          {tab === 'days' && <DaysTab events={events} today={today} workspace={ws} />}
+          {tab === 'badges' && <BadgesTab child={child} events={events} today={today} />}
+          {tab === 'child' && <ChildTab child={child} />}
+        </div>
+        <aside className={`${tab === 'path' ? 'flex' : 'hidden xl:flex'} flex-col gap-4 lg:col-start-2 xl:col-start-3 xl:row-start-1`} aria-label="Today">
+          <TasksCard tasks={todayTasks(chosen, today)} />
+          <StreakCard streak={readingStreak(events, today)} child={child} />
+          <PlanCard event={chosen} hasAccess={hasAccess} label={label} />
+          <CreateCard workspace={ws} />
+        </aside>
+      </div>
     </div>
   );
 }
@@ -112,7 +122,7 @@ function PathTab({ event, events, child, today, hasAccess }: { event: BigEvent; 
           <p className="text-base font-bold leading-snug">{status}</p>
         </div>
         <Link href={`/event/${event.id}`} className="inline-flex min-h-tap items-center gap-2 rounded-card border-2 border-primary-ink/30 px-3 text-sm font-extrabold uppercase hover:bg-primary-ink/10">
-          <Icon name="book-open" size={18} /> Plan
+          <Icon name="book-open" size={18} /> Plan &amp; reminders
         </Link>
       </header>
 

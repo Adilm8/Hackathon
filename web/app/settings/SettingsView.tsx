@@ -27,7 +27,7 @@ const NAME_RE = /^[\p{L}][\p{L}'’-]{0,19}$/u;
 
 function Section({ title, children }: { title: string; children: ReactNode }) {
   return (
-    <section aria-label={title} className="flex flex-col gap-4 rounded-card border border-line bg-surface p-5">
+    <section aria-label={title} className="flex flex-col gap-4 rounded-card border border-line bg-surface p-5 shadow-step">
       <h2 className="text-lg font-extrabold">{title}</h2>
       {children}
     </section>
@@ -56,7 +56,10 @@ export function SettingsView() {
 
   return (
     <div className="mx-auto flex max-w-2xl flex-col gap-5">
-      <h1 className="font-display text-2xl font-extrabold">Settings</h1>
+      <div className="flex items-center justify-between gap-3">
+        <h1 className="font-display text-2xl font-extrabold">Settings</h1>
+        {child && <ButtonLink href="/home" variant="ghost" className="whitespace-nowrap">Back to stories</ButtonLink>}
+      </div>
       {sample && (
         <div className="flex items-center justify-between gap-3 rounded-card border-2 border-accent p-4">
           <p className="text-sm font-bold">You are in the sample. Nothing here touches your own family.</p>

@@ -105,6 +105,8 @@ function BadgeScreen({ id }: { id: string }) {
           <Button variant="secondary" onClick={exitSample}>Exit sample</Button>
         </Card>
       )}
+
+      <ButtonLink href="/home" variant="ghost">Back to all big days</ButtonLink>
     </div>
   );
 }

@@ -7,7 +7,7 @@ import { CreateStoryButton } from '@/components/ui/CreateStoryButton';
 import type { BigEvent, ChildProfile, Workspace } from '@/lib/engine/types';
 import type { DayTask } from '@/lib/home/path';
 
-const card = 'rounded-card border-2 border-line bg-surface p-5';
+const card = 'rounded-card border border-line bg-surface p-5 shadow-step';
 
 /** Plan upsell while the nearest big day is not unlocked; a quiet "plan is on" line once it is. */
 export function PlanCard({ event, hasAccess, label }: { event: BigEvent | null; hasAccess: boolean; label: string }) {
@@ -23,7 +23,7 @@ export function PlanCard({ event, hasAccess, label }: { event: BigEvent | null; 
       </section>
     );
   return (
-    <section className={`${card} flex flex-col gap-3`} aria-labelledby="plan-h">
+    <section className="flex flex-col gap-3 rounded-card border-2 border-accent/60 bg-surface p-5 shadow-step" aria-labelledby="plan-h">
       <span className="self-start rounded-pill bg-accent px-2 py-0.5 text-xs font-extrabold uppercase tracking-wide text-accent-ink">Big Day Pass</span>
       <div className="flex items-start gap-3">
         <div className="flex-1">
@@ -103,7 +103,7 @@ export function TasksCard({ tasks }: { tasks: DayTask[] }) {
 
 export function CreateCard({ workspace }: { workspace: Workspace }) {
   return (
-    <section className={`${card} flex flex-col gap-3`} aria-labelledby="create-h">
+    <section className="flex flex-col gap-3 rounded-card border border-dashed border-line bg-surface-2/70 p-5" aria-labelledby="create-h">
       <h2 id="create-h" className="text-lg font-extrabold">Another big day coming?</h2>
       <p className="text-sm text-ink-soft">
         {workspace === 'sample' ? 'This is a sample family. Make a real story for your own child; the sample stays here.' : 'Make a new story in two minutes. Saved children are filled in for you.'}

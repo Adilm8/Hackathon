@@ -18,26 +18,43 @@ const shift = (k: number) => Math.round(Math.sin(k * 0.95) * 64);
 export function StoryPath({ nodes, child }: { nodes: PathNode[]; child: ChildProfile }) {
   const cur = currentNodeIndex(nodes);
   return (
-    <ol aria-label="Story path" className="relative mx-auto flex w-full max-w-sm flex-col items-center gap-5 overflow-x-clip py-4">
+    <ol aria-label="Story path" className="relative mx-auto flex w-full max-w-sm flex-col items-center overflow-x-clip py-4">
       {nodes.map((n, k) => {
         const isCur = k === cur;
         const x = shift(k);
+        const hasNext = k < nodes.length - 1;
+        const nextX = hasNext ? shift(k + 1) : x;
         const friendLeft = x > 0;
+        const doneSeg = n.state === 'done';
         return (
-          <li key={n.key} className="relative flex w-full justify-center" style={{ transform: `translateX(${x}px)` }}>
-            <div className="relative flex flex-col items-center">
-              {isCur && <Bubble node={n} />}
-              <Node node={n} current={isCur} />
-              <span className={`mt-1 text-xs font-bold ${n.state === 'locked' ? 'text-ink-soft' : 'text-ink'}`}>{n.title}</span>
-            </div>
-            {isCur && (
-              <div
-                aria-hidden
-                className="pointer-events-none absolute top-1/2 hidden -translate-y-1/2 min-[380px]:block"
-                style={friendLeft ? { right: 'calc(50% + 64px)' } : { left: 'calc(50% + 64px)' }}
-              >
-                <Character character={child.character} mood={n.kind === 'day' ? 'brave' : 'happy'} size={96} decorative />
+          <li key={n.key} className="relative flex w-full flex-col items-center">
+            <div className="relative flex w-full justify-center" style={{ transform: `translateX(${x}px)` }}>
+              <div className="relative z-10 flex flex-col items-center">
+                {isCur && <Bubble node={n} />}
+                <Node node={n} current={isCur} />
+                <span className={`mt-1.5 text-xs font-bold ${n.state === 'locked' ? 'text-ink-soft' : 'text-ink'}`}>{n.title}</span>
               </div>
+              {isCur && (
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute top-1/2 hidden -translate-y-1/2 min-[380px]:block"
+                  style={friendLeft ? { right: 'calc(50% + 64px)' } : { left: 'calc(50% + 64px)' }}
+                >
+                  <Character character={child.character} mood={n.kind === 'day' ? 'brave' : 'happy'} size={96} decorative />
+                </div>
+              )}
+            </div>
+            {hasNext && (
+              <svg aria-hidden width="200" height="36" viewBox="-100 0 200 36" className="pointer-events-none my-1 overflow-visible">
+                <path
+                  d={`M ${x} 0 C ${x} 18, ${nextX} 18, ${nextX} 36`}
+                  fill="none"
+                  stroke={doneSeg ? 'var(--success)' : 'var(--line)'}
+                  strokeWidth="3.5"
+                  strokeLinecap="round"
+                  strokeDasharray={doneSeg ? undefined : '7 7'}
+                />
+              </svg>
             )}
           </li>
         );
