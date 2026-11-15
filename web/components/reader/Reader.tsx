@@ -29,6 +29,7 @@ import { getWorkspace } from '@/lib/store/workspace';
 import { isNight } from '@/lib/theme';
 import { ListenButton, type ReadPosition } from './ListenButton';
 import { RecordButton } from './RecordButton';
+import { VoicePicker } from './VoicePicker';
 import { PageView } from './PageView';
 import { AskGrownUp, ParentCheck } from './ParentCheck';
 import { useParentGate } from './ParentGate';
@@ -318,6 +319,7 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
           >
             <Icon name={night ? 'sun' : 'moon'} size={22} />
           </button>
+          {reading && <VoicePicker className={iconBtn} />}
           {isOn('parentVoice') && reading && (
             <RecordButton compact recKey={recKey} has={recs.key === recKey && recs.has} onChange={() => setRecTick((n) => n + 1)} />
           )}
