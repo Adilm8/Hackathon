@@ -117,7 +117,7 @@
     {
       "id": "sad",
       "text": "Why do I feel sad?",
-      "topic": "other",
+      "topic": "love",
       "fallbackAnswer": [
         "Moving can feel happy and sad at the same time.",
         "It is okay to miss the old home, and I miss it too sometimes."
@@ -139,6 +139,37 @@
       "fallbackAnswer": [
         "Every home has its own sounds, like pipes, cars or wind.",
         "After a few nights, the new sounds start to feel normal."
+      ]
+    },
+    {
+      "id": "new_school",
+      "text": "Will I go to a new school?",
+      "topic": "social",
+      "fallbackAnswer": [
+        "[[GROWNUP]] will tell you if you change schools and when. If you do, we can visit the new school before the first day.",
+        "Lots of kids change schools, and teachers help new kids find friends."
+      ]
+    },
+    {
+      "id": "pet",
+      "text": "Will our pet come too?",
+      "topic": "love",
+      "fallbackAnswer": [
+        "Yes, family pets move with the family. Pets can feel unsure in a new home too, so you can help them settle.",
+        "Their bed and toys come along, just like yours."
+      ]
+    },
+    {
+      "id": "phone_friends",
+      "text": "Can I keep talking to my old friends?",
+      "topic": "social",
+      "fallbackAnswer": [
+        "Yes. You can call, video chat, or send letters and pictures. Some friends can visit too.",
+        "Real friends stay friends, even far away."
+      ],
+      "ages": [
+        7,
+        12
       ]
     }
   ],

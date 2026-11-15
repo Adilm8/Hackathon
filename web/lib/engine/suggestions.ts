@@ -3,14 +3,15 @@ import { addDays, compareDates } from './clock';
 import type { BigEvent, ChildProfile, EventType, ISODate } from './types';
 
 const BY_AGE: { maxAge: number; types: EventType[] }[] = [
-  { maxAge: 4, types: ['haircut', 'shot', 'dentist', 'school', 'doctor', 'babysitter'] },
-  { maxAge: 6, types: ['school', 'dentist', 'flight', 'shot', 'swimming', 'party'] },
-  { maxAge: 8, types: ['dentist', 'flight', 'shot', 'sibling', 'sleepover', 'blood_test'] },
-  { maxAge: 12, types: ['sleepover', 'flight', 'moving', 'dentist', 'blood_test', 'hospital'] },
+  { maxAge: 4, types: ['haircut', 'shot', 'dentist', 'school', 'doctor', 'babysitter', 'potty', 'daycare', 'big_bed', 'playdate'] },
+  { maxAge: 6, types: ['school', 'dentist', 'flight', 'shot', 'swimming', 'party', 'tooth_loss', 'eye_exam', 'new_class', 'bike'] },
+  { maxAge: 8, types: ['dentist', 'flight', 'shot', 'sibling', 'sleepover', 'blood_test', 'tooth_loss', 'sports', 'performance', 'camp'] },
+  { maxAge: 12, types: ['sleepover', 'flight', 'moving', 'dentist', 'blood_test', 'hospital', 'test_day', 'camp', 'sports', 'new_school'] },
 ];
 const ALL: EventType[] = [
   'dentist', 'school', 'flight', 'shot', 'haircut', 'sibling',
   'doctor', 'swimming', 'party', 'babysitter', 'sleepover', 'blood_test', 'moving', 'hospital',
+  'eye_exam', 'playdate', 'new_class', 'road_trip', 'holiday', 'halloween', 'performance', 'sports',
 ];
 
 /**

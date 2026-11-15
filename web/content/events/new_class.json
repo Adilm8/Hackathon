@@ -1,0 +1,2507 @@
+{
+  "type": "new_class",
+  "version": 1,
+  "label": "New class or club",
+  "countdownLabel": "the first class",
+  "beats": {
+    "what_happens": {
+      "title": "What happens at a new class",
+      "goals": [
+        "A class has a warm-up, learning and a goodbye",
+        "Everyone starts as a beginner",
+        "The teacher shows first, then everyone tries"
+      ],
+      "parentSkill": "Watch a short video of the activity together and name the first move or note."
+    },
+    "who_is_there": {
+      "title": "Who is at the class",
+      "goals": [
+        "The teacher or coach shows and helps",
+        "Other kids are learning too",
+        "Some kids have done it before"
+      ],
+      "parentSkill": "Arrive a few minutes early so your child can meet the teacher before the room gets busy."
+    },
+    "what_i_do": {
+      "title": "What I do in the class",
+      "goals": [
+        "Watch, try, practise",
+        "Ask when something is unclear",
+        "Take breaks and keep trying"
+      ],
+      "parentSkill": "Praise effort: \"You kept trying that hard part.\""
+    },
+    "if_scared": {
+      "title": "If it feels hard",
+      "goals": [
+        "Feeling clumsy or shy is normal",
+        "Watching first is okay",
+        "Calm tools: breathing, trying a smaller step, a break"
+      ],
+      "parentSkill": "Name the feeling and shrink the step: 'It feels hard. Let's try just the first part.'"
+    },
+    "rehearsal": {
+      "title": "Let's practise the first class",
+      "goals": [
+        "Try one basic move or note at home",
+        "Practise saying hello",
+        "Pack the bag together"
+      ],
+      "parentSkill": "Learn one beginner move or note together from a video and laugh at your own attempts."
+    }
+  },
+  "steps": [
+    "Pack the bag with the right clothes or instrument",
+    "Arrive and find the room or the hall",
+    "Meet the teacher or coach and say hello",
+    "Watch the teacher show the first moves or notes",
+    "Try it with the group, step by step",
+    "Have a water break",
+    "Finish, say goodbye and tell what was fun"
+  ],
+  "sensory": [
+    "a big hall or a studio with mirrors",
+    "music, a drum or an instrument sound",
+    "a new uniform, leotard or belt",
+    "a squeaky floor or soft mats",
+    "other kids moving and talking",
+    "a teacher counting out loud"
+  ],
+  "honestyNotes": "Learning a new skill feels awkward at first and children may feel clumsy or behind; never promise it will be easy. It is okay not to like a class, but encourage trying a few times before deciding. Let the parent fill in which class it is.",
+  "questionButtons": [
+    {
+      "id": "not_good",
+      "text": "What if I am not good at it?",
+      "topic": "social",
+      "fallbackAnswer": [
+        "Everyone starts as a beginner, even the teacher once did.",
+        "You get a little better each class."
+      ]
+    },
+    {
+      "id": "teacher",
+      "text": "Who is the teacher?",
+      "topic": "strangers",
+      "fallbackAnswer": [
+        "A teacher or coach whose job is showing kids how to do it.",
+        "They will say hello and help you."
+      ]
+    },
+    {
+      "id": "stay",
+      "text": "Will [[GROWNUP]] stay?",
+      "topic": "separation",
+      "fallbackAnswer": [
+        "[[GROWNUP]] will tell you if they watch, wait outside or come back at the end.",
+        "They will be there when class finishes."
+      ]
+    },
+    {
+      "id": "friends",
+      "text": "Will I know anyone?",
+      "topic": "social",
+      "fallbackAnswer": [
+        "Maybe not at first, and that is okay.",
+        "You can say hello, and friends grow over the weeks."
+      ]
+    },
+    {
+      "id": "wear",
+      "text": "What do I wear?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "[[GROWNUP]] will find out and pack the right clothes with you.",
+        "Some classes have a uniform, a leotard or a belt."
+      ]
+    },
+    {
+      "id": "hurt",
+      "text": "Will it hurt?",
+      "topic": "pain",
+      "fallbackAnswer": [
+        "Some activities can make muscles tired or a bit sore after.",
+        "Warm-ups help, and you can tell the teacher if something hurts."
+      ]
+    },
+    {
+      "id": "dont_like",
+      "text": "What if I don't like it?",
+      "topic": "love",
+      "fallbackAnswer": [
+        "It is okay to not like it at first. Let's try a few times.",
+        "Then we can talk about it together."
+      ]
+    },
+    {
+      "id": "loud",
+      "text": "What if it is loud?",
+      "topic": "sensory",
+      "fallbackAnswer": [
+        "Music, drums or lots of kids can be loud.",
+        "You can take a quiet break or ask the teacher."
+      ]
+    },
+    {
+      "id": "rules",
+      "text": "What are the rules?",
+      "topic": "safety",
+      "fallbackAnswer": [
+        "Every class has a few rules to keep everyone safe.",
+        "The teacher will tell you, and you can ask."
+      ]
+    },
+    {
+      "id": "quit",
+      "text": "Can I quit if it is boring?",
+      "topic": "other",
+      "fallbackAnswer": [
+        "We can talk about it after a few classes.",
+        "Sometimes things get more fun once you learn the basics."
+      ],
+      "ages": [
+        7,
+        12
+      ]
+    }
+  ],
+  "techniques": [
+    {
+      "id": "watch_first",
+      "label": "Watching first",
+      "how": "Watch for a few minutes before joining in.",
+      "topics": [
+        "social",
+        "unknown",
+        "safety"
+      ]
+    },
+    {
+      "id": "arrive_early",
+      "label": "Arriving early",
+      "how": "Arrive early to meet the teacher in a quiet room.",
+      "topics": [
+        "strangers",
+        "unknown"
+      ]
+    },
+    {
+      "id": "one_move",
+      "label": "Learning one move",
+      "how": "Learn one basic move or note at home first.",
+      "topics": [
+        "unknown",
+        "body"
+      ]
+    },
+    {
+      "id": "show_again",
+      "label": "Asking to see it again",
+      "how": "Practise: can you show me again, please?",
+      "topics": [
+        "strangers",
+        "social"
+      ]
+    },
+    {
+      "id": "try_four",
+      "label": "Try it four times",
+      "how": "Agree to try four classes before deciding.",
+      "topics": [
+        "love",
+        "unknown"
+      ]
+    },
+    {
+      "id": "effort_praise",
+      "label": "Praising effort",
+      "how": "Praise trying hard, not being good.",
+      "topics": [
+        "love",
+        "social"
+      ]
+    },
+    {
+      "id": "water_breaks",
+      "label": "Water breaks",
+      "how": "Drink water at the break.",
+      "topics": [
+        "body",
+        "pain"
+      ]
+    },
+    {
+      "id": "quiet_break",
+      "label": "A quiet break",
+      "how": "Take a short break if it feels like too much.",
+      "topics": [
+        "sensory",
+        "safety"
+      ]
+    },
+    {
+      "id": "goodbye_wave",
+      "label": "A goodbye wave",
+      "how": "Agree a wave through the window if you wait outside.",
+      "topics": [
+        "separation",
+        "love"
+      ]
+    }
+  ],
+  "ritual": [
+    "Pack my bag and say hello",
+    "Watch, try, try again",
+    "Tell one fun thing after"
+  ],
+  "phrases": {
+    "pain": [
+      "If your muscles feel tired, take a break and drink water.",
+      "Tell the teacher if something hurts."
+    ],
+    "body": [
+      "Your body is learning something new.",
+      "Warm-ups get your body ready."
+    ],
+    "sensory": [
+      "The music is loud. You can take a quiet break.",
+      "The room is big at first and then feels normal."
+    ],
+    "strangers": [
+      "The teacher's job is to help beginners.",
+      "You can say, hi, I'm new."
+    ],
+    "separation": [
+      "I will be there at the end.",
+      "Look for my wave."
+    ],
+    "unknown": [
+      "Hello, warm-up, watch, try, goodbye.",
+      "The teacher shows first."
+    ],
+    "safety": [
+      "The class rules keep everyone safe.",
+      "Ask when something is not clear."
+    ],
+    "social": [
+      "Everyone was a beginner once.",
+      "Other kids are new too."
+    ],
+    "love": [
+      "I'm proud of you for trying something new.",
+      "I love you whether you love the class or not."
+    ]
+  },
+  "topicWords": {
+    "pain": [
+      "hurt",
+      "hurts",
+      "sore",
+      "tired",
+      "ouch"
+    ],
+    "body": [
+      "body",
+      "muscles",
+      "feet",
+      "water",
+      "drink",
+      "move",
+      "moves"
+    ],
+    "sensory": [
+      "loud",
+      "music",
+      "drum",
+      "room",
+      "big",
+      "mirrors",
+      "mats",
+      "strange",
+      "clumsy"
+    ],
+    "strangers": [
+      "teacher",
+      "coach",
+      "swan",
+      "instructors",
+      "instructor",
+      "hello"
+    ],
+    "separation": [
+      "watch",
+      "outside",
+      "come back",
+      "at the end",
+      "wave",
+      "waved",
+      "right there",
+      "stay",
+      "close",
+      "with me",
+      "with you",
+      "together",
+      "comes back",
+      "back",
+      "hand",
+      "nearby"
+    ],
+    "unknown": [
+      "first",
+      "then",
+      "next",
+      "after",
+      "last",
+      "step",
+      "new",
+      "steps"
+    ],
+    "safety": [
+      "safe",
+      "rules",
+      "break",
+      "slowly",
+      "ask",
+      "careful",
+      "stop",
+      "help"
+    ],
+    "social": [
+      "kids",
+      "friends",
+      "class",
+      "everyone",
+      "beginner",
+      "beginners",
+      "classmate",
+      "friend",
+      "children",
+      "people",
+      "others"
+    ],
+    "love": [
+      "love",
+      "hug",
+      "proud",
+      "cuddle"
+    ]
+  },
+  "backgrounds": [
+    "school",
+    "outside",
+    "home-evening",
+    "cosy-room"
+  ],
+  "fallbackPages": {
+    "story": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "Soon [[CHILD]] will go to a new class or club.",
+              "kind": "describe"
+            },
+            {
+              "text": "It might be dance, karate, music, art, gymnastics or something else.",
+              "kind": "describe"
+            },
+            {
+              "text": "First [[CHILD]] changes into the right clothes or gets the instrument ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the class says hello and warms up.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can watch the teacher closely, then try.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Before bed, here is a story about a little penguin called Pim.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pim wanted to learn to dance.",
+              "kind": "describe"
+            },
+            {
+              "text": "So Pim went to the Ice Hall dance class.",
+              "kind": "describe"
+            },
+            {
+              "text": "First Pim put on little red dancing shoes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the class waddled in a circle to warm up.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next the teacher, a graceful swan, showed a spin.",
+              "kind": "describe"
+            },
+            {
+              "text": "Watch my feet, said the swan, slowly, slowly.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, the penguins tried.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pim spun, wobbled and plopped onto a soft mat.",
+              "kind": "describe"
+            },
+            {
+              "text": "Everyone giggled, and Pim giggled too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Next the teacher shows something new, slowly.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, everyone tries it, step by step.",
+              "kind": "describe"
+            },
+            {
+              "text": "There is a water break in the middle.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, the class says goodbye until next time.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can watch the teacher closely, then try.",
+              "kind": "coach"
+            },
+            {
+              "text": "Step by step, it all gets a little easier.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "body",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Soon [[CHILD]] will go to a new class or club.",
+              "kind": "describe"
+            },
+            {
+              "text": "It might be dance, karate, music, art, gymnastics or something else.",
+              "kind": "describe"
+            },
+            {
+              "text": "First [[CHILD]] changes into the right clothes or gets the instrument ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the class says hello and warms up.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next the teacher shows something new, slowly.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, everyone tries it, step by step.",
+              "kind": "describe"
+            },
+            {
+              "text": "There is a water break in the middle.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, the class says goodbye until next time.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can watch the teacher closely, then try.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "At the class there is a teacher or coach.",
+              "kind": "describe"
+            },
+            {
+              "text": "Their job is to show, explain and help.",
+              "kind": "describe"
+            },
+            {
+              "text": "They know that new kids need time.",
+              "kind": "describe"
+            },
+            {
+              "text": "There are other kids too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some are new, and some have been coming for a while.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say, hi, I'm new, to the teacher.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "strangers",
+            "unknown",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Pim the penguin looked around the Ice Hall.",
+              "kind": "describe"
+            },
+            {
+              "text": "The swan teacher had a gentle voice and a long neck.",
+              "kind": "describe"
+            },
+            {
+              "text": "Welcome, Pim, she said, everyone starts at the beginning.",
+              "kind": "describe"
+            },
+            {
+              "text": "There were puffins, seals and a young walrus.",
+              "kind": "describe"
+            },
+            {
+              "text": "A puffin spun perfectly.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pim whispered, I cannot do that.",
+              "kind": "describe"
+            },
+            {
+              "text": "The puffin said, I could not either, at first.",
+              "kind": "describe"
+            },
+            {
+              "text": "The young walrus was new, just like Pim.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama Penguin waved from the bench by the window.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pim waved back.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "strangers",
+            "separation",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "The kids who know more were beginners once.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] may watch, or wait outside, or come back at the end.",
+              "kind": "describe"
+            },
+            {
+              "text": "Friends can start with a simple hello.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say, hi, I'm new, to the teacher.",
+              "kind": "coach"
+            },
+            {
+              "text": "Step by step, it all gets a little easier.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is close by, and [[GROWNUP]] is proud.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "school",
+          "addresses": [
+            "strangers",
+            "separation",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At the class there is a teacher or coach.",
+              "kind": "describe"
+            },
+            {
+              "text": "Their job is to show, explain and help.",
+              "kind": "describe"
+            },
+            {
+              "text": "They know that new kids need time.",
+              "kind": "describe"
+            },
+            {
+              "text": "There are other kids too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some are new, and some have been coming for a while.",
+              "kind": "describe"
+            },
+            {
+              "text": "The kids who know more were beginners once.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] may watch, or wait outside, or come back at the end.",
+              "kind": "describe"
+            },
+            {
+              "text": "Friends can start with a simple hello.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say, hi, I'm new, to the teacher.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "strangers",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "In the class, [[CHILD]] watches the teacher first.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then tries the move or the note.",
+              "kind": "describe"
+            },
+            {
+              "text": "It may not work the first time, and that is how learning goes.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can try again, slowly.",
+              "kind": "describe"
+            },
+            {
+              "text": "If something is not clear, asking is smart: can you show me again?",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say, can you show me again, please?",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "school",
+          "addresses": [
+            "body",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Pim the penguin watched the swan's feet.",
+              "kind": "describe"
+            },
+            {
+              "text": "Step, step, turn.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pim tried and turned the wrong way.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pim tried again, slowly, step, step, turn.",
+              "kind": "describe"
+            },
+            {
+              "text": "That time it worked, almost.",
+              "kind": "describe"
+            },
+            {
+              "text": "Can you show me again, please, asked Pim.",
+              "kind": "describe"
+            },
+            {
+              "text": "Of course, said the swan, and showed it once more.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the break, Pim drank cool water.",
+              "kind": "describe"
+            },
+            {
+              "text": "By the end, Pim could do the turn three times in a row.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pim felt proud.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At the water break, drink and rest.",
+              "kind": "describe"
+            },
+            {
+              "text": "Following the class rules keeps everyone safe.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the end, think of one thing that felt good.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say, can you show me again, please?",
+              "kind": "coach"
+            },
+            {
+              "text": "Step by step, it all gets a little easier.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is close by, and [[GROWNUP]] is proud.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "school",
+          "addresses": [
+            "body",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the class, [[CHILD]] watches the teacher first.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then tries the move or the note.",
+              "kind": "describe"
+            },
+            {
+              "text": "It may not work the first time, and that is how learning goes.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can try again, slowly.",
+              "kind": "describe"
+            },
+            {
+              "text": "If something is not clear, asking is smart: can you show me again?",
+              "kind": "describe"
+            },
+            {
+              "text": "At the water break, drink and rest.",
+              "kind": "describe"
+            },
+            {
+              "text": "Following the class rules keeps everyone safe.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the end, think of one thing that felt good.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say, can you show me again, please?",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "school",
+          "addresses": [
+            "body",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "A new class can feel strange.",
+              "kind": "describe"
+            },
+            {
+              "text": "The room may be big, and the music may be loud.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids feel shy, clumsy or behind.",
+              "kind": "describe"
+            },
+            {
+              "text": "Others seem to know everything.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to watch first.",
+              "kind": "describe"
+            },
+            {
+              "text": "Trying a smaller step is also okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can take slow breaths, smell the flower and blow the candle.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "worried",
+          "background": "school",
+          "addresses": [
+            "sensory",
+            "separation",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Pim the penguin felt clumsy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Everyone else seemed to spin so well.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pim wanted to go home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama Penguin did not say, it is easy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama said, new things feel hard, and you can try just the first step.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pim watched for a few minutes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then Pim tried just the first step, step, step.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pim took a slow breath, like smelling a flower.",
+              "kind": "describe"
+            },
+            {
+              "text": "The next week, it felt a little easier.",
+              "kind": "describe"
+            },
+            {
+              "text": "By the third week, Pim was spinning and laughing.",
+              "kind": "describe"
+            },
+            {
+              "text": "Worried and brave can happen at the same time.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "sensory",
+            "separation",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Most kids need a few classes to feel comfortable.",
+              "kind": "describe"
+            },
+            {
+              "text": "Not liking a class at first is normal too.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can take slow breaths, smell the flower and blow the candle.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can say, I want to watch first.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "school",
+          "addresses": [
+            "separation",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "A new class can feel strange.",
+              "kind": "describe"
+            },
+            {
+              "text": "The room may be big, and the music may be loud.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids feel shy, clumsy or behind.",
+              "kind": "describe"
+            },
+            {
+              "text": "Others seem to know everything.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to watch first.",
+              "kind": "describe"
+            },
+            {
+              "text": "Trying a smaller step is also okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "Most kids need a few classes to feel comfortable.",
+              "kind": "describe"
+            },
+            {
+              "text": "Not liking a class at first is normal too.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can take slow breaths, smell the flower and blow the candle.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can say, I want to watch first.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "school",
+          "addresses": [
+            "sensory",
+            "separation",
+            "unknown",
+            "social"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "Tonight [[CHILD]] and [[GROWNUP]] can practise for the first class.",
+              "kind": "describe"
+            },
+            {
+              "text": "First they pack the bag with the right clothes or instrument.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then they try one easy move or note together.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] tries too, and wobbles, and that is funny.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say: watch, try, try again.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "school",
+          "addresses": [
+            "body",
+            "separation",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Pim the penguin practised at home with Papa.",
+              "kind": "describe"
+            },
+            {
+              "text": "They watched a little video of a spin.",
+              "kind": "describe"
+            },
+            {
+              "text": "Papa tried first and plopped down on his belly.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pim laughed so hard.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then Pim tried, step, step, turn.",
+              "kind": "describe"
+            },
+            {
+              "text": "They practised the hello too: hi, I'm Pim.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pim packed the little red shoes in a bag.",
+              "kind": "describe"
+            },
+            {
+              "text": "Papa said, watch, try, try again.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pim repeated it like a song.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pim was ready for next week.",
+              "kind": "describe"
+            },
+            {
+              "text": "And Pim slept well that night.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Next [[CHILD]] practises: hi, I'm new, my name is [[CHILD]].",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, they picture the class: hello, warm-up, watch, try, break, goodbye.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, they choose a treat for after.",
+              "kind": "describe"
+            },
+            {
+              "text": "Practising makes the class feel familiar.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say: watch, try, try again.",
+              "kind": "coach"
+            },
+            {
+              "text": "Step by step, it all gets a little easier.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is close by, and [[GROWNUP]] is proud.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "school",
+          "addresses": [
+            "strangers",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight [[CHILD]] and [[GROWNUP]] can practise for the first class.",
+              "kind": "describe"
+            },
+            {
+              "text": "First they pack the bag with the right clothes or instrument.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then they try one easy move or note together.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] tries too, and wobbles, and that is funny.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next [[CHILD]] practises: hi, I'm new, my name is [[CHILD]].",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, they picture the class: hello, warm-up, watch, try, break, goodbye.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, they choose a treat for after.",
+              "kind": "describe"
+            },
+            {
+              "text": "Practising makes the class feel familiar.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say: watch, try, try again.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "school",
+          "addresses": [
+            "body",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        }
+      ]
+    },
+    "social": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "Soon I go to a new class.",
+              "kind": "describe"
+            },
+            {
+              "text": "It might be dance, karate, music or art.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I get ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "I put on the right clothes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the class says hello.",
+              "kind": "describe"
+            },
+            {
+              "text": "We warm up.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next the teacher shows something new.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can watch the teacher, then try.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Soon I go to a new class.",
+              "kind": "describe"
+            },
+            {
+              "text": "It might be dance, karate, music or art.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I get ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "I put on the right clothes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the class says hello.",
+              "kind": "describe"
+            },
+            {
+              "text": "We warm up.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next the teacher shows something new.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, we all try.",
+              "kind": "describe"
+            },
+            {
+              "text": "We go step by step.",
+              "kind": "describe"
+            },
+            {
+              "text": "There is a water break.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, we say goodbye.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "After that, we all try.",
+              "kind": "describe"
+            },
+            {
+              "text": "We go step by step.",
+              "kind": "describe"
+            },
+            {
+              "text": "There is a water break.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, we say goodbye.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can watch the teacher, then try.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Soon I go to a new class.",
+              "kind": "describe"
+            },
+            {
+              "text": "It might be dance, karate, music or art.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I get ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "I put on the right clothes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the class says hello.",
+              "kind": "describe"
+            },
+            {
+              "text": "We warm up.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next the teacher shows something new.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can watch the teacher, then try.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "There is a teacher at my class.",
+              "kind": "describe"
+            },
+            {
+              "text": "The teacher shows and helps.",
+              "kind": "describe"
+            },
+            {
+              "text": "The teacher knows new kids need time.",
+              "kind": "describe"
+            },
+            {
+              "text": "There are other kids too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some are new.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some have come for a while.",
+              "kind": "describe"
+            },
+            {
+              "text": "They were beginners once.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say, hi, I'm new.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "strangers",
+            "unknown",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "There is a teacher at my class.",
+              "kind": "describe"
+            },
+            {
+              "text": "The teacher shows and helps.",
+              "kind": "describe"
+            },
+            {
+              "text": "The teacher knows new kids need time.",
+              "kind": "describe"
+            },
+            {
+              "text": "There are other kids too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some are new.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some have come for a while.",
+              "kind": "describe"
+            },
+            {
+              "text": "They were beginners once.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] may watch or wait outside.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] will come back at the end.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say hello to someone.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "Step by step, it gets a little easier.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "[[GROWNUP]] may watch or wait outside.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] will come back at the end.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say hello to someone.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say, hi, I'm new.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "school",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "There is a teacher at my class.",
+              "kind": "describe"
+            },
+            {
+              "text": "The teacher shows and helps.",
+              "kind": "describe"
+            },
+            {
+              "text": "The teacher knows new kids need time.",
+              "kind": "describe"
+            },
+            {
+              "text": "There are other kids too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some are new.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some have come for a while.",
+              "kind": "describe"
+            },
+            {
+              "text": "They were beginners once.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say, hi, I'm new.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "unknown",
+            "safety"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "In class, I watch the teacher.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I try.",
+              "kind": "describe"
+            },
+            {
+              "text": "It may not work the first time.",
+              "kind": "describe"
+            },
+            {
+              "text": "That is how learning goes.",
+              "kind": "describe"
+            },
+            {
+              "text": "I try again slowly.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask, can you show me again?",
+              "kind": "describe"
+            },
+            {
+              "text": "At the break, I drink water.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask, can you show me again, please?",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "school",
+          "addresses": [
+            "body",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In class, I watch the teacher.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I try.",
+              "kind": "describe"
+            },
+            {
+              "text": "It may not work the first time.",
+              "kind": "describe"
+            },
+            {
+              "text": "That is how learning goes.",
+              "kind": "describe"
+            },
+            {
+              "text": "I try again slowly.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask, can you show me again?",
+              "kind": "describe"
+            },
+            {
+              "text": "At the break, I drink water.",
+              "kind": "describe"
+            },
+            {
+              "text": "I follow the class rules.",
+              "kind": "describe"
+            },
+            {
+              "text": "They keep everyone safe.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the end, I think of one thing I liked.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I follow the class rules.",
+              "kind": "describe"
+            },
+            {
+              "text": "They keep everyone safe.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the end, I think of one thing I liked.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask, can you show me again, please?",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "school",
+          "addresses": [
+            "sensory",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In class, I watch the teacher.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I try.",
+              "kind": "describe"
+            },
+            {
+              "text": "It may not work the first time.",
+              "kind": "describe"
+            },
+            {
+              "text": "That is how learning goes.",
+              "kind": "describe"
+            },
+            {
+              "text": "I try again slowly.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask, can you show me again?",
+              "kind": "describe"
+            },
+            {
+              "text": "At the break, I drink water.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask, can you show me again, please?",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "school",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "A new class can feel strange.",
+              "kind": "describe"
+            },
+            {
+              "text": "The room may be big.",
+              "kind": "describe"
+            },
+            {
+              "text": "The music may be loud.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel shy.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel clumsy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Other kids may seem to know more.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to watch first.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "worried",
+          "background": "school",
+          "addresses": [
+            "sensory",
+            "separation",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "A new class can feel strange.",
+              "kind": "describe"
+            },
+            {
+              "text": "The room may be big.",
+              "kind": "describe"
+            },
+            {
+              "text": "The music may be loud.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel shy.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel clumsy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Other kids may seem to know more.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to watch first.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can try a smaller step.",
+              "kind": "describe"
+            },
+            {
+              "text": "Most kids need a few classes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then it feels better.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "sensory",
+            "separation",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I can try a smaller step.",
+              "kind": "describe"
+            },
+            {
+              "text": "Most kids need a few classes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then it feels better.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can say, I want to watch first.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "school",
+          "addresses": [
+            "sensory",
+            "separation",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "A new class can feel strange.",
+              "kind": "describe"
+            },
+            {
+              "text": "The room may be big.",
+              "kind": "describe"
+            },
+            {
+              "text": "The music may be loud.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel shy.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel clumsy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Other kids may seem to know more.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to watch first.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can say, I want to watch first.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "school",
+          "addresses": [
+            "sensory",
+            "separation",
+            "unknown",
+            "social"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "Tonight I practise for my class.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I pack my bag.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I try one easy move.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] tries too.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] wobbles, and it is funny.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next I practise my hello.",
+              "kind": "describe"
+            },
+            {
+              "text": "Hi, I'm new.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, I picture the class.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: watch, try, try again.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "school",
+          "addresses": [
+            "body",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight I practise for my class.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I pack my bag.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I try one easy move.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] tries too.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] wobbles, and it is funny.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next I practise my hello.",
+              "kind": "describe"
+            },
+            {
+              "text": "Hi, I'm new.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, I picture the class.",
+              "kind": "describe"
+            },
+            {
+              "text": "Hello, warm-up, watch, try, goodbye.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, we choose a treat for after.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "Step by step, it gets a little easier.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Hello, warm-up, watch, try, goodbye.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, we choose a treat for after.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: watch, try, try again.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "school",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight I practise for my class.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I pack my bag.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I try one easy move.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] tries too.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] wobbles, and it is funny.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next I practise my hello.",
+              "kind": "describe"
+            },
+            {
+              "text": "Hi, I'm new.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, I picture the class.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: watch, try, try again.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "school",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        }
+      ]
+    }
+  },
+  "badge": {
+    "id": "try_it_star",
+    "label": "Try It Star"
+  },
+  "olderPages": {
+    "what_happens": {
+      "sentences": [
+        {
+          "text": "Most activities build skills in layers: basics first, then combinations, then performances or grades.",
+          "kind": "describe"
+        },
+        {
+          "text": "Beginner classes are designed for people who know nothing yet.",
+          "kind": "describe"
+        },
+        {
+          "text": "Progress often feels slow for a few weeks and then suddenly clicks.",
+          "kind": "describe"
+        },
+        {
+          "text": "Many clubs have levels, belts or certificates that mark progress.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can ask the teacher what the first goal is.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "school",
+      "addresses": [
+        "strangers",
+        "unknown",
+        "safety",
+        "social"
+      ]
+    },
+    "who_is_there": {
+      "sentences": [
+        {
+          "text": "Instructors are usually trained in teaching kids and keeping them safe in the activity.",
+          "kind": "describe"
+        },
+        {
+          "text": "Mixed-level classes mean there are role models to watch.",
+          "kind": "describe"
+        },
+        {
+          "text": "Asking an experienced kid for a tip is a good way to start a friendship.",
+          "kind": "describe"
+        },
+        {
+          "text": "Some classes ask parents to wait outside so kids can focus.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can ask a classmate how long they have been coming.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "school",
+      "addresses": [
+        "strangers",
+        "separation",
+        "safety",
+        "social"
+      ]
+    },
+    "what_i_do": {
+      "sentences": [
+        {
+          "text": "Learning a physical or musical skill uses muscle memory, which builds through repetition, not just understanding.",
+          "kind": "describe"
+        },
+        {
+          "text": "Breaking a skill into tiny steps makes it easier to master.",
+          "kind": "describe"
+        },
+        {
+          "text": "Feeling awkward is a sign the brain is learning something new.",
+          "kind": "describe"
+        },
+        {
+          "text": "Most teachers love questions because they show attention.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can practise one small thing for five minutes at home between classes.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "brave",
+      "background": "school",
+      "addresses": [
+        "sensory",
+        "strangers",
+        "unknown",
+        "safety"
+      ]
+    },
+    "if_scared": {
+      "sentences": [
+        {
+          "text": "Comparing yourself to someone with two years of practice is not a fair comparison.",
+          "kind": "describe"
+        },
+        {
+          "text": "Embarrassment fades fast because others are focused on their own moves.",
+          "kind": "describe"
+        },
+        {
+          "text": "Committing to a set number of classes, like four, before deciding gives the skill time to grow.",
+          "kind": "describe"
+        },
+        {
+          "text": "Sometimes a class really is not a good fit, and that is useful to know.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can track one small improvement after each class.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "worried",
+      "background": "school",
+      "addresses": [
+        "body",
+        "unknown",
+        "social"
+      ]
+    },
+    "rehearsal": {
+      "sentences": [
+        {
+          "text": "Knowing a single basic move or rule before class makes the first lesson less overwhelming.",
+          "kind": "describe"
+        },
+        {
+          "text": "Checking the location, the entrance and what to wear removes small worries.",
+          "kind": "describe"
+        },
+        {
+          "text": "Arriving early gives time to meet the teacher.",
+          "kind": "describe"
+        },
+        {
+          "text": "A short practice plan, like five minutes three times a week, is better than one long session.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can make a progress chart for the first month.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "happy",
+      "background": "school",
+      "addresses": [
+        "body",
+        "strangers",
+        "unknown",
+        "social"
+      ]
+    }
+  }
+}

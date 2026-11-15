@@ -1,0 +1,2446 @@
+{
+  "type": "potty",
+  "version": 1,
+  "label": "Big kid toilet",
+  "countdownLabel": "the big kid toilet",
+  "beats": {
+    "what_happens": {
+      "title": "How the big kid toilet works",
+      "goals": [
+        "The body gives a feeling when wee or poo is coming",
+        "Wee and poo go in the potty or toilet",
+        "Learning takes time, and accidents happen"
+      ],
+      "parentSkill": "Use simple, calm words for wee and poo and read a short book about potties together."
+    },
+    "who_is_there": {
+      "title": "Who helps me",
+      "goals": [
+        "[[GROWNUP]] helps and stays close",
+        "Teachers and carers help with toilets too",
+        "Other kids are learning as well"
+      ],
+      "parentSkill": "Stay close and calm; let your child choose whether you stay in the bathroom or wait at the door."
+    },
+    "what_i_do": {
+      "title": "What I do on the toilet",
+      "goals": [
+        "Listen to the tummy feeling and go straight away",
+        "Sit, wait, wipe, wash",
+        "Flushing is optional"
+      ],
+      "parentSkill": "Make a picture chart of the toilet steps and stick it next to the potty."
+    },
+    "if_scared": {
+      "title": "If it feels hard",
+      "goals": [
+        "Accidents happen to everyone who is learning",
+        "The flush is loud, and nobody has to flush",
+        "Calm tools: slow breaths, a song, trying again later"
+      ],
+      "parentSkill": "After an accident say: 'That's okay, bodies are learning. Let's clean up together.'"
+    },
+    "rehearsal": {
+      "title": "Let's practise the toilet steps",
+      "goals": [
+        "Practise with a doll or a toy on the potty",
+        "Say the steps: feel, tell, sit, wipe, wash",
+        "Celebrate trying, not only success"
+      ],
+      "parentSkill": "Let a toy have a turn on the potty first and praise the toy for trying."
+    }
+  },
+  "steps": [
+    "Notice the wee or poo feeling in the tummy",
+    "Tell a grown-up, I need the toilet",
+    "Pull pants down and sit on the potty or the toilet seat",
+    "Wait and let the wee or poo come out",
+    "Wipe with toilet paper, a grown-up helps",
+    "Pull pants up and flush, or tip the potty with help",
+    "Wash hands with soap and water"
+  ],
+  "sensory": [
+    "a cold toilet seat",
+    "the loud whoosh of the flush",
+    "a tummy feeling that says it is time",
+    "soft toilet paper",
+    "warm soapy water on the hands",
+    "a little step stool under the feet"
+  ],
+  "honestyNotes": "Accidents are normal and part of learning; never shame, punish or call them naughty. The flush is loud and can be scary; the child never has to flush. Bodies work in their own time; never promise it will be easy or quick. Use the family's own words for wee and poo.",
+  "questionButtons": [
+    {
+      "id": "fall_in",
+      "text": "Will I fall in?",
+      "topic": "safety",
+      "fallbackAnswer": [
+        "No. A potty is small and low, and a big toilet can have a little seat on top.",
+        "[[GROWNUP]] can hold you while you sit."
+      ]
+    },
+    {
+      "id": "flush",
+      "text": "Why is the flush so loud?",
+      "topic": "sensory",
+      "fallbackAnswer": [
+        "The flush is water rushing away, whoosh, and it is loud.",
+        "You do not have to flush, and you can cover your ears."
+      ]
+    },
+    {
+      "id": "accident",
+      "text": "What if I have an accident?",
+      "topic": "love",
+      "fallbackAnswer": [
+        "Accidents happen to everyone who is learning. It is okay.",
+        "We clean up together and try again next time."
+      ]
+    },
+    {
+      "id": "where_go",
+      "text": "Where does the poo go?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "It goes down the pipes, far away, to a place that cleans the water.",
+        "It does not come back."
+      ]
+    },
+    {
+      "id": "hurt",
+      "text": "Will it hurt?",
+      "topic": "pain",
+      "fallbackAnswer": [
+        "Usually not, and soft poos come out easily.",
+        "If it feels sore, tell [[GROWNUP]], and drinking water and eating fruit can help."
+      ]
+    },
+    {
+      "id": "help",
+      "text": "Who helps me wipe?",
+      "topic": "separation",
+      "fallbackAnswer": [
+        "[[GROWNUP]] helps you, or your teacher at daycare.",
+        "You will learn to do it yourself, little by little."
+      ]
+    },
+    {
+      "id": "school",
+      "text": "Can I use the toilet at daycare?",
+      "topic": "strangers",
+      "fallbackAnswer": [
+        "Yes. Teachers help kids with toilets every day.",
+        "You can say, I need the toilet, please."
+      ]
+    },
+    {
+      "id": "diaper",
+      "text": "Do I still wear a diaper at night?",
+      "topic": "body",
+      "fallbackAnswer": [
+        "Many kids still wear night pants for a while, and that is normal.",
+        "Night dryness comes later for lots of kids."
+      ]
+    },
+    {
+      "id": "outside",
+      "text": "What if I need to go when we are out?",
+      "topic": "body",
+      "fallbackAnswer": [
+        "Shops, parks and restaurants have toilets.",
+        "Tell [[GROWNUP]] quickly, and we will find one together."
+      ]
+    },
+    {
+      "id": "wait",
+      "text": "Why do I have to wait so long?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "Sometimes the body needs a few minutes to relax.",
+        "A book or a song makes the waiting easier."
+      ],
+      "ages": [
+        2,
+        6
+      ]
+    }
+  ],
+  "techniques": [
+    {
+      "id": "toilet_chart",
+      "label": "Picture steps chart",
+      "how": "Stick a picture chart of the toilet steps beside the potty.",
+      "topics": [
+        "unknown",
+        "safety"
+      ]
+    },
+    {
+      "id": "step_stool",
+      "label": "A little step stool",
+      "how": "Use a stool so feet rest flat and the body feels steady.",
+      "topics": [
+        "safety",
+        "body"
+      ]
+    },
+    {
+      "id": "blow_bubbles",
+      "label": "Blowing slow bubbles",
+      "how": "Blow slow pretend bubbles to help the body relax.",
+      "topics": [
+        "body",
+        "pain",
+        "sensory"
+      ]
+    },
+    {
+      "id": "flush_choice",
+      "label": "Flush is optional",
+      "how": "Let your child leave before you flush, or cover the ears.",
+      "topics": [
+        "sensory"
+      ]
+    },
+    {
+      "id": "try_times",
+      "label": "Try times",
+      "how": "Sit on the potty after meals and before bath, when bodies are most ready.",
+      "topics": [
+        "body",
+        "unknown"
+      ]
+    },
+    {
+      "id": "spare_kit",
+      "label": "A spare clothes kit",
+      "how": "Pack spare pants and wipes so accidents are no big deal.",
+      "topics": [
+        "love",
+        "safety",
+        "social"
+      ]
+    },
+    {
+      "id": "toy_teacher",
+      "label": "Teaching a toy",
+      "how": "Let your child teach a toy the steps.",
+      "topics": [
+        "unknown",
+        "social"
+      ]
+    },
+    {
+      "id": "teacher_word",
+      "label": "Asking the teacher",
+      "how": "Practise the sentence, I need the toilet, please, for daycare.",
+      "topics": [
+        "strangers",
+        "separation",
+        "social"
+      ]
+    },
+    {
+      "id": "deep_breaths",
+      "label": "Smell the flower, blow the candle",
+      "how": "Breathe in slowly through the nose and out like blowing a candle.",
+      "topics": [
+        "pain",
+        "sensory",
+        "safety"
+      ]
+    }
+  ],
+  "ritual": [
+    "Feel the tummy, tell a grown-up",
+    "Sit, wait, wipe",
+    "Wash hands and a happy dance"
+  ],
+  "phrases": {
+    "pain": [
+      "If it feels sore, tell me. Water and fruit help.",
+      "Take a slow breath and let your body relax."
+    ],
+    "body": [
+      "Everybody does wee and poo.",
+      "Your body is learning, a little every day."
+    ],
+    "sensory": [
+      "The flush is loud. You can leave first.",
+      "The seat can feel cold for a moment."
+    ],
+    "strangers": [
+      "Teachers help kids with toilets every day.",
+      "You can say, I need the toilet, please."
+    ],
+    "separation": [
+      "I'm right here. I can stay or wait by the door.",
+      "I will help you wipe."
+    ],
+    "unknown": [
+      "Feel, tell, sit, wipe, wash.",
+      "First sit, then wait a little."
+    ],
+    "safety": [
+      "You will not fall in. I can hold you.",
+      "You never have to flush."
+    ],
+    "social": [
+      "Lots of kids are learning right now.",
+      "Big kids learned too, step by step."
+    ],
+    "love": [
+      "Accidents are okay. I love you.",
+      "I'm proud of you for trying."
+    ]
+  },
+  "topicWords": {
+    "pain": [
+      "hurt",
+      "sore",
+      "ouch"
+    ],
+    "body": [
+      "body",
+      "tummy",
+      "wee",
+      "poo",
+      "bottom",
+      "pants"
+    ],
+    "sensory": [
+      "loud",
+      "flush",
+      "whoosh",
+      "cold",
+      "wet",
+      "feeling"
+    ],
+    "strangers": [
+      "teacher",
+      "teachers",
+      "carer",
+      "doctor"
+    ],
+    "separation": [
+      "right here",
+      "stay",
+      "with me",
+      "door",
+      "helps me",
+      "right there",
+      "close",
+      "with you",
+      "together",
+      "comes back",
+      "back",
+      "hand",
+      "nearby"
+    ],
+    "unknown": [
+      "first",
+      "then",
+      "next",
+      "after",
+      "last",
+      "step",
+      "steps"
+    ],
+    "safety": [
+      "fall",
+      "safe",
+      "steady",
+      "stool",
+      "help",
+      "careful",
+      "break",
+      "stop"
+    ],
+    "social": [
+      "kids",
+      "friend",
+      "friends",
+      "everyone",
+      "everybody",
+      "children",
+      "people",
+      "others"
+    ],
+    "love": [
+      "love",
+      "hug",
+      "proud",
+      "high five",
+      "cuddle"
+    ]
+  },
+  "backgrounds": [
+    "home-evening",
+    "cosy-room",
+    "outside"
+  ],
+  "fallbackPages": {
+    "story": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "[[CHILD]] is learning to use the big kid toilet.",
+              "kind": "describe"
+            },
+            {
+              "text": "Everybody does wee and poo, even animals and grown-ups.",
+              "kind": "describe"
+            },
+            {
+              "text": "The body gives a feeling in the tummy when it is time.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, [[CHILD]] tells [[GROWNUP]], I need the toilet.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Before bed, here is a story about a little elephant called Ellie.",
+              "kind": "describe"
+            },
+            {
+              "text": "Ellie wore diapers, but she wanted to try the big kid potty.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama Elephant said, your tummy will tell you when it is time.",
+              "kind": "describe"
+            },
+            {
+              "text": "One morning, Ellie felt a funny tummy feeling.",
+              "kind": "describe"
+            },
+            {
+              "text": "First she said, Mama, I need the potty.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then she sat on her little blue potty.",
+              "kind": "describe"
+            },
+            {
+              "text": "She waited and waited, and hummed a song.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, plop, a wee came out.",
+              "kind": "describe"
+            },
+            {
+              "text": "Ellie looked at Mama with big eyes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama clapped, and Ellie did a happy stomp.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "sensory",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Then pants go down, and the bottom sits on the potty.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next the wee or poo comes out, and that can take a little while.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, wipe, pants up and wash hands.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, a happy dance, because the body did its job.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say, I need the toilet, as soon as the tummy feeling comes.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "[[CHILD]] is learning to use the big kid toilet.",
+              "kind": "describe"
+            },
+            {
+              "text": "Everybody does wee and poo, even animals and grown-ups.",
+              "kind": "describe"
+            },
+            {
+              "text": "The body gives a feeling in the tummy when it is time.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, [[CHILD]] tells [[GROWNUP]], I need the toilet.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then pants go down, and the bottom sits on the potty.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next the wee or poo comes out, and that can take a little while.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, wipe, pants up and wash hands.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, a happy dance, because the body did its job.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say, I need the toilet, as soon as the tummy feeling comes.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "[[GROWNUP]] helps [[CHILD]] with the toilet.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] can stay in the bathroom or wait by the door, whatever feels right.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grown-ups help with wiping and washing hands.",
+              "kind": "describe"
+            },
+            {
+              "text": "At daycare or school, teachers help kids with toilets every day.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can ask any grown-up who looks after kids, can you help me with the toilet?",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "strangers",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Ellie the elephant had lots of helpers.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama Elephant helped her wipe and wash her trunk.",
+              "kind": "describe"
+            },
+            {
+              "text": "Papa Elephant made a little step so Ellie could reach the sink.",
+              "kind": "describe"
+            },
+            {
+              "text": "At playgroup, the kind giraffe teacher said, tell me when you need the potty.",
+              "kind": "describe"
+            },
+            {
+              "text": "Ellie saw her friend the hippo going to the potty too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Are you learning too, asked Ellie.",
+              "kind": "describe"
+            },
+            {
+              "text": "Yes, said the hippo, and yesterday I had an accident, but today I made it.",
+              "kind": "describe"
+            },
+            {
+              "text": "Ellie smiled.",
+              "kind": "describe"
+            },
+            {
+              "text": "Big brother elephant said, I learned too when I was little.",
+              "kind": "describe"
+            },
+            {
+              "text": "Ellie felt less alone.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "strangers",
+            "unknown",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "It is a normal part of their job.",
+              "kind": "describe"
+            },
+            {
+              "text": "Other kids are learning to use the toilet too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Big kids learned once, a little at a time.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can ask any grown-up who looks after kids, can you help me with the toilet?",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "[[GROWNUP]] helps [[CHILD]] with the toilet.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] can stay in the bathroom or wait by the door, whatever feels right.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grown-ups help with wiping and washing hands.",
+              "kind": "describe"
+            },
+            {
+              "text": "At daycare or school, teachers help kids with toilets every day.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is a normal part of their job.",
+              "kind": "describe"
+            },
+            {
+              "text": "Other kids are learning to use the toilet too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Big kids learned once, a little at a time.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can ask any grown-up who looks after kids, can you help me with the toilet?",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "strangers",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "When the tummy feeling comes, [[CHILD]] goes to the potty straight away.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] sits down, with feet on the floor or a little step.",
+              "kind": "describe"
+            },
+            {
+              "text": "Waiting can take a few minutes, so a book or a song helps.",
+              "kind": "describe"
+            },
+            {
+              "text": "When the wee or poo is out, it is time to wipe, front to back.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Ellie the elephant learned all the steps.",
+              "kind": "describe"
+            },
+            {
+              "text": "When the tummy feeling came, she stopped playing and went to the potty.",
+              "kind": "describe"
+            },
+            {
+              "text": "She sat down with her feet on a little stool.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama gave her a book to look at while she waited.",
+              "kind": "describe"
+            },
+            {
+              "text": "Ellie blew slow bubbles, like in the bath, and her tummy relaxed.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then, plop.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, she wiped with soft paper, with Mama's help.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then she pulled her pants up all by herself.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama flushed, whoosh, while Ellie covered her ears.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, Ellie washed her trunk with lots of bubbles.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "sensory",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Then [[CHILD]] pulls up the pants.",
+              "kind": "describe"
+            },
+            {
+              "text": "The toilet flush is loud, so it is fine to leave the room first.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, wash hands with soap and sing a little song.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can sit and blow slow bubbles to help the body relax.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "When the tummy feeling comes, [[CHILD]] goes to the potty straight away.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] sits down, with feet on the floor or a little step.",
+              "kind": "describe"
+            },
+            {
+              "text": "Waiting can take a few minutes, so a book or a song helps.",
+              "kind": "describe"
+            },
+            {
+              "text": "When the wee or poo is out, it is time to wipe, front to back.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[CHILD]] pulls up the pants.",
+              "kind": "describe"
+            },
+            {
+              "text": "The toilet flush is loud, so it is fine to leave the room first.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, wash hands with soap and sing a little song.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can sit and blow slow bubbles to help the body relax.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "Sometimes a wee or poo comes before reaching the potty.",
+              "kind": "describe"
+            },
+            {
+              "text": "That is called an accident, and it is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "Every child who is learning has accidents.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] and [[GROWNUP]] clean up together, change clothes and try again next time.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "worried",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Ellie the elephant had an accident at the park.",
+              "kind": "describe"
+            },
+            {
+              "text": "She felt wet and sad, and she wanted to cry.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama did not say, you are naughty.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama said, that is okay, bodies are learning.",
+              "kind": "describe"
+            },
+            {
+              "text": "They cleaned up together and put on dry clothes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next time, said Mama, we will try a little earlier.",
+              "kind": "describe"
+            },
+            {
+              "text": "Ellie was also scared of the big whoosh of the toilet.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama said, you never have to flush, and you can cover your ears.",
+              "kind": "describe"
+            },
+            {
+              "text": "Ellie took a slow breath.",
+              "kind": "describe"
+            },
+            {
+              "text": "The next day, she made it to the potty, and she grinned.",
+              "kind": "describe"
+            },
+            {
+              "text": "Worried and brave can happen at the same time.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Some kids feel scared of the loud flush.",
+              "kind": "describe"
+            },
+            {
+              "text": "Nobody has to flush, and covering ears is fine.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids feel worried about poo coming out.",
+              "kind": "describe"
+            },
+            {
+              "text": "The body knows how to do it, slowly and gently.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can take slow breaths, smell the flower and blow the candle.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can say, I am scared of the flush, and [[GROWNUP]] will help.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Sometimes a wee or poo comes before reaching the potty.",
+              "kind": "describe"
+            },
+            {
+              "text": "That is called an accident, and it is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "Every child who is learning has accidents.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] and [[GROWNUP]] clean up together, change clothes and try again next time.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids feel scared of the loud flush.",
+              "kind": "describe"
+            },
+            {
+              "text": "Nobody has to flush, and covering ears is fine.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids feel worried about poo coming out.",
+              "kind": "describe"
+            },
+            {
+              "text": "The body knows how to do it, slowly and gently.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can take slow breaths, smell the flower and blow the candle.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can say, I am scared of the flush, and [[GROWNUP]] will help.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "Tonight [[CHILD]] can teach a toy to use the potty.",
+              "kind": "describe"
+            },
+            {
+              "text": "First the toy feels the tummy feeling.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the toy says, I need the toilet.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next the toy sits on the potty and waits.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, the toy wipes and washes its hands.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Ellie the elephant taught her toy mouse to use the potty.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, she said, you feel your tummy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then you say, I need the potty.",
+              "kind": "describe"
+            },
+            {
+              "text": "Ellie put the mouse on the little potty.",
+              "kind": "describe"
+            },
+            {
+              "text": "Wait a bit, said Ellie, and sing a song.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then wipe, then wash your paws.",
+              "kind": "describe"
+            },
+            {
+              "text": "The toy mouse looked very proud.",
+              "kind": "describe"
+            },
+            {
+              "text": "Ellie gave it a big high five.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama said, you are a great teacher, Ellie.",
+              "kind": "describe"
+            },
+            {
+              "text": "Ellie yawned, happy and ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "And Ellie slept well that night.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "strangers",
+            "unknown",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Last, [[CHILD]] gives the toy a high five for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "Trying is what matters, every time, even when nothing comes out.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then it is [[CHILD]]'s turn to sit on the potty and practise, just for a minute.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] cheers, and [[CHILD]] does a happy dance.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say the steps: feel, tell, sit, wipe, wash.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight [[CHILD]] can teach a toy to use the potty.",
+              "kind": "describe"
+            },
+            {
+              "text": "First the toy feels the tummy feeling.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the toy says, I need the toilet.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next the toy sits on the potty and waits.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, the toy wipes and washes its hands.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, [[CHILD]] gives the toy a high five for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "Trying is what matters, every time, even when nothing comes out.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then it is [[CHILD]]'s turn to sit on the potty and practise, just for a minute.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] cheers, and [[CHILD]] does a happy dance.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say the steps: feel, tell, sit, wipe, wash.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        }
+      ]
+    },
+    "social": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "I am learning to use the big kid toilet.",
+              "kind": "describe"
+            },
+            {
+              "text": "Everybody does wee and poo.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grown-ups and animals do too.",
+              "kind": "describe"
+            },
+            {
+              "text": "My tummy tells me when it is time.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I say, I need the toilet.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I pull my pants down.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say, I need the toilet.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I am learning to use the big kid toilet.",
+              "kind": "describe"
+            },
+            {
+              "text": "Everybody does wee and poo.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grown-ups and animals do too.",
+              "kind": "describe"
+            },
+            {
+              "text": "My tummy tells me when it is time.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I say, I need the toilet.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I pull my pants down.",
+              "kind": "describe"
+            },
+            {
+              "text": "I sit on the potty.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next the wee or poo comes out.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes it takes a little while.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, I wipe and wash my hands.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, I do a happy dance.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "separation",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I sit on the potty.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next the wee or poo comes out.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes it takes a little while.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, I wipe and wash my hands.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, I do a happy dance.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say, I need the toilet.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "separation",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I am learning to use the big kid toilet.",
+              "kind": "describe"
+            },
+            {
+              "text": "Everybody does wee and poo.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grown-ups and animals do too.",
+              "kind": "describe"
+            },
+            {
+              "text": "My tummy tells me when it is time.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I say, I need the toilet.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I pull my pants down.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say, I need the toilet.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "unknown",
+            "social",
+            "love"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "[[GROWNUP]] helps me with the toilet.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] can stay with me.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] can wait by the door.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grown-ups help me wipe.",
+              "kind": "describe"
+            },
+            {
+              "text": "They help me wash my hands.",
+              "kind": "describe"
+            },
+            {
+              "text": "At daycare, teachers help kids with toilets.",
+              "kind": "describe"
+            },
+            {
+              "text": "Helping with toilets is part of their job.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask a grown-up to help me.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "strangers",
+            "separation",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "[[GROWNUP]] helps me with the toilet.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] can stay with me.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] can wait by the door.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grown-ups help me wipe.",
+              "kind": "describe"
+            },
+            {
+              "text": "They help me wash my hands.",
+              "kind": "describe"
+            },
+            {
+              "text": "At daycare, teachers help kids with toilets.",
+              "kind": "describe"
+            },
+            {
+              "text": "Helping with toilets is part of their job.",
+              "kind": "describe"
+            },
+            {
+              "text": "Other kids are learning too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Big kids learned too, a little at a time.",
+              "kind": "describe"
+            },
+            {
+              "text": "I am not the only one.",
+              "kind": "describe"
+            },
+            {
+              "text": "Everyone learns.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "strangers",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Other kids are learning too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Big kids learned too, a little at a time.",
+              "kind": "describe"
+            },
+            {
+              "text": "I am not the only one.",
+              "kind": "describe"
+            },
+            {
+              "text": "Everyone learns.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask a grown-up to help me.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "safety",
+            "social",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "[[GROWNUP]] helps me with the toilet.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] can stay with me.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] can wait by the door.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grown-ups help me wipe.",
+              "kind": "describe"
+            },
+            {
+              "text": "They help me wash my hands.",
+              "kind": "describe"
+            },
+            {
+              "text": "At daycare, teachers help kids with toilets.",
+              "kind": "describe"
+            },
+            {
+              "text": "Helping with toilets is part of their job.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask a grown-up to help me.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "strangers",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "When my tummy tells me, I go to the potty.",
+              "kind": "describe"
+            },
+            {
+              "text": "I go straight away.",
+              "kind": "describe"
+            },
+            {
+              "text": "I sit down.",
+              "kind": "describe"
+            },
+            {
+              "text": "My feet rest on the floor or a step.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can look at a book while I wait.",
+              "kind": "describe"
+            },
+            {
+              "text": "When the wee or poo is out, I wipe.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can blow slow bubbles to help my body relax.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "When my tummy tells me, I go to the potty.",
+              "kind": "describe"
+            },
+            {
+              "text": "I go straight away.",
+              "kind": "describe"
+            },
+            {
+              "text": "I sit down.",
+              "kind": "describe"
+            },
+            {
+              "text": "My feet rest on the floor or a step.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can look at a book while I wait.",
+              "kind": "describe"
+            },
+            {
+              "text": "When the wee or poo is out, I wipe.",
+              "kind": "describe"
+            },
+            {
+              "text": "A grown-up can help me.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I pull up my pants.",
+              "kind": "describe"
+            },
+            {
+              "text": "The flush is loud.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can leave before the flush.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, I wash my hands with soap.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "A grown-up can help me.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I pull up my pants.",
+              "kind": "describe"
+            },
+            {
+              "text": "The flush is loud.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can leave before the flush.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, I wash my hands with soap.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can blow slow bubbles to help my body relax.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "When my tummy tells me, I go to the potty.",
+              "kind": "describe"
+            },
+            {
+              "text": "I go straight away.",
+              "kind": "describe"
+            },
+            {
+              "text": "I sit down.",
+              "kind": "describe"
+            },
+            {
+              "text": "My feet rest on the floor or a step.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can look at a book while I wait.",
+              "kind": "describe"
+            },
+            {
+              "text": "When the wee or poo is out, I wipe.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can blow slow bubbles to help my body relax.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "unknown",
+            "safety",
+            "social"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "Sometimes I have an accident.",
+              "kind": "describe"
+            },
+            {
+              "text": "An accident is when wee or poo comes early.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "All kids who are learning have accidents.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] helps me clean up.",
+              "kind": "describe"
+            },
+            {
+              "text": "I change my clothes.",
+              "kind": "describe"
+            },
+            {
+              "text": "I try again next time.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "worried",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Sometimes I have an accident.",
+              "kind": "describe"
+            },
+            {
+              "text": "An accident is when wee or poo comes early.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "All kids who are learning have accidents.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] helps me clean up.",
+              "kind": "describe"
+            },
+            {
+              "text": "I change my clothes.",
+              "kind": "describe"
+            },
+            {
+              "text": "I try again next time.",
+              "kind": "describe"
+            },
+            {
+              "text": "The flush is loud.",
+              "kind": "describe"
+            },
+            {
+              "text": "I do not have to flush.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can cover my ears.",
+              "kind": "describe"
+            },
+            {
+              "text": "My body knows how to do poo, slowly and gently.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "The flush is loud.",
+              "kind": "describe"
+            },
+            {
+              "text": "I do not have to flush.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can cover my ears.",
+              "kind": "describe"
+            },
+            {
+              "text": "My body knows how to do poo, slowly and gently.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can tell [[GROWNUP]] what feels scary.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Sometimes I have an accident.",
+              "kind": "describe"
+            },
+            {
+              "text": "An accident is when wee or poo comes early.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "All kids who are learning have accidents.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] helps me clean up.",
+              "kind": "describe"
+            },
+            {
+              "text": "I change my clothes.",
+              "kind": "describe"
+            },
+            {
+              "text": "I try again next time.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can tell [[GROWNUP]] what feels scary.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "Tonight I can teach my toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "My toy feels the tummy feeling.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then my toy says, I need the toilet.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next my toy sits on the potty.",
+              "kind": "describe"
+            },
+            {
+              "text": "It waits a little.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, it wipes.",
+              "kind": "describe"
+            },
+            {
+              "text": "It washes its hands.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say the steps: feel, tell, sit, wipe, wash.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight I can teach my toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "My toy feels the tummy feeling.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then my toy says, I need the toilet.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next my toy sits on the potty.",
+              "kind": "describe"
+            },
+            {
+              "text": "It waits a little.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, it wipes.",
+              "kind": "describe"
+            },
+            {
+              "text": "It washes its hands.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, I give my toy a high five.",
+              "kind": "describe"
+            },
+            {
+              "text": "Trying is what matters.",
+              "kind": "describe"
+            },
+            {
+              "text": "I try every time.",
+              "kind": "describe"
+            },
+            {
+              "text": "Each try helps me learn.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Last, I give my toy a high five.",
+              "kind": "describe"
+            },
+            {
+              "text": "Trying is what matters.",
+              "kind": "describe"
+            },
+            {
+              "text": "I try every time.",
+              "kind": "describe"
+            },
+            {
+              "text": "Each try helps me learn.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say the steps: feel, tell, sit, wipe, wash.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "separation",
+            "unknown",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight I can teach my toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "My toy feels the tummy feeling.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then my toy says, I need the toilet.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next my toy sits on the potty.",
+              "kind": "describe"
+            },
+            {
+              "text": "It waits a little.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, it wipes.",
+              "kind": "describe"
+            },
+            {
+              "text": "It washes its hands.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say the steps: feel, tell, sit, wipe, wash.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        }
+      ]
+    }
+  },
+  "badge": {
+    "id": "potty_champion",
+    "label": "Potty Champion"
+  },
+  "olderPages": {
+    "what_happens": {
+      "sentences": [
+        {
+          "text": "Learning to use the toilet is a skill, like learning to ride a bike, and every body learns at its own speed.",
+          "kind": "describe"
+        },
+        {
+          "text": "The brain and the bladder have to learn to talk to each other, and that takes practice.",
+          "kind": "describe"
+        },
+        {
+          "text": "Some kids are dry in the day long before they are dry at night, and that is normal.",
+          "kind": "describe"
+        },
+        {
+          "text": "Drinking water and eating fruit helps poos come out easily.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can sit on the toilet after meals, when the body is most ready.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "home-evening",
+      "addresses": [
+        "body",
+        "unknown",
+        "safety",
+        "social"
+      ]
+    },
+    "who_is_there": {
+      "sentences": [
+        {
+          "text": "Teachers, carers and doctors all know that toilet learning is a normal part of growing up.",
+          "kind": "describe"
+        },
+        {
+          "text": "If accidents keep happening at night, a doctor can explain why, and it is never a child's fault.",
+          "kind": "describe"
+        },
+        {
+          "text": "Lots of kids still wear night pants for years, and nobody needs to know.",
+          "kind": "describe"
+        },
+        {
+          "text": "Family members can share their own stories of learning.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can choose a private word to tell [[GROWNUP]] quietly.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "home-evening",
+      "addresses": [
+        "body",
+        "strangers",
+        "social"
+      ]
+    },
+    "what_i_do": {
+      "sentences": [
+        {
+          "text": "Taking time on the toilet helps the body empty properly.",
+          "kind": "describe"
+        },
+        {
+          "text": "Feet flat on a stool help the tummy muscles relax, which is why many families use one.",
+          "kind": "describe"
+        },
+        {
+          "text": "Holding wee in for a long time can make accidents more likely.",
+          "kind": "describe"
+        },
+        {
+          "text": "Wiping front to back keeps the body clean and healthy.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can set a reminder to try the toilet before leaving the house.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "brave",
+      "background": "home-evening",
+      "addresses": [
+        "body",
+        "separation",
+        "safety"
+      ]
+    },
+    "if_scared": {
+      "sentences": [
+        {
+          "text": "Accidents are normal for months, and stress, illness or changes like a new sibling can bring them back for a while.",
+          "kind": "describe"
+        },
+        {
+          "text": "If poos feel hard or sore, that is constipation, and a doctor can help with simple changes.",
+          "kind": "describe"
+        },
+        {
+          "text": "Feeling embarrassed is common, and nobody needs to know apart from the family.",
+          "kind": "describe"
+        },
+        {
+          "text": "Night dryness depends on a hormone that develops in its own time.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can pack spare clothes in a bag, so an accident is no big deal.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "worried",
+      "background": "home-evening",
+      "addresses": [
+        "pain",
+        "body",
+        "sensory",
+        "strangers"
+      ]
+    },
+    "rehearsal": {
+      "sentences": [
+        {
+          "text": "A simple chart with stickers can track tries, not just successes.",
+          "kind": "describe"
+        },
+        {
+          "text": "Practising at set times, like after breakfast and before bath, builds a habit.",
+          "kind": "describe"
+        },
+        {
+          "text": "It helps to know where the toilets are when going out.",
+          "kind": "describe"
+        },
+        {
+          "text": "Packing a little kit with spare pants, wipes and a bag means no worries.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can be in charge of the sticker chart.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "happy",
+      "background": "home-evening",
+      "addresses": [
+        "body",
+        "unknown",
+        "safety"
+      ]
+    }
+  }
+}

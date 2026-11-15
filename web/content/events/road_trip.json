@@ -1,0 +1,2463 @@
+{
+  "type": "road_trip",
+  "version": 1,
+  "label": "Long car trip",
+  "countdownLabel": "the road trip",
+  "beats": {
+    "what_happens": {
+      "title": "What happens on a long car trip",
+      "goals": [
+        "A long trip has driving, stops and arriving",
+        "Stops are for toilets, food and stretching",
+        "The map shows how far is left"
+      ],
+      "parentSkill": "Draw the trip as a line with stops, so your child can tick each one."
+    },
+    "who_is_there": {
+      "title": "Who is on the trip",
+      "goals": [
+        "The driver focuses on the road",
+        "Passengers help keep the car calm",
+        "Other travellers share the road and the rest stops"
+      ],
+      "parentSkill": "Explain that the driver needs to concentrate, and name another grown-up or a signal for help."
+    },
+    "what_i_do": {
+      "title": "What I do in the car",
+      "goals": [
+        "Stay buckled",
+        "Use the busy bag and car games",
+        "Ask for stops and say if I feel sick"
+      ],
+      "parentSkill": "Pack small surprises to open at each stop."
+    },
+    "if_scared": {
+      "title": "If the trip feels long",
+      "goals": [
+        "Feeling bored or cranky is normal",
+        "Carsickness can happen and has fixes",
+        "Calm tools: stops, window, music, slow breaths"
+      ],
+      "parentSkill": "Acknowledge it: 'It feels long. Two more stops, then Granny's house.'"
+    },
+    "rehearsal": {
+      "title": "Let's get ready for the trip",
+      "goals": [
+        "Pack the busy bag together",
+        "Draw the trip map with stops",
+        "Practise a car game"
+      ],
+      "parentSkill": "Let your child choose what goes in the busy bag and draw the trip map."
+    }
+  },
+  "steps": [
+    "Pack a busy bag with snacks, toys and a pillow",
+    "Buckle into the car seat or seatbelt",
+    "Drive on big roads for a long time",
+    "Stop for toilet, food and stretching at rest stops",
+    "Play car games, listen to music or nap",
+    "Watch the map to see how far is left",
+    "Arrive, stretch and explore the new place"
+  ],
+  "sensory": [
+    "the hum of the car and the road",
+    "a seatbelt across the chest",
+    "trees, fields and trucks going past the window",
+    "a stuffy or warm car",
+    "snack crumbs and juice",
+    "a wobbly tummy on curvy roads"
+  ],
+  "honestyNotes": "Long trips can be boring, uncomfortable and sometimes make children carsick; never promise it will be quick or that they will not feel sick. Traffic can make trips longer. Use stops and landmarks rather than hours to describe the length.",
+  "questionButtons": [
+    {
+      "id": "how_long",
+      "text": "How long is the drive?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "[[GROWNUP]] will tell you how many stops there are.",
+        "We can tick each stop on the trip map."
+      ]
+    },
+    {
+      "id": "there_yet",
+      "text": "Are we there yet?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "Not yet, but every stop brings us closer.",
+        "Let's look at the map together."
+      ]
+    },
+    {
+      "id": "sick",
+      "text": "What if I feel sick?",
+      "topic": "body",
+      "fallbackAnswer": [
+        "Tell us straight away. We can open a window, look far away or stop.",
+        "The feeling gets better with fresh air."
+      ]
+    },
+    {
+      "id": "toilet",
+      "text": "What if I need the toilet?",
+      "topic": "body",
+      "fallbackAnswer": [
+        "Say so, and we will find a rest stop.",
+        "It is good to go at every stop, even a little."
+      ]
+    },
+    {
+      "id": "bored",
+      "text": "What if I get bored?",
+      "topic": "social",
+      "fallbackAnswer": [
+        "Your busy bag has things to do, and we can play car games.",
+        "Being bored for a bit is okay too."
+      ]
+    },
+    {
+      "id": "sleep",
+      "text": "Can I sleep in the car?",
+      "topic": "safety",
+      "fallbackAnswer": [
+        "Yes, with your seatbelt on and a pillow.",
+        "Napping makes the time pass quickly."
+      ]
+    },
+    {
+      "id": "trucks",
+      "text": "Why are the trucks so loud?",
+      "topic": "sensory",
+      "fallbackAnswer": [
+        "Big trucks have big engines, and they rumble.",
+        "They carry food and things to shops all over the country."
+      ]
+    },
+    {
+      "id": "car_crash",
+      "text": "Is the car safe?",
+      "topic": "safety",
+      "fallbackAnswer": [
+        "The driver drives carefully, and seatbelts and car seats keep everyone safe.",
+        "That is why we stay buckled."
+      ]
+    },
+    {
+      "id": "who_drives",
+      "text": "Who drives?",
+      "topic": "separation",
+      "fallbackAnswer": [
+        "[[GROWNUP]] or another grown-up drives and watches the road.",
+        "A grown-up is always in the car with you."
+      ]
+    },
+    {
+      "id": "strangers",
+      "text": "Who are all the people at the stop?",
+      "topic": "strangers",
+      "fallbackAnswer": [
+        "Other families and travellers on their own trips.",
+        "You stay with us at the stop."
+      ]
+    },
+    {
+      "id": "wifi",
+      "text": "Can I use a tablet?",
+      "topic": "other",
+      "fallbackAnswer": [
+        "[[GROWNUP]] will decide the screen plan for the trip.",
+        "Looking out of the window helps if your tummy feels funny."
+      ],
+      "ages": [
+        5,
+        12
+      ]
+    }
+  ],
+  "techniques": [
+    {
+      "id": "busy_bag",
+      "label": "A busy bag",
+      "how": "Pack books, crayons, toys and small surprises.",
+      "topics": [
+        "social",
+        "unknown"
+      ]
+    },
+    {
+      "id": "trip_map",
+      "label": "A trip map",
+      "how": "Draw the route with stops to tick off.",
+      "topics": [
+        "unknown"
+      ]
+    },
+    {
+      "id": "car_games",
+      "label": "Car games",
+      "how": "Play I spy, counting animals or spot the colour.",
+      "topics": [
+        "social",
+        "sensory"
+      ]
+    },
+    {
+      "id": "look_far",
+      "label": "Looking far away",
+      "how": "Look at the horizon when the tummy feels wobbly.",
+      "topics": [
+        "body",
+        "sensory"
+      ]
+    },
+    {
+      "id": "fresh_air",
+      "label": "Fresh air",
+      "how": "Open a window a little for cool air.",
+      "topics": [
+        "body",
+        "pain"
+      ]
+    },
+    {
+      "id": "stop_stretch",
+      "label": "Stop and stretch",
+      "how": "Run and stretch at every rest stop.",
+      "topics": [
+        "body"
+      ]
+    },
+    {
+      "id": "stay_close",
+      "label": "Stay close at stops",
+      "how": "Hold hands in car parks and stay together at stops.",
+      "topics": [
+        "safety",
+        "strangers",
+        "separation"
+      ]
+    },
+    {
+      "id": "playlist",
+      "label": "A trip playlist",
+      "how": "Let your child choose songs and stories.",
+      "topics": [
+        "love",
+        "sensory"
+      ]
+    },
+    {
+      "id": "deep_breaths",
+      "label": "Smell the flower, blow the candle",
+      "how": "Breathe in slowly through the nose and out like blowing a candle.",
+      "topics": [
+        "pain",
+        "sensory",
+        "safety"
+      ]
+    }
+  ],
+  "ritual": [
+    "Busy bag packed, buckle click",
+    "Play, nap, tick the stops",
+    "Stretch and explore"
+  ],
+  "phrases": {
+    "pain": [
+      "If your head hurts, let's have water and fresh air.",
+      "Tell me if your tummy feels funny."
+    ],
+    "body": [
+      "Look far away at the hills, and your tummy settles.",
+      "Let's use the toilet at this stop."
+    ],
+    "sensory": [
+      "The trucks rumble. That is their big engines.",
+      "The car hums. You can listen to music."
+    ],
+    "strangers": [
+      "Other families are on trips too.",
+      "Stay with us at the stop."
+    ],
+    "separation": [
+      "I'm right here in the car with you.",
+      "We stay together at every stop."
+    ],
+    "unknown": [
+      "Two more stops, then we arrive.",
+      "Let's tick the stop on your map."
+    ],
+    "safety": [
+      "Seatbelts keep us safe.",
+      "Hold my hand in the car park."
+    ],
+    "social": [
+      "Let's play I spy together.",
+      "You can be the navigator."
+    ],
+    "love": [
+      "I love going on adventures with you.",
+      "I'm proud of how well you are doing."
+    ]
+  },
+  "topicWords": {
+    "pain": [
+      "hurt",
+      "headache",
+      "sore",
+      "stiff",
+      "sick"
+    ],
+    "body": [
+      "tummy",
+      "toilet",
+      "snack",
+      "snacks",
+      "water",
+      "stretch",
+      "body",
+      "nap"
+    ],
+    "sensory": [
+      "hum",
+      "hummed",
+      "rumble",
+      "rumbled",
+      "loud",
+      "window",
+      "hot",
+      "music",
+      "wobbly"
+    ],
+    "strangers": [
+      "other families",
+      "travellers",
+      "trucks",
+      "other cars",
+      "rabbits",
+      "beavers"
+    ],
+    "separation": [
+      "together",
+      "with us",
+      "waiting",
+      "drives",
+      "in the car",
+      "right there",
+      "stay",
+      "close",
+      "with me",
+      "with you",
+      "comes back",
+      "back",
+      "hand",
+      "nearby"
+    ],
+    "unknown": [
+      "first",
+      "then",
+      "next",
+      "after",
+      "last",
+      "stop",
+      "stops",
+      "map",
+      "step",
+      "steps"
+    ],
+    "safety": [
+      "buckle",
+      "buckled",
+      "seatbelt",
+      "seatbelts",
+      "safe",
+      "carefully",
+      "road",
+      "careful",
+      "break",
+      "stop",
+      "help"
+    ],
+    "social": [
+      "games",
+      "game",
+      "i spy",
+      "family",
+      "everyone",
+      "friend",
+      "friends",
+      "kids",
+      "children",
+      "people",
+      "others"
+    ],
+    "love": [
+      "love",
+      "hug",
+      "proud",
+      "cuddle"
+    ]
+  },
+  "backgrounds": [
+    "outside",
+    "home-evening",
+    "cosy-room"
+  ],
+  "fallbackPages": {
+    "story": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "Soon [[CHILD]] will go on a long car trip.",
+              "kind": "describe"
+            },
+            {
+              "text": "First [[CHILD]] packs a busy bag with toys, books and snacks.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then everyone buckles in, click.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next the car drives on big roads for a long time.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Before bed, here is a story about a young badger called Bix.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bix's family was driving to see Granny Badger by the sea.",
+              "kind": "describe"
+            },
+            {
+              "text": "First Bix packed a bag with a book, crayons and crackers.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then everyone buckled in, click, click, click.",
+              "kind": "describe"
+            },
+            {
+              "text": "The car hummed along the long grey road.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bix counted red cars, one, two, three.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next they stopped at a rest stop for the toilet and a stretch.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bix ran in circles on the grass.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then more driving, and Bix had a little nap.",
+              "kind": "describe"
+            },
+            {
+              "text": "When Bix woke up, Papa said, look, the sea.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "sensory",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "After a while, there is a stop for the toilet, a snack and a stretch.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then more driving, with music, games and maybe a nap.",
+              "kind": "describe"
+            },
+            {
+              "text": "The map shows how far is left.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, the car arrives, and everyone stretches and explores.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can tick each stop on the trip map.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Soon [[CHILD]] will go on a long car trip.",
+              "kind": "describe"
+            },
+            {
+              "text": "First [[CHILD]] packs a busy bag with toys, books and snacks.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then everyone buckles in, click.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next the car drives on big roads for a long time.",
+              "kind": "describe"
+            },
+            {
+              "text": "After a while, there is a stop for the toilet, a snack and a stretch.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then more driving, with music, games and maybe a nap.",
+              "kind": "describe"
+            },
+            {
+              "text": "The map shows how far is left.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, the car arrives, and everyone stretches and explores.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can tick each stop on the trip map.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "On the trip, [[GROWNUP]] or another grown-up drives the car.",
+              "kind": "describe"
+            },
+            {
+              "text": "The driver needs to watch the road carefully.",
+              "kind": "describe"
+            },
+            {
+              "text": "Passengers can help by keeping voices calm.",
+              "kind": "describe"
+            },
+            {
+              "text": "If someone needs something, the grown-up in the front can help, or we wait for a stop.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Papa Badger drove the car.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama Badger sat next to him with the map.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bix and baby sister sat in the back.",
+              "kind": "describe"
+            },
+            {
+              "text": "Papa needs to watch the road, said Mama, so let's keep voices calm.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bix whispered a song to his sister.",
+              "kind": "describe"
+            },
+            {
+              "text": "Big trucks rumbled past, and a bus full of beavers waved.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the rest stop, a family of rabbits was having a picnic.",
+              "kind": "describe"
+            },
+            {
+              "text": "Where are you going, asked a little rabbit.",
+              "kind": "describe"
+            },
+            {
+              "text": "To see my granny, said Bix.",
+              "kind": "describe"
+            },
+            {
+              "text": "Me too, said the rabbit.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Other cars, trucks and buses share the road.",
+              "kind": "describe"
+            },
+            {
+              "text": "At rest stops, there are other families on trips too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Everyone takes turns at the toilets.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the end, family or friends may be waiting.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say, I need a stop, please, when needed.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "On the trip, [[GROWNUP]] or another grown-up drives the car.",
+              "kind": "describe"
+            },
+            {
+              "text": "The driver needs to watch the road carefully.",
+              "kind": "describe"
+            },
+            {
+              "text": "Passengers can help by keeping voices calm.",
+              "kind": "describe"
+            },
+            {
+              "text": "If someone needs something, the grown-up in the front can help, or we wait for a stop.",
+              "kind": "describe"
+            },
+            {
+              "text": "Other cars, trucks and buses share the road.",
+              "kind": "describe"
+            },
+            {
+              "text": "At rest stops, there are other families on trips too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Everyone takes turns at the toilets.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the end, family or friends may be waiting.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say, I need a stop, please, when needed.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "In the car, [[CHILD]] stays buckled the whole time.",
+              "kind": "describe"
+            },
+            {
+              "text": "The busy bag has books, crayons and toys.",
+              "kind": "describe"
+            },
+            {
+              "text": "Car games are fun: spot a red car, count cows, I spy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Music, stories and podcasts help time pass.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can look far out of the window when the tummy feels wobbly.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Bix the badger stayed buckled in his seat.",
+              "kind": "describe"
+            },
+            {
+              "text": "He opened his busy bag and drew a whale.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the family played I spy.",
+              "kind": "describe"
+            },
+            {
+              "text": "I spy something green, said Bix.",
+              "kind": "describe"
+            },
+            {
+              "text": "A tree, a field, a tractor, everyone guessed.",
+              "kind": "describe"
+            },
+            {
+              "text": "After a while, Bix's tummy felt wobbly on a curvy road.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama, my tummy feels funny, he said.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama opened the window a little.",
+              "kind": "describe"
+            },
+            {
+              "text": "Look far away at the hills, she said.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bix looked and breathed, and his tummy settled.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Snacks and water come out at the right times.",
+              "kind": "describe"
+            },
+            {
+              "text": "Napping is fine, with a pillow and a blanket.",
+              "kind": "describe"
+            },
+            {
+              "text": "If the tummy feels wobbly, say so straight away.",
+              "kind": "describe"
+            },
+            {
+              "text": "At stops, run, stretch and use the toilet.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can look far out of the window when the tummy feels wobbly.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the car, [[CHILD]] stays buckled the whole time.",
+              "kind": "describe"
+            },
+            {
+              "text": "The busy bag has books, crayons and toys.",
+              "kind": "describe"
+            },
+            {
+              "text": "Car games are fun: spot a red car, count cows, I spy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Music, stories and podcasts help time pass.",
+              "kind": "describe"
+            },
+            {
+              "text": "Snacks and water come out at the right times.",
+              "kind": "describe"
+            },
+            {
+              "text": "Napping is fine, with a pillow and a blanket.",
+              "kind": "describe"
+            },
+            {
+              "text": "If the tummy feels wobbly, say so straight away.",
+              "kind": "describe"
+            },
+            {
+              "text": "At stops, run, stretch and use the toilet.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can look far out of the window when the tummy feels wobbly.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "Long trips can feel very long.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sitting still for a long time is hard.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bodies can feel cranky, hot or stiff.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids feel carsick, with a wobbly tummy or a headache.",
+              "kind": "describe"
+            },
+            {
+              "text": "Traffic can make the trip slower.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "worried",
+          "background": "outside",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Bix the badger felt very bored.",
+              "kind": "describe"
+            },
+            {
+              "text": "Are we there yet, he asked, for the tenth time.",
+              "kind": "describe"
+            },
+            {
+              "text": "Papa did not say, nearly there.",
+              "kind": "describe"
+            },
+            {
+              "text": "Papa said, we have two more stops, and then the sea.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bix felt hot and cranky.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama passed back cool water and a new little puzzle.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bix took a slow breath, like smelling a flower.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then they sang a silly song about a bus.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the next stop, Bix ran and jumped.",
+              "kind": "describe"
+            },
+            {
+              "text": "Only one more stop, said Papa.",
+              "kind": "describe"
+            },
+            {
+              "text": "Worried and brave can happen at the same time.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Saying, I feel bored, or, I feel sick, is helpful.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grown-ups can plan a stop, open a window or change the game.",
+              "kind": "describe"
+            },
+            {
+              "text": "Each stop brings the trip closer to the end.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can take slow breaths, smell the flower and blow the candle.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can ask, how many stops are left?",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "pain",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Long trips can feel very long.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sitting still for a long time is hard.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bodies can feel cranky, hot or stiff.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids feel carsick, with a wobbly tummy or a headache.",
+              "kind": "describe"
+            },
+            {
+              "text": "Traffic can make the trip slower.",
+              "kind": "describe"
+            },
+            {
+              "text": "Saying, I feel bored, or, I feel sick, is helpful.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grown-ups can plan a stop, open a window or change the game.",
+              "kind": "describe"
+            },
+            {
+              "text": "Each stop brings the trip closer to the end.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can take slow breaths, smell the flower and blow the candle.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can ask, how many stops are left?",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "separation"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "Tonight [[CHILD]] and [[GROWNUP]] can get ready for the road trip.",
+              "kind": "describe"
+            },
+            {
+              "text": "First [[CHILD]] packs the busy bag: books, crayons, a toy and a pillow.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then they draw a trip map: home, the stops, and the end.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next [[CHILD]] chooses some songs for the car.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "outside",
+          "addresses": [
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Bix the badger got ready the night before.",
+              "kind": "describe"
+            },
+            {
+              "text": "He packed a busy bag with a book, crayons and a pillow.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then he drew a trip map with a house, three stops and the sea.",
+              "kind": "describe"
+            },
+            {
+              "text": "Papa helped him write the names.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next Bix chose songs for the car, the bus song and the whale song.",
+              "kind": "describe"
+            },
+            {
+              "text": "They practised I spy in the kitchen.",
+              "kind": "describe"
+            },
+            {
+              "text": "I spy something yellow, said Bix.",
+              "kind": "describe"
+            },
+            {
+              "text": "A lemon, said Papa.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bix laughed and put the map by the door.",
+              "kind": "describe"
+            },
+            {
+              "text": "He was ready for the adventure.",
+              "kind": "describe"
+            },
+            {
+              "text": "And Bix slept well that night.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "unknown",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "After that, they practise a car game, like I spy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, they talk about what to do if the tummy feels wobbly.",
+              "kind": "describe"
+            },
+            {
+              "text": "Getting ready makes the trip feel like an adventure.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow the wheels start turning.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say: buckle, play, stop, stretch, arrive.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight [[CHILD]] and [[GROWNUP]] can get ready for the road trip.",
+              "kind": "describe"
+            },
+            {
+              "text": "First [[CHILD]] packs the busy bag: books, crayons, a toy and a pillow.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then they draw a trip map: home, the stops, and the end.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next [[CHILD]] chooses some songs for the car.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, they practise a car game, like I spy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, they talk about what to do if the tummy feels wobbly.",
+              "kind": "describe"
+            },
+            {
+              "text": "Getting ready makes the trip feel like an adventure.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow the wheels start turning.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say: buckle, play, stop, stretch, arrive.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "unknown",
+            "safety"
+          ]
+        }
+      ]
+    },
+    "social": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "Soon I go on a long car trip.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I pack my busy bag.",
+              "kind": "describe"
+            },
+            {
+              "text": "Toys, books and snacks.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I buckle in.",
+              "kind": "describe"
+            },
+            {
+              "text": "Click.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next the car drives a long time.",
+              "kind": "describe"
+            },
+            {
+              "text": "After a while, we stop.",
+              "kind": "describe"
+            },
+            {
+              "text": "I use the toilet.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can tick each stop on my trip map.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Soon I go on a long car trip.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I pack my busy bag.",
+              "kind": "describe"
+            },
+            {
+              "text": "Toys, books and snacks.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I buckle in.",
+              "kind": "describe"
+            },
+            {
+              "text": "Click.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next the car drives a long time.",
+              "kind": "describe"
+            },
+            {
+              "text": "After a while, we stop.",
+              "kind": "describe"
+            },
+            {
+              "text": "I use the toilet.",
+              "kind": "describe"
+            },
+            {
+              "text": "I have a snack and a stretch.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then we drive more.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, we arrive.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I have a snack and a stretch.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then we drive more.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, we arrive.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can tick each stop on my trip map.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "unknown",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Soon I go on a long car trip.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I pack my busy bag.",
+              "kind": "describe"
+            },
+            {
+              "text": "Toys, books and snacks.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I buckle in.",
+              "kind": "describe"
+            },
+            {
+              "text": "Click.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next the car drives a long time.",
+              "kind": "describe"
+            },
+            {
+              "text": "After a while, we stop.",
+              "kind": "describe"
+            },
+            {
+              "text": "I use the toilet.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can tick each stop on my trip map.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "A grown-up drives the car.",
+              "kind": "describe"
+            },
+            {
+              "text": "The driver watches the road.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can help with a calm voice.",
+              "kind": "describe"
+            },
+            {
+              "text": "If I need something, I can ask.",
+              "kind": "describe"
+            },
+            {
+              "text": "Or I can wait for a stop.",
+              "kind": "describe"
+            },
+            {
+              "text": "Other cars share the road.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say, I need a stop, please.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "strangers",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "A grown-up drives the car.",
+              "kind": "describe"
+            },
+            {
+              "text": "The driver watches the road.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can help with a calm voice.",
+              "kind": "describe"
+            },
+            {
+              "text": "If I need something, I can ask.",
+              "kind": "describe"
+            },
+            {
+              "text": "Or I can wait for a stop.",
+              "kind": "describe"
+            },
+            {
+              "text": "Other cars share the road.",
+              "kind": "describe"
+            },
+            {
+              "text": "Trucks and buses too.",
+              "kind": "describe"
+            },
+            {
+              "text": "At rest stops, there are other families.",
+              "kind": "describe"
+            },
+            {
+              "text": "We take turns at the toilets.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the end, someone may be waiting for us.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Trucks and buses too.",
+              "kind": "describe"
+            },
+            {
+              "text": "At rest stops, there are other families.",
+              "kind": "describe"
+            },
+            {
+              "text": "We take turns at the toilets.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the end, someone may be waiting for us.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say, I need a stop, please.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "A grown-up drives the car.",
+              "kind": "describe"
+            },
+            {
+              "text": "The driver watches the road.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can help with a calm voice.",
+              "kind": "describe"
+            },
+            {
+              "text": "If I need something, I can ask.",
+              "kind": "describe"
+            },
+            {
+              "text": "Or I can wait for a stop.",
+              "kind": "describe"
+            },
+            {
+              "text": "Other cars share the road.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say, I need a stop, please.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "strangers",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "I stay buckled.",
+              "kind": "describe"
+            },
+            {
+              "text": "I open my busy bag.",
+              "kind": "describe"
+            },
+            {
+              "text": "I draw and play.",
+              "kind": "describe"
+            },
+            {
+              "text": "We play car games.",
+              "kind": "describe"
+            },
+            {
+              "text": "I spy, and counting cows.",
+              "kind": "describe"
+            },
+            {
+              "text": "We listen to music and stories.",
+              "kind": "describe"
+            },
+            {
+              "text": "I have snacks and water.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can nap with my pillow.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can look far out of the window.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I stay buckled.",
+              "kind": "describe"
+            },
+            {
+              "text": "I open my busy bag.",
+              "kind": "describe"
+            },
+            {
+              "text": "I draw and play.",
+              "kind": "describe"
+            },
+            {
+              "text": "We play car games.",
+              "kind": "describe"
+            },
+            {
+              "text": "I spy, and counting cows.",
+              "kind": "describe"
+            },
+            {
+              "text": "We listen to music and stories.",
+              "kind": "describe"
+            },
+            {
+              "text": "I have snacks and water.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can nap with my pillow.",
+              "kind": "describe"
+            },
+            {
+              "text": "If my tummy feels wobbly, I say so.",
+              "kind": "describe"
+            },
+            {
+              "text": "At stops, I run and stretch.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "Step by step, it gets a little easier.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "If my tummy feels wobbly, I say so.",
+              "kind": "describe"
+            },
+            {
+              "text": "At stops, I run and stretch.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can look far out of the window.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I stay buckled.",
+              "kind": "describe"
+            },
+            {
+              "text": "I open my busy bag.",
+              "kind": "describe"
+            },
+            {
+              "text": "I draw and play.",
+              "kind": "describe"
+            },
+            {
+              "text": "We play car games.",
+              "kind": "describe"
+            },
+            {
+              "text": "I spy, and counting cows.",
+              "kind": "describe"
+            },
+            {
+              "text": "We listen to music and stories.",
+              "kind": "describe"
+            },
+            {
+              "text": "I have snacks and water.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can nap with my pillow.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can look far out of the window.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "Long trips can feel very long.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sitting still is hard.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel cranky.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel hot or stiff.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes my tummy feels wobbly.",
+              "kind": "describe"
+            },
+            {
+              "text": "Traffic can make it slower.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say, I feel bored.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "worried",
+          "background": "outside",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Long trips can feel very long.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sitting still is hard.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel cranky.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel hot or stiff.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes my tummy feels wobbly.",
+              "kind": "describe"
+            },
+            {
+              "text": "Traffic can make it slower.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say, I feel bored.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say, I feel sick.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grown-ups can help.",
+              "kind": "describe"
+            },
+            {
+              "text": "Each stop brings us closer.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "Step by step, it gets a little easier.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I can say, I feel sick.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grown-ups can help.",
+              "kind": "describe"
+            },
+            {
+              "text": "Each stop brings us closer.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can ask, how many stops are left?",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "pain",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Long trips can feel very long.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sitting still is hard.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel cranky.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel hot or stiff.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes my tummy feels wobbly.",
+              "kind": "describe"
+            },
+            {
+              "text": "Traffic can make it slower.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say, I feel bored.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can ask, how many stops are left?",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "unknown"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "Tonight I get ready for the trip.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I pack my busy bag.",
+              "kind": "describe"
+            },
+            {
+              "text": "Books, crayons, a toy and a pillow.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I draw a trip map.",
+              "kind": "describe"
+            },
+            {
+              "text": "Home, the stops and the end.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next I choose songs.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: buckle, play, stop, stretch, arrive.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight I get ready for the trip.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I pack my busy bag.",
+              "kind": "describe"
+            },
+            {
+              "text": "Books, crayons, a toy and a pillow.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I draw a trip map.",
+              "kind": "describe"
+            },
+            {
+              "text": "Home, the stops and the end.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next I choose songs.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, we practise I spy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, we talk about a wobbly tummy.",
+              "kind": "describe"
+            },
+            {
+              "text": "I know what to do.",
+              "kind": "describe"
+            },
+            {
+              "text": "The trip is an adventure.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "After that, we practise I spy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, we talk about a wobbly tummy.",
+              "kind": "describe"
+            },
+            {
+              "text": "I know what to do.",
+              "kind": "describe"
+            },
+            {
+              "text": "The trip is an adventure.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: buckle, play, stop, stretch, arrive.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight I get ready for the trip.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I pack my busy bag.",
+              "kind": "describe"
+            },
+            {
+              "text": "Books, crayons, a toy and a pillow.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I draw a trip map.",
+              "kind": "describe"
+            },
+            {
+              "text": "Home, the stops and the end.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next I choose songs.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: buckle, play, stop, stretch, arrive.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "unknown",
+            "safety",
+            "social"
+          ]
+        }
+      ]
+    }
+  },
+  "badge": {
+    "id": "road_explorer",
+    "label": "Road Explorer"
+  },
+  "olderPages": {
+    "what_happens": {
+      "sentences": [
+        {
+          "text": "Long drives are planned around distance, fuel, rest stops and traffic.",
+          "kind": "describe"
+        },
+        {
+          "text": "Drivers need breaks every couple of hours to stay alert, so stops keep everyone safe.",
+          "kind": "describe"
+        },
+        {
+          "text": "Navigation apps estimate the time, but traffic and weather can change it.",
+          "kind": "describe"
+        },
+        {
+          "text": "Watching the route on a map shows the towns and rivers you pass.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can be the navigator and announce the next stop.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "outside",
+      "addresses": [
+        "separation",
+        "unknown",
+        "safety",
+        "social"
+      ]
+    },
+    "who_is_there": {
+      "sentences": [
+        {
+          "text": "Distracting a driver is a real safety risk, which is why calm passengers matter.",
+          "kind": "describe"
+        },
+        {
+          "text": "Rest stops have toilets, food and space to walk, and they are used by thousands of travellers.",
+          "kind": "describe"
+        },
+        {
+          "text": "Truck drivers often drive all day for work.",
+          "kind": "describe"
+        },
+        {
+          "text": "Families sometimes take turns driving on long trips.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can be in charge of the music playlist.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "outside",
+      "addresses": [
+        "body",
+        "sensory",
+        "strangers",
+        "unknown"
+      ]
+    },
+    "what_i_do": {
+      "sentences": [
+        {
+          "text": "Carsickness happens when the eyes and the inner ear send different messages about movement.",
+          "kind": "describe"
+        },
+        {
+          "text": "Looking at the horizon, fresh air and not reading help match the signals.",
+          "kind": "describe"
+        },
+        {
+          "text": "Light snacks are better than big meals before a drive.",
+          "kind": "describe"
+        },
+        {
+          "text": "Screens can make carsickness worse for some kids.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can keep a trip journal of things spotted out of the window.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "brave",
+      "background": "outside",
+      "addresses": [
+        "body",
+        "sensory",
+        "safety",
+        "social"
+      ]
+    },
+    "if_scared": {
+      "sentences": [
+        {
+          "text": "Boredom is uncomfortable but harmless, and it often leads to creative ideas.",
+          "kind": "describe"
+        },
+        {
+          "text": "Hunger, thirst and tiredness make crankiness worse, so check those first.",
+          "kind": "describe"
+        },
+        {
+          "text": "Carsickness fades once the car stops, and fresh air helps quickly.",
+          "kind": "describe"
+        },
+        {
+          "text": "Breaking the trip into chunks between stops makes it feel shorter.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can plan one activity for each chunk of the drive.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "worried",
+      "background": "outside",
+      "addresses": [
+        "unknown",
+        "safety"
+      ]
+    },
+    "rehearsal": {
+      "sentences": [
+        {
+          "text": "Planning a trip means checking the route, the stops and how long each part takes.",
+          "kind": "describe"
+        },
+        {
+          "text": "Downloading songs and stories before leaving avoids signal problems.",
+          "kind": "describe"
+        },
+        {
+          "text": "A small reward at each stop keeps morale high.",
+          "kind": "describe"
+        },
+        {
+          "text": "Knowing the plan reduces the, are we there yet, feeling.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can calculate how many stops there are and mark them as they go.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "happy",
+      "background": "outside",
+      "addresses": [
+        "unknown",
+        "safety"
+      ]
+    }
+  }
+}

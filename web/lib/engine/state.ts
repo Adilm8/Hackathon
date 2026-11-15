@@ -421,6 +421,8 @@ export interface CheckinInput {
   helped: string[];
   didntHelp: string[];
   custom?: string;
+  /** Brave-moment sticker ids (lib/home/achievements.ts); unknown ids are dropped, at most two. */
+  brave?: string[];
 }
 
 /**
@@ -443,6 +445,8 @@ export function saveCheckin(args: {
   const custom = input.custom?.trim().slice(0, 60) || undefined;
   const checkin: Checkin = { rating: input.rating, helped, didntHelp: didnt, savedOn: today };
   if (custom) checkin.custom = custom;
+  const brave = [...new Set((input.brave ?? []).filter((id) => /^[a-z_]{1,40}$/.test(id)))].slice(0, 2);
+  if (brave.length) checkin.brave = brave;
 
   const label = (id: string) =>
     template.techniques.find((t) => t.id === id)?.label ??

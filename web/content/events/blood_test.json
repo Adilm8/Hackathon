@@ -121,6 +121,10 @@
       "fallbackAnswer": [
         "Yes. [[GROWNUP]] can hold you in a big hug on a lap.",
         "You are not alone for any part."
+      ],
+      "ages": [
+        2,
+        9
       ]
     },
     {
@@ -139,6 +143,37 @@
       "fallbackAnswer": [
         "After the blood test you get a bandage, and maybe a sticker.",
         "Then we do something nice together."
+      ]
+    },
+    {
+      "id": "dizzy",
+      "text": "What if I feel dizzy?",
+      "topic": "body",
+      "fallbackAnswer": [
+        "Some people feel a bit wobbly after a blood test. You stay sitting, have a drink and a snack, and the feeling passes.",
+        "Tell the nurse or [[GROWNUP]] straight away, it is good to say it."
+      ]
+    },
+    {
+      "id": "how_long",
+      "text": "How long does it take?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "The poke part is quick, about as long as a short song. Getting ready and the bandage take a few minutes more.",
+        "Then it is done, and we can do something nice."
+      ]
+    },
+    {
+      "id": "results",
+      "text": "When will we know the results?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "The blood goes to a lab where helpers check it with special machines. The doctor tells [[GROWNUP]] the results, usually in a few days.",
+        "You can ask [[GROWNUP]] to share what the doctor says."
+      ],
+      "ages": [
+        7,
+        12
       ]
     }
   ],

@@ -12,7 +12,9 @@ export type IconName =
   | 'heart-pulse' | 'droplet' | 'hospital' | 'house' | 'moon-star' | 'users' | 'waves' | 'cake'
   | 'flame' | 'trophy' | 'crown' | 'target' | 'settings'
   | 'x' | 'chevron-up' | 'chevron-down' | 'chevron-right' | 'chevron-left' | 'bell' | 'maximize' | 'minimize' | 'keyboard'
-  | 'snowflake' | 'share-2' | 'timer' | 'library-big' | 'play' | 'pause' | 'rotate-ccw' | 'bath' | 'shirt' | 'lamp' | 'smartphone';
+  | 'snowflake' | 'share-2' | 'timer' | 'library-big' | 'play' | 'pause' | 'rotate-ccw' | 'bath' | 'shirt' | 'lamp' | 'smartphone'
+  | 'briefcase' | 'heart-handshake' | 'paw-print' | 'house-plus' | 'notebook-pen' | 'bed-single' | 'glasses' | 'puzzle' | 'ghost'
+  | 'gift' | 'car-front' | 'bike' | 'music' | 'drama' | 'medal' | 'tent' | 'blocks' | 'toilet' | 'bandage';
 
 export interface IconProps extends Omit<SVGProps<SVGSVGElement>, 'name'> {
   name: IconName;
@@ -60,6 +62,27 @@ export const EVENT_ICON: Record<EventType, IconName> = {
   babysitter: 'users',
   swimming: 'waves',
   party: 'cake',
+  tooth_loss: 'smile-plus',
+  surgery: 'bandage',
+  potty: 'toilet',
+  daycare: 'blocks',
+  new_school: 'backpack',
+  camp: 'tent',
+  sports: 'medal',
+  performance: 'drama',
+  new_class: 'music',
+  bike: 'bike',
+  road_trip: 'car-front',
+  holiday: 'gift',
+  halloween: 'ghost',
+  playdate: 'puzzle',
+  eye_exam: 'glasses',
+  big_bed: 'bed-single',
+  test_day: 'notebook-pen',
+  two_homes: 'house-plus',
+  new_pet: 'paw-print',
+  pet_loss: 'heart-handshake',
+  parent_trip: 'briefcase',
   other: 'sparkles',
 };
 
@@ -78,6 +101,27 @@ export const EVENT_LABEL: Record<EventType, string> = {
   babysitter: 'New babysitter',
   swimming: 'First swimming lesson',
   party: 'Birthday party',
+  tooth_loss: 'Losing a tooth',
+  surgery: 'Operation',
+  potty: 'Big kid toilet',
+  daycare: 'New daycare',
+  new_school: 'Changing schools',
+  camp: 'Summer camp',
+  sports: 'Sports game',
+  performance: 'Show or recital',
+  new_class: 'New class or club',
+  bike: 'Learning to ride a bike',
+  road_trip: 'Long car trip',
+  holiday: 'Family holiday',
+  halloween: 'Halloween',
+  playdate: 'First playdate',
+  eye_exam: 'Eye test',
+  big_bed: 'Big bed',
+  test_day: 'Big test',
+  two_homes: 'Two homes',
+  new_pet: 'New pet',
+  pet_loss: 'Saying goodbye to a pet',
+  parent_trip: 'Grown-up goes away',
   other: 'Another big day',
 };
 

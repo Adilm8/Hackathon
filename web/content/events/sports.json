@@ -1,0 +1,2466 @@
+{
+  "type": "sports",
+  "version": 1,
+  "label": "Sports game or competition",
+  "countdownLabel": "the big game",
+  "beats": {
+    "what_happens": {
+      "title": "What happens at the big game",
+      "goals": [
+        "A game has a warm-up, playing time and an ending",
+        "The coach gives a plan",
+        "Win or lose, the game ends with good game"
+      ],
+      "parentSkill": "Walk through the order of the day: kit, warm-up, plan, play, breaks, good game."
+    },
+    "who_is_there": {
+      "title": "Who is at the game",
+      "goals": [
+        "The coach leads and helps",
+        "Teammates work together",
+        "The other team and the referee are part of the game"
+      ],
+      "parentSkill": "Tell your child you will be cheering, and that you love watching them play, whatever happens."
+    },
+    "what_i_do": {
+      "title": "What I do in the game",
+      "goals": [
+        "Warm up, listen, try the plan",
+        "Keep going after a mistake",
+        "Drink water and be a good sport"
+      ],
+      "parentSkill": "Agree on a \"reset\" move for after mistakes, like a deep breath and a clap."
+    },
+    "if_scared": {
+      "title": "If I feel nervous",
+      "goals": [
+        "Butterflies before a game are normal",
+        "Losing and mistakes feel bad and pass",
+        "Calm tools: breathing, a cue word, remembering the fun"
+      ],
+      "parentSkill": "Name the nerves as energy: 'Butterflies mean your body is getting ready to play.'"
+    },
+    "rehearsal": {
+      "title": "Let's practise game day",
+      "goals": [
+        "Practise the reset move and good game",
+        "Pack the kit together",
+        "Picture the game from warm-up to the end"
+      ],
+      "parentSkill": "Play a mini game at home and practise both winning and losing with good game."
+    }
+  },
+  "steps": [
+    "Put on the kit and pack a water bottle",
+    "Arrive and warm up with the coach and the team",
+    "Listen to the coach's plan",
+    "Play the game, race or match",
+    "Take water breaks and cheer for teammates",
+    "Shake hands or say good game at the end",
+    "Talk about the best moment on the way home"
+  ],
+  "sensory": [
+    "a whistle blowing",
+    "people cheering and clapping",
+    "a fast heartbeat and puffing breath",
+    "sweaty hands and a red face",
+    "the smell of grass or a gym floor",
+    "a team shirt with a number"
+  ],
+  "honestyNotes": "Kids may lose, make mistakes or not get much playing time; never promise winning. Praise effort, teamwork and courage, not the score. Nerves before a game are normal. Let the parent fill in the sport.",
+  "questionButtons": [
+    {
+      "id": "lose",
+      "text": "What if we lose?",
+      "topic": "love",
+      "fallbackAnswer": [
+        "Losing can feel sad, and that is okay.",
+        "[[GROWNUP]] is proud of you for playing, win or lose."
+      ]
+    },
+    {
+      "id": "mistake",
+      "text": "What if I make a mistake?",
+      "topic": "safety",
+      "fallbackAnswer": [
+        "Everyone makes mistakes, even big athletes.",
+        "Take a breath, clap once and keep going."
+      ]
+    },
+    {
+      "id": "watch",
+      "text": "Will [[GROWNUP]] watch me?",
+      "topic": "separation",
+      "fallbackAnswer": [
+        "[[GROWNUP]] will tell you if they can come and where they will sit.",
+        "You can look for them and wave."
+      ]
+    },
+    {
+      "id": "coach",
+      "text": "What if the coach shouts?",
+      "topic": "strangers",
+      "fallbackAnswer": [
+        "Coaches sometimes shout so players can hear on a big field.",
+        "Loud does not mean angry, and you can ask the coach what they meant."
+      ]
+    },
+    {
+      "id": "hurt",
+      "text": "What if I get hurt?",
+      "topic": "pain",
+      "fallbackAnswer": [
+        "Bumps can happen in sports. Tell the coach straight away.",
+        "The coach knows what to do, and you can take a break."
+      ]
+    },
+    {
+      "id": "play_time",
+      "text": "What if I don't get to play much?",
+      "topic": "social",
+      "fallbackAnswer": [
+        "Coaches share playing time over many games.",
+        "Cheering from the bench helps the team too."
+      ]
+    },
+    {
+      "id": "butterflies",
+      "text": "Why do I feel butterflies?",
+      "topic": "body",
+      "fallbackAnswer": [
+        "Butterflies mean your body is getting ready to play.",
+        "Slow breaths help them settle."
+      ]
+    },
+    {
+      "id": "rules",
+      "text": "What if I forget the rules?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "Coaches and teammates will remind you.",
+        "The referee helps everyone follow the rules too."
+      ]
+    },
+    {
+      "id": "loud",
+      "text": "What if the crowd is loud?",
+      "topic": "sensory",
+      "fallbackAnswer": [
+        "Crowds cheer and whistles blow, and it can be loud.",
+        "You can focus on the ball and your teammates."
+      ]
+    },
+    {
+      "id": "win_feel",
+      "text": "How should I act if we win?",
+      "topic": "social",
+      "fallbackAnswer": [
+        "Celebrate with your team, then say good game to the other team.",
+        "Winning kindly is part of being a good sport."
+      ],
+      "ages": [
+        5,
+        12
+      ]
+    }
+  ],
+  "techniques": [
+    {
+      "id": "reset_move",
+      "label": "A reset move",
+      "how": "After a mistake: one breath, one clap, and say next.",
+      "topics": [
+        "safety",
+        "love"
+      ]
+    },
+    {
+      "id": "effort_goal",
+      "label": "An effort goal",
+      "how": "Pick a goal that does not depend on winning, like passing to friends.",
+      "topics": [
+        "unknown",
+        "love",
+        "social"
+      ]
+    },
+    {
+      "id": "water_breaks",
+      "label": "Water breaks",
+      "how": "Drink water at every break.",
+      "topics": [
+        "body"
+      ]
+    },
+    {
+      "id": "cheer_team",
+      "label": "Cheering for teammates",
+      "how": "Cheer and clap for teammates, even from the bench.",
+      "topics": [
+        "social"
+      ]
+    },
+    {
+      "id": "good_game",
+      "label": "Saying good game",
+      "how": "Practise good game for winning and for losing.",
+      "topics": [
+        "social",
+        "strangers"
+      ]
+    },
+    {
+      "id": "pre_game_song",
+      "label": "A pre-game song",
+      "how": "Pick a song to hum during warm-up.",
+      "topics": [
+        "sensory",
+        "unknown"
+      ]
+    },
+    {
+      "id": "tell_coach",
+      "label": "Telling the coach",
+      "how": "Tell the coach about any hurt or worry.",
+      "topics": [
+        "pain",
+        "strangers",
+        "safety"
+      ]
+    },
+    {
+      "id": "wave_signal",
+      "label": "A wave from the side",
+      "how": "Agree a wave or thumbs up between you and your child.",
+      "topics": [
+        "separation",
+        "love"
+      ]
+    },
+    {
+      "id": "deep_breaths",
+      "label": "Smell the flower, blow the candle",
+      "how": "Breathe in slowly through the nose and out like blowing a candle.",
+      "topics": [
+        "pain",
+        "sensory",
+        "safety",
+        "body"
+      ]
+    }
+  ],
+  "ritual": [
+    "Kit on, water bottle full",
+    "Breath, clap, next",
+    "Good game, win or lose"
+  ],
+  "phrases": {
+    "pain": [
+      "If something hurts, tell your coach and take a break.",
+      "Bumps get better."
+    ],
+    "body": [
+      "Butterflies mean your body is getting ready.",
+      "Drink water at every break."
+    ],
+    "sensory": [
+      "The crowd is loud. Watch the ball.",
+      "Your heart beats fast when you run. That is normal."
+    ],
+    "strangers": [
+      "The coach is there to help the team.",
+      "The referee keeps the game fair."
+    ],
+    "separation": [
+      "I'll be cheering for you.",
+      "Look for my wave."
+    ],
+    "unknown": [
+      "Warm-up, plan, play, water, good game.",
+      "The coach will tell you what to do."
+    ],
+    "safety": [
+      "After a mistake: breath, clap, next.",
+      "Everyone makes mistakes."
+    ],
+    "social": [
+      "Cheer for your teammates.",
+      "Being a good teammate matters most."
+    ],
+    "love": [
+      "I love watching you play, win or lose.",
+      "I'm proud of how hard you try."
+    ]
+  },
+  "topicWords": {
+    "pain": [
+      "hurt",
+      "hurts",
+      "bump",
+      "bumps",
+      "sore",
+      "ouch",
+      "injuries"
+    ],
+    "body": [
+      "body",
+      "heart",
+      "water",
+      "butterflies",
+      "tummy",
+      "muscles",
+      "energy",
+      "sweaty"
+    ],
+    "sensory": [
+      "whistle",
+      "loud",
+      "cheer",
+      "cheering",
+      "crowd",
+      "crowds",
+      "fast",
+      "red",
+      "smell"
+    ],
+    "strangers": [
+      "coach",
+      "referee",
+      "judge",
+      "other team",
+      "otters"
+    ],
+    "separation": [
+      "watch",
+      "watching",
+      "cheer for",
+      "wave",
+      "waving",
+      "side",
+      "right there",
+      "stay",
+      "close",
+      "with me",
+      "with you",
+      "together",
+      "comes back",
+      "back",
+      "hand",
+      "nearby"
+    ],
+    "unknown": [
+      "first",
+      "then",
+      "next",
+      "after",
+      "last",
+      "plan",
+      "step",
+      "steps"
+    ],
+    "safety": [
+      "mistake",
+      "mistakes",
+      "rules",
+      "safe",
+      "break",
+      "fair",
+      "careful",
+      "stop",
+      "help"
+    ],
+    "social": [
+      "team",
+      "teammates",
+      "teammate",
+      "friends",
+      "together",
+      "everyone",
+      "players",
+      "friend",
+      "kids",
+      "children",
+      "people",
+      "others"
+    ],
+    "love": [
+      "love",
+      "hug",
+      "proud",
+      "cuddle"
+    ]
+  },
+  "backgrounds": [
+    "outside",
+    "school",
+    "home-evening",
+    "cosy-room"
+  ],
+  "fallbackPages": {
+    "story": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "Soon [[CHILD]] will play in a big game.",
+              "kind": "describe"
+            },
+            {
+              "text": "First [[CHILD]] puts on the team kit and fills a water bottle.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the team warms up, stretching and running.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next the coach tells the team the plan.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can listen to the coach and try the plan.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "strangers",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Before bed, here is a story about a young rabbit called Rue.",
+              "kind": "describe"
+            },
+            {
+              "text": "Rue was on the Meadow Hoppers team.",
+              "kind": "describe"
+            },
+            {
+              "text": "On game day, Rue put on a green shirt with the number seven.",
+              "kind": "describe"
+            },
+            {
+              "text": "First the team warmed up, hop, hop, stretch.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then Coach Heron said, pass the ball and help each other.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next the whistle blew, peep, and the game began.",
+              "kind": "describe"
+            },
+            {
+              "text": "Rue ran and passed and missed and ran again.",
+              "kind": "describe"
+            },
+            {
+              "text": "At half time, everyone drank water in the shade.",
+              "kind": "describe"
+            },
+            {
+              "text": "The other team scored one more goal than the Hoppers.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the end, Rue said, good game, to every player.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "After that, the game starts with a whistle.",
+              "kind": "describe"
+            },
+            {
+              "text": "There are breaks for water and a rest.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some games are won, and some are lost.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, everyone says good game and shakes hands.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can listen to the coach and try the plan.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Soon [[CHILD]] will play in a big game.",
+              "kind": "describe"
+            },
+            {
+              "text": "First [[CHILD]] puts on the team kit and fills a water bottle.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the team warms up, stretching and running.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next the coach tells the team the plan.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, the game starts with a whistle.",
+              "kind": "describe"
+            },
+            {
+              "text": "There are breaks for water and a rest.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some games are won, and some are lost.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, everyone says good game and shakes hands.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can listen to the coach and try the plan.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "At the game there is a coach, who helps the team.",
+              "kind": "describe"
+            },
+            {
+              "text": "The teammates play together, passing and helping.",
+              "kind": "describe"
+            },
+            {
+              "text": "There is another team, who wants to play well too.",
+              "kind": "describe"
+            },
+            {
+              "text": "A referee or judge makes sure everyone follows the rules.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can cheer for teammates, even from the bench.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "separation",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Rue the rabbit looked around the meadow field.",
+              "kind": "describe"
+            },
+            {
+              "text": "Coach Heron stood tall at the side with a clipboard.",
+              "kind": "describe"
+            },
+            {
+              "text": "Rue's teammates were a mole, a hedgehog, two mice and a fast squirrel.",
+              "kind": "describe"
+            },
+            {
+              "text": "The other team, the River Otters, wore blue.",
+              "kind": "describe"
+            },
+            {
+              "text": "A badger in a striped shirt was the referee.",
+              "kind": "describe"
+            },
+            {
+              "text": "All the families sat on logs, ready to cheer.",
+              "kind": "describe"
+            },
+            {
+              "text": "Rue saw Mama Rabbit waving a little flag.",
+              "kind": "describe"
+            },
+            {
+              "text": "The mole whispered, I am nervous.",
+              "kind": "describe"
+            },
+            {
+              "text": "Rue said, me too, let's help each other.",
+              "kind": "describe"
+            },
+            {
+              "text": "They bumped paws.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "pain",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Families watch from the side and cheer.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] will be there, cheering for [[CHILD]].",
+              "kind": "describe"
+            },
+            {
+              "text": "Everyone makes mistakes sometimes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Being a good teammate matters most.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can cheer for teammates, even from the bench.",
+              "kind": "coach"
+            },
+            {
+              "text": "Step by step, it all gets a little easier.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is close by, and [[GROWNUP]] is proud.",
+              "kind": "describe"
+            },
+            {
+              "text": "New things feel strange at first, and then they feel normal.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "outside",
+          "addresses": [
+            "sensory",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At the game there is a coach, who helps the team.",
+              "kind": "describe"
+            },
+            {
+              "text": "The teammates play together, passing and helping.",
+              "kind": "describe"
+            },
+            {
+              "text": "There is another team, who wants to play well too.",
+              "kind": "describe"
+            },
+            {
+              "text": "A referee or judge makes sure everyone follows the rules.",
+              "kind": "describe"
+            },
+            {
+              "text": "Families watch from the side and cheer.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] will be there, cheering for [[CHILD]].",
+              "kind": "describe"
+            },
+            {
+              "text": "Everyone makes mistakes sometimes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Being a good teammate matters most.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can cheer for teammates, even from the bench.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "separation",
+            "safety"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "In the game, [[CHILD]] tries the plan from the coach.",
+              "kind": "describe"
+            },
+            {
+              "text": "Running, passing and paying attention help the team.",
+              "kind": "describe"
+            },
+            {
+              "text": "When a mistake happens, take a breath and keep going.",
+              "kind": "describe"
+            },
+            {
+              "text": "Water breaks help the body keep its energy.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "strangers",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Rue the rabbit missed an easy pass.",
+              "kind": "describe"
+            },
+            {
+              "text": "The ball rolled out of the field.",
+              "kind": "describe"
+            },
+            {
+              "text": "Rue's ears drooped.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then Rue remembered the reset move.",
+              "kind": "describe"
+            },
+            {
+              "text": "One deep breath, one clap, and back into the game.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next time, Rue passed to the mole, and the mole kicked the ball forward.",
+              "kind": "describe"
+            },
+            {
+              "text": "Great pass, called Coach Heron.",
+              "kind": "describe"
+            },
+            {
+              "text": "At half time, Rue drank water and felt better.",
+              "kind": "describe"
+            },
+            {
+              "text": "When an Otter scored a beautiful goal, Rue clapped.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the end, Rue said good game, and the Otter grinned.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "[[CHILD]] can cheer for teammates and clap for good plays, even by the other team.",
+              "kind": "describe"
+            },
+            {
+              "text": "If something hurts, tell the coach.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the end, say good game, win or lose.",
+              "kind": "describe"
+            },
+            {
+              "text": "Trying hard is the real goal.",
+              "kind": "describe"
+            },
+            {
+              "text": "After a mistake, [[CHILD]] can take one deep breath, clap once and keep playing.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "pain",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the game, [[CHILD]] tries the plan from the coach.",
+              "kind": "describe"
+            },
+            {
+              "text": "Running, passing and paying attention help the team.",
+              "kind": "describe"
+            },
+            {
+              "text": "When a mistake happens, take a breath and keep going.",
+              "kind": "describe"
+            },
+            {
+              "text": "Water breaks help the body keep its energy.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can cheer for teammates and clap for good plays, even by the other team.",
+              "kind": "describe"
+            },
+            {
+              "text": "If something hurts, tell the coach.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the end, say good game, win or lose.",
+              "kind": "describe"
+            },
+            {
+              "text": "Trying hard is the real goal.",
+              "kind": "describe"
+            },
+            {
+              "text": "After a mistake, [[CHILD]] can take one deep breath, clap once and keep playing.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "strangers"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "Before a game, the tummy may feel full of butterflies.",
+              "kind": "describe"
+            },
+            {
+              "text": "The heart may beat fast, and the hands may feel sweaty.",
+              "kind": "describe"
+            },
+            {
+              "text": "That is the body getting ready to play.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids worry about making mistakes or losing.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "worried",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Rue the rabbit felt butterflies before the game.",
+              "kind": "describe"
+            },
+            {
+              "text": "What if I miss, what if we lose, Rue thought.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama Rabbit did not say, you will win.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama said, you might miss, and you might lose, and I will be proud of you.",
+              "kind": "describe"
+            },
+            {
+              "text": "Butterflies mean your body is getting ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "Rue smelled a flower slowly and blew a candle.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then Rue thought about the best part, running fast with friends.",
+              "kind": "describe"
+            },
+            {
+              "text": "When the whistle blew, the butterflies flew away a bit.",
+              "kind": "describe"
+            },
+            {
+              "text": "After the game, the Hoppers had lost.",
+              "kind": "describe"
+            },
+            {
+              "text": "Rue felt sad, and Mama gave a big hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "Worried and brave can happen at the same time.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "sensory",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Losing can feel sad or disappointing, and it is okay to feel that.",
+              "kind": "describe"
+            },
+            {
+              "text": "Crowds and whistles can feel loud.",
+              "kind": "describe"
+            },
+            {
+              "text": "Even big athletes feel nervous.",
+              "kind": "describe"
+            },
+            {
+              "text": "The feelings usually shrink once the game starts.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can take slow breaths, smell the flower and blow the candle.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can think of the most fun part of the sport.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "sensory"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Before a game, the tummy may feel full of butterflies.",
+              "kind": "describe"
+            },
+            {
+              "text": "The heart may beat fast, and the hands may feel sweaty.",
+              "kind": "describe"
+            },
+            {
+              "text": "That is the body getting ready to play.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids worry about making mistakes or losing.",
+              "kind": "describe"
+            },
+            {
+              "text": "Losing can feel sad or disappointing, and it is okay to feel that.",
+              "kind": "describe"
+            },
+            {
+              "text": "Crowds and whistles can feel loud.",
+              "kind": "describe"
+            },
+            {
+              "text": "Even big athletes feel nervous.",
+              "kind": "describe"
+            },
+            {
+              "text": "The feelings usually shrink once the game starts.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can take slow breaths, smell the flower and blow the candle.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can think of the most fun part of the sport.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "safety"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "Tonight [[CHILD]] and [[GROWNUP]] can practise game day.",
+              "kind": "describe"
+            },
+            {
+              "text": "First they pack the kit and the water bottle.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then they play a tiny game in the living room.",
+              "kind": "describe"
+            },
+            {
+              "text": "When [[CHILD]] makes a pretend mistake, they practise the reset: breath, clap, keep going.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Rue the rabbit practised with Papa Rabbit.",
+              "kind": "describe"
+            },
+            {
+              "text": "They played a tiny game with a pinecone ball.",
+              "kind": "describe"
+            },
+            {
+              "text": "When Rue missed, Rue took a breath, clapped and said, next.",
+              "kind": "describe"
+            },
+            {
+              "text": "When Papa missed, Papa did the same.",
+              "kind": "describe"
+            },
+            {
+              "text": "They laughed so hard they fell over.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then they practised good game, both ways.",
+              "kind": "describe"
+            },
+            {
+              "text": "Rue packed the green shirt with the number seven.",
+              "kind": "describe"
+            },
+            {
+              "text": "Papa asked, what is your goal tomorrow?",
+              "kind": "describe"
+            },
+            {
+              "text": "Rue said, to pass to my friends and have fun.",
+              "kind": "describe"
+            },
+            {
+              "text": "Papa said, that is a great goal.",
+              "kind": "describe"
+            },
+            {
+              "text": "And Rue slept well that night.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Next they practise winning politely and losing kindly, saying good game.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, [[CHILD]] pictures the day: warm-up, plan, play, water, good game.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, they choose one goal that is not about winning.",
+              "kind": "describe"
+            },
+            {
+              "text": "Practising helps the body feel ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say: breath, clap, next.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight [[CHILD]] and [[GROWNUP]] can practise game day.",
+              "kind": "describe"
+            },
+            {
+              "text": "First they pack the kit and the water bottle.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then they play a tiny game in the living room.",
+              "kind": "describe"
+            },
+            {
+              "text": "When [[CHILD]] makes a pretend mistake, they practise the reset: breath, clap, keep going.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next they practise winning politely and losing kindly, saying good game.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, [[CHILD]] pictures the day: warm-up, plan, play, water, good game.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, they choose one goal that is not about winning.",
+              "kind": "describe"
+            },
+            {
+              "text": "Practising helps the body feel ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say: breath, clap, next.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "unknown",
+            "safety"
+          ]
+        }
+      ]
+    },
+    "social": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "Soon I will play in a big game.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I put on my team kit.",
+              "kind": "describe"
+            },
+            {
+              "text": "I fill my water bottle.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then my team warms up.",
+              "kind": "describe"
+            },
+            {
+              "text": "We stretch and run.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next the coach tells us the plan.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can listen to the coach.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "strangers",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Soon I will play in a big game.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I put on my team kit.",
+              "kind": "describe"
+            },
+            {
+              "text": "I fill my water bottle.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then my team warms up.",
+              "kind": "describe"
+            },
+            {
+              "text": "We stretch and run.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next the coach tells us the plan.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, the whistle blows.",
+              "kind": "describe"
+            },
+            {
+              "text": "The game starts.",
+              "kind": "describe"
+            },
+            {
+              "text": "We have water breaks.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes we win, and sometimes we lose.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, we say good game.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "After that, the whistle blows.",
+              "kind": "describe"
+            },
+            {
+              "text": "The game starts.",
+              "kind": "describe"
+            },
+            {
+              "text": "We have water breaks.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes we win, and sometimes we lose.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, we say good game.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can listen to the coach.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Soon I will play in a big game.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I put on my team kit.",
+              "kind": "describe"
+            },
+            {
+              "text": "I fill my water bottle.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then my team warms up.",
+              "kind": "describe"
+            },
+            {
+              "text": "We stretch and run.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next the coach tells us the plan.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can listen to the coach.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "strangers",
+            "unknown",
+            "social"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "At the game there is a coach.",
+              "kind": "describe"
+            },
+            {
+              "text": "The coach helps my team.",
+              "kind": "describe"
+            },
+            {
+              "text": "My teammates play with me.",
+              "kind": "describe"
+            },
+            {
+              "text": "We pass and help each other.",
+              "kind": "describe"
+            },
+            {
+              "text": "There is another team.",
+              "kind": "describe"
+            },
+            {
+              "text": "A referee makes sure we follow the rules.",
+              "kind": "describe"
+            },
+            {
+              "text": "Families watch and cheer.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can cheer for my teammates.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "separation",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At the game there is a coach.",
+              "kind": "describe"
+            },
+            {
+              "text": "The coach helps my team.",
+              "kind": "describe"
+            },
+            {
+              "text": "My teammates play with me.",
+              "kind": "describe"
+            },
+            {
+              "text": "We pass and help each other.",
+              "kind": "describe"
+            },
+            {
+              "text": "There is another team.",
+              "kind": "describe"
+            },
+            {
+              "text": "A referee makes sure we follow the rules.",
+              "kind": "describe"
+            },
+            {
+              "text": "Families watch and cheer.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] will cheer for me.",
+              "kind": "describe"
+            },
+            {
+              "text": "Everyone makes mistakes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Being a good teammate matters most.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "Step by step, it gets a little easier.",
+              "kind": "describe"
+            },
+            {
+              "text": "New things feel strange at first, and then they feel normal.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "[[GROWNUP]] will cheer for me.",
+              "kind": "describe"
+            },
+            {
+              "text": "Everyone makes mistakes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Being a good teammate matters most.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can cheer for my teammates.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "outside",
+          "addresses": [
+            "sensory",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At the game there is a coach.",
+              "kind": "describe"
+            },
+            {
+              "text": "The coach helps my team.",
+              "kind": "describe"
+            },
+            {
+              "text": "My teammates play with me.",
+              "kind": "describe"
+            },
+            {
+              "text": "We pass and help each other.",
+              "kind": "describe"
+            },
+            {
+              "text": "There is another team.",
+              "kind": "describe"
+            },
+            {
+              "text": "A referee makes sure we follow the rules.",
+              "kind": "describe"
+            },
+            {
+              "text": "Families watch and cheer.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can cheer for my teammates.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "In the game, I try the plan.",
+              "kind": "describe"
+            },
+            {
+              "text": "I run and pass.",
+              "kind": "describe"
+            },
+            {
+              "text": "I pay attention.",
+              "kind": "describe"
+            },
+            {
+              "text": "If I make a mistake, I keep going.",
+              "kind": "describe"
+            },
+            {
+              "text": "I drink water at the breaks.",
+              "kind": "describe"
+            },
+            {
+              "text": "I cheer for my teammates.",
+              "kind": "describe"
+            },
+            {
+              "text": "I clap for good plays.",
+              "kind": "describe"
+            },
+            {
+              "text": "After a mistake, I take one breath and clap once.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the game, I try the plan.",
+              "kind": "describe"
+            },
+            {
+              "text": "I run and pass.",
+              "kind": "describe"
+            },
+            {
+              "text": "I pay attention.",
+              "kind": "describe"
+            },
+            {
+              "text": "If I make a mistake, I keep going.",
+              "kind": "describe"
+            },
+            {
+              "text": "I drink water at the breaks.",
+              "kind": "describe"
+            },
+            {
+              "text": "I cheer for my teammates.",
+              "kind": "describe"
+            },
+            {
+              "text": "I clap for good plays.",
+              "kind": "describe"
+            },
+            {
+              "text": "If something hurts, I tell the coach.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the end, I say good game.",
+              "kind": "describe"
+            },
+            {
+              "text": "Trying hard is my goal.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "strangers"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "If something hurts, I tell the coach.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the end, I say good game.",
+              "kind": "describe"
+            },
+            {
+              "text": "Trying hard is my goal.",
+              "kind": "describe"
+            },
+            {
+              "text": "After a mistake, I take one breath and clap once.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "pain",
+            "strangers",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the game, I try the plan.",
+              "kind": "describe"
+            },
+            {
+              "text": "I run and pass.",
+              "kind": "describe"
+            },
+            {
+              "text": "I pay attention.",
+              "kind": "describe"
+            },
+            {
+              "text": "If I make a mistake, I keep going.",
+              "kind": "describe"
+            },
+            {
+              "text": "I drink water at the breaks.",
+              "kind": "describe"
+            },
+            {
+              "text": "I cheer for my teammates.",
+              "kind": "describe"
+            },
+            {
+              "text": "I clap for good plays.",
+              "kind": "describe"
+            },
+            {
+              "text": "After a mistake, I take one breath and clap once.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "Before a game, I may feel butterflies.",
+              "kind": "describe"
+            },
+            {
+              "text": "My heart may beat fast.",
+              "kind": "describe"
+            },
+            {
+              "text": "My hands may feel sweaty.",
+              "kind": "describe"
+            },
+            {
+              "text": "That is my body getting ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may worry about mistakes.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may worry about losing.",
+              "kind": "describe"
+            },
+            {
+              "text": "Losing can feel sad.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "worried",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Before a game, I may feel butterflies.",
+              "kind": "describe"
+            },
+            {
+              "text": "My heart may beat fast.",
+              "kind": "describe"
+            },
+            {
+              "text": "My hands may feel sweaty.",
+              "kind": "describe"
+            },
+            {
+              "text": "That is my body getting ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may worry about mistakes.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may worry about losing.",
+              "kind": "describe"
+            },
+            {
+              "text": "Losing can feel sad.",
+              "kind": "describe"
+            },
+            {
+              "text": "That is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "Even big athletes feel nervous.",
+              "kind": "describe"
+            },
+            {
+              "text": "The feelings shrink when the game starts.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "That is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "Even big athletes feel nervous.",
+              "kind": "describe"
+            },
+            {
+              "text": "The feelings shrink when the game starts.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can think of the most fun part.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "unknown",
+            "social",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Before a game, I may feel butterflies.",
+              "kind": "describe"
+            },
+            {
+              "text": "My heart may beat fast.",
+              "kind": "describe"
+            },
+            {
+              "text": "My hands may feel sweaty.",
+              "kind": "describe"
+            },
+            {
+              "text": "That is my body getting ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may worry about mistakes.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may worry about losing.",
+              "kind": "describe"
+            },
+            {
+              "text": "Losing can feel sad.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can think of the most fun part.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "Tonight I practise game day.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I pack my kit.",
+              "kind": "describe"
+            },
+            {
+              "text": "I pack my water bottle.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then we play a tiny game.",
+              "kind": "describe"
+            },
+            {
+              "text": "If I miss, I take a breath.",
+              "kind": "describe"
+            },
+            {
+              "text": "I clap and say next.",
+              "kind": "describe"
+            },
+            {
+              "text": "We practise saying good game.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: breath, clap, next.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight I practise game day.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I pack my kit.",
+              "kind": "describe"
+            },
+            {
+              "text": "I pack my water bottle.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then we play a tiny game.",
+              "kind": "describe"
+            },
+            {
+              "text": "If I miss, I take a breath.",
+              "kind": "describe"
+            },
+            {
+              "text": "I clap and say next.",
+              "kind": "describe"
+            },
+            {
+              "text": "We practise saying good game.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, I picture the day.",
+              "kind": "describe"
+            },
+            {
+              "text": "Warm-up, plan, play, water, good game.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, I choose a goal that is not about winning.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "unknown",
+            "social",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "After that, I picture the day.",
+              "kind": "describe"
+            },
+            {
+              "text": "Warm-up, plan, play, water, good game.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, I choose a goal that is not about winning.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: breath, clap, next.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "unknown",
+            "social",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight I practise game day.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I pack my kit.",
+              "kind": "describe"
+            },
+            {
+              "text": "I pack my water bottle.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then we play a tiny game.",
+              "kind": "describe"
+            },
+            {
+              "text": "If I miss, I take a breath.",
+              "kind": "describe"
+            },
+            {
+              "text": "I clap and say next.",
+              "kind": "describe"
+            },
+            {
+              "text": "We practise saying good game.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: breath, clap, next.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "unknown",
+            "social",
+            "love"
+          ]
+        }
+      ]
+    }
+  },
+  "badge": {
+    "id": "team_player",
+    "label": "Team Player"
+  },
+  "olderPages": {
+    "what_happens": {
+      "sentences": [
+        {
+          "text": "Competitions follow rules so every team has a fair chance, and a referee or judge makes the calls.",
+          "kind": "describe"
+        },
+        {
+          "text": "Warm-ups prepare muscles and the heart, which helps prevent injuries.",
+          "kind": "describe"
+        },
+        {
+          "text": "Coaches plan positions and rotations, so playing time is shared over a season.",
+          "kind": "describe"
+        },
+        {
+          "text": "Even professional athletes lose often; what they practise is coming back after mistakes.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can set one personal goal for the game that does not depend on the score.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "outside",
+      "addresses": [
+        "pain",
+        "body",
+        "strangers",
+        "separation"
+      ]
+    },
+    "who_is_there": {
+      "sentences": [
+        {
+          "text": "The referee's job is to keep the game fair and safe, even when a call feels wrong.",
+          "kind": "describe"
+        },
+        {
+          "text": "Respecting the other team is part of the sport; without them, there is no game.",
+          "kind": "describe"
+        },
+        {
+          "text": "Coaches notice effort and attitude as much as skill.",
+          "kind": "describe"
+        },
+        {
+          "text": "Supporting a teammate who made a mistake builds trust on a team.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can thank the coach and the referee after the game.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "outside",
+      "addresses": [
+        "strangers",
+        "unknown",
+        "safety",
+        "social"
+      ]
+    },
+    "what_i_do": {
+      "sentences": [
+        {
+          "text": "Athletes use reset routines because the brain replays mistakes; a breath and a cue word help it move on.",
+          "kind": "describe"
+        },
+        {
+          "text": "Focusing on the next play, not the last one, is a skill that improves with practice.",
+          "kind": "describe"
+        },
+        {
+          "text": "Hydration affects energy and concentration more than most players realise.",
+          "kind": "describe"
+        },
+        {
+          "text": "Good sportsmanship includes winning politely, not only losing well.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can pick a cue word, like next, to say after a mistake.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "brave",
+      "background": "outside",
+      "addresses": [
+        "body",
+        "unknown",
+        "safety",
+        "social"
+      ]
+    },
+    "if_scared": {
+      "sentences": [
+        {
+          "text": "Pre-game nerves are adrenaline, the same chemical that helps muscles react faster.",
+          "kind": "describe"
+        },
+        {
+          "text": "Calling the feeling excited instead of scared can actually help performance.",
+          "kind": "describe"
+        },
+        {
+          "text": "Feeling upset after a loss shows you care; it usually fades within a few hours.",
+          "kind": "describe"
+        },
+        {
+          "text": "If [[CHILD]] does not want to talk right after a game, that is fine, and a snack and quiet often help.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can write down one thing that went well after each game.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "worried",
+      "background": "outside",
+      "addresses": [
+        "body",
+        "sensory",
+        "unknown",
+        "safety"
+      ]
+    },
+    "rehearsal": {
+      "sentences": [
+        {
+          "text": "Visualisation, picturing the game in detail, is a technique real athletes use.",
+          "kind": "describe"
+        },
+        {
+          "text": "Sleep, a good meal and water the day before matter for energy.",
+          "kind": "describe"
+        },
+        {
+          "text": "A small pre-game routine, like a song or a stretch, signals the brain it is time to focus.",
+          "kind": "describe"
+        },
+        {
+          "text": "Setting effort goals, like hustling back on defence, keeps motivation high whatever the score.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can choose the pre-game song.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "happy",
+      "background": "outside",
+      "addresses": [
+        "body",
+        "separation"
+      ]
+    }
+  }
+}

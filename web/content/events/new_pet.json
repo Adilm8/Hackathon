@@ -1,0 +1,2461 @@
+{
+  "type": "new_pet",
+  "version": 1,
+  "label": "New pet at home",
+  "countdownLabel": "the pet coming home",
+  "beats": {
+    "what_happens": {
+      "title": "What happens when a pet comes home",
+      "goals": [
+        "The pet comes to a new home and needs time",
+        "Getting ready: bed, bowls, food",
+        "Gentle, calm and slow is best"
+      ],
+      "parentSkill": "Name the pet and its needs, and set up the pet's space together."
+    },
+    "who_is_there": {
+      "title": "Who helps the pet",
+      "goals": [
+        "Grown-ups are in charge of the pet",
+        "Everyone in the family helps",
+        "The vet helps the pet stay healthy"
+      ],
+      "parentSkill": "Make a simple family chart of pet jobs and give your child one small job."
+    },
+    "what_i_do": {
+      "title": "What I do with the pet",
+      "goals": [
+        "Gentle hands, calm voice",
+        "Let the pet rest and eat in peace",
+        "Wash hands after"
+      ],
+      "parentSkill": "Show your child where and how the pet likes to be touched, and practise on a toy first."
+    },
+    "if_scared": {
+      "title": "If the pet feels scary",
+      "goals": [
+        "New pets can be loud, jumpy or shy",
+        "Scratches or nips can happen and can be avoided",
+        "Calm tools: stay still, step back, get a grown-up"
+      ],
+      "parentSkill": "Teach the 'be a tree' move: stand still, arms folded, look at your feet, if a pet jumps."
+    },
+    "rehearsal": {
+      "title": "Let's get ready for the pet",
+      "goals": [
+        "Set up the pet space",
+        "Practise gentle hands on a toy",
+        "Practise calm voice and being a tree"
+      ],
+      "parentSkill": "Practise with a stuffed animal: gentle stroking, letting it \"sniff\" a hand, and the tree move."
+    }
+  },
+  "steps": [
+    "Get ready: a bed, bowls, food and toys for the pet",
+    "Bring the pet home in a carrier or on a lead",
+    "Let the pet explore one quiet room first",
+    "Sit calmly and let the pet come close",
+    "Gently stroke the pet the way it likes",
+    "Help with feeding, water and cleaning, with a grown-up",
+    "Wash hands after touching the pet"
+  ],
+  "sensory": [
+    "soft fur or smooth scales",
+    "little paws clicking on the floor",
+    "barking, meowing, squeaking or chirping",
+    "a wet nose or a lick",
+    "the smell of pet food",
+    "scratchy claws or a nibble"
+  ],
+  "honestyNotes": "New pets can be shy, scared, noisy, and may scratch or nip when frightened; never promise a pet will love the child straight away or never bite. Pets need gentle hands and rest. A grown-up is responsible for the pet's care; children help. Let the parent say what kind of pet it is.",
+  "questionButtons": [
+    {
+      "id": "bite",
+      "text": "Will it bite me?",
+      "topic": "pain",
+      "fallbackAnswer": [
+        "Scared or hurt pets can nip or scratch. Gentle hands and letting it rest help a lot.",
+        "If it happens, tell a grown-up straight away."
+      ]
+    },
+    {
+      "id": "like_me",
+      "text": "Will the pet like me?",
+      "topic": "love",
+      "fallbackAnswer": [
+        "Pets need time to get to know new people.",
+        "Being calm and gentle helps them trust you."
+      ]
+    },
+    {
+      "id": "hold",
+      "text": "Can I hold it?",
+      "topic": "safety",
+      "fallbackAnswer": [
+        "Maybe, with a grown-up showing you how.",
+        "Some pets like to be held, and some prefer to sit near you."
+      ]
+    },
+    {
+      "id": "noise",
+      "text": "Why is it so noisy?",
+      "topic": "sensory",
+      "fallbackAnswer": [
+        "Pets bark, meow or squeak to talk.",
+        "A new home can make them noisy until they settle."
+      ]
+    },
+    {
+      "id": "vet",
+      "text": "Who is the vet?",
+      "topic": "strangers",
+      "fallbackAnswer": [
+        "A vet is an animal doctor.",
+        "The vet helps pets stay healthy."
+      ]
+    },
+    {
+      "id": "job",
+      "text": "What can I do to help?",
+      "topic": "social",
+      "fallbackAnswer": [
+        "You can fill the water bowl or help at feeding time.",
+        "Ask [[GROWNUP]] what job you can have."
+      ]
+    },
+    {
+      "id": "sleep",
+      "text": "Where will the pet sleep?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "[[GROWNUP]] will choose a cosy spot for the pet's bed.",
+        "Pets need a quiet place to rest."
+      ]
+    },
+    {
+      "id": "germs",
+      "text": "Why do I wash my hands?",
+      "topic": "body",
+      "fallbackAnswer": [
+        "Pets can carry tiny germs, so we wash hands after touching them.",
+        "It keeps everyone healthy."
+      ]
+    },
+    {
+      "id": "alone",
+      "text": "Will the pet be lonely when I am at school?",
+      "topic": "separation",
+      "fallbackAnswer": [
+        "Pets rest a lot during the day.",
+        "Grown-ups make sure it has what it needs."
+      ]
+    },
+    {
+      "id": "allergy",
+      "text": "Why do I sneeze?",
+      "topic": "body",
+      "fallbackAnswer": [
+        "Some people sneeze around pet fur.",
+        "Tell [[GROWNUP]], and a doctor can help."
+      ],
+      "ages": [
+        4,
+        12
+      ]
+    },
+    {
+      "id": "responsible",
+      "text": "Can I look after it myself?",
+      "topic": "other",
+      "fallbackAnswer": [
+        "You can do some jobs on your own as you grow.",
+        "A grown-up stays in charge and helps."
+      ],
+      "ages": [
+        7,
+        12
+      ]
+    }
+  ],
+  "techniques": [
+    {
+      "id": "gentle_hands",
+      "label": "Gentle hands",
+      "how": "Practise soft strokes on a stuffed animal.",
+      "topics": [
+        "safety",
+        "pain"
+      ]
+    },
+    {
+      "id": "let_it_come",
+      "label": "Let it come to you",
+      "how": "Sit still and let the pet approach first.",
+      "topics": [
+        "safety",
+        "strangers"
+      ]
+    },
+    {
+      "id": "be_a_tree",
+      "label": "Be a tree",
+      "how": "Stand still, arms folded, look at your feet when a pet jumps.",
+      "topics": [
+        "safety",
+        "pain",
+        "sensory"
+      ]
+    },
+    {
+      "id": "pet_job",
+      "label": "A pet job",
+      "how": "Give your child one small daily job.",
+      "topics": [
+        "social",
+        "love"
+      ]
+    },
+    {
+      "id": "wash_hands",
+      "label": "Washing hands",
+      "how": "Wash hands after touching the pet.",
+      "topics": [
+        "body"
+      ]
+    },
+    {
+      "id": "quiet_space",
+      "label": "A quiet pet space",
+      "how": "Set up a quiet spot where the pet can rest.",
+      "topics": [
+        "sensory",
+        "unknown"
+      ]
+    },
+    {
+      "id": "body_language",
+      "label": "Reading pet signals",
+      "how": "Learn what tail wags, ears and hissing mean.",
+      "topics": [
+        "safety",
+        "unknown"
+      ]
+    },
+    {
+      "id": "meet_vet",
+      "label": "Meeting the vet",
+      "how": "Bring your child along to a calm vet visit.",
+      "topics": [
+        "strangers",
+        "body",
+        "separation"
+      ]
+    },
+    {
+      "id": "deep_breaths",
+      "label": "Smell the flower, blow the candle",
+      "how": "Breathe in slowly through the nose and out like blowing a candle.",
+      "topics": [
+        "pain",
+        "sensory",
+        "safety"
+      ]
+    }
+  ],
+  "ritual": [
+    "Gentle hands, calm voice",
+    "Let the pet come to me",
+    "Help with water, then wash my hands"
+  ],
+  "phrases": {
+    "pain": [
+      "If it scratches, we wash it and put on a bandage.",
+      "Tell me straight away if it nips."
+    ],
+    "body": [
+      "Wash your hands after stroking.",
+      "If you sneeze, tell me."
+    ],
+    "sensory": [
+      "Its fur is so soft. Stroke it gently.",
+      "Barking is how it talks."
+    ],
+    "strangers": [
+      "The vet is an animal doctor.",
+      "Visitors ask before stroking."
+    ],
+    "separation": [
+      "The pet will be here when you get home.",
+      "I look after the pet while you are at school."
+    ],
+    "unknown": [
+      "First it explores, then it comes closer.",
+      "It needs time to settle in."
+    ],
+    "safety": [
+      "Be a tree if it jumps.",
+      "Let it eat and sleep in peace."
+    ],
+    "social": [
+      "You are a great pet helper.",
+      "Your friends can meet the pet gently."
+    ],
+    "love": [
+      "The pet will learn to love you.",
+      "I'm proud of how gentle you are."
+    ]
+  },
+  "topicWords": {
+    "pain": [
+      "scratch",
+      "scratches",
+      "nip",
+      "nips",
+      "bite",
+      "hurt",
+      "poke"
+    ],
+    "body": [
+      "hands",
+      "paw",
+      "paws",
+      "wash",
+      "washed",
+      "healthy",
+      "germs",
+      "sneeze"
+    ],
+    "sensory": [
+      "fur",
+      "soft",
+      "bark",
+      "barks",
+      "meow",
+      "squeak",
+      "lick",
+      "licked",
+      "sniff",
+      "sniffing",
+      "noisy",
+      "quiet"
+    ],
+    "strangers": [
+      "vet",
+      "visitors",
+      "animal doctor",
+      "bug doctor",
+      "beetle"
+    ],
+    "separation": [
+      "when you get home",
+      "at school",
+      "here when",
+      "with me",
+      "right there",
+      "stay",
+      "close",
+      "with you",
+      "together",
+      "comes back",
+      "back",
+      "hand",
+      "nearby"
+    ],
+    "unknown": [
+      "first",
+      "then",
+      "next",
+      "after",
+      "last",
+      "new",
+      "settle",
+      "step",
+      "steps"
+    ],
+    "safety": [
+      "gentle",
+      "gently",
+      "calm",
+      "still",
+      "tree",
+      "rest",
+      "careful",
+      "safe",
+      "break",
+      "stop",
+      "help"
+    ],
+    "social": [
+      "family",
+      "friend",
+      "friends",
+      "helper",
+      "everyone",
+      "cousin",
+      "kids",
+      "children",
+      "people",
+      "others"
+    ],
+    "love": [
+      "love",
+      "hug",
+      "proud",
+      "welcome",
+      "cuddle"
+    ]
+  },
+  "backgrounds": [
+    "home-evening",
+    "outside",
+    "cosy-room"
+  ],
+  "fallbackPages": {
+    "story": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "Soon a new pet will come to live with [[CHILD]]'s family.",
+              "kind": "describe"
+            },
+            {
+              "text": "It might be a puppy, a kitten, a bunny, a fish or another animal.",
+              "kind": "describe"
+            },
+            {
+              "text": "First [[CHILD]] helps get ready: a bed, bowls, food and toys.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the pet arrives in a carrier or on a lead.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Before bed, here is a story about a little girl mouse called Mila.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mila's family was getting a pet ladybird called Dot.",
+              "kind": "describe"
+            },
+            {
+              "text": "First Mila helped make a leaf bed and a tiny water drop bowl.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then Papa Mouse brought Dot home in a little box.",
+              "kind": "describe"
+            },
+            {
+              "text": "Dot crawled out slowly and looked around.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mila wanted to hold her right away.",
+              "kind": "describe"
+            },
+            {
+              "text": "Papa said, let Dot explore first, she is new here.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mila sat very still and very quiet.",
+              "kind": "describe"
+            },
+            {
+              "text": "After a while, Dot crawled onto Mila's paw.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mila smiled the biggest smile.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "sensory",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Next the pet explores a quiet room, sniffing everything.",
+              "kind": "describe"
+            },
+            {
+              "text": "The pet may feel shy, because the home is new.",
+              "kind": "describe"
+            },
+            {
+              "text": "After a while, it comes closer.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, the family helps the pet settle in, day by day.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can sit calmly and let the pet come close first.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "sensory",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Soon a new pet will come to live with [[CHILD]]'s family.",
+              "kind": "describe"
+            },
+            {
+              "text": "It might be a puppy, a kitten, a bunny, a fish or another animal.",
+              "kind": "describe"
+            },
+            {
+              "text": "First [[CHILD]] helps get ready: a bed, bowls, food and toys.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the pet arrives in a carrier or on a lead.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next the pet explores a quiet room, sniffing everything.",
+              "kind": "describe"
+            },
+            {
+              "text": "The pet may feel shy, because the home is new.",
+              "kind": "describe"
+            },
+            {
+              "text": "After a while, it comes closer.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, the family helps the pet settle in, day by day.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can sit calmly and let the pet come close first.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "sensory",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "[[GROWNUP]] and the grown-ups are in charge of looking after the pet.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can help with small jobs, like filling the water bowl.",
+              "kind": "describe"
+            },
+            {
+              "text": "Everyone in the family can be a pet helper.",
+              "kind": "describe"
+            },
+            {
+              "text": "A vet is an animal doctor who checks that the pet is healthy.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "strangers",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, the whole mouse family helped with Dot the ladybird.",
+              "kind": "describe"
+            },
+            {
+              "text": "Papa Mouse made sure she had fresh leaves every day.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama Mouse checked her little home was clean.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mila had her own job, to bring a drop of water each morning.",
+              "kind": "describe"
+            },
+            {
+              "text": "One day, they took Dot to the bug doctor, a gentle beetle.",
+              "kind": "describe"
+            },
+            {
+              "text": "Dot is healthy and happy, said the beetle.",
+              "kind": "describe"
+            },
+            {
+              "text": "When Mila's friend visited, he asked, can I say hello to Dot?",
+              "kind": "describe"
+            },
+            {
+              "text": "Mila showed him how to be gentle.",
+              "kind": "describe"
+            },
+            {
+              "text": "Everyone was a pet helper.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mila felt proud of her job.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "strangers",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "The pet may go to the vet for check-ups.",
+              "kind": "describe"
+            },
+            {
+              "text": "Visitors should ask before stroking the pet.",
+              "kind": "describe"
+            },
+            {
+              "text": "Other pets in the home may need time to meet the new one.",
+              "kind": "describe"
+            },
+            {
+              "text": "Friends will love meeting the new pet.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can ask [[GROWNUP]], how can I help the pet today?",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "strangers",
+            "unknown",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "[[GROWNUP]] and the grown-ups are in charge of looking after the pet.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can help with small jobs, like filling the water bowl.",
+              "kind": "describe"
+            },
+            {
+              "text": "Everyone in the family can be a pet helper.",
+              "kind": "describe"
+            },
+            {
+              "text": "A vet is an animal doctor who checks that the pet is healthy.",
+              "kind": "describe"
+            },
+            {
+              "text": "The pet may go to the vet for check-ups.",
+              "kind": "describe"
+            },
+            {
+              "text": "Visitors should ask before stroking the pet.",
+              "kind": "describe"
+            },
+            {
+              "text": "Other pets in the home may need time to meet the new one.",
+              "kind": "describe"
+            },
+            {
+              "text": "Friends will love meeting the new pet.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can ask [[GROWNUP]], how can I help the pet today?",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "strangers",
+            "unknown",
+            "safety"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "With the new pet, [[CHILD]] uses gentle hands and a calm voice.",
+              "kind": "describe"
+            },
+            {
+              "text": "Stroke the pet softly, in the direction of the fur.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some pets like their back stroked, and some do not like their tummy touched.",
+              "kind": "describe"
+            },
+            {
+              "text": "Let the pet come to you, instead of chasing it.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Mila the mouse learned how Dot liked to be treated.",
+              "kind": "describe"
+            },
+            {
+              "text": "Gentle, said Papa, use one soft finger.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mila let Dot crawl onto her paw instead of grabbing.",
+              "kind": "describe"
+            },
+            {
+              "text": "Dot liked to rest on a sunny leaf after lunch.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mila let her rest and drew her picture instead.",
+              "kind": "describe"
+            },
+            {
+              "text": "One day, Mila's cousin wanted to poke Dot.",
+              "kind": "describe"
+            },
+            {
+              "text": "Gentle, said Mila, and showed him one soft finger.",
+              "kind": "describe"
+            },
+            {
+              "text": "Every morning, Mila brought the water drop with Papa.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then she washed her paws in the stream.",
+              "kind": "describe"
+            },
+            {
+              "text": "Dot waved her little legs, as if to say thank you.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "When the pet is eating or sleeping, let it rest.",
+              "kind": "describe"
+            },
+            {
+              "text": "Never pull tails, ears or fur.",
+              "kind": "describe"
+            },
+            {
+              "text": "Help with feeding and water, with a grown-up.",
+              "kind": "describe"
+            },
+            {
+              "text": "Wash hands after touching the pet.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say to the pet, hello, friend, in a soft voice.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "With the new pet, [[CHILD]] uses gentle hands and a calm voice.",
+              "kind": "describe"
+            },
+            {
+              "text": "Stroke the pet softly, in the direction of the fur.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some pets like their back stroked, and some do not like their tummy touched.",
+              "kind": "describe"
+            },
+            {
+              "text": "Let the pet come to you, instead of chasing it.",
+              "kind": "describe"
+            },
+            {
+              "text": "When the pet is eating or sleeping, let it rest.",
+              "kind": "describe"
+            },
+            {
+              "text": "Never pull tails, ears or fur.",
+              "kind": "describe"
+            },
+            {
+              "text": "Help with feeding and water, with a grown-up.",
+              "kind": "describe"
+            },
+            {
+              "text": "Wash hands after touching the pet.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say to the pet, hello, friend, in a soft voice.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "A new pet can feel a bit scary at first.",
+              "kind": "describe"
+            },
+            {
+              "text": "Puppies can jump and lick, and kittens can pounce.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some pets bark, hiss or squeak when they feel unsure.",
+              "kind": "describe"
+            },
+            {
+              "text": "A pet may scratch or nip if it is scared or hurt.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "worried",
+          "background": "home-evening",
+          "addresses": [
+            "pain",
+            "sensory",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Mila the mouse's cousin had a new puppy.",
+              "kind": "describe"
+            },
+            {
+              "text": "The puppy jumped up and licked Mila's nose.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mila squeaked and wanted to run.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama did not say, he would never hurt you.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama said, puppies jump when they are excited, so let's be a tree.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mila stood still, folded her arms and looked at her feet.",
+              "kind": "describe"
+            },
+            {
+              "text": "The puppy sniffed, then sat down.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mila took a slow breath, like smelling a flower.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then she held out her paw, slowly, for the puppy to sniff.",
+              "kind": "describe"
+            },
+            {
+              "text": "The puppy wagged its tail.",
+              "kind": "describe"
+            },
+            {
+              "text": "Worried and brave can happen at the same time.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Standing still like a tree helps a jumpy pet calm down.",
+              "kind": "describe"
+            },
+            {
+              "text": "Stepping back and calling a grown-up is always okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel unsure about a new pet.",
+              "kind": "describe"
+            },
+            {
+              "text": "Getting to know each other takes time.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can take slow breaths, smell the flower and blow the candle.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can be a tree: stand still, arms folded, look at the feet.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "A new pet can feel a bit scary at first.",
+              "kind": "describe"
+            },
+            {
+              "text": "Puppies can jump and lick, and kittens can pounce.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some pets bark, hiss or squeak when they feel unsure.",
+              "kind": "describe"
+            },
+            {
+              "text": "A pet may scratch or nip if it is scared or hurt.",
+              "kind": "describe"
+            },
+            {
+              "text": "Standing still like a tree helps a jumpy pet calm down.",
+              "kind": "describe"
+            },
+            {
+              "text": "Stepping back and calling a grown-up is always okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel unsure about a new pet.",
+              "kind": "describe"
+            },
+            {
+              "text": "Getting to know each other takes time.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can take slow breaths, smell the flower and blow the candle.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can be a tree: stand still, arms folded, look at the feet.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "pain",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "Tonight [[CHILD]] and [[GROWNUP]] can get ready for the new pet.",
+              "kind": "describe"
+            },
+            {
+              "text": "First they set up the pet's bed and bowls in a quiet spot.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[CHILD]] practises gentle hands on a stuffed animal.",
+              "kind": "describe"
+            },
+            {
+              "text": "Soft strokes, in the direction of the fur.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Mila the mouse got ready for Dot.",
+              "kind": "describe"
+            },
+            {
+              "text": "She made a cosy leaf bed in a quiet corner.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then she practised gentle hands on a pinecone.",
+              "kind": "describe"
+            },
+            {
+              "text": "One soft finger, stroke, stroke.",
+              "kind": "describe"
+            },
+            {
+              "text": "Papa pretended to be a jumpy puppy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mila stood like a tree, and they both laughed.",
+              "kind": "describe"
+            },
+            {
+              "text": "She practised holding her paw out slowly to sniff.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then they talked about names, and chose Dot.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mila said, gentle hands, calm voice, let her come to me.",
+              "kind": "describe"
+            },
+            {
+              "text": "She was ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "And Mila slept well that night.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Next they practise letting the toy sniff a hand, held out slowly.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, they practise being a tree, still and calm.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, they choose a name, or talk about the pet's name.",
+              "kind": "describe"
+            },
+            {
+              "text": "Being ready helps the pet feel welcome.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say: gentle hands, calm voice, let it come to me.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight [[CHILD]] and [[GROWNUP]] can get ready for the new pet.",
+              "kind": "describe"
+            },
+            {
+              "text": "First they set up the pet's bed and bowls in a quiet spot.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[CHILD]] practises gentle hands on a stuffed animal.",
+              "kind": "describe"
+            },
+            {
+              "text": "Soft strokes, in the direction of the fur.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next they practise letting the toy sniff a hand, held out slowly.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, they practise being a tree, still and calm.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, they choose a name, or talk about the pet's name.",
+              "kind": "describe"
+            },
+            {
+              "text": "Being ready helps the pet feel welcome.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say: gentle hands, calm voice, let it come to me.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        }
+      ]
+    },
+    "social": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "Soon a new pet comes home.",
+              "kind": "describe"
+            },
+            {
+              "text": "It might be a puppy or a kitten.",
+              "kind": "describe"
+            },
+            {
+              "text": "It might be a bunny or a fish.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I help get ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "A bed, bowls, food and toys.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the pet arrives.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can sit calmly and let the pet come to me.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Soon a new pet comes home.",
+              "kind": "describe"
+            },
+            {
+              "text": "It might be a puppy or a kitten.",
+              "kind": "describe"
+            },
+            {
+              "text": "It might be a bunny or a fish.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I help get ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "A bed, bowls, food and toys.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the pet arrives.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next it explores a quiet room.",
+              "kind": "describe"
+            },
+            {
+              "text": "It sniffs everything.",
+              "kind": "describe"
+            },
+            {
+              "text": "It may feel shy.",
+              "kind": "describe"
+            },
+            {
+              "text": "After a while, it comes closer.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, we help it settle in.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "sensory",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Next it explores a quiet room.",
+              "kind": "describe"
+            },
+            {
+              "text": "It sniffs everything.",
+              "kind": "describe"
+            },
+            {
+              "text": "It may feel shy.",
+              "kind": "describe"
+            },
+            {
+              "text": "After a while, it comes closer.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, we help it settle in.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can sit calmly and let the pet come to me.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "sensory",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Soon a new pet comes home.",
+              "kind": "describe"
+            },
+            {
+              "text": "It might be a puppy or a kitten.",
+              "kind": "describe"
+            },
+            {
+              "text": "It might be a bunny or a fish.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I help get ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "A bed, bowls, food and toys.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the pet arrives.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can sit calmly and let the pet come to me.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "safety",
+            "social",
+            "love"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "[[GROWNUP]] is in charge of the pet.",
+              "kind": "describe"
+            },
+            {
+              "text": "I help with small jobs.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can fill the water bowl.",
+              "kind": "describe"
+            },
+            {
+              "text": "Everyone in my family helps.",
+              "kind": "describe"
+            },
+            {
+              "text": "A vet is an animal doctor.",
+              "kind": "describe"
+            },
+            {
+              "text": "The vet checks the pet is healthy.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask, how can I help the pet today?",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "strangers",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "[[GROWNUP]] is in charge of the pet.",
+              "kind": "describe"
+            },
+            {
+              "text": "I help with small jobs.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can fill the water bowl.",
+              "kind": "describe"
+            },
+            {
+              "text": "Everyone in my family helps.",
+              "kind": "describe"
+            },
+            {
+              "text": "A vet is an animal doctor.",
+              "kind": "describe"
+            },
+            {
+              "text": "The vet checks the pet is healthy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Visitors ask before stroking the pet.",
+              "kind": "describe"
+            },
+            {
+              "text": "Other pets may need time.",
+              "kind": "describe"
+            },
+            {
+              "text": "My friends will meet the pet.",
+              "kind": "describe"
+            },
+            {
+              "text": "I am a pet helper.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "strangers",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Visitors ask before stroking the pet.",
+              "kind": "describe"
+            },
+            {
+              "text": "Other pets may need time.",
+              "kind": "describe"
+            },
+            {
+              "text": "My friends will meet the pet.",
+              "kind": "describe"
+            },
+            {
+              "text": "I am a pet helper.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask, how can I help the pet today?",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "strangers",
+            "unknown",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "[[GROWNUP]] is in charge of the pet.",
+              "kind": "describe"
+            },
+            {
+              "text": "I help with small jobs.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can fill the water bowl.",
+              "kind": "describe"
+            },
+            {
+              "text": "Everyone in my family helps.",
+              "kind": "describe"
+            },
+            {
+              "text": "A vet is an animal doctor.",
+              "kind": "describe"
+            },
+            {
+              "text": "The vet checks the pet is healthy.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask, how can I help the pet today?",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "strangers",
+            "unknown",
+            "safety"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "I use gentle hands.",
+              "kind": "describe"
+            },
+            {
+              "text": "I use a calm voice.",
+              "kind": "describe"
+            },
+            {
+              "text": "I stroke the pet softly.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some pets do not like tummy touches.",
+              "kind": "describe"
+            },
+            {
+              "text": "I let the pet come to me.",
+              "kind": "describe"
+            },
+            {
+              "text": "I do not chase it.",
+              "kind": "describe"
+            },
+            {
+              "text": "When it eats or sleeps, I let it rest.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say, hello, friend, softly.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I use gentle hands.",
+              "kind": "describe"
+            },
+            {
+              "text": "I use a calm voice.",
+              "kind": "describe"
+            },
+            {
+              "text": "I stroke the pet softly.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some pets do not like tummy touches.",
+              "kind": "describe"
+            },
+            {
+              "text": "I let the pet come to me.",
+              "kind": "describe"
+            },
+            {
+              "text": "I do not chase it.",
+              "kind": "describe"
+            },
+            {
+              "text": "When it eats or sleeps, I let it rest.",
+              "kind": "describe"
+            },
+            {
+              "text": "I never pull tails or ears.",
+              "kind": "describe"
+            },
+            {
+              "text": "I help with food and water.",
+              "kind": "describe"
+            },
+            {
+              "text": "I wash my hands after.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I never pull tails or ears.",
+              "kind": "describe"
+            },
+            {
+              "text": "I help with food and water.",
+              "kind": "describe"
+            },
+            {
+              "text": "I wash my hands after.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say, hello, friend, softly.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I use gentle hands.",
+              "kind": "describe"
+            },
+            {
+              "text": "I use a calm voice.",
+              "kind": "describe"
+            },
+            {
+              "text": "I stroke the pet softly.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some pets do not like tummy touches.",
+              "kind": "describe"
+            },
+            {
+              "text": "I let the pet come to me.",
+              "kind": "describe"
+            },
+            {
+              "text": "I do not chase it.",
+              "kind": "describe"
+            },
+            {
+              "text": "When it eats or sleeps, I let it rest.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say, hello, friend, softly.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "A new pet can feel scary.",
+              "kind": "describe"
+            },
+            {
+              "text": "Puppies can jump and lick.",
+              "kind": "describe"
+            },
+            {
+              "text": "Kittens can pounce.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some pets bark or hiss.",
+              "kind": "describe"
+            },
+            {
+              "text": "A scared pet may scratch.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can stand still like a tree.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can step back.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can call a grown-up.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "worried",
+          "background": "home-evening",
+          "addresses": [
+            "pain",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "A new pet can feel scary.",
+              "kind": "describe"
+            },
+            {
+              "text": "Puppies can jump and lick.",
+              "kind": "describe"
+            },
+            {
+              "text": "Kittens can pounce.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some pets bark or hiss.",
+              "kind": "describe"
+            },
+            {
+              "text": "A scared pet may scratch.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can stand still like a tree.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can step back.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can call a grown-up.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel unsure.",
+              "kind": "describe"
+            },
+            {
+              "text": "Getting to know each other takes time.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "Step by step, it gets a little easier.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "pain",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "It is okay to feel unsure.",
+              "kind": "describe"
+            },
+            {
+              "text": "Getting to know each other takes time.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can be a tree.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "safety",
+            "social",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "A new pet can feel scary.",
+              "kind": "describe"
+            },
+            {
+              "text": "Puppies can jump and lick.",
+              "kind": "describe"
+            },
+            {
+              "text": "Kittens can pounce.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some pets bark or hiss.",
+              "kind": "describe"
+            },
+            {
+              "text": "A scared pet may scratch.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can stand still like a tree.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can step back.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can call a grown-up.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can be a tree.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "pain",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "Tonight I get ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "First we set up the pet bed.",
+              "kind": "describe"
+            },
+            {
+              "text": "We put the bowls in a quiet spot.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I practise gentle hands.",
+              "kind": "describe"
+            },
+            {
+              "text": "On a stuffed animal.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next I hold out my hand slowly.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, I practise being a tree.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: gentle hands, calm voice, let it come to me.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight I get ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "First we set up the pet bed.",
+              "kind": "describe"
+            },
+            {
+              "text": "We put the bowls in a quiet spot.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I practise gentle hands.",
+              "kind": "describe"
+            },
+            {
+              "text": "On a stuffed animal.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next I hold out my hand slowly.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, I practise being a tree.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, we talk about a name.",
+              "kind": "describe"
+            },
+            {
+              "text": "I feel ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "The pet will feel welcome.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Last, we talk about a name.",
+              "kind": "describe"
+            },
+            {
+              "text": "I feel ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "The pet will feel welcome.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: gentle hands, calm voice, let it come to me.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight I get ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "First we set up the pet bed.",
+              "kind": "describe"
+            },
+            {
+              "text": "We put the bowls in a quiet spot.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I practise gentle hands.",
+              "kind": "describe"
+            },
+            {
+              "text": "On a stuffed animal.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next I hold out my hand slowly.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, I practise being a tree.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: gentle hands, calm voice, let it come to me.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        }
+      ]
+    }
+  },
+  "badge": {
+    "id": "pet_pal",
+    "label": "Pet Pal"
+  },
+  "olderPages": {
+    "what_happens": {
+      "sentences": [
+        {
+          "text": "Animals feel stress in a new place, just like people, and settling can take days or weeks.",
+          "kind": "describe"
+        },
+        {
+          "text": "Each type of pet has different needs for food, space, exercise and rest.",
+          "kind": "describe"
+        },
+        {
+          "text": "Body language shows how a pet feels, like a wagging tail, flattened ears or hiding.",
+          "kind": "describe"
+        },
+        {
+          "text": "Learning about the pet's species before it arrives makes care easier.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can research one fact about the pet's needs.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "home-evening",
+      "addresses": [
+        "unknown",
+        "safety",
+        "social"
+      ]
+    },
+    "who_is_there": {
+      "sentences": [
+        {
+          "text": "Vets give vaccines, check teeth and help pets when they are ill, just like doctors for people.",
+          "kind": "describe"
+        },
+        {
+          "text": "Pet care includes daily jobs and also costs, which grown-ups plan for.",
+          "kind": "describe"
+        },
+        {
+          "text": "Introducing pets to each other slowly reduces fights.",
+          "kind": "describe"
+        },
+        {
+          "text": "Pet sitters or neighbours help when the family is away.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can take on a regular job, like brushing or feeding, with supervision.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "home-evening",
+      "addresses": [
+        "strangers",
+        "safety",
+        "social"
+      ]
+    },
+    "what_i_do": {
+      "sentences": [
+        {
+          "text": "Reading a pet's signals, like a tail swish, growl or hiss, tells you when to back off.",
+          "kind": "describe"
+        },
+        {
+          "text": "Most bites and scratches happen when a pet feels cornered, startled or hurt.",
+          "kind": "describe"
+        },
+        {
+          "text": "Handwashing matters because animals can carry germs that are harmless to them but not to people.",
+          "kind": "describe"
+        },
+        {
+          "text": "Training a pet with rewards works better than punishment.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can help teach the pet a simple trick, with a grown-up.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "brave",
+      "background": "home-evening",
+      "addresses": [
+        "pain",
+        "body",
+        "separation",
+        "safety"
+      ]
+    },
+    "if_scared": {
+      "sentences": [
+        {
+          "text": "Being nervous around animals is common, and confidence grows with small, calm interactions.",
+          "kind": "describe"
+        },
+        {
+          "text": "Most pet fear comes from not knowing what the animal will do next; learning its body language helps.",
+          "kind": "describe"
+        },
+        {
+          "text": "Allergies to pets are real and a doctor can help with them.",
+          "kind": "describe"
+        },
+        {
+          "text": "If [[CHILD]] gets scratched or bitten, telling a grown-up straight away matters so it can be cleaned.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can set their own pace, like starting with watching, then gentle stroking.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "worried",
+      "background": "home-evening",
+      "addresses": [
+        "pain",
+        "unknown",
+        "safety"
+      ]
+    },
+    "rehearsal": {
+      "sentences": [
+        {
+          "text": "Preparing the space, food and supplies ahead of time makes the first day calmer for the pet.",
+          "kind": "describe"
+        },
+        {
+          "text": "A quiet room helps a new pet decompress.",
+          "kind": "describe"
+        },
+        {
+          "text": "Agreeing house rules, like no pets on beds, before arrival avoids confusion.",
+          "kind": "describe"
+        },
+        {
+          "text": "A care schedule shared by the family keeps the pet healthy.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can make a welcome sign or a care chart.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "happy",
+      "background": "home-evening",
+      "addresses": [
+        "body",
+        "sensory",
+        "unknown",
+        "safety"
+      ]
+    }
+  }
+}

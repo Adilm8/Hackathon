@@ -1,0 +1,2486 @@
+{
+  "type": "performance",
+  "version": 1,
+  "label": "Show, recital or concert",
+  "countdownLabel": "the show",
+  "beats": {
+    "what_happens": {
+      "title": "What happens at the show",
+      "goals": [
+        "A show has practice, waiting, performing and a bow",
+        "The audience is friendly, mostly families",
+        "Clapping at the end means well done"
+      ],
+      "parentSkill": "Explain the order: costume, waiting, stage, perform, bow, hugs."
+    },
+    "who_is_there": {
+      "title": "Who is at the show",
+      "goals": [
+        "The teacher or director guides the performers",
+        "Other performers are nervous too",
+        "The audience wants the performers to do well"
+      ],
+      "parentSkill": "Tell your child where you will sit and agree a small signal, like touching your nose."
+    },
+    "what_i_do": {
+      "title": "What I do on stage",
+      "goals": [
+        "Practise in small pieces",
+        "Breathe, look at a friendly face, start",
+        "If a mistake happens, keep going"
+      ],
+      "parentSkill": "Practise the part in front of toys, then family, then a video call."
+    },
+    "if_scared": {
+      "title": "If I get stage fright",
+      "goals": [
+        "Stage fright is normal",
+        "Shaky knees and butterflies pass once it starts",
+        "Calm tools: breathing, a friendly face, a plan if I freeze"
+      ],
+      "parentSkill": "Name it and normalise it: 'Lots of performers get butterflies. They go away once you start.'"
+    },
+    "rehearsal": {
+      "title": "Let's practise the show",
+      "goals": [
+        "Do a home show for toys and family",
+        "Practise the walk on, the part and the bow",
+        "Practise keeping going after a pretend mistake"
+      ],
+      "parentSkill": "Hold a living-room show with toys as the audience and a lamp as the stage light."
+    }
+  },
+  "steps": [
+    "Practise the part, song or piece at home",
+    "Put on the costume or the special clothes",
+    "Wait backstage or in a line with the group",
+    "Walk onto the stage when it is time",
+    "Perform the part with the group or alone",
+    "Bow while everyone claps",
+    "Meet the family after the show"
+  ],
+  "sensory": [
+    "bright stage lights that make it hard to see the audience",
+    "clapping and cheering",
+    "a quiet, dark room full of people",
+    "a costume that feels scratchy or new",
+    "a fluttery tummy and shaky knees",
+    "music from a piano or speakers"
+  ],
+  "honestyNotes": "Mistakes happen in almost every show and the audience rarely notices; never promise it will be perfect. Stage fright is normal. A child can freeze or cry; agree a calm plan with the teacher. Praise courage and effort, not perfection.",
+  "questionButtons": [
+    {
+      "id": "forget",
+      "text": "What if I forget my part?",
+      "topic": "safety",
+      "fallbackAnswer": [
+        "It happens to lots of performers. Take a breath, and the teacher can whisper a hint.",
+        "Then you keep going."
+      ]
+    },
+    {
+      "id": "mistake",
+      "text": "What if I make a mistake?",
+      "topic": "love",
+      "fallbackAnswer": [
+        "Most people will not even notice. Keep going like nothing happened.",
+        "[[GROWNUP]] will be proud of you for being brave."
+      ]
+    },
+    {
+      "id": "see_you",
+      "text": "Will [[GROWNUP]] be there?",
+      "topic": "separation",
+      "fallbackAnswer": [
+        "[[GROWNUP]] will tell you where they will sit.",
+        "You can agree a special signal, like touching your nose."
+      ]
+    },
+    {
+      "id": "lights",
+      "text": "Why are the lights so bright?",
+      "topic": "sensory",
+      "fallbackAnswer": [
+        "Stage lights help the audience see you.",
+        "They can make it hard to see the audience, and that can help with nerves."
+      ]
+    },
+    {
+      "id": "people",
+      "text": "Who will watch me?",
+      "topic": "strangers",
+      "fallbackAnswer": [
+        "Mostly families and friends.",
+        "Everyone in the audience wants you to do well."
+      ]
+    },
+    {
+      "id": "butterflies",
+      "text": "Why do I feel butterflies?",
+      "topic": "body",
+      "fallbackAnswer": [
+        "Butterflies mean your body is excited and nervous.",
+        "They usually get smaller when you start."
+      ]
+    },
+    {
+      "id": "laugh",
+      "text": "What if people laugh?",
+      "topic": "social",
+      "fallbackAnswer": [
+        "If people laugh, it is usually because something is funny or cute, not at you.",
+        "You can smile and keep going."
+      ]
+    },
+    {
+      "id": "when",
+      "text": "When is my turn?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "The teacher knows the order and will tell you when to go on.",
+        "You wait quietly with your group until then."
+      ]
+    },
+    {
+      "id": "cry",
+      "text": "What if I cry on stage?",
+      "topic": "love",
+      "fallbackAnswer": [
+        "If you feel too big a feeling, the teacher will help.",
+        "It is okay, and you can try again next time."
+      ],
+      "ages": [
+        2,
+        8
+      ]
+    },
+    {
+      "id": "freeze",
+      "text": "What if I freeze?",
+      "topic": "safety",
+      "fallbackAnswer": [
+        "Freezing for a moment happens. Breathe out slowly, look at the teacher, and start from the last part.",
+        "The audience will wait kindly."
+      ],
+      "ages": [
+        7,
+        12
+      ]
+    }
+  ],
+  "techniques": [
+    {
+      "id": "home_show",
+      "label": "A living-room show",
+      "how": "Perform for toys and family at home first.",
+      "topics": [
+        "unknown",
+        "social"
+      ]
+    },
+    {
+      "id": "special_signal",
+      "label": "A special signal",
+      "how": "Agree a signal like touching the nose from the audience.",
+      "topics": [
+        "separation",
+        "love"
+      ]
+    },
+    {
+      "id": "friendly_face",
+      "label": "A friendly face",
+      "how": "Look at a friendly face or a spot at the back.",
+      "topics": [
+        "strangers",
+        "social"
+      ]
+    },
+    {
+      "id": "keep_going",
+      "label": "Keep going practice",
+      "how": "Practise making a mistake on purpose and carrying on.",
+      "topics": [
+        "safety",
+        "love"
+      ]
+    },
+    {
+      "id": "chunk_practice",
+      "label": "Practising in pieces",
+      "how": "Practise small parts, then join them.",
+      "topics": [
+        "unknown"
+      ]
+    },
+    {
+      "id": "water_sip",
+      "label": "A sip of water",
+      "how": "Have water backstage for a dry mouth.",
+      "topics": [
+        "body",
+        "sensory"
+      ]
+    },
+    {
+      "id": "power_pose",
+      "label": "A power pose",
+      "how": "Stand tall with hands on hips for a few breaths backstage.",
+      "topics": [
+        "body",
+        "safety"
+      ]
+    },
+    {
+      "id": "teacher_hint",
+      "label": "A hint plan",
+      "how": "Ask the teacher to whisper a hint if your child forgets.",
+      "topics": [
+        "strangers",
+        "safety",
+        "pain"
+      ]
+    },
+    {
+      "id": "deep_breaths",
+      "label": "Smell the flower, blow the candle",
+      "how": "Breathe in slowly through the nose and out like blowing a candle.",
+      "topics": [
+        "pain",
+        "sensory",
+        "safety",
+        "body"
+      ]
+    }
+  ],
+  "ritual": [
+    "Costume on, sip of water",
+    "One slow breath, then walk on",
+    "Perform, bow and big hugs"
+  ],
+  "phrases": {
+    "pain": [
+      "If something feels uncomfortable in the costume, tell the teacher.",
+      "Take a slow breath."
+    ],
+    "body": [
+      "Butterflies mean your body is excited.",
+      "A sip of water helps a dry mouth."
+    ],
+    "sensory": [
+      "The lights are bright. That is normal on a stage.",
+      "The clapping is loud because people liked it."
+    ],
+    "strangers": [
+      "The audience is on your side.",
+      "The teacher will tell you when to go on."
+    ],
+    "separation": [
+      "I'll be in the audience. Look for my signal.",
+      "I will be clapping the loudest."
+    ],
+    "unknown": [
+      "Wait, walk on, perform, bow.",
+      "The teacher knows the order."
+    ],
+    "safety": [
+      "If you forget, breathe and keep going.",
+      "The teacher can whisper a hint."
+    ],
+    "social": [
+      "Your group is doing it with you.",
+      "Lots of performers feel nervous."
+    ],
+    "love": [
+      "I'm proud of you for being brave on stage.",
+      "I love watching you."
+    ]
+  },
+  "topicWords": {
+    "pain": [
+      "hurt",
+      "uncomfortable",
+      "scratchy",
+      "sore"
+    ],
+    "body": [
+      "tummy",
+      "knees",
+      "legs",
+      "mouth",
+      "butterflies",
+      "body",
+      "breath",
+      "breathe"
+    ],
+    "sensory": [
+      "lights",
+      "light",
+      "bright",
+      "loud",
+      "claps",
+      "clapping",
+      "music",
+      "dark",
+      "costume",
+      "glowed"
+    ],
+    "strangers": [
+      "audience",
+      "teacher",
+      "director",
+      "miss moth"
+    ],
+    "separation": [
+      "watch",
+      "watching",
+      "signal",
+      "front row",
+      "in the audience",
+      "right there",
+      "stay",
+      "close",
+      "with me",
+      "with you",
+      "together",
+      "comes back",
+      "back",
+      "hand",
+      "nearby"
+    ],
+    "unknown": [
+      "first",
+      "then",
+      "next",
+      "after",
+      "last",
+      "turn",
+      "order",
+      "step",
+      "steps"
+    ],
+    "safety": [
+      "mistake",
+      "forget",
+      "forgets",
+      "hint",
+      "keep going",
+      "freeze",
+      "safe",
+      "careful",
+      "break",
+      "stop",
+      "help"
+    ],
+    "social": [
+      "group",
+      "friends",
+      "classmates",
+      "kids",
+      "everyone",
+      "performers",
+      "friend",
+      "children",
+      "people",
+      "others"
+    ],
+    "love": [
+      "love",
+      "hug",
+      "hugs",
+      "hugged",
+      "proud",
+      "cuddle"
+    ]
+  },
+  "backgrounds": [
+    "school",
+    "home-evening",
+    "cosy-room",
+    "outside"
+  ],
+  "fallbackPages": {
+    "story": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "Soon [[CHILD]] will be in a show.",
+              "kind": "describe"
+            },
+            {
+              "text": "A show is when performers share a song, a dance, a play or music with an audience.",
+              "kind": "describe"
+            },
+            {
+              "text": "First [[CHILD]] puts on the costume or the special clothes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the group waits backstage, quietly, for their turn.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Before bed, here is a story about a little cricket called Kit.",
+              "kind": "describe"
+            },
+            {
+              "text": "Kit was going to play a song in the Garden Concert.",
+              "kind": "describe"
+            },
+            {
+              "text": "First Kit put on a shiny green bow tie.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then Kit waited behind a big leaf with the other bugs.",
+              "kind": "describe"
+            },
+            {
+              "text": "The ladybird sang first, then the bees buzzed a tune.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next it was Kit's turn.",
+              "kind": "describe"
+            },
+            {
+              "text": "Kit hopped onto the stage, a flat stone under the moonlight.",
+              "kind": "describe"
+            },
+            {
+              "text": "The fireflies glowed like stage lights.",
+              "kind": "describe"
+            },
+            {
+              "text": "Kit played chirp, chirp, chirp, the song from practice.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the end, Kit bowed, and all the garden clapped.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "sensory",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Next they walk onto the stage, and the lights are bright.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, they perform the part they practised.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the end, everyone bows, and the audience claps.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, families meet the performers with hugs.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can remember: wait, walk on, perform, bow.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Soon [[CHILD]] will be in a show.",
+              "kind": "describe"
+            },
+            {
+              "text": "A show is when performers share a song, a dance, a play or music with an audience.",
+              "kind": "describe"
+            },
+            {
+              "text": "First [[CHILD]] puts on the costume or the special clothes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the group waits backstage, quietly, for their turn.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next they walk onto the stage, and the lights are bright.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, they perform the part they practised.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the end, everyone bows, and the audience claps.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, families meet the performers with hugs.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can remember: wait, walk on, perform, bow.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "At the show, a teacher or director helps the performers.",
+              "kind": "describe"
+            },
+            {
+              "text": "They tell everyone when to go on and where to stand.",
+              "kind": "describe"
+            },
+            {
+              "text": "The other performers are friends, classmates or kids from the class.",
+              "kind": "describe"
+            },
+            {
+              "text": "Many of them feel nervous too.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can look for [[GROWNUP]]'s special signal, then look at the teacher.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "strangers",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Kit the cricket peeked out from behind the leaf.",
+              "kind": "describe"
+            },
+            {
+              "text": "Miss Moth, the teacher, whispered, you go after the bees.",
+              "kind": "describe"
+            },
+            {
+              "text": "The ladybird next to Kit was shaking a little.",
+              "kind": "describe"
+            },
+            {
+              "text": "Are you nervous, asked Kit.",
+              "kind": "describe"
+            },
+            {
+              "text": "Yes, said the ladybird, are you?",
+              "kind": "describe"
+            },
+            {
+              "text": "Kit nodded, and they held each other's little legs.",
+              "kind": "describe"
+            },
+            {
+              "text": "In the audience sat frogs, snails, beetles and mice.",
+              "kind": "describe"
+            },
+            {
+              "text": "Kit saw Mama Cricket in the front row.",
+              "kind": "describe"
+            },
+            {
+              "text": "She touched her nose, their special signal.",
+              "kind": "describe"
+            },
+            {
+              "text": "Kit touched back and smiled.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the audience there are families and friends.",
+              "kind": "describe"
+            },
+            {
+              "text": "The audience wants everyone to do well.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] will be in the audience, watching [[CHILD]].",
+              "kind": "describe"
+            },
+            {
+              "text": "Clapping means, well done, we liked it.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can look for [[GROWNUP]]'s special signal, then look at the teacher.",
+              "kind": "coach"
+            },
+            {
+              "text": "Step by step, it all gets a little easier.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "school",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At the show, a teacher or director helps the performers.",
+              "kind": "describe"
+            },
+            {
+              "text": "They tell everyone when to go on and where to stand.",
+              "kind": "describe"
+            },
+            {
+              "text": "The other performers are friends, classmates or kids from the class.",
+              "kind": "describe"
+            },
+            {
+              "text": "Many of them feel nervous too.",
+              "kind": "describe"
+            },
+            {
+              "text": "In the audience there are families and friends.",
+              "kind": "describe"
+            },
+            {
+              "text": "The audience wants everyone to do well.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] will be in the audience, watching [[CHILD]].",
+              "kind": "describe"
+            },
+            {
+              "text": "Clapping means, well done, we liked it.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can look for [[GROWNUP]]'s special signal, then look at the teacher.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "Before the show, [[CHILD]] practises the part in small pieces.",
+              "kind": "describe"
+            },
+            {
+              "text": "On the day, breathe slowly while waiting.",
+              "kind": "describe"
+            },
+            {
+              "text": "When it is time, [[CHILD]] walks on and finds the spot.",
+              "kind": "describe"
+            },
+            {
+              "text": "Looking at a friendly face or a point at the back helps.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can take one slow breath before the first word.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "school",
+          "addresses": [
+            "body",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Kit the cricket practised the song every evening.",
+              "kind": "describe"
+            },
+            {
+              "text": "First to the moon, then to a snail, then to the whole family.",
+              "kind": "describe"
+            },
+            {
+              "text": "On the night of the concert, Kit stood on the stone.",
+              "kind": "describe"
+            },
+            {
+              "text": "Kit took one slow breath.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then Kit looked at Mama Cricket's friendly face.",
+              "kind": "describe"
+            },
+            {
+              "text": "Chirp, chirp, chirp, the song began.",
+              "kind": "describe"
+            },
+            {
+              "text": "In the middle, Kit missed a chirp.",
+              "kind": "describe"
+            },
+            {
+              "text": "Kit kept going, like nothing happened.",
+              "kind": "describe"
+            },
+            {
+              "text": "Nobody noticed, not even the owl.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the end, Kit bowed and grinned.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Then the music starts, or the first word comes.",
+              "kind": "describe"
+            },
+            {
+              "text": "If a mistake happens, keep going, like nothing happened.",
+              "kind": "describe"
+            },
+            {
+              "text": "Most people will not even notice.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the end, bow and smile.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can take one slow breath before the first word.",
+              "kind": "coach"
+            },
+            {
+              "text": "Step by step, it all gets a little easier.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "school",
+          "addresses": [
+            "body",
+            "sensory",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Before the show, [[CHILD]] practises the part in small pieces.",
+              "kind": "describe"
+            },
+            {
+              "text": "On the day, breathe slowly while waiting.",
+              "kind": "describe"
+            },
+            {
+              "text": "When it is time, [[CHILD]] walks on and finds the spot.",
+              "kind": "describe"
+            },
+            {
+              "text": "Looking at a friendly face or a point at the back helps.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the music starts, or the first word comes.",
+              "kind": "describe"
+            },
+            {
+              "text": "If a mistake happens, keep going, like nothing happened.",
+              "kind": "describe"
+            },
+            {
+              "text": "Most people will not even notice.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the end, bow and smile.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can take one slow breath before the first word.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "school",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "Before a show, the tummy may feel full of butterflies.",
+              "kind": "describe"
+            },
+            {
+              "text": "The knees may shake, and the mouth may feel dry.",
+              "kind": "describe"
+            },
+            {
+              "text": "This is called stage fright, and lots of performers feel it, even famous ones.",
+              "kind": "describe"
+            },
+            {
+              "text": "The feeling is strongest right before going on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "worried",
+          "background": "school",
+          "addresses": [
+            "body",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Kit the cricket felt stage fright.",
+              "kind": "describe"
+            },
+            {
+              "text": "Kit's legs wobbled, and Kit's mouth felt dry.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama Cricket did not say, nothing will go wrong.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama said, your body is excited and nervous at the same time.",
+              "kind": "describe"
+            },
+            {
+              "text": "If you forget, Miss Moth will whisper a hint.",
+              "kind": "describe"
+            },
+            {
+              "text": "Kit took a sip of dew water.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then Kit smelled a flower slowly and blew a candle.",
+              "kind": "describe"
+            },
+            {
+              "text": "When the music began, the wobbles got smaller.",
+              "kind": "describe"
+            },
+            {
+              "text": "By the end, Kit was having fun.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama hugged Kit and said, I am proud of you.",
+              "kind": "describe"
+            },
+            {
+              "text": "Worried and brave can happen at the same time.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Once the show starts, it usually gets smaller.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes a performer forgets or freezes for a moment.",
+              "kind": "describe"
+            },
+            {
+              "text": "The teacher can whisper a hint.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel nervous and still do it.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can take slow breaths, smell the flower and blow the candle.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can sip water and look for the friendly face.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "school",
+          "addresses": [
+            "body",
+            "strangers",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Before a show, the tummy may feel full of butterflies.",
+              "kind": "describe"
+            },
+            {
+              "text": "The knees may shake, and the mouth may feel dry.",
+              "kind": "describe"
+            },
+            {
+              "text": "This is called stage fright, and lots of performers feel it, even famous ones.",
+              "kind": "describe"
+            },
+            {
+              "text": "The feeling is strongest right before going on.",
+              "kind": "describe"
+            },
+            {
+              "text": "Once the show starts, it usually gets smaller.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes a performer forgets or freezes for a moment.",
+              "kind": "describe"
+            },
+            {
+              "text": "The teacher can whisper a hint.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel nervous and still do it.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can take slow breaths, smell the flower and blow the candle.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can sip water and look for the friendly face.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "school",
+          "addresses": [
+            "body",
+            "strangers",
+            "safety",
+            "social"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "Tonight [[CHILD]] can give a living-room show.",
+              "kind": "describe"
+            },
+            {
+              "text": "Toys sit in a row as the audience.",
+              "kind": "describe"
+            },
+            {
+              "text": "A lamp can be the stage light.",
+              "kind": "describe"
+            },
+            {
+              "text": "First [[CHILD]] waits behind the sofa, like backstage.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then walks on and finds the spot.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say: wait, breathe, walk on, perform, bow.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "school",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Kit the cricket gave a show at home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Kit lined up pebbles as the audience.",
+              "kind": "describe"
+            },
+            {
+              "text": "Papa Cricket held a glow-worm as the stage light.",
+              "kind": "describe"
+            },
+            {
+              "text": "Kit waited behind a leaf, then hopped out.",
+              "kind": "describe"
+            },
+            {
+              "text": "Kit chirped the song, and missed a note on purpose.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then Kit kept going, chirp, chirp.",
+              "kind": "describe"
+            },
+            {
+              "text": "Papa laughed and clapped.",
+              "kind": "describe"
+            },
+            {
+              "text": "Kit bowed very low.",
+              "kind": "describe"
+            },
+            {
+              "text": "Papa said, you can handle a mistake like a real performer.",
+              "kind": "describe"
+            },
+            {
+              "text": "Kit felt ready and proud.",
+              "kind": "describe"
+            },
+            {
+              "text": "And Kit slept well that night.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Next [[CHILD]] performs the part, and makes one pretend mistake on purpose, and keeps going.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, a big bow.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, everyone claps and cheers.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say: wait, breathe, walk on, perform, bow.",
+              "kind": "coach"
+            },
+            {
+              "text": "Step by step, it all gets a little easier.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is close by, and [[GROWNUP]] is proud.",
+              "kind": "describe"
+            },
+            {
+              "text": "New things feel strange at first, and then they feel normal.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "school",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight [[CHILD]] can give a living-room show.",
+              "kind": "describe"
+            },
+            {
+              "text": "Toys sit in a row as the audience.",
+              "kind": "describe"
+            },
+            {
+              "text": "A lamp can be the stage light.",
+              "kind": "describe"
+            },
+            {
+              "text": "First [[CHILD]] waits behind the sofa, like backstage.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then walks on and finds the spot.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next [[CHILD]] performs the part, and makes one pretend mistake on purpose, and keeps going.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, a big bow.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, everyone claps and cheers.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say: wait, breathe, walk on, perform, bow.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "school",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        }
+      ]
+    },
+    "social": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "Soon I will be in a show.",
+              "kind": "describe"
+            },
+            {
+              "text": "I will share something I practised.",
+              "kind": "describe"
+            },
+            {
+              "text": "It might be a song, a dance or a play.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I put on my costume.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I wait backstage.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next I walk onto the stage.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can remember: wait, walk on, perform, bow.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Soon I will be in a show.",
+              "kind": "describe"
+            },
+            {
+              "text": "I will share something I practised.",
+              "kind": "describe"
+            },
+            {
+              "text": "It might be a song, a dance or a play.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I put on my costume.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I wait backstage.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next I walk onto the stage.",
+              "kind": "describe"
+            },
+            {
+              "text": "The lights are bright.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, I do my part.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the end, I bow.",
+              "kind": "describe"
+            },
+            {
+              "text": "The audience claps.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, I get hugs from my family.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "The lights are bright.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, I do my part.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the end, I bow.",
+              "kind": "describe"
+            },
+            {
+              "text": "The audience claps.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, I get hugs from my family.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can remember: wait, walk on, perform, bow.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Soon I will be in a show.",
+              "kind": "describe"
+            },
+            {
+              "text": "I will share something I practised.",
+              "kind": "describe"
+            },
+            {
+              "text": "It might be a song, a dance or a play.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I put on my costume.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I wait backstage.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next I walk onto the stage.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can remember: wait, walk on, perform, bow.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "sensory",
+            "separation",
+            "unknown",
+            "social"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "A teacher helps us at the show.",
+              "kind": "describe"
+            },
+            {
+              "text": "The teacher tells us when to go on.",
+              "kind": "describe"
+            },
+            {
+              "text": "The other performers are kids like me.",
+              "kind": "describe"
+            },
+            {
+              "text": "Many of them feel nervous too.",
+              "kind": "describe"
+            },
+            {
+              "text": "The audience is families and friends.",
+              "kind": "describe"
+            },
+            {
+              "text": "They want us to do well.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can look for [[GROWNUP]]'s special signal.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "strangers",
+            "separation",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "A teacher helps us at the show.",
+              "kind": "describe"
+            },
+            {
+              "text": "The teacher tells us when to go on.",
+              "kind": "describe"
+            },
+            {
+              "text": "The other performers are kids like me.",
+              "kind": "describe"
+            },
+            {
+              "text": "Many of them feel nervous too.",
+              "kind": "describe"
+            },
+            {
+              "text": "The audience is families and friends.",
+              "kind": "describe"
+            },
+            {
+              "text": "They want us to do well.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] will be in the audience.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] will watch me.",
+              "kind": "describe"
+            },
+            {
+              "text": "Clapping means well done.",
+              "kind": "describe"
+            },
+            {
+              "text": "Everyone is on my side.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "[[GROWNUP]] will be in the audience.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] will watch me.",
+              "kind": "describe"
+            },
+            {
+              "text": "Clapping means well done.",
+              "kind": "describe"
+            },
+            {
+              "text": "Everyone is on my side.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can look for [[GROWNUP]]'s special signal.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "school",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "A teacher helps us at the show.",
+              "kind": "describe"
+            },
+            {
+              "text": "The teacher tells us when to go on.",
+              "kind": "describe"
+            },
+            {
+              "text": "The other performers are kids like me.",
+              "kind": "describe"
+            },
+            {
+              "text": "Many of them feel nervous too.",
+              "kind": "describe"
+            },
+            {
+              "text": "The audience is families and friends.",
+              "kind": "describe"
+            },
+            {
+              "text": "They want us to do well.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can look for [[GROWNUP]]'s special signal.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "strangers",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "Before the show, I practise in small pieces.",
+              "kind": "describe"
+            },
+            {
+              "text": "On the day, I breathe slowly.",
+              "kind": "describe"
+            },
+            {
+              "text": "When it is time, I walk on.",
+              "kind": "describe"
+            },
+            {
+              "text": "I find my spot.",
+              "kind": "describe"
+            },
+            {
+              "text": "I look at a friendly face.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I start.",
+              "kind": "describe"
+            },
+            {
+              "text": "If I make a mistake, I keep going.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take one slow breath before I start.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "school",
+          "addresses": [
+            "body",
+            "unknown",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Before the show, I practise in small pieces.",
+              "kind": "describe"
+            },
+            {
+              "text": "On the day, I breathe slowly.",
+              "kind": "describe"
+            },
+            {
+              "text": "When it is time, I walk on.",
+              "kind": "describe"
+            },
+            {
+              "text": "I find my spot.",
+              "kind": "describe"
+            },
+            {
+              "text": "I look at a friendly face.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I start.",
+              "kind": "describe"
+            },
+            {
+              "text": "If I make a mistake, I keep going.",
+              "kind": "describe"
+            },
+            {
+              "text": "Most people will not notice.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the end, I bow.",
+              "kind": "describe"
+            },
+            {
+              "text": "I smile.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "body",
+            "unknown",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Most people will not notice.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the end, I bow.",
+              "kind": "describe"
+            },
+            {
+              "text": "I smile.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take one slow breath before I start.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "school",
+          "addresses": [
+            "body",
+            "unknown",
+            "social",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Before the show, I practise in small pieces.",
+              "kind": "describe"
+            },
+            {
+              "text": "On the day, I breathe slowly.",
+              "kind": "describe"
+            },
+            {
+              "text": "When it is time, I walk on.",
+              "kind": "describe"
+            },
+            {
+              "text": "I find my spot.",
+              "kind": "describe"
+            },
+            {
+              "text": "I look at a friendly face.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I start.",
+              "kind": "describe"
+            },
+            {
+              "text": "If I make a mistake, I keep going.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take one slow breath before I start.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "school",
+          "addresses": [
+            "body",
+            "unknown",
+            "safety",
+            "social"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "Before the show, I may feel butterflies.",
+              "kind": "describe"
+            },
+            {
+              "text": "My knees may shake.",
+              "kind": "describe"
+            },
+            {
+              "text": "My mouth may feel dry.",
+              "kind": "describe"
+            },
+            {
+              "text": "This is stage fright.",
+              "kind": "describe"
+            },
+            {
+              "text": "Lots of performers feel it.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is strongest before I go on.",
+              "kind": "describe"
+            },
+            {
+              "text": "When I start, it gets smaller.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "worried",
+          "background": "school",
+          "addresses": [
+            "body",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Before the show, I may feel butterflies.",
+              "kind": "describe"
+            },
+            {
+              "text": "My knees may shake.",
+              "kind": "describe"
+            },
+            {
+              "text": "My mouth may feel dry.",
+              "kind": "describe"
+            },
+            {
+              "text": "This is stage fright.",
+              "kind": "describe"
+            },
+            {
+              "text": "Lots of performers feel it.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is strongest before I go on.",
+              "kind": "describe"
+            },
+            {
+              "text": "When I start, it gets smaller.",
+              "kind": "describe"
+            },
+            {
+              "text": "If I forget, the teacher can whisper a hint.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel nervous.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can still do it.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "body",
+            "strangers",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "If I forget, the teacher can whisper a hint.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel nervous.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can still do it.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can look for a friendly face.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "school",
+          "addresses": [
+            "body",
+            "strangers",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Before the show, I may feel butterflies.",
+              "kind": "describe"
+            },
+            {
+              "text": "My knees may shake.",
+              "kind": "describe"
+            },
+            {
+              "text": "My mouth may feel dry.",
+              "kind": "describe"
+            },
+            {
+              "text": "This is stage fright.",
+              "kind": "describe"
+            },
+            {
+              "text": "Lots of performers feel it.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is strongest before I go on.",
+              "kind": "describe"
+            },
+            {
+              "text": "When I start, it gets smaller.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can look for a friendly face.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "school",
+          "addresses": [
+            "body",
+            "unknown",
+            "social",
+            "love"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "Tonight I give a show at home.",
+              "kind": "describe"
+            },
+            {
+              "text": "My toys are the audience.",
+              "kind": "describe"
+            },
+            {
+              "text": "A lamp is the stage light.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I wait behind the sofa.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I walk on.",
+              "kind": "describe"
+            },
+            {
+              "text": "I find my spot.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next I do my part.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: wait, breathe, walk on, perform, bow.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "school",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight I give a show at home.",
+              "kind": "describe"
+            },
+            {
+              "text": "My toys are the audience.",
+              "kind": "describe"
+            },
+            {
+              "text": "A lamp is the stage light.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I wait behind the sofa.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I walk on.",
+              "kind": "describe"
+            },
+            {
+              "text": "I find my spot.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next I do my part.",
+              "kind": "describe"
+            },
+            {
+              "text": "I make a pretend mistake.",
+              "kind": "describe"
+            },
+            {
+              "text": "I keep going.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, I bow.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, everyone claps.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "Step by step, it gets a little easier.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "school",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I make a pretend mistake.",
+              "kind": "describe"
+            },
+            {
+              "text": "I keep going.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, I bow.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, everyone claps.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: wait, breathe, walk on, perform, bow.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "school",
+          "addresses": [
+            "body",
+            "sensory",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight I give a show at home.",
+              "kind": "describe"
+            },
+            {
+              "text": "My toys are the audience.",
+              "kind": "describe"
+            },
+            {
+              "text": "A lamp is the stage light.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I wait behind the sofa.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I walk on.",
+              "kind": "describe"
+            },
+            {
+              "text": "I find my spot.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next I do my part.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: wait, breathe, walk on, perform, bow.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "school",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "unknown"
+          ]
+        }
+      ]
+    }
+  },
+  "badge": {
+    "id": "stage_star",
+    "label": "Stage Star"
+  },
+  "olderPages": {
+    "what_happens": {
+      "sentences": [
+        {
+          "text": "Performances have a running order, so each group knows when they go on.",
+          "kind": "describe"
+        },
+        {
+          "text": "Stage lights are bright so the audience can see the performers, which means performers often see only darkness.",
+          "kind": "describe"
+        },
+        {
+          "text": "A dress rehearsal is the practice run with costumes and lights.",
+          "kind": "describe"
+        },
+        {
+          "text": "Professional performers make small mistakes too and simply keep going.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can ask the teacher for the running order to know exactly when the turn comes.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "school",
+      "addresses": [
+        "sensory",
+        "strangers",
+        "unknown",
+        "safety"
+      ]
+    },
+    "who_is_there": {
+      "sentences": [
+        {
+          "text": "Audiences at school shows are almost all parents and grandparents cheering for someone.",
+          "kind": "describe"
+        },
+        {
+          "text": "Directors and teachers plan cues, signals that tell performers when to start or move.",
+          "kind": "describe"
+        },
+        {
+          "text": "Ensemble members support each other on stage; if one forgets, others carry on.",
+          "kind": "describe"
+        },
+        {
+          "text": "Backstage helpers sort costumes and props.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can thank the teacher after the show.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "school",
+      "addresses": [
+        "sensory",
+        "strangers",
+        "separation",
+        "unknown"
+      ]
+    },
+    "what_i_do": {
+      "sentences": [
+        {
+          "text": "Practising in chunks, then joining them, is how musicians and actors learn long pieces.",
+          "kind": "describe"
+        },
+        {
+          "text": "Looking just above the audience's heads gives the feeling of eye contact without the nerves.",
+          "kind": "describe"
+        },
+        {
+          "text": "If words are forgotten, a pause, a breath and the next line usually brings them back.",
+          "kind": "describe"
+        },
+        {
+          "text": "Recovering from a slip smoothly is a performance skill in itself.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can practise one run-through a day in the week before.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "brave",
+      "background": "school",
+      "addresses": [
+        "body",
+        "sensory",
+        "strangers",
+        "separation"
+      ]
+    },
+    "if_scared": {
+      "sentences": [
+        {
+          "text": "Stage fright is the body's alarm system reacting to being watched; it is uncomfortable but harmless.",
+          "kind": "describe"
+        },
+        {
+          "text": "Slow exhaling tells the nervous system it is safe and calms shaking.",
+          "kind": "describe"
+        },
+        {
+          "text": "Many performers reframe nerves as excitement because the body feels almost the same.",
+          "kind": "describe"
+        },
+        {
+          "text": "If [[CHILD]] freezes, a plan helps: breathe, look at the teacher, start again from the last line.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can choose a power pose to do backstage.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "worried",
+      "background": "school",
+      "addresses": [
+        "pain",
+        "body",
+        "strangers",
+        "separation"
+      ]
+    },
+    "rehearsal": {
+      "sentences": [
+        {
+          "text": "Running the whole performance at home in the costume removes surprises.",
+          "kind": "describe"
+        },
+        {
+          "text": "Recording a practice and watching it back shows that small mistakes are hard to spot.",
+          "kind": "describe"
+        },
+        {
+          "text": "A pre-show routine, like a stretch and a breath, gives the body a calm cue.",
+          "kind": "describe"
+        },
+        {
+          "text": "Packing water, a hair tie and a snack keeps the waiting easier.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can invite a grandparent to a video call for an extra practice audience.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "happy",
+      "background": "school",
+      "addresses": [
+        "body",
+        "sensory",
+        "strangers",
+        "separation"
+      ]
+    }
+  }
+}

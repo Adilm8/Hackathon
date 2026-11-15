@@ -1,0 +1,2471 @@
+{
+  "type": "two_homes",
+  "version": 1,
+  "label": "Two homes",
+  "countdownLabel": "the first switch day",
+  "beats": {
+    "what_happens": {
+      "title": "What two homes means",
+      "goals": [
+        "The grown-ups will live in two homes",
+        "It is a grown-up decision and not the child's fault",
+        "Both grown-ups keep loving the child"
+      ],
+      "parentSkill": "Use one calm sentence both grown-ups agree on, like: 'We decided to live in two homes. It is a grown-up decision, and we both love you.'"
+    },
+    "who_is_there": {
+      "title": "Who is in my two homes",
+      "goals": [
+        "Each grown-up looks after me at their home",
+        "Other family and friends stay in my life",
+        "Other kids live in two homes too"
+      ],
+      "parentSkill": "Name who will be at each home, including pets, siblings and any other adults, and keep other important people in the child's life."
+    },
+    "what_i_do": {
+      "title": "What I do on switch days",
+      "goals": [
+        "Use the calendar to know where I will be",
+        "Pack a travel bag with special things",
+        "Keep in touch with the other grown-up"
+      ],
+      "parentSkill": "Make a colour calendar together and let your child pack a travel bag with a comfort item that goes everywhere."
+    },
+    "if_scared": {
+      "title": "If I feel sad or worried",
+      "goals": [
+        "Sad, angry, worried and relieved feelings are all okay",
+        "It is not my fault and not my job to fix",
+        "Calm tools: talking, drawing, slow breaths, a hug"
+      ],
+      "parentSkill": "Name and accept all feelings: 'You feel sad and angry. That makes sense. It is not your fault.'"
+    },
+    "rehearsal": {
+      "title": "Let's practise the switch day",
+      "goals": [
+        "Make the calendar and pack the travel bag",
+        "Practise goodbye and hello",
+        "Set up a little special spot in each home"
+      ],
+      "parentSkill": "Make the colour calendar together and let your child decorate their spot in each home."
+    }
+  },
+  "steps": [
+    "Grown-ups explain that they will live in two homes",
+    "Look at a calendar that shows the days at each home",
+    "Pack a bag with special things for the switch",
+    "Say goodbye at one home and hello at the other",
+    "Settle in: my bed, my toys and the routine at this home",
+    "Call or message the other grown-up, as agreed",
+    "Switch back on the next switch day"
+  ],
+  "sensory": [
+    "two different bedrooms",
+    "a bag that travels between homes",
+    "different smells and sounds in each home",
+    "a calendar with colours for each home",
+    "a car ride or walk on switch days",
+    "a heavy or quiet feeling in the chest"
+  ],
+  "honestyNotes": "Children often think the separation is their fault or that they can fix it; say clearly that it is a grown-up decision and not the child's fault, and never promise the grown-ups will get back together. Never blame either parent, never ask the child to pass messages or keep secrets, and never make the child choose sides. Let the parent explain the reason in their own words.",
+  "questionButtons": [
+    {
+      "id": "fault",
+      "text": "Is it my fault?",
+      "topic": "love",
+      "fallbackAnswer": [
+        "No. It is a grown-up decision, and it is not because of anything you did or said.",
+        "Nothing you do could cause it or fix it."
+      ]
+    },
+    {
+      "id": "still_love",
+      "text": "Do you both still love me?",
+      "topic": "love",
+      "fallbackAnswer": [
+        "Yes. Both your grown-ups love you, and that never changes.",
+        "Grown-ups can stop living together, but they never stop loving their kids."
+      ]
+    },
+    {
+      "id": "back_together",
+      "text": "Will you live together again?",
+      "topic": "other",
+      "fallbackAnswer": [
+        "That is a grown-up decision, and [[GROWNUP]] will be honest with you.",
+        "It is okay to wish for it, and to talk about that wish."
+      ]
+    },
+    {
+      "id": "where_live",
+      "text": "Where will I live?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "You will have days at each home, and the calendar shows which.",
+        "[[GROWNUP]] will tell you the plan."
+      ]
+    },
+    {
+      "id": "my_things",
+      "text": "Will my things be at both homes?",
+      "topic": "safety",
+      "fallbackAnswer": [
+        "You will have a bed and some things at each home.",
+        "Your travel bag carries the special things."
+      ]
+    },
+    {
+      "id": "pets",
+      "text": "What about our pet?",
+      "topic": "social",
+      "fallbackAnswer": [
+        "[[GROWNUP]] will tell you where the pet lives.",
+        "You can visit and help look after it."
+      ]
+    },
+    {
+      "id": "see_other",
+      "text": "Can I still see my other grown-up?",
+      "topic": "separation",
+      "fallbackAnswer": [
+        "Yes. The calendar shows the days, and you can keep in touch in between, as agreed.",
+        "Both grown-ups want to see you."
+      ]
+    },
+    {
+      "id": "tell_friends",
+      "text": "Do I have to tell my friends?",
+      "topic": "social",
+      "fallbackAnswer": [
+        "You can choose who to tell and when.",
+        "Many kids live in two homes, and real friends understand."
+      ],
+      "ages": [
+        5,
+        12
+      ]
+    },
+    {
+      "id": "choose",
+      "text": "Do I have to choose?",
+      "topic": "love",
+      "fallbackAnswer": [
+        "No. You never have to choose between your grown-ups.",
+        "You can love both homes and both grown-ups."
+      ],
+      "ages": [
+        4,
+        12
+      ]
+    },
+    {
+      "id": "school",
+      "text": "Will I change schools?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "[[GROWNUP]] will tell you about school.",
+        "Many kids stay at the same school."
+      ]
+    },
+    {
+      "id": "sad",
+      "text": "Why do I feel so sad?",
+      "topic": "love",
+      "fallbackAnswer": [
+        "Big changes bring big feelings, and sadness is normal.",
+        "Telling a trusted grown-up helps the sadness feel smaller."
+      ]
+    }
+  ],
+  "techniques": [
+    {
+      "id": "colour_calendar",
+      "label": "A colour calendar",
+      "how": "Make a calendar with one colour for each home.",
+      "topics": [
+        "unknown",
+        "safety"
+      ]
+    },
+    {
+      "id": "travel_bag",
+      "label": "A travel bag",
+      "how": "Pack a bag with special things that move between homes.",
+      "topics": [
+        "safety",
+        "separation"
+      ]
+    },
+    {
+      "id": "comfort_toy",
+      "label": "One toy for both homes",
+      "how": "A comfort toy that always travels with your child.",
+      "topics": [
+        "separation",
+        "love"
+      ]
+    },
+    {
+      "id": "not_your_fault",
+      "label": "Not your fault",
+      "how": "Say often and clearly that it is not the child's fault.",
+      "topics": [
+        "love"
+      ]
+    },
+    {
+      "id": "keep_in_touch",
+      "label": "Keeping in touch",
+      "how": "Agree how the child can call or send pictures to the other grown-up.",
+      "topics": [
+        "separation",
+        "love"
+      ]
+    },
+    {
+      "id": "special_spot",
+      "label": "A special spot in each home",
+      "how": "Let your child set up a spot in each home.",
+      "topics": [
+        "safety",
+        "sensory"
+      ]
+    },
+    {
+      "id": "feelings_drawing",
+      "label": "Drawing feelings",
+      "how": "Draw or colour feelings, and talk about them.",
+      "topics": [
+        "love",
+        "pain",
+        "body"
+      ]
+    },
+    {
+      "id": "trusted_adults",
+      "label": "Trusted grown-ups",
+      "how": "Name trusted grown-ups at school and in the family to talk to.",
+      "topics": [
+        "strangers",
+        "social"
+      ]
+    },
+    {
+      "id": "deep_breaths",
+      "label": "Smell the flower, blow the candle",
+      "how": "Breathe in slowly through the nose and out like blowing a candle.",
+      "topics": [
+        "pain",
+        "sensory",
+        "safety",
+        "body"
+      ]
+    }
+  ],
+  "ritual": [
+    "Check my colour calendar",
+    "Travel bag packed, toy in hand",
+    "Goodbye here, hello there"
+  ],
+  "phrases": {
+    "pain": [
+      "Big feelings can hurt inside. I am here with you.",
+      "Let's take a slow breath together."
+    ],
+    "body": [
+      "Sad feelings can feel heavy in the chest. A hug helps.",
+      "You can rest when feelings are big."
+    ],
+    "sensory": [
+      "Each home smells and sounds a little different. That is normal.",
+      "Your toy smells like you in both homes."
+    ],
+    "strangers": [
+      "Your teacher or a counselor can listen too.",
+      "You can choose who to talk to."
+    ],
+    "separation": [
+      "You will see your other grown-up on the calendar day.",
+      "You can send a picture any time we agreed."
+    ],
+    "unknown": [
+      "Check the calendar, pack, goodbye, hello.",
+      "We will tell you the plan."
+    ],
+    "safety": [
+      "You are safe and loved in both homes.",
+      "You never have to choose."
+    ],
+    "social": [
+      "Lots of kids live in two homes.",
+      "You can tell friends when you are ready."
+    ],
+    "love": [
+      "It is not your fault. We both love you.",
+      "Our love for you never changes."
+    ]
+  },
+  "topicWords": {
+    "pain": [
+      "hurt",
+      "storm",
+      "heavy",
+      "cried",
+      "sad"
+    ],
+    "body": [
+      "chest",
+      "heavy",
+      "rest",
+      "tummy",
+      "bedtime",
+      "eat"
+    ],
+    "sensory": [
+      "smells",
+      "sounds",
+      "different",
+      "quiet",
+      "colour",
+      "colours"
+    ],
+    "strangers": [
+      "counselor",
+      "teacher",
+      "trusted grown-up",
+      "trusted adult",
+      "owl teacher"
+    ],
+    "separation": [
+      "other grown-up",
+      "goodbye",
+      "two homes",
+      "switch",
+      "keep in touch",
+      "see you",
+      "other home",
+      "other",
+      "right there",
+      "stay",
+      "close",
+      "with me",
+      "with you",
+      "together",
+      "comes back",
+      "back",
+      "hand",
+      "nearby"
+    ],
+    "unknown": [
+      "first",
+      "then",
+      "next",
+      "after",
+      "last",
+      "plan",
+      "calendar",
+      "schedule",
+      "step",
+      "steps"
+    ],
+    "safety": [
+      "safe",
+      "my things",
+      "bag",
+      "spot",
+      "same",
+      "careful",
+      "break",
+      "stop",
+      "help"
+    ],
+    "social": [
+      "kids",
+      "friends",
+      "friend",
+      "siblings",
+      "pets",
+      "grandparents",
+      "grandma",
+      "children",
+      "people",
+      "everyone",
+      "others"
+    ],
+    "love": [
+      "love",
+      "loved",
+      "hug",
+      "proud",
+      "fault",
+      "cuddle"
+    ]
+  },
+  "backgrounds": [
+    "home-evening",
+    "cosy-room",
+    "outside"
+  ],
+  "fallbackPages": {
+    "story": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "[[CHILD]]'s grown-ups have decided to live in two homes.",
+              "kind": "describe"
+            },
+            {
+              "text": "This is a grown-up decision.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is not because of anything [[CHILD]] did or said.",
+              "kind": "describe"
+            },
+            {
+              "text": "Both grown-ups still love [[CHILD]], very much, and that never changes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some days [[CHILD]] will be at one home, and some days at the other.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "separation",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Before bed, here is a story about a little bird called Wren.",
+              "kind": "describe"
+            },
+            {
+              "text": "Wren's two grown-up birds decided to build two nests.",
+              "kind": "describe"
+            },
+            {
+              "text": "One nest was in the apple tree, and one was in the tall pine.",
+              "kind": "describe"
+            },
+            {
+              "text": "Wren felt confused and sad.",
+              "kind": "describe"
+            },
+            {
+              "text": "Is it because I was noisy, she asked.",
+              "kind": "describe"
+            },
+            {
+              "text": "No, said both grown-up birds, it is a grown-up choice, not because of you.",
+              "kind": "describe"
+            },
+            {
+              "text": "We both love you, and that will never change.",
+              "kind": "describe"
+            },
+            {
+              "text": "Wren would fly between the apple tree and the pine.",
+              "kind": "describe"
+            },
+            {
+              "text": "Each nest had soft feathers and a little spot just for her.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some days she was in one, and some days in the other.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "pain",
+            "separation",
+            "safety",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "A calendar shows which days are at each home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Each home has a bed, toys and things that are just for the child.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some things change, and some things stay the same.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can ask any question, and the grown-ups will answer honestly.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "[[CHILD]]'s grown-ups have decided to live in two homes.",
+              "kind": "describe"
+            },
+            {
+              "text": "This is a grown-up decision.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is not because of anything [[CHILD]] did or said.",
+              "kind": "describe"
+            },
+            {
+              "text": "Both grown-ups still love [[CHILD]], very much, and that never changes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some days [[CHILD]] will be at one home, and some days at the other.",
+              "kind": "describe"
+            },
+            {
+              "text": "A calendar shows which days are at each home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Each home has a bed, toys and things that are just for the child.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some things change, and some things stay the same.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can ask any question, and the grown-ups will answer honestly.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "separation",
+            "unknown",
+            "safety",
+            "love"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "At each home, one of [[CHILD]]'s grown-ups looks after [[CHILD]].",
+              "kind": "describe"
+            },
+            {
+              "text": "Brothers, sisters or pets may move between homes too, or stay in one.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grandparents, friends and teachers stay part of life.",
+              "kind": "describe"
+            },
+            {
+              "text": "School stays a familiar place.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "strangers",
+            "separation",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Wren the bird looked around.",
+              "kind": "describe"
+            },
+            {
+              "text": "In the apple tree nest, one grown-up bird sang her the morning song.",
+              "kind": "describe"
+            },
+            {
+              "text": "In the tall pine nest, the other grown-up bird showed her the stars.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grandma Robin still visited every week.",
+              "kind": "describe"
+            },
+            {
+              "text": "Wren's friend the sparrow said, I have two nests too.",
+              "kind": "describe"
+            },
+            {
+              "text": "You do, asked Wren.",
+              "kind": "describe"
+            },
+            {
+              "text": "Yes, one by the river and one by the barn, said the sparrow.",
+              "kind": "describe"
+            },
+            {
+              "text": "At school, the kind owl teacher said, you can tell me how you feel any time.",
+              "kind": "describe"
+            },
+            {
+              "text": "Wren felt a little less alone.",
+              "kind": "describe"
+            },
+            {
+              "text": "Many birds had two nests, and they were loved in both.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "strangers",
+            "separation",
+            "social",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Lots of kids live in two homes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some friends at school might, too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids talk to a counselor, a helper whose job is listening to feelings.",
+              "kind": "describe"
+            },
+            {
+              "text": "Both grown-ups want [[CHILD]] to feel safe and loved in each home.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can tell a trusted grown-up how they feel, at either home or at school.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "strangers",
+            "separation",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At each home, one of [[CHILD]]'s grown-ups looks after [[CHILD]].",
+              "kind": "describe"
+            },
+            {
+              "text": "Brothers, sisters or pets may move between homes too, or stay in one.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grandparents, friends and teachers stay part of life.",
+              "kind": "describe"
+            },
+            {
+              "text": "School stays a familiar place.",
+              "kind": "describe"
+            },
+            {
+              "text": "Lots of kids live in two homes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some friends at school might, too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids talk to a counselor, a helper whose job is listening to feelings.",
+              "kind": "describe"
+            },
+            {
+              "text": "Both grown-ups want [[CHILD]] to feel safe and loved in each home.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can tell a trusted grown-up how they feel, at either home or at school.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "strangers",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "On a switch day, [[CHILD]] checks the calendar.",
+              "kind": "describe"
+            },
+            {
+              "text": "The colour shows which home is next.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[CHILD]] packs the travel bag with special things, like a toy or a book.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next comes the goodbye at one home.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "sensory",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Wren the bird had a switch day.",
+              "kind": "describe"
+            },
+            {
+              "text": "She looked at the leaf calendar: green for the apple tree, blue for the pine.",
+              "kind": "describe"
+            },
+            {
+              "text": "Today was blue.",
+              "kind": "describe"
+            },
+            {
+              "text": "Wren packed her tiny travel pouch with a feather and a pebble.",
+              "kind": "describe"
+            },
+            {
+              "text": "She gave her apple tree grown-up a big wing hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "See you on green day, they said.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then she flew to the pine, and her other grown-up was waiting.",
+              "kind": "describe"
+            },
+            {
+              "text": "Wren unpacked her feather in her little spot.",
+              "kind": "describe"
+            },
+            {
+              "text": "At bedtime, she sent a song on the wind to the apple tree.",
+              "kind": "describe"
+            },
+            {
+              "text": "The apple tree sang back.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "After that, the hello at the other home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Settling in takes a little while: unpack, play, eat.",
+              "kind": "describe"
+            },
+            {
+              "text": "Calling or sending a picture to the other grown-up can help, as agreed.",
+              "kind": "describe"
+            },
+            {
+              "text": "Each home has its own bedtime routine, and that is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can bring the same comfort toy to both homes.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "On a switch day, [[CHILD]] checks the calendar.",
+              "kind": "describe"
+            },
+            {
+              "text": "The colour shows which home is next.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[CHILD]] packs the travel bag with special things, like a toy or a book.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next comes the goodbye at one home.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, the hello at the other home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Settling in takes a little while: unpack, play, eat.",
+              "kind": "describe"
+            },
+            {
+              "text": "Calling or sending a picture to the other grown-up can help, as agreed.",
+              "kind": "describe"
+            },
+            {
+              "text": "Each home has its own bedtime routine, and that is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can bring the same comfort toy to both homes.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "Living in two homes can bring big feelings.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids feel sad, some feel angry, and some feel worried.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids feel relieved, or all of these at once.",
+              "kind": "describe"
+            },
+            {
+              "text": "All feelings are okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids wonder if it was their fault.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "worried",
+          "background": "home-evening",
+          "addresses": [
+            "pain",
+            "separation",
+            "social",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Wren the bird felt a big storm inside.",
+              "kind": "describe"
+            },
+            {
+              "text": "She was sad, and cross, and worried all at once.",
+              "kind": "describe"
+            },
+            {
+              "text": "Maybe if I am very good, they will build one nest again, she thought.",
+              "kind": "describe"
+            },
+            {
+              "text": "Her grown-up bird sat beside her.",
+              "kind": "describe"
+            },
+            {
+              "text": "The grown-up did not say, everything will go back to how it was.",
+              "kind": "describe"
+            },
+            {
+              "text": "The grown-up said, it is a grown-up decision, and it is not your job to fix it.",
+              "kind": "describe"
+            },
+            {
+              "text": "Your feelings are okay, all of them.",
+              "kind": "describe"
+            },
+            {
+              "text": "Wren cried, and the grown-up held her under a wing.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then Wren smelled a flower slowly and blew a candle.",
+              "kind": "describe"
+            },
+            {
+              "text": "The storm inside got a little smaller.",
+              "kind": "describe"
+            },
+            {
+              "text": "Worried and brave can happen at the same time.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "pain",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "It was not.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids wish the grown-ups would live together again.",
+              "kind": "describe"
+            },
+            {
+              "text": "That is a grown-up decision, and it is okay to have that wish.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can take slow breaths, smell the flower and blow the candle.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can draw or talk about the feelings with a trusted grown-up.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "strangers",
+            "separation",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Living in two homes can bring big feelings.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids feel sad, some feel angry, and some feel worried.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids feel relieved, or all of these at once.",
+              "kind": "describe"
+            },
+            {
+              "text": "All feelings are okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids wonder if it was their fault.",
+              "kind": "describe"
+            },
+            {
+              "text": "It was not.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids wish the grown-ups would live together again.",
+              "kind": "describe"
+            },
+            {
+              "text": "That is a grown-up decision, and it is okay to have that wish.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can take slow breaths, smell the flower and blow the candle.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can draw or talk about the feelings with a trusted grown-up.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "pain",
+            "strangers",
+            "separation",
+            "social"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "Tonight [[CHILD]] and [[GROWNUP]] can get ready for switch days.",
+              "kind": "describe"
+            },
+            {
+              "text": "First they make a calendar with two colours, one for each home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[CHILD]] packs a travel bag and chooses the comfort toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next they practise a goodbye and a hello with two toy houses.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "sensory",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Wren the bird made a plan with her grown-up.",
+              "kind": "describe"
+            },
+            {
+              "text": "They made a leaf calendar, green and blue.",
+              "kind": "describe"
+            },
+            {
+              "text": "Wren chose her feather to travel everywhere.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then they played with two pinecone nests.",
+              "kind": "describe"
+            },
+            {
+              "text": "A little acorn bird said goodbye to one and hello to the other.",
+              "kind": "describe"
+            },
+            {
+              "text": "See you on green day, said Wren in a tiny voice.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, she decided her spot in each nest would have a pebble.",
+              "kind": "describe"
+            },
+            {
+              "text": "They agreed she could send a song any evening.",
+              "kind": "describe"
+            },
+            {
+              "text": "Wren felt a bit more ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "Her feather was tucked in her pouch.",
+              "kind": "describe"
+            },
+            {
+              "text": "And Wren slept well that night.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "The toy says, see you on blue day, and flies to the other house.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, [[CHILD]] plans a little special spot for each home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, they agree how to keep in touch with the other grown-up.",
+              "kind": "describe"
+            },
+            {
+              "text": "Knowing the plan makes switch days easier.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say: check the calendar, pack, goodbye, hello, settle in.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight [[CHILD]] and [[GROWNUP]] can get ready for switch days.",
+              "kind": "describe"
+            },
+            {
+              "text": "First they make a calendar with two colours, one for each home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[CHILD]] packs a travel bag and chooses the comfort toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next they practise a goodbye and a hello with two toy houses.",
+              "kind": "describe"
+            },
+            {
+              "text": "The toy says, see you on blue day, and flies to the other house.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, [[CHILD]] plans a little special spot for each home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, they agree how to keep in touch with the other grown-up.",
+              "kind": "describe"
+            },
+            {
+              "text": "Knowing the plan makes switch days easier.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say: check the calendar, pack, goodbye, hello, settle in.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "sensory",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        }
+      ]
+    },
+    "social": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "My grown-ups will live in two homes.",
+              "kind": "describe"
+            },
+            {
+              "text": "This is a grown-up decision.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is not because of me.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is not my fault.",
+              "kind": "describe"
+            },
+            {
+              "text": "Both my grown-ups love me.",
+              "kind": "describe"
+            },
+            {
+              "text": "That never changes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some days I am at one home.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask any question.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "separation",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "My grown-ups will live in two homes.",
+              "kind": "describe"
+            },
+            {
+              "text": "This is a grown-up decision.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is not because of me.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is not my fault.",
+              "kind": "describe"
+            },
+            {
+              "text": "Both my grown-ups love me.",
+              "kind": "describe"
+            },
+            {
+              "text": "That never changes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some days I am at one home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some days I am at the other.",
+              "kind": "describe"
+            },
+            {
+              "text": "A calendar shows the days.",
+              "kind": "describe"
+            },
+            {
+              "text": "I have my things at each home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some things change, and some stay the same.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to have big feelings about two homes.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is not my fault.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and we have a big hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "Step by step, it gets a little easier.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "separation",
+            "unknown",
+            "safety",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Some days I am at the other.",
+              "kind": "describe"
+            },
+            {
+              "text": "A calendar shows the days.",
+              "kind": "describe"
+            },
+            {
+              "text": "I have my things at each home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some things change, and some stay the same.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask any question.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to have big feelings about two homes.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is not my fault.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "separation",
+            "unknown",
+            "safety",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "My grown-ups will live in two homes.",
+              "kind": "describe"
+            },
+            {
+              "text": "This is a grown-up decision.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is not because of me.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is not my fault.",
+              "kind": "describe"
+            },
+            {
+              "text": "Both my grown-ups love me.",
+              "kind": "describe"
+            },
+            {
+              "text": "That never changes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some days I am at one home.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask any question.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to have big feelings about two homes.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is not my fault.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "separation",
+            "love"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "At each home, a grown-up looks after me.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pets or siblings may move with me.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grandparents stay in my life.",
+              "kind": "describe"
+            },
+            {
+              "text": "Friends stay in my life.",
+              "kind": "describe"
+            },
+            {
+              "text": "School stays the same.",
+              "kind": "describe"
+            },
+            {
+              "text": "Lots of kids live in two homes.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can tell a trusted grown-up how I feel.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "strangers",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At each home, a grown-up looks after me.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pets or siblings may move with me.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grandparents stay in my life.",
+              "kind": "describe"
+            },
+            {
+              "text": "Friends stay in my life.",
+              "kind": "describe"
+            },
+            {
+              "text": "School stays the same.",
+              "kind": "describe"
+            },
+            {
+              "text": "Lots of kids live in two homes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Maybe some kids in my class.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids talk to a counselor.",
+              "kind": "describe"
+            },
+            {
+              "text": "A counselor listens to feelings.",
+              "kind": "describe"
+            },
+            {
+              "text": "I am loved in each home.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to have big feelings about two homes.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is not my fault.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and we have a big hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "Step by step, it gets a little easier.",
+              "kind": "describe"
+            },
+            {
+              "text": "New things feel strange at first, and then they feel normal.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "strangers",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Maybe some kids in my class.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids talk to a counselor.",
+              "kind": "describe"
+            },
+            {
+              "text": "A counselor listens to feelings.",
+              "kind": "describe"
+            },
+            {
+              "text": "I am loved in each home.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can tell a trusted grown-up how I feel.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to have big feelings about two homes.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is not my fault.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "strangers",
+            "separation",
+            "social",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At each home, a grown-up looks after me.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pets or siblings may move with me.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grandparents stay in my life.",
+              "kind": "describe"
+            },
+            {
+              "text": "Friends stay in my life.",
+              "kind": "describe"
+            },
+            {
+              "text": "School stays the same.",
+              "kind": "describe"
+            },
+            {
+              "text": "Lots of kids live in two homes.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can tell a trusted grown-up how I feel.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to have big feelings about two homes.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is not my fault.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "strangers",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "On a switch day, I check my calendar.",
+              "kind": "describe"
+            },
+            {
+              "text": "The colour shows which home is next.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I pack my travel bag.",
+              "kind": "describe"
+            },
+            {
+              "text": "I bring a toy or a book.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next I say goodbye at one home.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, I say hello at the other.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can bring my comfort toy to both homes.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "sensory",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "On a switch day, I check my calendar.",
+              "kind": "describe"
+            },
+            {
+              "text": "The colour shows which home is next.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I pack my travel bag.",
+              "kind": "describe"
+            },
+            {
+              "text": "I bring a toy or a book.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next I say goodbye at one home.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, I say hello at the other.",
+              "kind": "describe"
+            },
+            {
+              "text": "I unpack and settle in.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can call or send a picture.",
+              "kind": "describe"
+            },
+            {
+              "text": "Each home has its own routine.",
+              "kind": "describe"
+            },
+            {
+              "text": "That is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to have big feelings about two homes.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is not my fault.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "sensory",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I unpack and settle in.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can call or send a picture.",
+              "kind": "describe"
+            },
+            {
+              "text": "Each home has its own routine.",
+              "kind": "describe"
+            },
+            {
+              "text": "That is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can bring my comfort toy to both homes.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to have big feelings about two homes.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is not my fault.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "separation",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "On a switch day, I check my calendar.",
+              "kind": "describe"
+            },
+            {
+              "text": "The colour shows which home is next.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I pack my travel bag.",
+              "kind": "describe"
+            },
+            {
+              "text": "I bring a toy or a book.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next I say goodbye at one home.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, I say hello at the other.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can bring my comfort toy to both homes.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to have big feelings about two homes.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is not my fault.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "sensory",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "Two homes can bring big feelings.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel sad.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel angry.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel worried.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel all of these at once.",
+              "kind": "describe"
+            },
+            {
+              "text": "All feelings are okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is not my fault.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is not my job to fix.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "worried",
+          "background": "home-evening",
+          "addresses": [
+            "pain",
+            "separation",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Two homes can bring big feelings.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel sad.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel angry.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel worried.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel all of these at once.",
+              "kind": "describe"
+            },
+            {
+              "text": "All feelings are okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is not my fault.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is not my job to fix.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may wish it was different.",
+              "kind": "describe"
+            },
+            {
+              "text": "That wish is okay to have.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to have big feelings about two homes.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is not my fault.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and we have a big hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "Step by step, it gets a little easier.",
+              "kind": "describe"
+            },
+            {
+              "text": "New things feel strange at first, and then they feel normal.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "pain",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I may wish it was different.",
+              "kind": "describe"
+            },
+            {
+              "text": "That wish is okay to have.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can draw or talk about my feelings.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to have big feelings about two homes.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is not my fault.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "sensory",
+            "separation",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Two homes can bring big feelings.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel sad.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel angry.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel worried.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel all of these at once.",
+              "kind": "describe"
+            },
+            {
+              "text": "All feelings are okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is not my fault.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is not my job to fix.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can draw or talk about my feelings.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to have big feelings about two homes.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is not my fault.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "pain",
+            "separation",
+            "love"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "Tonight we get ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "First we make a calendar.",
+              "kind": "describe"
+            },
+            {
+              "text": "Two colours, one for each home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I pack my travel bag.",
+              "kind": "describe"
+            },
+            {
+              "text": "I choose my comfort toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next we practise goodbye and hello.",
+              "kind": "describe"
+            },
+            {
+              "text": "With two toy houses.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: calendar, pack, goodbye, hello, settle in.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "sensory",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight we get ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "First we make a calendar.",
+              "kind": "describe"
+            },
+            {
+              "text": "Two colours, one for each home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I pack my travel bag.",
+              "kind": "describe"
+            },
+            {
+              "text": "I choose my comfort toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next we practise goodbye and hello.",
+              "kind": "describe"
+            },
+            {
+              "text": "With two toy houses.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, I plan my special spot.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, we agree how to keep in touch.",
+              "kind": "describe"
+            },
+            {
+              "text": "Knowing the plan helps.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to have big feelings about two homes.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is not my fault.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and we have a big hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "Step by step, it gets a little easier.",
+              "kind": "describe"
+            },
+            {
+              "text": "New things feel strange at first, and then they feel normal.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "sensory",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "After that, I plan my special spot.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, we agree how to keep in touch.",
+              "kind": "describe"
+            },
+            {
+              "text": "Knowing the plan helps.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: calendar, pack, goodbye, hello, settle in.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to have big feelings about two homes.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is not my fault.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "separation",
+            "unknown",
+            "safety",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight we get ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "First we make a calendar.",
+              "kind": "describe"
+            },
+            {
+              "text": "Two colours, one for each home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I pack my travel bag.",
+              "kind": "describe"
+            },
+            {
+              "text": "I choose my comfort toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next we practise goodbye and hello.",
+              "kind": "describe"
+            },
+            {
+              "text": "With two toy houses.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: calendar, pack, goodbye, hello, settle in.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to have big feelings about two homes.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is not my fault.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "sensory",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        }
+      ]
+    }
+  },
+  "badge": {
+    "id": "two_homes_heart",
+    "label": "Two Homes Heart"
+  },
+  "olderPages": {
+    "what_happens": {
+      "sentences": [
+        {
+          "text": "When parents separate, it is about their relationship with each other, not their relationship with their kids.",
+          "kind": "describe"
+        },
+        {
+          "text": "Kids cannot cause it and cannot fix it, even though many kids wonder about both.",
+          "kind": "describe"
+        },
+        {
+          "text": "Families with two homes are very common, and kids in them do well, especially when they feel loved by both parents.",
+          "kind": "describe"
+        },
+        {
+          "text": "Feelings can be mixed and can change from day to day.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can ask to see the schedule and help plan how things move between homes.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "home-evening",
+      "addresses": [
+        "separation",
+        "unknown",
+        "safety",
+        "social"
+      ]
+    },
+    "who_is_there": {
+      "sentences": [
+        {
+          "text": "Many families have different rules or routines in each home; that is normal, and kids adapt.",
+          "kind": "describe"
+        },
+        {
+          "text": "Some families have new partners or step-siblings over time, which comes with its own feelings.",
+          "kind": "describe"
+        },
+        {
+          "text": "School counselors and family therapists help many kids with this.",
+          "kind": "describe"
+        },
+        {
+          "text": "It is okay to love both homes, or to prefer one sometimes, without feeling guilty.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can choose who to talk to about it, and who not to.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "home-evening",
+      "addresses": [
+        "sensory",
+        "strangers",
+        "unknown",
+        "safety"
+      ]
+    },
+    "what_i_do": {
+      "sentences": [
+        {
+          "text": "Switch days can feel unsettled; a short routine, like unpacking and a snack, helps you land.",
+          "kind": "describe"
+        },
+        {
+          "text": "Keeping a few duplicates, like a toothbrush and pyjamas, at each home makes packing easier.",
+          "kind": "describe"
+        },
+        {
+          "text": "Shared calendars or apps help everyone know the plan.",
+          "kind": "describe"
+        },
+        {
+          "text": "It is not your job to carry messages between grown-ups.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can keep a special item that always travels, like a journal.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "brave",
+      "background": "home-evening",
+      "addresses": [
+        "separation",
+        "unknown",
+        "safety",
+        "social"
+      ]
+    },
+    "if_scared": {
+      "sentences": [
+        {
+          "text": "Grief is a normal reaction to a family change, even when the change is the right one.",
+          "kind": "describe"
+        },
+        {
+          "text": "Feelings may come in waves, sometimes at unexpected times like birthdays or holidays.",
+          "kind": "describe"
+        },
+        {
+          "text": "Feeling caught in the middle is a sign to tell a trusted adult.",
+          "kind": "describe"
+        },
+        {
+          "text": "Talking to a counselor is a sign of strength, not of something being wrong.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can keep a feelings journal, or use a code word to say, I need to talk.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "worried",
+      "background": "home-evening",
+      "addresses": [
+        "strangers"
+      ]
+    },
+    "rehearsal": {
+      "sentences": [
+        {
+          "text": "Having a voice in small decisions, like room decor or the travel bag, helps kids feel in control.",
+          "kind": "describe"
+        },
+        {
+          "text": "Predictable switch routines lower stress for everyone.",
+          "kind": "describe"
+        },
+        {
+          "text": "Keeping a copy of the schedule in your room or on a device helps.",
+          "kind": "describe"
+        },
+        {
+          "text": "Planning a fun ritual for arrival at each home makes switches feel less like goodbyes.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can write down questions to ask both grown-ups together.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "happy",
+      "background": "home-evening",
+      "addresses": [
+        "separation",
+        "unknown",
+        "safety",
+        "social"
+      ]
+    }
+  }
+}

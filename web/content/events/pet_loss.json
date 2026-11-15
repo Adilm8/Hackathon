@@ -1,0 +1,2515 @@
+{
+  "type": "pet_loss",
+  "version": 1,
+  "label": "Saying goodbye to a pet",
+  "countdownLabel": "the goodbye for our pet",
+  "beats": {
+    "what_happens": {
+      "title": "What happens when a pet dies",
+      "goals": [
+        "Died means the body stopped working and cannot start again",
+        "It is nobody's fault in most cases",
+        "It is okay to feel very sad"
+      ],
+      "parentSkill": "Use simple, true words: 'Our pet died. Its body stopped working. It cannot feel pain anymore, and it cannot come back.'"
+    },
+    "who_is_there": {
+      "title": "Who helps me",
+      "goals": [
+        "Family grieves together",
+        "The vet helped the pet",
+        "Friends, teachers and others can help"
+      ],
+      "parentSkill": "Share your own sadness openly, so your child knows grief is normal."
+    },
+    "what_i_do": {
+      "title": "What I do to say goodbye",
+      "goals": [
+        "Say goodbye in my own way",
+        "Make a memory: a drawing, a letter, a flower",
+        "Remember happy times"
+      ],
+      "parentSkill": "Offer a simple goodbye ritual and let your child choose how to take part."
+    },
+    "if_scared": {
+      "title": "When the sadness is big",
+      "goals": [
+        "Grief can feel sad, angry, worried or numb",
+        "Feelings come and go in waves",
+        "Calm tools: talking, crying, hugs, slow breaths"
+      ],
+      "parentSkill": "Accept every feeling and do not rush it: 'You miss Pebble so much. I miss her too.'"
+    },
+    "rehearsal": {
+      "title": "Let's remember together",
+      "goals": [
+        "Make a memory book or box",
+        "Share happy stories",
+        "Choose a way to keep remembering"
+      ],
+      "parentSkill": "Make a memory page together tonight: a photo, a drawing and three words about the pet."
+    }
+  },
+  "steps": [
+    "A grown-up explains that the pet is very ill or has died",
+    "Talk about what died means: the body stopped working and cannot start again",
+    "Say goodbye, in person or in our own way",
+    "Have a small goodbye ritual, like planting a flower or making a picture",
+    "Remember happy times and look at photos",
+    "Feel the feelings, and talk about them",
+    "Keep the pet in our memories"
+  ],
+  "sensory": [
+    "a quiet house without the pet's sounds",
+    "the pet's empty bed or bowl",
+    "tears and a tight throat",
+    "soft photos and memories",
+    "the smell of the pet on a blanket",
+    "warm hugs"
+  ],
+  "honestyNotes": "Use the real words 'died' and 'dead'; never say 'went to sleep', 'got lost' or 'went away', which confuse children and can make sleep or trips scary. Explain that the body stopped working and cannot come back. Never promise a new pet as a replacement. Grief has no timetable. Let the parent explain any family or faith beliefs about what happens after death.",
+  "questionButtons": [
+    {
+      "id": "why_die",
+      "text": "Why did my pet die?",
+      "topic": "body",
+      "fallbackAnswer": [
+        "[[GROWNUP]] will tell you what happened.",
+        "Often pets die because they are very old or very ill, and their bodies stop working."
+      ]
+    },
+    {
+      "id": "come_back",
+      "text": "Will my pet come back?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "No. When a body stops working, it cannot start again.",
+        "We can keep remembering, and that keeps our pet in our hearts."
+      ]
+    },
+    {
+      "id": "fault",
+      "text": "Was it my fault?",
+      "topic": "love",
+      "fallbackAnswer": [
+        "No. It was not because of anything you did or did not do.",
+        "You loved your pet, and your pet knew it."
+      ]
+    },
+    {
+      "id": "hurt",
+      "text": "Did it hurt?",
+      "topic": "pain",
+      "fallbackAnswer": [
+        "[[GROWNUP]] will tell you what you would like to know.",
+        "Now that it has died, it cannot feel any pain."
+      ]
+    },
+    {
+      "id": "where",
+      "text": "Where is my pet now?",
+      "topic": "other",
+      "fallbackAnswer": [
+        "[[GROWNUP]] will tell you what our family believes.",
+        "Its body may be buried or cared for, and its memory is with us."
+      ]
+    },
+    {
+      "id": "sad",
+      "text": "Why do I feel so sad?",
+      "topic": "love",
+      "fallbackAnswer": [
+        "You feel sad because you loved your pet very much.",
+        "It is okay to cry, and the sadness gets softer with time."
+      ]
+    },
+    {
+      "id": "others_die",
+      "text": "Will you die too?",
+      "topic": "safety",
+      "fallbackAnswer": [
+        "Everyone dies one day, usually when they are very, very old.",
+        "[[GROWNUP]] plans to be here for a very long time, looking after you."
+      ],
+      "ages": [
+        4,
+        12
+      ]
+    },
+    {
+      "id": "new_pet",
+      "text": "Can we get a new pet?",
+      "topic": "other",
+      "fallbackAnswer": [
+        "Maybe one day, when the family feels ready.",
+        "A new pet would not replace our pet. It would be a new friend."
+      ]
+    },
+    {
+      "id": "say_bye",
+      "text": "How can I say goodbye?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "You can draw a picture, write a letter or plant a flower.",
+        "You choose what feels right."
+      ]
+    },
+    {
+      "id": "tell",
+      "text": "Do I have to tell people?",
+      "topic": "social",
+      "fallbackAnswer": [
+        "You can choose who to tell and when.",
+        "Telling a teacher can help them understand how you feel."
+      ]
+    },
+    {
+      "id": "laugh",
+      "text": "Is it okay to laugh and play?",
+      "topic": "love",
+      "fallbackAnswer": [
+        "Yes. Laughing and playing does not mean you forgot.",
+        "Your pet would want you to be happy."
+      ]
+    }
+  ],
+  "techniques": [
+    {
+      "id": "real_words",
+      "label": "Using real words",
+      "how": "Say 'died', not 'went to sleep' or 'went away'.",
+      "topics": [
+        "unknown",
+        "safety"
+      ]
+    },
+    {
+      "id": "memory_box",
+      "label": "A memory box",
+      "how": "Collect a photo, a toy and drawings in a box.",
+      "topics": [
+        "love",
+        "separation"
+      ]
+    },
+    {
+      "id": "goodbye_ritual",
+      "label": "A goodbye ritual",
+      "how": "Plant a flower or say a few words together.",
+      "topics": [
+        "love",
+        "social"
+      ]
+    },
+    {
+      "id": "happy_stories",
+      "label": "Happy stories",
+      "how": "Tell favourite and funny stories about the pet.",
+      "topics": [
+        "love",
+        "social"
+      ]
+    },
+    {
+      "id": "feelings_ok",
+      "label": "All feelings are okay",
+      "how": "Accept sadness, anger, numbness and laughter.",
+      "topics": [
+        "love",
+        "pain",
+        "body"
+      ]
+    },
+    {
+      "id": "tell_school",
+      "label": "Telling school",
+      "how": "Let the teacher know so they can be gentle.",
+      "topics": [
+        "strangers",
+        "social"
+      ]
+    },
+    {
+      "id": "letter_to_pet",
+      "label": "A letter to the pet",
+      "how": "Write or draw a letter saying goodbye.",
+      "topics": [
+        "love",
+        "separation",
+        "sensory"
+      ]
+    },
+    {
+      "id": "hugs",
+      "label": "Hugs and closeness",
+      "how": "Offer extra hugs and time together.",
+      "topics": [
+        "love",
+        "sensory"
+      ]
+    },
+    {
+      "id": "deep_breaths",
+      "label": "Smell the flower, blow the candle",
+      "how": "Breathe in slowly through the nose and out like blowing a candle.",
+      "topics": [
+        "pain",
+        "sensory",
+        "safety",
+        "body"
+      ]
+    }
+  ],
+  "ritual": [
+    "Look at a photo of my pet",
+    "Tell one happy memory",
+    "Hug and say, I love you"
+  ],
+  "phrases": {
+    "pain": [
+      "Our pet cannot feel pain anymore.",
+      "Your sadness hurts. I am here."
+    ],
+    "body": [
+      "Its body stopped working and cannot start again.",
+      "Sadness can feel heavy in your chest. Let's breathe."
+    ],
+    "sensory": [
+      "The house feels quiet without our pet.",
+      "This blanket still smells like our pet."
+    ],
+    "strangers": [
+      "Your teacher can know, so they understand.",
+      "The vet helped our pet at the end."
+    ],
+    "separation": [
+      "Our pet died, and we will always remember it.",
+      "You can say goodbye in your own way."
+    ],
+    "unknown": [
+      "When someone dies, they cannot come back.",
+      "You can ask me any question."
+    ],
+    "safety": [
+      "It was not your fault.",
+      "I plan to be here for a very long time."
+    ],
+    "social": [
+      "Lots of people have lost pets and understand.",
+      "We can tell happy stories together."
+    ],
+    "love": [
+      "You loved our pet, and our pet loved you.",
+      "Remembering is a way of loving."
+    ]
+  },
+  "topicWords": {
+    "pain": [
+      "pain",
+      "hurt",
+      "hurting",
+      "sore",
+      "suffering",
+      "cry",
+      "cried",
+      "tears"
+    ],
+    "body": [
+      "body",
+      "heart",
+      "breathing",
+      "chest",
+      "ill",
+      "old",
+      "stopped working",
+      "tummy"
+    ],
+    "sensory": [
+      "quiet",
+      "quietly",
+      "empty",
+      "smell",
+      "smells",
+      "heavy",
+      "photo",
+      "photos",
+      "picture"
+    ],
+    "strangers": [
+      "vet",
+      "teacher",
+      "mrs owl",
+      "counselor"
+    ],
+    "separation": [
+      "died",
+      "goodbye",
+      "miss",
+      "missed",
+      "come back",
+      "memory",
+      "memories",
+      "remember",
+      "right there",
+      "stay",
+      "close",
+      "with me",
+      "with you",
+      "together",
+      "comes back",
+      "back",
+      "hand",
+      "nearby"
+    ],
+    "unknown": [
+      "first",
+      "then",
+      "next",
+      "after",
+      "last",
+      "means",
+      "what happened",
+      "step",
+      "steps"
+    ],
+    "safety": [
+      "fault",
+      "not because",
+      "safe",
+      "long time",
+      "careful",
+      "break",
+      "stop",
+      "help"
+    ],
+    "social": [
+      "family",
+      "friends",
+      "friend",
+      "everyone",
+      "together",
+      "grandpa",
+      "kids",
+      "children",
+      "people",
+      "others"
+    ],
+    "love": [
+      "love",
+      "loved",
+      "loving",
+      "hug",
+      "hugs",
+      "heart",
+      "hearts",
+      "proud",
+      "cuddle"
+    ]
+  },
+  "backgrounds": [
+    "cosy-room",
+    "home-evening",
+    "outside"
+  ],
+  "fallbackPages": {
+    "story": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "[[CHILD]]'s pet has died, or is very ill and will die soon.",
+              "kind": "describe"
+            },
+            {
+              "text": "Died means the body stopped working.",
+              "kind": "describe"
+            },
+            {
+              "text": "The heart stopped beating, and the body stopped breathing.",
+              "kind": "describe"
+            },
+            {
+              "text": "A pet that has died cannot feel pain, hunger or cold anymore.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "pain",
+            "body",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Before bed, here is a story about a little bear called Toby.",
+              "kind": "describe"
+            },
+            {
+              "text": "Toby had an old tortoise called Pebble.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pebble had lived a very long time and grown very slow.",
+              "kind": "describe"
+            },
+            {
+              "text": "One morning, Mama Bear sat down with Toby.",
+              "kind": "describe"
+            },
+            {
+              "text": "She said, Pebble died in the night.",
+              "kind": "describe"
+            },
+            {
+              "text": "Her body was very old, and it stopped working.",
+              "kind": "describe"
+            },
+            {
+              "text": "She cannot feel anything now, not hungry, not cold, not sore.",
+              "kind": "describe"
+            },
+            {
+              "text": "Toby asked, will she wake up?",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama held his paw and said gently, no, when someone dies they cannot come back.",
+              "kind": "describe"
+            },
+            {
+              "text": "Toby cried, and Mama cried too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "pain",
+            "body",
+            "separation",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "It cannot come back to life.",
+              "kind": "describe"
+            },
+            {
+              "text": "This is very sad, and it is okay to cry.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pets often die because they are very old or very ill.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is not because of anything anyone in the family did wrong.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can ask any question about it, and [[GROWNUP]] will answer honestly.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "pain",
+            "body",
+            "separation",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "[[CHILD]]'s pet has died, or is very ill and will die soon.",
+              "kind": "describe"
+            },
+            {
+              "text": "Died means the body stopped working.",
+              "kind": "describe"
+            },
+            {
+              "text": "The heart stopped beating, and the body stopped breathing.",
+              "kind": "describe"
+            },
+            {
+              "text": "A pet that has died cannot feel pain, hunger or cold anymore.",
+              "kind": "describe"
+            },
+            {
+              "text": "It cannot come back to life.",
+              "kind": "describe"
+            },
+            {
+              "text": "This is very sad, and it is okay to cry.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pets often die because they are very old or very ill.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is not because of anything anyone in the family did wrong.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can ask any question about it, and [[GROWNUP]] will answer honestly.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "pain",
+            "body",
+            "separation",
+            "unknown"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "When a pet dies, the whole family feels sad together.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] may cry too, and that is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "The vet may have helped the pet at the end, so it was not hurting.",
+              "kind": "describe"
+            },
+            {
+              "text": "Other pets in the home may seem confused or quiet.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "pain",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, the whole bear family missed Pebble.",
+              "kind": "describe"
+            },
+            {
+              "text": "Papa Bear sat quietly and looked at her empty shell box.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama Bear's eyes were wet.",
+              "kind": "describe"
+            },
+            {
+              "text": "Even the cat, Whiskers, sniffed the box and lay beside it.",
+              "kind": "describe"
+            },
+            {
+              "text": "Toby's teacher, Mrs Owl, heard the news.",
+              "kind": "describe"
+            },
+            {
+              "text": "She said, I had a dog who died when I was little, and I missed him very much.",
+              "kind": "describe"
+            },
+            {
+              "text": "Toby's friend the rabbit said, my fish died last summer.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grandpa Bear came over and told a funny story about Pebble eating a whole strawberry.",
+              "kind": "describe"
+            },
+            {
+              "text": "Everyone laughed a little, and cried a little.",
+              "kind": "describe"
+            },
+            {
+              "text": "Toby did not feel alone.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "pain",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Friends and teachers can be told, so they understand.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some friends have lost pets too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grandparents and other family can share memories.",
+              "kind": "describe"
+            },
+            {
+              "text": "Nobody has to be sad alone.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can tell a teacher or a friend, my pet died, if they want to.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "strangers",
+            "separation",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "When a pet dies, the whole family feels sad together.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] may cry too, and that is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "The vet may have helped the pet at the end, so it was not hurting.",
+              "kind": "describe"
+            },
+            {
+              "text": "Other pets in the home may seem confused or quiet.",
+              "kind": "describe"
+            },
+            {
+              "text": "Friends and teachers can be told, so they understand.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some friends have lost pets too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grandparents and other family can share memories.",
+              "kind": "describe"
+            },
+            {
+              "text": "Nobody has to be sad alone.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can tell a teacher or a friend, my pet died, if they want to.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "pain",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "To say goodbye, [[CHILD]] can choose a way that feels right.",
+              "kind": "describe"
+            },
+            {
+              "text": "Drawing a picture of the pet, or writing a letter to it.",
+              "kind": "describe"
+            },
+            {
+              "text": "Planting a flower or a tree in its memory.",
+              "kind": "describe"
+            },
+            {
+              "text": "Making a memory box with a collar, a toy or a photo.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "sensory",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Toby the bear wanted to say goodbye to Pebble.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama asked, how would you like to say goodbye?",
+              "kind": "describe"
+            },
+            {
+              "text": "Toby drew a picture of Pebble eating a strawberry.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the family planted a little strawberry plant in the garden.",
+              "kind": "describe"
+            },
+            {
+              "text": "Papa said a few words: Pebble, you were slow and kind, and we loved you.",
+              "kind": "describe"
+            },
+            {
+              "text": "Toby put his drawing in a memory box with Pebble's favourite leaf.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then everyone told a happy memory.",
+              "kind": "describe"
+            },
+            {
+              "text": "Toby said, I liked when she climbed on my foot.",
+              "kind": "describe"
+            },
+            {
+              "text": "Everyone smiled.",
+              "kind": "describe"
+            },
+            {
+              "text": "Toby felt sad, and a little bit warm inside.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "sensory",
+            "separation",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Some families have a small ceremony, and say a few words.",
+              "kind": "describe"
+            },
+            {
+              "text": "Looking at photos and telling happy stories helps.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to choose not to take part, too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Remembering keeps the pet in our hearts.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can tell a favourite memory of the pet out loud.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "To say goodbye, [[CHILD]] can choose a way that feels right.",
+              "kind": "describe"
+            },
+            {
+              "text": "Drawing a picture of the pet, or writing a letter to it.",
+              "kind": "describe"
+            },
+            {
+              "text": "Planting a flower or a tree in its memory.",
+              "kind": "describe"
+            },
+            {
+              "text": "Making a memory box with a collar, a toy or a photo.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some families have a small ceremony, and say a few words.",
+              "kind": "describe"
+            },
+            {
+              "text": "Looking at photos and telling happy stories helps.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to choose not to take part, too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Remembering keeps the pet in our hearts.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can tell a favourite memory of the pet out loud.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "safety"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "Missing a pet can feel very big.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids feel sad, some feel angry, and some feel nothing at all at first.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids worry that other people or pets will die too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Feelings can come in waves, sad, then okay, then sad again.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "worried",
+          "background": "cosy-room",
+          "addresses": [
+            "separation",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Toby the bear felt very sad at bedtime.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pebble's box was empty, and it made his chest feel heavy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Will you die too, Mama, he asked.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama did not say, nobody will ever die.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama said, I plan to be here for a very, very long time, to look after you.",
+              "kind": "describe"
+            },
+            {
+              "text": "Toby cried, and Mama held him close.",
+              "kind": "describe"
+            },
+            {
+              "text": "The next day, Toby laughed while playing with his friend.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then he felt bad, like he forgot Pebble.",
+              "kind": "describe"
+            },
+            {
+              "text": "Papa said, laughing is okay, Pebble would like you to be happy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Toby smelled a flower slowly, and blew a candle.",
+              "kind": "describe"
+            },
+            {
+              "text": "Worried and brave can happen at the same time.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Playing and laughing is okay too, and does not mean you have forgotten.",
+              "kind": "describe"
+            },
+            {
+              "text": "Crying helps let the feelings out.",
+              "kind": "describe"
+            },
+            {
+              "text": "Hugs and talking help.",
+              "kind": "describe"
+            },
+            {
+              "text": "Over time, the sadness gets softer, and happy memories get stronger.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can take slow breaths, smell the flower and blow the candle.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can say, I miss my pet, and ask for a hug.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "pain",
+            "sensory",
+            "separation",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Missing a pet can feel very big.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids feel sad, some feel angry, and some feel nothing at all at first.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids worry that other people or pets will die too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Feelings can come in waves, sad, then okay, then sad again.",
+              "kind": "describe"
+            },
+            {
+              "text": "Playing and laughing is okay too, and does not mean you have forgotten.",
+              "kind": "describe"
+            },
+            {
+              "text": "Crying helps let the feelings out.",
+              "kind": "describe"
+            },
+            {
+              "text": "Hugs and talking help.",
+              "kind": "describe"
+            },
+            {
+              "text": "Over time, the sadness gets softer, and happy memories get stronger.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can take slow breaths, smell the flower and blow the candle.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can say, I miss my pet, and ask for a hug.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "pain",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "Tonight [[CHILD]] and [[GROWNUP]] can remember the pet together.",
+              "kind": "describe"
+            },
+            {
+              "text": "First they look at photos and choose a favourite.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[CHILD]] draws the pet, doing something it loved.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next they write three words about the pet, like soft, funny, brave.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "sensory",
+            "separation",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Toby the bear made a memory book with Papa.",
+              "kind": "describe"
+            },
+            {
+              "text": "They found a picture of Pebble in the sunshine.",
+              "kind": "describe"
+            },
+            {
+              "text": "Toby drew Pebble climbing on his foot.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then they wrote three words: slow, kind, funny.",
+              "kind": "describe"
+            },
+            {
+              "text": "Papa told the story of Pebble hiding in a boot.",
+              "kind": "describe"
+            },
+            {
+              "text": "Toby laughed so hard his tummy hurt.",
+              "kind": "describe"
+            },
+            {
+              "text": "They tied the book with a green ribbon.",
+              "kind": "describe"
+            },
+            {
+              "text": "Toby put it on his shelf, next to his bed.",
+              "kind": "describe"
+            },
+            {
+              "text": "He said softly, I remember you, Pebble, I love you.",
+              "kind": "describe"
+            },
+            {
+              "text": "He felt sad, and loved, at the same time.",
+              "kind": "describe"
+            },
+            {
+              "text": "And Toby slept well that night.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "After that, they tell happy stories, and maybe a funny one.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, they put everything in a memory book or box.",
+              "kind": "describe"
+            },
+            {
+              "text": "They can look at it any time.",
+              "kind": "describe"
+            },
+            {
+              "text": "Remembering is a way of loving.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say: I remember, I miss you, I love you.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "separation",
+            "unknown",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight [[CHILD]] and [[GROWNUP]] can remember the pet together.",
+              "kind": "describe"
+            },
+            {
+              "text": "First they look at photos and choose a favourite.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[CHILD]] draws the pet, doing something it loved.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next they write three words about the pet, like soft, funny, brave.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, they tell happy stories, and maybe a funny one.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, they put everything in a memory book or box.",
+              "kind": "describe"
+            },
+            {
+              "text": "They can look at it any time.",
+              "kind": "describe"
+            },
+            {
+              "text": "Remembering is a way of loving.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say: I remember, I miss you, I love you.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "sensory",
+            "separation",
+            "unknown",
+            "social"
+          ]
+        }
+      ]
+    },
+    "social": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "My pet has died.",
+              "kind": "describe"
+            },
+            {
+              "text": "Died means the body stopped working.",
+              "kind": "describe"
+            },
+            {
+              "text": "The heart stopped.",
+              "kind": "describe"
+            },
+            {
+              "text": "The breathing stopped.",
+              "kind": "describe"
+            },
+            {
+              "text": "My pet cannot feel pain now.",
+              "kind": "describe"
+            },
+            {
+              "text": "My pet cannot feel hungry or cold.",
+              "kind": "describe"
+            },
+            {
+              "text": "My pet cannot come back.",
+              "kind": "describe"
+            },
+            {
+              "text": "This is very sad.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask [[GROWNUP]] any question.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "pain",
+            "body",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "My pet has died.",
+              "kind": "describe"
+            },
+            {
+              "text": "Died means the body stopped working.",
+              "kind": "describe"
+            },
+            {
+              "text": "The heart stopped.",
+              "kind": "describe"
+            },
+            {
+              "text": "The breathing stopped.",
+              "kind": "describe"
+            },
+            {
+              "text": "My pet cannot feel pain now.",
+              "kind": "describe"
+            },
+            {
+              "text": "My pet cannot feel hungry or cold.",
+              "kind": "describe"
+            },
+            {
+              "text": "My pet cannot come back.",
+              "kind": "describe"
+            },
+            {
+              "text": "This is very sad.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to cry.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is not my fault.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask [[GROWNUP]] anything.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel sad, and to miss my pet.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is sad too, and we are together.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and we have a big hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "Step by step, it gets a little easier.",
+              "kind": "describe"
+            },
+            {
+              "text": "New things feel strange at first, and then they feel normal.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "pain",
+            "body",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "It is okay to cry.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is not my fault.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask [[GROWNUP]] anything.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask [[GROWNUP]] any question.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel sad, and to miss my pet.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is sad too, and we are together.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "pain",
+            "separation",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "My pet has died.",
+              "kind": "describe"
+            },
+            {
+              "text": "Died means the body stopped working.",
+              "kind": "describe"
+            },
+            {
+              "text": "The heart stopped.",
+              "kind": "describe"
+            },
+            {
+              "text": "The breathing stopped.",
+              "kind": "describe"
+            },
+            {
+              "text": "My pet cannot feel pain now.",
+              "kind": "describe"
+            },
+            {
+              "text": "My pet cannot feel hungry or cold.",
+              "kind": "describe"
+            },
+            {
+              "text": "My pet cannot come back.",
+              "kind": "describe"
+            },
+            {
+              "text": "This is very sad.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask [[GROWNUP]] any question.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel sad, and to miss my pet.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is sad too, and we are together.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "pain",
+            "body",
+            "separation",
+            "unknown"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "My whole family feels sad.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] may cry too.",
+              "kind": "describe"
+            },
+            {
+              "text": "That is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "The vet helped my pet.",
+              "kind": "describe"
+            },
+            {
+              "text": "Other pets may seem quiet.",
+              "kind": "describe"
+            },
+            {
+              "text": "My teacher can know.",
+              "kind": "describe"
+            },
+            {
+              "text": "My friends can know.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some friends lost pets too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Family can share memories.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can tell someone, my pet died.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "pain",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "My whole family feels sad.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] may cry too.",
+              "kind": "describe"
+            },
+            {
+              "text": "That is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "The vet helped my pet.",
+              "kind": "describe"
+            },
+            {
+              "text": "Other pets may seem quiet.",
+              "kind": "describe"
+            },
+            {
+              "text": "My teacher can know.",
+              "kind": "describe"
+            },
+            {
+              "text": "My friends can know.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some friends lost pets too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Family can share memories.",
+              "kind": "describe"
+            },
+            {
+              "text": "I do not have to be sad alone.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel sad, and to miss my pet.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is sad too, and we are together.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and we have a big hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "Step by step, it gets a little easier.",
+              "kind": "describe"
+            },
+            {
+              "text": "New things feel strange at first, and then they feel normal.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask [[GROWNUP]] anything.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "pain",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I do not have to be sad alone.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can tell someone, my pet died.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel sad, and to miss my pet.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is sad too, and we are together.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "separation",
+            "social",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "My whole family feels sad.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] may cry too.",
+              "kind": "describe"
+            },
+            {
+              "text": "That is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "The vet helped my pet.",
+              "kind": "describe"
+            },
+            {
+              "text": "Other pets may seem quiet.",
+              "kind": "describe"
+            },
+            {
+              "text": "My teacher can know.",
+              "kind": "describe"
+            },
+            {
+              "text": "My friends can know.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some friends lost pets too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Family can share memories.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can tell someone, my pet died.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel sad, and to miss my pet.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is sad too, and we are together.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "pain",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "I can say goodbye my way.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can draw a picture.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can write a letter.",
+              "kind": "describe"
+            },
+            {
+              "text": "We can plant a flower.",
+              "kind": "describe"
+            },
+            {
+              "text": "We can make a memory box.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can put in a photo or a toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can tell my favourite memory.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "sensory",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I can say goodbye my way.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can draw a picture.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can write a letter.",
+              "kind": "describe"
+            },
+            {
+              "text": "We can plant a flower.",
+              "kind": "describe"
+            },
+            {
+              "text": "We can make a memory box.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can put in a photo or a toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can tell happy stories.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can look at photos.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can choose not to take part.",
+              "kind": "describe"
+            },
+            {
+              "text": "My pet stays in my heart.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel sad, and to miss my pet.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is sad too, and we are together.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and we have a big hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "Step by step, it gets a little easier.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I can tell happy stories.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can look at photos.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can choose not to take part.",
+              "kind": "describe"
+            },
+            {
+              "text": "My pet stays in my heart.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can tell my favourite memory.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel sad, and to miss my pet.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is sad too, and we are together.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I can say goodbye my way.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can draw a picture.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can write a letter.",
+              "kind": "describe"
+            },
+            {
+              "text": "We can plant a flower.",
+              "kind": "describe"
+            },
+            {
+              "text": "We can make a memory box.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can put in a photo or a toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can tell my favourite memory.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel sad, and to miss my pet.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is sad too, and we are together.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "sensory",
+            "separation",
+            "social",
+            "love"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "Missing my pet can feel very big.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel sad.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel angry.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel nothing at first.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may worry about others.",
+              "kind": "describe"
+            },
+            {
+              "text": "Feelings come in waves.",
+              "kind": "describe"
+            },
+            {
+              "text": "Playing is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "Laughing is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "worried",
+          "background": "cosy-room",
+          "addresses": [
+            "separation",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Missing my pet can feel very big.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel sad.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel angry.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel nothing at first.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may worry about others.",
+              "kind": "describe"
+            },
+            {
+              "text": "Feelings come in waves.",
+              "kind": "describe"
+            },
+            {
+              "text": "Playing is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "Laughing is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "Crying helps.",
+              "kind": "describe"
+            },
+            {
+              "text": "Over time, the sadness gets softer.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel sad, and to miss my pet.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is sad too, and we are together.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and we have a big hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "Step by step, it gets a little easier.",
+              "kind": "describe"
+            },
+            {
+              "text": "New things feel strange at first, and then they feel normal.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask [[GROWNUP]] anything.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "pain",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Crying helps.",
+              "kind": "describe"
+            },
+            {
+              "text": "Over time, the sadness gets softer.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can say, I miss my pet.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel sad, and to miss my pet.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is sad too, and we are together.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "pain",
+            "separation",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Missing my pet can feel very big.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel sad.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel angry.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel nothing at first.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may worry about others.",
+              "kind": "describe"
+            },
+            {
+              "text": "Feelings come in waves.",
+              "kind": "describe"
+            },
+            {
+              "text": "Playing is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "Laughing is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can say, I miss my pet.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel sad, and to miss my pet.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is sad too, and we are together.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "separation",
+            "unknown",
+            "social",
+            "love"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "Tonight we remember my pet.",
+              "kind": "describe"
+            },
+            {
+              "text": "First we look at photos.",
+              "kind": "describe"
+            },
+            {
+              "text": "I choose a favourite.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I draw my pet.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next we write three words.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, we tell happy stories.",
+              "kind": "describe"
+            },
+            {
+              "text": "Maybe a funny one.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, we make a memory book.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: I remember, I miss you, I love you.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "sensory",
+            "separation",
+            "unknown",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight we remember my pet.",
+              "kind": "describe"
+            },
+            {
+              "text": "First we look at photos.",
+              "kind": "describe"
+            },
+            {
+              "text": "I choose a favourite.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I draw my pet.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next we write three words.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, we tell happy stories.",
+              "kind": "describe"
+            },
+            {
+              "text": "Maybe a funny one.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, we make a memory book.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can look at it any time.",
+              "kind": "describe"
+            },
+            {
+              "text": "Remembering is loving.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel sad, and to miss my pet.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is sad too, and we are together.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and we have a big hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "Step by step, it gets a little easier.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "sensory",
+            "separation",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I can look at it any time.",
+              "kind": "describe"
+            },
+            {
+              "text": "Remembering is loving.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: I remember, I miss you, I love you.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel sad, and to miss my pet.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is sad too, and we are together.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "separation",
+            "social",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight we remember my pet.",
+              "kind": "describe"
+            },
+            {
+              "text": "First we look at photos.",
+              "kind": "describe"
+            },
+            {
+              "text": "I choose a favourite.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I draw my pet.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next we write three words.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, we tell happy stories.",
+              "kind": "describe"
+            },
+            {
+              "text": "Maybe a funny one.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, we make a memory book.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: I remember, I miss you, I love you.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel sad, and to miss my pet.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is sad too, and we are together.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "sensory",
+            "separation",
+            "unknown",
+            "social"
+          ]
+        }
+      ]
+    }
+  },
+  "badge": {
+    "id": "loving_memory",
+    "label": "Loving Memory"
+  },
+  "olderPages": {
+    "what_happens": {
+      "sentences": [
+        {
+          "text": "Death is the end of life for every living thing, and pets usually have shorter lives than people.",
+          "kind": "describe"
+        },
+        {
+          "text": "Sometimes a vet helps a very ill pet die peacefully so it is not suffering; this is called euthanasia, and it is a kind, loving decision.",
+          "kind": "describe"
+        },
+        {
+          "text": "Grief is the feeling of missing someone we love, and it shows how much they mattered.",
+          "kind": "describe"
+        },
+        {
+          "text": "Different families have different beliefs about what happens after death.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can ask [[GROWNUP]] what our family believes.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "cosy-room",
+      "addresses": [
+        "pain",
+        "body",
+        "strangers",
+        "separation"
+      ]
+    },
+    "who_is_there": {
+      "sentences": [
+        {
+          "text": "Vets and vet nurses care deeply about pets and often feel sad too.",
+          "kind": "describe"
+        },
+        {
+          "text": "Telling school helps teachers understand if you seem quiet or upset.",
+          "kind": "describe"
+        },
+        {
+          "text": "Some people do not understand how much a pet matters; that can feel lonely, and your feelings are still real.",
+          "kind": "describe"
+        },
+        {
+          "text": "Pet loss support groups and books exist because it is such a common experience.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can choose who to tell and how much to say.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "cosy-room",
+      "addresses": [
+        "sensory",
+        "strangers",
+        "safety",
+        "social"
+      ]
+    },
+    "what_i_do": {
+      "sentences": [
+        {
+          "text": "Rituals give grief a shape and a place to go, which is why people have funerals and memorials.",
+          "kind": "describe"
+        },
+        {
+          "text": "Making something, like a photo book or a painting, can help when words are hard.",
+          "kind": "describe"
+        },
+        {
+          "text": "Some families bury a pet, some scatter ashes, and some keep them; each is a choice.",
+          "kind": "describe"
+        },
+        {
+          "text": "Anniversaries can bring feelings back, and remembering on those days is okay.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can plan a yearly way to remember the pet.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "cosy-room",
+      "addresses": [
+        "pain",
+        "sensory",
+        "separation",
+        "safety"
+      ]
+    },
+    "if_scared": {
+      "sentences": [
+        {
+          "text": "Grief is not a straight line; good and bad days mix for weeks or months.",
+          "kind": "describe"
+        },
+        {
+          "text": "Guilt, like thinking, I should have noticed, is common and usually not true.",
+          "kind": "describe"
+        },
+        {
+          "text": "Worrying about the death of family is a normal reaction, and talking about it helps.",
+          "kind": "describe"
+        },
+        {
+          "text": "If sadness stays very heavy for a long time, [[GROWNUP]] can find someone to talk to, like a counselor.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can keep a memory journal and add to it whenever they want.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "worried",
+      "background": "cosy-room",
+      "addresses": [
+        "sensory",
+        "strangers",
+        "separation",
+        "safety"
+      ]
+    },
+    "rehearsal": {
+      "sentences": [
+        {
+          "text": "Memory projects help the brain hold on to the good parts while the loss sinks in.",
+          "kind": "describe"
+        },
+        {
+          "text": "Writing a letter to the pet, saying what you would like to tell them, can help with unfinished feelings.",
+          "kind": "describe"
+        },
+        {
+          "text": "Some families donate to an animal shelter in the pet's name.",
+          "kind": "describe"
+        },
+        {
+          "text": "Getting a new pet is a family decision for later, not a replacement, and it is okay to wait.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can decide where the memory book lives.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "cosy-room",
+      "addresses": [
+        "separation",
+        "safety",
+        "social"
+      ]
+    }
+  }
+}

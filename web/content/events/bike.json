@@ -1,0 +1,2508 @@
+{
+  "type": "bike",
+  "version": 1,
+  "label": "Learning to ride a bike",
+  "countdownLabel": "the bike day",
+  "beats": {
+    "what_happens": {
+      "title": "How learning to ride works",
+      "goals": [
+        "Riding is balance, pedalling and steering",
+        "It is learned step by step",
+        "Wobbles and falls are part of learning"
+      ],
+      "parentSkill": "Explain the three skills: balance, pedal, steer, and that you learn them one at a time."
+    },
+    "who_is_there": {
+      "title": "Who helps me learn",
+      "goals": [
+        "[[GROWNUP]] runs alongside and helps",
+        "Other riders share the path",
+        "Kids learn at different ages"
+      ],
+      "parentSkill": "Agree exactly how you will help: holding the back of the seat or the shoulders, and when you will let go."
+    },
+    "what_i_do": {
+      "title": "What I do on the bike",
+      "goals": [
+        "Helmet on, look ahead, pedal",
+        "Brake to stop and put feet down",
+        "If I fall, check, rest, try again"
+      ],
+      "parentSkill": "Practise braking first, so your child knows how to stop before going faster."
+    },
+    "if_scared": {
+      "title": "If I am scared of falling",
+      "goals": [
+        "Falling can happen and usually means small scrapes",
+        "Wobbling is normal and gets better",
+        "Calm tools: helmet, slow breaths, going at my speed"
+      ],
+      "parentSkill": "Name the fear honestly: 'You might fall. The helmet protects your head, and scrapes get better.'"
+    },
+    "rehearsal": {
+      "title": "Let's get ready to ride",
+      "goals": [
+        "Practise helmet and strap",
+        "Practise the stop: brake, feet down",
+        "Picture the first glide"
+      ],
+      "parentSkill": "Let your child practise putting on and clicking the helmet themselves, and squeezing the brakes while you push the bike."
+    }
+  },
+  "steps": [
+    "Put on a helmet and click the strap",
+    "Find a flat, quiet place like a park path",
+    "Sit on the seat with feet touching the ground",
+    "Practise gliding and balancing",
+    "Push the pedals while a grown-up runs alongside",
+    "Look ahead, steer and squeeze the brakes to stop",
+    "Rest, drink water and try again"
+  ],
+  "sensory": [
+    "a helmet strap clicking under the chin",
+    "wind on the face",
+    "a wobbly feeling in the handlebars",
+    "the whir of the wheels",
+    "a bump on the knee or the hands",
+    "a fast heartbeat when going faster"
+  ],
+  "honestyNotes": "Falling is part of learning to ride and can cause scrapes and bumps; never promise no falls. A grown-up holding the bike will let go at some point; agree when, never trick the child. Always a helmet. Let the parent decide balance bike, training wheels or pedals.",
+  "questionButtons": [
+    {
+      "id": "fall",
+      "text": "What if I fall?",
+      "topic": "pain",
+      "fallbackAnswer": [
+        "Falling can happen when learning, and it can make a scrape or a bump that stings.",
+        "The helmet protects your head, and scrapes get better."
+      ]
+    },
+    {
+      "id": "let_go",
+      "text": "Will [[GROWNUP]] let go?",
+      "topic": "separation",
+      "fallbackAnswer": [
+        "[[GROWNUP]] will hold on until you say, let go.",
+        "You decide the signal together."
+      ]
+    },
+    {
+      "id": "helmet",
+      "text": "Why do I wear a helmet?",
+      "topic": "safety",
+      "fallbackAnswer": [
+        "A helmet protects your head if you fall.",
+        "Every rider wears one, even grown-ups."
+      ]
+    },
+    {
+      "id": "wobble",
+      "text": "Why does the bike wobble?",
+      "topic": "body",
+      "fallbackAnswer": [
+        "Wobbling happens while your body learns to balance.",
+        "It gets better with practice, and going a bit faster helps."
+      ]
+    },
+    {
+      "id": "stop",
+      "text": "How do I stop?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "Squeeze the brakes on the handlebars and put your feet down.",
+        "We can practise stopping first."
+      ]
+    },
+    {
+      "id": "others",
+      "text": "What if other kids watch?",
+      "topic": "social",
+      "fallbackAnswer": [
+        "Lots of kids are learning too.",
+        "Everyone wobbled when they started."
+      ]
+    },
+    {
+      "id": "fast",
+      "text": "What if I go too fast?",
+      "topic": "safety",
+      "fallbackAnswer": [
+        "Squeeze the brakes gently to slow down.",
+        "We practise on a flat path where it is easy to stop."
+      ]
+    },
+    {
+      "id": "cars",
+      "text": "Will there be cars?",
+      "topic": "safety",
+      "fallbackAnswer": [
+        "We practise in a quiet place with no cars, like a park path.",
+        "Roads come much later, with a grown-up."
+      ]
+    },
+    {
+      "id": "noise",
+      "text": "What is that clicking sound?",
+      "topic": "sensory",
+      "fallbackAnswer": [
+        "Bikes make whirring and clicking sounds when the wheels turn.",
+        "That is the chain and the wheels doing their job."
+      ]
+    },
+    {
+      "id": "cant",
+      "text": "What if I can't do it?",
+      "topic": "love",
+      "fallbackAnswer": [
+        "Most kids need a few tries on different days.",
+        "[[GROWNUP]] is proud of you for trying every time."
+      ]
+    },
+    {
+      "id": "strangers_path",
+      "text": "Who else is on the path?",
+      "topic": "strangers",
+      "fallbackAnswer": [
+        "Walkers, runners and other riders.",
+        "We keep to one side and say, excuse me."
+      ],
+      "ages": [
+        5,
+        12
+      ]
+    }
+  ],
+  "techniques": [
+    {
+      "id": "helmet_click",
+      "label": "Helmet click",
+      "how": "Let your child put on and click the helmet themselves.",
+      "topics": [
+        "safety"
+      ]
+    },
+    {
+      "id": "glide_first",
+      "label": "Gliding first",
+      "how": "Glide with feet off the ground before pedalling.",
+      "topics": [
+        "body",
+        "unknown"
+      ]
+    },
+    {
+      "id": "brake_first",
+      "label": "Brakes first",
+      "how": "Practise squeezing the brakes before going faster.",
+      "topics": [
+        "safety",
+        "unknown"
+      ]
+    },
+    {
+      "id": "let_go_signal",
+      "label": "A let-go signal",
+      "how": "Agree that you let go only when your child says so.",
+      "topics": [
+        "separation",
+        "safety"
+      ]
+    },
+    {
+      "id": "look_ahead",
+      "label": "Look ahead",
+      "how": "Pick a tree or a bench to look at while riding.",
+      "topics": [
+        "body",
+        "sensory"
+      ]
+    },
+    {
+      "id": "bandage_kit",
+      "label": "A little first aid kit",
+      "how": "Bring water, wipes and fun bandages.",
+      "topics": [
+        "pain",
+        "love"
+      ]
+    },
+    {
+      "id": "short_sessions",
+      "label": "Short sessions",
+      "how": "Ride for short times with breaks.",
+      "topics": [
+        "body",
+        "pain"
+      ]
+    },
+    {
+      "id": "path_manners",
+      "label": "Path manners",
+      "how": "Keep to one side and say, excuse me.",
+      "topics": [
+        "strangers",
+        "social"
+      ]
+    },
+    {
+      "id": "deep_breaths",
+      "label": "Smell the flower, blow the candle",
+      "how": "Breathe in slowly through the nose and out like blowing a candle.",
+      "topics": [
+        "pain",
+        "sensory",
+        "safety"
+      ]
+    }
+  ],
+  "ritual": [
+    "Helmet on, strap clicked",
+    "Look ahead and pedal",
+    "Brake, feet down, high five"
+  ],
+  "phrases": {
+    "pain": [
+      "A scrape stings, and then it gets better. Let's clean it.",
+      "Take a slow breath."
+    ],
+    "body": [
+      "Your body is learning to balance.",
+      "Wobbles get smaller with practice."
+    ],
+    "sensory": [
+      "The wind feels nice on your face.",
+      "The clicking is just the chain."
+    ],
+    "strangers": [
+      "Other people share the path. Keep to one side.",
+      "You can say, excuse me."
+    ],
+    "separation": [
+      "I'll hold on until you say, let go.",
+      "I'm right here running next to you."
+    ],
+    "unknown": [
+      "Helmet, look ahead, pedal, brake.",
+      "First glide, then pedal."
+    ],
+    "safety": [
+      "The helmet protects your head.",
+      "Squeeze the brakes to slow down."
+    ],
+    "social": [
+      "Lots of kids are learning too.",
+      "Everyone wobbled at the start."
+    ],
+    "love": [
+      "I'm proud of you for trying again.",
+      "I love riding with you."
+    ]
+  },
+  "topicWords": {
+    "pain": [
+      "scrape",
+      "scrapes",
+      "sting",
+      "stung",
+      "bump",
+      "hurt",
+      "thump",
+      "ouch"
+    ],
+    "body": [
+      "balance",
+      "body",
+      "knee",
+      "feet",
+      "paws",
+      "wobble",
+      "wobbles",
+      "wobbly",
+      "tired"
+    ],
+    "sensory": [
+      "wind",
+      "click",
+      "whir",
+      "clicking",
+      "squeak",
+      "fast",
+      "ground"
+    ],
+    "strangers": [
+      "other people",
+      "walkers",
+      "riders",
+      "rabbit",
+      "squirrel",
+      "excuse me"
+    ],
+    "separation": [
+      "let go",
+      "alongside",
+      "next to",
+      "holds",
+      "hold",
+      "helps me",
+      "right there",
+      "stay",
+      "close",
+      "with me",
+      "with you",
+      "together",
+      "comes back",
+      "back",
+      "hand",
+      "nearby"
+    ],
+    "unknown": [
+      "first",
+      "then",
+      "next",
+      "after",
+      "last",
+      "step",
+      "steps"
+    ],
+    "safety": [
+      "helmet",
+      "brakes",
+      "brake",
+      "safe",
+      "protects",
+      "stop",
+      "careful",
+      "break",
+      "help"
+    ],
+    "social": [
+      "kids",
+      "everyone",
+      "friends",
+      "other kids",
+      "friend",
+      "children",
+      "people",
+      "others"
+    ],
+    "love": [
+      "love",
+      "hug",
+      "proud",
+      "cuddle"
+    ]
+  },
+  "backgrounds": [
+    "outside",
+    "home-evening",
+    "cosy-room"
+  ],
+  "fallbackPages": {
+    "story": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "Soon [[CHILD]] will practise riding a bike.",
+              "kind": "describe"
+            },
+            {
+              "text": "Riding needs three skills: balance, pedalling and steering.",
+              "kind": "describe"
+            },
+            {
+              "text": "First [[CHILD]] puts on a helmet and clicks the strap.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then they go to a flat, quiet place, like a park path.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can look ahead, not down at the wheel.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Before bed, here is a story about a little hedgehog called Hazel.",
+              "kind": "describe"
+            },
+            {
+              "text": "Hazel got a shiny red bike.",
+              "kind": "describe"
+            },
+            {
+              "text": "First Hazel put on a helmet with a strap, click.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then Grandpa Hedgehog took her to the flat path by the pond.",
+              "kind": "describe"
+            },
+            {
+              "text": "Feet down, glide, said Grandpa.",
+              "kind": "describe"
+            },
+            {
+              "text": "Hazel glided and wobbled and put her feet down.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next she tried the pedals, push, push.",
+              "kind": "describe"
+            },
+            {
+              "text": "The bike went wiggle, wiggle, and Hazel went thump on the grass.",
+              "kind": "describe"
+            },
+            {
+              "text": "She got up and tried again.",
+              "kind": "describe"
+            },
+            {
+              "text": "By sunset, Hazel rode three wobbly pedals all by herself.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Next [[CHILD]] sits on the seat, feet on the ground, and glides along.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, the feet go on the pedals, push, push.",
+              "kind": "describe"
+            },
+            {
+              "text": "The bike wobbles at first, and that is normal.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, brakes, squeeze, and stop.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can look ahead, not down at the wheel.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Soon [[CHILD]] will practise riding a bike.",
+              "kind": "describe"
+            },
+            {
+              "text": "Riding needs three skills: balance, pedalling and steering.",
+              "kind": "describe"
+            },
+            {
+              "text": "First [[CHILD]] puts on a helmet and clicks the strap.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then they go to a flat, quiet place, like a park path.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next [[CHILD]] sits on the seat, feet on the ground, and glides along.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, the feet go on the pedals, push, push.",
+              "kind": "describe"
+            },
+            {
+              "text": "The bike wobbles at first, and that is normal.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, brakes, squeeze, and stop.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can look ahead, not down at the wheel.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "unknown",
+            "safety"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "[[GROWNUP]] helps [[CHILD]] learn to ride.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] can hold the back of the seat or the shoulders and run alongside.",
+              "kind": "describe"
+            },
+            {
+              "text": "They agree together when [[GROWNUP]] lets go.",
+              "kind": "describe"
+            },
+            {
+              "text": "Other people may be on the path too, walking or riding.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say, let go now, when ready.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "strangers",
+            "separation",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Hazel the hedgehog had a helper.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grandpa Hedgehog held the back of her seat.",
+              "kind": "describe"
+            },
+            {
+              "text": "I will hold on until you say, let go, he said.",
+              "kind": "describe"
+            },
+            {
+              "text": "They went up and down the path by the pond.",
+              "kind": "describe"
+            },
+            {
+              "text": "A rabbit zoomed by on a scooter and waved.",
+              "kind": "describe"
+            },
+            {
+              "text": "A squirrel on a tiny bike rang a bell, ring ring.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grandpa said, I fell off lots when I learned.",
+              "kind": "describe"
+            },
+            {
+              "text": "You did, asked Hazel.",
+              "kind": "describe"
+            },
+            {
+              "text": "Many times, said Grandpa, and I always got up.",
+              "kind": "describe"
+            },
+            {
+              "text": "Hazel felt braver.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "strangers",
+            "separation",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Riders keep to one side and look out for each other.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids learn at four, some at eight, and some later.",
+              "kind": "describe"
+            },
+            {
+              "text": "Everyone learns at their own speed.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grown-ups fell off when they learned too.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say, let go now, when ready.",
+              "kind": "coach"
+            },
+            {
+              "text": "Step by step, it all gets a little easier.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "outside",
+          "addresses": [
+            "strangers",
+            "separation",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "[[GROWNUP]] helps [[CHILD]] learn to ride.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] can hold the back of the seat or the shoulders and run alongside.",
+              "kind": "describe"
+            },
+            {
+              "text": "They agree together when [[GROWNUP]] lets go.",
+              "kind": "describe"
+            },
+            {
+              "text": "Other people may be on the path too, walking or riding.",
+              "kind": "describe"
+            },
+            {
+              "text": "Riders keep to one side and look out for each other.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids learn at four, some at eight, and some later.",
+              "kind": "describe"
+            },
+            {
+              "text": "Everyone learns at their own speed.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grown-ups fell off when they learned too.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say, let go now, when ready.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "strangers",
+            "separation",
+            "safety",
+            "social"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "On the bike, [[CHILD]] wears the helmet with the strap clicked.",
+              "kind": "describe"
+            },
+            {
+              "text": "Look ahead at where to go, like a tree or a bench.",
+              "kind": "describe"
+            },
+            {
+              "text": "Push the pedals in circles, round and round.",
+              "kind": "describe"
+            },
+            {
+              "text": "Keep the handlebars gently straight.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say: helmet, look ahead, pedal, brake.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "sensory",
+            "separation",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Hazel the hedgehog learned the bike steps.",
+              "kind": "describe"
+            },
+            {
+              "text": "Helmet, look ahead, pedal, brake.",
+              "kind": "describe"
+            },
+            {
+              "text": "Hazel looked at the big oak tree at the end of the path.",
+              "kind": "describe"
+            },
+            {
+              "text": "She pushed the pedals, round and round.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grandpa let go when Hazel said so.",
+              "kind": "describe"
+            },
+            {
+              "text": "Hazel rode, rode, rode, and then squeezed the brakes.",
+              "kind": "describe"
+            },
+            {
+              "text": "She stopped right at the oak tree.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then she wobbled and fell into the soft grass.",
+              "kind": "describe"
+            },
+            {
+              "text": "Hazel checked her paws, took a breath and stood up.",
+              "kind": "describe"
+            },
+            {
+              "text": "I did it, she shouted.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "To stop, squeeze the brakes and put the feet down.",
+              "kind": "describe"
+            },
+            {
+              "text": "If [[CHILD]] falls, check for scrapes, take a breath and rest.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then try again when ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "Small tries add up.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say: helmet, look ahead, pedal, brake.",
+              "kind": "coach"
+            },
+            {
+              "text": "Step by step, it all gets a little easier.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is close by, and [[GROWNUP]] is proud.",
+              "kind": "describe"
+            },
+            {
+              "text": "New things feel strange at first, and then they feel normal.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "pain",
+            "body",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "On the bike, [[CHILD]] wears the helmet with the strap clicked.",
+              "kind": "describe"
+            },
+            {
+              "text": "Look ahead at where to go, like a tree or a bench.",
+              "kind": "describe"
+            },
+            {
+              "text": "Push the pedals in circles, round and round.",
+              "kind": "describe"
+            },
+            {
+              "text": "Keep the handlebars gently straight.",
+              "kind": "describe"
+            },
+            {
+              "text": "To stop, squeeze the brakes and put the feet down.",
+              "kind": "describe"
+            },
+            {
+              "text": "If [[CHILD]] falls, check for scrapes, take a breath and rest.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then try again when ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "Small tries add up.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say: helmet, look ahead, pedal, brake.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "separation"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "Learning to ride can feel scary.",
+              "kind": "describe"
+            },
+            {
+              "text": "The bike wobbles, and the ground looks far away.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes riders fall.",
+              "kind": "describe"
+            },
+            {
+              "text": "A fall can cause a scrape or a bump, and that can sting.",
+              "kind": "describe"
+            },
+            {
+              "text": "The helmet protects the head.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "worried",
+          "background": "outside",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "strangers"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Hazel the hedgehog was scared after a fall.",
+              "kind": "describe"
+            },
+            {
+              "text": "Her knee had a little scrape, and it stung.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grandpa did not say, you will never fall again.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grandpa said, falling is part of learning, and scrapes get better.",
+              "kind": "describe"
+            },
+            {
+              "text": "He washed the scrape and put on a bandage with stars.",
+              "kind": "describe"
+            },
+            {
+              "text": "Hazel took a slow breath and blew it out.",
+              "kind": "describe"
+            },
+            {
+              "text": "I need a break, she said.",
+              "kind": "describe"
+            },
+            {
+              "text": "They sat on the bench and ate an apple.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then Hazel said, I want to try again, slowly.",
+              "kind": "describe"
+            },
+            {
+              "text": "She did, and it felt a little easier.",
+              "kind": "describe"
+            },
+            {
+              "text": "Worried and brave can happen at the same time.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "pain",
+            "body",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Scrapes get washed, a bandage goes on, and they heal.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to go slowly and stop when tired.",
+              "kind": "describe"
+            },
+            {
+              "text": "Going at your own speed is fine.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can take slow breaths, smell the flower and blow the candle.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can say, I need a break.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "pain",
+            "body",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Learning to ride can feel scary.",
+              "kind": "describe"
+            },
+            {
+              "text": "The bike wobbles, and the ground looks far away.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes riders fall.",
+              "kind": "describe"
+            },
+            {
+              "text": "A fall can cause a scrape or a bump, and that can sting.",
+              "kind": "describe"
+            },
+            {
+              "text": "The helmet protects the head.",
+              "kind": "describe"
+            },
+            {
+              "text": "Scrapes get washed, a bandage goes on, and they heal.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to go slowly and stop when tired.",
+              "kind": "describe"
+            },
+            {
+              "text": "Going at your own speed is fine.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can take slow breaths, smell the flower and blow the candle.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can say, I need a break.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "strangers"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "Tonight [[CHILD]] and [[GROWNUP]] can get ready for bike day.",
+              "kind": "describe"
+            },
+            {
+              "text": "First [[CHILD]] practises the helmet: on, strap, click.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then they look at the bike together: seat, pedals, handlebars, brakes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next [[CHILD]] practises squeezing the brakes while [[GROWNUP]] pushes the bike slowly.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say: helmet, look ahead, pedal, brake.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "outside",
+          "addresses": [
+            "sensory",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Hazel the hedgehog got ready the night before.",
+              "kind": "describe"
+            },
+            {
+              "text": "She put on the helmet and clicked the strap, click.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then she showed her toy fox the bike parts.",
+              "kind": "describe"
+            },
+            {
+              "text": "Seat, pedals, handlebars, brakes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grandpa pushed the bike slowly, and Hazel squeezed the brakes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Stop, said the bike, squeak.",
+              "kind": "describe"
+            },
+            {
+              "text": "They agreed the signal: when Hazel says let go, Grandpa lets go.",
+              "kind": "describe"
+            },
+            {
+              "text": "Hazel pictured the flat path by the pond.",
+              "kind": "describe"
+            },
+            {
+              "text": "She felt ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "Her helmet sat by the door, waiting.",
+              "kind": "describe"
+            },
+            {
+              "text": "And Hazel slept well that night.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "sensory",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "After that, they agree the let-go signal.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, [[CHILD]] pictures the first glide on the flat path.",
+              "kind": "describe"
+            },
+            {
+              "text": "Practising at home makes the real day feel ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow, the bike adventure starts.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say: helmet, look ahead, pedal, brake.",
+              "kind": "coach"
+            },
+            {
+              "text": "Step by step, it all gets a little easier.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "outside",
+          "addresses": [
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight [[CHILD]] and [[GROWNUP]] can get ready for bike day.",
+              "kind": "describe"
+            },
+            {
+              "text": "First [[CHILD]] practises the helmet: on, strap, click.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then they look at the bike together: seat, pedals, handlebars, brakes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next [[CHILD]] practises squeezing the brakes while [[GROWNUP]] pushes the bike slowly.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, they agree the let-go signal.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, [[CHILD]] pictures the first glide on the flat path.",
+              "kind": "describe"
+            },
+            {
+              "text": "Practising at home makes the real day feel ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow, the bike adventure starts.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say: helmet, look ahead, pedal, brake.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "outside",
+          "addresses": [
+            "sensory",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        }
+      ]
+    },
+    "social": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "Soon I will learn to ride a bike.",
+              "kind": "describe"
+            },
+            {
+              "text": "I need balance.",
+              "kind": "describe"
+            },
+            {
+              "text": "I need to pedal.",
+              "kind": "describe"
+            },
+            {
+              "text": "I need to steer.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I put on my helmet.",
+              "kind": "describe"
+            },
+            {
+              "text": "I click the strap.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then we go to a flat path.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can look ahead, not down.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Soon I will learn to ride a bike.",
+              "kind": "describe"
+            },
+            {
+              "text": "I need balance.",
+              "kind": "describe"
+            },
+            {
+              "text": "I need to pedal.",
+              "kind": "describe"
+            },
+            {
+              "text": "I need to steer.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I put on my helmet.",
+              "kind": "describe"
+            },
+            {
+              "text": "I click the strap.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then we go to a flat path.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next I glide with my feet.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, I push the pedals.",
+              "kind": "describe"
+            },
+            {
+              "text": "The bike may wobble.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, I squeeze the brakes to stop.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Next I glide with my feet.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, I push the pedals.",
+              "kind": "describe"
+            },
+            {
+              "text": "The bike may wobble.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, I squeeze the brakes to stop.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can look ahead, not down.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "unknown",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Soon I will learn to ride a bike.",
+              "kind": "describe"
+            },
+            {
+              "text": "I need balance.",
+              "kind": "describe"
+            },
+            {
+              "text": "I need to pedal.",
+              "kind": "describe"
+            },
+            {
+              "text": "I need to steer.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I put on my helmet.",
+              "kind": "describe"
+            },
+            {
+              "text": "I click the strap.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then we go to a flat path.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can look ahead, not down.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "unknown",
+            "safety"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "[[GROWNUP]] helps me learn.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] holds the back of my seat.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] runs next to me.",
+              "kind": "describe"
+            },
+            {
+              "text": "We agree when to let go.",
+              "kind": "describe"
+            },
+            {
+              "text": "Other people use the path too.",
+              "kind": "describe"
+            },
+            {
+              "text": "We keep to one side.",
+              "kind": "describe"
+            },
+            {
+              "text": "Kids learn at different ages.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say, let go now, when I am ready.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "strangers",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "[[GROWNUP]] helps me learn.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] holds the back of my seat.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] runs next to me.",
+              "kind": "describe"
+            },
+            {
+              "text": "We agree when to let go.",
+              "kind": "describe"
+            },
+            {
+              "text": "Other people use the path too.",
+              "kind": "describe"
+            },
+            {
+              "text": "We keep to one side.",
+              "kind": "describe"
+            },
+            {
+              "text": "Kids learn at different ages.",
+              "kind": "describe"
+            },
+            {
+              "text": "Everyone learns at their own speed.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grown-ups fell off when they learned.",
+              "kind": "describe"
+            },
+            {
+              "text": "They got up and tried again.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "strangers",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Everyone learns at their own speed.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grown-ups fell off when they learned.",
+              "kind": "describe"
+            },
+            {
+              "text": "They got up and tried again.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say, let go now, when I am ready.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "outside",
+          "addresses": [
+            "separation",
+            "unknown",
+            "social",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "[[GROWNUP]] helps me learn.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] holds the back of my seat.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] runs next to me.",
+              "kind": "describe"
+            },
+            {
+              "text": "We agree when to let go.",
+              "kind": "describe"
+            },
+            {
+              "text": "Other people use the path too.",
+              "kind": "describe"
+            },
+            {
+              "text": "We keep to one side.",
+              "kind": "describe"
+            },
+            {
+              "text": "Kids learn at different ages.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say, let go now, when I am ready.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "strangers",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "I wear my helmet.",
+              "kind": "describe"
+            },
+            {
+              "text": "The strap is clicked.",
+              "kind": "describe"
+            },
+            {
+              "text": "I look ahead.",
+              "kind": "describe"
+            },
+            {
+              "text": "I pick a tree or a bench.",
+              "kind": "describe"
+            },
+            {
+              "text": "I push the pedals round and round.",
+              "kind": "describe"
+            },
+            {
+              "text": "I hold the handlebars gently.",
+              "kind": "describe"
+            },
+            {
+              "text": "To stop, I squeeze the brakes.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: helmet, look ahead, pedal, brake.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "sensory",
+            "separation",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I wear my helmet.",
+              "kind": "describe"
+            },
+            {
+              "text": "The strap is clicked.",
+              "kind": "describe"
+            },
+            {
+              "text": "I look ahead.",
+              "kind": "describe"
+            },
+            {
+              "text": "I pick a tree or a bench.",
+              "kind": "describe"
+            },
+            {
+              "text": "I push the pedals round and round.",
+              "kind": "describe"
+            },
+            {
+              "text": "I hold the handlebars gently.",
+              "kind": "describe"
+            },
+            {
+              "text": "To stop, I squeeze the brakes.",
+              "kind": "describe"
+            },
+            {
+              "text": "I put my feet down.",
+              "kind": "describe"
+            },
+            {
+              "text": "If I fall, I take a breath.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I try again.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "Step by step, it gets a little easier.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I put my feet down.",
+              "kind": "describe"
+            },
+            {
+              "text": "If I fall, I take a breath.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I try again.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: helmet, look ahead, pedal, brake.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "unknown",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I wear my helmet.",
+              "kind": "describe"
+            },
+            {
+              "text": "The strap is clicked.",
+              "kind": "describe"
+            },
+            {
+              "text": "I look ahead.",
+              "kind": "describe"
+            },
+            {
+              "text": "I pick a tree or a bench.",
+              "kind": "describe"
+            },
+            {
+              "text": "I push the pedals round and round.",
+              "kind": "describe"
+            },
+            {
+              "text": "I hold the handlebars gently.",
+              "kind": "describe"
+            },
+            {
+              "text": "To stop, I squeeze the brakes.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: helmet, look ahead, pedal, brake.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "sensory",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "Learning to ride can feel scary.",
+              "kind": "describe"
+            },
+            {
+              "text": "The bike may wobble.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes I may fall.",
+              "kind": "describe"
+            },
+            {
+              "text": "A fall can make a scrape.",
+              "kind": "describe"
+            },
+            {
+              "text": "A scrape can sting.",
+              "kind": "describe"
+            },
+            {
+              "text": "My helmet protects my head.",
+              "kind": "describe"
+            },
+            {
+              "text": "Scrapes get a bandage.",
+              "kind": "describe"
+            },
+            {
+              "text": "Scrapes heal.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can go slowly.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "worried",
+          "background": "outside",
+          "addresses": [
+            "pain",
+            "body",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Learning to ride can feel scary.",
+              "kind": "describe"
+            },
+            {
+              "text": "The bike may wobble.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes I may fall.",
+              "kind": "describe"
+            },
+            {
+              "text": "A fall can make a scrape.",
+              "kind": "describe"
+            },
+            {
+              "text": "A scrape can sting.",
+              "kind": "describe"
+            },
+            {
+              "text": "My helmet protects my head.",
+              "kind": "describe"
+            },
+            {
+              "text": "Scrapes get a bandage.",
+              "kind": "describe"
+            },
+            {
+              "text": "Scrapes heal.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can go slowly.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can stop when I am tired.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "Step by step, it gets a little easier.",
+              "kind": "describe"
+            },
+            {
+              "text": "New things feel strange at first, and then they feel normal.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "pain",
+            "body",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I can stop when I am tired.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can say, I need a break.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "unknown",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Learning to ride can feel scary.",
+              "kind": "describe"
+            },
+            {
+              "text": "The bike may wobble.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes I may fall.",
+              "kind": "describe"
+            },
+            {
+              "text": "A fall can make a scrape.",
+              "kind": "describe"
+            },
+            {
+              "text": "A scrape can sting.",
+              "kind": "describe"
+            },
+            {
+              "text": "My helmet protects my head.",
+              "kind": "describe"
+            },
+            {
+              "text": "Scrapes get a bandage.",
+              "kind": "describe"
+            },
+            {
+              "text": "Scrapes heal.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can go slowly.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can say, I need a break.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "pain",
+            "body",
+            "unknown",
+            "safety"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "Tonight I get ready for bike day.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I practise my helmet.",
+              "kind": "describe"
+            },
+            {
+              "text": "On, strap, click.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then we look at the bike.",
+              "kind": "describe"
+            },
+            {
+              "text": "Seat, pedals, handlebars, brakes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next I practise squeezing the brakes.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, we agree the let-go signal.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: helmet, look ahead, pedal, brake.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "outside",
+          "addresses": [
+            "sensory",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight I get ready for bike day.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I practise my helmet.",
+              "kind": "describe"
+            },
+            {
+              "text": "On, strap, click.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then we look at the bike.",
+              "kind": "describe"
+            },
+            {
+              "text": "Seat, pedals, handlebars, brakes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next I practise squeezing the brakes.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, we agree the let-go signal.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, I picture the flat path.",
+              "kind": "describe"
+            },
+            {
+              "text": "I picture my first glide.",
+              "kind": "describe"
+            },
+            {
+              "text": "I feel ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "Step by step, it gets a little easier.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "sensory",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Last, I picture the flat path.",
+              "kind": "describe"
+            },
+            {
+              "text": "I picture my first glide.",
+              "kind": "describe"
+            },
+            {
+              "text": "I feel ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: helmet, look ahead, pedal, brake.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "outside",
+          "addresses": [
+            "unknown",
+            "safety",
+            "social",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight I get ready for bike day.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I practise my helmet.",
+              "kind": "describe"
+            },
+            {
+              "text": "On, strap, click.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then we look at the bike.",
+              "kind": "describe"
+            },
+            {
+              "text": "Seat, pedals, handlebars, brakes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next I practise squeezing the brakes.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, we agree the let-go signal.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: helmet, look ahead, pedal, brake.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "outside",
+          "addresses": [
+            "sensory",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        }
+      ]
+    }
+  },
+  "badge": {
+    "id": "wheel_hero",
+    "label": "Wheel Hero"
+  },
+  "olderPages": {
+    "what_happens": {
+      "sentences": [
+        {
+          "text": "Balance on a bike comes from forward motion; the faster the wheels turn, the steadier the bike feels.",
+          "kind": "describe"
+        },
+        {
+          "text": "That is why going a little faster often makes it easier, not harder.",
+          "kind": "describe"
+        },
+        {
+          "text": "Steering and looking ahead keep the bike pointed where the rider wants to go.",
+          "kind": "describe"
+        },
+        {
+          "text": "Most kids need several sessions before it clicks.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can count how many pedal strokes they manage each session.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "outside",
+      "addresses": [
+        "body",
+        "sensory",
+        "social"
+      ]
+    },
+    "who_is_there": {
+      "sentences": [
+        {
+          "text": "Agreeing a signal for letting go builds trust; tricking a rider usually makes the next try harder.",
+          "kind": "describe"
+        },
+        {
+          "text": "Path etiquette matters: ride on the right side, ring a bell or call out when passing.",
+          "kind": "describe"
+        },
+        {
+          "text": "Some kids learn faster on a balance bike or with pedals removed first.",
+          "kind": "describe"
+        },
+        {
+          "text": "Watching another kid ride can make the skill click.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can teach a younger kid later, once it clicks.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "outside",
+      "addresses": [
+        "body",
+        "sensory",
+        "unknown",
+        "social"
+      ]
+    },
+    "what_i_do": {
+      "sentences": [
+        {
+          "text": "Starting with one pedal at the top position gives the strongest first push.",
+          "kind": "describe"
+        },
+        {
+          "text": "Looking far ahead makes small wobbles correct themselves.",
+          "kind": "describe"
+        },
+        {
+          "text": "Using both brakes evenly gives the smoothest stop.",
+          "kind": "describe"
+        },
+        {
+          "text": "Short sessions with breaks work better than one long, tired session.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can set a goal, like riding from one bench to the next.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "brave",
+      "background": "outside",
+      "addresses": [
+        "body",
+        "unknown",
+        "safety"
+      ]
+    },
+    "if_scared": {
+      "sentences": [
+        {
+          "text": "Fear of falling is useful; it makes riders careful, and it shrinks as skill grows.",
+          "kind": "describe"
+        },
+        {
+          "text": "Most learning falls are slow and low, causing scrapes rather than serious injuries.",
+          "kind": "describe"
+        },
+        {
+          "text": "Gloves and knee pads can make a nervous rider feel braver.",
+          "kind": "describe"
+        },
+        {
+          "text": "Practising on grass makes falls softer, though pedalling is harder.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can decide how long each session lasts.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "worried",
+      "background": "outside",
+      "addresses": [
+        "pain",
+        "body",
+        "strangers",
+        "unknown"
+      ]
+    },
+    "rehearsal": {
+      "sentences": [
+        {
+          "text": "Checking the bike before riding, tyres, brakes and seat height, is what experienced riders do.",
+          "kind": "describe"
+        },
+        {
+          "text": "The seat should let feet touch the ground for beginners.",
+          "kind": "describe"
+        },
+        {
+          "text": "Choosing a quiet, flat place makes the first session a success.",
+          "kind": "describe"
+        },
+        {
+          "text": "Having water and a snack keeps energy up.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can be in charge of the pre-ride check.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "happy",
+      "background": "outside",
+      "addresses": [
+        "body",
+        "sensory",
+        "strangers",
+        "unknown"
+      ]
+    }
+  }
+}

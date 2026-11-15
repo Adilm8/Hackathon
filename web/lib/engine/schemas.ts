@@ -17,6 +17,27 @@ export const ISODateSchema = z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'expected Y
 export const EventTypeEnum = z.enum([
   'dentist', 'school', 'flight', 'sibling', 'haircut', 'shot',
   'doctor', 'blood_test', 'hospital', 'moving', 'sleepover', 'babysitter', 'swimming', 'party',
+  'tooth_loss',
+  'surgery',
+  'potty',
+  'daycare',
+  'new_school',
+  'camp',
+  'sports',
+  'performance',
+  'new_class',
+  'bike',
+  'road_trip',
+  'holiday',
+  'halloween',
+  'playdate',
+  'eye_exam',
+  'big_bed',
+  'test_day',
+  'two_homes',
+  'new_pet',
+  'pet_loss',
+  'parent_trip',
   'other',
 ]);
 export const BeatEnum = z.enum(['what_happens', 'who_is_there', 'what_i_do', 'if_scared', 'rehearsal']);
@@ -187,6 +208,7 @@ export const CheckinSchema = z.strictObject({
   helped: z.array(z.string().max(80)).max(20),
   didntHelp: z.array(z.string().max(80)).max(20),
   custom: z.string().max(60).optional(),
+  brave: z.array(z.string().max(40)).max(2).optional(),
   savedOn: ISODateSchema,
 });
 
@@ -349,6 +371,7 @@ export const EventTemplateSchema = z.strictObject({
         text: z.string().min(1),
         topic: TopicEnum,
         fallbackAnswer: z.array(z.string()).min(2).max(3),
+        ages: z.tuple([z.number().int().min(2).max(12), z.number().int().min(2).max(12)]).optional(),
       }),
     )
     .min(3),

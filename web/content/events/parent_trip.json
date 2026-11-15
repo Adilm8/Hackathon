@@ -1,0 +1,2473 @@
+{
+  "type": "parent_trip",
+  "version": 1,
+  "label": "Grown-up goes away for a while",
+  "countdownLabel": "the day the trip starts",
+  "beats": {
+    "what_happens": {
+      "title": "What happens when a grown-up goes away",
+      "goals": [
+        "The grown-up goes away for a set number of days",
+        "Someone the child knows looks after them",
+        "The grown-up comes back on a known day"
+      ],
+      "parentSkill": "Explain the trip in sleeps: 'I'm going for five sleeps for work. On the sixth day, I come home.'"
+    },
+    "who_is_there": {
+      "title": "Who looks after me",
+      "goals": [
+        "A known grown-up looks after the child",
+        "The away grown-up stays in touch",
+        "Teachers and friends can know"
+      ],
+      "parentSkill": "Name exactly who will do school runs, meals and bedtime while you are away."
+    },
+    "what_i_do": {
+      "title": "What I do while they are away",
+      "goals": [
+        "Cross off the days on the calendar",
+        "Stay in touch: calls, drawings, a journal",
+        "Keep my routines"
+      ],
+      "parentSkill": "Leave a small item, like a T-shirt or a recorded story, and set up a simple way to share news."
+    },
+    "if_scared": {
+      "title": "If I miss them a lot",
+      "goals": [
+        "Missing someone is normal",
+        "Feelings can be sad, angry or worried",
+        "Calm tools: the calendar, a hug, the smell T-shirt, slow breaths"
+      ],
+      "parentSkill": "Name the feeling and point to the plan: 'You miss Papa. Three more sleeps, then he's home.'"
+    },
+    "rehearsal": {
+      "title": "Let's get ready for the trip",
+      "goals": [
+        "Make the countdown calendar",
+        "Plan how to stay in touch",
+        "Choose the goodbye ritual and the welcome-home plan"
+      ],
+      "parentSkill": "Make the countdown calendar together and record a bedtime story before you leave."
+    }
+  },
+  "steps": [
+    "The grown-up explains where they are going and for how long",
+    "Make a countdown calendar with the days away",
+    "Say a special goodbye before the trip",
+    "Stay home with another grown-up who looks after me",
+    "Call, video chat or send pictures, as agreed",
+    "Cross off each day on the calendar",
+    "Welcome the grown-up home with a hug"
+  ],
+  "sensory": [
+    "an empty chair at the table",
+    "the grown-up's voice on a phone or a video call",
+    "a suitcase by the door",
+    "a T-shirt or pillow that smells like the grown-up",
+    "a calendar with crossed-off days",
+    "a big hug at the door"
+  ],
+  "honestyNotes": "Children may miss the grown-up a lot, feel angry or act out; never promise calls at exact times unless they are certain, and never promise the child will not feel sad. Use sleeps or days, not vague words like 'soon'. For deployments or long absences, let the parent decide how much detail to share.",
+  "questionButtons": [
+    {
+      "id": "how_long",
+      "text": "How long will you be gone?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "[[GROWNUP]] will tell you how many sleeps.",
+        "We can count them on the countdown calendar."
+      ]
+    },
+    {
+      "id": "come_back",
+      "text": "Will you come back?",
+      "topic": "separation",
+      "fallbackAnswer": [
+        "Yes. [[GROWNUP]] will tell you the coming-home day.",
+        "We will cross off the days until then."
+      ]
+    },
+    {
+      "id": "who",
+      "text": "Who will look after me?",
+      "topic": "strangers",
+      "fallbackAnswer": [
+        "A grown-up you know and trust will look after you.",
+        "[[GROWNUP]] will tell you who."
+      ]
+    },
+    {
+      "id": "call",
+      "text": "Can we talk every day?",
+      "topic": "separation",
+      "fallbackAnswer": [
+        "We will try to call or send messages when we can.",
+        "Sometimes a call is missed because of time or work, and that is okay."
+      ]
+    },
+    {
+      "id": "why",
+      "text": "Why do you have to go?",
+      "topic": "other",
+      "fallbackAnswer": [
+        "[[GROWNUP]] will tell you the reason, maybe work or helping family.",
+        "Going away does not change how much [[GROWNUP]] loves you."
+      ]
+    },
+    {
+      "id": "miss",
+      "text": "What if I miss you too much?",
+      "topic": "love",
+      "fallbackAnswer": [
+        "Missing someone is normal and shows how much you love them.",
+        "You can hug the special T-shirt and look at the calendar."
+      ]
+    },
+    {
+      "id": "safe",
+      "text": "Will you be safe?",
+      "topic": "safety",
+      "fallbackAnswer": [
+        "[[GROWNUP]] will be careful and tell you about the trip.",
+        "You can ask any question."
+      ]
+    },
+    {
+      "id": "bedtime",
+      "text": "Who will do bedtime?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "The grown-up at home will do your bedtime steps.",
+        "You can listen to a recorded story too."
+      ]
+    },
+    {
+      "id": "cross",
+      "text": "Why do I feel cross?",
+      "topic": "body",
+      "fallbackAnswer": [
+        "Missing someone can feel cross or grumpy, not only sad.",
+        "Telling the grown-up at home helps."
+      ]
+    },
+    {
+      "id": "present",
+      "text": "Will you bring me something?",
+      "topic": "social",
+      "fallbackAnswer": [
+        "[[GROWNUP]] will tell you.",
+        "The best present is the welcome-home hug."
+      ],
+      "ages": [
+        2,
+        8
+      ]
+    },
+    {
+      "id": "time_zone",
+      "text": "Why is it night there when it is day here?",
+      "topic": "sensory",
+      "fallbackAnswer": [
+        "The world is round, and the sun shines on different places at different times.",
+        "That is why calls can be at funny times."
+      ],
+      "ages": [
+        6,
+        12
+      ]
+    }
+  ],
+  "techniques": [
+    {
+      "id": "countdown",
+      "label": "A countdown calendar",
+      "how": "Make a calendar with a box for each sleep.",
+      "topics": [
+        "unknown",
+        "separation"
+      ]
+    },
+    {
+      "id": "smell_shirt",
+      "label": "A T-shirt that smells like home",
+      "how": "Leave a worn T-shirt or pillowcase to hug.",
+      "topics": [
+        "separation",
+        "sensory",
+        "love"
+      ]
+    },
+    {
+      "id": "recorded_story",
+      "label": "A recorded story",
+      "how": "Record bedtime stories before leaving.",
+      "topics": [
+        "separation",
+        "love"
+      ]
+    },
+    {
+      "id": "goodbye_ritual",
+      "label": "A goodbye ritual",
+      "how": "Choose a hug, a high five and a special word.",
+      "topics": [
+        "separation",
+        "love"
+      ]
+    },
+    {
+      "id": "news_journal",
+      "label": "A news journal",
+      "how": "Draw or write news to share on calls or at home.",
+      "topics": [
+        "social",
+        "love"
+      ]
+    },
+    {
+      "id": "map_look",
+      "label": "Looking at the map",
+      "how": "Show on a map where the grown-up will be.",
+      "topics": [
+        "unknown",
+        "safety"
+      ]
+    },
+    {
+      "id": "same_routine",
+      "label": "Same routines",
+      "how": "Keep school, meals and bedtime the same.",
+      "topics": [
+        "safety",
+        "body"
+      ]
+    },
+    {
+      "id": "tell_teacher",
+      "label": "Telling the teacher",
+      "how": "Let the teacher know about the trip.",
+      "topics": [
+        "strangers",
+        "social"
+      ]
+    },
+    {
+      "id": "deep_breaths",
+      "label": "Smell the flower, blow the candle",
+      "how": "Breathe in slowly through the nose and out like blowing a candle.",
+      "topics": [
+        "pain",
+        "sensory",
+        "safety",
+        "body"
+      ]
+    }
+  ],
+  "ritual": [
+    "Cross off one sleep",
+    "Hug the T-shirt, hear the story",
+    "One day closer to the welcome hug"
+  ],
+  "phrases": {
+    "pain": [
+      "Missing someone can hurt inside. I am here.",
+      "Let's breathe together."
+    ],
+    "body": [
+      "Missing someone can feel grumpy or tired.",
+      "A good sleep helps the days go by."
+    ],
+    "sensory": [
+      "This T-shirt smells like them. Give it a hug.",
+      "Their voice on the call sounds far away, and they are listening."
+    ],
+    "strangers": [
+      "Grandma knows all your bedtime steps.",
+      "Your teacher knows, so you can tell her how you feel."
+    ],
+    "separation": [
+      "Three more sleeps, then the welcome hug.",
+      "They think of you every day."
+    ],
+    "unknown": [
+      "Cross off a day each evening.",
+      "The calendar shows the coming-home day."
+    ],
+    "safety": [
+      "They will be careful on the trip.",
+      "You are safe here at home."
+    ],
+    "social": [
+      "Let's save up news for the call.",
+      "Other kids have grown-ups who travel too."
+    ],
+    "love": [
+      "Going away does not change their love.",
+      "I'm proud of you for being so brave."
+    ]
+  },
+  "topicWords": {
+    "pain": [
+      "hurt",
+      "sad",
+      "cross",
+      "grumpy",
+      "sore"
+    ],
+    "body": [
+      "tired",
+      "sleep",
+      "meals",
+      "bedtime",
+      "beak",
+      "body"
+    ],
+    "sensory": [
+      "smells",
+      "smelled",
+      "smell",
+      "voice",
+      "empty",
+      "sounds",
+      "night",
+      "day"
+    ],
+    "strangers": [
+      "grandma",
+      "grandparent",
+      "teacher",
+      "family friend",
+      "teacher seal",
+      "trusted"
+    ],
+    "separation": [
+      "away",
+      "miss",
+      "comes home",
+      "come home",
+      "coming-home",
+      "goodbye",
+      "call",
+      "calls",
+      "keep in touch",
+      "right there",
+      "stay",
+      "close",
+      "with me",
+      "with you",
+      "together",
+      "comes back",
+      "back",
+      "hand",
+      "nearby"
+    ],
+    "unknown": [
+      "first",
+      "then",
+      "next",
+      "after",
+      "last",
+      "sleeps",
+      "calendar",
+      "countdown",
+      "step",
+      "steps"
+    ],
+    "safety": [
+      "safe",
+      "careful",
+      "same",
+      "routine",
+      "routines",
+      "trusted",
+      "break",
+      "stop",
+      "help"
+    ],
+    "social": [
+      "friends",
+      "friend",
+      "kids",
+      "family",
+      "everyone",
+      "news",
+      "children",
+      "people",
+      "others"
+    ],
+    "love": [
+      "love",
+      "loves",
+      "hug",
+      "proud",
+      "cuddle"
+    ]
+  },
+  "backgrounds": [
+    "home-evening",
+    "cosy-room",
+    "outside"
+  ],
+  "fallbackPages": {
+    "story": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "Soon one of [[CHILD]]'s grown-ups will go away for a while.",
+              "kind": "describe"
+            },
+            {
+              "text": "It might be for work, to help family, or for another reason.",
+              "kind": "describe"
+            },
+            {
+              "text": "The grown-up will tell [[CHILD]] how many sleeps it lasts.",
+              "kind": "describe"
+            },
+            {
+              "text": "A countdown calendar shows each day.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Before bed, here is a story about a young penguin called Pip.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pip's papa had to swim far away to the fishing grounds for work.",
+              "kind": "describe"
+            },
+            {
+              "text": "I will be gone for five sleeps, he said.",
+              "kind": "describe"
+            },
+            {
+              "text": "On the sixth day, I will swim home.",
+              "kind": "describe"
+            },
+            {
+              "text": "They made an ice calendar with five little snowflakes.",
+              "kind": "describe"
+            },
+            {
+              "text": "While Papa was away, Mama and Grandma looked after Pip.",
+              "kind": "describe"
+            },
+            {
+              "text": "Every evening, Pip crossed off one snowflake.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some evenings, Papa sent a message with a seagull.",
+              "kind": "describe"
+            },
+            {
+              "text": "On the fifth night, there was just one snowflake left.",
+              "kind": "describe"
+            },
+            {
+              "text": "In the morning, Papa waddled out of the sea, and Pip ran to hug him.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "strangers"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "While the grown-up is away, another grown-up [[CHILD]] knows will look after [[CHILD]].",
+              "kind": "describe"
+            },
+            {
+              "text": "The routines stay mostly the same: school, meals and bedtime.",
+              "kind": "describe"
+            },
+            {
+              "text": "There may be calls, video chats or pictures.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, on the coming-home day, there is a big hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can cross off one day each evening on the countdown calendar.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Soon one of [[CHILD]]'s grown-ups will go away for a while.",
+              "kind": "describe"
+            },
+            {
+              "text": "It might be for work, to help family, or for another reason.",
+              "kind": "describe"
+            },
+            {
+              "text": "The grown-up will tell [[CHILD]] how many sleeps it lasts.",
+              "kind": "describe"
+            },
+            {
+              "text": "A countdown calendar shows each day.",
+              "kind": "describe"
+            },
+            {
+              "text": "While the grown-up is away, another grown-up [[CHILD]] knows will look after [[CHILD]].",
+              "kind": "describe"
+            },
+            {
+              "text": "The routines stay mostly the same: school, meals and bedtime.",
+              "kind": "describe"
+            },
+            {
+              "text": "There may be calls, video chats or pictures.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, on the coming-home day, there is a big hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can cross off one day each evening on the countdown calendar.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "separation"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "While one grown-up is away, [[CHILD]] stays with someone known and trusted.",
+              "kind": "describe"
+            },
+            {
+              "text": "It might be the other grown-up, a grandparent or a family friend.",
+              "kind": "describe"
+            },
+            {
+              "text": "They know the routines and the bedtime steps.",
+              "kind": "describe"
+            },
+            {
+              "text": "The away grown-up still thinks about the family every day.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Pip the penguin had lots of helpers.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama Penguin made his favourite fish soup.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grandma Penguin did the bedtime story, the same one Papa always read.",
+              "kind": "describe"
+            },
+            {
+              "text": "At school, Teacher Seal said, I heard your papa is away, you can tell me if you miss him.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pip's friend the puffin said, my mama goes away sometimes too.",
+              "kind": "describe"
+            },
+            {
+              "text": "What do you do, asked Pip.",
+              "kind": "describe"
+            },
+            {
+              "text": "I draw her pictures to give her when she comes back, said the puffin.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pip thought that was a great idea.",
+              "kind": "describe"
+            },
+            {
+              "text": "That night, Papa's voice came through on the shell phone.",
+              "kind": "describe"
+            },
+            {
+              "text": "Goodnight, Pip, I am thinking of you.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "They may call, video chat or send pictures and messages.",
+              "kind": "describe"
+            },
+            {
+              "text": "Teachers can know, so they understand if feelings are big.",
+              "kind": "describe"
+            },
+            {
+              "text": "Friends' grown-ups go on trips sometimes too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Everyone helps the days go by.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can tell the grown-up at home, I miss them, and ask for a hug.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "separation",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "While one grown-up is away, [[CHILD]] stays with someone known and trusted.",
+              "kind": "describe"
+            },
+            {
+              "text": "It might be the other grown-up, a grandparent or a family friend.",
+              "kind": "describe"
+            },
+            {
+              "text": "They know the routines and the bedtime steps.",
+              "kind": "describe"
+            },
+            {
+              "text": "The away grown-up still thinks about the family every day.",
+              "kind": "describe"
+            },
+            {
+              "text": "They may call, video chat or send pictures and messages.",
+              "kind": "describe"
+            },
+            {
+              "text": "Teachers can know, so they understand if feelings are big.",
+              "kind": "describe"
+            },
+            {
+              "text": "Friends' grown-ups go on trips sometimes too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Everyone helps the days go by.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can tell the grown-up at home, I miss them, and ask for a hug.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "While the grown-up is away, [[CHILD]] crosses off one day each evening.",
+              "kind": "describe"
+            },
+            {
+              "text": "Drawing pictures or writing a journal to show them later is fun.",
+              "kind": "describe"
+            },
+            {
+              "text": "Calls and video chats happen when they can.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes a call is missed, because of time or work, and that is okay.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "pain",
+            "sensory",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Pip the penguin had jobs while Papa was away.",
+              "kind": "describe"
+            },
+            {
+              "text": "Every evening, he crossed off a snowflake.",
+              "kind": "describe"
+            },
+            {
+              "text": "He drew a picture of himself sliding on the ice, for Papa.",
+              "kind": "describe"
+            },
+            {
+              "text": "At bedtime, he hugged Papa's old scarf, which smelled like home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grandma played Papa's recorded story about the moon fish.",
+              "kind": "describe"
+            },
+            {
+              "text": "One evening, Papa could not call, because he was out at sea.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pip felt sad, but Mama said, he will call when he can.",
+              "kind": "describe"
+            },
+            {
+              "text": "The next day, Papa called, and Pip told him all the news.",
+              "kind": "describe"
+            },
+            {
+              "text": "I slid the whole hill, said Pip.",
+              "kind": "describe"
+            },
+            {
+              "text": "Papa said, I cannot wait to see.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "strangers"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "[[CHILD]] can hug a T-shirt or a pillow that smells like the grown-up.",
+              "kind": "describe"
+            },
+            {
+              "text": "Listening to a recorded story or a voice message helps at bedtime.",
+              "kind": "describe"
+            },
+            {
+              "text": "School, playing and meals keep going as usual.",
+              "kind": "describe"
+            },
+            {
+              "text": "The countdown gets shorter every day.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can save up news to share on the next call.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "While the grown-up is away, [[CHILD]] crosses off one day each evening.",
+              "kind": "describe"
+            },
+            {
+              "text": "Drawing pictures or writing a journal to show them later is fun.",
+              "kind": "describe"
+            },
+            {
+              "text": "Calls and video chats happen when they can.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes a call is missed, because of time or work, and that is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can hug a T-shirt or a pillow that smells like the grown-up.",
+              "kind": "describe"
+            },
+            {
+              "text": "Listening to a recorded story or a voice message helps at bedtime.",
+              "kind": "describe"
+            },
+            {
+              "text": "School, playing and meals keep going as usual.",
+              "kind": "describe"
+            },
+            {
+              "text": "The countdown gets shorter every day.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can save up news to share on the next call.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "separation"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "Missing the away grown-up can feel big.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bedtime and quiet times can feel the hardest.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids feel sad, some feel cross, and some feel worried.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids worry about the grown-up being far away.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel all of these things.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "worried",
+          "background": "home-evening",
+          "addresses": [
+            "pain",
+            "body",
+            "separation",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Pip the penguin missed Papa a lot one night.",
+              "kind": "describe"
+            },
+            {
+              "text": "He felt sad and cross at the same time.",
+              "kind": "describe"
+            },
+            {
+              "text": "He did not want to brush his beak or go to bed.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama did not say, stop being sad.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama said, you miss Papa, and that is a big feeling.",
+              "kind": "describe"
+            },
+            {
+              "text": "Let's look at the calendar.",
+              "kind": "describe"
+            },
+            {
+              "text": "There were only two snowflakes left.",
+              "kind": "describe"
+            },
+            {
+              "text": "Two more sleeps, said Pip.",
+              "kind": "describe"
+            },
+            {
+              "text": "He hugged Papa's scarf and smelled a flower slowly, and blew a candle.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then he felt a little calmer.",
+              "kind": "describe"
+            },
+            {
+              "text": "Worried and brave can happen at the same time.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Talking about the feelings helps.",
+              "kind": "describe"
+            },
+            {
+              "text": "The countdown calendar shows the days getting fewer.",
+              "kind": "describe"
+            },
+            {
+              "text": "Each day gone is one day closer to the hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can take slow breaths, smell the flower and blow the candle.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can look at the calendar and count the sleeps left.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Missing the away grown-up can feel big.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bedtime and quiet times can feel the hardest.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids feel sad, some feel cross, and some feel worried.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids worry about the grown-up being far away.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel all of these things.",
+              "kind": "describe"
+            },
+            {
+              "text": "Talking about the feelings helps.",
+              "kind": "describe"
+            },
+            {
+              "text": "The countdown calendar shows the days getting fewer.",
+              "kind": "describe"
+            },
+            {
+              "text": "Each day gone is one day closer to the hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can take slow breaths, smell the flower and blow the candle.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can look at the calendar and count the sleeps left.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "separation"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "Tonight [[CHILD]] and [[GROWNUP]] can get ready for the trip.",
+              "kind": "describe"
+            },
+            {
+              "text": "First they make a countdown calendar with a box for each sleep.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then they look at a map of where the grown-up is going.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next they plan how to keep in touch: calls, pictures or messages.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Pip the penguin got ready with Papa before the trip.",
+              "kind": "describe"
+            },
+            {
+              "text": "They made the ice calendar with five snowflakes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Papa showed Pip a map with the fishing grounds far away.",
+              "kind": "describe"
+            },
+            {
+              "text": "They planned the seagull messages.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then they chose a goodbye: a flipper hug, a beak tap and the word, splash.",
+              "kind": "describe"
+            },
+            {
+              "text": "Papa recorded the moon fish story on a shell.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pip planned the welcome: a slide down the hill into Papa's flippers.",
+              "kind": "describe"
+            },
+            {
+              "text": "They practised it, whee.",
+              "kind": "describe"
+            },
+            {
+              "text": "Papa said, five sleeps, then splash.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pip felt ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "And Pip slept well that night.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "After that, [[CHILD]] chooses the goodbye ritual: a hug, a high five and a special word.",
+              "kind": "describe"
+            },
+            {
+              "text": "They record a bedtime story to listen to while apart.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, they plan the welcome-home moment.",
+              "kind": "describe"
+            },
+            {
+              "text": "Planning makes the days apart feel more manageable.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say: count the sleeps, keep in touch, welcome home hug.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight [[CHILD]] and [[GROWNUP]] can get ready for the trip.",
+              "kind": "describe"
+            },
+            {
+              "text": "First they make a countdown calendar with a box for each sleep.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then they look at a map of where the grown-up is going.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next they plan how to keep in touch: calls, pictures or messages.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, [[CHILD]] chooses the goodbye ritual: a hug, a high five and a special word.",
+              "kind": "describe"
+            },
+            {
+              "text": "They record a bedtime story to listen to while apart.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, they plan the welcome-home moment.",
+              "kind": "describe"
+            },
+            {
+              "text": "Planning makes the days apart feel more manageable.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say: count the sleeps, keep in touch, welcome home hug.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        }
+      ]
+    },
+    "social": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "Soon one of my grown-ups goes away.",
+              "kind": "describe"
+            },
+            {
+              "text": "It might be for work.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is for a number of sleeps.",
+              "kind": "describe"
+            },
+            {
+              "text": "A countdown calendar shows each day.",
+              "kind": "describe"
+            },
+            {
+              "text": "Another grown-up looks after me.",
+              "kind": "describe"
+            },
+            {
+              "text": "Someone I know.",
+              "kind": "describe"
+            },
+            {
+              "text": "My routines stay the same.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can cross off one day each evening.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Soon one of my grown-ups goes away.",
+              "kind": "describe"
+            },
+            {
+              "text": "It might be for work.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is for a number of sleeps.",
+              "kind": "describe"
+            },
+            {
+              "text": "A countdown calendar shows each day.",
+              "kind": "describe"
+            },
+            {
+              "text": "Another grown-up looks after me.",
+              "kind": "describe"
+            },
+            {
+              "text": "Someone I know.",
+              "kind": "describe"
+            },
+            {
+              "text": "My routines stay the same.",
+              "kind": "describe"
+            },
+            {
+              "text": "School, meals and bedtime.",
+              "kind": "describe"
+            },
+            {
+              "text": "We may call or send pictures.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, my grown-up comes home.",
+              "kind": "describe"
+            },
+            {
+              "text": "We have a big hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to miss my grown-up, and lots of kids feel this way.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for being brave.",
+              "kind": "describe"
+            },
+            {
+              "text": "Every day is one day closer to the big welcome hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "School, meals and bedtime.",
+              "kind": "describe"
+            },
+            {
+              "text": "We may call or send pictures.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, my grown-up comes home.",
+              "kind": "describe"
+            },
+            {
+              "text": "We have a big hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can cross off one day each evening.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to miss my grown-up, and lots of kids feel this way.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for being brave.",
+              "kind": "describe"
+            },
+            {
+              "text": "Every day is one day closer to the big welcome hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Soon one of my grown-ups goes away.",
+              "kind": "describe"
+            },
+            {
+              "text": "It might be for work.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is for a number of sleeps.",
+              "kind": "describe"
+            },
+            {
+              "text": "A countdown calendar shows each day.",
+              "kind": "describe"
+            },
+            {
+              "text": "Another grown-up looks after me.",
+              "kind": "describe"
+            },
+            {
+              "text": "Someone I know.",
+              "kind": "describe"
+            },
+            {
+              "text": "My routines stay the same.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can cross off one day each evening.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to miss my grown-up, and lots of kids feel this way.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for being brave.",
+              "kind": "describe"
+            },
+            {
+              "text": "Every day is one day closer to the big welcome hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "separation"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "A grown-up I know looks after me.",
+              "kind": "describe"
+            },
+            {
+              "text": "Maybe my other grown-up.",
+              "kind": "describe"
+            },
+            {
+              "text": "Maybe a grandparent.",
+              "kind": "describe"
+            },
+            {
+              "text": "They know my routines.",
+              "kind": "describe"
+            },
+            {
+              "text": "My away grown-up thinks of me every day.",
+              "kind": "describe"
+            },
+            {
+              "text": "They may call or send pictures.",
+              "kind": "describe"
+            },
+            {
+              "text": "My teacher can know.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say, I miss them, and ask for a hug.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "A grown-up I know looks after me.",
+              "kind": "describe"
+            },
+            {
+              "text": "Maybe my other grown-up.",
+              "kind": "describe"
+            },
+            {
+              "text": "Maybe a grandparent.",
+              "kind": "describe"
+            },
+            {
+              "text": "They know my routines.",
+              "kind": "describe"
+            },
+            {
+              "text": "My away grown-up thinks of me every day.",
+              "kind": "describe"
+            },
+            {
+              "text": "They may call or send pictures.",
+              "kind": "describe"
+            },
+            {
+              "text": "My teacher can know.",
+              "kind": "describe"
+            },
+            {
+              "text": "Friends' grown-ups go on trips too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Everyone helps.",
+              "kind": "describe"
+            },
+            {
+              "text": "The days go by.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to miss my grown-up, and lots of kids feel this way.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for being brave.",
+              "kind": "describe"
+            },
+            {
+              "text": "Every day is one day closer to the big welcome hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Friends' grown-ups go on trips too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Everyone helps.",
+              "kind": "describe"
+            },
+            {
+              "text": "The days go by.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say, I miss them, and ask for a hug.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to miss my grown-up, and lots of kids feel this way.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for being brave.",
+              "kind": "describe"
+            },
+            {
+              "text": "Every day is one day closer to the big welcome hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "sensory",
+            "separation",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "A grown-up I know looks after me.",
+              "kind": "describe"
+            },
+            {
+              "text": "Maybe my other grown-up.",
+              "kind": "describe"
+            },
+            {
+              "text": "Maybe a grandparent.",
+              "kind": "describe"
+            },
+            {
+              "text": "They know my routines.",
+              "kind": "describe"
+            },
+            {
+              "text": "My away grown-up thinks of me every day.",
+              "kind": "describe"
+            },
+            {
+              "text": "They may call or send pictures.",
+              "kind": "describe"
+            },
+            {
+              "text": "My teacher can know.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say, I miss them, and ask for a hug.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to miss my grown-up, and lots of kids feel this way.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for being brave.",
+              "kind": "describe"
+            },
+            {
+              "text": "Every day is one day closer to the big welcome hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "I cross off one day each evening.",
+              "kind": "describe"
+            },
+            {
+              "text": "I draw pictures.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can keep a journal.",
+              "kind": "describe"
+            },
+            {
+              "text": "We call when we can.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes a call is missed.",
+              "kind": "describe"
+            },
+            {
+              "text": "That is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can hug a T-shirt that smells like them.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can save up news for the next call.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "pain",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I cross off one day each evening.",
+              "kind": "describe"
+            },
+            {
+              "text": "I draw pictures.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can keep a journal.",
+              "kind": "describe"
+            },
+            {
+              "text": "We call when we can.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes a call is missed.",
+              "kind": "describe"
+            },
+            {
+              "text": "That is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can hug a T-shirt that smells like them.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can listen to a recorded story.",
+              "kind": "describe"
+            },
+            {
+              "text": "School and play keep going.",
+              "kind": "describe"
+            },
+            {
+              "text": "The countdown gets shorter.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to miss my grown-up, and lots of kids feel this way.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for being brave.",
+              "kind": "describe"
+            },
+            {
+              "text": "Every day is one day closer to the big welcome hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "pain",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I can listen to a recorded story.",
+              "kind": "describe"
+            },
+            {
+              "text": "School and play keep going.",
+              "kind": "describe"
+            },
+            {
+              "text": "The countdown gets shorter.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can save up news for the next call.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to miss my grown-up, and lots of kids feel this way.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for being brave.",
+              "kind": "describe"
+            },
+            {
+              "text": "Every day is one day closer to the big welcome hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "sensory",
+            "separation",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I cross off one day each evening.",
+              "kind": "describe"
+            },
+            {
+              "text": "I draw pictures.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can keep a journal.",
+              "kind": "describe"
+            },
+            {
+              "text": "We call when we can.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes a call is missed.",
+              "kind": "describe"
+            },
+            {
+              "text": "That is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can hug a T-shirt that smells like them.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can save up news for the next call.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to miss my grown-up, and lots of kids feel this way.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for being brave.",
+              "kind": "describe"
+            },
+            {
+              "text": "Every day is one day closer to the big welcome hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "pain",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "I may miss my grown-up a lot.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bedtime can feel hardest.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel sad.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel cross.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel worried.",
+              "kind": "describe"
+            },
+            {
+              "text": "All these feelings are okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "Talking helps.",
+              "kind": "describe"
+            },
+            {
+              "text": "The calendar shows the days.",
+              "kind": "describe"
+            },
+            {
+              "text": "The days get fewer.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "worried",
+          "background": "home-evening",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I may miss my grown-up a lot.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bedtime can feel hardest.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel sad.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel cross.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel worried.",
+              "kind": "describe"
+            },
+            {
+              "text": "All these feelings are okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "Talking helps.",
+              "kind": "describe"
+            },
+            {
+              "text": "The calendar shows the days.",
+              "kind": "describe"
+            },
+            {
+              "text": "The days get fewer.",
+              "kind": "describe"
+            },
+            {
+              "text": "Each day is closer to the hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to miss my grown-up, and lots of kids feel this way.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for being brave.",
+              "kind": "describe"
+            },
+            {
+              "text": "Every day is one day closer to the big welcome hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "Step by step, it gets a little easier.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Each day is closer to the hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can count the sleeps left.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to miss my grown-up, and lots of kids feel this way.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for being brave.",
+              "kind": "describe"
+            },
+            {
+              "text": "Every day is one day closer to the big welcome hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I may miss my grown-up a lot.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bedtime can feel hardest.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel sad.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel cross.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel worried.",
+              "kind": "describe"
+            },
+            {
+              "text": "All these feelings are okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "Talking helps.",
+              "kind": "describe"
+            },
+            {
+              "text": "The calendar shows the days.",
+              "kind": "describe"
+            },
+            {
+              "text": "The days get fewer.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can count the sleeps left.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to miss my grown-up, and lots of kids feel this way.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for being brave.",
+              "kind": "describe"
+            },
+            {
+              "text": "Every day is one day closer to the big welcome hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "separation"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "Tonight we get ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "First we make a countdown calendar.",
+              "kind": "describe"
+            },
+            {
+              "text": "A box for each sleep.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then we look at a map.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next we plan how to keep in touch.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, I choose our goodbye.",
+              "kind": "describe"
+            },
+            {
+              "text": "A hug and a special word.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: count the sleeps, keep in touch, welcome home.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "separation",
+            "unknown",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight we get ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "First we make a countdown calendar.",
+              "kind": "describe"
+            },
+            {
+              "text": "A box for each sleep.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then we look at a map.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next we plan how to keep in touch.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, I choose our goodbye.",
+              "kind": "describe"
+            },
+            {
+              "text": "A hug and a special word.",
+              "kind": "describe"
+            },
+            {
+              "text": "We record a bedtime story.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, we plan the welcome home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Planning helps.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to miss my grown-up, and lots of kids feel this way.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for being brave.",
+              "kind": "describe"
+            },
+            {
+              "text": "Every day is one day closer to the big welcome hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "We record a bedtime story.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, we plan the welcome home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Planning helps.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: count the sleeps, keep in touch, welcome home.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to miss my grown-up, and lots of kids feel this way.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for being brave.",
+              "kind": "describe"
+            },
+            {
+              "text": "Every day is one day closer to the big welcome hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight we get ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "First we make a countdown calendar.",
+              "kind": "describe"
+            },
+            {
+              "text": "A box for each sleep.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then we look at a map.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next we plan how to keep in touch.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, I choose our goodbye.",
+              "kind": "describe"
+            },
+            {
+              "text": "A hug and a special word.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: count the sleeps, keep in touch, welcome home.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to miss my grown-up, and lots of kids feel this way.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for being brave.",
+              "kind": "describe"
+            },
+            {
+              "text": "Every day is one day closer to the big welcome hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        }
+      ]
+    }
+  },
+  "badge": {
+    "id": "countdown_champ",
+    "label": "Countdown Champ"
+  },
+  "olderPages": {
+    "what_happens": {
+      "sentences": [
+        {
+          "text": "Grown-ups travel for work, for training, to care for relatives, or for military service.",
+          "kind": "describe"
+        },
+        {
+          "text": "Knowing exactly how long and where helps the waiting feel more manageable.",
+          "kind": "describe"
+        },
+        {
+          "text": "Time zones can make calls tricky, so plans may change.",
+          "kind": "describe"
+        },
+        {
+          "text": "Families often find new routines while someone is away, which can be fun too.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can look at a map of where the grown-up is going.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "home-evening",
+      "addresses": [
+        "separation",
+        "safety"
+      ]
+    },
+    "who_is_there": {
+      "sentences": [
+        {
+          "text": "Kids sometimes feel extra responsible while a parent is away, but taking care of the household is the grown-ups' job.",
+          "kind": "describe"
+        },
+        {
+          "text": "Military families and families with travelling parents often have support groups and resources.",
+          "kind": "describe"
+        },
+        {
+          "text": "Letting the school know helps teachers spot when a kid needs extra support.",
+          "kind": "describe"
+        },
+        {
+          "text": "It is normal to feel closer to the at-home grown-up and also to feel frustrated with them.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can keep a list of news to share on calls.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "home-evening",
+      "addresses": [
+        "strangers",
+        "separation",
+        "safety",
+        "social"
+      ]
+    },
+    "what_i_do": {
+      "sentences": [
+        {
+          "text": "Keeping a shared photo album or a journal makes it easier to catch up.",
+          "kind": "describe"
+        },
+        {
+          "text": "Planning a special activity for the at-home days helps time pass.",
+          "kind": "describe"
+        },
+        {
+          "text": "Writing letters or emails can be a nice change from calls.",
+          "kind": "describe"
+        },
+        {
+          "text": "It is okay to have days when you do not feel like talking on the phone.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can be in charge of the countdown and announcing how many sleeps are left.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "brave",
+      "background": "home-evening",
+      "addresses": [
+        "body",
+        "sensory",
+        "separation",
+        "unknown"
+      ]
+    },
+    "if_scared": {
+      "sentences": [
+        {
+          "text": "Missing someone often shows up as grumpiness or trouble sleeping, not only as sadness.",
+          "kind": "describe"
+        },
+        {
+          "text": "Worries about safety, especially with long trips or deployments, are normal, and asking questions helps.",
+          "kind": "describe"
+        },
+        {
+          "text": "Keeping a worry journal or talking to the at-home grown-up gives worries somewhere to go.",
+          "kind": "describe"
+        },
+        {
+          "text": "The reunion can feel strange too, as everyone gets used to being together again.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can plan the welcome-home moment.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "worried",
+      "background": "home-evening",
+      "addresses": [
+        "pain",
+        "body",
+        "separation",
+        "safety"
+      ]
+    },
+    "rehearsal": {
+      "sentences": [
+        {
+          "text": "Talking openly before the trip about feelings and plans makes the goodbye smoother.",
+          "kind": "describe"
+        },
+        {
+          "text": "Shared activities, like reading the same book in two places, keep a connection.",
+          "kind": "describe"
+        },
+        {
+          "text": "Agreeing on a call schedule, with a backup if it fails, avoids disappointment.",
+          "kind": "describe"
+        },
+        {
+          "text": "Planning a reunion activity gives the waiting a goal.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can choose a small item for the grown-up to take on the trip.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "happy",
+      "background": "home-evening",
+      "addresses": [
+        "separation",
+        "safety"
+      ]
+    }
+  }
+}

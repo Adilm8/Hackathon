@@ -113,6 +113,10 @@
       "fallbackAnswer": [
         "Yes, you sit next to [[GROWNUP]].",
         "You can hold hands when the plane takes off."
+      ],
+      "ages": [
+        2,
+        9
       ]
     },
     {
@@ -149,6 +153,37 @@
       "fallbackAnswer": [
         "Yes. You can lean on [[GROWNUP]] or on a little pillow.",
         "The seatbelt stays on while you sleep, like a gentle hug."
+      ]
+    },
+    {
+      "id": "sick",
+      "text": "What if I feel sick?",
+      "topic": "body",
+      "fallbackAnswer": [
+        "Some people feel a bit queasy on a plane. Looking out of the window, sipping water and slow breaths can help.",
+        "Every seat has a special paper bag, just in case, and [[GROWNUP]] will help you."
+      ]
+    },
+    {
+      "id": "pilot",
+      "text": "Can I see the pilot?",
+      "topic": "social",
+      "fallbackAnswer": [
+        "Sometimes, when everyone is getting on the plane, kids can say hello to the pilot at the door. You can ask a flight attendant.",
+        "Pilots like meeting kids who are curious about flying."
+      ]
+    },
+    {
+      "id": "turbulence",
+      "text": "What are the bumps called?",
+      "topic": "safety",
+      "fallbackAnswer": [
+        "Bumps in the air are called turbulence. Air moves like waves in water, and planes are built to ride over them.",
+        "The seatbelt sign goes on, you stay seated, and the bumps pass."
+      ],
+      "ages": [
+        7,
+        12
       ]
     }
   ],

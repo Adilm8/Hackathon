@@ -19,17 +19,69 @@ import sleepover from '@/content/events/sleepover.json';
 import babysitter from '@/content/events/babysitter.json';
 import swimming from '@/content/events/swimming.json';
 import party from '@/content/events/party.json';
+import tooth_loss from '@/content/events/tooth_loss.json';
+import surgery from '@/content/events/surgery.json';
+import potty from '@/content/events/potty.json';
+import daycare from '@/content/events/daycare.json';
+import new_school from '@/content/events/new_school.json';
+import camp from '@/content/events/camp.json';
+import sports from '@/content/events/sports.json';
+import performance from '@/content/events/performance.json';
+import new_class from '@/content/events/new_class.json';
+import bike from '@/content/events/bike.json';
+import road_trip from '@/content/events/road_trip.json';
+import holiday from '@/content/events/holiday.json';
+import halloween from '@/content/events/halloween.json';
+import playdate from '@/content/events/playdate.json';
+import eye_exam from '@/content/events/eye_exam.json';
+import big_bed from '@/content/events/big_bed.json';
+import test_day from '@/content/events/test_day.json';
+import two_homes from '@/content/events/two_homes.json';
+import new_pet from '@/content/events/new_pet.json';
+import pet_loss from '@/content/events/pet_loss.json';
+import parent_trip from '@/content/events/parent_trip.json';
 import other from '@/content/events/other.json';
 
-/** Every event type, in the order onboarding shows them; "other" stays last. */
-export const EVENT_TYPES: readonly EventType[] = [
-  'dentist', 'doctor', 'shot', 'blood_test', 'hospital', 'haircut', 'school', 'babysitter', 'sleepover',
-  'party', 'swimming', 'flight', 'moving', 'sibling', 'other',
+/**
+ * Groups of big days for the picker, in display order. Every type appears exactly once;
+ * "other" is shown on its own after the groups.
+ */
+export const EVENT_GROUPS: readonly { id: string; label: string; types: readonly EventType[] }[] = [
+  { id: 'health', label: 'Health and doctors', types: ['dentist', 'doctor', 'shot', 'blood_test', 'eye_exam', 'hospital', 'surgery'] },
+  { id: 'growing', label: 'Growing up', types: ['potty', 'big_bed', 'tooth_loss', 'haircut', 'bike'] },
+  { id: 'school', label: 'School and learning', types: ['daycare', 'school', 'new_school', 'test_day', 'new_class'] },
+  { id: 'fun', label: 'Friends and fun', types: ['party', 'playdate', 'sports', 'performance', 'swimming', 'halloween', 'holiday'] },
+  { id: 'away', label: 'Trips and nights away', types: ['flight', 'road_trip', 'sleepover', 'camp', 'babysitter'] },
+  { id: 'family', label: 'Family changes', types: ['sibling', 'moving', 'new_pet', 'two_homes', 'pet_loss', 'parent_trip'] },
 ];
+
+/** Every event type, in the order onboarding shows them; "other" stays last. */
+export const EVENT_TYPES: readonly EventType[] = [...EVENT_GROUPS.flatMap((g) => g.types), 'other'];
 
 const RAW: Record<EventType, unknown> = {
   dentist, school, flight, sibling, haircut, shot,
   doctor, blood_test, hospital, moving, sleepover, babysitter, swimming, party,
+  tooth_loss,
+  surgery,
+  potty,
+  daycare,
+  new_school,
+  camp,
+  sports,
+  performance,
+  new_class,
+  bike,
+  road_trip,
+  holiday,
+  halloween,
+  playdate,
+  eye_exam,
+  big_bed,
+  test_day,
+  two_homes,
+  new_pet,
+  pet_loss,
+  parent_trip,
   other,
 };
 

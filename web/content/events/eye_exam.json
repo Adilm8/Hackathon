@@ -1,0 +1,2490 @@
+{
+  "type": "eye_exam",
+  "version": 1,
+  "label": "Eye test and glasses",
+  "countdownLabel": "the eye test",
+  "beats": {
+    "what_happens": {
+      "title": "What happens at the eye test",
+      "goals": [
+        "The eye doctor checks how well eyes see",
+        "You look at pictures, letters and lights",
+        "There are no wrong answers"
+      ],
+      "parentSkill": "Play a game at home: cover one eye and name pictures across the room."
+    },
+    "who_is_there": {
+      "title": "Who checks my eyes",
+      "goals": [
+        "The eye doctor and helpers",
+        "[[GROWNUP]] stays in the room",
+        "Lots of kids wear glasses"
+      ],
+      "parentSkill": "Point out people wearing glasses, including favourite characters and family."
+    },
+    "what_i_do": {
+      "title": "What I do at the eye test",
+      "goals": [
+        "Keep my head still and look where asked",
+        "Say what I see honestly",
+        "Blink, look up for drops if needed"
+      ],
+      "parentSkill": "Practise \"chin on the rest, look at the light\" with a cup and a flashlight."
+    },
+    "if_scared": {
+      "title": "If it feels strange",
+      "goals": [
+        "A dark room and bright lights can feel strange",
+        "Drops can sting for a moment",
+        "Calm tools: slow breaths, a hand to hold, a break"
+      ],
+      "parentSkill": "Be honest about drops: 'They may sting for a few seconds. Then they stop.'"
+    },
+    "rehearsal": {
+      "title": "Let's practise the eye test",
+      "goals": [
+        "Play eye doctor with a picture chart",
+        "Practise looking up for drops with water",
+        "Try on pretend glasses"
+      ],
+      "parentSkill": "Make a picture chart, play eye doctor, and practise looking up while you pretend to give drops."
+    }
+  },
+  "steps": [
+    "Arrive at the eye doctor and check in",
+    "Sit in a big chair in a room that can go dark",
+    "Look at pictures or letters on a chart and say what I see",
+    "Look through a big machine with lenses that click",
+    "Maybe get eye drops that sting for a moment and make eyes blurry",
+    "The eye doctor shines a little light to look inside the eyes",
+    "Choose glasses frames, if glasses are needed"
+  ],
+  "sensory": [
+    "a dark room with a bright chart",
+    "a big machine with clicking lenses",
+    "a small bright light close to the eye",
+    "eye drops that feel cold and may sting",
+    "blurry, sparkly vision after drops",
+    "new glasses sitting on the nose and ears"
+  ],
+  "honestyNotes": "Eye drops can sting for a few seconds and can make vision blurry and eyes sensitive to light for a few hours; never promise they will feel like nothing. The test itself has no wrong answers. If glasses are needed, they may feel strange for a few days.",
+  "questionButtons": [
+    {
+      "id": "drops",
+      "text": "Do eye drops hurt?",
+      "topic": "pain",
+      "fallbackAnswer": [
+        "Drops can feel cold and sting for a few seconds.",
+        "Then it stops, and things look blurry for a while."
+      ]
+    },
+    {
+      "id": "wrong",
+      "text": "What if I get the answers wrong?",
+      "topic": "safety",
+      "fallbackAnswer": [
+        "There are no wrong answers. Just say what you see.",
+        "Guessing is okay."
+      ]
+    },
+    {
+      "id": "dark",
+      "text": "Why does the room go dark?",
+      "topic": "sensory",
+      "fallbackAnswer": [
+        "A dark room makes the chart and the lights easier to see.",
+        "The lights come back on after."
+      ]
+    },
+    {
+      "id": "glasses",
+      "text": "Will I need glasses?",
+      "topic": "body",
+      "fallbackAnswer": [
+        "The eye doctor will tell you. Lots of kids wear glasses.",
+        "Glasses help your eyes see clearly."
+      ]
+    },
+    {
+      "id": "stay",
+      "text": "Will [[GROWNUP]] stay with me?",
+      "topic": "separation",
+      "fallbackAnswer": [
+        "Yes, [[GROWNUP]] stays in the room.",
+        "You can hold a hand during the drops."
+      ]
+    },
+    {
+      "id": "machine",
+      "text": "What is the big machine?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "It has lenses that click, to find which one helps you see best.",
+        "You just look and say, one or two."
+      ]
+    },
+    {
+      "id": "who",
+      "text": "Who is the eye doctor?",
+      "topic": "strangers",
+      "fallbackAnswer": [
+        "A doctor whose job is checking eyes.",
+        "They tell you each step before they do it."
+      ]
+    },
+    {
+      "id": "teased",
+      "text": "Will kids tease me about glasses?",
+      "topic": "social",
+      "fallbackAnswer": [
+        "Lots of kids wear glasses, and most kids think they look cool.",
+        "If anyone is unkind, tell a teacher and [[GROWNUP]]."
+      ],
+      "ages": [
+        5,
+        12
+      ]
+    },
+    {
+      "id": "light",
+      "text": "Why is the light so bright?",
+      "topic": "sensory",
+      "fallbackAnswer": [
+        "The little light helps the doctor see inside your eye.",
+        "You can close your eyes for a rest after."
+      ]
+    },
+    {
+      "id": "after",
+      "text": "What happens after?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "You go home, maybe with sunglasses if you had drops.",
+        "If you need glasses, you choose frames."
+      ]
+    },
+    {
+      "id": "contacts",
+      "text": "Can I get contact lenses?",
+      "topic": "body",
+      "fallbackAnswer": [
+        "Some older kids wear contacts. The eye doctor can tell you when it might be an option.",
+        "Glasses are the usual start."
+      ],
+      "ages": [
+        9,
+        12
+      ]
+    }
+  ],
+  "techniques": [
+    {
+      "id": "chart_game",
+      "label": "A home eye chart",
+      "how": "Make a picture chart and play eye doctor.",
+      "topics": [
+        "unknown",
+        "sensory"
+      ]
+    },
+    {
+      "id": "look_up",
+      "label": "Look-up practice",
+      "how": "Practise looking at the ceiling for drops.",
+      "topics": [
+        "unknown",
+        "pain"
+      ]
+    },
+    {
+      "id": "hold_hand",
+      "label": "Holding a hand",
+      "how": "Hold your child's hand during drops.",
+      "topics": [
+        "separation",
+        "pain"
+      ]
+    },
+    {
+      "id": "sunglasses",
+      "label": "Sunglasses after",
+      "how": "Bring sunglasses for after the drops.",
+      "topics": [
+        "sensory",
+        "body"
+      ]
+    },
+    {
+      "id": "no_wrong",
+      "label": "No wrong answers",
+      "how": "Remind your child that guessing is okay.",
+      "topics": [
+        "safety",
+        "social"
+      ]
+    },
+    {
+      "id": "glasses_heroes",
+      "label": "Glasses heroes",
+      "how": "Point out favourite people and characters who wear glasses.",
+      "topics": [
+        "social",
+        "body"
+      ]
+    },
+    {
+      "id": "ask_why",
+      "label": "Asking what it does",
+      "how": "Encourage asking what each machine does.",
+      "topics": [
+        "strangers",
+        "unknown"
+      ]
+    },
+    {
+      "id": "frame_choice",
+      "label": "Choosing frames",
+      "how": "Let your child choose the colour and shape of frames.",
+      "topics": [
+        "love",
+        "body"
+      ]
+    },
+    {
+      "id": "deep_breaths",
+      "label": "Smell the flower, blow the candle",
+      "how": "Breathe in slowly through the nose and out like blowing a candle.",
+      "topics": [
+        "pain",
+        "sensory",
+        "safety"
+      ]
+    }
+  ],
+  "ritual": [
+    "Chin still, look at the chart",
+    "Say what I see, blink",
+    "Sticker or new frames"
+  ],
+  "phrases": {
+    "pain": [
+      "The drops may sting for a moment, then stop.",
+      "Hold my hand and blink."
+    ],
+    "body": [
+      "Glasses help your eyes see clearly.",
+      "Lots of eyes need a little help."
+    ],
+    "sensory": [
+      "The room goes dark so the chart is easy to see.",
+      "The light is bright. You can rest your eyes after."
+    ],
+    "strangers": [
+      "The eye doctor will tell you each step.",
+      "You can ask what the machine does."
+    ],
+    "separation": [
+      "I'm right here in the room.",
+      "I will hold your hand."
+    ],
+    "unknown": [
+      "Chart, machine, light, then done.",
+      "Just say one or two."
+    ],
+    "safety": [
+      "There are no wrong answers.",
+      "You can ask for a break."
+    ],
+    "social": [
+      "Lots of kids wear glasses.",
+      "Your friends will think they look great."
+    ],
+    "love": [
+      "I love your eyes, with or without glasses.",
+      "I'm proud of you."
+    ]
+  },
+  "topicWords": {
+    "pain": [
+      "sting",
+      "stung",
+      "stings",
+      "hurt",
+      "sore",
+      "headaches"
+    ],
+    "body": [
+      "eyes",
+      "eye",
+      "glasses",
+      "see",
+      "vision",
+      "pupil",
+      "lens",
+      "lenses"
+    ],
+    "sensory": [
+      "dark",
+      "bright",
+      "light",
+      "blurry",
+      "fuzzy",
+      "cold",
+      "clicking",
+      "click",
+      "sparkly"
+    ],
+    "strangers": [
+      "eye doctor",
+      "doctor",
+      "helper",
+      "heron",
+      "optometrist",
+      "sparrow"
+    ],
+    "separation": [
+      "stays",
+      "stay",
+      "with me",
+      "close by",
+      "hand",
+      "wing",
+      "right there",
+      "close",
+      "with you",
+      "together",
+      "comes back",
+      "back",
+      "nearby"
+    ],
+    "unknown": [
+      "first",
+      "then",
+      "next",
+      "after",
+      "last",
+      "step",
+      "machine",
+      "steps"
+    ],
+    "safety": [
+      "no wrong",
+      "guessing",
+      "break",
+      "still",
+      "safe",
+      "careful",
+      "stop",
+      "help"
+    ],
+    "social": [
+      "kids",
+      "grown-ups",
+      "friends",
+      "everyone",
+      "friend",
+      "children",
+      "people",
+      "others"
+    ],
+    "love": [
+      "love",
+      "hug",
+      "proud",
+      "cuddle"
+    ]
+  },
+  "backgrounds": [
+    "dentist",
+    "outside",
+    "home-evening",
+    "cosy-room"
+  ],
+  "fallbackPages": {
+    "story": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "Soon [[CHILD]] will have an eye test.",
+              "kind": "describe"
+            },
+            {
+              "text": "An eye test checks how well the eyes can see, near and far.",
+              "kind": "describe"
+            },
+            {
+              "text": "First [[CHILD]] sits in a big chair in a room that can go dark.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then a chart lights up with pictures or letters.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "dentist",
+          "addresses": [
+            "body",
+            "sensory",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Before bed, here is a story about a little owl called Iris.",
+              "kind": "describe"
+            },
+            {
+              "text": "Iris kept bumping into branches at dusk.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama Owl took her to the eye doctor, a wise old heron.",
+              "kind": "describe"
+            },
+            {
+              "text": "First Iris sat on a big perch in a dim room.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then a chart glowed with pictures: a leaf, a fish, a moon.",
+              "kind": "describe"
+            },
+            {
+              "text": "Iris said the big ones easily, but the tiny ones looked fuzzy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next the heron put clicking lenses in front of her eyes.",
+              "kind": "describe"
+            },
+            {
+              "text": "One or two, which is clearer, asked the heron.",
+              "kind": "describe"
+            },
+            {
+              "text": "Two, said Iris, and the leaf looked sharp.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the heron said, little glasses will help you see the branches.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "[[CHILD]] says what each one is, big ones first, then small ones.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next comes a machine with lenses that click, which one is clearer, one or two?",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, the eye doctor shines a little light to look inside the eyes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, the doctor says if the eyes need any help, like glasses.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say, I am not sure, if a picture looks blurry.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "dentist",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Soon [[CHILD]] will have an eye test.",
+              "kind": "describe"
+            },
+            {
+              "text": "An eye test checks how well the eyes can see, near and far.",
+              "kind": "describe"
+            },
+            {
+              "text": "First [[CHILD]] sits in a big chair in a room that can go dark.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then a chart lights up with pictures or letters.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] says what each one is, big ones first, then small ones.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next comes a machine with lenses that click, which one is clearer, one or two?",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, the eye doctor shines a little light to look inside the eyes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, the doctor says if the eyes need any help, like glasses.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say, I am not sure, if a picture looks blurry.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "dentist",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "unknown"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "At the eye test, an eye doctor checks the eyes.",
+              "kind": "describe"
+            },
+            {
+              "text": "The eye doctor is called an optometrist or an ophthalmologist.",
+              "kind": "describe"
+            },
+            {
+              "text": "A helper may do the first part, like the chart.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] stays in the room the whole time.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can ask the doctor, what is that machine for?",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "dentist",
+          "addresses": [
+            "body",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Iris the owl met the eye helpers.",
+              "kind": "describe"
+            },
+            {
+              "text": "Doctor Heron had kind eyes behind big round glasses.",
+              "kind": "describe"
+            },
+            {
+              "text": "You wear glasses too, said Iris.",
+              "kind": "describe"
+            },
+            {
+              "text": "I do, said the heron, they help me read.",
+              "kind": "describe"
+            },
+            {
+              "text": "A cheerful sparrow helped Iris choose frames.",
+              "kind": "describe"
+            },
+            {
+              "text": "There were red ones, blue ones, round ones and square ones.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama Owl sat close by and watched.",
+              "kind": "describe"
+            },
+            {
+              "text": "Iris tried on purple frames and looked in the mirror.",
+              "kind": "describe"
+            },
+            {
+              "text": "Those fit just right, said the sparrow.",
+              "kind": "describe"
+            },
+            {
+              "text": "Iris thought she looked very clever.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "strangers",
+            "separation",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "The doctor explains each step before doing it.",
+              "kind": "describe"
+            },
+            {
+              "text": "Lots of kids and grown-ups wear glasses.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the glasses shop, a helper helps choose frames.",
+              "kind": "describe"
+            },
+            {
+              "text": "They make sure the glasses fit just right.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can ask the doctor, what is that machine for?",
+              "kind": "coach"
+            },
+            {
+              "text": "Step by step, it all gets a little easier.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "dentist",
+          "addresses": [
+            "body",
+            "strangers",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At the eye test, an eye doctor checks the eyes.",
+              "kind": "describe"
+            },
+            {
+              "text": "The eye doctor is called an optometrist or an ophthalmologist.",
+              "kind": "describe"
+            },
+            {
+              "text": "A helper may do the first part, like the chart.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] stays in the room the whole time.",
+              "kind": "describe"
+            },
+            {
+              "text": "The doctor explains each step before doing it.",
+              "kind": "describe"
+            },
+            {
+              "text": "Lots of kids and grown-ups wear glasses.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the glasses shop, a helper helps choose frames.",
+              "kind": "describe"
+            },
+            {
+              "text": "They make sure the glasses fit just right.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can ask the doctor, what is that machine for?",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "dentist",
+          "addresses": [
+            "body",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "At the eye test, [[CHILD]] sits back and keeps the head still.",
+              "kind": "describe"
+            },
+            {
+              "text": "Look where the doctor asks, at the chart, at a light or at a toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Say what you see, even if it is blurry.",
+              "kind": "describe"
+            },
+            {
+              "text": "Guessing is okay, there are no wrong answers.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "dentist",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Iris the owl kept her head very still.",
+              "kind": "describe"
+            },
+            {
+              "text": "Look at the light, said the heron, and Iris looked.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then she looked at the little toy fish.",
+              "kind": "describe"
+            },
+            {
+              "text": "Is it clear or fuzzy, asked the heron.",
+              "kind": "describe"
+            },
+            {
+              "text": "A bit fuzzy, said Iris, honestly.",
+              "kind": "describe"
+            },
+            {
+              "text": "That is helpful, said the heron.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then came eye drops.",
+              "kind": "describe"
+            },
+            {
+              "text": "Iris looked up at the ceiling, and drip.",
+              "kind": "describe"
+            },
+            {
+              "text": "It felt cold and stung for a moment, and Iris blinked and blinked.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then it stopped, and everything looked soft and blurry for a while.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "strangers"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "For the machine, put the chin on the chin rest and look inside.",
+              "kind": "describe"
+            },
+            {
+              "text": "If eye drops are needed, look up, and blink after.",
+              "kind": "describe"
+            },
+            {
+              "text": "If the light feels bright, close the eyes for a rest.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the end, choose a sticker, or glasses frames.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say, can I have a little break, please?",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "dentist",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At the eye test, [[CHILD]] sits back and keeps the head still.",
+              "kind": "describe"
+            },
+            {
+              "text": "Look where the doctor asks, at the chart, at a light or at a toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Say what you see, even if it is blurry.",
+              "kind": "describe"
+            },
+            {
+              "text": "Guessing is okay, there are no wrong answers.",
+              "kind": "describe"
+            },
+            {
+              "text": "For the machine, put the chin on the chin rest and look inside.",
+              "kind": "describe"
+            },
+            {
+              "text": "If eye drops are needed, look up, and blink after.",
+              "kind": "describe"
+            },
+            {
+              "text": "If the light feels bright, close the eyes for a rest.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the end, choose a sticker, or glasses frames.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say, can I have a little break, please?",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "dentist",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "The eye test room can feel strange when it goes dark.",
+              "kind": "describe"
+            },
+            {
+              "text": "The machine is big and close to the face.",
+              "kind": "describe"
+            },
+            {
+              "text": "A small light shines close to the eye, and it is bright.",
+              "kind": "describe"
+            },
+            {
+              "text": "Eye drops can feel cold and sting for a few seconds.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "worried",
+          "background": "dentist",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Iris the owl felt scared of the drops.",
+              "kind": "describe"
+            },
+            {
+              "text": "Will it hurt, she asked.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama Owl did not say, you will not feel anything.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama said, it may sting for a moment, and then it stops.",
+              "kind": "describe"
+            },
+            {
+              "text": "Iris held Mama's wing.",
+              "kind": "describe"
+            },
+            {
+              "text": "She smelled a flower slowly, and blew a candle.",
+              "kind": "describe"
+            },
+            {
+              "text": "Drip, it felt cold, and stung a little.",
+              "kind": "describe"
+            },
+            {
+              "text": "Iris blinked, and the sting went away.",
+              "kind": "describe"
+            },
+            {
+              "text": "Everything looked soft and blurry, like a dream.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama gave her little sunglasses for the way home.",
+              "kind": "describe"
+            },
+            {
+              "text": "Worried and brave can happen at the same time.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "pain",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "After drops, things look blurry and sparkly for a while.",
+              "kind": "describe"
+            },
+            {
+              "text": "That goes away in a few hours.",
+              "kind": "describe"
+            },
+            {
+              "text": "Holding a hand helps.",
+              "kind": "describe"
+            },
+            {
+              "text": "Asking for a break is always okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can take slow breaths, smell the flower and blow the candle.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can hold [[GROWNUP]]'s hand during the drops.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "dentist",
+          "addresses": [
+            "sensory",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "The eye test room can feel strange when it goes dark.",
+              "kind": "describe"
+            },
+            {
+              "text": "The machine is big and close to the face.",
+              "kind": "describe"
+            },
+            {
+              "text": "A small light shines close to the eye, and it is bright.",
+              "kind": "describe"
+            },
+            {
+              "text": "Eye drops can feel cold and sting for a few seconds.",
+              "kind": "describe"
+            },
+            {
+              "text": "After drops, things look blurry and sparkly for a while.",
+              "kind": "describe"
+            },
+            {
+              "text": "That goes away in a few hours.",
+              "kind": "describe"
+            },
+            {
+              "text": "Holding a hand helps.",
+              "kind": "describe"
+            },
+            {
+              "text": "Asking for a break is always okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can take slow breaths, smell the flower and blow the candle.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can hold [[GROWNUP]]'s hand during the drops.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "dentist",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "separation"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "Tonight [[CHILD]] and [[GROWNUP]] can play eye doctor.",
+              "kind": "describe"
+            },
+            {
+              "text": "First they draw a chart with big and small pictures.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[CHILD]] covers one eye and says the pictures from across the room.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next they switch, and the toy has a turn.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "dentist",
+          "addresses": [
+            "body",
+            "strangers",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Iris the owl played eye doctor with Papa.",
+              "kind": "describe"
+            },
+            {
+              "text": "They drew a chart with a big moon and a tiny star.",
+              "kind": "describe"
+            },
+            {
+              "text": "Papa covered one eye and squinted.",
+              "kind": "describe"
+            },
+            {
+              "text": "Is that a star or a sock, he said, and Iris giggled.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then Iris was the patient.",
+              "kind": "describe"
+            },
+            {
+              "text": "She looked up, and Papa pretended to drip drops, plip.",
+              "kind": "describe"
+            },
+            {
+              "text": "Iris blinked and blinked, like a real patient.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then she put on paper glasses and hooted at the mirror.",
+              "kind": "describe"
+            },
+            {
+              "text": "Papa said, you know all the steps.",
+              "kind": "describe"
+            },
+            {
+              "text": "Iris felt ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "And Iris slept well that night.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "strangers",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "After that, they practise looking up at the ceiling for pretend drops, and blinking.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, [[CHILD]] tries on pretend glasses and looks in the mirror.",
+              "kind": "describe"
+            },
+            {
+              "text": "Practising makes the real visit feel easy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow, the eye doctor.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say: chin still, look, say what I see, blink.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "dentist",
+          "addresses": [
+            "body",
+            "strangers",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight [[CHILD]] and [[GROWNUP]] can play eye doctor.",
+              "kind": "describe"
+            },
+            {
+              "text": "First they draw a chart with big and small pictures.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[CHILD]] covers one eye and says the pictures from across the room.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next they switch, and the toy has a turn.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, they practise looking up at the ceiling for pretend drops, and blinking.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, [[CHILD]] tries on pretend glasses and looks in the mirror.",
+              "kind": "describe"
+            },
+            {
+              "text": "Practising makes the real visit feel easy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow, the eye doctor.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say: chin still, look, say what I see, blink.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "dentist",
+          "addresses": [
+            "body",
+            "strangers",
+            "unknown",
+            "safety"
+          ]
+        }
+      ]
+    },
+    "social": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "Soon I have an eye test.",
+              "kind": "describe"
+            },
+            {
+              "text": "It checks how well I see.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I sit in a big chair.",
+              "kind": "describe"
+            },
+            {
+              "text": "The room may go dark.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then a chart lights up.",
+              "kind": "describe"
+            },
+            {
+              "text": "I say the pictures or letters.",
+              "kind": "describe"
+            },
+            {
+              "text": "Big ones first, then small ones.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say, I am not sure.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "dentist",
+          "addresses": [
+            "body",
+            "sensory",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Soon I have an eye test.",
+              "kind": "describe"
+            },
+            {
+              "text": "It checks how well I see.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I sit in a big chair.",
+              "kind": "describe"
+            },
+            {
+              "text": "The room may go dark.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then a chart lights up.",
+              "kind": "describe"
+            },
+            {
+              "text": "I say the pictures or letters.",
+              "kind": "describe"
+            },
+            {
+              "text": "Big ones first, then small ones.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next I look through clicking lenses.",
+              "kind": "describe"
+            },
+            {
+              "text": "I say which is clearer.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, the doctor shines a little light.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, the doctor says if I need glasses.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "dentist",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Next I look through clicking lenses.",
+              "kind": "describe"
+            },
+            {
+              "text": "I say which is clearer.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, the doctor shines a little light.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, the doctor says if I need glasses.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say, I am not sure.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "dentist",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Soon I have an eye test.",
+              "kind": "describe"
+            },
+            {
+              "text": "It checks how well I see.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I sit in a big chair.",
+              "kind": "describe"
+            },
+            {
+              "text": "The room may go dark.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then a chart lights up.",
+              "kind": "describe"
+            },
+            {
+              "text": "I say the pictures or letters.",
+              "kind": "describe"
+            },
+            {
+              "text": "Big ones first, then small ones.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say, I am not sure.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "dentist",
+          "addresses": [
+            "body",
+            "sensory",
+            "unknown",
+            "social"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "An eye doctor checks my eyes.",
+              "kind": "describe"
+            },
+            {
+              "text": "A helper may do the first part.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] stays with me.",
+              "kind": "describe"
+            },
+            {
+              "text": "The doctor tells me each step.",
+              "kind": "describe"
+            },
+            {
+              "text": "Lots of kids wear glasses.",
+              "kind": "describe"
+            },
+            {
+              "text": "Lots of grown-ups wear glasses.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the glasses shop, a helper helps me.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask, what is that machine for?",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "dentist",
+          "addresses": [
+            "body",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "An eye doctor checks my eyes.",
+              "kind": "describe"
+            },
+            {
+              "text": "A helper may do the first part.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] stays with me.",
+              "kind": "describe"
+            },
+            {
+              "text": "The doctor tells me each step.",
+              "kind": "describe"
+            },
+            {
+              "text": "Lots of kids wear glasses.",
+              "kind": "describe"
+            },
+            {
+              "text": "Lots of grown-ups wear glasses.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the glasses shop, a helper helps me.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can choose frames.",
+              "kind": "describe"
+            },
+            {
+              "text": "They make sure the glasses fit.",
+              "kind": "describe"
+            },
+            {
+              "text": "Glasses help eyes see clearly.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "dentist",
+          "addresses": [
+            "body",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I can choose frames.",
+              "kind": "describe"
+            },
+            {
+              "text": "They make sure the glasses fit.",
+              "kind": "describe"
+            },
+            {
+              "text": "Glasses help eyes see clearly.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask, what is that machine for?",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "dentist",
+          "addresses": [
+            "body",
+            "unknown",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "An eye doctor checks my eyes.",
+              "kind": "describe"
+            },
+            {
+              "text": "A helper may do the first part.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] stays with me.",
+              "kind": "describe"
+            },
+            {
+              "text": "The doctor tells me each step.",
+              "kind": "describe"
+            },
+            {
+              "text": "Lots of kids wear glasses.",
+              "kind": "describe"
+            },
+            {
+              "text": "Lots of grown-ups wear glasses.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the glasses shop, a helper helps me.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask, what is that machine for?",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "dentist",
+          "addresses": [
+            "body",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "I sit back.",
+              "kind": "describe"
+            },
+            {
+              "text": "I keep my head still.",
+              "kind": "describe"
+            },
+            {
+              "text": "I look where the doctor asks.",
+              "kind": "describe"
+            },
+            {
+              "text": "I say what I see.",
+              "kind": "describe"
+            },
+            {
+              "text": "Even if it is blurry.",
+              "kind": "describe"
+            },
+            {
+              "text": "Guessing is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "There are no wrong answers.",
+              "kind": "describe"
+            },
+            {
+              "text": "I put my chin on the chin rest.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask for a little break.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "dentist",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I sit back.",
+              "kind": "describe"
+            },
+            {
+              "text": "I keep my head still.",
+              "kind": "describe"
+            },
+            {
+              "text": "I look where the doctor asks.",
+              "kind": "describe"
+            },
+            {
+              "text": "I say what I see.",
+              "kind": "describe"
+            },
+            {
+              "text": "Even if it is blurry.",
+              "kind": "describe"
+            },
+            {
+              "text": "Guessing is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "There are no wrong answers.",
+              "kind": "describe"
+            },
+            {
+              "text": "I put my chin on the chin rest.",
+              "kind": "describe"
+            },
+            {
+              "text": "If I get drops, I look up and blink.",
+              "kind": "describe"
+            },
+            {
+              "text": "If the light is bright, I can rest my eyes.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "dentist",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "If I get drops, I look up and blink.",
+              "kind": "describe"
+            },
+            {
+              "text": "If the light is bright, I can rest my eyes.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask for a little break.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "dentist",
+          "addresses": [
+            "body",
+            "sensory",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I sit back.",
+              "kind": "describe"
+            },
+            {
+              "text": "I keep my head still.",
+              "kind": "describe"
+            },
+            {
+              "text": "I look where the doctor asks.",
+              "kind": "describe"
+            },
+            {
+              "text": "I say what I see.",
+              "kind": "describe"
+            },
+            {
+              "text": "Even if it is blurry.",
+              "kind": "describe"
+            },
+            {
+              "text": "Guessing is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "There are no wrong answers.",
+              "kind": "describe"
+            },
+            {
+              "text": "I put my chin on the chin rest.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask for a little break.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "dentist",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "The room may go dark.",
+              "kind": "describe"
+            },
+            {
+              "text": "It can feel strange.",
+              "kind": "describe"
+            },
+            {
+              "text": "The machine is big.",
+              "kind": "describe"
+            },
+            {
+              "text": "A little light is bright.",
+              "kind": "describe"
+            },
+            {
+              "text": "Eye drops can feel cold.",
+              "kind": "describe"
+            },
+            {
+              "text": "They may sting for a moment.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then they stop.",
+              "kind": "describe"
+            },
+            {
+              "text": "Things may look blurry.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "worried",
+          "background": "dentist",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "The room may go dark.",
+              "kind": "describe"
+            },
+            {
+              "text": "It can feel strange.",
+              "kind": "describe"
+            },
+            {
+              "text": "The machine is big.",
+              "kind": "describe"
+            },
+            {
+              "text": "A little light is bright.",
+              "kind": "describe"
+            },
+            {
+              "text": "Eye drops can feel cold.",
+              "kind": "describe"
+            },
+            {
+              "text": "They may sting for a moment.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then they stop.",
+              "kind": "describe"
+            },
+            {
+              "text": "Things may look blurry.",
+              "kind": "describe"
+            },
+            {
+              "text": "That goes away later.",
+              "kind": "describe"
+            },
+            {
+              "text": "Asking for a break is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "Step by step, it gets a little easier.",
+              "kind": "describe"
+            },
+            {
+              "text": "New things feel strange at first, and then they feel normal.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "dentist",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "That goes away later.",
+              "kind": "describe"
+            },
+            {
+              "text": "Asking for a break is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can hold [[GROWNUP]]'s hand.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "dentist",
+          "addresses": [
+            "separation",
+            "unknown",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "The room may go dark.",
+              "kind": "describe"
+            },
+            {
+              "text": "It can feel strange.",
+              "kind": "describe"
+            },
+            {
+              "text": "The machine is big.",
+              "kind": "describe"
+            },
+            {
+              "text": "A little light is bright.",
+              "kind": "describe"
+            },
+            {
+              "text": "Eye drops can feel cold.",
+              "kind": "describe"
+            },
+            {
+              "text": "They may sting for a moment.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then they stop.",
+              "kind": "describe"
+            },
+            {
+              "text": "Things may look blurry.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can hold [[GROWNUP]]'s hand.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "dentist",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "separation"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "Tonight we play eye doctor.",
+              "kind": "describe"
+            },
+            {
+              "text": "First we draw a chart.",
+              "kind": "describe"
+            },
+            {
+              "text": "Big pictures and small pictures.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I cover one eye.",
+              "kind": "describe"
+            },
+            {
+              "text": "I say the pictures.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next my toy has a turn.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, I look up.",
+              "kind": "describe"
+            },
+            {
+              "text": "I practise pretend drops.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: chin still, look, say, blink.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "dentist",
+          "addresses": [
+            "body",
+            "strangers",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight we play eye doctor.",
+              "kind": "describe"
+            },
+            {
+              "text": "First we draw a chart.",
+              "kind": "describe"
+            },
+            {
+              "text": "Big pictures and small pictures.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I cover one eye.",
+              "kind": "describe"
+            },
+            {
+              "text": "I say the pictures.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next my toy has a turn.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, I look up.",
+              "kind": "describe"
+            },
+            {
+              "text": "I practise pretend drops.",
+              "kind": "describe"
+            },
+            {
+              "text": "I blink.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, I try on pretend glasses.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "Step by step, it gets a little easier.",
+              "kind": "describe"
+            },
+            {
+              "text": "New things feel strange at first, and then they feel normal.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "dentist",
+          "addresses": [
+            "body",
+            "strangers",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I blink.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, I try on pretend glasses.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: chin still, look, say, blink.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "dentist",
+          "addresses": [
+            "body",
+            "unknown",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight we play eye doctor.",
+              "kind": "describe"
+            },
+            {
+              "text": "First we draw a chart.",
+              "kind": "describe"
+            },
+            {
+              "text": "Big pictures and small pictures.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I cover one eye.",
+              "kind": "describe"
+            },
+            {
+              "text": "I say the pictures.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next my toy has a turn.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, I look up.",
+              "kind": "describe"
+            },
+            {
+              "text": "I practise pretend drops.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: chin still, look, say, blink.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "dentist",
+          "addresses": [
+            "body",
+            "strangers",
+            "unknown",
+            "safety"
+          ]
+        }
+      ]
+    }
+  },
+  "badge": {
+    "id": "sharp_eyes",
+    "label": "Sharp Eyes"
+  },
+  "olderPages": {
+    "what_happens": {
+      "sentences": [
+        {
+          "text": "Eye doctors measure sharpness of vision, how the eyes focus, and how they work together.",
+          "kind": "describe"
+        },
+        {
+          "text": "Being near-sighted means far things look blurry, and far-sighted means close things are harder.",
+          "kind": "describe"
+        },
+        {
+          "text": "The clicking lenses find the exact strength that makes things clear.",
+          "kind": "describe"
+        },
+        {
+          "text": "Many kids do not notice blurry vision because they think everyone sees that way.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can ask the doctor to show what their eyes look like on the screen.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "dentist",
+      "addresses": [
+        "body",
+        "sensory",
+        "strangers",
+        "separation"
+      ]
+    },
+    "who_is_there": {
+      "sentences": [
+        {
+          "text": "Optometrists do eye tests and prescribe glasses; ophthalmologists are medical doctors who also treat eye diseases.",
+          "kind": "describe"
+        },
+        {
+          "text": "Opticians fit the glasses so they sit at the right height.",
+          "kind": "describe"
+        },
+        {
+          "text": "About one in four school kids needs glasses at some point.",
+          "kind": "describe"
+        },
+        {
+          "text": "Many athletes, scientists and actors wear glasses or contact lenses.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can choose frames that match their style.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "dentist",
+      "addresses": [
+        "body",
+        "strangers",
+        "social"
+      ]
+    },
+    "what_i_do": {
+      "sentences": [
+        {
+          "text": "Honest answers give the most accurate result, so guessing to sound good does not help.",
+          "kind": "describe"
+        },
+        {
+          "text": "Dilating drops widen the pupil so the doctor can see the back of the eye, and the effect lasts a few hours.",
+          "kind": "describe"
+        },
+        {
+          "text": "Sunglasses help after drops because light feels brighter.",
+          "kind": "describe"
+        },
+        {
+          "text": "The machine that puffs air or flashes is checking pressure and shape, and it is quick.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can ask the doctor to explain the result in simple words.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "brave",
+      "background": "dentist",
+      "addresses": [
+        "body",
+        "sensory",
+        "strangers",
+        "separation"
+      ]
+    },
+    "if_scared": {
+      "sentences": [
+        {
+          "text": "Feeling uneasy with things near your eyes is a natural reflex that protects them.",
+          "kind": "describe"
+        },
+        {
+          "text": "Keeping both eyes closed briefly after drops helps them spread and reduces stinging.",
+          "kind": "describe"
+        },
+        {
+          "text": "Blurry near vision after dilation means reading or screens are hard for a few hours.",
+          "kind": "describe"
+        },
+        {
+          "text": "If glasses are needed, getting used to them takes a few days, and headaches at first are common.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can plan a relaxing activity, like an audiobook, for after the drops.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "worried",
+      "background": "dentist",
+      "addresses": [
+        "pain",
+        "body",
+        "sensory",
+        "separation"
+      ]
+    },
+    "rehearsal": {
+      "sentences": [
+        {
+          "text": "Knowing that the test is about finding the right lens, not passing or failing, takes the pressure off.",
+          "kind": "describe"
+        },
+        {
+          "text": "Writing down any problems noticed, like headaches or squinting at the board, helps the doctor.",
+          "kind": "describe"
+        },
+        {
+          "text": "Bringing sunglasses makes the trip home comfortable after drops.",
+          "kind": "describe"
+        },
+        {
+          "text": "If glasses are prescribed, choosing frames is a chance to show personality.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can make a list of frame colours to look for.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "happy",
+      "background": "dentist",
+      "addresses": [
+        "pain",
+        "body",
+        "strangers",
+        "unknown"
+      ]
+    }
+  }
+}
