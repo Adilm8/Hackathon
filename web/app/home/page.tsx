@@ -129,6 +129,7 @@ function PathTab({ event, events, child, today, hasAccess }: { event: BigEvent; 
   const others = events.filter((e) => e.id !== event.id && eventPhase(e, today) !== 'done');
   const router = useRouter();
   const [lockedCh, setLockedCh] = useState<Chapter | null>(null);
+  const early = !!lockedCh && canReadAhead(lockedCh, event, today, hasAccess);
   const status =
     phase === 'day' ? 'Today is the big day' : phase === 'after' ? 'How did it go? Tell us' : phase === 'done' ? 'All done. Well done!'
       : ch ? `Tonight: chapter ${ch.index} of ${p.total}` : `${p.read} of ${p.total} chapters read`;
@@ -181,11 +182,21 @@ function PathTab({ event, events, child, today, hasAccess }: { event: BigEvent; 
       <Sheet
         open={!!lockedCh}
         onOpenChange={(v) => !v && setLockedCh(null)}
-        title={lockedCh ? `This chapter opens on ${weekdayLabel(lockedCh.date, 'long')} evening` : ''}
-        description="One chapter a night works best: it gives your child time to think and to ask."
+        title={lockedCh ? (early ? `Start chapter ${lockedCh.index} now?` : `This chapter opens on ${weekdayLabel(lockedCh.date, 'long')} evening`) : ''}
+        description={
+          !lockedCh ? undefined
+            : early ? `It is planned for ${weekdayLabel(lockedCh.date, 'long')} evening. One chapter a night gives time to think and ask, but if ${child.name} is ready, you can skip the wait.`
+            : hasAccess ? 'Read the chapters before it first, so the story stays in order.'
+            : 'One chapter a night works best: it gives your child time to think and to ask.'
+        }
       >
-        {lockedCh && canReadAhead(lockedCh, event, today, hasAccess) ? (
-          <Button size="l" onClick={() => router.push(`/event/${encodeURIComponent(event.id)}/read/${lockedCh.index}`)}>Read ahead</Button>
+        {lockedCh && early ? (
+          <div className="flex flex-col gap-3">
+            <Button size="l" onClick={() => router.push(`/event/${encodeURIComponent(event.id)}/read/${lockedCh.index}`)}>
+              <Icon name="book-open" size={20} /> Read chapter {lockedCh.index} now
+            </Button>
+            <Button size="l" variant="ghost" onClick={() => setLockedCh(null)}>Wait until {weekdayLabel(lockedCh.date, 'long')}</Button>
+          </div>
         ) : (
           <Button size="l" variant="secondary" onClick={() => setLockedCh(null)}>Okay</Button>
         )}

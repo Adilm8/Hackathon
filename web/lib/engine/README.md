@@ -27,7 +27,7 @@ only through the architect.
 | `createEvent({ id, childId, type, date, today, fears, customLabel?, customFear?, photos? }, template?)` | a `BigEvent` with its chapters; `mustAddress` = fears |
 | `planChapters(eventDate, today)`, `buildChapters(template, eventDate, today)`, `chapterCount` | the plan itself |
 | `chapterStatus(chapter, event, today, hasAccess)` | `'read' \| 'needs_pay' \| 'today' \| 'catch_up' \| 'locked'`; chapter 1 is never locked |
-| `canReadAhead(...)`, `isChapterOpen(...)` | same arguments; "Read ahead" is one chapter ahead at most, with access |
+| `canReadAhead(...)`, `isChapterOpen(...)` | same arguments; "Read ahead" (skip the waiting days): the next unread chapter once every earlier one is read, with access |
 | `opensOnText(chapter)` | "This chapter opens on Wednesday evening" |
 | `eventPhase(event, today)` | `'prep' \| 'day' \| 'after' \| 'done'` |
 | `countdownText(event, template, today)` | "5 sleeps until the dentist" / "Tomorrow is the big day" / "Today is the big day" / null |

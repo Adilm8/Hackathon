@@ -215,12 +215,8 @@ export function chapterStatus(chapter: Chapter, _event: BigEvent, today: ISODate
 export function canReadAhead(chapter: Chapter, event: BigEvent, today: ISODate, hasAccess: boolean): boolean {
   if (!hasAccess) return false;
   if (chapterStatus(chapter, event, today, hasAccess) !== 'locked') return false;
-  const aheadRead = event.chapters.some((c) => c.index > 1 && c.readOn && compareDates(c.date, today) > 0);
-  if (aheadRead) return false;
-  const firstLocked = event.chapters
-    .filter((c) => chapterStatus(c, event, today, hasAccess) === 'locked')
-    .sort((a, b) => a.index - b.index)[0];
-  return firstLocked?.index === chapter.index;
+  // A parent may skip the waiting days, but the story stays in order: every earlier chapter is read first.
+  return event.chapters.every((c) => c.index >= chapter.index || !!c.readOn);
 }
 
 /** May the reader open this chapter now (read, today, catch up, or read ahead)? */
