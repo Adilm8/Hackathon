@@ -16,6 +16,7 @@ import { renderText } from '@/lib/engine/text';
 import { useEvents } from '@/lib/store/events';
 import { useEventCtx, type EventCtx } from '@/lib/store/hooks';
 import { eventLabel, eventPhase, fallbackRitual } from '@/lib/store/engine';
+import { planHref } from '@/lib/home/path';
 
 /** Event-day card (docs/SPEC.md 4.12): paid, printable as an A5 card (11.7). */
 export default function DayPage() {
@@ -121,7 +122,7 @@ function PaidDay({ ctx }: { ctx: EventCtx }) {
         <Link href={`/event/${encodeURIComponent(event.id)}/checkin`} className="mx-auto inline-flex min-h-tap items-center px-4 font-bold text-primary-text underline">
           Already back? Tell us how it went
         </Link>
-        <ButtonLink href={`/event/${encodeURIComponent(event.id)}`} variant="ghost">Back to the plan</ButtonLink>
+        <ButtonLink href={planHref(event.id)} variant="ghost">Back to the plan</ButtonLink>
       </div>
     </div>
   );
@@ -149,7 +150,7 @@ function LockedDay({ ctx }: { ctx: EventCtx }) {
       <Link href={`${base}/checkin`} className="mx-auto inline-flex min-h-tap items-center px-4 font-bold text-primary-text underline">
         Already back? Tell us how it went
       </Link>
-      <ButtonLink href={base} variant="ghost">Back to the plan</ButtonLink>
+      <ButtonLink href={planHref(event.id)} variant="ghost">Back to the plan</ButtonLink>
     </div>
   );
 }

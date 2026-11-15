@@ -6,6 +6,7 @@ import { buildSampleFamily } from './engine';
 import { buildSampleSibling } from '@/lib/engine/sample';
 import { clearWorkspaceKeys, seedWorkspace } from './seed';
 import { switchWorkspace, workspaceHasData } from './workspace';
+import { planHref } from '@/lib/home/path';
 
 /**
  * Creates a fresh sample family on the server (local seed when offline). `plan` opens its
@@ -22,7 +23,7 @@ export async function startSample(open: 'plan' | 'home' = 'plan'): Promise<void>
   const doc = { ...base, events: [...base.events.filter((e) => e.id !== mia.event.id), mia.event] };
   seedWorkspace('sample', doc, server?.entitlements ?? [], server?.version, [mia.child]);
   const upcoming = doc.events.filter((e) => e.date >= today).sort((a, b) => (a.date < b.date ? -1 : 1))[0];
-  switchWorkspace('sample', open === 'plan' && upcoming ? `/event/${upcoming.id}` : '/home');
+  switchWorkspace('sample', open === 'plan' && upcoming ? planHref(upcoming.id) : '/home');
 }
 
 export function exitSample(): void {

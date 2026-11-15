@@ -24,6 +24,11 @@ export interface PathNode {
   chapter?: number;
 }
 
+/** The plan of one big day now lives on the home page: /event/<id> redirects here. */
+export function planHref(eventId: string): string {
+  return `/home?event=${encodeURIComponent(eventId)}`;
+}
+
 export function buildPath(event: BigEvent, today: ISODate, hasAccess: boolean): PathNode[] {
   const base = `/event/${event.id}`;
   const phase = eventPhase(event, today);

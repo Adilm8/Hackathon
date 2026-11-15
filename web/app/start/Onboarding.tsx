@@ -33,6 +33,7 @@ import { newId } from '@/lib/store/id';
 import { childNameError } from '@/lib/childName';
 import { stashActiveFor } from '@/lib/store/children';
 import { firstNameOnly, loadProfiles, removeProfile, saveProfile, type SavedProfile } from '@/lib/store/profiles';
+import { planHref } from '@/lib/home/path';
 
 const EVENT_CAPTION: Record<EventType, string> = {
   dentist: 'Check-up or cleaning', school: 'Preschool, kindergarten, school', flight: 'Airport and plane',
@@ -171,7 +172,7 @@ export function Onboarding() {
       story: cleanStoryText(d.story, child.name, child.pronunciation),
     });
     useEvents.getState().addEvent(event);
-    router.push(`/event/${event.id}`);
+    router.push(planHref(event.id));
   };
 
   const guide = <Character character={d.character} mood={step === 'fears' ? 'worried' : 'happy'} size={72} decorative />;

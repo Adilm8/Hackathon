@@ -39,6 +39,7 @@ import { AskGrownUp, ParentCheck } from './ParentCheck';
 import { useParentGate } from './ParentGate';
 import { QuestionBar } from './QuestionBar';
 import { SafeMessage } from './SafeMessage';
+import { planHref } from '@/lib/home/path';
 
 type Mode = { kind: 'read' } | { kind: 'check'; q: Question; draft?: string; parent?: boolean } | { kind: 'unsafe' } | { kind: 'end' };
 
@@ -92,7 +93,7 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
   useEffect(() => {
     if (!ctx || !chapter) return;
     if (needsPay) router.replace(`/event/${eventId}/paywall`);
-    else if (!allowed) router.replace(`/event/${eventId}`);
+    else if (!allowed) router.replace(planHref(eventId));
   }, [ctx, chapter, allowed, needsPay, router, eventId]);
 
   // Generate once; a stored chapter is never generated again (4.7).
@@ -126,7 +127,7 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
       <EmptyState
         title="This chapter isn't in the plan"
         text={`The plan for this big day has ${ctx.event.chapters.length} ${ctx.event.chapters.length === 1 ? 'chapter' : 'chapters'}.`}
-        action={<ButtonLink href={`/event/${eventId}`}>Back to the plan</ButtonLink>}
+        action={<ButtonLink href={planHref(eventId)}>Back to the plan</ButtonLink>}
       />
     );
   if (!allowed) return <Skeleton className="h-96" />;
@@ -311,7 +312,7 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
           {total === 1 ? 'Quick prep' : `Chapter ${index} of ${total}`} · {chapter.title}
         </p>
         <div className="flex items-center gap-0 min-[400px]:gap-1 sm:gap-2">
-          <button type="button" onClick={() => guard(() => router.push(`/event/${eventId}`))} aria-label="Back to the plan" className={iconBtn}>
+          <button type="button" onClick={() => guard(() => router.push(planHref(eventId)))} aria-label="Back to the plan" className={iconBtn}>
             <Icon name="door-open" size={22} />
           </button>
           <div className="min-w-0 flex-1">
@@ -444,7 +445,7 @@ function ChapterEnd({ ctx, index, total, onReread }: { ctx: NonNullable<ReturnTy
         </ButtonLink>
         <Button variant="secondary" size="l" onClick={onReread}>Read it again</Button>
       </div>
-      <Link href={`/event/${event.id}`} className="inline-flex min-h-tap items-center font-bold text-primary-text underline">Back to the plan</Link>
+      <Link href={planHref(event.id)} className="inline-flex min-h-tap items-center font-bold text-primary-text underline">Back to the plan</Link>
     </section>
   );
 }

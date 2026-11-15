@@ -10,6 +10,7 @@ import type { Entitlement } from '@/lib/engine/types';
 import { setEntitlements } from '@/lib/store/entitlement';
 import { useEventCtx } from '@/lib/store/hooks';
 import { getWorkspace } from '@/lib/store/workspace';
+import { planHref } from '@/lib/home/path';
 
 /** Paywall screen (docs/SPEC.md 4.2, 4.11), read from the browser store (local-first). */
 export default function Page() {
@@ -30,7 +31,7 @@ function PaywallScreen() {
   const eventId = decodeURIComponent(params.id);
   const ctx = useEventCtx(eventId);
   const ws = getWorkspace();
-  const backHref = `/event/${encodeURIComponent(eventId)}`;
+  const backHref = planHref(eventId);
   if (!ctx) return <PlanNotFound />;
   if (ctx.hasAccess)
     return (
