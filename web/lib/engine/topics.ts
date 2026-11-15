@@ -60,6 +60,8 @@ export interface PanelSummary {
   rows: TopicRow[];
   /** Sensitive questions the parent chose to answer personally. */
   selfAnswered: PanelQuestion[];
+  /** Sensitive questions still waiting for a grown-up (the child chose "Keep reading"). */
+  waiting: PanelQuestion[];
   dayTechnique: DayTechnique;
   memoryLines: string[];
   parentSkill: string | null;
@@ -133,6 +135,7 @@ export function summarise(
   return {
     rows,
     selfAnswered: counted.filter((q) => q.category === 'sensitive' && q.parentAction === 'self').map(toPanelQuestion),
+    waiting: counted.filter((q) => q.category === 'sensitive' && !q.parentAction).map(toPanelQuestion),
     dayTechnique: pickDayTechnique(template, child, topTopics(event), { excludeEventId: event.id }),
     memoryLines: memoryLines(child, { excludeEventId: event.id }),
     parentSkill: (parentChapter ?? lastChapter)?.parentSkill ?? null,

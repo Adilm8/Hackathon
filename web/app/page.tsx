@@ -52,14 +52,11 @@ export default function Landing() {
           </div>
         </div>
         <div className="order-1 flex flex-col gap-5">
-          <span className="self-start rounded-pill bg-surface-2 px-3 py-1 text-xs font-extrabold uppercase tracking-wide text-primary-text">
-            For ages 3 to 8 · 5-evening prep
-          </span>
           <h1 className="text-balance font-display text-2xl font-extrabold leading-tight sm:text-3xl">
             Big day coming up? Get your child ready in 5 evenings
           </h1>
           <p className="text-base text-ink-soft">
-            A short story each night, read aloud by you, that answers your child&apos;s own questions inside the story.
+            For children 3 to 8. A short story each night, read aloud by you, that answers your child&apos;s own questions inside the story.
           </p>
           <LandingActions />
           <p className="text-sm text-ink-soft">
@@ -68,16 +65,24 @@ export default function Landing() {
         </div>
       </section>
 
-      <section aria-labelledby="how" className="py-6">
-        <h2 id="how" className="sr-only">How it works</h2>
-        <ol className="grid gap-4 sm:grid-cols-3">
-          {STEPS.map((s) => (
-            <li key={s.n} className="rounded-card border border-line bg-surface p-5 shadow-step">
-              <span className="flex size-10 items-center justify-center rounded-pill bg-primary font-display text-lg font-extrabold text-primary-ink">
+      <section aria-labelledby="how" className="py-8">
+        <h2 id="how" className="font-display text-xl font-extrabold">How it works</h2>
+        <ol className="mt-6 grid gap-6 sm:grid-cols-3 sm:gap-4">
+          {STEPS.map((s, i) => (
+            <li key={s.n} className="relative flex gap-4 sm:flex-col sm:gap-3">
+              {i < STEPS.length - 1 && (
+                <span
+                  aria-hidden
+                  className="absolute left-5 top-12 h-[calc(100%-2rem)] w-0.5 -translate-x-1/2 rounded-pill bg-line sm:left-12 sm:top-5 sm:h-0.5 sm:w-[calc(100%-2.5rem)] sm:translate-x-0 sm:-translate-y-1/2"
+                />
+              )}
+              <span className="relative flex size-10 shrink-0 items-center justify-center rounded-pill bg-primary font-display text-lg font-extrabold text-primary-ink">
                 {s.n}
               </span>
-              <h3 className="mt-3 text-lg font-extrabold">{s.title}</h3>
-              <p className="mt-1 text-sm text-ink-soft">{s.text}</p>
+              <div className="min-w-0 pt-1.5 sm:pt-0">
+                <h3 className="text-lg font-extrabold leading-snug">{s.title}</h3>
+                <p className="mt-1 text-sm text-ink-soft">{s.text}</p>
+              </div>
             </li>
           ))}
         </ol>

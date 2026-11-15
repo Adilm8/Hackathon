@@ -20,6 +20,8 @@ export interface PathNode {
   state: NodeState;
   /** Where a tap leads; undefined for locked nodes. */
   href?: string;
+  /** Chapter number, for chapter nodes. */
+  chapter?: number;
 }
 
 export function buildPath(event: BigEvent, today: ISODate, hasAccess: boolean): PathNode[] {
@@ -36,6 +38,7 @@ export function buildPath(event: BigEvent, today: ISODate, hasAccess: boolean): 
       title: `Chapter ${ch.index}`,
       hint,
       state,
+      chapter: ch.index,
       href: state === 'locked' ? undefined : state === 'pay' ? `${base}/paywall` : `${base}/read/${ch.index}`,
     };
   });

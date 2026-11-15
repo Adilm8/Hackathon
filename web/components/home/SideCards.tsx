@@ -25,7 +25,7 @@ export function PlanCard({ event, hasAccess, label }: { event: BigEvent | null; 
     );
   return (
     <section className="flex flex-col gap-3 rounded-card border-2 border-accent/60 bg-surface p-5 shadow-step" aria-labelledby="plan-h">
-      <span className="self-start rounded-pill bg-accent px-2 py-0.5 text-xs font-extrabold uppercase tracking-wide text-accent-ink">Big Day Pass</span>
+      <span className="self-start rounded-pill bg-accent px-2.5 py-0.5 text-xs font-extrabold text-accent-ink">Big Day Pass</span>
       <div className="flex items-start gap-3">
         <div className="flex-1">
           <h2 id="plan-h" className="text-lg font-extrabold leading-tight">Unlock the whole story</h2>
@@ -45,7 +45,7 @@ export function StreakCard({ streak, week, child }: { streak: Streak; week: Week
     <section className={`${card} flex flex-col gap-4`} aria-labelledby="streak-h">
       <div className="flex items-center justify-between">
         <h2 id="streak-h" className="text-lg font-extrabold">Story evenings</h2>
-        <Link href="/home?tab=badges" className="text-sm font-extrabold uppercase text-primary-text">Badges</Link>
+        <Link href="/home?tab=badges" className="-mr-2 inline-flex min-h-tap items-center rounded-pill px-2 text-sm font-extrabold text-primary-text hover:bg-surface-2">All badges</Link>
       </div>
       <div className="flex items-center gap-3">
         <span className={`flex size-12 items-center justify-center rounded-pill ${n > 0 ? 'bg-accent text-accent-ink' : 'bg-surface-2 text-ink-soft'}`}>
@@ -115,8 +115,8 @@ export function LevelCard({ level, name }: { level: Level; name: string }) {
       <div className="flex items-center gap-3">
         <span className="flex size-12 shrink-0 items-center justify-center rounded-pill bg-primary text-primary-ink"><Icon name="star" size={26} /></span>
         <div className="flex-1">
-          <p className="text-xs font-extrabold uppercase tracking-wide text-ink-soft">Level {level.number}</p>
           <h2 id="level-h" className="text-lg font-extrabold leading-tight">{level.name}</h2>
+          <p className="text-sm font-bold text-ink-soft">Level {level.number}</p>
         </div>
         <p className="text-right text-sm font-bold"><strong className="text-lg">{level.stars}</strong><br /><span className="text-xs text-ink-soft">stars</span></p>
       </div>

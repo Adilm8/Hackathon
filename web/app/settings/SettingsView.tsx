@@ -1,4 +1,5 @@
 'use client';
+import { childNameError } from '@/lib/childName';
 import { useRouter } from 'next/navigation';
 import { useState, type ReactNode } from 'react';
 import { SubscriptionCard } from '@/components/paywall/SubscriptionCard';
@@ -25,7 +26,6 @@ import { exitSample } from '@/lib/store/sample';
 import { getWorkspace } from '@/lib/store/workspace';
 import { api } from '@/lib/sync/api';
 
-const NAME_RE = /^[\p{L}][\p{L}'’-]{0,19}$/u;
 
 function Section({ title, children }: { title: string; children: ReactNode }) {
   return (
@@ -73,8 +73,8 @@ export function SettingsView() {
       {child ? (
         <>
           <Section title="Child">
-            <Field id="s-name" label="First name or nickname" helper="Never a last name. Never sent to an AI provider." error={name && !NAME_RE.test(name.trim()) ? 'One word, letters only.' : ''}>
-              <TextInput id="s-name" maxLength={20} value={name} onChange={(e) => setName(e.target.value)} onBlur={() => NAME_RE.test(name.trim()) && name.trim() !== child.name && updateChild({ name: name.trim() })} />
+            <Field id="s-name" label="First name or nickname" helper="Never a last name. Never sent to an AI provider." error={childNameError(name)}>
+              <TextInput id="s-name" maxLength={30} value={name} onChange={(e) => setName(e.target.value)} onBlur={() => !childNameError(name) && name.trim() !== child.name && updateChild({ name: name.trim() })} />
             </Field>
             <Field id="s-pron" label="How is it pronounced?">
               <TextInput id="s-pron" maxLength={30} defaultValue={child.pronunciation ?? ''} onBlur={(e) => updateChild({ pronunciation: e.target.value.trim() || undefined })} />

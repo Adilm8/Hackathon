@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { ReactNode } from 'react';
+import { Icon } from '@/components/icons';
 
 /**
  * Frame of every screen (docs/SPEC.md 4.2): header with the child's name and a settings
@@ -18,6 +19,8 @@ export function AppShell({
   headerExtra,
   onExitSample,
   fit = false,
+  homeHref = '/?landing=1',
+  childMode = false,
 }: {
   children: ReactNode;
   childName?: string;
@@ -35,14 +38,21 @@ export function AppShell({
   onExitSample?: () => void;
   /** One screen, no page scroll (the reader): the content gets exactly the height left between the header and the bottom bar; the footer is left out. */
   fit?: boolean;
+  /** Where the logo leads: /home for a family with data, the landing page otherwise. */
+  homeHref?: string;
+  /** The child's own screen (the reader): no settings button and no logo link, so a child can't wander off. */
+  childMode?: boolean;
 }) {
+  const logoClass = 'inline-flex min-h-tap items-center whitespace-nowrap font-display text-base font-extrabold sm:text-lg';
   return (
     <div data-room={room} className={`flex flex-col bg-bg text-ink ${fit ? 'h-dvh overflow-hidden' : 'min-h-dvh'}`}>
       <header className="no-print sticky top-0 z-20 border-b border-line bg-bg/95 backdrop-blur">
         <div className={`mx-auto flex h-14 items-center gap-3 px-4 ${wide ? 'max-w-6xl' : 'max-w-5xl'}`}>
-          <Link href="/?landing=1" className="whitespace-nowrap font-display text-base font-extrabold sm:text-lg">
-            Big Day Stories
-          </Link>
+          {childMode ? (
+            <span className={logoClass}>Big Day Stories</span>
+          ) : (
+            <Link href={homeHref} className={logoClass}>Big Day Stories</Link>
+          )}
           {isSample &&
             (onExitSample ? (
               <button
@@ -52,7 +62,7 @@ export function AppShell({
                 className="inline-flex min-h-tap items-center"
               >
                 <span className="inline-flex items-center gap-1 whitespace-nowrap rounded-pill bg-accent px-2 py-0.5 text-xs font-bold text-accent-ink">
-                  Sample data <span aria-hidden>×</span>
+                  Sample data <Icon name="x" size={14} strokeWidth={2.5} />
                 </span>
               </button>
             ) : (
@@ -61,8 +71,8 @@ export function AppShell({
           {headerExtra}
           <div className="ml-auto flex items-center gap-3">
             {saveIndicator}
-            {childName && <span className="hidden text-sm font-bold text-ink-soft min-[400px]:inline">{childName}</span>}
-            <Link
+            {childName && <span className="hidden max-w-[10rem] truncate text-sm font-bold text-ink-soft min-[400px]:inline">{childName}</span>}
+            {!childMode && <Link
               href="/settings"
               aria-label="Settings"
               className="inline-flex size-tap items-center justify-center rounded-pill hover:bg-surface-2"
@@ -71,7 +81,7 @@ export function AppShell({
                 <circle cx="12" cy="12" r="3" />
                 <path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z" />
               </svg>
-            </Link>
+            </Link>}
           </div>
         </div>
       </header>
