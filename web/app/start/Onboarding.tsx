@@ -337,8 +337,13 @@ export function Onboarding() {
         )}
       </div>
 
+      {/* The parent check has no Continue until the box is ticked; the button then slides in and is announced. */}
+      <p aria-live="polite" className="sr-only">{step === 'gate' && gateTick ? 'Continue button is now available.' : ''}</p>
+      {step === 'gate' && !gateTick ? (
+        <p className="py-4 text-center text-sm text-ink-soft">Tick the box above to continue.</p>
+      ) : (
       <div className="sticky bottom-0 -mx-4 flex flex-col gap-2 border-t border-line bg-bg px-4 py-4 sm:flex-row">
-        <Button size="l" className="flex-1" onClick={next}>
+        <Button size="l" className={`flex-1 ${step === 'gate' ? 'animate-cta-in' : ''}`} onClick={next}>
           {i === steps.length - 1 ? 'Make the plan' : 'Continue'}
         </Button>
         {step === 'character' && (
@@ -347,6 +352,7 @@ export function Onboarding() {
           </Button>
         )}
       </div>
+      )}
     </div>
   );
 }
