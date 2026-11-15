@@ -2,6 +2,7 @@ import Link from 'next/link';
 import type { ReactNode } from 'react';
 import { Icon } from '@/components/icons';
 import { LEAVE_READER_EVENT } from '@/lib/reader/gate';
+import { ThemeToggle } from './ThemeToggle';
 
 /**
  * Frame of every screen (docs/SPEC.md 4.2): header with the child's name and a settings
@@ -80,9 +81,10 @@ export function AppShell({
               <span className="whitespace-nowrap rounded-pill bg-accent px-2 py-0.5 text-xs font-bold text-accent-ink">Sample data</span>
             ))}
           {headerExtra}
-          <div className="ml-auto flex items-center gap-3">
+          <div className="ml-auto flex items-center gap-1 min-[400px]:gap-2">
             {saveIndicator}
             {childName && <span className="hidden max-w-[10rem] truncate text-sm font-bold text-ink-soft min-[400px]:inline">{childName}</span>}
+            <ThemeToggle quiet={childMode} />
             {!childMode && <Link
               href="/settings"
               aria-label="Settings"

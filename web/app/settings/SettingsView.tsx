@@ -6,9 +6,9 @@ import { useRouter } from 'next/navigation';
 import { useEffect, useState, type ReactNode } from 'react';
 import { SubscriptionCard } from '@/components/paywall/SubscriptionCard';
 import { ExportImport, NarrationSettings, PalettePicker, Reminders, RestoreLink, StyleToggle, ValuesProfile, VoiceConsent } from '@/components/settings';
-import { clock } from '@/lib/engine/clock';
 import { CHILD_AGES } from '@/lib/engine/plan';
-import { DEFAULT_PALETTE, isNight } from '@/lib/theme';
+import { DEFAULT_PALETTE } from '@/lib/theme';
+import { useThemeMode } from '@/lib/useThemeMode';
 import { clearDeviceData } from '@/lib/storage/clear';
 import { Button, ButtonLink } from '@/components/ui/Button';
 import { ErrorBoundary } from '@/components/ui/ErrorBoundary';
@@ -44,6 +44,7 @@ function Section({ title, children }: { title: string; children: ReactNode }) {
 }
 
 export function SettingsView() {
+  const themeMode = useThemeMode();
   const child = useChild((s) => s.child);
   const updateChild = useChild((s) => s.updateChild);
   const settings = useSettings();
@@ -132,7 +133,7 @@ export function SettingsView() {
         <PalettePicker
           palette={settings.palette ?? DEFAULT_PALETTE}
           nightMode={settings.nightMode}
-          mode={isNight(settings.nightMode, clock.hour()) ? 'night' : 'light'}
+          mode={themeMode}
           onPalette={settings.setPalette}
           onNightMode={settings.setNightMode}
         />

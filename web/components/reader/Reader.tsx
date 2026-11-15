@@ -29,7 +29,7 @@ import { PagePhotos } from '@/components/photos/PagePhotos';
 import { isOn } from '@/lib/flags';
 import { getRecording, deleteRecording, recordingKey } from '@/lib/speech/recordings';
 import { getWorkspace } from '@/lib/store/workspace';
-import { isNight } from '@/lib/theme';
+import { useThemeMode } from '@/lib/useThemeMode';
 import { useImmersive } from '@/lib/reader/immersive';
 import { LEAVE_READER_EVENT } from '@/lib/reader/gate';
 import { ListenButton, type ReadPosition } from './ListenButton';
@@ -41,6 +41,7 @@ import type { PageRecorder } from '@/lib/speech/recorder';
 import { recordingToWav } from '@/lib/speech/wav';
 import { VoicePicker } from './VoicePicker';
 import { PageView } from './PageView';
+import { CartoonPlayer } from './CartoonPlayer';
 import { AskGrownUp, ParentCheck } from './ParentCheck';
 import { useParentGate } from './ParentGate';
 import { QuestionBar } from './QuestionBar';
@@ -54,7 +55,7 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
   const router = useRouter();
   const st = useEvents.getState();
   const textSize = useSettings((s) => s.textSize);
-  const nightMode = useSettings((s) => s.nightMode);
+  const themeMode = useThemeMode();
   const voiceConsent = useSettings((s) => s.voiceQuestionConsentOn);
   const voiceMode = useSettings((s) => s.voiceQuestionMode) ?? 'device';
   const setTextSize = useSettings((s) => s.setTextSize);
@@ -76,6 +77,9 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
   // Full screen: only the story on screen (lib/reader/immersive.ts). Leaving it needs no grown-up;
   // leaving the reader still does (the door button).
   const immersive = useImmersive();
+  const [cartoon, setCartoon] = useState(false);
+  // Cartoon mode is a Gold extra (SPEC 10.1, capability scenes.cartoon).
+  const cartoonOk = useGoldExtra('scenes.cartoon');
   const { guard, gate } = useParentGate();
   // The header logo leaves the reader too, through the same grown-up gate as the door button.
   useEffect(() => {
@@ -121,7 +125,7 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
   const pages = chapter && chapter.pages.length > 0 ? chapter.pages : live ?? [];
   const page = pages[Math.min(pageIdx, Math.max(0, pages.length - 1))];
   // Night colours are app-wide (components/ui/ThemeSync.tsx); here they pick the night scenes.
-  const night = isNight(nightMode, clock.hour());
+  const night = themeMode === 'night';
   const render = useMemo(() => (t: string) => renderText(t, ctx?.child ?? null), [ctx?.child]);
   const touchX = useRef<number | null>(null);
   const recKey = page ? recordingKey(getWorkspace(), eventId, index, page.id) : '';
@@ -187,8 +191,9 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
     setPageIdx(i);
     setStep(s);
     setPosition(null);
-    setAutoListen(false);
-    setNavTick((n) => n + 1); // a tap stops the voice
+    // A tap stops the voice; with Auto on, a tap while it reads moves the voice there and it reads on.
+    setAutoListen(readOn && position !== null && mode.kind === 'read');
+    setNavTick((n) => n + 1);
   };
   // The voice finished the page: with Read on it turns to the next page and keeps reading, never past the chapter's end.
   const readOnNext = () => {
@@ -323,6 +328,7 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
           <PageView
             page={page} character={child.character} render={render} textSize={textSize} night={night}
             step={step} position={position} updatedText={updatedText} illustration={illustration}
+            onCartoon={isOn('cartoonMode') && cartoonOk ? () => setCartoon(true) : undefined}
             extra={photos ? <PagePhotos photos={event.photos} /> : undefined}
           />
         </div>
@@ -340,13 +346,23 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
             sentences={page.sentences.map((s) => renderText(s.text, child, { speak: true, pronunciation: child.pronunciation }))}
             shown={page.sentences.map((s) => render(s.text))} onProgress={onProgress}
             recordingKey={isOn('parentVoice') ? recKey : undefined} hasRecording={recs.key === recKey && recs.has} voiceName={child.values.family[0]}
-            autoStart={autoListen} onFinished={readOnNext} night={night} />
+            autoStart={autoListen} onFinished={readOnNext} night={night}
+            upNext={readOn && !isLast ? pages[pageIdx + 1]?.sentences.map((s) => renderText(s.text, child, { speak: true, pronunciation: child.pronunciation })) : undefined} />
           )}
           </span>
           {!recorder && (
-            <Button variant="secondary" aria-pressed={readOn} onClick={() => setVoice({ readOn: !readOn })}
-              title="Auto: the voice turns the pages by itself" aria-label="Auto page turn"
-              className={`px-3 text-sm ${readOn ? '!border-primary !bg-primary !text-primary-ink' : ''}`}>
+            <Button variant="secondary" aria-pressed={readOn}
+              onClick={() => {
+                const on = !readOn;
+                setVoice({ readOn: on });
+                // Turning Auto on starts reading at once (inside the tap, which iPhone needs for sound).
+                if (on && position === null && mode.kind === 'read')
+                  document.querySelector<HTMLButtonElement>('[data-reader-listen] button')?.click();
+              }}
+              title={readOn ? 'Auto is on: the voice reads and turns the pages. Tap to turn off.' : 'Auto: read aloud and turn the pages by itself'}
+              aria-label="Auto page turn"
+              className={`px-3 text-sm ${readOn ? '!border-primary !text-primary-text' : 'text-ink-soft'}`}>
+              <span aria-hidden className={`size-2.5 rounded-full ${readOn ? 'bg-primary' : 'border-2 border-line'}`} />
               Auto
             </Button>
           )}
@@ -374,6 +390,12 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
   const iconBtn = 'inline-flex size-tap max-[400px]:size-10 shrink-0 items-center justify-center rounded-pill hover:bg-surface-2';
   return (
     <div className="flex min-h-0 flex-1 gap-6">
+      {cartoon && pages.length > 0 && (
+        <CartoonPlayer
+          pages={pages} child={child} eventType={event.type} beats={chapter.beats} night={night} start={pageIdx}
+          onClose={(last) => { setCartoon(false); turn(last, 0); }}
+        />
+      )}
       <div className="flex min-w-0 flex-1 flex-col gap-2">
         {/* Phones: the icon row leaves no room, so the chapter name gets its own line. */}
         <p className="line-clamp-2 text-xs font-bold text-ink-soft sm:hidden">
