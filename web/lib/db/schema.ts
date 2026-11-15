@@ -8,6 +8,9 @@ import {
   bigserial, check, index, integer, jsonb, numeric, pgTable, text, timestamp, uuid,
 } from 'drizzle-orm/pg-core';
 import type { FamilyDoc } from '../engine/types';
+import type { Reminder } from '../push/reminders';
+
+export type PushReminder = Reminder & { sent?: boolean };
 
 export const families = pgTable(
   'families',
@@ -86,3 +89,23 @@ export type FamilyRow = typeof families.$inferSelect;
 export type FamilyStateRow = typeof familyState.$inferSelect;
 export type EntitlementRow = typeof entitlements.$inferSelect;
 export type LlmCallRow = typeof llmCalls.$inferInsert;
+
+/**
+ * Web push subscriptions (benchmark: reminders). One row per browser subscription. The
+ * reminders are plain times computed in the browser (no child name); the server only sends
+ * an empty push when one is due, and the service worker fetches `last` to show it.
+ */
+export const pushSubscriptions = pgTable(
+  'push_subscriptions',
+  {
+    endpoint: text('endpoint').primaryKey(),
+    familyId: uuid('family_id')
+      .notNull()
+      .references(() => families.id, { onDelete: 'cascade' }),
+    reminders: jsonb('reminders').$type<PushReminder[]>().notNull().default(sql`'[]'::jsonb`),
+    last: jsonb('last').$type<PushReminder | null>(),
+    createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+    updatedAt: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index('push_subscriptions_family_id').on(t.familyId)],
+);

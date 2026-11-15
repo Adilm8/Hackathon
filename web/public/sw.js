@@ -5,7 +5,7 @@
  * - API calls are never cached (family data stays in the browser store and the server).
  * Bump VERSION to drop old caches.
  */
-const VERSION = 'bds-v1';
+const VERSION = 'bds-v2';
 const STATIC = /^\/(_next\/static|icons|scenes)\//;
 
 self.addEventListener('install', (e) => {
@@ -59,4 +59,49 @@ self.addEventListener('fetch', (e) => {
         .catch(async () => (await caches.match(req)) || (await caches.match('/home')) || new Response(OFFLINE_HTML, { headers: { 'Content-Type': 'text/html; charset=utf-8' } })),
     );
   }
+});
+
+/*
+ * Push reminders arrive empty (no payload to decrypt); the worker asks the server what the
+ * reminder says. Texts never contain the child's name.
+ */
+self.addEventListener('push', (e) => {
+  e.waitUntil(
+    (async () => {
+      let r = null;
+      try {
+        const sub = await self.registration.pushManager.getSubscription();
+        if (sub) {
+          const res = await fetch(`/api/push/last?endpoint=${encodeURIComponent(sub.endpoint)}`, { cache: 'no-store' });
+          r = (await res.json()).reminder;
+        }
+      } catch {
+        /* show the general reminder */
+      }
+      const title = (r && r.title) || 'Big Day Stories';
+      await self.registration.showNotification(title, {
+        body: (r && r.body) || 'Tonight\'s story is ready.',
+        icon: '/icons/icon-192.png',
+        badge: '/icons/icon-192.png',
+        tag: (r && r.id) || 'bds-reminder',
+        data: { url: (r && r.url) || '/home' },
+      });
+    })(),
+  );
+});
+
+self.addEventListener('notificationclick', (e) => {
+  e.notification.close();
+  const url = (e.notification.data && e.notification.data.url) || '/home';
+  e.waitUntil(
+    self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then((list) => {
+      for (const c of list) {
+        if ('focus' in c) {
+          c.navigate(url);
+          return c.focus();
+        }
+      }
+      return self.clients.openWindow(url);
+    }),
+  );
 });

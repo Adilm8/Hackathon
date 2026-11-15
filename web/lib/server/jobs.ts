@@ -14,3 +14,25 @@ export function startJobs(): void {
   void run();
   setInterval(run, 24 * 3_600_000).unref();
 }
+
+const gp = globalThis as unknown as { __bdsPush?: boolean };
+
+/** Every minute: sends the reminders that are due (only when VAPID keys are set). */
+export function startPushJob(): void {
+  if (gp.__bdsPush) return;
+  gp.__bdsPush = true;
+  const run = async () => {
+    const { env } = await import('../env');
+    const { publicKey, privateKey, subject } = env().vapid;
+    if (!publicKey || !privateKey) return;
+    const { duePushes, deletePushSubscription } = await import('../db/push');
+    const { sendEmptyPush } = await import('../push/vapid');
+    const due = await duePushes(Date.now());
+    for (const d of due) {
+      const r = await sendEmptyPush(d.endpoint, { publicKey, privateKey }, subject);
+      if (r === 'gone') await deletePushSubscription(d.endpoint);
+    }
+    if (due.length) console.log(`[push] sent ${due.length} reminders`);
+  };
+  setInterval(() => void run().catch((e) => console.error('[push] failed:', e instanceof Error ? e.message : e)), 60_000).unref();
+}

@@ -4,3 +4,4 @@ export { StyleToggle } from './StyleToggle';
 export { ValuesProfile, FAMILY_CHIPS } from './ValuesProfile';
 export { VoiceConsent } from './VoiceConsent';
 export { PalettePicker } from './PalettePicker';
+export { Reminders } from './Reminders';

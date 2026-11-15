@@ -128,3 +128,11 @@ Defaults chosen without Lida (to revisit):
 - Opening any event screen of another child (link, calendar reminder) makes that child active first (`useEventCtx`). Onboarding a new child keeps the current one, with badges, in the roster.
 - Sample: Max's sister Mia (6, first day at school in a week) is seeded on the device so the jury can try switching.
 - Not synced: the other children's profiles stay on this device (restore link / backup carry only the active child).
+
+### Reminders (web push and in-app)
+
+- Settings > Reminders: opt-in "Reminders on this device", story time (default 18:30) and quiet hours (20:30 to 07:30); a reminder inside quiet hours waits until they end. Times live in `bds:prefs`.
+- `lib/push/reminders.ts` (tested): evening chapter reminders, the big day at 08:00, the check-in the next day at 17:00, computed in the browser's time zone, never with the child's name.
+- Server: `push_subscriptions` table (migration 0001), `/api/push` (GET public key, PUT subscription + reminder times with a family session, DELETE), `/api/push/last` (what the worker shows). `startPushJob` (instrumentation) checks every minute and sends an **empty** push signed with VAPID using Node crypto only (`lib/push/vapid.ts`, no third-party library, no payload encryption needed); `public/sw.js` fetches the text and shows the notification, a tap opens the right screen.
+- Keys: `npm run vapid` prints `VAPID_PUBLIC_KEY` and `VAPID_PRIVATE_KEY` for Railway variables (never commit). Without them push is off and Settings says so.
+- Fallback: on /home a bright reminder line appears once a reminder's time has come today (all browsers). iPhone/iPad: push only after "Add to Home Screen" (iOS 16.4+); Settings explains it.

@@ -58,6 +58,14 @@ function load() {
     /** Empty = taken from the request. */
     baseUrl: str('NEXT_PUBLIC_BASE_URL'),
     elevenLabsKey: str('ELEVENLABS_API_KEY'),
+    /** Web push reminders; empty keys = push is off and the app shows in-app reminders only. */
+    vapid: {
+      publicKey: str('VAPID_PUBLIC_KEY'),
+      privateKey: str('VAPID_PRIVATE_KEY'),
+      /** Contact the push services may use: VAPID_SUBJECT, else the app's public URL. */
+      subject: str('VAPID_SUBJECT') || str('NEXT_PUBLIC_BASE_URL')
+        || (str('RAILWAY_PUBLIC_DOMAIN') ? `https://${str('RAILWAY_PUBLIC_DOMAIN')}` : 'https://localhost'),
+    },
   };
 }
 
