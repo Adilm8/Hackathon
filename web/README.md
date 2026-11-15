@@ -108,3 +108,9 @@ Defaults chosen without Lida (to revisit):
 
 - `lib/fx/celebrate.ts`: confetti (CSS, skipped with reduced motion) and a soft three-note chime (Web Audio, no files) when a chapter ends and the first time a badge opens in a tab.
 - `lib/store/prefs.ts` (`bds:prefs`, this device only, outside the SPEC 6.1 Settings contract): Sounds, Easy-read letters, favourite chapters. `components/ui/PrefsSync.tsx` loads it and sets `<html data-font="easy">`, which swaps the body font to Atkinson Hyperlegible (OFL, next/font) with wider letter and word spacing. Switches in Settings > Reading.
+
+### Story library, favourites, bedtime routine
+
+- Library tab on /home (`?tab=library`, also in the bottom tab bar): every chapter read, newest first, "Read again" opens the reader; the heart keeps a chapter under Favourites (`bds:prefs` favorites, this device). Logic in `lib/home/library.ts`.
+- `/routine`: bath, teeth, pyjamas, story, lights; steps can be switched off (`bds:prefs` routineOff); a calm ring timer per step with Pause and Next step, a soft chime when time is up (only with Sounds on), the story step opens tonight's chapter. Linked from the right column on /home and the Library tab.
+- Defaults to revisit with Lida: step list and minutes.

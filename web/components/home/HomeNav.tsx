@@ -4,7 +4,7 @@ import { Icon, type IconName } from '@/components/icons';
 import type { Workspace } from '@/lib/engine/types';
 import { ownStoryHref, startOwnStory } from '@/lib/store/sample';
 
-export type HomeTab = 'path' | 'days' | 'badges' | 'child';
+export type HomeTab = 'path' | 'days' | 'library' | 'badges' | 'child';
 
 interface NavItem { key: string; label: string; icon: IconName; href: string; tab?: HomeTab }
 
@@ -12,6 +12,7 @@ function items(panelHref: string | null): NavItem[] {
   return [
     { key: 'path', label: 'Stories', icon: 'house', href: '/home', tab: 'path' },
     { key: 'days', label: 'Big days', icon: 'calendar-days', href: '/home?tab=days', tab: 'days' },
+    { key: 'library', label: 'Library', icon: 'library-big', href: '/home?tab=library', tab: 'library' },
     { key: 'badges', label: 'Badges', icon: 'trophy', href: '/home?tab=badges', tab: 'badges' },
     ...(panelHref ? [{ key: 'panel', label: 'Parent panel', icon: 'hand-heart' as IconName, href: panelHref }] : []),
     { key: 'child', label: 'Child', icon: 'smile', href: '/home?tab=child', tab: 'child' },

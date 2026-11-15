@@ -210,3 +210,17 @@ export function CreateCard({ workspace }: { workspace: Workspace }) {
     </section>
   );
 }
+
+/** Link to the bedtime routine timer (wind-down before the story). */
+export function RoutineCard({ name }: { name: string }) {
+  return (
+    <Link href="/routine" className={`${card} flex items-center gap-3 hover:border-ink-soft/40`}>
+      <span className="flex size-12 shrink-0 items-center justify-center rounded-pill bg-surface-2 text-primary-text"><Icon name="moon-star" size={26} /></span>
+      <span className="flex flex-1 flex-col">
+        <span className="font-extrabold">Bedtime routine</span>
+        <span className="text-xs text-ink-soft">Bath, teeth, pyjamas, story, lights: a calm timer for {name}&apos;s evening.</span>
+      </span>
+      <Icon name="arrow-right" size={20} />
+    </Link>
+  );
+}
