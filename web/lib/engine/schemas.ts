@@ -20,7 +20,10 @@ export const TopicEnum = z.enum([
 ]);
 export const MoodEnum = z.enum(['calm', 'worried', 'brave', 'happy']);
 export const StyleModeEnum = z.enum(['story', 'social']);
-export const AnimalEnum = z.enum(['bunny', 'bear', 'fox', 'kitten', 'dragon', 'owl', 'hedgehog', 'fawn']);
+export const AnimalEnum = z.enum([
+  'bunny', 'bear', 'fox', 'kitten', 'dragon', 'owl', 'hedgehog', 'fawn',
+  'wolf', 'lion', 'tiger', 'dino', 'panda', 'monkey', 'rhino', 'yeti',
+]);
 export const CharacterColorEnum = z.enum(['blue', 'green', 'yellow', 'red', 'purple', 'orange', 'teal', 'pink']);
 export const AccessoryEnum = z.enum([
   'none', 'cap', 'scarf', 'backpack', 'cape', 'satchel', 'star-necklace', 'star-wand', 'lantern', 'plush-star',

@@ -51,18 +51,18 @@ export const AVATAR_ART = {
   "bunny": {
    "ext": "svg",
    "v": {
-    "dawn": "829ebff4",
-    "dusk": "a26010dc",
-    "default": "8532e99b"
+    "dawn": "1a764e6d",
+    "dusk": "8a98514e",
+    "default": "ed3b100e"
    },
    "bbox": [
-    41.8,
-    32,
+    41.5,
+    33.7,
     198.6,
-    285.3
+    284.9
    ],
    "fur": {
-    "classic": "#fef1e3",
+    "classic": "#faf3e1",
     "dusk": "#c9d2ff",
     "dawn": "#ffd2de"
    }
@@ -70,18 +70,18 @@ export const AVATAR_ART = {
   "bear": {
    "ext": "svg",
    "v": {
-    "dawn": "f906d5eb",
-    "dusk": "d83a8659",
-    "default": "0ebf7dc7"
+    "dawn": "2b0a9d1b",
+    "dusk": "cb8dfc3c",
+    "default": "23e5592a"
    },
    "bbox": [
-    42.2,
-    38.4,
-    198.6,
+    41.8,
+    37.7,
+    198.9,
     285.3
    ],
    "fur": {
-    "classic": "#e7a760",
+    "classic": "#e6a65f",
     "dusk": "#a3abcf",
     "dawn": "#e9a08c"
    }
@@ -89,13 +89,13 @@ export const AVATAR_ART = {
   "fox": {
    "ext": "svg",
    "v": {
-    "dawn": "39f6db8e",
-    "dusk": "36a35778",
-    "default": "6c2df333"
+    "dawn": "463938fd",
+    "dusk": "c1cd54a3",
+    "default": "0f662b7c"
    },
    "bbox": [
-    6.8,
-    37.1,
+    6.5,
+    36.4,
     198.2,
     284.9
    ],
@@ -108,18 +108,18 @@ export const AVATAR_ART = {
   "kitten": {
    "ext": "svg",
    "v": {
-    "dawn": "70bce3d5",
-    "dusk": "8856c114",
-    "default": "74d9b130"
+    "dawn": "04eb5362",
+    "dusk": "c529a502",
+    "default": "bcfcb7ac"
    },
    "bbox": [
-    3.7,
+    3.4,
     45.2,
     198.2,
-    284.9
+    285.3
    ],
    "fur": {
-    "classic": "#d0b4c2",
+    "classic": "#d0b5c2",
     "dusk": "#7f8ed9",
     "dawn": "#f5ad66"
    }
@@ -127,18 +127,18 @@ export const AVATAR_ART = {
   "dragon": {
    "ext": "svg",
    "v": {
-    "dawn": "4c54bd1c",
-    "dusk": "3fc5ef71",
-    "default": "c94e85a6"
+    "dawn": "ae843f0d",
+    "dusk": "7d71bdc2",
+    "default": "55e41fe8"
    },
    "bbox": [
     35.7,
     37.7,
-    216.2,
+    216.6,
     283.9
    ],
    "fur": {
-    "classic": "#78c59e",
+    "classic": "#79c69f",
     "dusk": "#7fb0f0",
     "dawn": "#f5a3c0"
    }
@@ -146,15 +146,15 @@ export const AVATAR_ART = {
   "owl": {
    "ext": "svg",
    "v": {
-    "dawn": "5be8ada7",
-    "dusk": "a004ff82",
-    "default": "0f82740c"
+    "dawn": "cd143f74",
+    "dusk": "0ce518ad",
+    "default": "80512194"
    },
    "bbox": [
-    33.7,
-    37.7,
-    206.4,
-    283.9
+    33.3,
+    37.4,
+    206.7,
+    283.6
    ],
    "fur": {
     "classic": "#a76b5e",
@@ -165,18 +165,18 @@ export const AVATAR_ART = {
   "hedgehog": {
    "ext": "svg",
    "v": {
-    "dawn": "90c9469b",
-    "dusk": "f2c086f3",
-    "default": "d8b262d7"
+    "dawn": "7a37b691",
+    "dusk": "e978f3d1",
+    "default": "48154377"
    },
    "bbox": [
-    29.9,
-    37.4,
-    210.1,
+    29.6,
+    37.1,
+    210.5,
     284.9
    ],
    "fur": {
-    "classic": "#fde7cb",
+    "classic": "#fde8cd",
     "dusk": "#9a8be0",
     "dawn": "#f0a35e"
    }
@@ -184,20 +184,172 @@ export const AVATAR_ART = {
   "fawn": {
    "ext": "svg",
    "v": {
-    "dawn": "f3bd832b",
-    "dusk": "c287113b",
-    "default": "a04582ab"
+    "dawn": "d0d81f23",
+    "dusk": "8f91100e",
+    "default": "58182324"
    },
    "bbox": [
     30.6,
-    30.9,
-    209.4,
+    30.3,
+    209.8,
+    284.2
+   ],
+   "fur": {
+    "classic": "#db9265",
+    "dusk": "#a7b4cf",
+    "dawn": "#f0a0a8"
+   }
+  },
+  "wolf": {
+   "ext": "svg",
+   "v": {
+    "dawn": "bbf5f1bc",
+    "dusk": "6e079091",
+    "default": "68f6dc02"
+   },
+   "bbox": [
+    14.6,
+    37.7,
+    198.6,
     284.6
    ],
    "fur": {
-    "classic": "#db9264",
-    "dusk": "#a7b4cf",
-    "dawn": "#f0a0a8"
+    "classic": "#6f7892",
+    "dusk": "#8f8bd6",
+    "dawn": "#d9a97a"
+   }
+  },
+  "lion": {
+   "ext": "svg",
+   "v": {
+    "dawn": "7aa77df4",
+    "dusk": "7ba0a1e7",
+    "default": "27b110d9"
+   },
+   "bbox": [
+    35.7,
+    34,
+    220.7,
+    285.9
+   ],
+   "fur": {
+    "classic": "#f3bb52",
+    "dusk": "#b9b4e6",
+    "dawn": "#f2a07a"
+   }
+  },
+  "tiger": {
+   "ext": "svg",
+   "v": {
+    "dawn": "4107f998",
+    "dusk": "78f1b74f",
+    "default": "16075b10"
+   },
+   "bbox": [
+    41.1,
+    51,
+    215.9,
+    284.9
+   ],
+   "fur": {
+    "classic": "#f89b60",
+    "dusk": "#e8e6f2",
+    "dawn": "#f4b25a"
+   }
+  },
+  "dino": {
+   "ext": "svg",
+   "v": {
+    "dawn": "f0c7924c",
+    "dusk": "96d3c4b9",
+    "default": "d9ac9a31"
+   },
+   "bbox": [
+    40.1,
+    35,
+    215.6,
+    284.9
+   ],
+   "fur": {
+    "classic": "#86babc",
+    "dusk": "#9a8be0",
+    "dawn": "#7cc96b"
+   }
+  },
+  "panda": {
+   "ext": "svg",
+   "v": {
+    "dawn": "991ff68c",
+    "dusk": "5a926501",
+    "default": "199f447d"
+   },
+   "bbox": [
+    40.5,
+    31.3,
+    198.9,
+    284.9
+   ],
+   "fur": {
+    "classic": "#fcf3ee",
+    "dusk": "#dfe6ff",
+    "dawn": "#ffe3d2"
+   }
+  },
+  "monkey": {
+   "ext": "svg",
+   "v": {
+    "dawn": "334e630e",
+    "dusk": "9d3287bc",
+    "default": "2505c71b"
+   },
+   "bbox": [
+    11.6,
+    41.5,
+    212.5,
+    281.9
+   ],
+   "fur": {
+    "classic": "#a85639",
+    "dusk": "#7c86c4",
+    "dawn": "#d98a5a"
+   }
+  },
+  "rhino": {
+   "ext": "svg",
+   "v": {
+    "dawn": "d36b0600",
+    "dusk": "e3dab161",
+    "default": "e003979c"
+   },
+   "bbox": [
+    41.5,
+    34.7,
+    199.2,
+    284.2
+   ],
+   "fur": {
+    "classic": "#b8b0a5",
+    "dusk": "#8fb0d9",
+    "dawn": "#d9b48f"
+   }
+  },
+  "yeti": {
+   "ext": "svg",
+   "v": {
+    "dawn": "2ea9130f",
+    "dusk": "a513ddba",
+    "default": "3c3d536b"
+   },
+   "bbox": [
+    41.1,
+    31.6,
+    198.9,
+    284.9
+   ],
+   "fur": {
+    "classic": "#fdf7eb",
+    "dusk": "#c9d2ff",
+    "dawn": "#ffe0ec"
    }
   }
  },
@@ -205,75 +357,75 @@ export const AVATAR_ART = {
   "tunic": {
    "ext": "svg",
    "v": {
-    "blue": "35e67ca3",
-    "green": "58a5b66c",
-    "orange": "3da98f01",
-    "pink": "51936dad",
-    "purple": "bb726855",
-    "red": "d8774c1c",
-    "teal": "02e03ac0",
-    "yellow": "66084486",
-    "default": "0e489011"
+    "blue": "a9449b49",
+    "green": "b325dab8",
+    "orange": "52f809fc",
+    "pink": "43c0a89b",
+    "purple": "0e2b9edf",
+    "red": "49599e6c",
+    "teal": "8469e02b",
+    "yellow": "8e98a55e",
+    "default": "8a347631"
    },
    "bbox": [
     61.5,
     153,
-    178.5,
+    178.8,
     254
    ]
   },
   "raincoat": {
    "ext": "svg",
    "v": {
-    "blue": "af41519d",
-    "green": "05e1441b",
-    "orange": "f733ee4b",
-    "pink": "57445556",
-    "purple": "9e963b90",
-    "red": "9b8e9a2f",
-    "teal": "9a18dd91",
-    "yellow": "511dc730",
-    "default": "68449ac9"
+    "blue": "986f4dd8",
+    "green": "cb65eae9",
+    "orange": "ba93ec22",
+    "pink": "f44dff46",
+    "purple": "e26ad2b7",
+    "red": "3aeaa705",
+    "teal": "969967e7",
+    "yellow": "e3c048a3",
+    "default": "890032a6"
    },
    "bbox": [
     53,
     152.3,
-    186.7,
+    187,
     254.7
    ]
   },
   "star-robe": {
    "ext": "svg",
    "v": {
-    "blue": "cba7ebf7",
-    "green": "ebf6c6e0",
-    "orange": "99e1c55e",
-    "pink": "70c12614",
-    "purple": "52d95f19",
-    "red": "9a0988c5",
-    "teal": "b324899d",
-    "yellow": "98a17171",
-    "default": "645ab7a7"
+    "blue": "84c5c867",
+    "green": "fec90534",
+    "orange": "077a4e9d",
+    "pink": "3fae18a7",
+    "purple": "52f3dd72",
+    "red": "230f0d6d",
+    "teal": "c2cf0159",
+    "yellow": "1113d0b2",
+    "default": "6e23145d"
    },
    "bbox": [
-    54.7,
+    54.4,
     152.3,
-    185.3,
+    185.6,
     267.9
    ]
   },
   "knight-tabard": {
    "ext": "svg",
    "v": {
-    "blue": "a45974c0",
-    "green": "94a3cfa1",
-    "orange": "b55bbdf1",
-    "pink": "4443a7f9",
-    "purple": "cd0c2f01",
-    "red": "5093bb4a",
-    "teal": "9d72ff57",
-    "yellow": "8b3047b1",
-    "default": "d68f3465"
+    "blue": "5893cc9c",
+    "green": "d364eace",
+    "orange": "fa928ad3",
+    "pink": "2858617e",
+    "purple": "53168a44",
+    "red": "5c9a7a33",
+    "teal": "0c296634",
+    "yellow": "cd168eab",
+    "default": "242dc693"
    },
    "bbox": [
     57.5,
@@ -285,15 +437,15 @@ export const AVATAR_ART = {
   "overalls": {
    "ext": "svg",
    "v": {
-    "blue": "742d5db7",
-    "green": "ae00f363",
-    "orange": "e0ea66c6",
-    "pink": "57a9841b",
-    "purple": "905a85dd",
-    "red": "e629d3d9",
-    "teal": "9db15d3f",
-    "yellow": "8118b938",
-    "default": "5f1da3b9"
+    "blue": "51fb2825",
+    "green": "1e94519a",
+    "orange": "59f49435",
+    "pink": "d13f1d36",
+    "purple": "0cd6c544",
+    "red": "33310f95",
+    "teal": "001d843b",
+    "yellow": "9a39a757",
+    "default": "9219e03b"
    },
    "bbox": [
     64.9,
@@ -305,55 +457,55 @@ export const AVATAR_ART = {
   "moon-pajamas": {
    "ext": "svg",
    "v": {
-    "blue": "33443d09",
-    "green": "26d15d6d",
-    "orange": "9a834396",
-    "pink": "681fd937",
-    "purple": "1bf729b4",
-    "red": "3830a05e",
-    "teal": "ec606f42",
-    "yellow": "d1b6872e",
-    "default": "09050c69"
+    "blue": "c3365a02",
+    "green": "7e15a2f1",
+    "orange": "78c21cc7",
+    "pink": "99a60247",
+    "purple": "d8cf987a",
+    "red": "1ba330ed",
+    "teal": "749db51c",
+    "yellow": "ed920343",
+    "default": "ea452e18"
    },
    "bbox": [
     58.8,
     151.6,
     182.2,
-    284.9
+    285.3
    ]
   },
   "explorer-vest": {
    "ext": "svg",
    "v": {
-    "blue": "54c4c18f",
-    "green": "cb27c826",
-    "orange": "026be3fe",
-    "pink": "8dd44544",
-    "purple": "1e7aa120",
-    "red": "2783f0e2",
-    "teal": "25dcaef9",
-    "yellow": "ed52936e",
-    "default": "6c4ac8ae"
+    "blue": "0a552b27",
+    "green": "ebae9853",
+    "orange": "b155dfc5",
+    "pink": "e81d8d00",
+    "purple": "c69720f1",
+    "red": "317eb804",
+    "teal": "e50b75d6",
+    "yellow": "df00a5a7",
+    "default": "4451a3d9"
    },
    "bbox": [
-    73.4,
+    73.1,
     151.6,
-    166.3,
+    166.6,
     230.5
    ]
   },
   "knit-sweater": {
    "ext": "svg",
    "v": {
-    "blue": "c395cbfe",
-    "green": "22d44219",
-    "orange": "5fb92764",
-    "pink": "a57eb9d3",
-    "purple": "5416b62e",
-    "red": "5c44eddf",
-    "teal": "740c8cdd",
-    "yellow": "a806699e",
-    "default": "07f70704"
+    "blue": "2a0279ee",
+    "green": "a9163370",
+    "orange": "88c96146",
+    "pink": "fa50b638",
+    "purple": "2904db07",
+    "red": "95999e75",
+    "teal": "1c0fea2f",
+    "yellow": "3af5efdc",
+    "default": "88ec2b5b"
    },
    "bbox": [
     52.4,
@@ -367,67 +519,67 @@ export const AVATAR_ART = {
   "cap": {
    "ext": "svg",
    "v": {
-    "blue": "bfbbd26b",
-    "green": "7779af2e",
-    "orange": "d9c1c12e",
-    "pink": "78f656d2",
-    "purple": "1ba1f963",
-    "red": "437d7a20",
-    "teal": "737138e9",
-    "yellow": "363815b7",
-    "default": "1233d984"
+    "blue": "5cb6ebec",
+    "green": "db2191c9",
+    "orange": "d6fa6e3f",
+    "pink": "9a6efac5",
+    "purple": "8742584a",
+    "red": "3f73bc1f",
+    "teal": "6ff26681",
+    "yellow": "d66e6a72",
+    "default": "faad9abe"
    },
    "bbox": [
-    47.3,
-    36.4,
+    46.9,
+    36,
     177.1,
-    106.1
+    106.4
    ]
   },
   "wizard-hat": {
    "ext": "svg",
    "v": {
-    "blue": "963421db",
-    "green": "920d8ffa",
-    "orange": "23690deb",
-    "pink": "b5c1b099",
-    "purple": "d918e5b6",
-    "red": "e6856813",
-    "teal": "e558a497",
-    "yellow": "37bbd9bb",
-    "default": "264cb420"
+    "blue": "394d398d",
+    "green": "9020f7d2",
+    "orange": "c372fc25",
+    "pink": "43513838",
+    "purple": "d48b1c81",
+    "red": "ac577c41",
+    "teal": "ccc91243",
+    "yellow": "2b9aa867",
+    "default": "78445e43"
    },
    "bbox": [
     110.8,
-    35,
-    187,
+    34.7,
+    187.3,
     96.6
    ]
   },
   "flower-crown": {
    "ext": "svg",
    "v": {
-    "default": "b454ad0a"
+    "default": "3ea27f4b"
    },
    "bbox": [
-    48.3,
+    47.9,
     59.2,
-    192.8,
-    104.4
+    193.1,
+    104.7
    ]
   },
   "star-crown": {
    "ext": "svg",
    "v": {
-    "blue": "cd5cb123",
-    "green": "37fa2a08",
-    "orange": "2541e003",
-    "pink": "4b85edce",
-    "purple": "a8831467",
-    "red": "2df3b6ad",
-    "teal": "6aabb33e",
-    "yellow": "50320739",
-    "default": "21f43578"
+    "blue": "000254a1",
+    "green": "c6e320ce",
+    "orange": "18c56bed",
+    "pink": "efd3d9e2",
+    "purple": "ec672032",
+    "red": "126a16d3",
+    "teal": "3e7deb98",
+    "yellow": "85a8db39",
+    "default": "0da26ba2"
    },
    "bbox": [
     132.3,
@@ -439,39 +591,39 @@ export const AVATAR_ART = {
   "beret": {
    "ext": "svg",
    "v": {
-    "blue": "05ab5efe",
-    "green": "55b38dfd",
-    "orange": "34196cf2",
-    "pink": "8e8612c5",
-    "purple": "75e89f66",
-    "red": "cfc69c4e",
-    "teal": "bd30ed57",
-    "yellow": "e5c2dac2",
-    "default": "e8dc2acd"
+    "blue": "9a3caa62",
+    "green": "7baa40d1",
+    "orange": "f32959b9",
+    "pink": "810b5260",
+    "purple": "b4a33fe7",
+    "red": "22b22736",
+    "teal": "3ab11da1",
+    "yellow": "a4b58218",
+    "default": "5432c985"
    },
    "bbox": [
-    78.9,
+    78.5,
     34.7,
-    188,
-    97.6
+    188.4,
+    97.9
    ]
   },
   "acorn-cap": {
    "ext": "svg",
    "v": {
-    "blue": "4821eb00",
-    "green": "156dad73",
-    "orange": "14660709",
-    "pink": "73da8dfa",
-    "purple": "5b48739c",
-    "red": "778fcd8d",
-    "teal": "265e3388",
-    "yellow": "41cfae4c",
-    "default": "b49790d5"
+    "blue": "fb6eb1c7",
+    "green": "74842149",
+    "orange": "001ab975",
+    "pink": "3e5ee31f",
+    "purple": "93265f67",
+    "red": "fd6ba78d",
+    "teal": "68a1a268",
+    "yellow": "9c2781b6",
+    "default": "b32ab7cc"
    },
    "bbox": [
     61.5,
-    28.2,
+    27.9,
     178.8,
     101.7
    ]
@@ -479,41 +631,41 @@ export const AVATAR_ART = {
   "bow-headband": {
    "ext": "svg",
    "v": {
-    "blue": "8d463bde",
-    "green": "0563cc31",
-    "orange": "0b808747",
-    "pink": "1b34854e",
-    "purple": "a872879d",
-    "red": "39c9158a",
-    "teal": "289dd909",
-    "yellow": "638aec82",
-    "default": "4b6d3aa3"
+    "blue": "4f0c70f1",
+    "green": "65d4e6c5",
+    "orange": "af0c9992",
+    "pink": "0a047da6",
+    "purple": "acff04d6",
+    "red": "9bc9c655",
+    "teal": "e59703ff",
+    "yellow": "a364719a",
+    "default": "69beac45"
    },
    "bbox": [
-    64.9,
+    64.6,
     33.3,
-    198.2,
+    198.6,
     103
    ]
   },
   "goggles": {
    "ext": "svg",
    "v": {
-    "blue": "2d89fdcb",
-    "green": "24c803a2",
-    "orange": "7ae5eb24",
-    "pink": "904e4354",
-    "purple": "699812b4",
-    "red": "49c04bd5",
-    "teal": "bb72417e",
-    "yellow": "f4dbb79d",
-    "default": "1d7a5872"
+    "blue": "7020875c",
+    "green": "76fd6f5b",
+    "orange": "b81e5d11",
+    "pink": "70d62d34",
+    "purple": "0e0071c9",
+    "red": "b34881dc",
+    "teal": "ce760266",
+    "yellow": "ca4659c1",
+    "default": "f4cdf1d3"
    },
    "bbox": [
-    62.2,
+    61.9,
     52,
     178.2,
-    100
+    100.3
    ]
   }
  },
@@ -521,60 +673,60 @@ export const AVATAR_ART = {
   "scarf": {
    "ext": "svg",
    "v": {
-    "blue": "ca0f5207",
-    "green": "ac9a5abf",
-    "orange": "0b9bab2b",
-    "pink": "88fc810c",
-    "purple": "b47186eb",
-    "red": "c3213ff1",
-    "teal": "99efb9b9",
-    "yellow": "c02dcde3",
-    "default": "361cb888"
+    "blue": "e7d5d0bc",
+    "green": "943a8abd",
+    "orange": "40059ac3",
+    "pink": "2df6bdfa",
+    "purple": "bef1cc9a",
+    "red": "1d67f93c",
+    "teal": "b1d34b86",
+    "yellow": "20f53128",
+    "default": "094f1fb3"
    },
    "bbox": [
-    78.9,
+    78.5,
     143.5,
-    160.5,
+    160.8,
     237.7
    ]
   },
   "backpack": {
    "ext": "svg",
    "v": {
-    "blue": "46e5b345",
-    "green": "274f2881",
-    "orange": "c50dc2c8",
-    "pink": "4131ede6",
-    "purple": "031d4c1e",
-    "red": "22173dfb",
-    "teal": "d42f8030",
-    "yellow": "08e9d8c8",
-    "default": "e67a836a"
+    "blue": "3ad42312",
+    "green": "f9b687e4",
+    "orange": "8c1c6666",
+    "pink": "04bba5f9",
+    "purple": "10400864",
+    "red": "6be2790d",
+    "teal": "ee71b2e8",
+    "yellow": "520b5103",
+    "default": "70fcbfdf"
    },
    "bbox": [
     74.5,
     147.6,
     166.3,
-    222.4
+    223
    ],
    "behind": true
   },
   "cape": {
    "ext": "svg",
    "v": {
-    "blue": "ace24a3c",
-    "green": "88d0c087",
-    "orange": "5b7e6727",
-    "pink": "af86a881",
-    "purple": "64178fc7",
-    "red": "daa0b190",
-    "teal": "6c125687",
-    "yellow": "f369d643",
-    "default": "df711376"
+    "blue": "da630987",
+    "green": "0ca6ee43",
+    "orange": "fbb2e48b",
+    "pink": "5666d558",
+    "purple": "4cc27a2e",
+    "red": "45c8065e",
+    "teal": "c4aa0211",
+    "yellow": "baee0090",
+    "default": "78448a46"
    },
    "bbox": [
-    44.9,
-    149.9,
+    44.5,
+    149.6,
     195.5,
     275.7
    ],
@@ -583,19 +735,19 @@ export const AVATAR_ART = {
   "satchel": {
    "ext": "svg",
    "v": {
-    "blue": "da95cd73",
-    "green": "6b518798",
-    "orange": "6aea54f0",
-    "pink": "22964b81",
-    "purple": "d8bcff79",
-    "red": "9d2427ac",
-    "teal": "f3f570ec",
-    "yellow": "1c36f97e",
-    "default": "8d07b2f3"
+    "blue": "6c5f9e78",
+    "green": "8558eb46",
+    "orange": "612710c8",
+    "pink": "9d9bbe77",
+    "purple": "74a75782",
+    "red": "cd112f1e",
+    "teal": "6b902d32",
+    "yellow": "d95b4972",
+    "default": "db495c49"
    },
    "bbox": [
     90.1,
-    155.4,
+    155,
     179.2,
     260.8
    ]
@@ -603,15 +755,15 @@ export const AVATAR_ART = {
   "star-necklace": {
    "ext": "svg",
    "v": {
-    "blue": "6a59431b",
-    "green": "6a59431b",
-    "orange": "6a59431b",
-    "pink": "6a59431b",
-    "purple": "6a59431b",
-    "red": "6a59431b",
-    "teal": "6a59431b",
-    "yellow": "6a59431b",
-    "default": "6a59431b"
+    "blue": "bd7c42a0",
+    "green": "bd7c42a0",
+    "orange": "bd7c42a0",
+    "pink": "bd7c42a0",
+    "purple": "bd7c42a0",
+    "red": "bd7c42a0",
+    "teal": "bd7c42a0",
+    "yellow": "bd7c42a0",
+    "default": "bd7c42a0"
    },
    "bbox": [
     101,
@@ -623,35 +775,35 @@ export const AVATAR_ART = {
   "star-wand": {
    "ext": "svg",
    "v": {
-    "blue": "81569030",
-    "green": "8d785c31",
-    "orange": "038632fa",
-    "pink": "dbf054c1",
-    "purple": "18dac47c",
-    "red": "0b15878a",
-    "teal": "fc857c1b",
-    "yellow": "a8544e6b",
-    "default": "90437649"
+    "blue": "b63e0558",
+    "green": "62cc4330",
+    "orange": "037f364d",
+    "pink": "ec341690",
+    "purple": "9b9403c7",
+    "red": "26070c76",
+    "teal": "77a35a40",
+    "yellow": "403708a4",
+    "default": "d70bcd51"
    },
    "bbox": [
-    164.6,
+    164.2,
     143.1,
     222.7,
-    251.3
+    251.6
    ]
   },
   "lantern": {
    "ext": "svg",
    "v": {
-    "blue": "a94d7a74",
-    "green": "073aabca",
-    "orange": "fe4ea2a3",
-    "pink": "41f1ebda",
-    "purple": "d114812b",
-    "red": "4af7774d",
-    "teal": "77f07e20",
-    "yellow": "951acda8",
-    "default": "dd2b2912"
+    "blue": "6beead80",
+    "green": "b29b17ee",
+    "orange": "b3536f82",
+    "pink": "fc31d722",
+    "purple": "1582ba10",
+    "red": "7c2b43e9",
+    "teal": "5bd3003b",
+    "yellow": "c07c40c2",
+    "default": "407ad47a"
    },
    "bbox": [
     163.2,
@@ -663,19 +815,19 @@ export const AVATAR_ART = {
   "plush-star": {
    "ext": "svg",
    "v": {
-    "blue": "be8833ff",
-    "green": "306f929f",
-    "orange": "bf6ddca4",
-    "pink": "d0c9520b",
-    "purple": "03c43050",
-    "red": "ef2705df",
-    "teal": "11a7921c",
-    "yellow": "e0094ab3",
-    "default": "b79482b9"
+    "blue": "1546f78c",
+    "green": "6eea1aba",
+    "orange": "74a13678",
+    "pink": "28663698",
+    "purple": "e4c81536",
+    "red": "6a511e5b",
+    "teal": "8b3a4f6b",
+    "yellow": "d6fd2da6",
+    "default": "c11cbd9c"
    },
    "bbox": [
     112.2,
-    144.2,
+    143.8,
     199.6,
     235.6
    ]
@@ -685,11 +837,11 @@ export const AVATAR_ART = {
   "firefly": {
    "ext": "svg",
    "v": {
-    "default": "54b49b65"
+    "default": "0155028b"
    },
    "bbox": [
-    167.3,
-    125.5,
+    166.9,
+    125.1,
     240,
     199.6
    ]
@@ -697,7 +849,7 @@ export const AVATAR_ART = {
   "cloud-puff": {
    "ext": "svg",
    "v": {
-    "default": "10599524"
+    "default": "a50bd84f"
    },
    "bbox": [
     166.6,
@@ -709,47 +861,47 @@ export const AVATAR_ART = {
   "star-sprite": {
    "ext": "svg",
    "v": {
-    "default": "3cfa4ec5"
+    "default": "88f7650e"
    },
    "bbox": [
-    168.3,
-    127.2,
-    239,
-    193.8
+    168,
+    126.8,
+    239.4,
+    194.1
    ]
   },
   "crystal-snail": {
    "ext": "svg",
    "v": {
-    "default": "64b012dc"
+    "default": "9e3d9d93"
    },
    "bbox": [
     141.1,
-    217.9,
+    217.6,
     225.4,
-    289
+    289.3
    ]
   },
   "ladybug": {
    "ext": "svg",
    "v": {
-    "default": "11fdca60"
+    "default": "8e7bf15d"
    },
    "bbox": [
-    158.8,
-    238,
+    158.4,
+    237.7,
     228.5,
-    289.3
+    289.7
    ]
   },
   "tiny-turtle": {
    "ext": "svg",
    "v": {
-    "default": "b000f240"
+    "default": "bd910282"
    },
    "bbox": [
     145.2,
-    238.3,
+    238,
     235.6,
     290.4
    ]
@@ -757,24 +909,24 @@ export const AVATAR_ART = {
   "mushroom-sprout": {
    "ext": "svg",
    "v": {
-    "default": "7b26ecad"
+    "default": "e5d54d10"
    },
    "bbox": [
     161.8,
     212.5,
-    230.9,
-    289.3
+    231.2,
+    289.7
    ]
   },
   "pebble-chick": {
    "ext": "svg",
    "v": {
-    "default": "3b16df4f"
+    "default": "b725410a"
    },
    "bbox": [
-    160.8,
+    160.5,
     221.7,
-    222.7,
+    223,
     288.7
    ]
   }
@@ -783,7 +935,7 @@ export const AVATAR_ART = {
   "calm": {
    "ext": "svg",
    "v": {
-    "default": "0d5a8761"
+    "default": "42bc3773"
    },
    "bbox": [
     81.6,
@@ -795,7 +947,7 @@ export const AVATAR_ART = {
   "worried": {
    "ext": "svg",
    "v": {
-    "default": "dba323e8"
+    "default": "026742df"
    },
    "bbox": [
     81.6,
@@ -807,7 +959,7 @@ export const AVATAR_ART = {
   "brave": {
    "ext": "svg",
    "v": {
-    "default": "af003f8b"
+    "default": "67b069d0"
    },
    "bbox": [
     81.6,
@@ -819,7 +971,7 @@ export const AVATAR_ART = {
   "happy": {
    "ext": "svg",
    "v": {
-    "default": "db8931be"
+    "default": "ab82bd0f"
    },
    "bbox": [
     80.9,
@@ -831,7 +983,7 @@ export const AVATAR_ART = {
   "sleepy": {
    "ext": "svg",
    "v": {
-    "default": "27b60c3b"
+    "default": "d4efa6c1"
    },
    "bbox": [
     80.9,
@@ -843,7 +995,7 @@ export const AVATAR_ART = {
   "surprised": {
    "ext": "svg",
    "v": {
-    "default": "795b6af3"
+    "default": "64aec92e"
    },
    "bbox": [
     81.3,
@@ -867,7 +1019,7 @@ export const AVATAR_ART = {
   "giggly": {
    "ext": "svg",
    "v": {
-    "default": "ba15e85c"
+    "default": "ac21e749"
    },
    "bbox": [
     81.9,
@@ -881,49 +1033,49 @@ export const AVATAR_ART = {
   "moon-meadow": {
    "ext": "webp",
    "v": {
-    "default": "2776082e"
+    "default": "cd208f41"
    }
   },
   "mushroom-wood": {
    "ext": "webp",
    "v": {
-    "default": "956ea11a"
+    "default": "599b50a2"
    }
   },
   "cloud-castle": {
    "ext": "webp",
    "v": {
-    "default": "d03404d0"
+    "default": "c29e7aea"
    }
   },
   "cozy-burrow": {
    "ext": "webp",
    "v": {
-    "default": "72f5c5a5"
+    "default": "28308644"
    }
   },
   "starry-lake": {
    "ext": "webp",
    "v": {
-    "default": "37f64536"
+    "default": "8ac8d0ee"
    }
   },
   "lighthouse-cove": {
    "ext": "webp",
    "v": {
-    "default": "05c8e86d"
+    "default": "446388ca"
    }
   },
   "autumn-orchard": {
    "ext": "webp",
    "v": {
-    "default": "246dba7e"
+    "default": "6b878fa3"
    }
   },
   "snowy-pines": {
    "ext": "webp",
    "v": {
-    "default": "9257e45f"
+    "default": "60412842"
    }
   }
  }

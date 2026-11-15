@@ -6,7 +6,10 @@ import type { Accessory, Animal, Character, CharacterColor, Companion, FurVarian
  * server (story prompts) and the screens share it.
  */
 
-export const ANIMALS: Animal[] = ['bunny', 'bear', 'fox', 'kitten', 'dragon', 'owl', 'hedgehog', 'fawn'];
+export const ANIMALS: Animal[] = [
+  'bunny', 'bear', 'fox', 'kitten', 'dragon', 'owl', 'hedgehog', 'fawn',
+  'wolf', 'lion', 'tiger', 'dino', 'panda', 'monkey', 'rhino', 'yeti',
+];
 export const CHARACTER_COLORS: CharacterColor[] = ['blue', 'green', 'yellow', 'red', 'purple', 'orange', 'teal', 'pink'];
 export const OUTFITS: Outfit[] = [
   'tunic', 'raincoat', 'star-robe', 'knight-tabard', 'overalls', 'moon-pajamas', 'explorer-vest', 'knit-sweater',
@@ -68,11 +71,15 @@ export function normalizeCharacter(c: Partial<Character> | null | undefined): Ch
 export const ANIMAL_NAME: Record<Animal, string> = {
   bunny: 'Moon Bunny', bear: 'Cloud Cub', fox: 'Ember Fox', kitten: 'Star Kitten',
   dragon: 'Puff Dragon', owl: 'Owlet Sage', hedgehog: 'Moss Hedgehog', fawn: 'Dew Fawn',
+  wolf: 'Thunder Pup', lion: 'Sun Cub', tiger: 'Comet Tiger', dino: 'Rocky Dino',
+  panda: 'Bamboo Panda', monkey: 'Jungle Monkey', rhino: 'Pebble Rhino', yeti: 'Frost Yeti',
 };
 /** Plain animal word for story text and alt text. */
 export const ANIMAL_WORD: Record<Animal, string> = {
   bunny: 'bunny', bear: 'bear cub', fox: 'fox', kitten: 'kitten',
   dragon: 'little dragon', owl: 'owlet', hedgehog: 'hedgehog', fawn: 'fawn',
+  wolf: 'wolf pup', lion: 'lion cub', tiger: 'tiger cub', dino: 'little dinosaur',
+  panda: 'panda cub', monkey: 'monkey', rhino: 'baby rhino', yeti: 'yeti cub',
 };
 export const COLOR_NAME: Record<CharacterColor, string> = {
   blue: 'blue', green: 'green', yellow: 'yellow', red: 'red', purple: 'purple', orange: 'orange', teal: 'teal', pink: 'pink',
