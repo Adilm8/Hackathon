@@ -66,7 +66,7 @@ Lida did not change these on 15 Nov, so they are built as written. Each is isola
 | Q4 | Several children | One child in the MVP; the data model carries `childId`, so several children later is a migration, not a rewrite. The paywall does not promise "up to 3 children" until it exists. | 6, 17 |
 | Q5 | Several events at once | Yes. The home screen lists all events of the child, past and future. | 4.4 |
 | Q6 | Returning visitor | If the family already has data, `/` redirects to `/home`. The landing stays reachable through the logo. | 4.2 |
-| Q7 | Child asks by voice (F18) | Built with the browser, behind parent consent, only where recognition can run on the device; hidden elsewhere. Cloud recognition is a later tier (17.1). | 11.6 |
+| Q7 | Child asks by voice (F18) | Built with the browser, behind parent consent: on the device where possible, else the browser's speech service (Apple/Google), named in the consent (Lida, 15 Nov). Our own cloud recognition is a later tier (17.1). | 11.6 |
 
 ### 2.3 Architect decisions that change the ТЗ text (no scope is lost)
 
@@ -226,7 +226,7 @@ Three steps with a progress bar. Only name, age, event and date are required; er
 |---|---|---|
 | 1. Child | First name or nickname (required, one word of 1–20 letters, hyphen and apostrophe allowed; helper text: "A nickname works too. Please don't add a last name."); "How is it pronounced?" (optional, ≤ 30) with a **Hear it** button that speaks the pronunciation; age 3–8 (required); pronoun he / she / they (optional) | No surname, address, school or photo of the child is asked. Helper text says the name is never sent to an AI provider |
 | 2. Event | One of 6 events or "Other" (then a label ≤ 40 chars); date (required); up to 3 fears from a list; "Something else" (≤ 40 chars) | Date before today, or more than 60 days ahead → error under the field. Today and tomorrow are allowed and show a "Quick prep" note (5.2) |
-| 3. Character and values | Story friend builder with live preview (tabs Friend / Colours / Clothes / Hats / Extras / Buddy): species (8) × fur (3) × outfit colour (8) × outfit (8) × headwear (8 + none) × accessory (8 + none) × companion (8 + none); values profile: tone secular / religious; body words anatomical / family words; who is at home (chips: Mom, Dad, Mama, Papa, Mommy, Daddy, Grandma, Grandpa, Nana, Stepmom, Stepdad, Aunt, Uncle); "Social story style" toggle with a one-line explanation; up to 3 photos of the place (11.5) | All optional. Defaults: bunny, blue, cap; secular; anatomical; nobody selected (stories then say "your grown-up"); style "story" |
+| 3. Character and values | Story friend builder with live preview (tabs Friend / Colours / Clothes / Hats / Extras / Buddy): species (16) × fur (3) × outfit colour (8) × outfit (8) × headwear (8 + none) × accessory (8 + none) × companion (8 + none); values profile: tone secular / religious; body words anatomical / family words; who is at home (chips: Mom, Dad, Mama, Papa, Mommy, Daddy, Grandma, Grandpa, Nana, Stepmom, Stepdad, Aunt, Uncle); "Social story style" toggle with a one-line explanation; up to 3 photos of the place (11.5) | All optional. Defaults: bunny, blue, cap; secular; anatomical; nobody selected (stories then say "your grown-up"); style "story" |
 
 Fear list (label → topic): "It might hurt" → pain; "Being away from me" → separation; "Not knowing what will happen" → unknown; "Unfamiliar adults" → strangers; "Loud noises, bright lights, smells" → sensory; "Something going wrong" → safety; "Other kids" → social; "Being touched or undressed" → body.
 
@@ -439,9 +439,16 @@ export type Topic =
   | 'safety' | 'social' | 'body' | 'love' | 'other';
 export type Mood = 'calm' | 'worried' | 'brave' | 'happy';
 export type StyleMode = 'story' | 'social';
-export type Animal = 'bunny' | 'bear' | 'fox' | 'kitten';
-export type CharacterColor = 'blue' | 'green' | 'yellow' | 'red' | 'purple' | 'orange';
-export type Accessory = 'cap' | 'scarf' | 'backpack';
+export type Animal =
+  | 'bunny' | 'bear' | 'fox' | 'kitten' | 'dragon' | 'owl' | 'hedgehog' | 'fawn'
+  | 'wolf' | 'lion' | 'tiger' | 'dino' | 'panda' | 'monkey' | 'rhino' | 'yeti';
+export type CharacterColor = 'blue' | 'green' | 'yellow' | 'red' | 'purple' | 'orange' | 'teal' | 'pink';
+export type Accessory =
+  | 'none' | 'cap' | 'scarf' | 'backpack' | 'cape' | 'satchel' | 'star-necklace' | 'star-wand' | 'lantern' | 'plush-star';
+export type Outfit = 'tunic' | 'raincoat' | 'star-robe' | 'knight-tabard' | 'overalls' | 'moon-pajamas' | 'explorer-vest' | 'knit-sweater';
+export type Headwear = 'none' | 'cap' | 'wizard-hat' | 'flower-crown' | 'star-crown' | 'beret' | 'acorn-cap' | 'bow-headband' | 'goggles';
+export type Companion = 'none' | 'firefly' | 'cloud-puff' | 'star-sprite' | 'crystal-snail' | 'ladybug' | 'tiny-turtle' | 'mushroom-sprout' | 'pebble-chick';
+export type FurVariant = 'classic' | 'dusk' | 'dawn';
 export type Pronoun = 'he' | 'she' | 'they';
 export type QuestionCategory = 'on_topic' | 'off_topic' | 'sensitive' | 'unsafe';
 export type QuestionSource = 'button' | 'custom' | 'voice';
@@ -452,7 +459,7 @@ export type TextSource = 'llm' | 'fallback';
 export type BackgroundId = string;
 
 export interface Character {
-  animal: Animal;            // bunny bear fox kitten dragon owl hedgehog fawn
+  animal: Animal;            // 16 species, see the type above
   color: CharacterColor;     // outfit colour: blue green yellow red purple orange teal pink
   accessory: Accessory;      // none scarf backpack cape satchel star-necklace star-wand lantern plush-star; legacy 'cap' = headwear cap
   outfit?: Outfit;           // default tunic
@@ -1091,7 +1098,7 @@ Stores in `lib/store/` are the only place components read or write family data. 
 
 ### 11.4 Character and scenes
 
-- **Character (Story friend 2.0, art set "Moonlit Meadow")**: one SVG that stacks traced layers from `public/avatar` on a shared 240×300 canvas: species (8, three fur variants), outfit (8, recoloured to 8 colours), headwear, accessory, companion, and a face per mood (calm, worried, brave, happy). The layers come from image sheets in `docs/design/avatar/sheets` through the re-runnable pipeline `web/scripts/avatar` (`npm run avatar`), see docs/design/avatar-prompts.md section 6. The same character appears in the builder preview, the reader, the ritual card, the badge and the PDF. It never changes between pages, which is the complaint about AI storybooks we answer.
+- **Character (Story friend 2.0, art set "Moonlit Meadow")**: one SVG that stacks traced layers from `public/avatar` on a shared 240×300 canvas: species (16, three fur variants), outfit (8, recoloured to 8 colours), headwear, accessory, companion, and a face per mood (calm, worried, brave, happy). The layers come from image sheets in `docs/design/avatar/sheets` through the re-runnable pipeline `web/scripts/avatar` (`npm run avatar`), see docs/design/avatar-prompts.md section 6. The same character appears in the builder preview, the reader, the ritual card, the badge and the PDF. It never changes between pages, which is the complaint about AI storybooks we answer.
 - **Scenes**: at least 9 backgrounds: one main scene for each of the six events and three neutral ones (home in the evening, outside a building, a cosy room) for "Other" and for pages away from the event. A registry maps `BackgroundId` to the image; templates list which ids the LLM may choose. More scenes per event can be added without code changes.
 - Scenes are static files produced once at development time (drawn as SVG or generated and then committed as optimised WebP, at most 150 KB each). Nothing is generated at run time in the MVP. Generating the final character art and scenes is a separate task with its own approved budget (D10).
 
@@ -1117,7 +1124,8 @@ export interface Listener {
 
 - `BrowserNarrator` (F4): `speechSynthesis`, one utterance per sentence, highlight on utterance start, started only by a tap, best available en-US voice chosen in code after `voiceschanged`, the name replaced by the pronunciation field before speaking. If synthesis is missing the Listen button is hidden.
 - `RecordedNarrator` (F17): plays the parent's recording of the page from IndexedDB. Recording uses `MediaRecorder`, one take per page, with re-record and delete. A page rewritten after a question loses its recording.
-- `BrowserListener` (F18): shown only after the parent ticks a consent box in settings and only when on-device recognition is available; the recognised text is put into the question field for the parent to confirm. No audio is stored or sent by us.
+- `BrowserListener` (F18): shown only after the parent ticks a consent box in settings. Mode `device` when the browser confirms on-device recognition (Chrome can download the English pack on request); otherwise mode `browser`, the browser's own speech service (Apple in Safari, Google in Chrome, Microsoft in Edge), named in the consent text. Lida chose this on 15 Nov 2026 so voice questions work on iPhone at no cost. Words appear live, a second tap stops, 10 s cap; the recognised text is put into the question field for the grown-up to confirm. No audio is recorded, stored or sent by us. Without the mic the sheet points to keyboard dictation.
+- Reading options (Settings > Reading, device only): reading voice of this browser (English voices, natural ones first, novelty voices last), speed Slower / Normal / Faster (0.78 / 0.92 / 1.06) and **Read on** (the voice turns the page and keeps reading until the chapter's last page). Provider options for premium narration and voice cloning: `docs/voice-options.md`.
 
 ### 11.7 Ritual card PDF (F9)
 

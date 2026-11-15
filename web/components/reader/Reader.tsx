@@ -17,6 +17,7 @@ import type { Page, Question } from '@/lib/engine/types';
 import { useEvents } from '@/lib/store/events';
 import { useEventCtx } from '@/lib/store/hooks';
 import { newId } from '@/lib/store/id';
+import { usePrefs } from '@/lib/store/prefs';
 import { useSettings } from '@/lib/store/settings';
 import { isChapterOpen, questionButtonsForPage, questionsInChapter, renderText, updatedChipText } from '@/lib/store/engine';
 import { cleanText, isBlank, LIMITS, precheck } from '@/lib/safety/filters';
@@ -44,6 +45,7 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
   const textSize = useSettings((s) => s.textSize);
   const nightMode = useSettings((s) => s.nightMode);
   const voiceConsent = useSettings((s) => s.voiceQuestionConsentOn);
+  const voiceMode = useSettings((s) => s.voiceQuestionMode) ?? 'device';
   const setTextSize = useSettings((s) => s.setTextSize);
   const [live, setLive] = useState<Page[] | null>(null);
   const [pageIdx, setPageIdx] = useState(0);
@@ -52,6 +54,9 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
   const [position, setPosition] = useState<ReadPosition | null>(null);
   const [step, setStep] = useState(0);
   const [navTick, setNavTick] = useState(0);
+  // Read on: the voice turned the page, so the next page starts speaking by itself.
+  const [autoListen, setAutoListen] = useState(false);
+  const readOn = usePrefs((p) => p.readOn);
   const panel = usePanelOpen();
   // Full screen: only the story on screen (lib/reader/immersive.ts). Leaving it needs no grown-up;
   // leaving the reader still does (the door button).
@@ -124,7 +129,17 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
     setPageIdx(i);
     setStep(s);
     setPosition(null);
+    setAutoListen(false);
     setNavTick((n) => n + 1); // a tap stops the voice
+  };
+  // The voice finished the page: with Read on it turns to the next page and keeps reading, never past the chapter's end.
+  const readOnNext = () => {
+    if (!readOn || isLast || mode.kind !== 'read') return;
+    setPageIdx(pageIdx + 1);
+    setStep(0);
+    setPosition(null);
+    setAutoListen(true);
+    setNavTick((n) => n + 1);
   };
   // Next shows the page's next sentence, then turns the page; Finish only on the last sentence of the last page.
   const next = () => {
@@ -176,6 +191,8 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
       void deleteRecording(recordingKey(getWorkspace(), eventId, index, nextStory.id)).catch(() => {});
     }
     turn(pageIdx + 1, 0);
+    // Read on also reads the answer aloud: the question by voice, the answer by voice (SPEC 17.1 spoken answers).
+    if (readOn) setAutoListen(true);
   };
 
   const updatedText = (() => {
@@ -249,7 +266,8 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
           <ListenButton key={`${page.id}:${navTick}`} from={step}
             sentences={page.sentences.map((s) => renderText(s.text, child, { speak: true, pronunciation: child.pronunciation }))}
             shown={page.sentences.map((s) => render(s.text))} onProgress={onProgress}
-            recordingKey={isOn('parentVoice') ? recKey : undefined} hasRecording={recs.key === recKey && recs.has} voiceName={child.values.family[0]} />
+            recordingKey={isOn('parentVoice') ? recKey : undefined} hasRecording={recs.key === recKey && recs.has} voiceName={child.values.family[0]}
+            autoStart={autoListen} onFinished={readOnNext} night={night} />
           <Button className="flex-1" onClick={next}>
             {lastSentence && isLast ? 'Finish' : lastSentence && page.kind === 'answer' ? 'Back to the story' : 'Next'}
           </Button>
@@ -257,7 +275,7 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
         {busy ? (
           <p role="status" className="flex min-h-tap items-center text-sm font-bold text-ink-soft">Thinking about {child.name}&apos;s question…</p>
         ) : page.kind === 'story' ? (
-          <QuestionBar buttons={questionButtonsForPage(template, storyPages.indexOf(page) + 1).map((b) => ({ id: b.id, text: render(b.text) }))} asked={asked} busy={busy} childName={child.name} onAsk={ask} voice={isOn('voiceQuestion') && !!voiceConsent} />
+          <QuestionBar buttons={questionButtonsForPage(template, storyPages.indexOf(page) + 1).map((b) => ({ id: b.id, text: render(b.text) }))} asked={asked} busy={busy} childName={child.name} onAsk={ask} voice={isOn('voiceQuestion') && !!voiceConsent} voiceMode={voiceMode} />
         ) : null}
       </div>
     );

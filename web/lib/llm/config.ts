@@ -3,7 +3,7 @@
  */
 import 'server-only';
 
-export type LlmRoute = 'chapter' | 'answer' | 'rewrite' | 'ritual' | 'eval';
+export type LlmRoute = 'chapter' | 'answer' | 'rewrite' | 'ritual' | 'eval' | 'tts';
 
 /** Server budgets per call, in ms (8.2). The browser-side deadlines are 1 s larger. */
 const scale = (() => {

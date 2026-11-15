@@ -18,7 +18,9 @@ export type Topic =
 export type Mood = 'calm' | 'worried' | 'brave' | 'happy';
 export type StyleMode = 'story' | 'social';
 /** Story friend species (SPEC 6, 11.4). The first four are the original ids and stay valid. */
-export type Animal = 'bunny' | 'bear' | 'fox' | 'kitten' | 'dragon' | 'owl' | 'hedgehog' | 'fawn';
+export type Animal =
+  | 'bunny' | 'bear' | 'fox' | 'kitten' | 'dragon' | 'owl' | 'hedgehog' | 'fawn'
+  | 'wolf' | 'lion' | 'tiger' | 'dino' | 'panda' | 'monkey' | 'rhino' | 'yeti';
 /** Outfit colour. teal and pink were added with Story friend 2.0. */
 export type CharacterColor = 'blue' | 'green' | 'yellow' | 'red' | 'purple' | 'orange' | 'teal' | 'pink';
 /**
@@ -209,6 +211,8 @@ export interface Settings {
   /** Colour palette of the whole app (Settings > Colours). Missing = 'warm'. */
   palette?: 'warm' | 'ocean' | 'forest' | 'lavender';
   voiceQuestionConsentOn?: ISODate;
+  /** How voice questions are recognised: on the device, or by the browser's speech service (lib/speech/listener.ts). */
+  voiceQuestionMode?: 'device' | 'browser';
   schemaVersion: number;
 }
 

@@ -23,7 +23,9 @@ export function postcheckOptions(ctx: Pick<StoryContext, 'values' | 'child'>): P
     familyWords: ctx.values.family,
     allowWords: [
       ctx.child.character.animal, 'Bunny', 'Bear', 'Fox', 'Kitten', 'Dragon', 'Owl', 'Owlet', 'Hedgehog', 'Fawn',
-      'Moon', 'Cloud', 'Cub', 'Ember', 'Star', 'Puff', 'Sage', 'Moss', 'Dew', 'Mom', 'Dad',
+      'Moon', 'Cloud', 'Cub', 'Ember', 'Star', 'Puff', 'Sage', 'Moss', 'Dew',
+      'Wolf', 'Pup', 'Thunder', 'Lion', 'Sun', 'Tiger', 'Comet', 'Dino', 'Rocky', 'Panda', 'Bamboo',
+      'Monkey', 'Jungle', 'Rhino', 'Pebble', 'Yeti', 'Frost', 'Mom', 'Dad',
     ],
   };
 }
