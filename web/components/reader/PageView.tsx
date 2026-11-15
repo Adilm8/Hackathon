@@ -34,7 +34,8 @@ export function PageView({
   const count = page.sentences.length;
   return (
     <article className="flex h-full min-h-0 flex-col gap-3 lg:gap-4">
-      <div className="flex min-h-0 flex-1 flex-col justify-center gap-4 lg:gap-5">
+      {/* Safe centring + scroll: on a short screen the sentence stays above the buttons instead of spilling over them. */}
+      <div className="flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto [justify-content:safe_center] lg:gap-5">
       <div className="scene-box relative h-[46%] min-h-[96px] max-h-[26rem] shrink-[4] overflow-hidden rounded-card border border-line bg-surface-2 max-[700px]:h-[34%] max-[700px]:min-h-[88px] lg:aspect-[16/10] lg:h-[58%] lg:max-h-[34rem] lg:min-h-[96px] lg:w-auto lg:self-center">
         <Scene id={page.background} night={night} />
         <div
