@@ -243,9 +243,9 @@ DO NOT include: text, letters, numbers, labels, logos, watermarks, grid lines, g
 
 ### Папки
 ```
-docs/design/avatar/sheets/        исходники PNG: 00-template.png, 01-species.png, 02-outfits.png,
-                                  03-headwear.png, 04-accessories.png, 05-companions.png,
-                                  06-expressions.png, 07-backdrops.png (+ версия: 02-outfits.v2.png)
+docs/design/avatar/sheets/        исходники из Gemini (JPG 2752×1536): 00-template.jpg, 01-species.jpg, 02-outfits.jpg,
+                                  03-headwear.jpg, 04-accessories.jpg, 05-companions.jpg,
+                                  06-expressions.jpg, 07-backdrops.jpg (+ версия: 04-accessories.v2.jpg)
 web/scripts/avatar/               скрипты: slice.py, trace.py, colorize.py, build.mjs, ids.json
 web/public/avatar/<level>/<id>.svg   готовые слои, для проверки глазами и для <img>
 web/public/avatar/backdrop/<id>.webp фоны (не трассируем, WebP ≤ 150 KB)
@@ -272,6 +272,6 @@ web/components/character/art/generated.ts   сгенерированный мо�
 Картинки, созданные в Gemini по нашим промптам, можно использовать в продукте по условиям Google. В `web/components/CREDITS.md` добавить строку: «Story friend art: generated with an image model from our own prompts (docs/design/avatar-prompts.md), traced and edited for the project». Промпты не упоминают чужие бренды и персонажей, проверку «не похоже ли на известного героя» делаем глазами на каждом листе.
 
 ### Что делает разработка после того, как листы готовы
-1. Положить PNG в `docs/design/avatar/sheets/`.
+1. Листы уже лежат в `docs/design/avatar/sheets/` (15 Nov).
 2. Написать скрипты из шагов 1–7, прогнать, проверить слои глазами в `/start` на всех 8 существах.
 3. Расширить модель `Character` (species 8, outfit, headwear, accessory, companion, furVariant) с переводом старых значений, обновить конструктор: вкладки Friend / Colours / Clothes / Hats / Extras / Buddy.
