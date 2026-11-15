@@ -22,6 +22,7 @@ const PLACEHOLDER = /\[\[([A-Z]+)\]\]/g;
 function childTexts(t: ReturnType<typeof getTemplate>): string[] {
   const out: string[] = [];
   for (const s of STYLES) for (const b of BEATS) for (const p of t.fallbackPages[s][b]) out.push(sentencesToText(p.sentences));
+  for (const b of BEATS) if (t.olderPages) out.push(sentencesToText(t.olderPages[b].sentences));
   for (const q of t.questionButtons) out.push(q.text, ...q.fallbackAnswer);
   out.push(...t.ritual);
   return out;
@@ -107,6 +108,19 @@ describe.each(EVENT_TYPES)('template %s', (type) => {
             expect(containsAnyWord(sentencesToText(p.sentences), words), `${s}/${b} ${topic}`).toBe(true);
           }
         }
+  });
+
+  it('has a page for ages 9-12 in every beat, proved topics and known scenes', () => {
+    expect(t.olderPages, type).toBeDefined();
+    for (const b of BEATS) {
+      const p = t.olderPages![b];
+      const n = countWords(sentencesToText(p.sentences));
+      expect(n, `${type}/${b}`).toBeGreaterThanOrEqual(50);
+      expect(n, `${type}/${b}`).toBeLessThanOrEqual(130);
+      expect(t.backgrounds).toContain(p.background);
+      expect(p.addresses.length).toBeGreaterThan(0);
+      for (const topic of p.addresses) expect(containsAnyWord(sentencesToText(p.sentences), t.topicWords[topic] ?? []), `${b} ${topic}`).toBe(true);
+    }
   });
 
   it('social pages keep at least two describing sentences per coaching one (FR-B3)', () => {

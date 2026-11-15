@@ -2064,5 +2064,158 @@
   "badge": {
     "id": "big_sibling_heart",
     "label": "Big Sibling Heart"
+  },
+  "olderPages": {
+    "what_happens": {
+      "sentences": [
+        {
+          "text": "When a baby is about to be born, plans change quickly, because babies decide the day themselves.",
+          "kind": "describe"
+        },
+        {
+          "text": "A trusted grown-up comes to stay with [[CHILD]] while the parents go to the hospital.",
+          "kind": "describe"
+        },
+        {
+          "text": "Most stays last a day or two.",
+          "kind": "describe"
+        },
+        {
+          "text": "Then the baby comes home and the house gets busier: feeding every few hours, lots of sleep and lots of crying, which is how babies talk.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can ask who will stay at home when the baby arrives.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "home-evening",
+      "addresses": [
+        "unknown",
+        "separation",
+        "sensory"
+      ]
+    },
+    "who_is_there": {
+      "sentences": [
+        {
+          "text": "At the hospital, doctors and nurses look after the parent and the new baby.",
+          "kind": "describe"
+        },
+        {
+          "text": "At home, a grandparent, relative or friend may help for a while.",
+          "kind": "describe"
+        },
+        {
+          "text": "Visitors often come to meet the baby, and many will also ask how [[CHILD]] is doing as a big sibling.",
+          "kind": "describe"
+        },
+        {
+          "text": "Newborns cannot see far and like faces close up, especially familiar voices.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can be one of the first voices the baby learns.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "home-evening",
+      "addresses": [
+        "unknown",
+        "strangers",
+        "safety"
+      ]
+    },
+    "what_i_do": {
+      "sentences": [
+        {
+          "text": "Big siblings have real jobs.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can choose the baby's outfit, fetch a diaper, sing a song or read a short book out loud.",
+          "kind": "describe"
+        },
+        {
+          "text": "Babies need gentle hands and a careful hold of the head, so [[CHILD]] should only hold the baby while sitting and with a grown-up close.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can also ask for special one-on-one time with a parent each week.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "happy",
+      "background": "sibling",
+      "addresses": [
+        "body",
+        "safety",
+        "love"
+      ]
+    },
+    "if_scared": {
+      "sentences": [
+        {
+          "text": "It is normal to have mixed feelings about a new baby: excited, proud, annoyed, left out, sometimes all on one day.",
+          "kind": "describe"
+        },
+        {
+          "text": "Babies take a lot of attention at first, but that does not change how much [[CHILD]] is loved.",
+          "kind": "describe"
+        },
+        {
+          "text": "If [[CHILD]] feels forgotten, saying so to [[GROWNUP]] is the right thing to do.",
+          "kind": "coach"
+        },
+        {
+          "text": "A quiet spot, headphones, or a special box of things just for [[CHILD]] can help when the house gets loud.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "worried",
+      "background": "home-evening",
+      "addresses": [
+        "love",
+        "sensory",
+        "unknown"
+      ]
+    },
+    "rehearsal": {
+      "sentences": [
+        {
+          "text": "Let's go through the plan.",
+          "kind": "describe"
+        },
+        {
+          "text": "When the baby is coming, [[CHILD]] stays with the trusted grown-up and maybe talks on the phone.",
+          "kind": "describe"
+        },
+        {
+          "text": "Then [[CHILD]] meets the baby, says hello, and maybe swaps gifts.",
+          "kind": "describe"
+        },
+        {
+          "text": "At home, [[CHILD]] has a big-sibling job and still gets one-on-one time.",
+          "kind": "describe"
+        },
+        {
+          "text": "Feelings are allowed to be mixed.",
+          "kind": "describe"
+        },
+        {
+          "text": "Tonight, [[CHILD]] can pick one job they want to do for the baby.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "happy",
+      "background": "home-evening",
+      "addresses": [
+        "separation",
+        "unknown",
+        "strangers"
+      ]
+    }
   }
 }
