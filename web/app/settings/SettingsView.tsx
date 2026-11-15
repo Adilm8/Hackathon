@@ -96,7 +96,7 @@ export function SettingsView() {
       {child ? (
         <>
           <Section title="Child">
-            <Field id="s-name" label="First name or nickname" helper="Never a last name. Never sent to an AI provider." error={childNameError(name)}>
+            <Field id="s-name" label="First name or nickname" helper="Never a last name. Never sent to the AI that writes the story." error={childNameError(name)}>
               <TextInput id="s-name" maxLength={30} value={name} onChange={(e) => setName(e.target.value)} onBlur={() => !childNameError(name) && name.trim() !== child.name && updateChild({ name: name.trim() })} />
             </Field>
             <Field id="s-pron" label="How is it pronounced?">
