@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { AppShell } from '@/components/ui/AppShell';
 
-export const metadata: Metadata = { title: 'Terms · Big Day Stories' };
+export const metadata: Metadata = { title: 'Terms' };
 
 /** Terms (docs/SPEC.md 4.16, 10.5). */
 export default function TermsPage() {

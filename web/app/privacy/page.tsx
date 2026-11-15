@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { AppShell } from '@/components/ui/AppShell';
 
-export const metadata: Metadata = { title: 'Privacy · Big Day Stories' };
+export const metadata: Metadata = { title: 'Privacy' };
 
 /** Privacy (docs/SPEC.md 4.16, FR-A4): fits one screen. */
 export default function PrivacyPage() {
