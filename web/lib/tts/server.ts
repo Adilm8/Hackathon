@@ -7,7 +7,7 @@
  * for providers that do not train on data (data_collection deny; zero retention with TTS_ZDR=on). Costs count against the LLM daily cap.
  */
 import 'server-only';
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { mkdir, readdir, readFile, stat, unlink, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { budgetLeft, recordCall } from '../server/budget';
 import { cacheKey } from '../server/cache';
@@ -61,9 +61,35 @@ export function splitVoice(id: string, defaultModel: string): { model: string; v
   return at > 0 ? { model: id.slice(0, at), voice: id.slice(at + 1) } : { model: defaultModel, voice: id };
 }
 
+/** Story audio holds the child's first name, so it is kept at most 30 days (Privacy page). */
+export const AUDIO_MAX_AGE_MS = 30 * 24 * 60 * 60 * 1000;
+let lastSweep = 0;
+/** Deletes cached audio older than AUDIO_MAX_AGE_MS; runs at most once an hour. Never throws. */
+export async function sweepOldAudio(now = Date.now(), folder = dir()): Promise<number> {
+  if (now - lastSweep < 60 * 60 * 1000) return 0;
+  lastSweep = now;
+  let removed = 0;
+  try {
+    for (const name of await readdir(folder)) {
+      if (!/\.(mp3|wav)$/.test(name)) continue;
+      const f = path.join(folder, name);
+      const st = await stat(f).catch(() => null);
+      if (st && now - st.mtimeMs > AUDIO_MAX_AGE_MS && (await unlink(f).then(() => true, () => false))) removed++;
+    }
+  } catch {
+    /* no cache folder yet */
+  }
+  return removed;
+}
+/** Tests only. */
+export function resetSweep(): void {
+  lastSweep = 0;
+}
+
 export async function synthesize(text: string, familyId: string | null, wantedVoice?: string): Promise<TtsResult> {
   const { tts, llm } = env();
   if (!tts.enabled) return { error: 'disabled' };
+  void sweepOldAudio();
   const { model, voice } = splitVoice(resolveVoice(wantedVoice, tts.voices), tts.model);
   const key = cacheKey(['tts', 1, model, voice, text]);
   const pcm = wantsPcm(model);

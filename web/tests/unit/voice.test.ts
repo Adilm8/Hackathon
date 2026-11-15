@@ -89,3 +89,23 @@ describe('character voices across models', async () => {
     expect(priceFor('someone/new-tts', 33)).toBe(33);
   });
 });
+
+describe('story audio retention', async () => {
+  const { sweepOldAudio, resetSweep, AUDIO_MAX_AGE_MS } = await import('@/lib/tts/server');
+  const fs = await import('node:fs/promises');
+  const os = await import('node:os');
+  const path = await import('node:path');
+  it('deletes audio older than 30 days and keeps newer audio', async () => {
+    const dir = await fs.mkdtemp(path.join(os.tmpdir(), 'tts-'));
+    const old = path.join(dir, 'old.mp3');
+    const fresh = path.join(dir, 'fresh.wav');
+    await fs.writeFile(old, 'a');
+    await fs.writeFile(fresh, 'b');
+    const now = Date.now();
+    const past = new Date(now - AUDIO_MAX_AGE_MS - 60_000);
+    await fs.utimes(old, past, past);
+    resetSweep();
+    expect(await sweepOldAudio(now, dir)).toBe(1);
+    expect((await fs.readdir(dir)).sort()).toEqual(['fresh.wav']);
+  });
+});
