@@ -26,7 +26,7 @@ Stack: Next.js 16, React 19, TypeScript, PostgreSQL, Stripe, Web Push; deployed 
 | `web/` | The web application (Next.js). Run all npm commands from here. Copy `web/.env.example` to `web/.env.local` and fill in the keys |
 | `docs/` | Product and engineering documentation, see `docs/README.md` |
 
-Setup and run instructions: `web/README.md`.
+Setup and run instructions: `web/README.md`. What happens when a service fails (AI, voice, payments, database, offline) and the fallback for each case: [docs/reliability.md](docs/reliability.md); live status at `/api/health`.
 
 ## For the jury: the whole product in 3 minutes
 

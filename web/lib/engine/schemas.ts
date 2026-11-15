@@ -5,9 +5,15 @@
  */
 import { z } from 'zod';
 import type * as T from './types';
+import { CHILD_NAME_PATTERN, NAME_MAX, normalizeChildName } from '../childName';
 
 // ---------- enums ----------
-export const ISODateSchema = z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'expected YYYY-MM-DD');
+/** A real calendar day: 2026-02-31 and 2026-13-01 are refused, not silently rolled over. */
+export const ISODateSchema = z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'expected YYYY-MM-DD').refine((s) => {
+  const [y, m, d] = s.split('-').map(Number);
+  const t = new Date(Date.UTC(y, m - 1, d));
+  return y >= 2000 && y <= 2100 && t.getUTCMonth() === m - 1 && t.getUTCDate() === d;
+}, 'not a real date');
 export const EventTypeEnum = z.enum([
   'dentist', 'school', 'flight', 'sibling', 'haircut', 'shot',
   'doctor', 'blood_test', 'hospital', 'moving', 'sleepover', 'babysitter', 'swimming', 'party',
@@ -96,10 +102,8 @@ export const BadgeSchema = z.strictObject({
 /** First name or nickname: one word, letters only, no surname (D14). */
 export const ChildNameSchema = z
   .string()
-  .trim()
-  .min(1)
-  .max(20)
-  .regex(/^[\p{L}][\p{L}'-]*$/u, 'one word, letters only');
+  .transform((s) => normalizeChildName(s))
+  .pipe(z.string().min(1).refine((s) => [...s].length <= NAME_MAX, 'at most 20 characters').regex(CHILD_NAME_PATTERN, 'one word, letters only'));
 
 export const ChildProfileSchema = z.strictObject({
   id,

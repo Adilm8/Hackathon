@@ -1,4 +1,5 @@
 import type { BackgroundId, EventType } from '@/lib/engine/types';
+import { SceneImage } from './SceneImage';
 
 /**
  * Scene registry (SPEC 11.4). Every id maps to a static SVG in public/scenes (day and night
@@ -72,13 +73,7 @@ export interface SceneProps {
 /** Fills its parent (position the parent relative); the picture covers the box. */
 export function Scene({ id, night = false, className = '', decorative = true }: SceneProps) {
   const bg = getBackground(id);
-  return (
-    // eslint-disable-next-line @next/next/no-img-element -- static SVG, nothing to optimise
-    <img
-      src={night ? bg.nightSrc : bg.src}
-      alt={decorative ? '' : bg.alt}
-      className={`absolute inset-0 h-full w-full object-cover ${className}`}
-      draggable={false}
-    />
-  );
+  const fallback = `/scenes/${DEFAULT_BACKGROUND}.svg`;
+  const sources = [...new Set([night ? bg.nightSrc : bg.src, bg.src, fallback])];
+  return <SceneImage key={sources.join("|")} sources={sources} alt={decorative ? '' : bg.alt} className={`absolute inset-0 h-full w-full object-cover ${className}`} />;
 }

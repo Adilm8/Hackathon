@@ -23,9 +23,20 @@ const MIGRATIONS = path.join(process.cwd(), 'drizzle');
 async function createPostgres(url: string): Promise<Holder> {
   const { Pool } = await import('pg');
   const { migrate } = await import('drizzle-orm/node-postgres/migrator');
-  const pool = new Pool({ connectionString: url, max: 5 });
+  const pool = new Pool({
+    connectionString: url,
+    max: 5,
+    // Without these a dead database makes every request hang instead of failing fast (docs/reliability.md).
+    connectionTimeoutMillis: 5_000,
+    idleTimeoutMillis: 30_000,
+    query_timeout: 10_000,
+    statement_timeout: 10_000,
+  });
+  // An idle connection dropped by the server emits 'error'; unhandled, it would crash the process.
+  pool.on('error', (e) => console.error('[db] idle connection lost:', e.message));
   const db = drizzlePg(pool, { schema });
   const ready = migrate(db, { migrationsFolder: MIGRATIONS });
+  ready.catch(() => {}); // reported by getDb(); without this a failed start is an unhandled rejection
   return { db, ready, kind: 'postgres', close: () => pool.end() };
 }
 
@@ -40,11 +51,15 @@ async function createPglite(dataDir: string | undefined): Promise<Holder> {
   const client = new PGlite(dataDir);
   const lite = drizzleLite(client, { schema });
   const ready = migrate(lite, { migrationsFolder: MIGRATIONS });
+  ready.catch(() => {});
   // Query API is the same; one type keeps repository modules simple.
   return { db: lite as unknown as Db, ready, kind: 'pglite', close: () => client.close() };
 }
 
 let creating: Promise<Holder> | null = null;
+/** After a failed start (database down at boot) the next try waits this long, then starts over. */
+const RETRY_MS = 10_000;
+let failedAt = 0;
 
 function holder(): Promise<Holder> {
   if (g.__bdsDb) return Promise.resolve(g.__bdsDb);
@@ -66,8 +81,22 @@ function holder(): Promise<Holder> {
 
 /** The migrated database. Await it in every repository function. */
 export async function getDb(): Promise<Db> {
+  if (failedAt && Date.now() - failedAt < RETRY_MS) throw new Error('database unavailable (retrying soon)');
   const h = await holder();
-  await h.ready;
+  try {
+    await h.ready;
+  } catch (e) {
+    // Migrations failed (usually: database unreachable). Forget this client so a later call
+    // reconnects, instead of keeping the rejected promise until the next restart.
+    if (g.__bdsDb === h) {
+      g.__bdsDb = undefined;
+      creating = null;
+      failedAt = Date.now();
+      void h.close().catch(() => {});
+    }
+    throw e;
+  }
+  failedAt = 0;
   return h.db;
 }
 
@@ -81,13 +110,20 @@ export async function migrateDb(): Promise<void> {
 }
 
 /** Health check: true when a trivial query succeeds. */
-export async function pingDb(): Promise<boolean> {
+export async function pingDb(timeoutMs = 3_000): Promise<boolean> {
+  let timer: ReturnType<typeof setTimeout> | undefined;
   try {
-    const db = await getDb();
-    await db.execute('select 1');
-    return true;
+    const ping = (async () => {
+      const db = await getDb();
+      await db.execute('select 1');
+      return true;
+    })();
+    ping.catch(() => {});
+    return await Promise.race([ping, new Promise<boolean>((r) => (timer = setTimeout(() => r(false), timeoutMs)))]);
   } catch {
     return false;
+  } finally {
+    clearTimeout(timer);
   }
 }
 
@@ -96,5 +132,6 @@ export async function closeDb(): Promise<void> {
   const h = g.__bdsDb;
   g.__bdsDb = undefined;
   creating = null;
+  failedAt = 0;
   if (h) await h.close();
 }
