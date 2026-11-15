@@ -87,7 +87,7 @@ describe('brave-moment stickers', () => {
   });
 
   it('are saved with the check-in, validated by the schema, and counted', () => {
-    const child = doc.child;
+    const child = doc.child!;
     const r = saveCheckin({ event: sample, child, input: { rating: 1, helped: [], didntHelp: [], brave: ['said_hello', 'deep_breather', 'kind_helper'] }, today });
     expect(r.event.checkin!.brave).toEqual(['said_hello', 'deep_breather']);
     expect(CheckinSchema.safeParse(r.event.checkin).success).toBe(true);
