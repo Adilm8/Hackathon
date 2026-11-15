@@ -3,7 +3,7 @@ import { useEffect, useRef, useState, useSyncExternalStore } from 'react';
 import { Icon } from '@/components/icons';
 import { narrator } from '@/lib/speech/narrator';
 import { RecordedNarrator } from '@/lib/speech/recorder';
-import { cloudNarrator, premiumVoiceEnabled } from '@/lib/speech/cloud';
+import { cloudNarrator, prefetchSpeech, premiumVoiceEnabled, premiumVoiceKnown } from '@/lib/speech/cloud';
 import type { Narrator } from '@/lib/speech/types';
 import { estimateWordStarts, mapWordIndex, splitWords, wordAtChar, wordAtTime } from '@/lib/speech/words';
 import { Button } from '@/components/ui/Button';
@@ -22,8 +22,10 @@ const noop = () => () => {};
  * Render with `key={page.id}`: a new page unmounts the button, which stops the voice.
  */
 export function ListenButton({
-  sentences, shown, from = 0, onProgress, recordingKey, hasRecording = false, voiceName, autoStart = false, onFinished, night = false,
+  sentences, shown, from = 0, onProgress, recordingKey, hasRecording = false, voiceName, autoStart = false, onFinished, night = false, upNext,
 }: {
+  /** Auto is on: the next page's sentences, loaded ahead for the premium voice. */
+  upNext?: string[];
   /** Night scenes: the voice reads about 10% slower, for winding down (SPEC 17.1 adaptation). */
   night?: boolean;
   /** Read on: start speaking as soon as the button mounts (the page was turned by the voice). */
@@ -65,13 +67,15 @@ export function ListenButton({
 
   const wantPremium = usePrefs((p) => p.storyVoice) === 'premium';
   const characterVoice = usePrefs((p) => p.characterVoice);
-  const [premium, setPremium] = useState(false);
+  // null = not known yet: the premium voice is tried (it falls back to the device voice by itself),
+  // so an early tap never reads with the built-in voice when Storyteller is chosen.
+  const [premium, setPremium] = useState<boolean | null>(() => premiumVoiceKnown());
   useEffect(() => {
     let live = true;
     if (wantPremium) void premiumVoiceEnabled().then((on) => live && setPremium(on));
     return () => { live = false; };
   }, [wantPremium]);
-  const usePremium = wantPremium && premium && !useRecording;
+  const usePremium = wantPremium && premium !== false && !useRecording;
   useEffect(() => {
     player.current = useRecording ? new RecordedNarrator(recordingKey!) : usePremium ? cloudNarrator : narrator;
   }, [useRecording, recordingKey, usePremium]);
@@ -132,7 +136,9 @@ export function ListenButton({
   };
 
   const playNow = () => {
+    player.current = useRecording ? new RecordedNarrator(recordingKey!) : usePremium ? cloudNarrator : narrator;
     setPlaying(true);
+    if (usePremium && upNext) prefetchSpeech(upNext, characterVoice);
     // A parent's recording is one take for the whole page, so it always starts at the top.
     start.current = useRecording ? 0 : Math.min(from, sentences.length - 1);
     const t0 = performance.now();

@@ -185,8 +185,9 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
     setPageIdx(i);
     setStep(s);
     setPosition(null);
-    setAutoListen(false);
-    setNavTick((n) => n + 1); // a tap stops the voice
+    // A tap stops the voice; with Auto on, a tap while it reads moves the voice there and it reads on.
+    setAutoListen(readOn && position !== null && mode.kind === 'read');
+    setNavTick((n) => n + 1);
   };
   // The voice finished the page: with Read on it turns to the next page and keeps reading, never past the chapter's end.
   const readOnNext = () => {
@@ -338,13 +339,23 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
             sentences={page.sentences.map((s) => renderText(s.text, child, { speak: true, pronunciation: child.pronunciation }))}
             shown={page.sentences.map((s) => render(s.text))} onProgress={onProgress}
             recordingKey={isOn('parentVoice') ? recKey : undefined} hasRecording={recs.key === recKey && recs.has} voiceName={child.values.family[0]}
-            autoStart={autoListen} onFinished={readOnNext} night={night} />
+            autoStart={autoListen} onFinished={readOnNext} night={night}
+            upNext={readOn && !isLast ? pages[pageIdx + 1]?.sentences.map((s) => renderText(s.text, child, { speak: true, pronunciation: child.pronunciation })) : undefined} />
           )}
           </span>
           {!recorder && (
-            <Button variant="secondary" aria-pressed={readOn} onClick={() => setVoice({ readOn: !readOn })}
-              title="Auto: the voice turns the pages by itself" aria-label="Auto page turn"
-              className={`px-3 text-sm ${readOn ? '!border-primary !bg-primary !text-primary-ink' : ''}`}>
+            <Button variant="secondary" aria-pressed={readOn}
+              onClick={() => {
+                const on = !readOn;
+                setVoice({ readOn: on });
+                // Turning Auto on starts reading at once (inside the tap, which iPhone needs for sound).
+                if (on && position === null && mode.kind === 'read')
+                  document.querySelector<HTMLButtonElement>('[data-reader-listen] button')?.click();
+              }}
+              title={readOn ? 'Auto is on: the voice reads and turns the pages. Tap to turn off.' : 'Auto: read aloud and turn the pages by itself'}
+              aria-label="Auto page turn"
+              className={`px-3 text-sm ${readOn ? '!border-primary !text-primary-text' : 'text-ink-soft'}`}>
+              <span aria-hidden className={`size-2.5 rounded-full ${readOn ? 'bg-primary' : 'border-2 border-line'}`} />
               Auto
             </Button>
           )}

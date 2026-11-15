@@ -11,14 +11,18 @@ import type { Narrator, SpeakOptions } from './types';
 
 export type StoryVoice = { id: string; label: string };
 let status: Promise<StoryVoice[]> | null = null;
+let known: boolean | null = null;
 /** Character voices the server offers; empty = the premium voice is off. Asked once per page load. */
 export function premiumVoices(): Promise<StoryVoice[]> {
   status ??= fetch('/api/tts', { cache: 'no-store' })
     .then((r) => (r.ok ? r.json() : { enabled: false }))
     .then((j: { enabled?: boolean; voices?: StoryVoice[] }) => (j.enabled ? j.voices ?? [] : []))
     .catch(() => []);
+  void status.then((v) => (known = v.length > 0));
   return status;
 }
+/** Whether the premium voice is on, once the server has said so; null before (no wait in a tap). */
+export const premiumVoiceKnown = (): boolean | null => known;
 export const premiumVoiceEnabled = () => premiumVoices().then((v) => v.length > 0);
 
 /** A WAV file of 0.1 s of silence; playing it inside the tap unlocks the element on iOS. */
@@ -52,6 +56,12 @@ function audioUrl(text: string, voice?: string | null): Promise<string | null> {
     if (memo.size > 200) memo.delete(memo.keys().next().value as string);
   }
   return p;
+}
+
+/** Loads sentences ahead (the next page while Auto turns pages), so the voice goes on without a gap. */
+export function prefetchSpeech(texts: string[], voice?: string | null): void {
+  if (known !== true) return;
+  for (const t of texts.slice(0, 2)) if (t.trim()) void audioUrl(t, voice);
 }
 
 export class CloudNarrator implements Narrator {
