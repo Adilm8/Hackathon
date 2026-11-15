@@ -45,6 +45,14 @@ export const QuestionSourceEnum = z.enum(['button', 'custom', 'voice']);
 export const PlanIdEnum = z.enum(['event', 'year', 'month']);
 export const WorkspaceEnum = z.enum(['real', 'sample']);
 export const TextSourceEnum = z.enum(['llm', 'fallback']);
+export const StoryLengthEnum = z.enum(['short', 'standard', 'long']);
+export const StoryGenreEnum = z.enum(['bedtime', 'funny', 'discover', 'values', 'fairy_tale', 'hero', 'mindful']);
+export const ExperienceEnum = z.enum(['first', 'went_fine', 'was_hard']);
+export const ComfortKindEnum = z.enum(['teddy', 'blanket', 'toy', 'book']);
+export const InterestEnum = z.enum([
+  'dinosaurs', 'space', 'trains', 'animals', 'castles', 'cars',
+  'ocean', 'music', 'sports', 'drawing', 'bugs', 'building',
+]);
 export const BackgroundIdSchema = z.string().min(1).max(60);
 
 // ---------- family document (6.1) ----------
@@ -173,6 +181,21 @@ export const CheckinSchema = z.strictObject({
   savedOn: ISODateSchema,
 });
 
+const storyPrefsShape = {
+  length: StoryLengthEnum.optional(),
+  skipSteps: z.array(z.string().max(160)).max(10).optional(),
+  moments: z.array(z.string().max(60)).max(2).optional(),
+  companions: z.array(z.string().max(30)).max(2).optional(),
+  comfort: z.strictObject({ kind: ComfortKindEnum, nickname: z.string().max(24).optional() }).optional(),
+  interests: z.array(InterestEnum).max(3).optional(),
+  genre: StoryGenreEnum.optional(),
+  experience: ExperienceEnum.optional(),
+  after: z.string().max(60).optional(),
+  avoidWords: z.array(z.string().max(24)).max(3).optional(),
+};
+export const StoryPrefsSchema = z.strictObject({ ...storyPrefsShape, chapters: z.number().int().min(1).max(5).optional() });
+export const StoryContextPrefsSchema = z.strictObject(storyPrefsShape);
+
 export const BigEventSchema = z.strictObject({
   id,
   childId: id,
@@ -191,6 +214,7 @@ export const BigEventSchema = z.strictObject({
   place: z.string().max(40).optional(),
   ritual: RitualCardSchema.optional(),
   checkin: CheckinSchema.optional(),
+  story: StoryPrefsSchema.optional(),
 });
 
 export const FAMILY_DOC_SCHEMA_VERSION = 1;
@@ -250,9 +274,12 @@ export const StoryContextSchema = z.strictObject({
   previousSummaries: z.array(z.string().max(200)).max(5),
   placeCaptions: z.array(z.string().max(60)).max(3),
   place: z.string().max(40).optional(),
+  story: StoryContextPrefsSchema.optional(),
 });
 
 // ---------- LLM output (8.5) ----------
+/** Most pages a chapter may have: 7 for the 'long' story length. */
+export const MAX_PAGES_PER_CHAPTER = 7;
 const SentenceOut = z.object({ text: z.string().min(2).max(220), kind: z.enum(['describe', 'coach']) });
 export const PageOut = z.object({
   sentences: z.array(SentenceOut).min(2).max(16),
@@ -261,7 +288,7 @@ export const PageOut = z.object({
   addresses: z.array(TopicEnum),
 });
 export const ChapterOut = z.object({
-  pages: z.array(PageOut).min(3).max(5),
+  pages: z.array(PageOut).min(3).max(MAX_PAGES_PER_CHAPTER),
   summary: z.string().max(200),
   usedTechniques: z.array(z.string()), // filtered to ids the template knows
   place: z.string().max(40),

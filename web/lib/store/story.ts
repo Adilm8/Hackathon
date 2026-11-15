@@ -67,7 +67,7 @@ export async function generateChapter(
 ): Promise<ChapterResult | { error: 'payment_required' }> {
   const { event, child, template, index } = input;
   const ch = event.chapters.find((c) => c.index === index)!;
-  const fb = () => fallbackPages(template, ch.beats, child.styleMode, child.age, index);
+  const fb = () => fallbackPages(template, ch.beats, child.styleMode, child.age, index, event.story);
   const ctrl = new AbortController();
   let timer = setTimeout(() => ctrl.abort(), 6000);
   const pages: Page[] = [];

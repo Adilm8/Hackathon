@@ -5,7 +5,9 @@
 import { pickDayTechnique } from './memory';
 import { storyPageId } from './state';
 import { topTopics } from './topics';
-import type { Beat, BigEvent, Chapter, ChildProfile, EventTemplate, Page, RitualCard, Sentence, StyleMode, Topic } from './types';
+import { pageTargets } from './plan';
+import { pagesWithoutAvoided } from './storyPrefs';
+import type { Beat, BigEvent, Chapter, ChildProfile, EventTemplate, Page, RitualCard, Sentence, StoryPrefs, StyleMode, Topic } from './types';
 
 export const FALLBACK_COPY = {
   /** Own question that timed out (4.8). */
@@ -18,39 +20,37 @@ export const FALLBACK_COPY = {
   askGrownup: "That's a great question for [[GROWNUP]] or the doctor.",
 } as const;
 
-/** Most pages a chapter may have (ChapterOut allows 3–5). */
-const MAX_PAGES = 5;
-
 /**
- * Fallback pages for a chapter's beats, up to five: the beats' pages taken in turn (first page of
- * every beat, then the second ones, ...), then put back in beat order. One beat gives all four of its
- * pages; "Quick prep" (all five beats) gives the first page of each.
+ * Fallback pages for a chapter's beats, up to the story length's page count (5 by default): the beats'
+ * pages taken in turn (first page of every beat, then the second ones, ...), then put back in beat order.
+ * One beat gives all four of its pages; "Quick prep" (all five beats) gives the first page of each.
+ * Sentences with a word the parent asked to avoid are left out.
  */
 export function fallbackPages(
   template: EventTemplate,
   beats: readonly Beat[],
   styleMode: StyleMode,
-  _age: number,
+  age: number,
   chapterIndex: number,
+  story?: Pick<StoryPrefs, 'length' | 'avoidWords'>,
 ): Page[] {
+  const MAX_PAGES = pageTargets(age, story?.length).pages;
   const lists = beats.map((b) => template.fallbackPages[styleMode][b]);
   const picked: { beat: number; i: number }[] = [];
   const longest = Math.max(0, ...lists.map((l) => l.length));
   for (let i = 0; i < longest && picked.length < MAX_PAGES; i++)
     for (let b = 0; b < lists.length && picked.length < MAX_PAGES; b++) if (lists[b][i]) picked.push({ beat: b, i });
   picked.sort((x, y) => x.beat - y.beat || x.i - y.i);
-  return picked.map(({ beat, i }, n) => {
+  const pages = picked.map(({ beat, i }) => {
     const p = lists[beat][i];
-    return {
-      id: storyPageId(chapterIndex, n + 1),
-      kind: 'story',
-      sentences: p.sentences.map((s) => ({ ...s })),
-      mood: p.mood,
-      background: p.background,
-      addresses: [...p.addresses],
-      source: 'fallback',
-    };
+    return { sentences: p.sentences.map((s) => ({ ...s })), mood: p.mood, background: p.background, addresses: [...p.addresses] };
   });
+  return pagesWithoutAvoided(pages, story?.avoidWords).map((p, n) => ({
+    id: storyPageId(chapterIndex, n + 1),
+    kind: 'story',
+    ...p,
+    source: 'fallback',
+  }));
 }
 
 /** Summary of a fallback chapter, fed to later chapters (≤ 200 chars). */
@@ -65,9 +65,10 @@ export function fallbackChapter(
   chapter: Pick<Chapter, 'index' | 'beats'>,
   styleMode: StyleMode,
   age: number,
+  story?: Pick<StoryPrefs, 'length' | 'avoidWords'>,
 ): { pages: Page[]; summary: string; usedTechniques: string[]; place: string } {
   return {
-    pages: fallbackPages(template, chapter.beats, styleMode, age, chapter.index),
+    pages: fallbackPages(template, chapter.beats, styleMode, age, chapter.index, story),
     summary: fallbackSummary(template, chapter.beats),
     usedTechniques: [],
     place: '',

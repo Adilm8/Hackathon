@@ -42,6 +42,15 @@ export type QuestionSource = 'button' | 'custom' | 'voice';
 export type PlanId = 'event' | 'year' | 'month';
 export type Workspace = 'real' | 'sample';
 export type TextSource = 'llm' | 'fallback';
+/** Story options a parent may set per event (docs/story-customization.md). */
+export type StoryLength = 'short' | 'standard' | 'long';
+/** Story genre the parent picks right after the event type. */
+export type StoryGenre = 'bedtime' | 'funny' | 'discover' | 'values' | 'fairy_tale' | 'hero' | 'mindful';
+export type Experience = 'first' | 'went_fine' | 'was_hard';
+export type ComfortKind = 'teddy' | 'blanket' | 'toy' | 'book';
+export type Interest =
+  | 'dinosaurs' | 'space' | 'trains' | 'animals' | 'castles' | 'cars'
+  | 'ocean' | 'music' | 'sports' | 'drawing' | 'bugs' | 'building';
 /** Scene id; must exist in components/character/backgrounds registry. */
 export type BackgroundId = string;
 
@@ -150,6 +159,31 @@ export interface Checkin {
   savedOn: ISODate;
 }
 
+/**
+ * Parent's story options for one event. All optional: a missing field keeps the default behaviour.
+ * Free text (moments, nickname, after, avoid words) is cleaned in the browser and always goes into
+ * <data> blocks in prompts.
+ */
+export interface StoryPrefs {
+  length?: StoryLength;                 // missing = 'standard'
+  /** Wanted number of evenings, 1-5; never more than the days left. Missing = by days left. */
+  chapters?: number;
+  /** Template steps (exact text) that will not happen for this child. */
+  skipSteps?: string[];
+  /** Up to 2 own moments, <= 60 chars each. */
+  moments?: string[];
+  /** Who comes along on the day: family words from the values profile, up to 2. */
+  companions?: string[];
+  comfort?: { kind: ComfortKind; nickname?: string };   // nickname <= 24 chars
+  interests?: Interest[];               // up to 3
+  genre?: StoryGenre;                   // missing = 'bedtime'
+  experience?: Experience;
+  /** Something nice after the big day, <= 60 chars. */
+  after?: string;
+  /** Up to 3 words the story must not use, <= 24 chars each. */
+  avoidWords?: string[];
+}
+
 export interface BigEvent {
   id: string;
   childId: string;
@@ -168,6 +202,7 @@ export interface BigEvent {
   place?: string;                 // last place the story was at, <= 40 chars
   ritual?: RitualCard;
   checkin?: Checkin;
+  story?: StoryPrefs;
 }
 
 /** What the browser sends as story context. Built by code, never by the LLM. No name inside. */
@@ -185,6 +220,8 @@ export interface StoryContext {
   previousSummaries: string[];    // one per earlier chapter
   placeCaptions: string[];        // captions of place photos
   place?: string;
+  /** Parent's story options without the plan-only field `chapters`. */
+  story?: Omit<StoryPrefs, 'chapters'>;
 }
 
 /** Read-only in the browser: the server is the source of truth (10.4). */
