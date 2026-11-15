@@ -2067,5 +2067,186 @@
   "badge": {
     "id": "healthy_hero",
     "label": "Healthy Hero"
+  },
+  "olderPages": {
+    "what_happens": {
+      "sentences": [
+        {
+          "text": "A yearly check-up is the doctor's way of seeing how [[CHILD]] is growing.",
+          "kind": "describe"
+        },
+        {
+          "text": "First comes check-in, then a nurse measures height and weight and may take blood pressure with a cuff that squeezes the arm for a moment.",
+          "kind": "describe"
+        },
+        {
+          "text": "In the exam room, the doctor listens to the heart and lungs, looks in the ears and throat, and presses gently on the tummy.",
+          "kind": "describe"
+        },
+        {
+          "text": "They also ask questions about sleep, food and school.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can answer some questions on their own.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "outside",
+      "addresses": [
+        "unknown",
+        "separation",
+        "strangers"
+      ]
+    },
+    "who_is_there": {
+      "sentences": [
+        {
+          "text": "The nurse is often the first person in the room.",
+          "kind": "describe"
+        },
+        {
+          "text": "They measure, write down numbers and sometimes give a quick check with a light.",
+          "kind": "describe"
+        },
+        {
+          "text": "The doctor comes next and does the main exam.",
+          "kind": "describe"
+        },
+        {
+          "text": "Some offices also have a medical assistant who helps both of them.",
+          "kind": "describe"
+        },
+        {
+          "text": "Everyone washes their hands before touching a patient, because clean hands keep germs from spreading.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[GROWNUP]] stays in the room the whole time.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can ask the doctor what each tool is called.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "outside",
+      "addresses": [
+        "strangers",
+        "separation",
+        "unknown"
+      ]
+    },
+    "what_i_do": {
+      "sentences": [
+        {
+          "text": "[[CHILD]]'s jobs at the check-up are easy to learn.",
+          "kind": "describe"
+        },
+        {
+          "text": "Stand tall on the scale and against the measuring stick.",
+          "kind": "describe"
+        },
+        {
+          "text": "Sit on the crinkly paper on the exam table.",
+          "kind": "describe"
+        },
+        {
+          "text": "Breathe deeply when the doctor listens with the stethoscope, because deep breaths make the lung sounds easier to hear.",
+          "kind": "describe"
+        },
+        {
+          "text": "Look at one spot while the light checks the eyes.",
+          "kind": "describe"
+        },
+        {
+          "text": "It helps to say out loud if something feels strange.",
+          "kind": "coach"
+        },
+        {
+          "text": "[[CHILD]] can also ask to listen to their own heart through the stethoscope.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "brave",
+      "background": "shot",
+      "addresses": [
+        "body",
+        "separation",
+        "strangers"
+      ]
+    },
+    "if_scared": {
+      "sentences": [
+        {
+          "text": "Feeling unsure before a check-up is normal, especially if the last one was a while ago.",
+          "kind": "describe"
+        },
+        {
+          "text": "Most of the visit is looking and listening.",
+          "kind": "describe"
+        },
+        {
+          "text": "The blood pressure cuff squeezes hard for a few seconds, and a cold stethoscope can make [[CHILD]] jump.",
+          "kind": "describe"
+        },
+        {
+          "text": "If a shot is planned, the doctor will say so; it is a quick pinch that helps the body build protection.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can ask, is anything going to pinch today?",
+          "kind": "coach"
+        },
+        {
+          "text": "A slow breath out helps the muscles go loose.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "worried",
+      "background": "shot",
+      "addresses": [
+        "sensory",
+        "pain",
+        "unknown"
+      ]
+    },
+    "rehearsal": {
+      "sentences": [
+        {
+          "text": "Let's walk through the visit once more.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] checks in, waits, and follows the nurse to be measured.",
+          "kind": "describe"
+        },
+        {
+          "text": "On the exam table, [[CHILD]] breathes deeply for the stethoscope, looks ahead for the little light, and says ahh for the throat check.",
+          "kind": "describe"
+        },
+        {
+          "text": "The doctor asks some questions, and [[CHILD]] can answer or ask one back.",
+          "kind": "describe"
+        },
+        {
+          "text": "Then it is time to go home.",
+          "kind": "describe"
+        },
+        {
+          "text": "Tonight, [[CHILD]] can think of one question to ask the doctor and say it to [[GROWNUP]].",
+          "kind": "coach"
+        }
+      ],
+      "mood": "happy",
+      "background": "home-evening",
+      "addresses": [
+        "unknown",
+        "body",
+        "strangers"
+      ]
+    }
   }
 }

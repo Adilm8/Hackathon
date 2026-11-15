@@ -2,6 +2,7 @@
  * Template fallbacks of the three calls (docs/SPEC.md 8.2). Written by the team, never by a model,
  * so they are always safe to show. The whole cycle works on these with no LLM at all (A1).
  */
+import { fallbackPagesForAge } from '../engine/ageText';
 import { pagesWithoutAvoided } from '../engine/storyPrefs';
 import type { Beat, EventTemplate, Mood, RitualCard, Sentence, StoryContext, StoryPrefs, StyleMode, Topic } from '../engine/types';
 import { OWN_QUESTION_FALLBACK } from '../safety/messages';
@@ -27,7 +28,7 @@ export function fallbackChapterPages(
   story?: Pick<StoryPrefs, 'length' | 'avoidWords'>,
 ): OutPage[] {
   const target = pageTargets(age, story?.length).pages;
-  const lists = beats.map((b) => template.fallbackPages[styleMode]?.[b] ?? template.fallbackPages.story[b] ?? []);
+  const lists = beats.map((b) => fallbackPagesForAge(template, b, styleMode, age));
   const picked: { beat: number; i: number }[] = [];
   const maxLen = Math.max(0, ...lists.map((l) => l.length));
   for (let i = 0; i < maxLen && picked.length < target; i++) {

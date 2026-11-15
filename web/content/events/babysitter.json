@@ -2103,5 +2103,170 @@
   "badge": {
     "id": "brave_goodbye",
     "label": "Brave Goodbye"
+  },
+  "olderPages": {
+    "what_happens": {
+      "sentences": [
+        {
+          "text": "When [[GROWNUP]] goes out, a babysitter takes care of [[CHILD]] at home.",
+          "kind": "describe"
+        },
+        {
+          "text": "They arrive a little early to learn the plan: dinner, play, bath, bedtime and house rules.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[GROWNUP]] says goodbye and leaves a phone number.",
+          "kind": "describe"
+        },
+        {
+          "text": "The evening goes on almost like usual, and [[GROWNUP]] comes home later, even if [[CHILD]] is already asleep.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can help write the evening plan for the babysitter.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "home-evening",
+      "addresses": [
+        "strangers",
+        "separation",
+        "safety"
+      ]
+    },
+    "who_is_there": {
+      "sentences": [
+        {
+          "text": "A babysitter is a trusted person whom [[GROWNUP]] has chosen and checked.",
+          "kind": "describe"
+        },
+        {
+          "text": "They might be a teenager, a student, a neighbour or a nanny.",
+          "kind": "describe"
+        },
+        {
+          "text": "They know the safety rules and how to reach [[GROWNUP]].",
+          "kind": "describe"
+        },
+        {
+          "text": "Some love board games, some love drawing.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can ask the babysitter what they like to play and share a favourite game too.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "home-evening",
+      "addresses": [
+        "strangers",
+        "safety",
+        "social"
+      ]
+    },
+    "what_i_do": {
+      "sentences": [
+        {
+          "text": "[[CHILD]] can be the expert at home.",
+          "kind": "describe"
+        },
+        {
+          "text": "Show where the toys, books and snacks are.",
+          "kind": "describe"
+        },
+        {
+          "text": "Explain the bedtime steps.",
+          "kind": "describe"
+        },
+        {
+          "text": "The house rules stay the same as when [[GROWNUP]] is home.",
+          "kind": "describe"
+        },
+        {
+          "text": "If [[CHILD]] feels unsure about something, telling the babysitter is the right move.",
+          "kind": "coach"
+        },
+        {
+          "text": "And the next day, [[CHILD]] can tell [[GROWNUP]] how the evening went, including anything that felt wrong.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "brave",
+      "background": "home-evening",
+      "addresses": [
+        "strangers",
+        "social",
+        "unknown"
+      ]
+    },
+    "if_scared": {
+      "sentences": [
+        {
+          "text": "It can feel strange when [[GROWNUP]] leaves, even for a few hours, and that feeling usually fades after the first few minutes of playing.",
+          "kind": "describe"
+        },
+        {
+          "text": "The house may feel quieter than usual.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[GROWNUP]] always comes back.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can draw a small heart on their hand, the same as [[GROWNUP]], to remember they're connected.",
+          "kind": "coach"
+        },
+        {
+          "text": "A favourite activity right after the goodbye helps the time move fast.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "worried",
+      "background": "home-evening",
+      "addresses": [
+        "separation",
+        "sensory",
+        "unknown"
+      ]
+    },
+    "rehearsal": {
+      "sentences": [
+        {
+          "text": "Let's run through the evening.",
+          "kind": "describe"
+        },
+        {
+          "text": "The babysitter arrives and everyone plays together for a bit.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[GROWNUP]] does the goodbye ritual and leaves.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] shows the babysitter around, plays, has dinner, and does the bedtime steps.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] sleeps, and [[GROWNUP]] is home by morning.",
+          "kind": "describe"
+        },
+        {
+          "text": "Tonight, [[CHILD]] can choose the first game to play with the babysitter.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "happy",
+      "background": "home-evening",
+      "addresses": [
+        "unknown",
+        "separation",
+        "strangers"
+      ]
+    }
   }
 }

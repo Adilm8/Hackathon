@@ -2079,5 +2079,182 @@
   "badge": {
     "id": "super_sleeve",
     "label": "Super Sleeve"
+  },
+  "olderPages": {
+    "what_happens": {
+      "sentences": [
+        {
+          "text": "A blood test lets doctors look at tiny parts of the blood under a microscope, like checking how many red cells carry oxygen.",
+          "kind": "describe"
+        },
+        {
+          "text": "It takes only a few drops or one small tube.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] sits, a stretchy band goes around the arm so the vein is easier to see, a cool wipe cleans the spot, and then a thin needle takes the blood.",
+          "kind": "describe"
+        },
+        {
+          "text": "It is usually over in under a minute.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can ask what the doctors are looking for.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "outside",
+      "addresses": [
+        "body",
+        "unknown",
+        "sensory"
+      ]
+    },
+    "who_is_there": {
+      "sentences": [
+        {
+          "text": "The person who takes blood is often called a phlebotomist, a long word for someone whose whole job is drawing blood.",
+          "kind": "describe"
+        },
+        {
+          "text": "Because they do it many times a day, they are very quick and good at finding the right spot.",
+          "kind": "describe"
+        },
+        {
+          "text": "A nurse might do it instead.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[GROWNUP]] stays right there.",
+          "kind": "describe"
+        },
+        {
+          "text": "Some labs have numbing cream or a cold spray.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can ask the helper how many tests they do in one day.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "shot",
+      "addresses": [
+        "strangers",
+        "pain",
+        "separation"
+      ]
+    },
+    "what_i_do": {
+      "sentences": [
+        {
+          "text": "[[CHILD]] has a few jobs.",
+          "kind": "describe"
+        },
+        {
+          "text": "Sit still with the arm resting straight.",
+          "kind": "describe"
+        },
+        {
+          "text": "Let the arm go loose; tight muscles make it harder.",
+          "kind": "describe"
+        },
+        {
+          "text": "Breathe out slowly during the pinch.",
+          "kind": "describe"
+        },
+        {
+          "text": "Some kids like to look, others look away and count.",
+          "kind": "describe"
+        },
+        {
+          "text": "Afterwards, press on the cotton for a minute so the spot closes, and pick a bandage.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can decide in advance whether to watch.",
+          "kind": "coach"
+        },
+        {
+          "text": "Drinking water the day before makes veins easier to find.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "brave",
+      "background": "shot",
+      "addresses": [
+        "body",
+        "pain",
+        "separation"
+      ]
+    },
+    "if_scared": {
+      "sentences": [
+        {
+          "text": "It is normal to feel uneasy about seeing blood or feeling a needle.",
+          "kind": "describe"
+        },
+        {
+          "text": "The pinch is quick, and the tube fills in a few seconds.",
+          "kind": "describe"
+        },
+        {
+          "text": "Some people feel dizzy, so it is fine to lie down or sit on a lap.",
+          "kind": "describe"
+        },
+        {
+          "text": "If [[CHILD]] feels woozy, telling the helper right away is the right move.",
+          "kind": "coach"
+        },
+        {
+          "text": "Wiggling the toes and breathing slowly keeps the blood moving and the body calm.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "worried",
+      "background": "shot",
+      "addresses": [
+        "pain",
+        "separation",
+        "strangers"
+      ]
+    },
+    "rehearsal": {
+      "sentences": [
+        {
+          "text": "Here is the whole test in order.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] sits and rolls up a sleeve.",
+          "kind": "describe"
+        },
+        {
+          "text": "The stretchy band squeezes, the cool wipe cleans, and [[CHILD]] makes the arm loose.",
+          "kind": "describe"
+        },
+        {
+          "text": "A quick pinch, a few seconds of stillness, then cotton and a press.",
+          "kind": "describe"
+        },
+        {
+          "text": "Bandage on, and it is time for something nice.",
+          "kind": "describe"
+        },
+        {
+          "text": "Tonight, [[CHILD]] can practise a slow count to ten while keeping one arm floppy.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "happy",
+      "background": "home-evening",
+      "addresses": [
+        "unknown",
+        "body",
+        "pain"
+      ]
+    }
   }
 }

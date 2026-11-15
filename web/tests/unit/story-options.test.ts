@@ -187,3 +187,41 @@ describe('ages 2-12', () => {
     expect(StoryContextSchema.safeParse(buildStoryContext({ event: e, child: { ...child, age: 12 }, template: dentist, chapterIndex: 1 })).success).toBe(true);
   });
 });
+
+describe('fallback text by age', () => {
+  it('adds the 9-12 page second in each beat and shortens pages for age 2', async () => {
+    const { fallbackPagesForAge, TODDLER_MAX_WORDS } = await import('@/lib/engine/ageText');
+    const { countWords } = await import('@/lib/engine/text');
+    const older = fallbackPagesForAge(dentist, 'what_i_do', 'story', 11);
+    expect(older).toHaveLength(5);
+    expect(older[1]).toEqual(dentist.olderPages!.what_i_do);
+    expect(fallbackPagesForAge(dentist, 'what_i_do', 'social', 11)).toHaveLength(4);
+    expect(fallbackPagesForAge(dentist, 'what_i_do', 'story', 6)).toHaveLength(4);
+    for (const p of fallbackPagesForAge(dentist, 'what_i_do', 'story', 2)) {
+      expect(p.sentences.length).toBeGreaterThanOrEqual(2);
+      const words = countWords(p.sentences.map((s) => s.text).join(' '));
+      expect(words <= TODDLER_MAX_WORDS || p.sentences.length === 2).toBe(true);
+    }
+    // A long one-beat chapter for a 10-year-old falls back to 5 pages, not 4.
+    expect(fallbackPages(dentist, ['what_i_do'], 'story', 10, 1, { length: 'long' })).toHaveLength(5);
+  });
+});
+
+describe('answers start with the answer', () => {
+  it('spots a greeting or self-introduction', async () => {
+    const { isIntroduction } = await import('@/lib/llm/answer');
+    expect(isIntroduction('I am Leo, the bunny from your story.')).toBe(true);
+    expect(isIntroduction("Hi! I'm Bunny.")).toBe(true);
+    expect(isIntroduction('Hello!')).toBe(true);
+    expect(isIntroduction('It may feel like a quick pinch, and then it stops.')).toBe(false);
+    expect(isIntroduction('I am here with you, and it may pinch for a moment.')).toBe(true);
+  });
+
+  it('tells the model to answer first', async () => {
+    const { buildAnswerPrompt } = await import('@/lib/llm/prompts/answer.v1');
+    const ctx = buildStoryContext({ event: make({ avoidWords: ['needle'] }), child, template: dentist, chapterIndex: 1 });
+    const prompt = buildAnswerPrompt(ctx, { question: 'Will it hurt?', currentPage: 'The dentist counts teeth.', sensitive: false });
+    expect(prompt).toContain('FIRST sentence of answer answers the question');
+    expect(prompt).toContain('<data>needle</data>');
+  });
+});

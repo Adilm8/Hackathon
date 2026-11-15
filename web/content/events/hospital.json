@@ -2057,5 +2057,178 @@
   "badge": {
     "id": "hospital_hero",
     "label": "Hospital Hero"
+  },
+  "olderPages": {
+    "what_happens": {
+      "sentences": [
+        {
+          "text": "A hospital stay has a rhythm, and knowing it helps the days feel less strange.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] checks in and gets a wristband with a barcode, which helps every nurse make sure the right person gets the right care.",
+          "kind": "describe"
+        },
+        {
+          "text": "The room has a bed that moves with buttons and a button to call a nurse.",
+          "kind": "describe"
+        },
+        {
+          "text": "Nurses check temperature, heart rate and oxygen several times a day, even at night.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can ask to see how the bed buttons work.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "outside",
+      "addresses": [
+        "body",
+        "unknown",
+        "separation"
+      ]
+    },
+    "who_is_there": {
+      "sentences": [
+        {
+          "text": "Many people care for patients in a hospital.",
+          "kind": "describe"
+        },
+        {
+          "text": "Nurses visit most often and know the daily plan.",
+          "kind": "describe"
+        },
+        {
+          "text": "Doctors come on rounds, usually in the morning, to check progress and decide the next steps.",
+          "kind": "describe"
+        },
+        {
+          "text": "There may be a child life specialist, whose job is to explain things to kids and help with worries, and sometimes a teacher or volunteer with games.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[GROWNUP]] can stay or visit.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can ask, who is my nurse today?",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "shot",
+      "addresses": [
+        "strangers",
+        "separation",
+        "unknown"
+      ]
+    },
+    "what_i_do": {
+      "sentences": [
+        {
+          "text": "In the hospital, [[CHILD]] still gets to make choices.",
+          "kind": "describe"
+        },
+        {
+          "text": "Choose a book or a game for quiet time.",
+          "kind": "describe"
+        },
+        {
+          "text": "Use the call button when something is needed.",
+          "kind": "describe"
+        },
+        {
+          "text": "Tell the nurse how the body feels with a number from one to five.",
+          "kind": "describe"
+        },
+        {
+          "text": "Some things, like checks and medicine, are not choices, but [[CHILD]] can choose which arm or which song to play.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can keep a small list of questions for the doctor's visit.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "brave",
+      "background": "shot",
+      "addresses": [
+        "body",
+        "separation",
+        "strangers"
+      ]
+    },
+    "if_scared": {
+      "sentences": [
+        {
+          "text": "Hospitals can feel big and busy, and machines beep a lot; most beeps just mean a check is done.",
+          "kind": "describe"
+        },
+        {
+          "text": "Missing home and feeling bored or worried are all normal.",
+          "kind": "describe"
+        },
+        {
+          "text": "Some things may feel uncomfortable, and the team will say what is coming before they do it.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can ask, what is going to happen next?",
+          "kind": "coach"
+        },
+        {
+          "text": "A video call home, a comfort toy and slow breathing all help when the evening feels long.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "worried",
+      "background": "shot",
+      "addresses": [
+        "sensory",
+        "pain",
+        "separation"
+      ]
+    },
+    "rehearsal": {
+      "sentences": [
+        {
+          "text": "Let's walk through the first day.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] checks in and gets the wristband.",
+          "kind": "describe"
+        },
+        {
+          "text": "In the room, [[CHILD]] tries the bed buttons and the call button.",
+          "kind": "describe"
+        },
+        {
+          "text": "A nurse checks temperature and listens to the heart.",
+          "kind": "describe"
+        },
+        {
+          "text": "The doctor visits and explains the plan.",
+          "kind": "describe"
+        },
+        {
+          "text": "There is time to rest, play and read, and [[GROWNUP]] is close by.",
+          "kind": "describe"
+        },
+        {
+          "text": "Tonight, [[CHILD]] can pack one comfort thing and one fun thing for the bag.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "happy",
+      "background": "home-evening",
+      "addresses": [
+        "unknown",
+        "separation",
+        "strangers"
+      ]
+    }
   }
 }

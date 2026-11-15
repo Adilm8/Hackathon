@@ -2037,5 +2037,186 @@
   "badge": {
     "id": "brave_smile",
     "label": "Brave Smile"
+  },
+  "olderPages": {
+    "what_happens": {
+      "sentences": [
+        {
+          "text": "A check-up has a clear order, and knowing it makes the visit feel shorter.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] checks in at the front desk, waits a little, and then goes to a room with a chair that tilts back.",
+          "kind": "describe"
+        },
+        {
+          "text": "The dentist looks at every tooth and the gums, counting them out loud so the assistant can write notes.",
+          "kind": "describe"
+        },
+        {
+          "text": "Sometimes they take an X-ray, a quick picture of the inside of the teeth.",
+          "kind": "describe"
+        },
+        {
+          "text": "A cleaning comes next, and the visit ends with a plan for keeping teeth strong.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can ask what each step is for.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "outside",
+      "addresses": [
+        "unknown",
+        "pain",
+        "strangers"
+      ]
+    },
+    "who_is_there": {
+      "sentences": [
+        {
+          "text": "Several people work together at a dental office, and each has a real job.",
+          "kind": "describe"
+        },
+        {
+          "text": "The receptionist keeps track of visits.",
+          "kind": "describe"
+        },
+        {
+          "text": "The dental hygienist usually does the cleaning and knows a lot about gums.",
+          "kind": "describe"
+        },
+        {
+          "text": "The dentist checks for cavities, which are tiny holes made when sugar and germs stay on a tooth too long.",
+          "kind": "describe"
+        },
+        {
+          "text": "The assistant passes tools and runs the little suction straw that pulls water out of the mouth.",
+          "kind": "describe"
+        },
+        {
+          "text": "They see many kids every day, including kids who feel nervous.",
+          "kind": "describe"
+        },
+        {
+          "text": "It is fine for [[CHILD]] to ask any of them a question.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "dentist",
+      "addresses": [
+        "strangers",
+        "pain",
+        "separation"
+      ]
+    },
+    "what_i_do": {
+      "sentences": [
+        {
+          "text": "In the chair, [[CHILD]] has a few simple jobs: keep the mouth open, breathe through the nose, and stay as still as possible.",
+          "kind": "describe"
+        },
+        {
+          "text": "The dentist uses a small mirror to see the back of the teeth and a gentle hooked tool to check the surface.",
+          "kind": "describe"
+        },
+        {
+          "text": "The polishing brush buzzes and feels gritty, a bit like toothpaste with sand in it.",
+          "kind": "describe"
+        },
+        {
+          "text": "If [[CHILD]] needs a break, raising one hand is the signal.",
+          "kind": "coach"
+        },
+        {
+          "text": "Breathing slowly in through the nose and out through the mouth helps the jaw relax.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "brave",
+      "background": "dentist",
+      "addresses": [
+        "body",
+        "pain",
+        "separation"
+      ]
+    },
+    "if_scared": {
+      "sentences": [
+        {
+          "text": "It makes sense to feel nervous before the dentist; lots of older kids and even adults do.",
+          "kind": "describe"
+        },
+        {
+          "text": "The body gets ready for something new by speeding up the heart a little.",
+          "kind": "describe"
+        },
+        {
+          "text": "Some parts can feel uncomfortable: a press on a tooth, a pinch on the gums, or a sour taste.",
+          "kind": "describe"
+        },
+        {
+          "text": "Those feelings are short, and the dentist explains before doing something new.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can tell the dentist what helps, such as hearing each step first.",
+          "kind": "coach"
+        },
+        {
+          "text": "Counting slow breaths, four in and six out, calms the body down.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "worried",
+      "background": "dentist",
+      "addresses": [
+        "pain",
+        "unknown",
+        "strangers"
+      ]
+    },
+    "rehearsal": {
+      "sentences": [
+        {
+          "text": "Here is the plan for the day, step by step.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] and [[GROWNUP]] arrive, check in and wait.",
+          "kind": "describe"
+        },
+        {
+          "text": "In the chair, [[CHILD]] puts on the sunglasses, opens wide and breathes through the nose while the dentist counts teeth.",
+          "kind": "describe"
+        },
+        {
+          "text": "The cleaning buzzes, the water rinses, and the suction straw slurps it away.",
+          "kind": "describe"
+        },
+        {
+          "text": "A hand up means a short pause.",
+          "kind": "describe"
+        },
+        {
+          "text": "Afterwards, the dentist shares how the teeth look.",
+          "kind": "describe"
+        },
+        {
+          "text": "Tonight, [[CHILD]] can practise one minute of open-wide breathing in front of a mirror.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "happy",
+      "background": "home-evening",
+      "addresses": [
+        "unknown",
+        "safety",
+        "separation"
+      ]
+    }
   }
 }

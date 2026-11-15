@@ -282,5 +282,7 @@ export interface EventTemplate {
   fallbackPages: Record<StyleMode, Record<Beat, {   // 4 pages per beat and style, 36–125 words each, 260+ words per beat
     sentences: Sentence[]; mood: Mood; background: BackgroundId; addresses: Topic[];
   }[]>>;
+  /** One extra story-style page per beat for ages 9-12: the "how and why" behind each step. */
+  olderPages?: Record<Beat, { sentences: Sentence[]; mood: Mood; background: BackgroundId; addresses: Topic[] }>;
   badge: { id: string; label: string };             // "Brave Smile"
 }
