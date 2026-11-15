@@ -5,7 +5,39 @@ import { api } from '@/lib/sync/api';
 import { buildSampleFamily } from './engine';
 import { buildSampleSibling } from '@/lib/engine/sample';
 import { clearWorkspaceKeys, seedWorkspace } from './seed';
-import { switchWorkspace, workspaceHasData } from './workspace';
+import { getWorkspace, switchWorkspace, workspaceHasData } from './workspace';
+import type { Workspace } from '@/lib/engine/types';
+
+/** Where each workspace was left, so switching back opens the same screen (bds:return:real / bds:return:sample). */
+const RETURN_KEY = (ws: Workspace) => `bds:return:${ws}`;
+
+/** Remembers the current screen of the workspace being left. Onboarding is not a place to come back to. */
+function rememberHere(): void {
+  try {
+    const here = window.location.pathname + window.location.search;
+    if (here.startsWith('/start') || here === '/' || here.startsWith('/?')) return;
+    window.localStorage.setItem(RETURN_KEY(getWorkspace()), here);
+  } catch {
+    /* private mode: switching still works, just from /home */
+  }
+}
+
+function returnPath(ws: Workspace): string | null {
+  try {
+    const p = window.localStorage.getItem(RETURN_KEY(ws));
+    return p && p.startsWith('/') && !p.startsWith('//') ? p : null;
+  } catch {
+    return null;
+  }
+}
+
+function forgetReturn(ws: Workspace): void {
+  try {
+    window.localStorage.removeItem(RETURN_KEY(ws));
+  } catch {
+    /* ignore */
+  }
+}
 import { planHref } from '@/lib/home/path';
 
 /**
@@ -15,6 +47,8 @@ import { planHref } from '@/lib/home/path';
  */
 export async function startSample(open: 'plan' | 'home' = 'plan'): Promise<void> {
   const today = clock.realToday();
+  if (getWorkspace() === 'real') rememberHere();
+  forgetReturn('sample');
   clearWorkspaceKeys('sample');
   const server = await api.createSample(today);
   const base = server?.doc ?? buildSampleFamily(today);
@@ -26,8 +60,22 @@ export async function startSample(open: 'plan' | 'home' = 'plan'): Promise<void>
   switchWorkspace('sample', open === 'plan' && upcoming ? planHref(upcoming.id) : '/home');
 }
 
+/**
+ * One-tap switch into the demo: the sample family is kept between visits, so the parent comes
+ * back to the same screen and tour progress. A first visit (or a wiped sample) builds a fresh one.
+ */
+export async function enterSample(): Promise<void> {
+  if (getWorkspace() === 'sample') return;
+  if (!workspaceHasData('sample')) return startSample('home');
+  rememberHere();
+  switchWorkspace('sample', returnPath('sample') ?? '/home');
+}
+
+/** Back to the parent's own app, on the screen they left; their data was never touched. */
 export function exitSample(): void {
-  switchWorkspace('real', workspaceHasData('real') ? '/home' : '/?landing=1');
+  if (getWorkspace() === 'sample') rememberHere();
+  if (!workspaceHasData('real')) return switchWorkspace('real', '/?landing=1');
+  switchWorkspace('real', returnPath('real') ?? '/home');
 }
 
 /**
@@ -39,5 +87,6 @@ export function ownStoryHref(): string {
 }
 
 export function startOwnStory(): void {
+  if (getWorkspace() === 'sample') rememberHere();
   switchWorkspace('real', ownStoryHref());
 }

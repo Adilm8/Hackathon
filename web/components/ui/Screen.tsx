@@ -11,6 +11,7 @@ import { HeaderCreateStory } from './CreateStoryButton';
 import { SaveIndicator } from './SaveIndicator';
 import { ScreenSkeleton } from './Skeleton';
 import { Toaster } from './Toast';
+import { WorkspaceSwitch } from './WorkspaceSwitch';
 
 /**
  * Client frame of every family screen: starts the stores and sync, waits for hydration
@@ -65,6 +66,7 @@ export function Screen({
       childMode={childMode}
       homeHref={ready && workspaceHasData(ws) ? '/home' : '/?landing=1'}
       onExitSample={exitSample}
+      workspaceSwitch={ready ? <WorkspaceSwitch workspace={ws} locked={childMode} /> : undefined}
     >
       {ready ? (typeof children === 'function' ? children() : children) : <ScreenSkeleton />}
       <Toaster />

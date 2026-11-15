@@ -23,7 +23,7 @@ import { getFamilyDoc, replaceFamilyDoc, wipeAllBrowserKeys } from '@/lib/store/
 import { usePrefs } from '@/lib/store/prefs';
 import { useSettings } from '@/lib/store/settings';
 import { Toggle } from '@/components/ui/Toggle';
-import { exitSample } from '@/lib/store/sample';
+import { enterSample, exitSample } from '@/lib/store/sample';
 import { getWorkspace } from '@/lib/store/workspace';
 import { api } from '@/lib/sync/api';
 
@@ -76,8 +76,16 @@ export function SettingsView() {
       </div>
       {sample && (
         <div className="flex items-center justify-between gap-3 rounded-card border-2 border-accent p-4">
-          <p className="text-sm font-bold">You are in the sample. Nothing here touches your own family.</p>
-          <Button variant="secondary" onClick={exitSample}>Exit sample</Button>
+          <p className="text-sm font-bold">You are in the demo. Nothing here touches your own family.</p>
+          <Button variant="secondary" className="whitespace-nowrap" onClick={exitSample}>Back to my app</Button>
+        </div>
+      )}
+      {!sample && (
+        <div id="demo" className="flex items-center justify-between gap-3 rounded-card border-2 border-line p-4">
+          <p className="text-sm">
+            <span className="font-bold">Demo with sample data.</span> Look around the whole app with Max and Mia, then come back here. Your family stays as it is.
+          </p>
+          <Button variant="secondary" className="whitespace-nowrap" onClick={() => void enterSample()}>Open the demo</Button>
         </div>
       )}
 

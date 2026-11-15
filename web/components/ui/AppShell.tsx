@@ -22,6 +22,7 @@ export function AppShell({
   fit = false,
   homeHref = '/?landing=1',
   childMode = false,
+  workspaceSwitch,
 }: {
   children: ReactNode;
   childName?: string;
@@ -43,6 +44,8 @@ export function AppShell({
   homeHref?: string;
   /** The child's own screen (the reader): no settings button, and the logo asks the reader's parent gate before leaving, so a child can't wander off. */
   childMode?: boolean;
+  /** "My app | Demo" switch; replaces the "Sample data" badge when given. */
+  workspaceSwitch?: ReactNode;
 }) {
   const logoClass = 'inline-flex min-h-tap items-center whitespace-nowrap font-display text-base font-extrabold sm:text-lg';
   return (
@@ -60,7 +63,8 @@ export function AppShell({
           ) : (
             <Link href={homeHref} className={logoClass}>Big Day Stories</Link>
           )}
-          {isSample &&
+          {workspaceSwitch}
+          {!workspaceSwitch && isSample &&
             (onExitSample ? (
               <button
                 type="button"
