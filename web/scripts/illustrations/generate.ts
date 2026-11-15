@@ -55,7 +55,8 @@ async function generate(model: string, prompt: string, key: string): Promise<Buf
         modalities: ['image'],
         messages: [{ role: 'user', content: prompt }],
         image_config: { aspect_ratio: '16:9' },
-        provider: { data_collection: 'deny' },
+        // Free endpoints only exist with training allowed; the prompts hold no personal data.
+        ...(model.endsWith(':free') ? {} : { provider: { data_collection: 'deny' } }),
       }),
       signal: AbortSignal.timeout(120_000),
     });
