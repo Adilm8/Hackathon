@@ -23,6 +23,7 @@ Full walkthrough video: [laptop](docs/media/video/demo-walkthrough.mp4) · [phon
 - [The problem](#the-problem)
 - [How it works](#how-it-works)
 - [Features](#features)
+- [What makes it different](#what-makes-it-different)
 - [Screens](#screens)
 - [For the jury: the whole product in 3 minutes](#for-the-jury-the-whole-product-in-3-minutes)
 - [Business model](#business-model)
@@ -77,6 +78,35 @@ Sarah's son Max is 4. On Friday he sees the dentist, and last time he screamed i
 **Business**
 - **Three levels**: Free, **Big Day Pass $9.99 once**, or **Gold $49 a year** ($7.99 a month) with pictures, Cartoon mode and premium voices. Paywall after chapter 1, real **Stripe Checkout in test mode**, customer portal, upgrade offer after the check-in.
 - **Jury demo mode**: a sample family, a guided six-step tour that ticks itself off, time travel (Evening 2, Event day, After the event), "Skip payment (demo access)" and "Reset demo".
+
+## What makes it different
+
+Other apps give a child a story. Big Day Stories prepares the whole big day: a plan to the date, answers to the child's own questions, the words for the parent, and a loop after the event that brings the family back.
+
+| What the family gets | Big Day Stories | BooksGiant | TinyCoach | Storytime AI, Oscar Stories | Touch Autism, Special Stories | Printed books (Wonderbly) | ChatGPT, Gemini |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| A story about a specific big day | ✅ 15 big days | ✅ | ◐ | ◐ | manual | ◐ | prompt |
+| A date, a countdown, one chapter every evening | ✅ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ |
+| The child's question changes the next page | ✅ | ✗ | ✗ | ✗ | ✗ | ✗ | manual |
+| Parent panel: what worries the child, words to say | ✅ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ |
+| "First, then" card for the day, PDF, calendar | ✅ | ✗ | ✗ | ✗ | ◐ | ✗ | ✗ |
+| Check-in, badge, next big day, memory of what helped | ✅ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ |
+| Social story mode for autistic children | ✅ | ✅ | ✗ | ✗ | ✅ | ✗ | manual |
+| No login and no child photo | ✅ | ✗ | ✗ | ✗ | ✗ | ✗ | ✅ |
+| Sensitive answers go to the parent first | ✅ | ✗ | ✗ | ✗ | n/a | n/a | ✗ |
+| Storyteller voices and the parent's own voice | ✅ | ✗ | ✅ | ✅ | ◐ | ✗ | ✗ |
+| Path, streaks, badges, a story friend | ✅ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ |
+| Price | Free, $9.99 once, $49/yr | subscription | n/a | $5-10/mo | $0.99-49.90 | $16-40 a book | free / $20/mo |
+
+✅ yes · ◐ partly · ✗ no. Based on the products' store pages and websites, November 2026 (full comparison: [docs/pitch/business.md](docs/pitch/business.md)).
+
+**Five things only we do:**
+
+1. **Preparation for a date, not a bedtime tale.** "5 sleeps until the dentist" and one short chapter every evening.
+2. **The child steers the story with questions.** "Will it hurt?" and the next page answers it honestly.
+3. **The parent learns the skill.** The panel shows what worries the child, the words that help, and what worked last time.
+4. **A loop that brings families back.** Day card, a 30-second check-in, a bravery badge, the next big day already filled in, and a memory of what helps this child.
+5. **Trust by design.** No login, no child photo, the child's name never goes to the AI, sensitive answers wait for the parent, and a one-time pass instead of a subscription trap.
 
 ## Screens
 
