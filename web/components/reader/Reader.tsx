@@ -34,7 +34,11 @@ import { useImmersive } from '@/lib/reader/immersive';
 import { LEAVE_READER_EVENT } from '@/lib/reader/gate';
 import { ListenButton, type ReadPosition } from './ListenButton';
 import { ReaderKeys } from './ReaderKeys';
-import { RecordButton } from './RecordButton';
+import { ChapterRecordButton } from './ChapterRecordButton';
+import { TakeListenButton } from './TakeListenButton';
+import { addMark, deleteTake, getTake, saveTake, takeHasPage, takeKey, type ChapterTake, type TakeMark } from '@/lib/speech/chapterTake';
+import type { PageRecorder } from '@/lib/speech/recorder';
+import { recordingToWav } from '@/lib/speech/wav';
 import { VoicePicker } from './VoicePicker';
 import { PageView } from './PageView';
 import { AskGrownUp, ParentCheck } from './ParentCheck';
@@ -64,6 +68,7 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
   // Read on: the voice turned the page, so the next page starts speaking by itself.
   const [autoListen, setAutoListen] = useState(false);
   const readOn = usePrefs((p) => p.readOn);
+  const setVoice = usePrefs((p) => p.setVoice);
   const illustrated = usePrefs((p) => p.illustrated) && isOn('illustratedScenes');
   const panel = usePanelOpen();
   // Full screen: only the story on screen (lib/reader/immersive.ts). Leaving it needs no grown-up;
@@ -87,7 +92,7 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
   }, []);
   const started = useRef(false);
   const [recs, setRecs] = useState<{ key: string; has: boolean }>({ key: '', has: false });
-  const [recTick, setRecTick] = useState(0);
+  const [recTick] = useState(0);
 
   const chapter = ctx?.event.chapters.find((c) => c.index === index);
   const allowed = ctx && chapter ? isChapterOpen(chapter, ctx.event, ctx.today, ctx.hasAccess) : false;
@@ -123,6 +128,36 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
     getRecording(recKey).then((b) => live && setRecs({ key: recKey, has: !!b })).catch(() => {});
     return () => { live = false; };
   }, [recKey, recTick]);
+
+  // The chapter in one take (lib/speech/chapterTake.ts): marks are saved at every page or sentence turn.
+  const tKey = takeKey(getWorkspace(), eventId, index);
+  const [take, setTake] = useState<{ key: string; take: ChapterTake | null }>({ key: '', take: null });
+  const [takeTick, setTakeTick] = useState(0);
+  useEffect(() => {
+    if (!isOn('parentVoice')) return;
+    let live = true;
+    getTake(tKey).then((t) => live && setTake({ key: tKey, take: t })).catch(() => {});
+    return () => { live = false; };
+  }, [tKey, takeTick]);
+  const [recorder, setRecorder] = useState<PageRecorder | null>(null);
+  const marks = useRef<TakeMark[]>([]);
+  const pageId = page?.id;
+  useEffect(() => {
+    if (recorder && pageId) marks.current = addMark(marks.current, { pageId, step, t: recorder.elapsed() });
+  }, [recorder, pageId, step]);
+  const startTake = (r: PageRecorder) => {
+    marks.current = [];
+    setRecorder(r);
+  };
+  const stopTake = async (blob: Blob) => {
+    const m = marks.current;
+    setRecorder(null);
+    // WAV seeks exactly in every browser (a recorded webm often has no duration); the original is the fallback.
+    const audio = await recordingToWav(blob, 22050).then((r) => new Blob([r.wav as BlobPart], { type: 'audio/wav' })).catch(() => blob);
+    await saveTake(tKey, { blob: audio, marks: m });
+    setTakeTick((n) => n + 1);
+  };
+  const chapterTake = take.key === tKey ? take.take : null;
 
   if (!ctx) return <PlanNotFound />;
   if (!chapter)
@@ -160,6 +195,15 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
     setPosition(null);
     setAutoListen(true);
     setNavTick((n) => n + 1);
+  };
+  // The chapter take turns the pages by itself, in time with the voice.
+  const followTake = (id: string, s: number) => {
+    if (mode.kind !== 'read') return;
+    const i = pages.findIndex((p) => p.id === id);
+    if (i < 0) return;
+    setPageIdx(i);
+    setStep(Math.min(s, Math.max(0, pages[i].sentences.length - 1)));
+    setPosition(null);
   };
   // Next shows the page's next sentence, then turns the page; Finish only on the last sentence of the last page.
   const next = () => {
@@ -285,12 +329,24 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
           </Button>
           {/* The L key presses this button (ReaderKeys). */}
           <span data-reader-listen className="contents">
+          {recorder ? null : chapterTake && takeHasPage(chapterTake.marks, page.id) ? (
+            <TakeListenButton key={`take:${takeTick}`} take={chapterTake} pageId={page.id} step={step} navTick={navTick}
+              voiceName={child.values.family[0]} onFollow={followTake} autoStart={autoListen} />
+          ) : (
           <ListenButton key={`${page.id}:${navTick}`} from={step}
             sentences={page.sentences.map((s) => renderText(s.text, child, { speak: true, pronunciation: child.pronunciation }))}
             shown={page.sentences.map((s) => render(s.text))} onProgress={onProgress}
             recordingKey={isOn('parentVoice') ? recKey : undefined} hasRecording={recs.key === recKey && recs.has} voiceName={child.values.family[0]}
             autoStart={autoListen} onFinished={readOnNext} night={night} />
+          )}
           </span>
+          {!recorder && (
+            <Button variant="secondary" aria-pressed={readOn} onClick={() => setVoice({ readOn: !readOn })}
+              title="Auto: the voice turns the pages by itself" aria-label="Auto page turn"
+              className={`px-3 text-sm ${readOn ? '!border-primary !bg-primary !text-primary-ink' : ''}`}>
+              Auto
+            </Button>
+          )}
           <Button className="flex-1" onClick={next} aria-keyshortcuts="ArrowRight Space">
             {lastSentence && isLast ? 'Finish' : lastSentence && page.kind === 'answer' ? 'Back to the story' : 'Next'}
           </Button>
@@ -369,8 +425,9 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
             <Icon name={immersive.on ? 'minimize' : 'maximize'} size={22} />
           </button>
           {reading && <VoicePicker className={iconBtn} />}
-          {isOn('parentVoice') && reading && !immersive.on && (
-            <RecordButton compact recKey={recKey} has={recs.key === recKey && recs.has} onChange={() => setRecTick((n) => n + 1)} />
+          {isOn('parentVoice') && reading && (!immersive.on || recorder) && (
+            <ChapterRecordButton className={iconBtn} has={!!chapterTake} onStart={startTake} onStop={stopTake}
+              onDelete={async () => { await deleteTake(tKey); setTakeTick((n) => n + 1); }} />
           )}
           {/* Parent tools stay out of the child's full screen. */}
           {!immersive.on && <button

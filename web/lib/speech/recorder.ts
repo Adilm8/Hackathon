@@ -15,12 +15,23 @@ export function recordingAvailable(): boolean {
   return typeof navigator !== 'undefined' && !!navigator.mediaDevices?.getUserMedia && typeof MediaRecorder !== 'undefined';
 }
 
+/** Maps a microphone RMS (speech is about 0.02..0.3) to a 0..1 meter on a log scale. */
+export function levelFromRms(rms: number): number {
+  if (!(rms > 0)) return 0;
+  const db = 20 * Math.log10(rms); // -60 dB silence .. -10 dB loud
+  return Math.max(0, Math.min(1, (db + 60) / 50));
+}
+
 export type RecorderError = 'unsupported' | 'denied' | 'failed';
 
 export class PageRecorder {
   private rec: MediaRecorder | null = null;
   private stream: MediaStream | null = null;
   private chunks: Blob[] = [];
+  private ctx: AudioContext | null = null;
+  private analyser: AnalyserNode | null = null;
+  private buf: Float32Array<ArrayBuffer> | null = null;
+  private t0 = 0;
 
   /** Starts a take. Rejects with a RecorderError string. */
   async start(): Promise<void> {
@@ -36,9 +47,43 @@ export class PageRecorder {
       this.rec = new MediaRecorder(this.stream, mimeType ? { mimeType } : undefined);
       this.rec.ondataavailable = (e) => e.data.size > 0 && this.chunks.push(e.data);
       this.rec.start();
+      this.t0 = performance.now();
+      this.meter(this.stream);
     } catch {
       this.release();
       throw 'failed' satisfies RecorderError;
+    }
+  }
+
+  /** Seconds since the take started (for page marks). */
+  elapsed(): number {
+    return this.rec ? (performance.now() - this.t0) / 1000 : 0;
+  }
+
+  /** Loudness of the microphone right now, 0..1 (for the "sound is coming in" meter). */
+  level(): number {
+    if (!this.analyser || !this.buf) return 0;
+    this.analyser.getFloatTimeDomainData(this.buf);
+    let sum = 0;
+    for (let i = 0; i < this.buf.length; i++) sum += this.buf[i] * this.buf[i];
+    return levelFromRms(Math.sqrt(sum / this.buf.length));
+  }
+
+  /** A level meter is a bonus: without Web Audio the take still records. */
+  private meter(stream: MediaStream): void {
+    try {
+      const Ctx = (globalThis as unknown as { AudioContext?: typeof AudioContext; webkitAudioContext?: typeof AudioContext }).AudioContext
+        ?? (globalThis as unknown as { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
+      if (!Ctx) return;
+      this.ctx = new Ctx();
+      void this.ctx.resume?.();
+      this.analyser = this.ctx.createAnalyser();
+      this.analyser.fftSize = 1024;
+      this.buf = new Float32Array(this.analyser.fftSize);
+      this.ctx.createMediaStreamSource(stream).connect(this.analyser);
+    } catch {
+      this.ctx = null;
+      this.analyser = null;
     }
   }
 
@@ -71,6 +116,10 @@ export class PageRecorder {
     this.stream = null;
     this.rec = null;
     this.chunks = [];
+    void this.ctx?.close().catch(() => {});
+    this.ctx = null;
+    this.analyser = null;
+    this.buf = null;
   }
 }
 
