@@ -16,8 +16,8 @@ describe('illustrated scenes', () => {
     for (const k of allIllustrationKeys()) {
       const p = illustrationPrompt(k);
       expect(p, k).toBeTruthy();
-      expect(p).toContain('STYLE LOCK');
-      expect(p).toContain('DO NOT include');
+      expect(p).toContain('picture-book');
+      expect(p).toContain('Avoid:');
       expect(p).not.toMatch(/\[\[CHILD\]\]|\[\[GROWNUP\]\]/);
     }
   });

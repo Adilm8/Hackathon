@@ -1,8 +1,8 @@
 {
-  "version": 1,
-  "style": "STYLE LOCK — \"Moonlit Meadow\", art set BDS-01, scene backgrounds: cozy storybook illustration for children aged 3 to 7, fully original. Flat vector illustration: solid flat colour fills, at most one darker shade per colour as a simple hard-edged shape, no gradients, no textures, no noise, no glow. Smooth, uniform dark plum outline (#2B2A3A), the same thickness everywhere. Warm gentle palette: cream #FFF9F0, soft indigo #5B6CFF, mint #3DBE8B, honey #FFC93C, coral #E5565B, lilac #9B6BE8, apricot #FF8A3D, with soft pastel tints. Rounded, chunky, friendly shapes, nothing sharp, spooky, messy or menacing. Calm, tidy and well lit, like a page of a bedtime picture book.",
-  "format": "FORMAT: one landscape background, aspect ratio 16:9, eye-level view seen from a child's height. Keep the lower middle third of the picture open and uncluttered (a clear floor area): a story character is placed there later. Put the main objects to the left, the right and the back.",
-  "avoid": "DO NOT include: people, children, faces, hands, animals, creatures, characters, toys with faces, text, letters, numbers, labels, signs with writing, logos, watermarks, frames, needles, blood, sharp tools, scissors close up, anything scary, dark shadows, photorealism, 3D render look.",
+  "version": 2,
+  "style": "Children's picture-book illustration, cozy and warm, original art. A complete interior or outdoor scene that fills the whole frame edge to edge: walls, floor or ground, ceiling or sky, with soft depth and perspective, like a page of a bedtime storybook. Clean flat colour shapes with gentle soft shading, smooth dark plum outlines. Warm calm palette: cream, soft indigo, mint, honey yellow, coral, lilac, apricot. Rounded, friendly furniture and objects. Calm, tidy, well lit.",
+  "format": "Wide 16:9 view at a child's eye level. The floor in the lower middle is open and free of furniture, but still drawn as floor (rug, tiles or grass), never blank. No white or empty background anywhere.",
+  "avoid": "Avoid: people, faces, hands, animals, characters, text, letters, numbers, logos, needles, blood, sharp tools, germs or virus shapes, scary or dark mood, isolated icons on a blank background, photorealism, 3D render.",
   "neutral": {
     "home-evening": "A family living room in the evening: a soft sofa with cushions, a warm floor lamp, a rug, a low table with a cup of cocoa, a window with a deep blue sky and a few stars.",
     "outside": "A friendly street in daytime: a low building with a big blue door, a tree with round leaves, a path, a bench, a few flowers and fluffy clouds.",
@@ -12,7 +12,7 @@
     "dentist": {
       "place": "a bright, friendly children's dental clinic",
       "beats": {
-        "what_happens": "The treatment room: a big soft blue dentist chair that leans back, a round lamp above it, a small sink and a tray with a toothbrush and a little mirror.",
+        "what_happens": "The treatment room: a big soft blue dentist chair that leans back, a simple white dental light on an arm above it, a small sink and a tray with a toothbrush and a little mirror.",
         "who_is_there": "The front desk with a little bell and a jar of stickers, a coat rack with a white coat and a mask and gloves box on a shelf.",
         "what_i_do": "Close view of the big chair from the side, a cup of water, a cartoon tooth poster without words and a hand-held mirror.",
         "if_scared": "A calm corner of the waiting room: a beanbag, a basket of picture books, a fish tank with bubbles and a window with sunlight.",

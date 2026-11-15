@@ -24,8 +24,9 @@ export function illustrationPrompt(key: string): string | null {
   if (kind === 'neutral') scene = (prompts.neutral as Record<string, string>)[a];
   if (kind === 'events') {
     const ev = (prompts.events as Record<string, { place: string; beats: Record<string, string> }>)[a];
-    if (ev?.beats[b]) scene = `Setting: ${ev.place}. ${ev.beats[b]}`;
+    if (ev?.beats[b]) scene = `Inside ${ev.place}. ${ev.beats[b]}`;
   }
   if (!scene) return null;
-  return [prompts.style, `SCENE: ${scene}`, prompts.format, prompts.avoid].join('\n\n');
+  // The scene comes first: short image models weigh the start of the prompt most.
+  return [scene, prompts.style, prompts.format, prompts.avoid].join('\n\n');
 }
