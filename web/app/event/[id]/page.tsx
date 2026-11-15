@@ -3,10 +3,10 @@ import Link from 'next/link';
 import { useParams, useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { Character } from '@/components/character';
-import { CalendarButtons } from '@/components/eventday/CalendarButtons';
+import { PlanTools } from '@/components/eventday/PlanTools';
 import { StoryPath } from '@/components/home/StoryPath';
 import { Icon } from '@/components/icons';
-import { Button, ButtonLink } from '@/components/ui/Button';
+import { Button } from '@/components/ui/Button';
 import { PlanNotFound } from '@/components/ui/NotFound';
 import { Screen } from '@/components/ui/Screen';
 import { Sheet } from '@/components/ui/Sheet';
@@ -33,6 +33,9 @@ function Plan({ id }: { id: string }) {
 
   return (
     <div className="flex flex-col gap-6">
+      <Link href="/home" className="-mb-3 inline-flex min-h-tap items-center gap-1 self-start rounded-pill pr-3 text-sm font-bold text-primary-text hover:bg-surface-2">
+        <Icon name="chevron-left" size={18} /> All big days
+      </Link>
       <header className="flex items-center gap-4">
         <Character character={child.character} mood={phase === 'day' ? 'brave' : 'calm'} size={96} decorative />
         <div className="min-w-0">
@@ -54,24 +57,7 @@ function Plan({ id }: { id: string }) {
         }}
       />
 
-      {phase === 'prep' && (
-        <section aria-label="Reminders" className="flex flex-col gap-2">
-          <p className="text-sm font-bold text-ink-soft">A reminder at 7:30 pm on each story evening</p>
-          <CalendarButtons event={event} label={eventLabel(event, template)} />
-        </section>
-      )}
-
-      <div className="grid gap-3 sm:grid-cols-2">
-        <ButtonLink href={`/event/${id}/panel`} variant="secondary">
-          <Icon name="hand-heart" size={20} /> Parent panel
-        </ButtonLink>
-        {phase === 'prep' && (
-          <ButtonLink href={`/event/${id}/story`} variant="secondary">
-            <Icon name="pencil" size={20} /> Story options
-          </ButtonLink>
-        )}
-        <ButtonLink href="/home" variant="ghost">All big days</ButtonLink>
-      </div>
+      <PlanTools event={event} label={eventLabel(event, template)} prep={phase === 'prep'} />
 
       <Sheet
         open={!!lockedCh}
