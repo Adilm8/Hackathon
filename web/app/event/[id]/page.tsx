@@ -35,8 +35,8 @@ function Plan({ id }: { id: string }) {
     <div className="flex flex-col gap-6">
       <header className="flex items-center gap-4">
         <Character character={child.character} mood={phase === 'day' ? 'brave' : 'calm'} size={96} decorative />
-        <div>
-          <p className="text-sm font-bold text-ink-soft">{eventLabel(event, template)} · {dateLabel(event.date, { weekday: true })}</p>
+        <div className="min-w-0">
+          <p className="line-clamp-2 break-words text-sm font-bold text-ink-soft">{eventLabel(event, template)} · {dateLabel(event.date, { weekday: true })}</p>
           <h1 className="font-display text-2xl font-extrabold leading-tight">{countdownText(event, template, today)}</h1>
           <p className="text-sm text-ink-soft">{p.read} of {p.total} evenings read</p>
         </div>
