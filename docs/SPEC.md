@@ -10,7 +10,7 @@ Contents: 1 Product · 2 Decisions · 3 Scope · 4 User flows and screens · 5 P
 
 ## 1. Product in one page
 
-**What it is.** A web product for US parents (25–45) that prepares a child aged 3–8 for a hard event with a date (dentist, first day at school, flight, new sibling, haircut, shot). The parent enters the event, the date and the child's fears, and gets a plan of short chapters for the evenings before the event. The parent reads a chapter aloud; the child asks a question; the story character answers and the next page takes the question into account. A parent panel shows what worries the child and gives ready phrases. On the event day there is a "first → then" ritual card; after the event a check-in, a bravery badge and the next event with the form already filled in. Track: Skills (the skill is the parent's: leading a child through a hard moment).
+**What it is.** A web product for US parents (25–45) that prepares a child aged 2–12 for a hard event with a date (dentist, first day at school, flight, new sibling, haircut, shot). The parent enters the event, the date and the child's fears, and gets a plan of short chapters for the evenings before the event. The parent reads a chapter aloud; the child asks a question; the story character answers and the next page takes the question into account. A parent panel shows what worries the child and gives ready phrases. On the event day there is a "first → then" ritual card; after the event a check-in, a bravery badge and the next event with the form already filled in. Track: Skills (the skill is the parent's: leading a child through a hard moment).
 
 **One cycle, no login, walkable in 3 minutes:**
 
@@ -224,7 +224,7 @@ Three steps with a progress bar. Only name, age, event and date are required; er
 
 | Step | Fields | Rules |
 |---|---|---|
-| 1. Child | First name or nickname (required, one word of 1–20 letters, hyphen and apostrophe allowed; helper text: "A nickname works too. Please don't add a last name."); "How is it pronounced?" (optional, ≤ 30) with a **Hear it** button that speaks the pronunciation; age 3–8 (required); pronoun he / she / they (optional) | No surname, address, school or photo of the child is asked. Helper text says the name is never sent to an AI provider |
+| 1. Child | First name or nickname (required, one word of 1–20 letters, hyphen and apostrophe allowed; helper text: "A nickname works too. Please don't add a last name."); "How is it pronounced?" (optional, ≤ 30) with a **Hear it** button that speaks the pronunciation; age 2–12 (required; widened from 3–8 on 15 Nov 2026); pronoun he / she / they (optional) | No surname, address, school or photo of the child is asked. Helper text says the name is never sent to an AI provider |
 | 2. Event | One of 6 events or "Other" (then a label ≤ 40 chars); date (required); up to 3 fears from a list; "Something else" (≤ 40 chars) | Date before today, or more than 60 days ahead → error under the field. Today and tomorrow are allowed and show a "Quick prep" note (5.2) |
 | 3. Character and values | Story friend builder with live preview (tabs Friend / Colours / Clothes / Hats / Extras / Buddy): species (16) × fur (3) × outfit colour (8) × outfit (8) × headwear (8 + none) × accessory (8 + none) × companion (8 + none); values profile: tone secular / religious; body words anatomical / family words; who is at home (chips: Mom, Dad, Mama, Papa, Mommy, Daddy, Grandma, Grandpa, Nana, Stepmom, Stepdad, Aunt, Uncle); "Social story style" toggle with a one-line explanation; up to 3 photos of the place (11.5) | All optional. Defaults: bunny, blue, cap; secular; anatomical; nobody selected (stories then say "your grown-up"); style "story" |
 
@@ -492,7 +492,7 @@ export interface ChildProfile {
   id: string;
   name: string;                   // first name or nickname, one word, never a surname; never sent to an LLM
   pronunciation?: string;         // how the name is spoken, used only by speech
-  age: 3 | 4 | 5 | 6 | 7 | 8;
+  age: 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
   pronoun?: Pronoun;
   character: Character;
   values: ValuesProfile;

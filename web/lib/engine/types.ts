@@ -87,11 +87,14 @@ export interface TechniqueMemory {
 
 export interface Badge { id: string; label: string; eventType: EventType; eventId: string; earnedOn: ISODate }
 
+/** Child's age in years. Widened from 3-8 to 2-12 on 15 Nov 2026. */
+export type ChildAge = 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+
 export interface ChildProfile {
   id: string;
   name: string;                   // first name or nickname, one word, never a surname; never sent to an LLM
   pronunciation?: string;         // how the name is spoken, used only by speech
-  age: 3 | 4 | 5 | 6 | 7 | 8;
+  age: ChildAge;
   pronoun?: Pronoun;
   character: Character;
   values: ValuesProfile;

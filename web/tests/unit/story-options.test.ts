@@ -164,3 +164,26 @@ describe('prompts', () => {
     expect(buildChapterPrompt(ctx, dentist)).toContain("hero's plan for the day");
   });
 });
+
+describe('ages 2-12', () => {
+  it('accepts every age from 2 to 12 and nothing outside', async () => {
+    const { ChildProfileSchema } = await import('@/lib/engine/schemas');
+    const { CHILD_AGES } = await import('@/lib/engine/plan');
+    expect(CHILD_AGES).toEqual([2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
+    for (const age of CHILD_AGES) expect(ChildProfileSchema.safeParse({ ...child, age }).success).toBe(true);
+    for (const age of [1, 13]) expect(ChildProfileSchema.safeParse({ ...child, age }).success).toBe(false);
+  });
+
+  it('sets words per page and reading level by age band', async () => {
+    const { readingLevel } = await import('@/lib/engine/plan');
+    expect(pageTargets(2)).toMatchObject({ minWords: 40, maxWords: 60 });
+    expect(pageTargets(10)).toMatchObject({ minWords: 100, maxWords: 130 });
+    expect(pageTargets(12)).toMatchObject({ minWords: 110, maxWords: 150 });
+    const e = make();
+    const toddler = buildSystemPrompt(buildStoryContext({ event: e, child: { ...child, age: 2 }, template: dentist, chapterIndex: 1 }), dentist);
+    expect(toddler).toContain(readingLevel(2).style);
+    const preteen = buildSystemPrompt(buildStoryContext({ event: e, child: { ...child, age: 12 }, template: dentist, chapterIndex: 1 }), dentist);
+    expect(preteen).toContain('never babyish');
+    expect(StoryContextSchema.safeParse(buildStoryContext({ event: e, child: { ...child, age: 12 }, template: dentist, chapterIndex: 1 })).success).toBe(true);
+  });
+});
