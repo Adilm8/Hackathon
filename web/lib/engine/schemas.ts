@@ -213,6 +213,7 @@ export const SettingsSchema = z.strictObject({
   nightMode: z.enum(['auto', 'on', 'off']),
   palette: z.enum(['warm', 'ocean', 'forest', 'lavender']).optional(),
   voiceQuestionConsentOn: ISODateSchema.optional(),
+  voiceQuestionMode: z.enum(['device', 'browser']).optional(),
   schemaVersion: z.number().int().min(1),
 });
 

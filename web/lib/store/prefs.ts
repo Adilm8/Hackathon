@@ -7,6 +7,7 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { jsonStorage } from './persist';
+import type { RateName } from '../speech/voices';
 
 export interface Prefs {
   /** Soft chime when a chapter ends or a badge is earned. */
@@ -23,6 +24,16 @@ export interface Prefs {
   reminderEvening: string;
   quietStart: string;
   quietEnd: string;
+  /** Reading voice of this browser (SpeechSynthesisVoice.voiceURI); null = the best English voice. */
+  voiceURI: string | null;
+  /** Reading speed of the device voice. */
+  speechRate: RateName;
+  /** Read on: when the voice finishes a page it turns the page and keeps reading. */
+  readOn: boolean;
+  /** Story voice when the server offers the premium one (/api/tts): 'premium' or the device voice. */
+  storyVoice: 'premium' | 'device';
+  /** Character voice of the premium story voice (an id from /api/tts); null = the first one. */
+  characterVoice: string | null;
 }
 
 interface PrefsState extends Prefs {
@@ -32,6 +43,7 @@ interface PrefsState extends Prefs {
   toggleRoutineStep(id: string): void;
   setPush(v: boolean): void;
   setReminderTimes(t: Partial<Pick<Prefs, 'reminderEvening' | 'quietStart' | 'quietEnd'>>): void;
+  setVoice(t: Partial<Pick<Prefs, 'voiceURI' | 'speechRate' | 'readOn' | 'storyVoice' | 'characterVoice'>>): void;
 }
 
 export const favKey = (eventId: string, chapter: number) => `${eventId}#${chapter}`;
@@ -47,6 +59,12 @@ export const usePrefs = create<PrefsState>()(
       reminderEvening: '18:30',
       quietStart: '20:30',
       quietEnd: '07:30',
+      voiceURI: null,
+      speechRate: 'normal',
+      readOn: false,
+      storyVoice: 'premium',
+      characterVoice: null,
+      setVoice: (t) => set(t),
       setPush: (push) => set({ push }),
       setReminderTimes: (t) => set(t),
       toggleRoutineStep: (id) => set((s) => ({ routineOff: s.routineOff.includes(id) ? s.routineOff.filter((x) => x !== id) : [...s.routineOff, id] })),
@@ -65,6 +83,7 @@ export const usePrefs = create<PrefsState>()(
       skipHydration: true,
       partialize: (s) => ({ sound: s.sound, easyRead: s.easyRead, favorites: s.favorites, routineOff: s.routineOff,
         push: s.push, reminderEvening: s.reminderEvening, quietStart: s.quietStart, quietEnd: s.quietEnd,
+        voiceURI: s.voiceURI, speechRate: s.speechRate, readOn: s.readOn, storyVoice: s.storyVoice, characterVoice: s.characterVoice,
       }),
     },
   ),

@@ -17,7 +17,7 @@ interface SettingsState extends Settings {
   setTextSize(s: Settings['textSize']): void;
   setNightMode(m: Settings['nightMode']): void;
   setPalette(p: NonNullable<Settings['palette']>): void;
-  setVoiceConsent(on: ISODate | undefined): void;
+  setVoiceConsent(on: ISODate | undefined, mode?: Settings['voiceQuestionMode']): void;
   reset(): void;
 }
 
@@ -30,8 +30,9 @@ export const useSettings = create<SettingsState>()(
       setTextSize: (textSize) => set({ textSize }),
       setNightMode: (nightMode) => set({ nightMode }),
       setPalette: (palette) => set({ palette }),
-      setVoiceConsent: (voiceQuestionConsentOn) => set({ voiceQuestionConsentOn }),
-      reset: () => set({ ...initial, palette: undefined, parentGateAcceptedOn: undefined, clockOverride: undefined, voiceQuestionConsentOn: undefined }),
+      setVoiceConsent: (voiceQuestionConsentOn, voiceQuestionMode) =>
+        set({ voiceQuestionConsentOn, voiceQuestionMode: voiceQuestionConsentOn ? voiceQuestionMode ?? 'device' : undefined }),
+      reset: () => set({ ...initial, palette: undefined, parentGateAcceptedOn: undefined, clockOverride: undefined, voiceQuestionConsentOn: undefined, voiceQuestionMode: undefined }),
     }),
     {
       name: typeof window === 'undefined' ? 'bds:settings' : storeKey('settings'),
@@ -46,6 +47,7 @@ export const useSettings = create<SettingsState>()(
         nightMode: s.nightMode,
         palette: s.palette,
         voiceQuestionConsentOn: s.voiceQuestionConsentOn,
+        voiceQuestionMode: s.voiceQuestionMode,
         schemaVersion: s.schemaVersion,
       }),
     },

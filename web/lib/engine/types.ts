@@ -209,6 +209,8 @@ export interface Settings {
   /** Colour palette of the whole app (Settings > Colours). Missing = 'warm'. */
   palette?: 'warm' | 'ocean' | 'forest' | 'lavender';
   voiceQuestionConsentOn?: ISODate;
+  /** How voice questions are recognised: on the device, or by the browser's speech service (lib/speech/listener.ts). */
+  voiceQuestionMode?: 'device' | 'browser';
   schemaVersion: number;
 }
 

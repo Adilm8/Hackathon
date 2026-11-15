@@ -66,7 +66,7 @@ Lida did not change these on 15 Nov, so they are built as written. Each is isola
 | Q4 | Several children | One child in the MVP; the data model carries `childId`, so several children later is a migration, not a rewrite. The paywall does not promise "up to 3 children" until it exists. | 6, 17 |
 | Q5 | Several events at once | Yes. The home screen lists all events of the child, past and future. | 4.4 |
 | Q6 | Returning visitor | If the family already has data, `/` redirects to `/home`. The landing stays reachable through the logo. | 4.2 |
-| Q7 | Child asks by voice (F18) | Built with the browser, behind parent consent, only where recognition can run on the device; hidden elsewhere. Cloud recognition is a later tier (17.1). | 11.6 |
+| Q7 | Child asks by voice (F18) | Built with the browser, behind parent consent: on the device where possible, else the browser's speech service (Apple/Google), named in the consent (Lida, 15 Nov). Our own cloud recognition is a later tier (17.1). | 11.6 |
 
 ### 2.3 Architect decisions that change the ТЗ text (no scope is lost)
 
@@ -1117,7 +1117,8 @@ export interface Listener {
 
 - `BrowserNarrator` (F4): `speechSynthesis`, one utterance per sentence, highlight on utterance start, started only by a tap, best available en-US voice chosen in code after `voiceschanged`, the name replaced by the pronunciation field before speaking. If synthesis is missing the Listen button is hidden.
 - `RecordedNarrator` (F17): plays the parent's recording of the page from IndexedDB. Recording uses `MediaRecorder`, one take per page, with re-record and delete. A page rewritten after a question loses its recording.
-- `BrowserListener` (F18): shown only after the parent ticks a consent box in settings and only when on-device recognition is available; the recognised text is put into the question field for the parent to confirm. No audio is stored or sent by us.
+- `BrowserListener` (F18): shown only after the parent ticks a consent box in settings. Mode `device` when the browser confirms on-device recognition (Chrome can download the English pack on request); otherwise mode `browser`, the browser's own speech service (Apple in Safari, Google in Chrome, Microsoft in Edge), named in the consent text. Lida chose this on 15 Nov 2026 so voice questions work on iPhone at no cost. Words appear live, a second tap stops, 10 s cap; the recognised text is put into the question field for the grown-up to confirm. No audio is recorded, stored or sent by us. Without the mic the sheet points to keyboard dictation.
+- Reading options (Settings > Reading, device only): reading voice of this browser (English voices, natural ones first, novelty voices last), speed Slower / Normal / Faster (0.78 / 0.92 / 1.06) and **Read on** (the voice turns the page and keeps reading until the chapter's last page). Provider options for premium narration and voice cloning: `docs/voice-options.md`.
 
 ### 11.7 Ritual card PDF (F9)
 

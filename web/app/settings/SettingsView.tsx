@@ -3,7 +3,7 @@ import { childNameError } from '@/lib/childName';
 import { useRouter } from 'next/navigation';
 import { useState, type ReactNode } from 'react';
 import { SubscriptionCard } from '@/components/paywall/SubscriptionCard';
-import { ExportImport, PalettePicker, Reminders, RestoreLink, StyleToggle, ValuesProfile, VoiceConsent } from '@/components/settings';
+import { ExportImport, NarrationSettings, PalettePicker, Reminders, RestoreLink, StyleToggle, ValuesProfile, VoiceConsent } from '@/components/settings';
 import { clock } from '@/lib/engine/clock';
 import { DEFAULT_PALETTE, isNight } from '@/lib/theme';
 import { clearDeviceData } from '@/lib/storage/clear';
@@ -139,9 +139,12 @@ export function SettingsView() {
           hint="A soft chime when a chapter ends or a badge is earned."
           checked={prefs.sound} onChange={prefs.setSound}
         />
+        <ErrorBoundary fallback={<p className="text-sm text-ink-soft">Read-aloud options are not available in this browser.</p>}>
+          <NarrationSettings />
+        </ErrorBoundary>
         {isOn('voiceQuestion') && (
           <ErrorBoundary fallback={<p className="text-sm text-ink-soft">Voice options are not available in this browser. You can always type the question.</p>}>
-            <VoiceConsent consentOn={settings.voiceQuestionConsentOn} onChange={settings.setVoiceConsent} workspace={getWorkspace()} />
+            <VoiceConsent consentOn={settings.voiceQuestionConsentOn} mode={settings.voiceQuestionMode} onChange={settings.setVoiceConsent} workspace={getWorkspace()} />
           </ErrorBoundary>
         )}
       </Section>
