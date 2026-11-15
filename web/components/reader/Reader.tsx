@@ -29,7 +29,7 @@ import { PagePhotos } from '@/components/photos/PagePhotos';
 import { isOn } from '@/lib/flags';
 import { getRecording, deleteRecording, recordingKey } from '@/lib/speech/recordings';
 import { getWorkspace } from '@/lib/store/workspace';
-import { isNight } from '@/lib/theme';
+import { useThemeMode } from '@/lib/useThemeMode';
 import { useImmersive } from '@/lib/reader/immersive';
 import { LEAVE_READER_EVENT } from '@/lib/reader/gate';
 import { ListenButton, type ReadPosition } from './ListenButton';
@@ -54,7 +54,7 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
   const router = useRouter();
   const st = useEvents.getState();
   const textSize = useSettings((s) => s.textSize);
-  const nightMode = useSettings((s) => s.nightMode);
+  const themeMode = useThemeMode();
   const voiceConsent = useSettings((s) => s.voiceQuestionConsentOn);
   const voiceMode = useSettings((s) => s.voiceQuestionMode) ?? 'device';
   const setTextSize = useSettings((s) => s.setTextSize);
@@ -119,7 +119,7 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
   const pages = chapter && chapter.pages.length > 0 ? chapter.pages : live ?? [];
   const page = pages[Math.min(pageIdx, Math.max(0, pages.length - 1))];
   // Night colours are app-wide (components/ui/ThemeSync.tsx); here they pick the night scenes.
-  const night = isNight(nightMode, clock.hour());
+  const night = themeMode === 'night';
   const render = useMemo(() => (t: string) => renderText(t, ctx?.child ?? null), [ctx?.child]);
   const touchX = useRef<number | null>(null);
   const recKey = page ? recordingKey(getWorkspace(), eventId, index, page.id) : '';

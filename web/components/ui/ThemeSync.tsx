@@ -2,12 +2,12 @@
 import { useEffect, useState } from 'react';
 import { clock } from '@/lib/engine/clock';
 import { useSettings } from '@/lib/store/settings';
-import { applyTheme, DEFAULT_PALETTE } from '@/lib/theme';
+import { applyTheme, DARK_QUERY, DEFAULT_PALETTE } from '@/lib/theme';
 
 /**
  * Keeps <html data-palette data-mode> in step with Settings on every screen. It waits for the
  * settings to load from storage, so the colours chosen before (applied by the head script) are
- * never replaced by the defaults; "After 7 pm" is checked again every minute.
+ * never replaced by the defaults; "Auto" follows the device's dark mode and bedtime, checked again every minute.
  */
 export function ThemeSync() {
   const [ready, setReady] = useState(() => useSettings.persist?.hasHydrated?.() ?? false);
@@ -18,7 +18,14 @@ export function ThemeSync() {
   useEffect(() => useSettings.persist?.onFinishHydration?.(() => setReady(true)), []);
   useEffect(() => {
     const id = window.setInterval(() => setTick((n) => n + 1), 60_000);
-    return () => window.clearInterval(id);
+    // Follow the device switching to dark mode (or back) while the app is open.
+    const mq = window.matchMedia?.(DARK_QUERY);
+    const onChange = () => setTick((n) => n + 1);
+    mq?.addEventListener?.('change', onChange);
+    return () => {
+      window.clearInterval(id);
+      mq?.removeEventListener?.('change', onChange);
+    };
   }, []);
   useEffect(() => {
     if (ready) applyTheme(palette, nightMode, clock.hour());
