@@ -2100,5 +2100,174 @@
   "badge": {
     "id": "splash_star",
     "label": "Splash Star"
+  },
+  "olderPages": {
+    "what_happens": {
+      "sentences": [
+        {
+          "text": "A swimming lesson starts in the changing room, where [[CHILD]] puts on a swimsuit and takes a quick shower, which keeps the pool water clean.",
+          "kind": "describe"
+        },
+        {
+          "text": "At the pool, the class sits on the edge and listens to the teacher.",
+          "kind": "describe"
+        },
+        {
+          "text": "Lessons usually cover floating, kicking, blowing bubbles and moving through the water.",
+          "kind": "describe"
+        },
+        {
+          "text": "The water may feel cool at first and the pool area echoes.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can bring goggles and try them on at home first.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "outside",
+      "addresses": [
+        "unknown",
+        "strangers",
+        "sensory"
+      ]
+    },
+    "who_is_there": {
+      "sentences": [
+        {
+          "text": "The swim instructor teaches the class and stays close to each swimmer.",
+          "kind": "describe"
+        },
+        {
+          "text": "A lifeguard watches the whole pool from a high chair and is trained to help quickly.",
+          "kind": "describe"
+        },
+        {
+          "text": "Other kids in the class are learning too, and some will be more nervous than [[CHILD]].",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can ask the teacher how deep the water is where the class swims.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "outside",
+      "addresses": [
+        "strangers",
+        "separation",
+        "sensory"
+      ]
+    },
+    "what_i_do": {
+      "sentences": [
+        {
+          "text": "There are a few key skills.",
+          "kind": "describe"
+        },
+        {
+          "text": "Blowing bubbles out through the nose and mouth keeps water out.",
+          "kind": "describe"
+        },
+        {
+          "text": "Floating works best with the body relaxed and the head back, because air in the lungs helps the body stay up.",
+          "kind": "describe"
+        },
+        {
+          "text": "Kicking from the hips, with straight legs, moves the body forward.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] should always listen to the teacher and only get in the water when told.",
+          "kind": "coach"
+        },
+        {
+          "text": "Holding the edge is always allowed.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "brave",
+      "background": "outside",
+      "addresses": [
+        "body",
+        "safety",
+        "separation"
+      ]
+    },
+    "if_scared": {
+      "sentences": [
+        {
+          "text": "Water can feel unpredictable at first: it splashes, gets in the eyes and makes everything sound echoey.",
+          "kind": "describe"
+        },
+        {
+          "text": "Feeling nervous is common, even for older kids.",
+          "kind": "describe"
+        },
+        {
+          "text": "The teacher goes one small step at a time.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can say, I want to stay at the edge for now.",
+          "kind": "coach"
+        },
+        {
+          "text": "Blowing bubbles slowly is also a calm-down breath; it slows the heart and keeps water out of the nose.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "worried",
+      "background": "outside",
+      "addresses": [
+        "sensory",
+        "unknown",
+        "strangers"
+      ]
+    },
+    "rehearsal": {
+      "sentences": [
+        {
+          "text": "Here is the lesson step by step.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] changes, showers and walks to the pool.",
+          "kind": "describe"
+        },
+        {
+          "text": "Sit on the edge and listen.",
+          "kind": "describe"
+        },
+        {
+          "text": "Get in when the teacher says, hold the edge, blow bubbles, kick.",
+          "kind": "describe"
+        },
+        {
+          "text": "Try a float with help.",
+          "kind": "describe"
+        },
+        {
+          "text": "Play a water game.",
+          "kind": "describe"
+        },
+        {
+          "text": "Then a warm towel and getting dressed.",
+          "kind": "describe"
+        },
+        {
+          "text": "Tonight, [[CHILD]] can practise blowing bubbles in a bowl of water for five slow breaths.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "happy",
+      "background": "home-evening",
+      "addresses": [
+        "body",
+        "sensory",
+        "separation"
+      ]
+    }
   }
 }

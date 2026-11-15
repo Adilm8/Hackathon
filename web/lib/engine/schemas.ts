@@ -105,7 +105,10 @@ export const ChildProfileSchema = z.strictObject({
   id,
   name: ChildNameSchema,
   pronunciation: z.string().max(40).optional(),
-  age: z.union([z.literal(3), z.literal(4), z.literal(5), z.literal(6), z.literal(7), z.literal(8)]),
+  age: z.union([
+    z.literal(2), z.literal(3), z.literal(4), z.literal(5), z.literal(6), z.literal(7),
+    z.literal(8), z.literal(9), z.literal(10), z.literal(11), z.literal(12),
+  ]),
   pronoun: PronounEnum.optional(),
   character: CharacterSchema,
   values: ValuesProfileSchema,
@@ -255,7 +258,7 @@ export const StoryContextSchema = z.strictObject({
     templateVersion: z.number().int().min(1),
   }),
   child: z.strictObject({
-    age: z.number().int().min(3).max(8),
+    age: z.number().int().min(2).max(12),
     pronoun: PronounEnum.optional(),
     character: CharacterSchema,
   }),
@@ -356,6 +359,7 @@ export const EventTemplateSchema = z.strictObject({
     story: beatRecord(z.array(TemplatePage).min(1)),
     social: beatRecord(z.array(TemplatePage).min(1)),
   }),
+  olderPages: beatRecord(TemplatePage).optional(),
   badge: z.strictObject({ id: z.string().min(1), label: z.string().min(1) }),
 });
 

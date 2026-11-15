@@ -2014,5 +2014,182 @@
   "badge": {
     "id": "sky_explorer",
     "label": "Sky Explorer"
+  },
+  "olderPages": {
+    "what_happens": {
+      "sentences": [
+        {
+          "text": "Flying is a chain of steps that every passenger follows.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] and [[GROWNUP]] check in, drop off big bags, and go through security, where bags ride through an X-ray machine and people walk through a scanner.",
+          "kind": "describe"
+        },
+        {
+          "text": "At the gate, a screen shows when boarding starts.",
+          "kind": "describe"
+        },
+        {
+          "text": "On the plane, seatbelts go on, the engines get loud, and the wings lift the plane into the air.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can watch the departure screen and find the flight number.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "happy",
+      "background": "flight",
+      "addresses": [
+        "unknown",
+        "safety",
+        "sensory"
+      ]
+    },
+    "who_is_there": {
+      "sentences": [
+        {
+          "text": "Airports are busy, but everyone has a job.",
+          "kind": "describe"
+        },
+        {
+          "text": "Check-in agents take bags.",
+          "kind": "describe"
+        },
+        {
+          "text": "Security officers keep everyone safe and may ask to look in a bag.",
+          "kind": "describe"
+        },
+        {
+          "text": "At the gate, agents scan boarding passes.",
+          "kind": "describe"
+        },
+        {
+          "text": "On the plane, the pilots fly and talk on the speaker, and flight attendants help passengers and explain the safety rules.",
+          "kind": "describe"
+        },
+        {
+          "text": "If [[CHILD]] gets separated, the plan is to stay put and ask someone in a uniform for help.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "flight",
+      "addresses": [
+        "strangers",
+        "safety",
+        "unknown"
+      ]
+    },
+    "what_i_do": {
+      "sentences": [
+        {
+          "text": "There are a few useful flying skills.",
+          "kind": "describe"
+        },
+        {
+          "text": "Keep the boarding pass ready.",
+          "kind": "describe"
+        },
+        {
+          "text": "Put shoes, jackets and small electronics in the tray at security.",
+          "kind": "describe"
+        },
+        {
+          "text": "On the plane, buckle up whenever the seatbelt light is on.",
+          "kind": "describe"
+        },
+        {
+          "text": "During takeoff and landing, swallowing, chewing or sipping water helps the ears pop as the air pressure changes.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can pack headphones, a book and a snack in a small bag.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "brave",
+      "background": "flight",
+      "addresses": [
+        "safety",
+        "pain",
+        "unknown"
+      ]
+    },
+    "if_scared": {
+      "sentences": [
+        {
+          "text": "Lots of people feel nervous about flying.",
+          "kind": "describe"
+        },
+        {
+          "text": "Planes make noises and sometimes shake a little in turbulence, which is just bumpy air, like a car on a gravel road.",
+          "kind": "describe"
+        },
+        {
+          "text": "Pilots train for years and expect bumps.",
+          "kind": "describe"
+        },
+        {
+          "text": "The engine roar at takeoff is the loudest part.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can ask a flight attendant to explain a noise.",
+          "kind": "coach"
+        },
+        {
+          "text": "Counting out the seconds of takeoff, or gripping the armrest and breathing out slowly, helps the body settle.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "worried",
+      "background": "flight",
+      "addresses": [
+        "sensory",
+        "safety",
+        "strangers"
+      ]
+    },
+    "rehearsal": {
+      "sentences": [
+        {
+          "text": "Let's run through the trip.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] checks in, drops the big bag and goes through security.",
+          "kind": "describe"
+        },
+        {
+          "text": "At the gate, [[CHILD]] finds the flight on the screen.",
+          "kind": "describe"
+        },
+        {
+          "text": "On board, it is seat, bag under the seat, seatbelt on.",
+          "kind": "describe"
+        },
+        {
+          "text": "During takeoff, [[CHILD]] sips water for the ears.",
+          "kind": "describe"
+        },
+        {
+          "text": "Then it is time to read, snack and look out of the window until landing.",
+          "kind": "describe"
+        },
+        {
+          "text": "Tonight, [[CHILD]] can pack the carry-on bag together with [[GROWNUP]].",
+          "kind": "coach"
+        }
+      ],
+      "mood": "happy",
+      "background": "home-evening",
+      "addresses": [
+        "unknown",
+        "safety",
+        "pain"
+      ]
+    }
   }
 }

@@ -2061,5 +2061,178 @@
   "badge": {
     "id": "new_home_explorer",
     "label": "New Home Explorer"
+  },
+  "olderPages": {
+    "what_happens": {
+      "sentences": [
+        {
+          "text": "Moving happens in stages.",
+          "kind": "describe"
+        },
+        {
+          "text": "First, everything gets sorted and packed into boxes, labelled with the room they belong to.",
+          "kind": "describe"
+        },
+        {
+          "text": "On moving day, movers or family carry the boxes and furniture onto a truck.",
+          "kind": "describe"
+        },
+        {
+          "text": "The truck drives to the new home, where everything gets unloaded.",
+          "kind": "describe"
+        },
+        {
+          "text": "The first night, the beds are set up even if boxes are everywhere.",
+          "kind": "describe"
+        },
+        {
+          "text": "Unpacking can take weeks.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can label their own boxes so they go straight to the new room.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "home-evening",
+      "addresses": [
+        "unknown",
+        "separation",
+        "strangers"
+      ]
+    },
+    "who_is_there": {
+      "sentences": [
+        {
+          "text": "Movers are strong, careful workers who know how to wrap and stack furniture.",
+          "kind": "describe"
+        },
+        {
+          "text": "Family or friends may help.",
+          "kind": "describe"
+        },
+        {
+          "text": "At the new place there may be new neighbours, and eventually new classmates or friends nearby.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[GROWNUP]] stays with [[CHILD]] through the move.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can look for one friendly thing in the new neighbourhood, like a park, a library or a dog.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "outside",
+      "addresses": [
+        "strangers",
+        "separation",
+        "safety"
+      ]
+    },
+    "what_i_do": {
+      "sentences": [
+        {
+          "text": "[[CHILD]] has a real part in the move.",
+          "kind": "describe"
+        },
+        {
+          "text": "Choose what goes in a special first-night box: pyjamas, a favourite toy, a book, a night light.",
+          "kind": "describe"
+        },
+        {
+          "text": "Decide how to arrange the new room.",
+          "kind": "describe"
+        },
+        {
+          "text": "Say goodbye to the old place in a way that feels right, like a photo of each room.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can keep a list of friends' contact details, with a grown-up, to stay in touch.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "brave",
+      "background": "home-evening",
+      "addresses": [
+        "unknown",
+        "body",
+        "separation"
+      ]
+    },
+    "if_scared": {
+      "sentences": [
+        {
+          "text": "Leaving a home can bring up big feelings, even when the new place sounds exciting.",
+          "kind": "describe"
+        },
+        {
+          "text": "Missing the old room, old friends and old routines is normal.",
+          "kind": "describe"
+        },
+        {
+          "text": "The first nights in a new place may sound strange too, with new creaks and street noises.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can talk about what they will miss and what they hope for.",
+          "kind": "coach"
+        },
+        {
+          "text": "Keeping the same bedtime routine helps a new bedroom feel familiar faster.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "worried",
+      "background": "home-evening",
+      "addresses": [
+        "sensory",
+        "separation",
+        "unknown"
+      ]
+    },
+    "rehearsal": {
+      "sentences": [
+        {
+          "text": "Here is moving day in order.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] finishes the special box.",
+          "kind": "describe"
+        },
+        {
+          "text": "The truck is loaded.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] says goodbye to each room, then rides to the new home.",
+          "kind": "describe"
+        },
+        {
+          "text": "The special box is opened first, and the bed is set up.",
+          "kind": "describe"
+        },
+        {
+          "text": "That night, the same bedtime routine happens in a new room.",
+          "kind": "describe"
+        },
+        {
+          "text": "Tonight, [[CHILD]] can draw a plan of where things will go in the new room.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "happy",
+      "background": "home-evening",
+      "addresses": [
+        "unknown",
+        "separation",
+        "safety"
+      ]
+    }
   }
 }

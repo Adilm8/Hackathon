@@ -6,6 +6,7 @@ const BY_AGE: { maxAge: number; types: EventType[] }[] = [
   { maxAge: 4, types: ['haircut', 'shot', 'dentist', 'school', 'doctor', 'babysitter'] },
   { maxAge: 6, types: ['school', 'dentist', 'flight', 'shot', 'swimming', 'party'] },
   { maxAge: 8, types: ['dentist', 'flight', 'shot', 'sibling', 'sleepover', 'blood_test'] },
+  { maxAge: 12, types: ['sleepover', 'flight', 'moving', 'dentist', 'blood_test', 'hospital'] },
 ];
 const ALL: EventType[] = [
   'dentist', 'school', 'flight', 'shot', 'haircut', 'sibling',

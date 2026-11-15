@@ -2046,5 +2046,174 @@
   "badge": {
     "id": "snip_snap_star",
     "label": "Snip Snap Star"
+  },
+  "olderPages": {
+    "what_happens": {
+      "sentences": [
+        {
+          "text": "A haircut is a quick, simple job with a few clear steps.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] sits in the barber's or stylist's chair, a cape goes around the neck to keep hair off the clothes, and the hair gets sprayed with water and combed.",
+          "kind": "describe"
+        },
+        {
+          "text": "The scissors snip and the clippers buzz, especially around the ears and neck.",
+          "kind": "describe"
+        },
+        {
+          "text": "Then a soft brush sweeps away loose hair, and [[CHILD]] looks in the mirror.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can decide ahead of time how short to go.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "outside",
+      "addresses": [
+        "unknown",
+        "body",
+        "sensory"
+      ]
+    },
+    "who_is_there": {
+      "sentences": [
+        {
+          "text": "The stylist or barber has trained to cut hair safely and cuts many people's hair each day.",
+          "kind": "describe"
+        },
+        {
+          "text": "They will ask what [[CHILD]] wants and may suggest an idea.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[GROWNUP]] stays nearby and can help explain.",
+          "kind": "describe"
+        },
+        {
+          "text": "Other customers may be getting haircuts too, and the hair dryers can be loud.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can bring a photo of a haircut they like and show it to the stylist.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "outside",
+      "addresses": [
+        "body",
+        "separation",
+        "safety"
+      ]
+    },
+    "what_i_do": {
+      "sentences": [
+        {
+          "text": "[[CHILD]]'s main job is to keep the head still and follow small directions like tilt down or look ahead.",
+          "kind": "describe"
+        },
+        {
+          "text": "Hair does not have nerves, so cutting it is not felt, but the comb can tug and the clippers vibrate.",
+          "kind": "describe"
+        },
+        {
+          "text": "Little hairs may tickle the neck.",
+          "kind": "describe"
+        },
+        {
+          "text": "If [[CHILD]] needs a break, saying, can I have a quick break, is perfectly fine.",
+          "kind": "coach"
+        },
+        {
+          "text": "[[CHILD]] can also ask the stylist to show the clippers first.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "brave",
+      "background": "haircut",
+      "addresses": [
+        "unknown",
+        "body",
+        "pain"
+      ]
+    },
+    "if_scared": {
+      "sentences": [
+        {
+          "text": "Some kids dislike the sound of clippers or the feeling of water and tiny hairs.",
+          "kind": "describe"
+        },
+        {
+          "text": "That's a common sensory thing, not a problem.",
+          "kind": "describe"
+        },
+        {
+          "text": "The buzzing is louder than it feels.",
+          "kind": "describe"
+        },
+        {
+          "text": "Short breaks, a towel for the neck, or a toy to hold can all help.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can ask, can you tell me before you use the clippers?",
+          "kind": "coach"
+        },
+        {
+          "text": "Looking at one spot in the mirror helps the head stay still.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "worried",
+      "background": "haircut",
+      "addresses": [
+        "sensory",
+        "pain",
+        "body"
+      ]
+    },
+    "rehearsal": {
+      "sentences": [
+        {
+          "text": "Here is the haircut, step by step.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] says hello, climbs into the chair and gets the cape.",
+          "kind": "describe"
+        },
+        {
+          "text": "Spray and comb.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] looks ahead or tilts down when asked.",
+          "kind": "describe"
+        },
+        {
+          "text": "Snip, snip, then the clippers buzz for a moment.",
+          "kind": "describe"
+        },
+        {
+          "text": "A brush sweeps the hair away, and there is the mirror.",
+          "kind": "describe"
+        },
+        {
+          "text": "Tonight, [[CHILD]] can practise sitting still for one minute with a towel around the shoulders.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "happy",
+      "background": "home-evening",
+      "addresses": [
+        "unknown",
+        "sensory",
+        "body"
+      ]
+    }
   }
 }

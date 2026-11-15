@@ -56,7 +56,7 @@ export default function Landing() {
             Big day coming up? Get your child ready in 5 evenings
           </h1>
           <p className="text-base text-ink-soft">
-            For children 3 to 8. A short story each night, read aloud by you, that answers your child&apos;s own questions inside the story.
+            For children 2 to 12. A short story each night, read aloud by you, that answers your child&apos;s own questions inside the story.
           </p>
           <LandingActions />
           <p className="text-sm text-ink-soft">
