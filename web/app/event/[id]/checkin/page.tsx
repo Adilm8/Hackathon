@@ -16,6 +16,7 @@ import { useChild } from '@/lib/store/child';
 import { useEvents } from '@/lib/store/events';
 import { useEventCtx, type EventCtx } from '@/lib/store/hooks';
 import { checkinTechniqueOptions, eventLabel, saveCheckin } from '@/lib/store/engine';
+import { planHref } from '@/lib/home/path';
 
 /** Check-in after the big day (docs/SPEC.md 4.13). Free for everyone; about 30 seconds. */
 export default function CheckinPage() {
@@ -32,7 +33,7 @@ function CheckinScreen({ id }: { id: string }) {
         <Character character={ctx.child.character} mood="calm" size={120} decorative />
         <h1 className="font-display text-xl font-extrabold">The check-in opens on the big day</h1>
         <p className="text-ink-soft">Come back on {dateLabel(ctx.event.date, { weekday: true })} and tell us how it went.</p>
-        <ButtonLink href={`/event/${encodeURIComponent(id)}`}>Back to the plan</ButtonLink>
+        <ButtonLink href={planHref(id)}>Back to the plan</ButtonLink>
       </div>
     );
   return <Form ctx={ctx} />;
@@ -161,7 +162,7 @@ function Form({ ctx }: { ctx: EventCtx }) {
 
       {error && <p role="alert" className="text-sm font-bold text-danger">{error}</p>}
       <Button size="l" onClick={save}>{prev ? 'Save again' : 'Save'}</Button>
-      <ButtonLink href={`/event/${encodeURIComponent(event.id)}`} variant="ghost">Back to the plan</ButtonLink>
+      <ButtonLink href={planHref(event.id)} variant="ghost">Back to the plan</ButtonLink>
     </div>
   );
 }

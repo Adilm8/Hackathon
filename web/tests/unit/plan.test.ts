@@ -112,13 +112,17 @@ describe('chapter status (5.2)', () => {
     const read: BigEvent = { ...e, chapters: e.chapters.map((c) => (c.index === 2 ? { ...c, readOn: d } : c)) };
     expect(chapterStatus(read.chapters[1], read, d, false)).toBe('read');
   });
-  it('read ahead: only the next locked chapter, only with access, only once', () => {
-    expect(canReadAhead(c2, e, T, true)).toBe(true);
-    expect(canReadAhead(c3, e, T, true)).toBe(false);
-    expect(canReadAhead(c2, e, T, false)).toBe(false);
-    expect(isChapterOpen(c2, e, T, true)).toBe(true);
+  it('read ahead: the next chapter once the earlier ones are read, only with access', () => {
+    expect(canReadAhead(c2, e, T, true)).toBe(false); // chapter 1 not read yet
+    const one: BigEvent = { ...e, chapters: e.chapters.map((c) => (c.index === 1 ? { ...c, readOn: T } : c)) };
+    expect(canReadAhead(one.chapters[1], one, T, true)).toBe(true);
+    expect(canReadAhead(one.chapters[2], one, T, true)).toBe(false);
+    expect(canReadAhead(one.chapters[1], one, T, false)).toBe(false);
+    expect(isChapterOpen(one.chapters[1], one, T, true)).toBe(true);
+    // Skipping the waiting days works again and again: after chapter 2 read early, chapter 3 may follow.
     const ahead: BigEvent = { ...e, chapters: e.chapters.map((c) => (c.index <= 2 ? { ...c, readOn: T } : c)) };
-    expect(canReadAhead(ahead.chapters[2], ahead, T, true)).toBe(false);
+    expect(canReadAhead(ahead.chapters[2], ahead, T, true)).toBe(true);
+    expect(canReadAhead(ahead.chapters[3], ahead, T, true)).toBe(false);
     expect(opensOnText(c3)).toBe('This chapter opens on Tuesday evening');
   });
 });

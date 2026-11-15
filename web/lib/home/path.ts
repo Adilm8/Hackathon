@@ -4,7 +4,7 @@
  * without a browser; the page only draws what this returns.
  */
 import { addDays, weekdayLabel } from '@/lib/engine/clock';
-import { chapterStatus, eventPhase, tonightChapter } from '@/lib/engine/plan';
+import { canReadAhead, chapterStatus, eventPhase, tonightChapter } from '@/lib/engine/plan';
 import type { BigEvent, ISODate } from '@/lib/engine/types';
 
 export type NodeKind = 'chapter' | 'day' | 'checkin' | 'badge';
@@ -22,6 +22,13 @@ export interface PathNode {
   href?: string;
   /** Chapter number, for chapter nodes. */
   chapter?: number;
+  /** A locked chapter the parent may open now, skipping the waiting days. */
+  early?: boolean;
+}
+
+/** The plan of one big day now lives on the home page: /event/<id> redirects here. */
+export function planHref(eventId: string): string {
+  return `/home?event=${encodeURIComponent(eventId)}`;
 }
 
 export function buildPath(event: BigEvent, today: ISODate, hasAccess: boolean): PathNode[] {
@@ -39,6 +46,7 @@ export function buildPath(event: BigEvent, today: ISODate, hasAccess: boolean): 
       hint,
       state,
       chapter: ch.index,
+      early: state === 'locked' && canReadAhead(ch, event, today, hasAccess),
       href: state === 'locked' ? undefined : state === 'pay' ? `${base}/paywall` : `${base}/read/${ch.index}`,
     };
   });

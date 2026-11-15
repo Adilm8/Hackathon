@@ -1,6 +1,6 @@
 # Big day scenarios: audit and expansion plan
 
-Status: proposal for Lida, 15 Nov 2026. Nothing below is built yet.
+Status: built 15 Nov 2026 (Lida chose all 21). Collections use the six picker groups (lib/engine/templates.ts EVENT_GROUPS); brave-moment stickers are saved in the check-in (`checkin.brave`).
 
 ## 1. What we have today
 

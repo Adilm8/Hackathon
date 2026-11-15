@@ -33,6 +33,15 @@ export function StoryPath({ nodes, child, onLocked }: { nodes: PathNode[]; child
                 {isCur && <Bubble node={n} />}
                 <Node node={n} current={isCur} onLocked={onLocked} />
                 <span className={`mt-1.5 text-xs font-bold ${n.state === 'locked' ? 'text-ink-soft' : 'text-ink'}`}>{n.title}</span>
+                {n.early && onLocked && (
+                  <button
+                    type="button"
+                    onClick={() => onLocked(n)}
+                    className="mt-1 inline-flex min-h-tap items-center gap-1 whitespace-nowrap rounded-pill px-3 text-sm font-extrabold text-primary-text hover:bg-surface-2"
+                  >
+                    Read now <Icon name="arrow-right" size={16} />
+                  </button>
+                )}
               </div>
               {isCur && (
                 <div

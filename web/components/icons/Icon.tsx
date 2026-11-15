@@ -11,8 +11,13 @@ export type IconName =
   | 'door-open' | 'ticket' | 'luggage' | 'mic' | 'mic-off' | 'smile-plus' | 'cookie'
   | 'heart-pulse' | 'droplet' | 'hospital' | 'house' | 'moon-star' | 'users' | 'waves' | 'cake'
   | 'flame' | 'trophy' | 'crown' | 'target' | 'settings'
+<<<<<<< HEAD
   | 'x' | 'chevron-up' | 'chevron-down' | 'maximize' | 'minimize'
   | 'snowflake' | 'share-2' | 'timer' | 'library-big' | 'play' | 'pause' | 'rotate-ccw' | 'bath' | 'shirt' | 'lamp' | 'smartphone' | 'briefcase' | 'heart-handshake' | 'paw-print' | 'house-plus' | 'notebook-pen' | 'bed-single' | 'glasses' | 'puzzle' | 'ghost' | 'gift' | 'car-front' | 'bike' | 'music' | 'drama' | 'medal' | 'tent' | 'blocks' | 'toilet' | 'bandage';
+=======
+  | 'x' | 'chevron-up' | 'chevron-down' | 'chevron-right' | 'chevron-left' | 'bell' | 'maximize' | 'minimize' | 'keyboard'
+  | 'snowflake' | 'share-2' | 'timer' | 'library-big' | 'play' | 'pause' | 'rotate-ccw' | 'bath' | 'shirt' | 'lamp' | 'smartphone';
+>>>>>>> origin/main
 
 export interface IconProps extends Omit<SVGProps<SVGSVGElement>, 'name'> {
   name: IconName;

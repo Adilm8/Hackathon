@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { Suspense } from 'react';
+import { Suspense, useState } from 'react';
 import { Character } from '@/components/character';
 import { BadgeArt } from '@/components/badges';
 import { EVENT_LABEL, EventIcon, Icon } from '@/components/icons';
@@ -14,17 +14,19 @@ import { ChildSwitcher } from '@/components/home/ChildSwitcher';
 import { ReminderBanner } from '@/components/home/ReminderBanner';
 import { switchChild, useEventsOfActiveChild } from '@/lib/store/children';
 import { InstallCard } from '@/components/home/InstallCard';
-import { ButtonLink } from '@/components/ui/Button';
+import { Button, ButtonLink } from '@/components/ui/Button';
+import { Sheet } from '@/components/ui/Sheet';
+import { PlanTools } from '@/components/eventday/PlanTools';
 import { CreateStoryButton } from '@/components/ui/CreateStoryButton';
 import { EmptyState } from '@/components/ui/EmptyState';
 import { Screen } from '@/components/ui/Screen';
-import { dateLabel } from '@/lib/engine/clock';
-import type { BigEvent, ChildProfile, Workspace } from '@/lib/engine/types';
+import { dateLabel, weekdayLabel } from '@/lib/engine/clock';
+import type { BigEvent, Chapter, ChildProfile, Workspace } from '@/lib/engine/types';
 import { buildPath, todayTasks } from '@/lib/home/path';
 import { levelFor, streakWithRest, totalStars, weekStrip, weekSummary } from '@/lib/home/progress';
 import { useChild } from '@/lib/store/child';
 import { useHasAccess, useToday } from '@/lib/store/hooks';
-import { countdownText, eventLabel, eventPhase, getTemplate, readProgress, tonightChapter } from '@/lib/store/engine';
+import { canReadAhead, countdownText, eventLabel, eventPhase, getTemplate, readProgress, tonightChapter } from '@/lib/store/engine';
 import { loadProfiles } from '@/lib/store/profiles';
 import { usePrefs } from '@/lib/store/prefs';
 import { libraryItems, type LibraryItem } from '@/lib/home/library';
@@ -127,21 +129,21 @@ function PathTab({ event, events, child, today, hasAccess }: { event: BigEvent; 
   const phase = eventPhase(event, today);
   const ch = tonightChapter(event, today);
   const others = events.filter((e) => e.id !== event.id && eventPhase(e, today) !== 'done');
+  const router = useRouter();
+  const [lockedCh, setLockedCh] = useState<Chapter | null>(null);
+  const early = !!lockedCh && canReadAhead(lockedCh, event, today, hasAccess);
   const status =
     phase === 'day' ? 'Today is the big day' : phase === 'after' ? 'How did it go? Tell us' : phase === 'done' ? 'All done. Well done!'
       : ch ? `Tonight: chapter ${ch.index} of ${p.total}` : `${p.read} of ${p.total} chapters read`;
   return (
     <>
-      <header className="grid grid-cols-[auto_minmax(0,1fr)] items-center gap-x-3 gap-y-4 rounded-card bg-primary p-4 text-primary-ink shadow-step-primary sm:flex sm:p-5">
+      <header className="flex items-center gap-3 rounded-card bg-primary p-4 text-primary-ink shadow-step-primary sm:flex sm:p-5">
         <span className="flex size-12 shrink-0 items-center justify-center rounded-pill bg-primary-ink/15"><EventIcon type={event.type} size={28} /></span>
         <div className="min-w-0 flex-1">
           <h1 className="line-clamp-2 break-words font-display text-xl font-extrabold leading-tight">{label}</h1>
           <p className="text-base font-bold leading-snug">{status}</p>
           <p className="truncate text-sm font-bold opacity-85">{child.name}&apos;s big day · {dateLabel(event.date, { weekday: true })}</p>
         </div>
-        <Link href={`/event/${event.id}`} className="col-span-2 inline-flex min-h-tap items-center justify-center gap-2 whitespace-nowrap rounded-pill border-2 border-primary-ink/40 px-4 text-sm font-extrabold hover:bg-primary-ink/10 sm:col-span-1">
-          <Icon name="book-open" size={18} /> Plan &amp; reminders
-        </Link>
       </header>
 
       {others.length > 0 && (
@@ -165,8 +167,52 @@ function PathTab({ event, events, child, today, hasAccess }: { event: BigEvent; 
         <span className="h-0.5 flex-1 rounded-pill bg-line" />
       </div>
 
-      <StoryPath nodes={buildPath(event, today, hasAccess)} child={child} />
+      {phase === 'day' && <PhaseCard href={`/event/${encodeURIComponent(event.id)}/day`} title="Today is the big day" cta="Open today’s card" />}
+      {phase === 'after' && <PhaseCard href={`/event/${encodeURIComponent(event.id)}/checkin`} title="How did it go?" cta="Tell us in 30 seconds" />}
+
+      <StoryPath
+        nodes={buildPath(event, today, hasAccess)}
+        child={child}
+        onLocked={(n) => {
+          const c = event.chapters.find((x) => x.index === n.chapter);
+          if (c) setLockedCh(c);
+        }}
+      />
+
+      <PlanTools event={event} label={label} prep={phase === 'prep'} panel={false} />
+
+      <Sheet
+        open={!!lockedCh}
+        onOpenChange={(v) => !v && setLockedCh(null)}
+        title={lockedCh ? (early ? `Start chapter ${lockedCh.index} now?` : `This chapter opens on ${weekdayLabel(lockedCh.date, 'long')} evening`) : ''}
+        description={
+          !lockedCh ? undefined
+            : early ? `It is planned for ${weekdayLabel(lockedCh.date, 'long')} evening. One chapter a night gives time to think and ask, but if ${child.name} is ready, you can skip the wait.`
+            : hasAccess ? 'Read the chapters before it first, so the story stays in order.'
+            : 'One chapter a night works best: it gives your child time to think and to ask.'
+        }
+      >
+        {lockedCh && early ? (
+          <div className="flex flex-col gap-3">
+            <Button size="l" onClick={() => router.push(`/event/${encodeURIComponent(event.id)}/read/${lockedCh.index}`)}>
+              <Icon name="book-open" size={20} /> Read chapter {lockedCh.index} now
+            </Button>
+            <Button size="l" variant="ghost" onClick={() => setLockedCh(null)}>Wait until {weekdayLabel(lockedCh.date, 'long')}</Button>
+          </div>
+        ) : (
+          <Button size="l" variant="secondary" onClick={() => setLockedCh(null)}>Okay</Button>
+        )}
+      </Sheet>
     </>
+  );
+}
+
+function PhaseCard({ href, title, cta }: { href: string; title: string; cta: string }) {
+  return (
+    <Link href={href} className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 rounded-card border-2 border-accent bg-surface p-4 shadow-step hover:border-ink-soft/40">
+      <span className="text-lg font-extrabold">{title}</span>
+      <span className="inline-flex items-center gap-1 font-bold text-primary-text">{cta} <Icon name="chevron-right" size={18} /></span>
+    </Link>
   );
 }
 

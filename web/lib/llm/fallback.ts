@@ -3,6 +3,7 @@
  * so they are always safe to show. The whole cycle works on these with no LLM at all (A1).
  */
 import { fallbackPagesForAge } from '../engine/ageText';
+import { lastResortPage } from '../engine/fallback';
 import { pagesWithoutAvoided } from '../engine/storyPrefs';
 import type { Beat, EventTemplate, Mood, RitualCard, Sentence, StoryContext, StoryPrefs, StyleMode, Topic } from '../engine/types';
 import { OWN_QUESTION_FALLBACK } from '../safety/messages';
@@ -41,7 +42,9 @@ export function fallbackChapterPages(
     const p = lists[beat][i];
     return { sentences: p.sentences.map((s) => ({ ...s })), mood: p.mood, background: p.background, addresses: [...p.addresses], source: 'fallback' };
   });
-  return pagesWithoutAvoided(pages, story?.avoidWords);
+  const kept = pagesWithoutAvoided(pages, story?.avoidWords);
+  // Never an empty chapter: fbAt() in chapter.ts and the reader both need at least one page.
+  return kept.length ? kept : [{ ...lastResortPage(pages[0]?.background ?? 'cosy-room'), source: 'fallback' }];
 }
 
 /** Chapter summary for later prompts when the chapter came from the templates. */

@@ -4,7 +4,8 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
-import { Character } from '@/components/character';
+import { backgroundForEvent, Character } from '@/components/character';
+import { beatForPage, illustrationKey, illustrationSrc } from '@/lib/illustrations';
 import { Icon } from '@/components/icons';
 import { PanelView } from '@/components/panel/PanelView';
 import { Button, ButtonLink } from '@/components/ui/Button';
@@ -32,13 +33,19 @@ import { isNight } from '@/lib/theme';
 import { useImmersive } from '@/lib/reader/immersive';
 import { LEAVE_READER_EVENT } from '@/lib/reader/gate';
 import { ListenButton, type ReadPosition } from './ListenButton';
-import { RecordButton } from './RecordButton';
+import { ReaderKeys } from './ReaderKeys';
+import { ChapterRecordButton } from './ChapterRecordButton';
+import { TakeListenButton } from './TakeListenButton';
+import { addMark, deleteTake, getTake, saveTake, takeHasPage, takeKey, type ChapterTake, type TakeMark } from '@/lib/speech/chapterTake';
+import type { PageRecorder } from '@/lib/speech/recorder';
+import { recordingToWav } from '@/lib/speech/wav';
 import { VoicePicker } from './VoicePicker';
 import { PageView } from './PageView';
 import { AskGrownUp, ParentCheck } from './ParentCheck';
 import { useParentGate } from './ParentGate';
 import { QuestionBar } from './QuestionBar';
 import { SafeMessage } from './SafeMessage';
+import { planHref } from '@/lib/home/path';
 
 type Mode = { kind: 'read' } | { kind: 'check'; q: Question; draft?: string; parent?: boolean } | { kind: 'unsafe' } | { kind: 'end' };
 
@@ -61,6 +68,8 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
   // Read on: the voice turned the page, so the next page starts speaking by itself.
   const [autoListen, setAutoListen] = useState(false);
   const readOn = usePrefs((p) => p.readOn);
+  const setVoice = usePrefs((p) => p.setVoice);
+  const illustrated = usePrefs((p) => p.illustrated) && isOn('illustratedScenes');
   const panel = usePanelOpen();
   // Full screen: only the story on screen (lib/reader/immersive.ts). Leaving it needs no grown-up;
   // leaving the reader still does (the door button).
@@ -83,7 +92,7 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
   }, []);
   const started = useRef(false);
   const [recs, setRecs] = useState<{ key: string; has: boolean }>({ key: '', has: false });
-  const [recTick, setRecTick] = useState(0);
+  const [recTick] = useState(0);
 
   const chapter = ctx?.event.chapters.find((c) => c.index === index);
   const allowed = ctx && chapter ? isChapterOpen(chapter, ctx.event, ctx.today, ctx.hasAccess) : false;
@@ -92,7 +101,7 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
   useEffect(() => {
     if (!ctx || !chapter) return;
     if (needsPay) router.replace(`/event/${eventId}/paywall`);
-    else if (!allowed) router.replace(`/event/${eventId}`);
+    else if (!allowed) router.replace(planHref(eventId));
   }, [ctx, chapter, allowed, needsPay, router, eventId]);
 
   // Generate once; a stored chapter is never generated again (4.7).
@@ -120,13 +129,43 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
     return () => { live = false; };
   }, [recKey, recTick]);
 
+  // The chapter in one take (lib/speech/chapterTake.ts): marks are saved at every page or sentence turn.
+  const tKey = takeKey(getWorkspace(), eventId, index);
+  const [take, setTake] = useState<{ key: string; take: ChapterTake | null }>({ key: '', take: null });
+  const [takeTick, setTakeTick] = useState(0);
+  useEffect(() => {
+    if (!isOn('parentVoice')) return;
+    let live = true;
+    getTake(tKey).then((t) => live && setTake({ key: tKey, take: t })).catch(() => {});
+    return () => { live = false; };
+  }, [tKey, takeTick]);
+  const [recorder, setRecorder] = useState<PageRecorder | null>(null);
+  const marks = useRef<TakeMark[]>([]);
+  const pageId = page?.id;
+  useEffect(() => {
+    if (recorder && pageId) marks.current = addMark(marks.current, { pageId, step, t: recorder.elapsed() });
+  }, [recorder, pageId, step]);
+  const startTake = (r: PageRecorder) => {
+    marks.current = [];
+    setRecorder(r);
+  };
+  const stopTake = async (blob: Blob) => {
+    const m = marks.current;
+    setRecorder(null);
+    // WAV seeks exactly in every browser (a recorded webm often has no duration); the original is the fallback.
+    const audio = await recordingToWav(blob, 22050).then((r) => new Blob([r.wav as BlobPart], { type: 'audio/wav' })).catch(() => blob);
+    await saveTake(tKey, { blob: audio, marks: m });
+    setTakeTick((n) => n + 1);
+  };
+  const chapterTake = take.key === tKey ? take.take : null;
+
   if (!ctx) return <PlanNotFound />;
   if (!chapter)
     return (
       <EmptyState
         title="This chapter isn't in the plan"
         text={`The plan for this big day has ${ctx.event.chapters.length} ${ctx.event.chapters.length === 1 ? 'chapter' : 'chapters'}.`}
-        action={<ButtonLink href={`/event/${eventId}`}>Back to the plan</ButtonLink>}
+        action={<ButtonLink href={planHref(eventId)}>Back to the plan</ButtonLink>}
       />
     );
   if (!allowed) return <Skeleton className="h-96" />;
@@ -135,6 +174,9 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
   const asked = questionsInChapter(event, index);
   const storyPages = pages.filter((p) => p.kind === 'story');
   const isLast = pageIdx >= pages.length - 1;
+  const illustration = illustrated && page
+    ? illustrationSrc(illustrationKey(event.type, page.background, backgroundForEvent(event.type), beatForPage(chapter.beats, pageIdx, pages.length)))
+    : null;
 
   const sentenceCount = page?.sentences.length ?? 1;
   const lastSentence = step >= sentenceCount - 1;
@@ -153,6 +195,15 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
     setPosition(null);
     setAutoListen(true);
     setNavTick((n) => n + 1);
+  };
+  // The chapter take turns the pages by itself, in time with the voice.
+  const followTake = (id: string, s: number) => {
+    if (mode.kind !== 'read') return;
+    const i = pages.findIndex((p) => p.id === id);
+    if (i < 0) return;
+    setPageIdx(i);
+    setStep(Math.min(s, Math.max(0, pages[i].sentences.length - 1)));
+    setPosition(null);
   };
   // Next shows the page's next sentence, then turns the page; Finish only on the last sentence of the last page.
   const next = () => {
@@ -268,20 +319,35 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
         <div className="min-h-0 flex-1">
           <PageView
             page={page} character={child.character} render={render} textSize={textSize} night={night}
-            step={step} position={position} updatedText={updatedText}
+            step={step} position={position} updatedText={updatedText} illustration={illustration}
             extra={photos ? <PagePhotos photos={event.photos} /> : undefined}
           />
         </div>
         <div className="flex items-center gap-2">
-          <Button variant="secondary" onClick={prev} disabled={pageIdx === 0 && step === 0} aria-label="Previous sentence" className="px-4">
+          <Button variant="secondary" onClick={prev} disabled={pageIdx === 0 && step === 0} aria-label="Previous sentence" aria-keyshortcuts="ArrowLeft" className="px-4">
             <Icon name="arrow-right" size={20} className="rotate-180" />
           </Button>
+          {/* The L key presses this button (ReaderKeys). */}
+          <span data-reader-listen className="contents">
+          {recorder ? null : chapterTake && takeHasPage(chapterTake.marks, page.id) ? (
+            <TakeListenButton key={`take:${takeTick}`} take={chapterTake} pageId={page.id} step={step} navTick={navTick}
+              voiceName={child.values.family[0]} onFollow={followTake} autoStart={autoListen} />
+          ) : (
           <ListenButton key={`${page.id}:${navTick}`} from={step}
             sentences={page.sentences.map((s) => renderText(s.text, child, { speak: true, pronunciation: child.pronunciation }))}
             shown={page.sentences.map((s) => render(s.text))} onProgress={onProgress}
             recordingKey={isOn('parentVoice') ? recKey : undefined} hasRecording={recs.key === recKey && recs.has} voiceName={child.values.family[0]}
             autoStart={autoListen} onFinished={readOnNext} night={night} />
-          <Button className="flex-1" onClick={next}>
+          )}
+          </span>
+          {!recorder && (
+            <Button variant="secondary" aria-pressed={readOn} onClick={() => setVoice({ readOn: !readOn })}
+              title="Auto: the voice turns the pages by itself" aria-label="Auto page turn"
+              className={`px-3 text-sm ${readOn ? '!border-primary !bg-primary !text-primary-ink' : ''}`}>
+              Auto
+            </Button>
+          )}
+          <Button className="flex-1" onClick={next} aria-keyshortcuts="ArrowRight Space">
             {lastSentence && isLast ? 'Finish' : lastSentence && page.kind === 'answer' ? 'Back to the story' : 'Next'}
           </Button>
         </div>
@@ -311,7 +377,7 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
           {total === 1 ? 'Quick prep' : `Chapter ${index} of ${total}`} · {chapter.title}
         </p>
         <div className="flex items-center gap-0 min-[400px]:gap-1 sm:gap-2">
-          <button type="button" onClick={() => guard(() => router.push(`/event/${eventId}`))} aria-label="Back to the plan" className={iconBtn}>
+          <button type="button" onClick={() => guard(() => router.push(planHref(eventId)))} aria-label="Back to the plan" className={iconBtn}>
             <Icon name="door-open" size={22} />
           </button>
           <div className="min-w-0 flex-1">
@@ -337,8 +403,19 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
           >
             <Icon name={night ? 'sun' : 'moon'} size={22} />
           </button>
+          <ReaderKeys
+            reading={reading}
+            onNext={next}
+            onPrev={prev}
+            onListen={() => document.querySelector<HTMLButtonElement>('[data-reader-listen] button')?.click()}
+            fullscreen={immersive.on}
+            onFullscreen={immersive.enter}
+            onExitFullscreen={immersive.exit}
+            className={iconBtn}
+          />
           <button
             type="button"
+            aria-keyshortcuts="F"
             onClick={immersive.toggle}
             aria-pressed={immersive.on}
             aria-label={immersive.on ? 'Leave full screen' : 'Full screen'}
@@ -348,8 +425,9 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
             <Icon name={immersive.on ? 'minimize' : 'maximize'} size={22} />
           </button>
           {reading && <VoicePicker className={iconBtn} />}
-          {isOn('parentVoice') && reading && !immersive.on && (
-            <RecordButton compact recKey={recKey} has={recs.key === recKey && recs.has} onChange={() => setRecTick((n) => n + 1)} />
+          {isOn('parentVoice') && reading && (!immersive.on || recorder) && (
+            <ChapterRecordButton className={iconBtn} has={!!chapterTake} onStart={startTake} onStop={stopTake}
+              onDelete={async () => { await deleteTake(tKey); setTakeTick((n) => n + 1); }} />
           )}
           {/* Parent tools stay out of the child's full screen. */}
           {!immersive.on && <button
@@ -444,7 +522,7 @@ function ChapterEnd({ ctx, index, total, onReread }: { ctx: NonNullable<ReturnTy
         </ButtonLink>
         <Button variant="secondary" size="l" onClick={onReread}>Read it again</Button>
       </div>
-      <Link href={`/event/${event.id}`} className="inline-flex min-h-tap items-center font-bold text-primary-text underline">Back to the plan</Link>
+      <Link href={planHref(event.id)} className="inline-flex min-h-tap items-center font-bold text-primary-text underline">Back to the plan</Link>
     </section>
   );
 }
