@@ -148,7 +148,8 @@ export async function* answerQuestion(input: AnswerInput): AsyncGenerator<Answer
           nextPage: input.nextPage ? { text: pageText(input.nextPage.text, input), background: input.nextPage.background } : undefined,
         }),
       signal: ac.signal,
-      maxOutputTokens: 400,
+      // 400 cut off the JSON on Haiku 5.5 (answer + parent draft + phrase), so the final parse failed.
+      maxOutputTokens: 900,
     });
 
     for await (const raw of call.partials) {
