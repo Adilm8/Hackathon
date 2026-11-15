@@ -14,6 +14,7 @@ import type { EventTemplate, StoryContext } from '../engine/types';
 import { env } from '../env';
 import { cacheGet, cacheKey, cacheSet } from '../server/cache';
 import { DEADLINES, PROMPT_VERSION } from './config';
+import { pageTargets } from './deps';
 import { fallbackChapterPages, fallbackSummary, type OutPage } from './fallback';
 import { mockChapter } from './mock';
 import { buildChapterPrompt, buildSystemPrompt } from './prompts/system.v1';
@@ -56,7 +57,8 @@ function timers(signal?: AbortSignal) {
 
 export async function* generateChapter(input: ChapterInput): AsyncGenerator<ChapterEvent> {
   const { ctx, template } = input;
-  const fallback = fallbackChapterPages(template, ctx.chapter.beats, ctx.styleMode, ctx.child.age);
+  const fallback = fallbackChapterPages(template, ctx.chapter.beats, ctx.styleMode, ctx.child.age, ctx.story);
+  const pageCount = pageTargets(ctx.child.age, ctx.story?.length).pages;
   const post = postcheckOptions(ctx);
   const isMock = env().llm.provider === 'mock';
   const key = cacheKey(['chapter', PROMPT_VERSION, template.type, template.version, ctx]);
@@ -87,7 +89,7 @@ export async function* generateChapter(input: ChapterInput): AsyncGenerator<Chap
   const check = (raw: unknown, i: number): OutPage | null => {
     const parsed = PageOut.safeParse(raw);
     if (!parsed.success) return null;
-    const res = checkPage(parsed.data, { template, age: ctx.child.age, post, fallback: fbAt(i) });
+    const res = checkPage(parsed.data, { template, age: ctx.child.age, post, fallback: fbAt(i), avoidWords: ctx.story?.avoidWords });
     return isMock ? { ...res.page, source: 'fallback' } : res.page;
   };
 
@@ -110,7 +112,7 @@ export async function* generateChapter(input: ChapterInput): AsyncGenerator<Chap
         for await (const partial of call.partials) {
           const pages = (partial as Partial<ChapterOutT>)?.pages ?? [];
           // A page is complete once the model has started the next one.
-          while (emitted.length < Math.min(pages.length - 1, 5)) {
+          while (emitted.length < Math.min(pages.length - 1, pageCount)) {
             const page = check(pages[emitted.length], emitted.length);
             if (!page) break;
             const ev: ChapterEvent = { type: 'page', index: emitted.length, page };
@@ -125,7 +127,7 @@ export async function* generateChapter(input: ChapterInput): AsyncGenerator<Chap
       if (res.ok) {
         const out = res.object;
         const pages: OutPage[] = [];
-        for (let i = emitted.length; i < out.pages.length; i++) {
+        for (let i = emitted.length; i < Math.min(out.pages.length, pageCount); i++) {
           pages.push(check(out.pages[i], i) ?? fbAt(i));
         }
         if (social) {

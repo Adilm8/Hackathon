@@ -233,7 +233,7 @@ export async function* answerQuestion(input: AnswerInput): AsyncGenerator<Answer
         const parsed = rewrite.ok ? PageOut.safeParse(rewrite.object.nextPage) : null;
         if (parsed?.success) {
           const original: OutPage = { sentences: [], mood: 'calm', background: input.nextPage.background, addresses: [], source: 'fallback' };
-          const checked = checkPage(parsed.data, { template, age: ctx.child.age, post, fallback: original, minWords: wordCount(nextText) });
+          const checked = checkPage(parsed.data, { template, age: ctx.child.age, post, fallback: original, minWords: wordCount(nextText), avoidWords: ctx.story?.avoidWords });
           if (!checked.replaced) {
             yield { type: 'nextPage', page: { ...checked.page, source: src() } };
           }

@@ -6,6 +6,7 @@
 import type { EventTemplate, Sentence, StoryContext, Topic } from '../engine/types';
 import type { PageOutT } from '../engine/schemas';
 import { checkText, type PostcheckOptions } from '../safety/postcheck';
+import { withoutAvoided } from '../engine/storyPrefs';
 import { confirmAddresses, pageTargets } from './deps';
 import { allowedTechniques, type OutPage } from './fallback';
 
@@ -18,9 +19,11 @@ export function pageWords(sentences: Pick<Sentence, 'text'>[]): number {
 }
 
 /** Words the post-check accepts as capitalised names: family words and the hero's animal. */
-export function postcheckOptions(ctx: Pick<StoryContext, 'values' | 'child'>): PostcheckOptions {
+export function postcheckOptions(ctx: Pick<StoryContext, 'values' | 'child' | 'story'>): PostcheckOptions {
+  // The comfort toy's nickname and the grown-ups who come along are the parent's words, not invented names.
+  const own = [...(ctx.story?.comfort?.nickname?.split(/\s+/) ?? []), ...(ctx.story?.companions ?? [])].filter(Boolean);
   return {
-    familyWords: ctx.values.family,
+    familyWords: [...ctx.values.family, ...own],
     allowWords: [
       ctx.child.character.animal, 'Bunny', 'Bear', 'Fox', 'Kitten', 'Dragon', 'Owl', 'Owlet', 'Hedgehog', 'Fawn',
       'Moon', 'Cloud', 'Cub', 'Ember', 'Star', 'Puff', 'Sage', 'Moss', 'Dew',
@@ -44,10 +47,11 @@ export interface PageCheck {
 /**
  * Checks one model page. Over the length range (+25%): trimmed at a sentence boundary.
  * Under half the minimum (the age target, or `minWords` for a rewrite), or any safety hit: replaced by its fallback page.
+ * Sentences with a word the parent asked to avoid are dropped before the length check.
  */
 export function checkPage(
   raw: PageOutT,
-  opts: { template: EventTemplate; age: number; post: PostcheckOptions; fallback: OutPage; minWords?: number },
+  opts: { template: EventTemplate; age: number; post: PostcheckOptions; fallback: OutPage; minWords?: number; avoidWords?: string[] },
 ): PageCheck {
   const targets = pageTargets(opts.age);
   const { maxWords } = targets;
@@ -55,7 +59,7 @@ export function checkPage(
   const minWords = opts.minWords ?? targets.minWords;
   const replace = (reason: string): PageCheck => ({ page: { ...opts.fallback }, replaced: true, reason });
 
-  const sentences = raw.sentences.map((s) => ({ text: s.text.trim(), kind: s.kind }));
+  const sentences = withoutAvoided(raw.sentences.map((s) => ({ text: s.text.trim(), kind: s.kind })), opts.avoidWords);
   for (const s of sentences) {
     const v = checkText(s.text, opts.post);
     if (v.length) return replace(`postcheck:${v[0].kind}:${v[0].detail}`);

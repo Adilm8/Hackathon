@@ -65,6 +65,11 @@ function Plan({ id }: { id: string }) {
         <ButtonLink href={`/event/${id}/panel`} variant="secondary">
           <Icon name="hand-heart" size={20} /> Parent panel
         </ButtonLink>
+        {phase === 'prep' && (
+          <ButtonLink href={`/event/${id}/story`} variant="secondary">
+            <Icon name="pencil" size={20} /> Story options
+          </ButtonLink>
+        )}
         <ButtonLink href="/home" variant="ghost">All big days</ButtonLink>
       </div>
 

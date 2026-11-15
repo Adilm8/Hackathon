@@ -148,6 +148,11 @@ export function buildStoryContext({ event, child, template = getTemplate(event.t
   if (event.customFear) ctx.event.customFear = event.customFear.slice(0, 40);
   if (child.pronoun) ctx.child.pronoun = child.pronoun;
   if (event.place) ctx.place = event.place.slice(0, 40);
+  if (event.story) {
+    const story = { ...event.story };
+    delete story.chapters;
+    if (Object.keys(story).length) ctx.story = story;
+  }
   return ctx;
 }
 

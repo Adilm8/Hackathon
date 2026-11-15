@@ -59,9 +59,15 @@ nice afterwards so the story ends with a look forward.
 
 ## 4. Proposed parent options
 
-All optional, with today's behaviour as the default. They live on one new onboarding step
-("Make the story yours", after worries) and can be changed later from the event panel; changes
-apply to chapters that are not generated yet.
+All optional, with today's behaviour as the default. The genre has its own step right after the
+big day; the rest live on one step "Make the story yours" after the worries. Everything can be
+changed later on the plan's "Story options" screen (`/event/[id]/story`); changes apply to chapters
+not written yet, and the number of evenings can change only until the first chapter is written.
+
+Built (15 Nov 2026): all ten options below plus the three generation rules of section 5
+(WH questions in chapter 1, praise at the end of every chapter, the plan on the last page).
+Fallback pages follow the length (a one-beat chapter has only 4 template pages, so "Long" falls
+back to 4) and drop sentences with avoided words; they cannot leave out turned-off steps.
 
 | # | Option | Values | How it is used |
 |---|--------|--------|----------------|
@@ -71,7 +77,7 @@ apply to chapters that are not generated yet.
 | 4 | Who comes along | one or two chips from the family list, or "a grown-up" | prompt: the grown-up on the day |
 | 5 | Comfort object | teddy, blanket, toy, book, none, with an optional nickname | prompt: the hero brings it; shown in rehearsal |
 | 6 | Favourite things | up to 3 of ~12 chips (dinosaurs, space, trains, animals, princesses and knights, cars, ocean, music, sports, drawing, bugs, building) | prompt: small details and comparisons, never the plot |
-| 7 | Story mood | Calm and cozy · Playful and funny · Brave adventure | prompt: tone line |
+| 7 | Story genre (own step right after the big day) | Bedtime story · Funny adventure · Discover & grow · Moral values · Fairy tale & magic · Brave hero · Calm & mindful | prompt: genre line; a social story stays literal whatever the genre |
 | 8 | Been before? | First time · Been before, went fine · Been before, it was hard | prompt: what to stress |
 | 9 | Something nice after | chips (park, favourite snack, call Grandma, play time) or own text | prompt: last chapter ends looking forward to it |
 | 10 | Words to avoid | up to 3, own text | prompt and post-check: replaced in model text |
