@@ -17,6 +17,12 @@ export interface Prefs {
   favorites: string[];
   /** Bedtime routine steps the parent switched off. */
   routineOff: string[];
+  /** Web push reminders switched on in this browser (lib/push/client.ts). */
+  push: boolean;
+  /** Reminder times, local "HH:MM". */
+  reminderEvening: string;
+  quietStart: string;
+  quietEnd: string;
 }
 
 interface PrefsState extends Prefs {
@@ -24,6 +30,8 @@ interface PrefsState extends Prefs {
   setEasyRead(v: boolean): void;
   toggleFavorite(eventId: string, chapter: number): void;
   toggleRoutineStep(id: string): void;
+  setPush(v: boolean): void;
+  setReminderTimes(t: Partial<Pick<Prefs, 'reminderEvening' | 'quietStart' | 'quietEnd'>>): void;
 }
 
 export const favKey = (eventId: string, chapter: number) => `${eventId}#${chapter}`;
@@ -35,6 +43,12 @@ export const usePrefs = create<PrefsState>()(
       easyRead: false,
       favorites: [],
       routineOff: [],
+      push: false,
+      reminderEvening: '18:30',
+      quietStart: '20:30',
+      quietEnd: '07:30',
+      setPush: (push) => set({ push }),
+      setReminderTimes: (t) => set(t),
       toggleRoutineStep: (id) => set((s) => ({ routineOff: s.routineOff.includes(id) ? s.routineOff.filter((x) => x !== id) : [...s.routineOff, id] })),
       setSound: (sound) => set({ sound }),
       setEasyRead: (easyRead) => set({ easyRead }),
@@ -49,7 +63,9 @@ export const usePrefs = create<PrefsState>()(
       storage: jsonStorage,
       version: 1,
       skipHydration: true,
-      partialize: (s) => ({ sound: s.sound, easyRead: s.easyRead, favorites: s.favorites, routineOff: s.routineOff }),
+      partialize: (s) => ({ sound: s.sound, easyRead: s.easyRead, favorites: s.favorites, routineOff: s.routineOff,
+        push: s.push, reminderEvening: s.reminderEvening, quietStart: s.quietStart, quietEnd: s.quietEnd,
+      }),
     },
   ),
 );

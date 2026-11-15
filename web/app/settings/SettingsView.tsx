@@ -2,7 +2,7 @@
 import { useRouter } from 'next/navigation';
 import { useState, type ReactNode } from 'react';
 import { SubscriptionCard } from '@/components/paywall/SubscriptionCard';
-import { ExportImport, PalettePicker, RestoreLink, StyleToggle, ValuesProfile, VoiceConsent } from '@/components/settings';
+import { ExportImport, PalettePicker, Reminders, RestoreLink, StyleToggle, ValuesProfile, VoiceConsent } from '@/components/settings';
 import { clock } from '@/lib/engine/clock';
 import { DEFAULT_PALETTE, isNight } from '@/lib/theme';
 import { clearDeviceData } from '@/lib/storage/clear';
@@ -114,6 +114,12 @@ export function SettingsView() {
           onPalette={settings.setPalette}
           onNightMode={settings.setNightMode}
         />
+      </Section>
+
+      <Section title="Reminders">
+        <ErrorBoundary fallback={<p className="text-sm text-ink-soft">Reminders are not available in this browser. You will still see them on the home page.</p>}>
+          <Reminders />
+        </ErrorBoundary>
       </Section>
 
       <Section title="Reading">

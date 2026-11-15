@@ -23,7 +23,7 @@ Status: **have** = built and on main, **partial** = some of it is there, **missi
 | Daily goal and today's tasks | gamified learning | have | Today card with read / ask / day card / check-in |
 | Achievements / badge gallery | all groups | have | Badges tab, earned and still to come |
 | Celebration at the end of a session (animation, sound) | all groups | **added (PR "celebrations")** | confetti and a soft chime at the end of a chapter and on the badge; respects reduced motion and a Sounds switch |
-| Reminders (push / calendar) | all groups | partial | calendar file with evening reminders (.ics); no web push (needs a server push service and consent, left out) |
+| Reminders (push / calendar) | all groups | **added (PR "push reminders")** | opt-in web push (evening chapter, big day morning, check-in) with quiet hours; in-app reminder on /home where push is not available; calendar file stays |
 | Leaderboards, friends, leagues | gamified learning | not planned | wrong fit for small children and for privacy (COPPA) |
 
 ## 2. Story and reading
@@ -50,7 +50,7 @@ Status: **have** = built and on main, **partial** = some of it is there, **missi
 | Parent area behind a gate | all kids' apps | have | parent gate + parent panel |
 | Progress report / weekly summary | gamified learning, kids' learning | **added (PR "home progress")** | "This week" card: evenings read, questions asked, stars, badges |
 | Tips for the parent per session | social-story apps | have | parent panel per chapter |
-| Several children | kids' learning | partial | saved children on the device; a new story for another child is one tap; no live switch between two active plans (one child per family space in the MVP) |
+| Several children | kids' learning | **added (PR "switch children")** | "Stories for" switch on /home and the parent panel; each child's path, streak, library and badges; other children's profiles kept on this device |
 | Share an achievement | gamified learning | **added (PR "library")** | Share button on the badge (system share sheet, or copies the text); no picture of the child leaves the device |
 | Backup / move to another device | many | partial | export/import and restore link built, behind flags |
 | Subscription with tiers | all | have | Big Day Pass, Gold, Platinum, Diamond |
@@ -70,4 +70,3 @@ Status: **have** = built and on main, **partial** = some of it is there, **missi
 - Leaderboards, chat, public profiles: children 3 to 7, privacy first (first name only, no surname, no photos sent anywhere).
 - Medical advice: stories prepare emotionally; the app never tells a parent what is medically right.
 - Ads and loot-box style rewards: stars only mark effort, they never buy anything.
-- Web push notifications: need a push server and consent flow; the calendar reminders cover the evenings for the MVP.

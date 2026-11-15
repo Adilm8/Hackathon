@@ -9,6 +9,7 @@ import { SideNav, TabBar, type HomeTab } from '@/components/home/HomeNav';
 import { CreateCard, LevelCard, RoutineCard, PlanCard, StreakCard, TasksCard, WeekReport } from '@/components/home/SideCards';
 import { StoryPath } from '@/components/home/StoryPath';
 import { ChildSwitcher } from '@/components/home/ChildSwitcher';
+import { ReminderBanner } from '@/components/home/ReminderBanner';
 import { switchChild, useEventsOfActiveChild } from '@/lib/store/children';
 import { InstallCard } from '@/components/home/InstallCard';
 import { ButtonLink } from '@/components/ui/Button';
@@ -85,6 +86,7 @@ function Home({ tab, eventParam }: { tab: HomeTab; eventParam: string | null }) 
   return (
     <div className="flex flex-col gap-4">
       <ChildSwitcher onSwitch={onSwitch} />
+      {tab === 'path' && <ReminderBanner events={events} today={today} />}
       <div className="flex items-center justify-between gap-2 lg:hidden">
         <Link href="/home?tab=child" className="inline-flex min-h-tap items-center gap-2 rounded-pill border border-line bg-surface px-3 text-sm font-bold">
           <Icon name="smile" size={18} /> {child.name}

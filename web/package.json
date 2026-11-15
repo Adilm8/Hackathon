@@ -12,7 +12,8 @@
     "test:watch": "vitest",
     "db:generate": "drizzle-kit generate",
     "safety": "tsx --conditions=react-server evals/safety.ts",
-    "eval": "tsx --conditions=react-server evals/eval.ts"
+    "eval": "tsx --conditions=react-server evals/eval.ts",
+    "vapid": "node scripts/vapid-keys.mjs"
   },
   "dependencies": {
     "@ai-sdk/google": "^4.0.121",
