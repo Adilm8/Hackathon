@@ -2,7 +2,9 @@ import { describe, expect, it } from 'vitest';
 import type Stripe from 'stripe';
 import { checkoutInfo, subscriptionInfo } from '@/lib/payments/gateway';
 import { rowStatus } from '@/lib/payments/access';
-import { activeSubscription, formatUsd, hasCapability, ownsEventPack, renewalTerms } from '@/lib/payments/plans';
+import { activeSubscription, formatUsd, GOLD_EXTRAS, hasCapability, hasGoldExtra, LEVELS, ownsEventPack, PLANS, renewalTerms } from '@/lib/payments/plans';
+import { allowedVoice } from '@/lib/speech/cloud';
+import { isGoldVoice } from '@/lib/tts/server';
 import { timelineSteps } from '@/components/paywall/PlanTimeline';
 import type { Entitlement } from '@/lib/engine/types';
 
@@ -36,6 +38,32 @@ describe('plans', () => {
     expect(activeSubscription([pass, old, gold], NOW)).toBe(gold);
     expect(ownsEventPack([pass], NOW)).toBe(true);
     expect(ownsEventPack([gold], NOW)).toBe(false);
+  });
+
+  it('keeps three levels: Gold extras only with a subscription (SPEC 10.1)', () => {
+    const pass: Entitlement = { plan: 'event', eventId: 'e1', expiresAt: NOW + DAY, renews: false };
+    const gold: Entitlement = { plan: 'month', expiresAt: NOW + 20 * DAY, renews: true };
+    for (const cap of GOLD_EXTRAS) {
+      expect(hasGoldExtra([pass], cap, NOW)).toBe(false);
+      expect(hasGoldExtra([gold], cap, NOW)).toBe(true);
+      expect(hasGoldExtra([], cap, NOW)).toBe(false);
+    }
+    expect(PLANS.upgrade.capabilities).toEqual(PLANS.year.capabilities);
+    expect(PLANS.month.capabilities).toEqual(PLANS.year.capabilities);
+    expect(Object.keys(LEVELS[0])).toEqual(['feature', 'free', 'pass', 'gold']);
+  });
+
+  it('marks ElevenLabs voices as Gold and falls back without Gold', () => {
+    expect(isGoldVoice('elevenlabs/eleven-v3@pFZP5JQG7iQjIQuC4Bku', 'hexgrad/kokoro-82m')).toBe(true);
+    expect(isGoldVoice('af_bella', 'hexgrad/kokoro-82m')).toBe(false);
+    expect(isGoldVoice('fish-audio/s2.1-pro-free:free@', 'hexgrad/kokoro-82m')).toBe(false);
+    const voices = [{ id: 'af_bella', label: 'Owl' }, { id: 'eleven', label: 'Moon', gold: true }];
+    const none = { premium: false, clone: false };
+    expect(allowedVoice('eleven', voices, none)).toBeNull();
+    expect(allowedVoice('af_bella', voices, none)).toBe('af_bella');
+    expect(allowedVoice('parent:abc', voices, none)).toBeNull();
+    expect(allowedVoice('parent:abc', voices, { premium: true, clone: true })).toBe('parent:abc');
+    expect(allowedVoice('eleven', voices, { premium: true, clone: true })).toBe('eleven');
   });
 });
 

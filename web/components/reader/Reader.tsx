@@ -18,7 +18,7 @@ import type { Page, Question } from '@/lib/engine/types';
 import { CHARACTER_SIZES, normalizeCharacter, resolveCharacter, SIZE_NAME } from '@/lib/engine/character';
 import { useChild } from '@/lib/store/child';
 import { useEvents } from '@/lib/store/events';
-import { useEventCtx } from '@/lib/store/hooks';
+import { useEventCtx, useGoldExtra } from '@/lib/store/hooks';
 import { newId } from '@/lib/store/id';
 import { usePrefs } from '@/lib/store/prefs';
 import { useSettings } from '@/lib/store/settings';
@@ -69,7 +69,9 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
   const [autoListen, setAutoListen] = useState(false);
   const readOn = usePrefs((p) => p.readOn);
   const setVoice = usePrefs((p) => p.setVoice);
-  const illustrated = usePrefs((p) => p.illustrated) && isOn('illustratedScenes');
+  // Painted pictures are a Gold extra (SPEC 10.1); without Gold the drawn scenes show.
+  const pictures = useGoldExtra('scenes.pictures');
+  const illustrated = usePrefs((p) => p.illustrated) && isOn('illustratedScenes') && pictures;
   const panel = usePanelOpen();
   // Full screen: only the story on screen (lib/reader/immersive.ts). Leaving it needs no grown-up;
   // leaving the reader still does (the door button).

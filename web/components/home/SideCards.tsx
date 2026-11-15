@@ -29,7 +29,7 @@ export function PlanCard({ event, hasAccess, label }: { event: BigEvent | null; 
       <div className="flex items-start gap-3">
         <div className="flex-1">
           <h2 id="plan-h" className="text-lg font-extrabold leading-tight">Unlock the whole story</h2>
-          <p className="mt-1 text-sm text-ink-soft">Chapters 2 to 5, the &quot;first, then&quot; card and the badge for {label.toLowerCase()}. Gold and up cover every big day.</p>
+          <p className="mt-1 text-sm text-ink-soft">Chapters 2 to 5, the &quot;first, then&quot; card and the badge for {label.toLowerCase()}. Gold covers every big day and adds painted pictures and premium voices.</p>
         </div>
         <Icon name="crown" size={40} className="shrink-0 text-accent" />
       </div>

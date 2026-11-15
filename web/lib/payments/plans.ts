@@ -3,7 +3,8 @@
  * Prices are sent to Stripe as inline `price_data`, so nothing has to be created
  * in the Stripe dashboard.
  *
- * Display names follow the subscription levels of SPEC 17.2 (Big Day Pass, Gold);
+ * Three levels (SPEC 10.1, 17.2): Free, Big Day Pass (one event, once) and Gold (every event plus
+ * the premium extras, yearly or monthly);
  * the stored plan ids stay the contract ids `event | year | month` (SPEC 6.1).
  * Screens ask for a capability, never for a level name, so levels can be renamed later.
  */
@@ -13,7 +14,15 @@ import type { Entitlement, PlanId } from '../engine/types';
 export type CheckoutPlan = PlanId | 'upgrade';
 export const CHECKOUT_PLANS = ['event', 'year', 'month', 'upgrade'] as const satisfies readonly CheckoutPlan[];
 
-export type Capability = 'chapters.all' | 'daycard';
+/**
+ * What a level unlocks. `chapters.all` and `daycard` are per event for a Big Day Pass;
+ * the Gold extras below are family-wide and come only with a subscription.
+ */
+export type Capability = 'chapters.all' | 'daycard' | 'scenes.pictures' | 'scenes.cartoon' | 'voice.premium' | 'voice.clone';
+
+/** Gold-only extras: they cost us per use (premium voice, cloning) or are the richest look. */
+export const GOLD_EXTRAS = ['scenes.pictures', 'scenes.cartoon', 'voice.premium', 'voice.clone'] as const satisfies readonly Capability[];
+const GOLD: Capability[] = ['chapters.all', 'daycard', ...GOLD_EXTRAS];
 
 export interface PlanInfo {
   id: CheckoutPlan;
@@ -49,7 +58,7 @@ export const PLANS: Record<CheckoutPlan, PlanInfo> = {
     amountCents: 999,
     mode: 'payment',
     accessDays: EVENT_PACK_DAYS,
-    headline: 'Everything for this one big day',
+    headline: 'The whole story for one big day',
     perks: [
       'Every chapter of this story',
       'The event-day card with a printable PDF',
@@ -70,10 +79,11 @@ export const PLANS: Record<CheckoutPlan, PlanInfo> = {
     perks: [
       'Every chapter of every big day for 12 months',
       'Event-day cards with printable PDFs',
-      'The story remembers what helped last time',
+      'Painted pictures and Cartoon mode',
+      'Moon Storyteller voice and stories in your own voice',
       'Cancel anytime in Settings',
     ],
-    capabilities: ['chapters.all', 'daycard'],
+    capabilities: GOLD,
   },
   month: {
     id: 'month',
@@ -85,7 +95,7 @@ export const PLANS: Record<CheckoutPlan, PlanInfo> = {
     interval: 'month',
     headline: 'Ready for every big day',
     perks: ['Everything in Gold, paid month by month'],
-    capabilities: ['chapters.all', 'daycard'],
+    capabilities: GOLD,
   },
   upgrade: {
     id: 'upgrade',
@@ -97,8 +107,8 @@ export const PLANS: Record<CheckoutPlan, PlanInfo> = {
     interval: 'year',
     reminderDays: 30,
     headline: 'Add $39 and get the full year',
-    perks: ['Every big day for 12 months', 'Your Big Day Pass counts toward it'],
-    capabilities: ['chapters.all', 'daycard'],
+    perks: ['Every big day for 12 months', 'Painted pictures, Cartoon mode and premium voices', 'Your Big Day Pass counts toward it'],
+    capabilities: GOLD,
   },
 };
 
@@ -130,6 +140,24 @@ export function hasCapability(list: Entitlement[], cap: Capability, eventId: str
     return e.plan === 'year' || e.plan === 'month' || e.eventId === eventId;
   });
 }
+
+/** A family-wide Gold extra (pictures, Cartoon mode, premium voice, voice clone). */
+export function hasGoldExtra(list: Entitlement[], cap: (typeof GOLD_EXTRAS)[number], now = Date.now()): boolean {
+  return hasCapability(list, cap, '', now);
+}
+
+/** The three levels side by side, for the paywall comparison and the pitch (SPEC 10.1). */
+export const LEVELS: { feature: string; free: string; pass: string; gold: string }[] = [
+  { feature: 'Chapter 1 of every big day, questions, parent panel, Parent check', free: 'yes', pass: 'yes', gold: 'yes' },
+  { feature: 'Story options, genres, place photos, social story style', free: 'yes', pass: 'yes', gold: 'yes' },
+  { feature: 'Calendar, check-in, badges, achievements', free: 'yes', pass: 'yes', gold: 'yes' },
+  { feature: 'Read aloud: device voice, Storyteller voices, family recordings', free: 'yes', pass: 'yes', gold: 'yes' },
+  { feature: 'Chapters 2 and on', free: '-', pass: 'this big day', gold: 'every big day' },
+  { feature: 'Event-day card and printable PDF', free: '-', pass: 'this big day', gold: 'every big day' },
+  { feature: 'Painted scene pictures and Cartoon mode', free: '-', pass: '-', gold: 'yes' },
+  { feature: 'Moon Storyteller premium voice', free: '-', pass: '-', gold: 'yes' },
+  { feature: "Story read in a parent's own voice (voice clone)", free: '-', pass: '-', gold: 'yes' },
+];
 
 /** The longest-running subscription of a family, if any (for Settings). */
 export function activeSubscription(list: Entitlement[], now = Date.now()): Entitlement | undefined {

@@ -2,6 +2,7 @@ import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 import { z } from 'zod';
 import { env } from '@/lib/env';
+import { familyHasExtra } from '@/lib/payments/access';
 import { apiError, checkOrigin, clientIp, readJson } from '@/lib/server/http';
 import { allow } from '@/lib/server/ratelimit';
 import { getSession } from '@/lib/server/session';
@@ -37,6 +38,7 @@ export async function POST(req: NextRequest) {
   if ('error' in body) return body.error;
   const s = await getSession(req);
   if (!s) return apiError('no_session', 'No session');
+  if (!(await familyHasExtra(s.familyId, 'voice.clone'))) return apiError('payment_required', 'Your own storyteller voice is part of Gold');
   const wav = Buffer.from(body.data.audio, 'base64');
   const ok = checkWav(wav);
   if ('error' in ok) {

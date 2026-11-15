@@ -3,7 +3,8 @@ import { useEffect, useRef, useState, useSyncExternalStore } from 'react';
 import { Icon } from '@/components/icons';
 import { narrator } from '@/lib/speech/narrator';
 import { RecordedNarrator } from '@/lib/speech/recorder';
-import { cloudNarrator, premiumVoiceEnabled } from '@/lib/speech/cloud';
+import { allowedVoice, cloudNarrator, premiumVoices, type StoryVoice } from '@/lib/speech/cloud';
+import { useGoldExtra } from '@/lib/store/hooks';
 import type { Narrator } from '@/lib/speech/types';
 import { estimateWordStarts, mapWordIndex, splitWords, wordAtChar, wordAtTime } from '@/lib/speech/words';
 import { Button } from '@/components/ui/Button';
@@ -65,12 +66,17 @@ export function ListenButton({
 
   const wantPremium = usePrefs((p) => p.storyVoice) === 'premium';
   const characterVoice = usePrefs((p) => p.characterVoice);
-  const [premium, setPremium] = useState(false);
+  const [offered, setOffered] = useState<StoryVoice[]>([]);
+  const premium = offered.length > 0;
   useEffect(() => {
     let live = true;
-    if (wantPremium) void premiumVoiceEnabled().then((on) => live && setPremium(on));
+    if (wantPremium) void premiumVoices().then((v) => live && setOffered(v));
     return () => { live = false; };
   }, [wantPremium]);
+  // Gold extras (SPEC 10.1): without Gold the Moon Storyteller and family voices fall back to the default storyteller.
+  const goldVoice = useGoldExtra('voice.premium');
+  const goldClone = useGoldExtra('voice.clone');
+  const storyVoiceId = allowedVoice(characterVoice, offered, { premium: goldVoice, clone: goldClone });
   const usePremium = wantPremium && premium && !useRecording;
   useEffect(() => {
     player.current = useRecording ? new RecordedNarrator(recordingKey!) : usePremium ? cloudNarrator : narrator;
@@ -139,7 +145,7 @@ export function ListenButton({
     player.current.speak(sentences.slice(start.current), {
       rate: useRecording ? undefined : RATE,
       // For the premium voice this carries the character voice id.
-      voiceURI: useRecording ? undefined : usePremium ? characterVoice : voiceURI,
+      voiceURI: useRecording ? undefined : usePremium ? storyVoiceId : voiceURI,
       onSentence,
       onWord: useRecording ? undefined : onWord,
       onEnd: () => {

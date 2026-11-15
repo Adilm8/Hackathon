@@ -9,7 +9,8 @@ import { getWorkspace } from '../store/workspace';
 import { narrator as deviceNarrator } from './narrator';
 import type { Narrator, SpeakOptions } from './types';
 
-export type StoryVoice = { id: string; label: string };
+/** `gold`: a Gold-only voice (Moon Storyteller, SPEC 10.1). */
+export type StoryVoice = { id: string; label: string; gold?: boolean };
 let status: Promise<StoryVoice[]> | null = null;
 /** Character voices the server offers; empty = the premium voice is off. Asked once per page load. */
 export function premiumVoices(): Promise<StoryVoice[]> {
@@ -20,6 +21,14 @@ export function premiumVoices(): Promise<StoryVoice[]> {
   return status;
 }
 export const premiumVoiceEnabled = () => premiumVoices().then((v) => v.length > 0);
+
+/** The voice id to send: a Gold voice or a family voice without Gold becomes the default storyteller. */
+export function allowedVoice(id: string | null | undefined, voices: StoryVoice[], gold: { premium: boolean; clone: boolean }): string | null {
+  if (!id) return null;
+  if (id.startsWith('parent')) return gold.clone ? id : null;
+  const v = voices.find((x) => x.id === id);
+  return v?.gold && !gold.premium ? null : id;
+}
 
 /** A WAV file of 0.1 s of silence; playing it inside the tap unlocks the element on iOS. */
 export function silentWav(samples = 800): string {

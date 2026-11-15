@@ -7,8 +7,9 @@ import { Button, ButtonLink } from '@/components/ui/Button';
 import { PlanNotFound } from '@/components/ui/NotFound';
 import { Screen } from '@/components/ui/Screen';
 import type { Entitlement } from '@/lib/engine/types';
-import { setEntitlements } from '@/lib/store/entitlement';
-import { useEventCtx } from '@/lib/store/hooks';
+import { useEventCtx, useGoldExtra } from '@/lib/store/hooks';
+import { setEntitlements, useEntitlements } from '@/lib/store/entitlement';
+import { UpgradeOffer } from '@/components/paywall/UpgradeOffer';
 import { getWorkspace } from '@/lib/store/workspace';
 import { planHref } from '@/lib/home/path';
 
@@ -32,16 +33,32 @@ function PaywallScreen() {
   const ctx = useEventCtx(eventId);
   const ws = getWorkspace();
   const backHref = planHref(eventId);
+  // ?gold=1: came for a Gold extra (painted pictures, premium voice); SPEC 10.1.
+  const goldOnly = search.get('gold') === '1';
+  const gold = useGoldExtra('voice.premium');
+  const list = useEntitlements((s) => s.list);
   if (!ctx) return <PlanNotFound />;
-  if (ctx.hasAccess)
+  if ((goldOnly && gold) || (!goldOnly && ctx.hasAccess))
     return (
       <div className="mx-auto flex max-w-md flex-col items-center gap-4 py-16 text-center">
-        <h1 className="font-display text-xl font-extrabold">This big day is already unlocked</h1>
+        <h1 className="font-display text-xl font-extrabold">{goldOnly ? 'Gold is already on' : 'This big day is already unlocked'}</h1>
         <ButtonLink href={backHref}>Back to the plan</ButtonLink>
+        {!goldOnly && !gold && (
+          <ButtonLink variant="secondary" href={`/event/${encodeURIComponent(eventId)}/paywall?gold=1`}>
+            See what Gold adds
+          </ButtonLink>
+        )}
       </div>
     );
   return (
+    <>
+    {goldOnly && (
+      <div className="mx-auto mb-6 max-w-3xl">
+        <UpgradeOffer workspace={ws} eventId={eventId} entitlements={list} />
+      </div>
+    )}
     <Paywall
+      goldOnly={goldOnly}
       workspace={ws}
       eventId={eventId}
       childName={ctx.child.name}
@@ -51,6 +68,7 @@ function PaywallScreen() {
       backHref={backHref}
       demoSlot={ws === 'sample' ? <DemoSkip backHref={backHref} /> : undefined}
     />
+    </>
   );
 }
 
