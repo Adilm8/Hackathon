@@ -33,6 +33,7 @@ import { isNight } from '@/lib/theme';
 import { useImmersive } from '@/lib/reader/immersive';
 import { LEAVE_READER_EVENT } from '@/lib/reader/gate';
 import { ListenButton, type ReadPosition } from './ListenButton';
+import { ReaderKeys } from './ReaderKeys';
 import { RecordButton } from './RecordButton';
 import { VoicePicker } from './VoicePicker';
 import { PageView } from './PageView';
@@ -279,15 +280,18 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
           />
         </div>
         <div className="flex items-center gap-2">
-          <Button variant="secondary" onClick={prev} disabled={pageIdx === 0 && step === 0} aria-label="Previous sentence" className="px-4">
+          <Button variant="secondary" onClick={prev} disabled={pageIdx === 0 && step === 0} aria-label="Previous sentence" aria-keyshortcuts="ArrowLeft" className="px-4">
             <Icon name="arrow-right" size={20} className="rotate-180" />
           </Button>
+          {/* The L key presses this button (ReaderKeys). */}
+          <span data-reader-listen className="contents">
           <ListenButton key={`${page.id}:${navTick}`} from={step}
             sentences={page.sentences.map((s) => renderText(s.text, child, { speak: true, pronunciation: child.pronunciation }))}
             shown={page.sentences.map((s) => render(s.text))} onProgress={onProgress}
             recordingKey={isOn('parentVoice') ? recKey : undefined} hasRecording={recs.key === recKey && recs.has} voiceName={child.values.family[0]}
             autoStart={autoListen} onFinished={readOnNext} night={night} />
-          <Button className="flex-1" onClick={next}>
+          </span>
+          <Button className="flex-1" onClick={next} aria-keyshortcuts="ArrowRight Space">
             {lastSentence && isLast ? 'Finish' : lastSentence && page.kind === 'answer' ? 'Back to the story' : 'Next'}
           </Button>
         </div>
@@ -343,8 +347,19 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
           >
             <Icon name={night ? 'sun' : 'moon'} size={22} />
           </button>
+          <ReaderKeys
+            reading={reading}
+            onNext={next}
+            onPrev={prev}
+            onListen={() => document.querySelector<HTMLButtonElement>('[data-reader-listen] button')?.click()}
+            fullscreen={immersive.on}
+            onFullscreen={immersive.enter}
+            onExitFullscreen={immersive.exit}
+            className={iconBtn}
+          />
           <button
             type="button"
+            aria-keyshortcuts="F"
             onClick={immersive.toggle}
             aria-pressed={immersive.on}
             aria-label={immersive.on ? 'Leave full screen' : 'Full screen'}
