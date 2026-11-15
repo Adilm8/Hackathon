@@ -26,10 +26,10 @@ import { api } from '@/lib/sync/api';
 import { startSyncNow } from '@/lib/store/boot';
 import { getWorkspace } from '@/lib/store/workspace';
 import { newId } from '@/lib/store/id';
+import { childNameError } from '@/lib/childName';
 import { stashActiveFor } from '@/lib/store/children';
 import { firstNameOnly, loadProfiles, removeProfile, saveProfile, type SavedProfile } from '@/lib/store/profiles';
 
-const NAME_RE = /^[\p{L}][\p{L}'’-]{0,19}$/u;
 const EVENT_CAPTION: Record<EventType, string> = {
   dentist: 'Check-up or cleaning', school: 'Preschool, kindergarten, school', flight: 'Airport and plane',
   sibling: 'A baby is coming', haircut: 'Salon or barbershop', shot: 'Vaccine at the doctor',
@@ -101,7 +101,7 @@ export function Onboarding() {
   const [touched, setTouched] = useState(false);
   const [gateTick, setGateTick] = useState(false);
 
-  const nameErr = !d.name ? 'Please enter a first name or nickname.' : !NAME_RE.test(d.name.trim()) ? 'One word, letters only (a hyphen or apostrophe is fine).' : '';
+  const nameErr = childNameError(d.name);
   const dateCheck = d.date ? validateEventDate(d.date, today) : null;
   const dateErr = !d.date ? 'Please pick the date.' : dateCheck === 'past' ? 'This date has passed. Pick today or a later day.' : dateCheck === 'too_far' ? 'Pick a date within the next 60 days.' : '';
 
@@ -242,7 +242,7 @@ export function Onboarding() {
         {step === 'name' && (
           <>
             <Field id="name" label="First name or nickname" helper="A nickname works too. Please don't add a last name. The name stays on this device and in your family's private copy; it is never sent to an AI provider." error={touched ? nameErr : ''}>
-              <TextInput id="name" autoComplete="off" autoCapitalize="words" maxLength={20} value={d.name} onChange={(e) => set({ name: e.target.value })} aria-invalid={touched && !!nameErr} />
+              <TextInput id="name" autoComplete="off" autoCapitalize="words" maxLength={30} value={d.name} onChange={(e) => set({ name: e.target.value })} aria-invalid={touched && !!nameErr} aria-describedby={touched && nameErr ? 'name-err' : 'name-help'} />
             </Field>
             <Field id="pron" label="How is it pronounced? (optional)" helper="Write it the way it sounds, for the read-aloud voice.">
               <div className="flex gap-2">
