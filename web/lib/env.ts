@@ -77,6 +77,8 @@ function load() {
     tts: {
       model: str('TTS_MODEL'),
       voices: parseVoices(str('TTS_VOICES')),
+      /** on = only zero-data-retention providers (fewer models qualify). */
+      zdr: str('TTS_ZDR') === 'on',
       pricePerMChars: Number(str('TTS_PRICE_PER_M_CHARS') || '80'),
       cacheDir: str('TTS_CACHE_DIR'),
       enabled: !!str('OPENROUTER_API_KEY') && !!str('TTS_MODEL'),

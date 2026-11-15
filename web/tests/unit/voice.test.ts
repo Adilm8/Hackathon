@@ -73,3 +73,19 @@ describe('premium story voice formats', async () => {
     expect(wav.length).toBe(524);
   });
 });
+
+describe('character voices across models', async () => {
+  const { splitVoice, priceFor } = await import('@/lib/tts/server');
+  it('lets one character use another model', () => {
+    expect(splitVoice('af_bella', 'hexgrad/kokoro-82m')).toEqual({ model: 'hexgrad/kokoro-82m', voice: 'af_bella' });
+    expect(splitVoice('elevenlabs/eleven-v3@pFZP5JQG7iQjIQuC4Bku', 'hexgrad/kokoro-82m')).toEqual({ model: 'elevenlabs/eleven-v3', voice: 'pFZP5JQG7iQjIQuC4Bku' });
+    expect(splitVoice('fish-audio/s2.1-pro-free:free@', 'x')).toEqual({ model: 'fish-audio/s2.1-pro-free:free', voice: '' });
+  });
+  it('counts each model at its own price', () => {
+    expect(priceFor('fish-audio/s2.1-pro-free:free', 80)).toBe(0);
+    expect(priceFor('hexgrad/kokoro-82m', 80)).toBe(0.62);
+    expect(priceFor('elevenlabs/eleven-flash-v2.5', 80)).toBe(40);
+    expect(priceFor('elevenlabs/eleven-v3', 1)).toBe(80);
+    expect(priceFor('someone/new-tts', 33)).toBe(33);
+  });
+});

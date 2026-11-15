@@ -4,7 +4,7 @@
  * ElevenLabs and Microsoft models need an explicit voice: set TTS_VOICES. Audio is cached on disk by
  * a hash of model + voice + text, so a page is synthesised once for every family that reads it.
  * The text holds the child's first name (never a surname, SPEC 6.1); the request asks OpenRouter
- * for providers that keep no data (zdr, data_collection deny). Costs count against the LLM daily cap.
+ * for providers that do not train on data (data_collection deny; zero retention with TTS_ZDR=on). Costs count against the LLM daily cap.
  */
 import 'server-only';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
@@ -35,22 +35,38 @@ function dir(): string {
   return env().tts.cacheDir || path.join(process.cwd(), '.data', 'tts');
 }
 
-/** Cost of one request in USD at the configured price. */
+/** OpenRouter prices per million characters (catalog, 15 Nov 2026); unknown models use TTS_PRICE_PER_M_CHARS. */
+const PRICES: [RegExp, number][] = [
+  [/:free$/, 0], [/kokoro/, 0.62], [/gemini/, 10], [/fish-audio/, 15], [/grok-voice/, 15], [/mai-voice-2\.1-flash|mai-voice-2-flash/, 15],
+  [/mai-voice/, 22], [/eleven-(flash|turbo)|eleven-v4-turbo|eleven-v3-conversational/, 40], [/elevenlabs/, 80], [/minimax\/speech-2\.8-hd/, 100],
+];
+export function priceFor(model: string, fallback: number): number {
+  return PRICES.find(([re]) => re.test(model))?.[1] ?? fallback;
+}
+
+/** Cost of one request in USD at the given price. */
 export function ttsCost(chars: number, pricePerMChars: number): number {
   return (Math.max(0, chars) * Math.max(0, pricePerMChars)) / 1_000_000;
 }
 
 /** A voice the server offers; anything else becomes the default (first) voice. */
 export function resolveVoice(wanted: string | undefined, voices: { id: string }[]): string {
+  // An id may be "model@voice" to use another model for this character (voice test, 15 Nov).
   return voices.find((v) => v.id === wanted)?.id ?? voices[0]?.id ?? '';
+}
+
+/** "model@voice" picks another model for one character; a plain id uses the default model. */
+export function splitVoice(id: string, defaultModel: string): { model: string; voice: string } {
+  const at = id.lastIndexOf('@');
+  return at > 0 ? { model: id.slice(0, at), voice: id.slice(at + 1) } : { model: defaultModel, voice: id };
 }
 
 export async function synthesize(text: string, familyId: string | null, wantedVoice?: string): Promise<TtsResult> {
   const { tts, llm } = env();
   if (!tts.enabled) return { error: 'disabled' };
-  const voice = resolveVoice(wantedVoice, tts.voices);
-  const key = cacheKey(['tts', 1, tts.model, voice, text]);
-  const pcm = wantsPcm(tts.model);
+  const { model, voice } = splitVoice(resolveVoice(wantedVoice, tts.voices), tts.model);
+  const key = cacheKey(['tts', 1, model, voice, text]);
+  const pcm = wantsPcm(model);
   const type = pcm ? 'audio/wav' : 'audio/mpeg';
   const file = path.join(dir(), `${key}.${pcm ? 'wav' : 'mp3'}`);
   try {
@@ -66,12 +82,12 @@ export async function synthesize(text: string, familyId: string | null, wantedVo
       method: 'POST',
       headers: { Authorization: `Bearer ${llm.openrouter.apiKey}`, 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        model: tts.model,
+        model,
         input: text,
         ...(voice ? { voice } : {}),
         response_format: pcm ? 'pcm' : 'mp3',
         instructions: 'Warm, calm bedtime-story narration for a young child.',
-        provider: { zdr: true, data_collection: 'deny' },
+        provider: { data_collection: 'deny', ...(tts.zdr ? { zdr: true } : {}) },
       }),
       signal: AbortSignal.timeout(20_000),
     });
@@ -90,9 +106,9 @@ export async function synthesize(text: string, familyId: string | null, wantedVo
     return { error: 'upstream' };
   } finally {
     await recordCall({
-      familyId, route: 'tts', provider: 'openrouter', model: tts.model,
+      familyId, route: 'tts', provider: 'openrouter', model,
       inputTokens: text.length, outputTokens: 0,
-      costUsd: outcome === 'ok' ? ttsCost(text.length, tts.pricePerMChars) : 0,
+      costUsd: outcome === 'ok' ? ttsCost(text.length, priceFor(model, tts.pricePerMChars)) : 0,
       latencyMs: Date.now() - t0, outcome,
     });
   }

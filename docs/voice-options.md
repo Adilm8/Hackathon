@@ -43,3 +43,20 @@ Decide by a blind test: the same chapter from three or four OpenRouter models pl
 7. For the parent's own voice: a consent screen, one-tap deletion of the voice, legal review (a voice is biometric data under several US state laws and COPPA).
 
 Sources: invideo.io/blog/ai-voice-model-pricing, docs.fish.audio pricing, texttolab.com/pricing, inworld.ai TTS benchmarks (vendor).
+
+## Voice test result (15 Nov 2026, about $0.28 of the approved $0.50)
+
+Blind test of 20 voices on one passage (`npm run voice:test`). Lida's favourites: Kokoro 82M Bella, Fish Audio S2.1 Pro Free, ElevenLabs v3 Lily; she found the others decent too.
+
+| Model | Voice | Time for ~330 chars | Price / 1M chars | Note |
+|---|---|---|---|---|
+| hexgrad/kokoro-82m | af_bella (also af_heart, bf_emma, am_michael) | ~1 s | $0.62 | chosen default |
+| fish-audio/s2.1-pro-free:free | default | ~1.4 s | $0 | free alternative |
+| elevenlabs/eleven-v3 | Lily `pFZP5JQG7iQjIQuC4Bku` | ~7.5 s | $80 | premium storyteller, needs prefetch |
+| elevenlabs/eleven-flash-v2.5 | Rachel, Charlotte, Lily, Brian | ~1.1 s | $40 | needs an explicit voice id |
+| google/gemini-3.8-flash-tts | Kore, Aoede, Puck, Sulafat | 7 to 11 s | token-billed, near free | PCM only (wrapped into WAV) |
+| x-ai/grok-voice-tts-1.0 | Ara, Eve | ~0.7 s | $15 | |
+| microsoft/mai-voice-2.1 | en-US-AvaMultilingualNeural | ~0.6 s | $22 | other voice names rejected |
+
+Recommended setup (in `.env.example`): `TTS_MODEL=hexgrad/kokoro-82m`, and `TTS_VOICES` with our own characters, mixing models with `model@voice`:
+Owl the Storyteller (Kokoro Bella, default), Kind Friend (Fish Free), Grandma Bear (Kokoro Emma), Night Whale (Kokoro Michael), Moon Storyteller (ElevenLabs v3 Lily, premium).
