@@ -345,6 +345,7 @@ export const EventTemplateSchema = z.strictObject({
         text: z.string().min(1),
         topic: TopicEnum,
         fallbackAnswer: z.array(z.string()).min(2).max(3),
+        ages: z.tuple([z.number().int().min(2).max(12), z.number().int().min(2).max(12)]).optional(),
       }),
     )
     .min(3),

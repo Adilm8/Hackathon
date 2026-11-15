@@ -104,6 +104,10 @@
       "fallbackAnswer": [
         "Yes. [[GROWNUP]] stays in the room the whole time.",
         "You can hold a hand or sit on a lap for some parts."
+      ],
+      "ages": [
+        2,
+        9
       ]
     },
     {
@@ -140,6 +144,37 @@
       "fallbackAnswer": [
         "After the check-up we say goodbye and go home.",
         "Maybe we can read a book or play together."
+      ]
+    },
+    {
+      "id": "cold",
+      "text": "Why are the doctor's hands and tools cold?",
+      "topic": "sensory",
+      "fallbackAnswer": [
+        "Hands and the metal part of the stethoscope can feel cold for a second. You can ask the doctor to warm it in their hand first.",
+        "The cold feeling goes away fast."
+      ]
+    },
+    {
+      "id": "tongue",
+      "text": "What is the stick for my tongue?",
+      "topic": "sensory",
+      "fallbackAnswer": [
+        "It is a flat wooden stick that gently holds your tongue down so the doctor can see your throat. Saying a big aah helps.",
+        "It can feel funny for a moment, and then it is done."
+      ]
+    },
+    {
+      "id": "alone_talk",
+      "text": "Will the doctor talk to me alone?",
+      "topic": "strangers",
+      "fallbackAnswer": [
+        "Some doctors ask older kids a few questions on their own, and that is normal. You can say anything, and [[GROWNUP]] will be right outside or in the room.",
+        "You can always ask for [[GROWNUP]] to stay."
+      ],
+      "ages": [
+        9,
+        12
       ]
     }
   ],

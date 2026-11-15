@@ -112,6 +112,10 @@
       "fallbackAnswer": [
         "Yes, when you sit down and a grown-up helps you.",
         "Babies need gentle hands, and you can practise with a doll."
+      ],
+      "ages": [
+        3,
+        12
       ]
     },
     {
@@ -148,6 +152,33 @@
       "fallbackAnswer": [
         "Babies cannot walk, talk or eat by themselves yet.",
         "Grown-ups help them, just like they helped you when you were tiny."
+      ]
+    },
+    {
+      "id": "jealous",
+      "text": "Why do I feel cross with the baby?",
+      "topic": "love",
+      "fallbackAnswer": [
+        "It is normal to feel cross or jealous sometimes. Big feelings don't make you a bad big sibling.",
+        "You can tell [[GROWNUP]], and you can have special time just for the two of you."
+      ]
+    },
+    {
+      "id": "name",
+      "text": "Can I help choose the baby's name?",
+      "topic": "social",
+      "fallbackAnswer": [
+        "You can ask [[GROWNUP]]. Some families let the big sibling help choose, or pick a cute nickname.",
+        "Either way, you can be the first to say the baby's name to the baby."
+      ]
+    },
+    {
+      "id": "still_mine",
+      "text": "Is my room still mine?",
+      "topic": "safety",
+      "fallbackAnswer": [
+        "[[GROWNUP]] will tell you where the baby sleeps. Your bed and your special things stay yours.",
+        "You can help make a cosy spot for the baby too, if you want."
       ]
     }
   ],

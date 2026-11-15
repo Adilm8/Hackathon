@@ -81,7 +81,7 @@
     {
       "id": "why",
       "text": "Why do I need it?",
-      "topic": "unknown",
+      "topic": "body",
       "fallbackAnswer": [
         "The medicine helps your body stay strong against germs.",
         "Doctors check what each body needs, and this keeps you healthy."
@@ -103,6 +103,10 @@
       "fallbackAnswer": [
         "Yes. You can sit on [[GROWNUP]]'s lap in a big hug.",
         "[[GROWNUP]] stays with you the whole time."
+      ],
+      "ages": [
+        2,
+        9
       ]
     },
     {
@@ -148,6 +152,41 @@
       "fallbackAnswer": [
         "No. You can look away at a book or at [[GROWNUP]], or you can watch.",
         "You choose."
+      ]
+    },
+    {
+      "id": "toy",
+      "text": "Can I bring my toy?",
+      "topic": "separation",
+      "fallbackAnswer": [
+        "Yes. Your toy can sit on your lap and even get a pretend shot first.",
+        "Squeezing the toy during the poke can help."
+      ],
+      "ages": [
+        2,
+        8
+      ]
+    },
+    {
+      "id": "sit_lie",
+      "text": "Can I sit up or lie down?",
+      "topic": "safety",
+      "fallbackAnswer": [
+        "You can ask the nurse. Many kids sit on [[GROWNUP]]'s lap, and some like to lie down.",
+        "You choose the comfiest way, and you can keep your arm floppy."
+      ]
+    },
+    {
+      "id": "friends_see",
+      "text": "What if other people see me cry?",
+      "topic": "love",
+      "fallbackAnswer": [
+        "Lots of people cry or flinch at a shot, even grown-ups. Nurses see it every day, and it is okay.",
+        "You can look away, breathe out slowly, and it is over fast."
+      ],
+      "ages": [
+        8,
+        12
       ]
     }
   ],

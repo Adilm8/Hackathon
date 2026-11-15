@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { ALL_BACKGROUND_IDS, EVENT_TYPES, getTemplate } from '@/lib/engine/templates';
 import { EventTemplateSchema } from '@/lib/engine/schemas';
+import { questionButtonsForAge } from '@/lib/engine/fallback';
 import { containsAnyWord, countWords, sentencesToText } from '@/lib/engine/text';
 import { BACKGROUND_IDS, backgroundForEvent } from '@/components/character/backgrounds';
 import { EVENT_ICON, EVENT_LABEL } from '@/components/icons/Icon';
@@ -73,6 +74,11 @@ describe.each(EVENT_TYPES)('template %s', (type) => {
     const tech = t.techniques.map((x) => x.id);
     expect(new Set(tech).size).toBe(tech.length);
     expect(tech.length).toBeGreaterThanOrEqual(3);
+  });
+
+  it('every age 2-12 gets at least three question buttons, and age ranges are valid', () => {
+    for (const q of t.questionButtons) if (q.ages) expect(q.ages[0], q.id).toBeLessThanOrEqual(q.ages[1]);
+    for (let age = 2; age <= 12; age++) expect(questionButtonsForAge(t, age).length, `age ${age}`).toBeGreaterThanOrEqual(3);
   });
 
   it('uses only known scenes', () => {

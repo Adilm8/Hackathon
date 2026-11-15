@@ -277,6 +277,7 @@ export interface EventTemplate {
   questionButtons: {                  // exactly 3 are shown per page
     id: string; text: string; topic: Topic;
     fallbackAnswer: string[];         // 2–3 sentences written by the team
+    ages?: [number, number];          // shown only to children of these ages (inclusive); all ages when absent
   }[];
   techniques: { id: string; label: string; how: string; topics: Topic[] }[];
   ritual: [string, string, string];   // "first → then" steps for the day card

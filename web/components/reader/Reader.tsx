@@ -288,7 +288,7 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
         {busy ? (
           <p role="status" className="flex min-h-tap items-center text-sm font-bold text-ink-soft">Thinking about {child.name}&apos;s question…</p>
         ) : page.kind === 'story' ? (
-          <QuestionBar buttons={questionButtonsForPage(template, storyPages.indexOf(page) + 1).map((b) => ({ id: b.id, text: render(b.text) }))} asked={asked} busy={busy} childName={child.name} onAsk={ask} voice={isOn('voiceQuestion') && !!voiceConsent} voiceMode={voiceMode} />
+          <QuestionBar buttons={questionButtonsForPage(template, storyPages.indexOf(page) + 1, child.age).map((b) => ({ id: b.id, text: render(b.text) }))} asked={asked} busy={busy} childName={child.name} onAsk={ask} voice={isOn('voiceQuestion') && !!voiceConsent} voiceMode={voiceMode} />
         ) : null}
       </div>
     );

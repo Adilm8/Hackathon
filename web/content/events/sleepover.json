@@ -126,7 +126,7 @@
     {
       "id": "food",
       "text": "What if I don't like the food?",
-      "topic": "other",
+      "topic": "body",
       "fallbackAnswer": [
         "You can say, no thank you, politely.",
         "There will be other things to eat, and breakfast is coming too."
@@ -139,6 +139,33 @@
       "fallbackAnswer": [
         "You might play games, watch a film, or build a blanket fort.",
         "Then pyjamas, teeth and bed."
+      ]
+    },
+    {
+      "id": "wet_bed",
+      "text": "What if I wet the bed?",
+      "topic": "body",
+      "fallbackAnswer": [
+        "Accidents happen to lots of kids, even big kids, and it is nobody's fault. You can pack a spare pair of pyjamas in your bag.",
+        "You can quietly tell the grown-up there, and they will help without making a fuss."
+      ]
+    },
+    {
+      "id": "cant_sleep",
+      "text": "What if I can't fall asleep?",
+      "topic": "sensory",
+      "fallbackAnswer": [
+        "New places can feel strange at first. You can hug your toy, take slow breaths, and think about your favourite place.",
+        "Lying still and resting is okay, even if sleep takes a while."
+      ]
+    },
+    {
+      "id": "go_home",
+      "text": "Can I come home if I want?",
+      "topic": "safety",
+      "fallbackAnswer": [
+        "Yes. We agree a plan before you go, and if you really want to come home, [[GROWNUP]] will come and get you.",
+        "Trying is brave, and coming home early is okay too."
       ]
     }
   ],

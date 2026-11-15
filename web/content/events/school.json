@@ -148,6 +148,41 @@
       "fallbackAnswer": [
         "Many classes have a quiet time to rest or look at books.",
         "You can ask the teacher about it on the first day."
+      ],
+      "ages": [
+        2,
+        7
+      ]
+    },
+    {
+      "id": "miss",
+      "text": "What if I miss [[GROWNUP]]?",
+      "topic": "separation",
+      "fallbackAnswer": [
+        "Missing [[GROWNUP]] is normal on the first days. You can look at the heart on your hand or the photo in your bag.",
+        "Then pick-up time comes, and you can tell [[GROWNUP]] everything."
+      ]
+    },
+    {
+      "id": "cant_do",
+      "text": "What if I can't do the work?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "School is where you learn things you don't know yet, so it is fine to get things wrong.",
+        "You can say, can you help me, please? Teachers love that question."
+      ],
+      "ages": [
+        5,
+        12
+      ]
+    },
+    {
+      "id": "bus",
+      "text": "How do I get home?",
+      "topic": "safety",
+      "fallbackAnswer": [
+        "[[GROWNUP]] will tell you exactly how you get home, by car, bus or walking. A grown-up always checks that every child gets home safely.",
+        "We can practise the way home together before the first day."
       ]
     }
   ],

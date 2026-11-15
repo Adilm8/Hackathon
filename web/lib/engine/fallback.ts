@@ -88,9 +88,15 @@ export function fallbackParentPhrase(template: EventTemplate, topic: Topic): str
   return template.phrases[topic]?.[0];
 }
 
-/** Three question buttons for a page: rotate through the template list by page number. */
-export function questionButtonsForPage(template: EventTemplate, pageNumber: number) {
-  const list = template.questionButtons;
+/** Buttons that fit the child's age (all of them when the age is unknown). */
+export function questionButtonsForAge(template: EventTemplate, age?: number) {
+  if (age === undefined) return template.questionButtons.slice();
+  return template.questionButtons.filter((q) => !q.ages || (age >= q.ages[0] && age <= q.ages[1]));
+}
+
+/** Three question buttons for a page: rotate through the age-matched list by page number. */
+export function questionButtonsForPage(template: EventTemplate, pageNumber: number, age?: number) {
+  const list = questionButtonsForAge(template, age);
   if (list.length <= 3) return list.slice();
   const start = (Math.max(1, pageNumber) - 1) % list.length;
   return [0, 1, 2].map((k) => list[(start + k) % list.length]);

@@ -141,6 +141,37 @@
         "Yes. Many hospitals have toys, books and a playroom.",
         "You can bring your favourite things from home too."
       ]
+    },
+    {
+      "id": "operation",
+      "text": "Will I have an operation?",
+      "topic": "body",
+      "fallbackAnswer": [
+        "[[GROWNUP]] and the doctors will tell you if you need an operation. If you do, you will know what happens before it starts.",
+        "You can ask the doctor any question, and they will answer it."
+      ]
+    },
+    {
+      "id": "needle",
+      "text": "Will I get needles?",
+      "topic": "pain",
+      "fallbackAnswer": [
+        "Sometimes nurses put in a tiny soft tube called a drip to give medicine or water. Putting it in can pinch, and then it mostly feels like nothing.",
+        "You can ask for numbing cream and hold [[GROWNUP]]'s hand."
+      ]
+    },
+    {
+      "id": "school_miss",
+      "text": "What about school?",
+      "topic": "social",
+      "fallbackAnswer": [
+        "Your teacher and friends will know you are getting better. Some hospitals even have a teacher who visits.",
+        "You can send a picture or a video to your class."
+      ],
+      "ages": [
+        5,
+        12
+      ]
     }
   ],
   "techniques": [
