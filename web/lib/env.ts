@@ -22,6 +22,18 @@ function resolveProvider(): LlmProvider {
   return 'mock';
 }
 
+/**
+ * Character voices of the premium story voice: "voiceId=Label,voiceId=Label". The first is the default.
+ * Empty = the model's own default voice, shown as "Storyteller".
+ */
+export function parseVoices(raw: string): { id: string; label: string }[] {
+  const list = raw.split(',').map((x) => x.trim()).filter(Boolean).map((x) => {
+    const [id, ...rest] = x.split('=');
+    return { id: id.trim(), label: rest.join('=').trim() || id.trim() };
+  }).filter((v) => v.id);
+  return list.length ? list.slice(0, 8) : [{ id: '', label: 'Storyteller' }];
+}
+
 let cached: ReturnType<typeof load> | null = null;
 
 function load() {
@@ -58,6 +70,17 @@ function load() {
     /** Empty = taken from the request. */
     baseUrl: str('NEXT_PUBLIC_BASE_URL'),
     elevenLabsKey: str('ELEVENLABS_API_KEY'),
+    /**
+     * Premium story voice through OpenRouter's /audio/speech (docs/voice-options.md). Off until both
+     * OPENROUTER_API_KEY and TTS_MODEL are set. The price is per million characters, for the daily cap.
+     */
+    tts: {
+      model: str('TTS_MODEL'),
+      voices: parseVoices(str('TTS_VOICES')),
+      pricePerMChars: Number(str('TTS_PRICE_PER_M_CHARS') || '80'),
+      cacheDir: str('TTS_CACHE_DIR'),
+      enabled: !!str('OPENROUTER_API_KEY') && !!str('TTS_MODEL'),
+    },
     /** Web push reminders; empty keys = push is off and the app shows in-app reminders only. */
     vapid: {
       publicKey: str('VAPID_PUBLIC_KEY'),

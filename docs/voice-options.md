@@ -16,9 +16,21 @@ A chapter is about 1.5 to 3 thousand characters.
 | MiniMax Speech HD / turbo | $100 / $60 | ~$0.30 | $1.50 per voice, no documented consent check |
 | OpenAI TTS, Gemini TTS | $12 to $15 | ~$0.03 | No |
 
-Recommendation: ElevenLabs as the default premium voice (already in SPEC 17.1, the most expressive story reading,
+## Through OpenRouter (chosen for the MVP, 15 Nov)
+
+OpenRouter has had `/api/v1/audio/speech` and `/api/v1/audio/transcriptions` since May 2026, so one key, one bill and the existing daily cap cover voice too. Prices from its TTS collection page (15 Nov): Fish Audio S2.1 Pro Free $0, Kokoro 82M $0.62/M, Fish S2.1 Pro $15/M, Voxtral TTS 3 $13/M (zero-shot cloning), MAI-Voice-2 $22/M (cloning from short clips), Eleven Flash v2.5 $40/M, Eleven v3 $80/M, Gemini 3.8 Flash TTS (token-billed, Voice Replication). ElevenLabs cloning through OpenRouter is not mentioned; it would need a direct ElevenLabs account.
+
+Built (off until `TTS_MODEL` is set): `POST /api/tts` (one sentence, mp3, disk cache per model + voice + text, cost counted in `llm_calls` with route `tts`, zdr and data_collection deny), `lib/speech/cloud.ts` (plays sentence by sentence, prefetches the next, unlocks audio on iPhone inside the tap, falls back to the device voice), Settings > Story voice and Character voice from `TTS_VOICES`.
+
+Character voices: our own invented storytellers (for example Owl the Storyteller, Grandma Bear, Fox Cub, Night Whale), never an imitation of a real actor or a studio character. Public-domain characters only in their original book form. Each provider voice's commercial-use terms are checked in the test.
+
+The page text sent to the voice service holds the child's first name (SPEC 6.1); this is the open question K8 for Lida.
+
+## Direct providers (reference)
+
+Recommendation before OpenRouter was found: ElevenLabs as the default premium voice (already in SPEC 17.1, the most expressive story reading,
 consent tooling for cloning). Fish Audio or Inworld as the cheaper alternative with cloning.
-Decide by a blind test: the same chapter from three providers plus one cloned adult voice, budget up to $6.
+Decide by a blind test: the same chapter from three or four OpenRouter models plus one cloned adult voice, budget up to $0.50 (pending Lida's approval).
 
 ## What it needs
 

@@ -3,6 +3,7 @@ import { useEffect, useRef, useState, useSyncExternalStore } from 'react';
 import { Icon } from '@/components/icons';
 import { narrator } from '@/lib/speech/narrator';
 import { RecordedNarrator } from '@/lib/speech/recorder';
+import { cloudNarrator, premiumVoiceEnabled } from '@/lib/speech/cloud';
 import type { Narrator } from '@/lib/speech/types';
 import { estimateWordStarts, mapWordIndex, splitWords, wordAtChar, wordAtTime } from '@/lib/speech/words';
 import { Button } from '@/components/ui/Button';
@@ -60,9 +61,18 @@ export function ListenButton({
     timer.current = null;
   };
 
+  const wantPremium = usePrefs((p) => p.storyVoice) === 'premium';
+  const characterVoice = usePrefs((p) => p.characterVoice);
+  const [premium, setPremium] = useState(false);
   useEffect(() => {
-    player.current = useRecording ? new RecordedNarrator(recordingKey!) : narrator;
-  }, [useRecording, recordingKey]);
+    let live = true;
+    if (wantPremium) void premiumVoiceEnabled().then((on) => live && setPremium(on));
+    return () => { live = false; };
+  }, [wantPremium]);
+  const usePremium = wantPremium && premium && !useRecording;
+  useEffect(() => {
+    player.current = useRecording ? new RecordedNarrator(recordingKey!) : usePremium ? cloudNarrator : narrator;
+  }, [useRecording, recordingKey, usePremium]);
   useEffect(() => {
     if (!autoStart) return;
     const t = window.setTimeout(() => play.current(), 350); // a short breath between pages
@@ -73,6 +83,7 @@ export function ListenButton({
       stopTimer();
       player.current.stop();
       narrator.stop();
+      cloudNarrator.stop();
       report.current(null);
     },
     [],
@@ -125,7 +136,8 @@ export function ListenButton({
     const t0 = performance.now();
     player.current.speak(sentences.slice(start.current), {
       rate: useRecording ? undefined : RATE,
-      voiceURI: useRecording ? undefined : voiceURI,
+      // For the premium voice this carries the character voice id.
+      voiceURI: useRecording ? undefined : usePremium ? characterVoice : voiceURI,
       onSentence,
       onWord: useRecording ? undefined : onWord,
       onEnd: () => {

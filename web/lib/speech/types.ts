@@ -5,7 +5,7 @@ export type SpeakOptions = {
   /** Word boundary inside sentence `i`, as a char offset of the spoken text. Not every voice reports it. */
   onWord?(i: number, charIndex: number): void;
   rate?: number;
-  /** The parent's chosen device voice (Settings > Reading voice); missing or gone = the best English voice. */
+  /** Device voice: the parent's chosen voiceURI (missing or gone = the best English voice). Premium voice: the character voice id. */
   voiceURI?: string | null;
 };
 

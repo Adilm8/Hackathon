@@ -40,3 +40,24 @@ describe('voice questions', () => {
     expect(joinResults([[{ transcript: 'will the ' }], [{ transcript: ' dentist  be nice' }]])).toBe('will the dentist be nice');
   });
 });
+
+describe('premium story voice (server)', async () => {
+  const { parseVoices } = await import('@/lib/env');
+  const { resolveVoice, ttsCost } = await import('@/lib/tts/server');
+  it('reads the character voices from the env', () => {
+    expect(parseVoices('')).toEqual([{ id: '', label: 'Storyteller' }]);
+    expect(parseVoices('a=Warm storyteller, b=Grandma ,c')).toEqual([
+      { id: 'a', label: 'Warm storyteller' }, { id: 'b', label: 'Grandma' }, { id: 'c', label: 'c' },
+    ]);
+  });
+  it('only uses voices the server offers', () => {
+    const voices = [{ id: 'a' }, { id: 'b' }];
+    expect(resolveVoice('b', voices)).toBe('b');
+    expect(resolveVoice('evil', voices)).toBe('a');
+    expect(resolveVoice(undefined, [])).toBe('');
+  });
+  it('counts the cost per character', () => {
+    expect(ttsCost(3000, 40)).toBeCloseTo(0.12);
+    expect(ttsCost(-1, 40)).toBe(0);
+  });
+});

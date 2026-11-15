@@ -30,6 +30,10 @@ export interface Prefs {
   speechRate: RateName;
   /** Read on: when the voice finishes a page it turns the page and keeps reading. */
   readOn: boolean;
+  /** Story voice when the server offers the premium one (/api/tts): 'premium' or the device voice. */
+  storyVoice: 'premium' | 'device';
+  /** Character voice of the premium story voice (an id from /api/tts); null = the first one. */
+  characterVoice: string | null;
 }
 
 interface PrefsState extends Prefs {
@@ -39,7 +43,7 @@ interface PrefsState extends Prefs {
   toggleRoutineStep(id: string): void;
   setPush(v: boolean): void;
   setReminderTimes(t: Partial<Pick<Prefs, 'reminderEvening' | 'quietStart' | 'quietEnd'>>): void;
-  setVoice(t: Partial<Pick<Prefs, 'voiceURI' | 'speechRate' | 'readOn'>>): void;
+  setVoice(t: Partial<Pick<Prefs, 'voiceURI' | 'speechRate' | 'readOn' | 'storyVoice' | 'characterVoice'>>): void;
 }
 
 export const favKey = (eventId: string, chapter: number) => `${eventId}#${chapter}`;
@@ -58,6 +62,8 @@ export const usePrefs = create<PrefsState>()(
       voiceURI: null,
       speechRate: 'normal',
       readOn: false,
+      storyVoice: 'premium',
+      characterVoice: null,
       setVoice: (t) => set(t),
       setPush: (push) => set({ push }),
       setReminderTimes: (t) => set(t),
@@ -77,7 +83,7 @@ export const usePrefs = create<PrefsState>()(
       skipHydration: true,
       partialize: (s) => ({ sound: s.sound, easyRead: s.easyRead, favorites: s.favorites, routineOff: s.routineOff,
         push: s.push, reminderEvening: s.reminderEvening, quietStart: s.quietStart, quietEnd: s.quietEnd,
-        voiceURI: s.voiceURI, speechRate: s.speechRate, readOn: s.readOn,
+        voiceURI: s.voiceURI, speechRate: s.speechRate, readOn: s.readOn, storyVoice: s.storyVoice, characterVoice: s.characterVoice,
       }),
     },
   ),

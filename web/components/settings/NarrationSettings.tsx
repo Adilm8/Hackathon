@@ -1,5 +1,6 @@
 'use client';
-import { useSyncExternalStore } from 'react';
+import { useEffect, useState, useSyncExternalStore } from 'react';
+import { cloudNarrator, premiumVoices, type StoryVoice } from '@/lib/speech/cloud';
 import { Icon } from '@/components/icons';
 import { Button } from '@/components/ui/Button';
 import { Toggle } from '@/components/ui/Toggle';
@@ -25,12 +26,45 @@ const SAMPLE = 'Once upon a time, a brave little friend got ready for a big day.
 export function NarrationSettings() {
   const has = useSyncExternalStore(noop, () => narrator.available(), () => false);
   const voices = useSyncExternalStore(subscribeVoices, snapshot, () => none);
-  const { voiceURI, speechRate, readOn, setVoice } = usePrefs();
+  const { voiceURI, speechRate, readOn, storyVoice, characterVoice, setVoice } = usePrefs();
+  const [characters, setCharacters] = useState<StoryVoice[]>([]);
+  useEffect(() => {
+    let live = true;
+    void premiumVoices().then((v) => live && setCharacters(v));
+    return () => { live = false; };
+  }, []);
+  const premium = characters.length > 0;
+  const character = characters.find((c) => c.id === characterVoice)?.id ?? characters[0]?.id ?? '';
+  const hearCharacter = (id: string) =>
+    cloudNarrator.speak([SAMPLE], { voiceURI: id, rate: RATES[speechRate], onSentence: () => {}, onEnd: () => {} });
+  const device = !premium || storyVoice === 'device';
   if (!has) return <p className="text-sm text-ink-soft">This browser cannot read aloud. You can still read the story yourself or record your voice.</p>;
   const current = voices.find((v) => v.voiceURI === voiceURI)?.voiceURI ?? '';
   return (
     <div className="grid gap-4">
-      {voices.length > 0 && (
+      {premium && (
+        <Segmented<'premium' | 'device'>
+          label="Story voice" value={storyVoice}
+          options={[
+            { value: 'premium', label: 'Storyteller', hint: 'A warm storyteller voice. The page text goes to our voice service; the audio is kept so each page is made once.' },
+            { value: 'device', label: 'This device', hint: 'The voice built into this device. Works offline.' },
+          ]}
+          onChange={(v) => setVoice({ storyVoice: v })}
+        />
+      )}
+      {premium && storyVoice === 'premium' && characters.length > 1 && (
+        <div className="grid gap-2">
+          <Segmented<string>
+            label="Character voice" value={character}
+            options={characters.map((c) => ({ value: c.id, label: c.label }))}
+            onChange={(id) => { setVoice({ characterVoice: id }); hearCharacter(id); }}
+          />
+          <Button variant="secondary" className="justify-self-start" onClick={() => hearCharacter(character)}>
+            <Icon name="volume-2" size={18} /> Hear it
+          </Button>
+        </div>
+      )}
+      {device && voices.length > 0 && (
         <div className="grid gap-2">
           <label htmlFor="reading-voice" className="text-sm font-bold">Reading voice</label>
           <div className="flex flex-wrap items-center gap-2">
