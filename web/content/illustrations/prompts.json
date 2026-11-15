@@ -4,7 +4,7 @@
   "format": "Wide 16:9 view at a child's eye level. The floor in the lower middle is open and free of furniture, but still drawn as floor (rug, tiles or grass), never blank. No white or empty background anywhere.",
   "avoid": "Avoid: people, faces, hands, animals, characters, text, letters, numbers, logos, needles, blood, sharp tools, germs or virus shapes, scary or dark mood, isolated icons on a blank background, photorealism, 3D render.",
   "neutral": {
-    "home-evening": "A family living room in the evening: a soft sofa with cushions, a warm floor lamp, a rug, a low table with a cup of cocoa, a window with a deep blue sky and a few stars.",
+    "home-evening": "A cosy family living room in the evening, full of warm detail: a soft sofa with cushions and a blanket, a warm floor lamp, a patterned rug, a low table with a cup of cocoa, a bookshelf, plants, framed drawings without faces, and a window with a deep blue sky and stars.",
     "outside": "A friendly street in daytime: a low building with a big blue door, a tree with round leaves, a path, a bench, a few flowers and fluffy clouds.",
     "cosy-room": "A cosy child's bedroom: a small bed with a quilt, a night lamp, a shelf of picture books, a rug and a window with curtains."
   },
@@ -23,7 +23,7 @@
       "place": "a cheerful first-grade classroom",
       "beats": {
         "what_happens": "The classroom: little round tables with chairs, a chalkboard with drawn shapes, a calendar wall without words and sunny windows.",
-        "who_is_there": "The teacher's desk with an apple and a pot of pencils, a reading rug with cushions in a circle and a shelf of picture books.",
+        "who_is_there": "The empty classroom after everyone went out to play: the teacher's desk with an apple and a pot of pencils, a reading rug with cushions in a circle and a shelf of picture books. Nobody is in the room.",
         "what_i_do": "The cubbies with hooks for backpacks and coats, a lunch box on a shelf and a row of coloured cups.",
         "if_scared": "A quiet calm corner: a small tent of fabric, a soft cushion, a basket of books and a window with a tree outside.",
         "rehearsal": "A bedroom set up for a pretend school day: a small backpack, a lunch box, crayons and a drawing board on the rug."
@@ -63,7 +63,7 @@
       "place": "a calm, friendly children's clinic room",
       "beats": {
         "what_happens": "A clinic room with a soft exam table covered with paper, a rainbow poster, a small sink and a jar of bandages.",
-        "who_is_there": "A nurse's station with a tidy desk, a stethoscope on a hook, a box of gloves and a jar of stickers.",
+        "who_is_there": "A nurse's station with a tidy desk, a stethoscope on a hook, a plain unlabeled box and a jar of stickers.",
         "what_i_do": "A chair next to the exam table with a small cushion, a box of colourful bandages and a soft ball to squeeze.",
         "if_scared": "A calm corner of the clinic: a beanbag, a bubble tube lamp, a basket of picture books and a window with the sky.",
         "rehearsal": "A living room set up for a pretend doctor game: a toy doctor's bag, colourful bandages, a toy stethoscope and a cushion bed."
@@ -96,7 +96,7 @@
         "who_is_there": "A nurse's station with tidy shelves, a cart with folded blankets and a board with drawn stars without words.",
         "what_i_do": "The hospital bed with a button remote, a tray table with juice and a stack of picture books.",
         "if_scared": "A cosy corner of the room: a reading lamp, a soft blanket on the armchair, a plant and a starry night window.",
-        "rehearsal": "A bedroom set up for a pretend hospital stay: a small bag packed with pyjamas, a soft blanket and a toy doctor's kit."
+        "rehearsal": "A child's bedroom set up for a pretend hospital stay: a small packed bag with pyjamas, a soft blanket on the bed and a closed toy doctor's bag on the rug."
       }
     },
     "moving": {
@@ -142,7 +142,7 @@
     "party": {
       "place": "a cheerful birthday party at a friend's home",
       "beats": {
-        "what_happens": "A party room with balloons, paper garlands, a table with a cake and cups, and wrapped presents.",
+        "what_happens": "A cosy living room decorated for a birthday party: balloons, paper garlands across the walls, a table with a cake and cups, wrapped presents, a sofa and a window.",
         "who_is_there": "A door with a balloon tied to the handle, a coat rack with small jackets and a basket for presents.",
         "what_i_do": "A play corner with party games: a ring toss, a stack of cushions and a basket of party hats.",
         "if_scared": "A quiet room next to the party with a sofa, a picture book, a cup of juice and the door open.",
