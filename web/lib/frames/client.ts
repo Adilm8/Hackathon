@@ -18,7 +18,9 @@ export function framesEnabled(): Promise<boolean> {
 const urls = new Map<string, Promise<string | null>>();
 
 /** A drawn picture for these page words, or null (off, budget reached, error). */
-export function frameFor(sentences: string[], eventType: EventType): Promise<string | null> {
+export function frameFor(all: string[], eventType: EventType): Promise<string | null> {
+  // The first few sentences set the scene; the prompt is capped at about 420 characters anyway.
+  const sentences = all.slice(0, 4);
   const key = `${eventType}\u0000${sentences.join('\u0001')}`;
   let p = urls.get(key);
   if (!p) {
