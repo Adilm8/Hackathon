@@ -8,6 +8,8 @@ Short personalised stories for children aged 2 to 12 (core age 3 to 8) before a 
 
 Built for Business Cup 2.0 (Nazarbayev University, November 14-15, 2026). Track: **Skills**. Audience: US parents aged 25-45.
 
+**Team Chunky:** Adil Tatiyev, Amir Shamelov.
+
 <p align="center">
   <img src="docs/media/gifs/tour-fast.gif" width="720" alt="The jury tour: sample family, reader, a question changes the next page, parent panel, paywall, event-day card, check-in and badge">
 </p>
