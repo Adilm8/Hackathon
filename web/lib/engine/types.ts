@@ -36,6 +36,8 @@ export type Headwear =
 export type Companion =
   | 'none' | 'firefly' | 'cloud-puff' | 'star-sprite' | 'crystal-snail' | 'ladybug' | 'tiny-turtle' | 'mushroom-sprout' | 'pebble-chick';
 export type FurVariant = 'classic' | 'dusk' | 'dawn';
+/** How big the Story friend stands over the reader's scene. */
+export type CharacterSize = 's' | 'm' | 'l';
 export type Pronoun = 'he' | 'she' | 'they';
 export type QuestionCategory = 'on_topic' | 'off_topic' | 'sensitive' | 'unsafe';
 export type QuestionSource = 'button' | 'custom' | 'voice';
@@ -67,6 +69,8 @@ export interface Character {
   headwear?: Headwear;
   companion?: Companion;
   fur?: FurVariant;
+  /** Size over the reader's scene, default 'm'. */
+  size?: CharacterSize;
 }
 
 export interface ValuesProfile {
