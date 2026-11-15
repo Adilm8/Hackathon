@@ -24,9 +24,32 @@ export const THEME_COLOR: Record<PaletteId, Record<Mode, string>> = {
   lavender: { light: '#f8f5fd', night: '#191427' },
 };
 
-/** Bedtime hours for "After 7 pm": 19:00 to 06:00. */
-export function isNight(mode: Settings['nightMode'], hour: number): boolean {
-  return mode === 'on' || (mode === 'auto' && (hour >= 19 || hour < 6));
+/**
+ * Night colours. 'auto' (the default) follows the device's dark mode, and also turns on at
+ * bedtime, 19:00 to 06:00; 'on' and 'off' are the parent's own choice (header sun/moon button).
+ */
+export function isNight(mode: Settings['nightMode'], hour: number, systemDark = false): boolean {
+  return mode === 'on' || (mode === 'auto' && (systemDark || hour >= 19 || hour < 6));
+}
+
+export const DARK_QUERY = '(prefers-color-scheme: dark)';
+
+/** Whether the device asks for dark mode. False on the server and in old browsers. */
+export function systemPrefersDark(): boolean {
+  try {
+    return typeof window !== 'undefined' && !!window.matchMedia?.(DARK_QUERY).matches;
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * The header toggle: flip what is on screen now. When the flipped mode is what 'auto' would show
+ * anyway, go back to 'auto', so the app keeps following the device and bedtime from then on.
+ */
+export function toggledNightMode(mode: Settings['nightMode'], hour: number, systemDark: boolean): Settings['nightMode'] {
+  const wantNight = !isNight(mode, hour, systemDark);
+  return isNight('auto', hour, systemDark) === wantNight ? 'auto' : wantNight ? 'on' : 'off';
 }
 
 export function isPalette(v: unknown): v is PaletteId {
@@ -36,8 +59,8 @@ export function isPalette(v: unknown): v is PaletteId {
 /** Last applied theme, read before the first paint by the script in app/layout.tsx. */
 export const THEME_KEY = 'bds:theme';
 
-export function applyTheme(palette: PaletteId, nightMode: Settings['nightMode'], hour: number): Mode {
-  const mode: Mode = isNight(nightMode, hour) ? 'night' : 'light';
+export function applyTheme(palette: PaletteId, nightMode: Settings['nightMode'], hour: number, systemDark = systemPrefersDark()): Mode {
+  const mode: Mode = isNight(nightMode, hour, systemDark) ? 'night' : 'light';
   const root = document.documentElement;
   root.dataset.palette = palette;
   root.dataset.mode = mode;
@@ -54,4 +77,4 @@ export function applyTheme(palette: PaletteId, nightMode: Settings['nightMode'],
  * Inline script for <head>: applies the saved palette before React starts, so a page never
  * flashes in the default colours. Kept tiny and dependency-free.
  */
-export const THEME_BOOT_SCRIPT = `(function(){try{var t=JSON.parse(localStorage.getItem('${THEME_KEY}')||'{}');var p=['warm','ocean','forest','lavender'].indexOf(t.palette)>=0?t.palette:'warm';var h=new Date().getHours();var n=t.nightMode==='on'||((t.nightMode||'auto')==='auto'&&(h>=19||h<6));var r=document.documentElement;r.dataset.palette=p;r.dataset.mode=n?'night':'light';}catch(e){}})();`;
+export const THEME_BOOT_SCRIPT = `(function(){try{var t=JSON.parse(localStorage.getItem('${THEME_KEY}')||'{}');var p=['warm','ocean','forest','lavender'].indexOf(t.palette)>=0?t.palette:'warm';var h=new Date().getHours();var d=false;try{d=matchMedia('(prefers-color-scheme: dark)').matches}catch(e){}var n=t.nightMode==='on'||((t.nightMode||'auto')==='auto'&&(d||h>=19||h<6));var r=document.documentElement;r.dataset.palette=p;r.dataset.mode=n?'night':'light';}catch(e){}})();`;
