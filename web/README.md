@@ -114,3 +114,9 @@ Defaults chosen without Lida (to revisit):
 - Library tab on /home (`?tab=library`, also in the bottom tab bar): every chapter read, newest first, "Read again" opens the reader; the heart keeps a chapter under Favourites (`bds:prefs` favorites, this device). Logic in `lib/home/library.ts`.
 - `/routine`: bath, teeth, pyjamas, story, lights; steps can be switched off (`bds:prefs` routineOff); a calm ring timer per step with Pause and Next step, a soft chime when time is up (only with Sounds on), the story step opens tonight's chapter. Linked from the right column on /home and the Library tab.
 - Defaults to revisit with Lida: step list and minutes.
+
+### Offline, install, share
+
+- `public/sw.js` (registered in production by `components/ui/ServiceWorker.tsx`): pages network first with the last cached copy offline, hashed build files, icons and scenes cache first, `/api` never cached. Bump `VERSION` in sw.js to drop old caches.
+- `components/home/InstallCard.tsx` on /home: the browser's install prompt where it exists, a "Share > Add to Home Screen" hint on iPhone/iPad Safari; hidden once installed or dismissed (`bds:install-dismissed`).
+- Badge page: "Share the good news" (`components/badges/ShareBadge.tsx`): system share sheet or copy; shares only the badge name and the app link, never the child's name.

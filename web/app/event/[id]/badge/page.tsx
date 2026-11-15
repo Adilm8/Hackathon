@@ -4,6 +4,7 @@ import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { celebrateOnce } from '@/lib/fx/celebrate';
 import { BadgeArt } from '@/components/badges';
+import { ShareBadge } from '@/components/badges/ShareBadge';
 import { Character } from '@/components/character';
 import { EventIcon, Icon } from '@/components/icons';
 import { UpgradeOffer } from '@/components/paywall/UpgradeOffer';
@@ -59,7 +60,10 @@ function BadgeScreen({ id }: { id: string }) {
         </div>
         <h1 className="font-display text-2xl font-extrabold leading-tight">{child.name} earned the {badge.label} badge!</h1>
         <p className="text-ink-soft">{dateLabel(badge.earnedOn, { weekday: true })}{skills > 0 ? ` · Skills you practised: ${skills}` : ''}</p>
-        <ButtonLink href={`${base}/checkin`} variant="ghost">Edit the check-in</ButtonLink>
+        <div className="flex flex-wrap justify-center gap-2">
+          <ShareBadge label={badge.label} />
+          <ButtonLink href={`${base}/checkin`} variant="ghost">Edit the check-in</ButtonLink>
+        </div>
       </section>
 
       {collection.length > 1 && (

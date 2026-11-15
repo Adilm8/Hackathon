@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { Atkinson_Hyperlegible, Baloo_2, Nunito } from 'next/font/google';
 import './globals.css';
 import { PrefsSync } from '@/components/ui/PrefsSync';
+import { ServiceWorker } from '@/components/ui/ServiceWorker';
 import { ThemeSync } from '@/components/ui/ThemeSync';
 import { THEME_BOOT_SCRIPT } from '@/lib/theme';
 
@@ -43,6 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-full flex flex-col bg-bg text-ink">
         <ThemeSync />
         <PrefsSync />
+        <ServiceWorker />
         {children}
       </body>
     </html>

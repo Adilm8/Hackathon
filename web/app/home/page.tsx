@@ -8,6 +8,7 @@ import { EventIcon, Icon } from '@/components/icons';
 import { SideNav, TabBar, type HomeTab } from '@/components/home/HomeNav';
 import { CreateCard, LevelCard, RoutineCard, PlanCard, StreakCard, TasksCard, WeekReport } from '@/components/home/SideCards';
 import { StoryPath } from '@/components/home/StoryPath';
+import { InstallCard } from '@/components/home/InstallCard';
 import { ButtonLink } from '@/components/ui/Button';
 import { CreateStoryButton } from '@/components/ui/CreateStoryButton';
 import { EmptyState } from '@/components/ui/EmptyState';
@@ -100,6 +101,7 @@ function Home({ tab, eventParam }: { tab: HomeTab; eventParam: string | null }) 
           <StreakCard streak={streakWithRest(events, today)} week={weekStrip(events, today)} child={child} />
           <LevelCard level={levelFor(totalStars(events, child))} name={child.name} />
           <RoutineCard name={child.name} />
+          <InstallCard />
           <PlanCard event={chosen} hasAccess={hasAccess} label={label} />
           <CreateCard workspace={ws} />
         </aside>
