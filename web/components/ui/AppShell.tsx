@@ -2,6 +2,7 @@ import Link from 'next/link';
 import type { ReactNode } from 'react';
 import { Icon } from '@/components/icons';
 import { LEAVE_READER_EVENT } from '@/lib/reader/gate';
+import { ThemeToggle } from './ThemeToggle';
 
 /**
  * Frame of every screen (docs/SPEC.md 4.2): header with the child's name and a settings
@@ -22,6 +23,7 @@ export function AppShell({
   fit = false,
   homeHref = '/?landing=1',
   childMode = false,
+  workspaceSwitch,
 }: {
   children: ReactNode;
   childName?: string;
@@ -43,6 +45,8 @@ export function AppShell({
   homeHref?: string;
   /** The child's own screen (the reader): no settings button, and the logo asks the reader's parent gate before leaving, so a child can't wander off. */
   childMode?: boolean;
+  /** "My app | Demo" switch; replaces the "Sample data" badge when given. */
+  workspaceSwitch?: ReactNode;
 }) {
   const logoClass = 'inline-flex min-h-tap items-center whitespace-nowrap font-display text-base font-extrabold sm:text-lg';
   return (
@@ -60,7 +64,8 @@ export function AppShell({
           ) : (
             <Link href={homeHref} className={logoClass}>Big Day Stories</Link>
           )}
-          {isSample &&
+          {workspaceSwitch}
+          {!workspaceSwitch && isSample &&
             (onExitSample ? (
               <button
                 type="button"
@@ -76,9 +81,10 @@ export function AppShell({
               <span className="whitespace-nowrap rounded-pill bg-accent px-2 py-0.5 text-xs font-bold text-accent-ink">Sample data</span>
             ))}
           {headerExtra}
-          <div className="ml-auto flex items-center gap-3">
+          <div className="ml-auto flex items-center gap-1 min-[400px]:gap-2">
             {saveIndicator}
             {childName && <span className="hidden max-w-[10rem] truncate text-sm font-bold text-ink-soft min-[400px]:inline">{childName}</span>}
+            <ThemeToggle quiet={childMode} />
             {!childMode && <Link
               href="/settings"
               aria-label="Settings"

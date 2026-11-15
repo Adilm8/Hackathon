@@ -2,6 +2,7 @@
 import type { CSSProperties, ReactNode } from 'react';
 import { Character } from '@/components/character';
 import { IllustratedScene } from '@/components/character/IllustratedScene';
+import { Icon } from '@/components/icons';
 import type { Character as CharacterT, Page, Settings } from '@/lib/engine/types';
 import { resolveCharacter, SIZE_SCALE } from '@/lib/engine/character';
 import { splitWords } from '@/lib/speech/words';
@@ -20,7 +21,7 @@ const SIZE: Record<Settings['textSize'], string> = { m: 'text-sentence-m', l: 't
  * With reduced motion the words appear at once and only the colours change.
  */
 export function PageView({
-  page, character, render, textSize, night, step, position, updatedText, extra, illustration = null,
+  page, character, render, textSize, night, step, position, updatedText, extra, illustration = null, onCartoon,
 }: {
   page: Page; character: CharacterT; render: (t: string) => string; textSize: Settings['textSize'];
   night: boolean;
@@ -29,6 +30,8 @@ export function PageView({
   position: ReadPosition | null; updatedText?: string; extra?: ReactNode;
   /** Painted scene for this page (lib/illustrations); null = the drawn scene. */
   illustration?: string | null;
+  /** Opens cartoon mode (components/reader/CartoonPlayer.tsx). */
+  onCartoon?: () => void;
 }) {
   const si = Math.min(step, page.sentences.length - 1);
   const sentence = page.sentences[si];
@@ -48,6 +51,12 @@ export function PageView({
         >
           <Character character={character} mood={page.mood} className="h-full w-auto" />
         </div>
+        {onCartoon && (
+          <button type="button" onClick={onCartoon} aria-label="Watch as a cartoon"
+            className="absolute right-2 top-2 inline-flex min-h-10 items-center gap-1.5 rounded-pill bg-surface/95 px-3 text-sm font-bold text-ink shadow-sm hover:bg-surface">
+            <Icon name="clapperboard" size={18} /> Cartoon
+          </button>
+        )}
         {page.kind === 'answer' && (
           <span className="absolute left-3 top-3 rounded-pill bg-surface/95 px-3 py-1 text-xs font-bold text-ink">Answer</span>
         )}

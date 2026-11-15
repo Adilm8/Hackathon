@@ -1,0 +1,2471 @@
+{
+  "type": "surgery",
+  "version": 1,
+  "label": "Operation (surgery)",
+  "countdownLabel": "the operation",
+  "beats": {
+    "what_happens": {
+      "title": "What happens on operation day",
+      "goals": [
+        "An operation is how doctors fix or check something inside the body",
+        "A special medical sleep means the body does not feel the operation",
+        "Waking up comes with a grown-up close by"
+      ],
+      "parentSkill": "Explain in one sentence what the operation will fix, using the real body part name."
+    },
+    "who_is_there": {
+      "title": "Who looks after me",
+      "goals": [
+        "Nurses, the surgeon and the sleep doctor each have a job",
+        "People wear masks and caps to keep germs away",
+        "[[GROWNUP]] is there before and after"
+      ],
+      "parentSkill": "Name the three main helpers (nurse, surgeon, sleep doctor) and practise saying hello to each."
+    },
+    "what_i_do": {
+      "title": "What I do on operation day",
+      "goals": [
+        "Follow the no-food rule the doctors give",
+        "Breathe slowly with the mask, hold a toy",
+        "Rest and drink slowly after waking up"
+      ],
+      "parentSkill": "Practise breathing through a pretend mask (a cup) and blowing out slowly."
+    },
+    "if_scared": {
+      "title": "If it feels scary",
+      "goals": [
+        "It is normal to feel scared before an operation",
+        "Waking up may feel sore, sleepy or wobbly, and that passes",
+        "Calm tools: slow breaths, a toy, a hand to hold, asking questions"
+      ],
+      "parentSkill": "Name the feeling and give one true fact: 'You feel scared. The doctors watch over you the whole time.'"
+    },
+    "rehearsal": {
+      "title": "Let's practise operation day",
+      "goals": [
+        "Play hospital with a toy: gown, name band, mask, wake up",
+        "Practise slow breaths with a cup as a mask",
+        "End with waking up and a hug"
+      ],
+      "parentSkill": "Let your child be the sleep doctor for a toy, then switch roles."
+    }
+  },
+  "steps": [
+    "No food for a while before, as the doctors say",
+    "Arrive at the hospital and put on a hospital gown and a name band",
+    "Meet the nurse, the surgeon and the sleep doctor",
+    "Breathe through a mask or get sleep medicine through a little tube",
+    "Go into a special deep sleep while the doctors work",
+    "Wake up in a recovery room with a grown-up close by",
+    "Rest, have a drink and go home or to a hospital room"
+  ],
+  "sensory": [
+    "a hospital gown that ties at the back",
+    "a plastic name band on the wrist",
+    "a mask that smells like plastic or a fruity scent",
+    "beeping machines and bright lights",
+    "a sleepy, floaty feeling after waking up",
+    "a sore spot or a bandage where the doctors worked",
+    "a dry mouth and a cold drink"
+  ],
+  "honestyNotes": "The child will be in a special medical sleep (anaesthesia) and will not feel the operation while it happens, but may feel sore, sleepy, thirsty or wobbly afterwards. Never call it 'going to sleep' like bedtime and never compare it to a pet being 'put to sleep'. Never promise exactly how long it lasts or that nothing will feel sore. Let the parent fill in what the operation is for.",
+  "questionButtons": [
+    {
+      "id": "hurt",
+      "text": "Will it hurt?",
+      "topic": "pain",
+      "fallbackAnswer": [
+        "During the operation you are in a special sleep, so your body does not feel it.",
+        "After, the spot may feel sore, and nurses have medicine to help."
+      ]
+    },
+    {
+      "id": "wake",
+      "text": "Will I wake up?",
+      "topic": "safety",
+      "fallbackAnswer": [
+        "Yes. When the doctors finish, the medicine wears off and you wake up.",
+        "The sleep doctor watches over you the whole time."
+      ]
+    },
+    {
+      "id": "why",
+      "text": "Why do I need an operation?",
+      "topic": "body",
+      "fallbackAnswer": [
+        "[[GROWNUP]] and the doctors will tell you what they are fixing.",
+        "An operation helps your body work better or feel better."
+      ]
+    },
+    {
+      "id": "stay",
+      "text": "Will [[GROWNUP]] stay with me?",
+      "topic": "separation",
+      "fallbackAnswer": [
+        "[[GROWNUP]] stays with you before the special sleep, and is there again after you wake up.",
+        "Nurses look after you in between."
+      ]
+    },
+    {
+      "id": "mask",
+      "text": "What is the mask for?",
+      "topic": "sensory",
+      "fallbackAnswer": [
+        "The mask gives the sleep medicine as air you breathe.",
+        "It may smell like plastic or fruit, and you breathe slowly."
+      ]
+    },
+    {
+      "id": "eat",
+      "text": "Why can't I eat?",
+      "topic": "body",
+      "fallbackAnswer": [
+        "An empty tummy keeps you safe during the special sleep.",
+        "After, you can have a drink and then food again."
+      ]
+    },
+    {
+      "id": "who",
+      "text": "Who will be there?",
+      "topic": "strangers",
+      "fallbackAnswer": [
+        "Nurses, the surgeon and the sleep doctor. They all wear name badges.",
+        "They wear masks and caps to keep germs away."
+      ]
+    },
+    {
+      "id": "after",
+      "text": "What happens after?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "You wake up in a quiet room, maybe feeling sleepy or sore.",
+        "You rest, have a drink, and then go home or to your room."
+      ]
+    },
+    {
+      "id": "toy",
+      "text": "Can I bring my toy?",
+      "topic": "love",
+      "fallbackAnswer": [
+        "Yes, many hospitals let a toy come along, even into the room.",
+        "Your toy can be brave with you."
+      ],
+      "ages": [
+        2,
+        9
+      ]
+    },
+    {
+      "id": "awake",
+      "text": "What if I wake up during it?",
+      "topic": "safety",
+      "fallbackAnswer": [
+        "The sleep doctor checks your sleep every second, and that is their whole job.",
+        "If you ever need more medicine, they give it."
+      ],
+      "ages": [
+        7,
+        12
+      ]
+    },
+    {
+      "id": "scar",
+      "text": "Will I have a scar?",
+      "topic": "body",
+      "fallbackAnswer": [
+        "Some operations leave a small mark that fades over time.",
+        "The doctors can tell you what yours will look like."
+      ],
+      "ages": [
+        7,
+        12
+      ]
+    }
+  ],
+  "techniques": [
+    {
+      "id": "comfort_toy",
+      "label": "A comfort toy",
+      "how": "Let a favourite toy come to the hospital and into the operating room if allowed.",
+      "topics": [
+        "separation",
+        "strangers",
+        "safety"
+      ]
+    },
+    {
+      "id": "mask_practice",
+      "label": "Mask practice",
+      "how": "Breathe slowly through a cup or toy mask at home.",
+      "topics": [
+        "sensory",
+        "unknown"
+      ]
+    },
+    {
+      "id": "deep_breaths",
+      "label": "Smell the flower, blow the candle",
+      "how": "Breathe in through the nose and out slowly like blowing a candle.",
+      "topics": [
+        "pain",
+        "sensory",
+        "safety"
+      ]
+    },
+    {
+      "id": "hold_hand",
+      "label": "Holding a hand",
+      "how": "Hold your child's hand until the special sleep starts.",
+      "topics": [
+        "separation",
+        "safety"
+      ]
+    },
+    {
+      "id": "ask_child_life",
+      "label": "Asking for a child life specialist",
+      "how": "Ask the hospital for a child life specialist who explains each step.",
+      "topics": [
+        "unknown",
+        "strangers"
+      ]
+    },
+    {
+      "id": "pain_scale",
+      "label": "Pain faces scale",
+      "how": "Practise pointing to a face from happy to very sore so nurses know how to help.",
+      "topics": [
+        "pain",
+        "body"
+      ]
+    },
+    {
+      "id": "hospital_tour",
+      "label": "Hospital tour or video",
+      "how": "Watch the hospital's video or take a tour before the day.",
+      "topics": [
+        "unknown",
+        "sensory"
+      ]
+    },
+    {
+      "id": "recovery_plan",
+      "label": "Cosy recovery plan",
+      "how": "Plan films, books and a treat for the days after.",
+      "topics": [
+        "love",
+        "social"
+      ]
+    },
+    {
+      "id": "question_list",
+      "label": "A question list",
+      "how": "Write the child's questions down and ask the doctors together.",
+      "topics": [
+        "unknown",
+        "strangers",
+        "body"
+      ]
+    }
+  ],
+  "ritual": [
+    "Gown and name band on",
+    "Slow breaths with the mask",
+    "Wake up, sip and hug"
+  ],
+  "phrases": {
+    "pain": [
+      "During the operation your body is in a special sleep. After, nurses can help if it is sore.",
+      "Tell me where it feels sore, so we can help."
+    ],
+    "body": [
+      "The doctors are fixing your body so it works better.",
+      "The sore spot will get better day by day."
+    ],
+    "sensory": [
+      "The mask may smell funny. Breathe slowly.",
+      "Beeps are just messages for the nurses."
+    ],
+    "strangers": [
+      "The masks keep germs away. They are smiling underneath.",
+      "You can ask anyone, what is your job?"
+    ],
+    "separation": [
+      "I stay with you until you are asleep, and I am there when you wake up.",
+      "Hold my hand."
+    ],
+    "unknown": [
+      "First the gown, then the mask, then a special sleep, then waking up.",
+      "We will ask the doctors every question."
+    ],
+    "safety": [
+      "The sleep doctor watches over you the whole time.",
+      "When they finish, you wake up."
+    ],
+    "social": [
+      "Lots of kids have operations and get better.",
+      "Your friends can send you pictures."
+    ],
+    "love": [
+      "I love you, and I'm proud of you.",
+      "We will have cosy days together after."
+    ]
+  },
+  "topicWords": {
+    "pain": [
+      "hurt",
+      "sore",
+      "soreness",
+      "pain",
+      "ouch"
+    ],
+    "body": [
+      "body",
+      "tummy",
+      "paw",
+      "fix",
+      "heart",
+      "scar",
+      "operation"
+    ],
+    "sensory": [
+      "mask",
+      "smell",
+      "smells",
+      "beep",
+      "beeps",
+      "bright",
+      "light",
+      "lights",
+      "sleepy",
+      "heavy",
+      "drink",
+      "gown"
+    ],
+    "strangers": [
+      "nurse",
+      "nurses",
+      "doctor",
+      "doctors",
+      "surgeon",
+      "helper",
+      "helpers",
+      "anaesthetist",
+      "team"
+    ],
+    "separation": [
+      "close by",
+      "right there",
+      "stay",
+      "stays",
+      "with me",
+      "hand",
+      "paw",
+      "close",
+      "with you",
+      "together",
+      "comes back",
+      "back",
+      "nearby"
+    ],
+    "unknown": [
+      "first",
+      "then",
+      "next",
+      "after",
+      "last",
+      "step",
+      "steps",
+      "plan"
+    ],
+    "safety": [
+      "safe",
+      "careful",
+      "carefully",
+      "watch",
+      "watches",
+      "checks",
+      "break",
+      "stop",
+      "help"
+    ],
+    "social": [
+      "kids",
+      "children",
+      "friends",
+      "people",
+      "friend",
+      "everyone",
+      "others"
+    ],
+    "love": [
+      "love",
+      "hug",
+      "proud",
+      "cuddle"
+    ]
+  },
+  "backgrounds": [
+    "shot",
+    "outside",
+    "home-evening",
+    "cosy-room"
+  ],
+  "fallbackPages": {
+    "story": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "Soon [[CHILD]] will have an operation.",
+              "kind": "describe"
+            },
+            {
+              "text": "An operation is a way doctors fix or check something inside the body.",
+              "kind": "describe"
+            },
+            {
+              "text": "First [[CHILD]] and [[GROWNUP]] go to the hospital.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[CHILD]] puts on a hospital gown and a name band.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Before bed, here is a story about a little bear called Bo.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bo had a sore paw that needed fixing.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama Bear said, the forest doctors will do an operation to fix your paw.",
+              "kind": "describe"
+            },
+            {
+              "text": "First they went to the big tree hospital.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then Bo put on a soft gown with little stars.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next the owl doctor said, I am the sleep doctor.",
+              "kind": "describe"
+            },
+            {
+              "text": "This special medicine helps your body go into a deep sleep, so the doctors can work.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is a different sleep from bedtime, and I watch over you the whole time.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bo held Mama's paw, and breathed slowly.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the story says, Bo woke up later, and Mama was right there.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "strangers"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Next a sleep doctor gives a special medicine through a mask or a tiny tube.",
+              "kind": "describe"
+            },
+            {
+              "text": "It makes the body go into a deep, special sleep, different from bedtime sleep.",
+              "kind": "describe"
+            },
+            {
+              "text": "While the body sleeps, the doctors do their work carefully.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, [[CHILD]] wakes up in a quiet room, and a grown-up is close by.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can ask, what will you fix, and the doctors will explain.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Soon [[CHILD]] will have an operation.",
+              "kind": "describe"
+            },
+            {
+              "text": "An operation is a way doctors fix or check something inside the body.",
+              "kind": "describe"
+            },
+            {
+              "text": "First [[CHILD]] and [[GROWNUP]] go to the hospital.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[CHILD]] puts on a hospital gown and a name band.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next a sleep doctor gives a special medicine through a mask or a tiny tube.",
+              "kind": "describe"
+            },
+            {
+              "text": "It makes the body go into a deep, special sleep, different from bedtime sleep.",
+              "kind": "describe"
+            },
+            {
+              "text": "While the body sleeps, the doctors do their work carefully.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, [[CHILD]] wakes up in a quiet room, and a grown-up is close by.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can ask, what will you fix, and the doctors will explain.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "Many helpers look after children on operation day.",
+              "kind": "describe"
+            },
+            {
+              "text": "A nurse checks the name band, listens to the heart and answers questions.",
+              "kind": "describe"
+            },
+            {
+              "text": "The surgeon is the doctor who does the operation.",
+              "kind": "describe"
+            },
+            {
+              "text": "The sleep doctor gives the special sleep medicine and watches over the body the whole time.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "body",
+            "strangers",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Bo the bear met all the forest helpers.",
+              "kind": "describe"
+            },
+            {
+              "text": "The rabbit nurse checked Bo's name band and said, hello, Bo.",
+              "kind": "describe"
+            },
+            {
+              "text": "The badger surgeon said, I am the one who will fix your paw.",
+              "kind": "describe"
+            },
+            {
+              "text": "The owl said, I am the sleep doctor, and I watch over you while you sleep.",
+              "kind": "describe"
+            },
+            {
+              "text": "In the big room, all the helpers wore masks and caps.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bo felt unsure, because the masks looked funny.",
+              "kind": "describe"
+            },
+            {
+              "text": "The rabbit nurse said, we wear masks to keep germs away, and I am smiling underneath.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bo looked at the kind eyes above the mask.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama Bear said, I will be right here when you wake up.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bo nodded and held a little toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the operating room, people wear masks, caps and gowns to keep germs away.",
+              "kind": "describe"
+            },
+            {
+              "text": "Under the masks, they are smiling.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] stays close before the special sleep.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is there again after [[CHILD]] wakes up.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can ask anyone, what is your job, and they will say.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "shot",
+          "addresses": [
+            "sensory",
+            "separation",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Many helpers look after children on operation day.",
+              "kind": "describe"
+            },
+            {
+              "text": "A nurse checks the name band, listens to the heart and answers questions.",
+              "kind": "describe"
+            },
+            {
+              "text": "The surgeon is the doctor who does the operation.",
+              "kind": "describe"
+            },
+            {
+              "text": "The sleep doctor gives the special sleep medicine and watches over the body the whole time.",
+              "kind": "describe"
+            },
+            {
+              "text": "In the operating room, people wear masks, caps and gowns to keep germs away.",
+              "kind": "describe"
+            },
+            {
+              "text": "Under the masks, they are smiling.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] stays close before the special sleep.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is there again after [[CHILD]] wakes up.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can ask anyone, what is your job, and they will say.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "Before the operation, [[CHILD]] may not eat for a while.",
+              "kind": "describe"
+            },
+            {
+              "text": "The doctors say when, so the tummy is empty and safe for the special sleep.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can bring a favourite toy and a blanket.",
+              "kind": "describe"
+            },
+            {
+              "text": "When it is time, [[CHILD]] breathes slowly through the mask, in and out.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "shot",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Bo the bear had a job to do too.",
+              "kind": "describe"
+            },
+            {
+              "text": "The night before, Bo ate a big supper, then waited until morning with an empty tummy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bo packed a little blanket and a toy rabbit.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the hospital, the owl gave Bo a soft mask that smelled like strawberries.",
+              "kind": "describe"
+            },
+            {
+              "text": "Breathe in slowly, said the owl, and blow out.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bo breathed in and out, holding the toy rabbit.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bo's paws felt heavy, then cosy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Later, Bo woke up in a quiet room.",
+              "kind": "describe"
+            },
+            {
+              "text": "The rabbit nurse gave Bo a cold drink, sip by sip.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bo said, my paw feels a bit sore, and the nurse helped.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "strangers"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "The mask can smell of plastic or of fruit.",
+              "kind": "describe"
+            },
+            {
+              "text": "Soon the body feels heavy and sleepy.",
+              "kind": "describe"
+            },
+            {
+              "text": "After waking up, [[CHILD]] rests in bed and drinks slowly.",
+              "kind": "describe"
+            },
+            {
+              "text": "The nurses check how the body feels.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can tell a nurse if something feels sore, so they can help.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "shot",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "strangers"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Before the operation, [[CHILD]] may not eat for a while.",
+              "kind": "describe"
+            },
+            {
+              "text": "The doctors say when, so the tummy is empty and safe for the special sleep.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can bring a favourite toy and a blanket.",
+              "kind": "describe"
+            },
+            {
+              "text": "When it is time, [[CHILD]] breathes slowly through the mask, in and out.",
+              "kind": "describe"
+            },
+            {
+              "text": "The mask can smell of plastic or of fruit.",
+              "kind": "describe"
+            },
+            {
+              "text": "Soon the body feels heavy and sleepy.",
+              "kind": "describe"
+            },
+            {
+              "text": "After waking up, [[CHILD]] rests in bed and drinks slowly.",
+              "kind": "describe"
+            },
+            {
+              "text": "The nurses check how the body feels.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can tell a nurse if something feels sore, so they can help.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "shot",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "strangers"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "Feeling scared before an operation is normal.",
+              "kind": "describe"
+            },
+            {
+              "text": "Lots of kids and grown-ups feel that way.",
+              "kind": "describe"
+            },
+            {
+              "text": "The hospital can feel big and busy, with beeps and bright lights.",
+              "kind": "describe"
+            },
+            {
+              "text": "After waking up, the body may feel sore, sleepy, thirsty or wobbly.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "worried",
+          "background": "shot",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Bo the bear felt scared.",
+              "kind": "describe"
+            },
+            {
+              "text": "What if I wake up and my paw hurts, Bo asked.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama Bear did not say, nothing will feel sore.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama said, your paw may feel sore after, and the nurses have ways to help.",
+              "kind": "describe"
+            },
+            {
+              "text": "What if I am scared, Bo asked.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama said, being scared is okay, and you can hold my paw until you are asleep.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bo smelled a flower, slowly, and blew a candle, whoosh.",
+              "kind": "describe"
+            },
+            {
+              "text": "After the operation, Bo felt sleepy and a bit sore.",
+              "kind": "describe"
+            },
+            {
+              "text": "The nurse brought medicine and a cold drink.",
+              "kind": "describe"
+            },
+            {
+              "text": "Soon Bo felt a little better, then better again.",
+              "kind": "describe"
+            },
+            {
+              "text": "Worried and brave can happen at the same time.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "strangers"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "These feelings get better with rest.",
+              "kind": "describe"
+            },
+            {
+              "text": "Nurses have medicine and ways to help with soreness.",
+              "kind": "describe"
+            },
+            {
+              "text": "Questions are always welcome, and the doctors will answer.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can take slow breaths, smell the flower and blow the candle.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can squeeze [[GROWNUP]]'s hand or the toy.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "shot",
+          "addresses": [
+            "pain",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Feeling scared before an operation is normal.",
+              "kind": "describe"
+            },
+            {
+              "text": "Lots of kids and grown-ups feel that way.",
+              "kind": "describe"
+            },
+            {
+              "text": "The hospital can feel big and busy, with beeps and bright lights.",
+              "kind": "describe"
+            },
+            {
+              "text": "After waking up, the body may feel sore, sleepy, thirsty or wobbly.",
+              "kind": "describe"
+            },
+            {
+              "text": "These feelings get better with rest.",
+              "kind": "describe"
+            },
+            {
+              "text": "Nurses have medicine and ways to help with soreness.",
+              "kind": "describe"
+            },
+            {
+              "text": "Questions are always welcome, and the doctors will answer.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can take slow breaths, smell the flower and blow the candle.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can squeeze [[GROWNUP]]'s hand or the toy.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "shot",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "strangers"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "Tonight [[CHILD]] and [[GROWNUP]] can practise operation day with a toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "First the toy puts on a pretend gown and a name band.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the toy meets the nurse and says hello.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next the toy breathes slowly through a cup like a mask, in and out.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "shot",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Bo the bear played hospital with a toy rabbit.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bo tied a little gown on the rabbit and drew a name band.",
+              "kind": "describe"
+            },
+            {
+              "text": "Hello, I am the nurse, said Bo, and listened to the rabbit's heart.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then Bo was the sleep doctor and held a cup like a mask.",
+              "kind": "describe"
+            },
+            {
+              "text": "Breathe in slowly, and blow out, said Bo.",
+              "kind": "describe"
+            },
+            {
+              "text": "The rabbit had a pretend special sleep.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the rabbit woke up, and Bo gave it a sip of water.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bo gave the rabbit a big hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama Bear clapped her paws.",
+              "kind": "describe"
+            },
+            {
+              "text": "You know all the steps, she said.",
+              "kind": "describe"
+            },
+            {
+              "text": "And Bo slept well that night.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "After that, the toy has a special sleep while the doctors work.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, the toy wakes up, has a sip of water and gets a hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "Every step can be practised as many times as wanted.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say the steps out loud: gown, mask, sleep, wake up, hug.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "shot",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "unknown",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight [[CHILD]] and [[GROWNUP]] can practise operation day with a toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "First the toy puts on a pretend gown and a name band.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the toy meets the nurse and says hello.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next the toy breathes slowly through a cup like a mask, in and out.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, the toy has a special sleep while the doctors work.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, the toy wakes up, has a sip of water and gets a hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "Every step can be practised as many times as wanted.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say the steps out loud: gown, mask, sleep, wake up, hug.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "shot",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "unknown"
+          ]
+        }
+      ]
+    },
+    "social": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "Soon I will have an operation.",
+              "kind": "describe"
+            },
+            {
+              "text": "An operation is how doctors fix or check something in my body.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I go to the hospital with [[GROWNUP]].",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I put on a hospital gown.",
+              "kind": "describe"
+            },
+            {
+              "text": "I get a name band on my wrist.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next a sleep doctor gives me special medicine.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask the doctors what they will fix.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Soon I will have an operation.",
+              "kind": "describe"
+            },
+            {
+              "text": "An operation is how doctors fix or check something in my body.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I go to the hospital with [[GROWNUP]].",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I put on a hospital gown.",
+              "kind": "describe"
+            },
+            {
+              "text": "I get a name band on my wrist.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next a sleep doctor gives me special medicine.",
+              "kind": "describe"
+            },
+            {
+              "text": "It can come through a mask or a tiny tube.",
+              "kind": "describe"
+            },
+            {
+              "text": "The medicine helps my body go into a deep, special sleep.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is different from bedtime sleep.",
+              "kind": "describe"
+            },
+            {
+              "text": "The doctors work carefully while I sleep.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, I wake up.",
+              "kind": "describe"
+            },
+            {
+              "text": "A grown-up is close by.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "It can come through a mask or a tiny tube.",
+              "kind": "describe"
+            },
+            {
+              "text": "The medicine helps my body go into a deep, special sleep.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is different from bedtime sleep.",
+              "kind": "describe"
+            },
+            {
+              "text": "The doctors work carefully while I sleep.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, I wake up.",
+              "kind": "describe"
+            },
+            {
+              "text": "A grown-up is close by.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask the doctors what they will fix.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Soon I will have an operation.",
+              "kind": "describe"
+            },
+            {
+              "text": "An operation is how doctors fix or check something in my body.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I go to the hospital with [[GROWNUP]].",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I put on a hospital gown.",
+              "kind": "describe"
+            },
+            {
+              "text": "I get a name band on my wrist.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next a sleep doctor gives me special medicine.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask the doctors what they will fix.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "unknown"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "Many helpers look after me.",
+              "kind": "describe"
+            },
+            {
+              "text": "A nurse checks my name band.",
+              "kind": "describe"
+            },
+            {
+              "text": "The nurse listens to my heart.",
+              "kind": "describe"
+            },
+            {
+              "text": "The surgeon is the doctor who does the operation.",
+              "kind": "describe"
+            },
+            {
+              "text": "The sleep doctor gives me the sleep medicine.",
+              "kind": "describe"
+            },
+            {
+              "text": "The sleep doctor watches me the whole time.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask, what is your job?",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "body",
+            "strangers",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Many helpers look after me.",
+              "kind": "describe"
+            },
+            {
+              "text": "A nurse checks my name band.",
+              "kind": "describe"
+            },
+            {
+              "text": "The nurse listens to my heart.",
+              "kind": "describe"
+            },
+            {
+              "text": "The surgeon is the doctor who does the operation.",
+              "kind": "describe"
+            },
+            {
+              "text": "The sleep doctor gives me the sleep medicine.",
+              "kind": "describe"
+            },
+            {
+              "text": "The sleep doctor watches me the whole time.",
+              "kind": "describe"
+            },
+            {
+              "text": "Helpers wear masks and caps.",
+              "kind": "describe"
+            },
+            {
+              "text": "Masks keep germs away.",
+              "kind": "describe"
+            },
+            {
+              "text": "They are smiling under the masks.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] stays with me before the sleep.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is there when I wake up.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Helpers wear masks and caps.",
+              "kind": "describe"
+            },
+            {
+              "text": "Masks keep germs away.",
+              "kind": "describe"
+            },
+            {
+              "text": "They are smiling under the masks.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] stays with me before the sleep.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is there when I wake up.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask, what is your job?",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "shot",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Many helpers look after me.",
+              "kind": "describe"
+            },
+            {
+              "text": "A nurse checks my name band.",
+              "kind": "describe"
+            },
+            {
+              "text": "The nurse listens to my heart.",
+              "kind": "describe"
+            },
+            {
+              "text": "The surgeon is the doctor who does the operation.",
+              "kind": "describe"
+            },
+            {
+              "text": "The sleep doctor gives me the sleep medicine.",
+              "kind": "describe"
+            },
+            {
+              "text": "The sleep doctor watches me the whole time.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask, what is your job?",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "body",
+            "strangers",
+            "unknown",
+            "safety"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "Before the operation, I may not eat for a while.",
+              "kind": "describe"
+            },
+            {
+              "text": "The doctors tell us when.",
+              "kind": "describe"
+            },
+            {
+              "text": "An empty tummy keeps me safe in the special sleep.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can bring a toy and a blanket.",
+              "kind": "describe"
+            },
+            {
+              "text": "When it is time, I breathe slowly through the mask.",
+              "kind": "describe"
+            },
+            {
+              "text": "The mask can smell like plastic or fruit.",
+              "kind": "describe"
+            },
+            {
+              "text": "If something feels sore, I can tell a nurse.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "shot",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "strangers"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Before the operation, I may not eat for a while.",
+              "kind": "describe"
+            },
+            {
+              "text": "The doctors tell us when.",
+              "kind": "describe"
+            },
+            {
+              "text": "An empty tummy keeps me safe in the special sleep.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can bring a toy and a blanket.",
+              "kind": "describe"
+            },
+            {
+              "text": "When it is time, I breathe slowly through the mask.",
+              "kind": "describe"
+            },
+            {
+              "text": "The mask can smell like plastic or fruit.",
+              "kind": "describe"
+            },
+            {
+              "text": "My body feels heavy and sleepy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Later I wake up.",
+              "kind": "describe"
+            },
+            {
+              "text": "I rest in bed.",
+              "kind": "describe"
+            },
+            {
+              "text": "I drink slowly, sip by sip.",
+              "kind": "describe"
+            },
+            {
+              "text": "The nurses check how I feel.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "My body feels heavy and sleepy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Later I wake up.",
+              "kind": "describe"
+            },
+            {
+              "text": "I rest in bed.",
+              "kind": "describe"
+            },
+            {
+              "text": "I drink slowly, sip by sip.",
+              "kind": "describe"
+            },
+            {
+              "text": "The nurses check how I feel.",
+              "kind": "describe"
+            },
+            {
+              "text": "If something feels sore, I can tell a nurse.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "shot",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "strangers"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Before the operation, I may not eat for a while.",
+              "kind": "describe"
+            },
+            {
+              "text": "The doctors tell us when.",
+              "kind": "describe"
+            },
+            {
+              "text": "An empty tummy keeps me safe in the special sleep.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can bring a toy and a blanket.",
+              "kind": "describe"
+            },
+            {
+              "text": "When it is time, I breathe slowly through the mask.",
+              "kind": "describe"
+            },
+            {
+              "text": "The mask can smell like plastic or fruit.",
+              "kind": "describe"
+            },
+            {
+              "text": "If something feels sore, I can tell a nurse.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "shot",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "strangers"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "I may feel scared before the operation.",
+              "kind": "describe"
+            },
+            {
+              "text": "That is normal.",
+              "kind": "describe"
+            },
+            {
+              "text": "Lots of kids feel that way.",
+              "kind": "describe"
+            },
+            {
+              "text": "The hospital can feel big and busy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Machines beep and lights are bright.",
+              "kind": "describe"
+            },
+            {
+              "text": "After I wake up, I may feel sore.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "worried",
+          "background": "shot",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I may feel scared before the operation.",
+              "kind": "describe"
+            },
+            {
+              "text": "That is normal.",
+              "kind": "describe"
+            },
+            {
+              "text": "Lots of kids feel that way.",
+              "kind": "describe"
+            },
+            {
+              "text": "The hospital can feel big and busy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Machines beep and lights are bright.",
+              "kind": "describe"
+            },
+            {
+              "text": "After I wake up, I may feel sore.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel sleepy or thirsty.",
+              "kind": "describe"
+            },
+            {
+              "text": "These feelings get better with rest.",
+              "kind": "describe"
+            },
+            {
+              "text": "Nurses have ways to help me feel better.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask any question.",
+              "kind": "describe"
+            },
+            {
+              "text": "The doctors will answer.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "strangers"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I may feel sleepy or thirsty.",
+              "kind": "describe"
+            },
+            {
+              "text": "These feelings get better with rest.",
+              "kind": "describe"
+            },
+            {
+              "text": "Nurses have ways to help me feel better.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask any question.",
+              "kind": "describe"
+            },
+            {
+              "text": "The doctors will answer.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can hold [[GROWNUP]]'s hand or my toy.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "shot",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I may feel scared before the operation.",
+              "kind": "describe"
+            },
+            {
+              "text": "That is normal.",
+              "kind": "describe"
+            },
+            {
+              "text": "Lots of kids feel that way.",
+              "kind": "describe"
+            },
+            {
+              "text": "The hospital can feel big and busy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Machines beep and lights are bright.",
+              "kind": "describe"
+            },
+            {
+              "text": "After I wake up, I may feel sore.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can hold [[GROWNUP]]'s hand or my toy.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "shot",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "separation"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "Tonight I can practise with my toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "First my toy puts on a pretend gown.",
+              "kind": "describe"
+            },
+            {
+              "text": "It gets a name band too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then my toy meets the nurse.",
+              "kind": "describe"
+            },
+            {
+              "text": "It says hello.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next my toy breathes through a cup like a mask.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say the steps: gown, mask, sleep, wake up, hug.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "shot",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "unknown",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight I can practise with my toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "First my toy puts on a pretend gown.",
+              "kind": "describe"
+            },
+            {
+              "text": "It gets a name band too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then my toy meets the nurse.",
+              "kind": "describe"
+            },
+            {
+              "text": "It says hello.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next my toy breathes through a cup like a mask.",
+              "kind": "describe"
+            },
+            {
+              "text": "In and out, slowly.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, my toy has a special sleep.",
+              "kind": "describe"
+            },
+            {
+              "text": "The doctors work carefully.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, my toy wakes up.",
+              "kind": "describe"
+            },
+            {
+              "text": "It has a sip of water and gets a hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "shot",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In and out, slowly.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, my toy has a special sleep.",
+              "kind": "describe"
+            },
+            {
+              "text": "The doctors work carefully.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, my toy wakes up.",
+              "kind": "describe"
+            },
+            {
+              "text": "It has a sip of water and gets a hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say the steps: gown, mask, sleep, wake up, hug.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "shot",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight I can practise with my toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "First my toy puts on a pretend gown.",
+              "kind": "describe"
+            },
+            {
+              "text": "It gets a name band too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then my toy meets the nurse.",
+              "kind": "describe"
+            },
+            {
+              "text": "It says hello.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next my toy breathes through a cup like a mask.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say the steps: gown, mask, sleep, wake up, hug.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "shot",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "unknown",
+            "social"
+          ]
+        }
+      ]
+    }
+  },
+  "badge": {
+    "id": "brave_sleeper",
+    "label": "Brave Sleeper"
+  },
+  "olderPages": {
+    "what_happens": {
+      "sentences": [
+        {
+          "text": "Anaesthesia is the medical name for the special sleep, and the doctor who gives it is an anaesthetist.",
+          "kind": "describe"
+        },
+        {
+          "text": "This doctor watches breathing, heart rate and oxygen on a screen the whole time.",
+          "kind": "describe"
+        },
+        {
+          "text": "Under anaesthesia the brain does not notice the operation and does not remember it.",
+          "kind": "describe"
+        },
+        {
+          "text": "Waking up can feel groggy, and that passes in a few hours.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can ask the anaesthetist to explain each machine before the operation.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "shot",
+      "addresses": [
+        "body",
+        "strangers",
+        "safety"
+      ]
+    },
+    "who_is_there": {
+      "sentences": [
+        {
+          "text": "An operating room is very clean, cool and bright, with big lights so the surgeon can see clearly.",
+          "kind": "describe"
+        },
+        {
+          "text": "Everyone has a job: the surgeon operates, the anaesthetist manages the sleep, and nurses pass tools and keep track of everything.",
+          "kind": "describe"
+        },
+        {
+          "text": "They check the name band and the plan many times, because being careful is part of the job.",
+          "kind": "describe"
+        },
+        {
+          "text": "In many hospitals [[GROWNUP]] can stay until [[CHILD]] is asleep.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can ask to meet the team before the operation.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "shot",
+      "addresses": [
+        "body",
+        "sensory",
+        "strangers",
+        "separation"
+      ]
+    },
+    "what_i_do": {
+      "sentences": [
+        {
+          "text": "The no-food rule matters: an empty stomach keeps the airway safe during anaesthesia.",
+          "kind": "describe"
+        },
+        {
+          "text": "Some kids choose to breathe the mask gas, and some get the medicine through a small tube called an IV.",
+          "kind": "describe"
+        },
+        {
+          "text": "Waking up, it is normal to feel confused, cold, thirsty or a bit sick for a while.",
+          "kind": "describe"
+        },
+        {
+          "text": "Pain medicine helps with soreness afterwards, and nurses check often.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can rate the pain from one to ten so the nurses know how to help.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "brave",
+      "background": "shot",
+      "addresses": [
+        "pain",
+        "sensory",
+        "strangers",
+        "unknown"
+      ]
+    },
+    "if_scared": {
+      "sentences": [
+        {
+          "text": "It is normal to worry about waking up during the operation; the anaesthetist checks the sleep every second, which is exactly their job.",
+          "kind": "describe"
+        },
+        {
+          "text": "Soreness afterwards is expected and treated, not something to be brave about in silence.",
+          "kind": "describe"
+        },
+        {
+          "text": "Some kids feel emotional or teary when they wake up, which is the medicine wearing off.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can write down three questions to ask the doctors.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can ask for a child life specialist, a helper whose job is explaining hospital things.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "worried",
+      "background": "shot",
+      "addresses": [
+        "pain",
+        "body",
+        "strangers",
+        "unknown"
+      ]
+    },
+    "rehearsal": {
+      "sentences": [
+        {
+          "text": "Knowing the plan step by step makes the day feel more under control.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can make a list: what to pack, what to ask, and what to do after, like a film or a game.",
+          "kind": "describe"
+        },
+        {
+          "text": "Many hospitals offer a tour or a video of the operating room for kids.",
+          "kind": "describe"
+        },
+        {
+          "text": "Planning a reward for the recovery days gives something to look forward to.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can choose the comfort item that goes into the operating room.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "happy",
+      "background": "shot",
+      "addresses": [
+        "unknown",
+        "social"
+      ]
+    }
+  }
+}

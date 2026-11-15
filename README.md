@@ -57,6 +57,7 @@ Sarah's son Max is 4. On Friday he sees the dentist, and last time he screamed i
 - **15 big-day scenarios**: dentist, shot, blood test, doctor check-up, hospital, haircut, first day at school, flight, moving house, new sibling, new babysitter, sleepover, party, swimming lessons, and a custom big day.
 - **Sentence-by-sentence reader** with a progress bar, text sizes, easy-read letters, day and night colours, and a full-screen mode.
 - **The child's questions change the story**: three suggested questions per page plus "Ask your own" by typing or by voice; the next page answers it and shows "Updated because Max asked".
+- **Painted scene pictures** on every page and **Cartoon mode**: the chapter plays like a picture-book cartoon with gentle motion, a quiet lullaby and auto-turning pages.
 - **Read aloud**: the device voice, or premium storyteller voices (Owl the Storyteller, Kind Friend, Moon Storyteller), with highlighting sentence by sentence.
 - **A parent's own voice as the storyteller**: record a short sample with consent, and the story is narrated in that voice; one tap deletes it.
 - **Story options** for parents: 7 kinds of story (bedtime, funny adventure, discover & grow, moral values, fairy tale, brave hero, social story), length, number of evenings, moments to include, companions, comfort object, interests and words to avoid.
@@ -74,7 +75,7 @@ Sarah's son Max is 4. On Friday he sees the dentist, and last time he screamed i
 - **Four colour palettes** in day and night versions.
 
 **Business**
-- **Paywall** after chapter 1: **Big Day Pass $9.99 once** or **Gold $49 a year** ($7.99 a month), real **Stripe Checkout in test mode**, customer portal, upgrade offer after the check-in.
+- **Three levels**: Free, **Big Day Pass $9.99 once**, or **Gold $49 a year** ($7.99 a month) with pictures, Cartoon mode and premium voices. Paywall after chapter 1, real **Stripe Checkout in test mode**, customer portal, upgrade offer after the check-in.
 - **Jury demo mode**: a sample family, a guided six-step tour that ticks itself off, time travel (Evening 2, Event day, After the event), "Skip payment (demo access)" and "Reset demo".
 
 ## Screens
@@ -131,7 +132,7 @@ Open [bigdaystories.up.railway.app](https://bigdaystories.up.railway.app) and ta
 
 **Evening 2**, **Event day** and **After the event** move the app's clock; **Reset demo** starts a clean sample for the next person.
 
-To look around the whole app instead, tap **Or explore the whole app with sample data**: the same sample family opens on the home page, with Max and his sister Mia (her school plan started last night, so her path, streak and library already have something in them). The Demo bar's **More to explore** links lead to the home path, library, badges, the story friend, storyteller voices and the parent's own voice, the bedtime routine and the colour palettes. The sample is kept apart from a real family's data, and the **Sample data ×** badge leaves it.
+To look around the whole app instead, tap **Or explore the whole app with sample data** under the buttons: the same sample family opens on the home page, with Max and his sister Mia (her school plan started last night, so her path, streak and library already have something in them). The Demo bar's **More to explore** links lead to the home path, library, badges, the story friend, storyteller voices and the parent's own voice, the bedtime routine and the colour palettes. The sample is kept apart from a real family's data. The **My app | Demo** switch in the header (on phones one chip, **Demo** or **Demo · Exit**) moves between the two in one tap, on every screen except the reader; each side opens on the screen it was left on, and the demo keeps its tour progress. **Back to my app** is also in the open Demo bar and in Settings, and Settings has **Open the demo**. **Reset demo** still starts a fresh sample.
 
 To try it as a real parent, tap **Start for free** and describe your own big day.
 
@@ -141,7 +142,7 @@ To try it as a real parent, tap **Start for free** and describe your own big day
 |---|---|---|
 | Free | $0 | Chapter 1 of any big day, questions, the parent panel, calendar reminders, the check-in |
 | **Big Day Pass** | **$9.99 once**, no auto-renewal | Every chapter and the event-day card for one big day, 90 days |
-| **Gold** | **$49 a year** or $7.99 a month | Every big day for every child, the story remembers what helped |
+| **Gold** | **$49 a year** or $7.99 a month | Every big day for every child, painted scene pictures, Cartoon mode, the premium Moon Storyteller voice and the parent's own voice; the story remembers what helped |
 
 Why families come back: a countdown and a chapter every evening, calendar reminders, the check-in and a badge, the next big day suggested with the form filled in, and a memory of what helps this child that grows with every event. Gross margin is above 90% (AI costs about $0.001 per full story). Market sizing, unit economics and the go-to-market plan are in [docs/pitch/business.md](docs/pitch/business.md).
 

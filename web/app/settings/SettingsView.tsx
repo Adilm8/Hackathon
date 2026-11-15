@@ -1,12 +1,14 @@
 'use client';
+import { GoldNote } from '@/components/paywall/GoldNote';
+import { useGoldExtra } from '@/lib/store/hooks';
 import { childNameError } from '@/lib/childName';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState, type ReactNode } from 'react';
 import { SubscriptionCard } from '@/components/paywall/SubscriptionCard';
 import { ExportImport, NarrationSettings, PalettePicker, Reminders, RestoreLink, StyleToggle, ValuesProfile, VoiceConsent } from '@/components/settings';
-import { clock } from '@/lib/engine/clock';
 import { CHILD_AGES } from '@/lib/engine/plan';
-import { DEFAULT_PALETTE, isNight } from '@/lib/theme';
+import { DEFAULT_PALETTE } from '@/lib/theme';
+import { useThemeMode } from '@/lib/useThemeMode';
 import { clearDeviceData } from '@/lib/storage/clear';
 import { Button, ButtonLink } from '@/components/ui/Button';
 import { ErrorBoundary } from '@/components/ui/ErrorBoundary';
@@ -23,7 +25,7 @@ import { getFamilyDoc, replaceFamilyDoc, wipeAllBrowserKeys } from '@/lib/store/
 import { usePrefs } from '@/lib/store/prefs';
 import { useSettings } from '@/lib/store/settings';
 import { Toggle } from '@/components/ui/Toggle';
-import { exitSample } from '@/lib/store/sample';
+import { enterSample, exitSample } from '@/lib/store/sample';
 import { getWorkspace } from '@/lib/store/workspace';
 import { api } from '@/lib/sync/api';
 
@@ -42,10 +44,12 @@ function Section({ title, children }: { title: string; children: ReactNode }) {
 }
 
 export function SettingsView() {
+  const themeMode = useThemeMode();
   const child = useChild((s) => s.child);
   const updateChild = useChild((s) => s.updateChild);
   const settings = useSettings();
   const prefs = usePrefs();
+  const pictures = useGoldExtra('scenes.pictures');
   const ents = useEntitlements((s) => s.list);
   const router = useRouter();
   const sample = getWorkspace() === 'sample';
@@ -76,8 +80,16 @@ export function SettingsView() {
       </div>
       {sample && (
         <div className="flex items-center justify-between gap-3 rounded-card border-2 border-accent p-4">
-          <p className="text-sm font-bold">You are in the sample. Nothing here touches your own family.</p>
-          <Button variant="secondary" onClick={exitSample}>Exit sample</Button>
+          <p className="text-sm font-bold">You are in the demo. Nothing here touches your own family.</p>
+          <Button variant="secondary" className="whitespace-nowrap" onClick={exitSample}>Back to my app</Button>
+        </div>
+      )}
+      {!sample && (
+        <div id="demo" className="flex items-center justify-between gap-3 rounded-card border-2 border-line p-4">
+          <p className="text-sm">
+            <span className="font-bold">Demo with sample data.</span> Look around the whole app with Max and Mia, then come back here. Your family stays as it is.
+          </p>
+          <Button variant="secondary" className="whitespace-nowrap" onClick={() => void enterSample()}>Open the demo</Button>
         </div>
       )}
 
@@ -121,7 +133,7 @@ export function SettingsView() {
         <PalettePicker
           palette={settings.palette ?? DEFAULT_PALETTE}
           nightMode={settings.nightMode}
-          mode={isNight(settings.nightMode, clock.hour()) ? 'night' : 'light'}
+          mode={themeMode}
           onPalette={settings.setPalette}
           onNightMode={settings.setNightMode}
         />
@@ -145,7 +157,8 @@ export function SettingsView() {
           hint="A clearer font with more space between letters and words. Helps early and struggling readers."
           checked={prefs.easyRead} onChange={prefs.setEasyRead}
         />
-        {isOn('illustratedScenes') && (
+        {isOn('illustratedScenes') && !pictures && <GoldNote what="Painted pictures and Cartoon mode for every chapter." />}
+        {isOn('illustratedScenes') && pictures && (
           <Toggle
             id="illustrated" label="Painted pictures"
             hint="Each chapter shows its own painted scene. Turn off for the simple drawn scenes."

@@ -49,7 +49,7 @@ Contents: 1 Product · 2 Decisions · 3 Scope · 4 User flows and screens · 5 P
 | D12 | Stripe stays; more payment methods and checkout styling may be added (10.7). |
 | D13 | Voice (recognition, narration in the character's voice, the parent's voice, spoken answers, adaptation) is wanted because it raises the product in the jury's eyes. For the MVP it is sized by the time left; everything else is planned by tier (17.1). |
 | D14 | Child's name: follow US law and best practice. A first name or a nickname may be stored; a surname never (6.3). |
-| D15 | Features are grouped into named subscription levels, to be finalised later; the free level offers a couple of trial stories. **In the MVP every feature is open**; only the paywall required by the case rules stays (10.1, 17.2). |
+| D15 | Features are grouped into named subscription levels, to be finalised later; the free level offers a couple of trial stories. ~~In the MVP every feature is open~~. Updated 15 Nov: three levels, Free, Big Day Pass and Gold, matching the real functionality; Gold holds the painted pictures, Cartoon mode, premium voice and voice clone (10.1, 17.2). |
 | D16 | Pacing of chapters and the check-in details are decided by the architect and re-checked in a working session (5.2, 4.13). |
 | D17 | Models: follow benchmarks and start from the cheaper end, though not the very cheapest (candidates named by Lida: DeepSeek 4.1 Flash, Haiku 5.5); read what is written about them, then test. Until then Gemini is used wherever possible, within its limits (8.1, 8.8). |
 | D18 | The paywall stays. The jury, and anyone opening the deployed link, must still be able to see every function quickly: solved by the jury demo mode (4.3, 5.1). |
@@ -988,20 +988,24 @@ Health: `{ ok: true, db: true, provider, budgetLeft: boolean, version }`, used b
 | Monthly | $7.99 per month | `subscription`, monthly | same as Year |
 | Upgrade | $39 for the first year, then $49 | `subscription`, yearly, with a one-time $10 discount created by code | offered after the check-in to Event Pack owners |
 
-Names on screen (default of the payment stream, K12): the paywall calls the one-time purchase **Big Day Pass** and the subscription **Gold**, with yearly and monthly as a switch inside the Gold card, following 17.2. The stored plan ids and the API stay `event | year | month` (6.1), so a rename later touches only `plans.ts`. In this document "Event Pack" means Big Day Pass, and "Family Year" and "Monthly" mean Gold yearly and Gold monthly.
+Names on screen (decided 15 Nov, three levels): the paywall calls the one-time purchase **Big Day Pass** and the subscription **Gold**, with yearly and monthly as a switch inside the Gold card, following 17.2. The stored plan ids and the API stay `event | year | month` (6.1), so a rename later touches only `plans.ts`. In this document "Event Pack" means Big Day Pass, and "Family Year" and "Monthly" mean Gold yearly and Gold monthly.
 
-Feature gating. Lida's decision for the MVP (D15): every feature is open to everyone. The only thing behind payment is what the case rules require a working paywall for: chapters 2+ and the event-day card. The column "Enforced now" is what the code checks; the named subscription levels are designed in 17.2.
+Feature gating: three levels (Lida's decision of 15 Nov, replaces D15 "everything open" and the five levels proposed in 17.2). Free, Big Day Pass and Gold, matching what the app really does today. Gold yearly, Gold monthly and the $39 upgrade are one level with the same capabilities. The column "Checked by" says where the rule is enforced.
 
-| Feature | Free | Event Pack | Family Year / Monthly | Enforced now |
+| Feature | Free | Big Day Pass | Gold | Checked by |
 |---|---|---|---|---|
-| Chapter 1, questions, parent panel | yes | yes | yes | - |
-| Chapters 2+ | no | this event | all events | yes |
-| Event-day card and PDF | no | this event | all events | yes |
-| Calendar reminders, check-in, badge | yes | yes | yes | - |
-| Memory of what helped across events | yes | yes | yes | open to all |
-| Social story style, place photos, parent's recorded voice | yes | yes | yes | open to all |
-| Device voice (Listen) | yes | yes | yes | - |
-| Premium narration, cloud voice questions, pictures in stories | - | - | planned tiers (17.2) | not built |
+| Chapter 1 of every big day, questions, parent panel, Parent check | yes | yes | yes | - |
+| Story options, 7 genres, place photos, social story style | yes | yes | yes | - |
+| Calendar, reminders, check-in, badges, achievements, courage stickers, memory | yes | yes | yes | - |
+| Read aloud: device voice, Storyteller character voices (Kokoro, Fish), family recordings of a page or chapter | yes | yes | yes | - |
+| Chapters 2+ | - | this big day | every big day | `/api/chapter` |
+| Event-day card and PDF | - | this big day | every big day | `/api/ritual` |
+| Painted scene pictures (`scenes.pictures`) | - | - | yes | reader and Settings (static images, no cost per use) |
+| Cartoon mode (`scenes.cartoon`) | - | - | yes | reader, once the mode ships |
+| Moon Storyteller premium voice (`voice.premium`, any voice whose model costs at least $40 per million characters) | - | - | yes | `/api/tts` falls back to the default storyteller; Settings hides the voice |
+| Story in a parent's own voice, voice clone (`voice.clone`) | - | - | yes | `/api/voice-sample` POST and `/api/tts` answer 402 |
+
+Safety, control, deletion and export are never sold. Jury demo access (10.4a) writes a Gold row, so after "Skip payment" the jury sees every level-3 feature. Without Gold, locked extras show a small "Gold" line with a link to the Gold paywall (`/event/<id>/paywall?gold=1`), never a dead button; the child's reading room shows no upsell, the reader quietly uses the drawn scenes and the default voice.
 
 Prices are defined in `web/lib/payments/plans.ts` and sent to Stripe as inline `price_data`; no products need to be created in the Stripe dashboard. Only `STRIPE_SECRET_KEY` (test) is needed; there is no publishable key because we redirect to hosted Checkout.
 
@@ -1324,39 +1328,19 @@ The interfaces of 11.6 stay; each item below is a new implementation behind them
 | Spoken answers | Answer page with Listen | Hands-free loop: question by voice → the character answers aloud → the story continues | top tier | the two rows above |
 | Adaptation | Text adapts (question → next page) | Voice adapts too: slower and softer at night, shorter sentences for younger children, the calm technique spoken as a guided exercise | top tier | prompt and voice settings per age and time |
 
-### 17.2 Subscription levels (design after the MVP; names and prices are proposals)
+### 17.2 Subscription levels (decided 15 Nov: three levels)
 
-Principles taken from how consumer subscriptions that convert well are built:
+Lida decided on 15 Nov to keep three levels that match the functionality that exists now: **Free**, **Big Day Pass** $9.99 once and **Gold** $49 a year or $7.99 a month (the $39 first-year upgrade for Pass owners stays). What each one includes is the table in 10.1. The earlier proposal of five levels (Gold, Platinum about $99, Diamond about $149) is dropped: its extras either already ship and now sit in Gold, or are not built.
 
-- At most three paid choices on one screen; more causes hesitation. One is marked as recommended.
-- A level is defined by who it is for, not by a list of switches. Every level must have one headline benefit a parent can repeat.
-- Whatever costs us money per use (premium voice, generated pictures, a stronger model, print) sits in a level whose price covers it. Whatever proves the core value stays free or in the cheapest paid step.
-- Safety and control are never sold: Parent check, the panel, deletion and export are in every level.
-- A one-time purchase stays next to the subscriptions, because fear of subscription traps is the most common complaint in this category.
+Principles kept from the proposal:
 
-| | **Free** | **Big Day Pass** $9.99 once | **Gold** $49/year or $7.99/month | **Platinum** about $99/year | **Diamond** about $149/year |
-|---|---|---|---|---|---|
-| For whom | trying it out | one event, no subscription | a family with several big days a year | families who want the richest experience | children who need it most often; the top of the line |
-| Headline | "See how your child reacts" | "Everything for this one big day" | "Ready for every big day" | "Stories that sound and look like a real book" | "In your own voice, on paper, with everyone who helps" |
-| Stories | a couple of trial stories: chapter 1 of the first two events | one event in full | all events | all events | all events |
-| Questions, parent panel, Parent check | yes | yes | yes | yes | yes |
-| Event-day card and PDF, calendar | calendar only | yes | yes | yes | yes |
-| Check-in, badge, memory | yes, last event | yes, last event | full history and a "What works for Max" summary | same | same |
-| Children | 1 | 1 | up to 3 | up to 3 | up to 5 |
-| Social story style, place photos | yes | yes | yes | yes | yes |
-| Voice | device voice | device voice, own recording | own recordings kept in the account | character voice narration, voice questions on every browser | narration in the parent's own voice, spoken answers |
-| Pictures | SVG character and scenes | same | same | generated illustrations with the same character on every page | stories built around the family's own photos |
-| Model | small fast model | same | same | stronger model for chapters | same |
-| Sharing | - | - | read-only link for grandma or nanny | note for the teacher or doctor | everything, plus a mode for a therapist working with the family |
-| Extras | - | - | - | printed bravery book at a discount | one printed bravery book a year included |
+- At most three choices on one screen, one marked as recommended. The paywall shows the Big Day Pass and Gold cards plus a "Compare Free, Big Day Pass and Gold" table.
+- Each level has one headline a parent can repeat: Free "See how your child reacts", Big Day Pass "The whole story for one big day", Gold "Ready for every big day".
+- Whatever costs us money per use (premium voice, voice cloning, later a stronger model or print) sits in Gold, whose price covers it. Whatever proves the core value stays free.
+- Safety and control are never sold. A one-time purchase stays next to the subscription.
+- In code the levels are one table `web/lib/payments/plans.ts` mapping a plan to capability keys (`chapters.all`, `daycard`, `scenes.pictures`, `scenes.cartoon`, `voice.premium`, `voice.clone`). Screens ask "does this family have capability X" (`hasCapability`, `hasGoldExtra`, the `useGoldExtra` hook, `familyHasExtra` on the server), never "is this family Gold", so levels can be regrouped later without touching the screens.
 
-Notes for the decision:
-
-- Names. Gold, Platinum and Diamond are instantly understood as a ladder, which is their strength; their weakness is that they say nothing about the benefit and people disagree on whether platinum or diamond is higher. An alternative in the product's own language is Brave (Gold), Braver (Platinum), Bravest (Diamond), or plain Family, Family Plus, Family Pro. The table uses the metal names Lida suggested; the final choice is hers (section 19).
-- Start with two subscriptions (Gold and Platinum) and add Diamond only when parent-voice narration and print exist; an empty top level looks unfinished.
-- The free level in the MVP stays as the ТЗ defines it (chapter 1 of any event); the limit of two trial events is switched on together with the levels.
-- Prices of Platinum and Diamond are hypotheses to test: they must cover voice and picture costs, which are measured first (17.1).
-- In code the levels are one table `plans.ts` mapping a level to a list of capability keys (`chapters.all`, `daycard`, `voice.premium`, `images.generated`, …). Screens ask "does this family have capability X", never "is this family Gold", so levels can be renamed and regrouped without touching the screens.
+Not built and therefore not sold yet (candidates for Gold or a later level once they exist): cloud voice questions on every browser, spoken answers, a stronger model for chapters, the share link for grandma, the note for a teacher or doctor, printed bravery book, therapist mode, child limits per level.
 
 ### 17.3 Backlog
 
@@ -1409,7 +1393,7 @@ Hard questions and questions about complex mechanics (D7).
 | # | Question | Decision |
 |---|---|---|
 | K1 | Child's name on the server | Follow US law and best practice: a first name or a nickname is stored, a surname never; the name never goes to an AI provider (D14, 6.3) |
-| K3 | Features locked by level in the MVP | Everything is open in the MVP; named levels are designed for later (D15, 17.2) |
+| K3 | Features locked by level in the MVP | Answered 15 Nov: three levels, Free / Big Day Pass / Gold, gated by capability (10.1, 17.2) |
 | K5 | Reading ahead | Decided by the architect: one chapter a night is recommended, a family with access may read one chapter ahead; re-checked in a usability session (5.2) |
 | K6 | What counts as "didn't help" | Decided by the architect: only what the parent marks; untouched techniques stay neutral (4.13) |
 | K9 | Model budget | No approval yet and nothing is spent. Strategy: benchmarks first, start from the cheaper models, test, move up only if needed; Gemini for now (D17, 8.8) |
@@ -1426,7 +1410,7 @@ Lida's instruction when development started: keep the defaults, mark the questio
 | K7 | Social story style and questions | The answer page appears, but the next page is not rewritten, because the text must not change on re-reading; the topic moves to the next chapter | In a usability session with the social story persona |
 | K8 | Premium narration and the name | Not built in the MVP. When ElevenLabs is connected: explicit consent from the parent before the spoken name goes to the voice provider | When the voice work starts (17.1) |
 | K10 | Deploy timing | Deploy at 08:30 at the latest; the Railway project and PostgreSQL are created earlier | At checkpoint 2 (07:00) |
-| K12 | Names of the levels | Changed by the payment stream on 15 Nov: the paywall shows **Big Day Pass** ($9.99 once) and **Gold** ($49 a year or $7.99 a month) as in 17.2, in place of the ТЗ names Event Pack, Family Year and Monthly; plan ids are unchanged. Platinum and Diamond stay working names of later levels | With the level design after the hackathon; before the pitch, check that the slides use the same names as the paywall |
+| K12 | Names of the levels | Changed by the payment stream on 15 Nov: the paywall shows **Big Day Pass** ($9.99 once) and **Gold** ($49 a year or $7.99 a month) as in 17.2, in place of the ТЗ names Event Pack, Family Year and Monthly; plan ids are unchanged. Answered 15 Nov: three levels only, Platinum and Diamond dropped | Slides use Free, Big Day Pass, Gold (checked 15 Nov) |
 | K13 | Budgets | Nothing is spent. Every paid run is requested separately with an estimate; the first request comes with the model shortlist | In the LLM working session (8.8) |
 
 ### Accepted by default on 15 Nov, 02:25: payment stream, revisit later

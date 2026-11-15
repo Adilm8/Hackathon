@@ -88,6 +88,10 @@
       "fallbackAnswer": [
         "Yes, [[GROWNUP]] can stay in the room with you.",
         "You can look at [[GROWNUP]] or hold a hand or a foot the whole time."
+      ],
+      "ages": [
+        2,
+        9
       ]
     },
     {
@@ -152,6 +156,37 @@
       "fallbackAnswer": [
         "Sometimes the dentist takes a picture of your teeth with a special camera.",
         "You bite on something small and keep still for a moment, and then it is done."
+      ]
+    },
+    {
+      "id": "pull",
+      "text": "Will they pull my tooth?",
+      "topic": "pain",
+      "fallbackAnswer": [
+        "Most visits are only counting, cleaning and looking. If a tooth ever needs to come out, the dentist and [[GROWNUP]] will tell you first.",
+        "Nothing happens to your teeth without someone telling you."
+      ]
+    },
+    {
+      "id": "needle",
+      "text": "Will there be a needle?",
+      "topic": "pain",
+      "fallbackAnswer": [
+        "Most check-ups have no needle at all. If a tooth needs fixing, the dentist may use sleepy-tooth medicine, and [[GROWNUP]] will tell you before the visit.",
+        "You can always ask the dentist, what are you doing now?"
+      ]
+    },
+    {
+      "id": "braces",
+      "text": "Will I need braces?",
+      "topic": "body",
+      "fallbackAnswer": [
+        "The dentist looks at how your teeth fit together as you grow. Many kids get braces later to help teeth line up, and it is very common.",
+        "If braces are ever an idea, you will talk about it together first."
+      ],
+      "ages": [
+        7,
+        12
       ]
     }
   ],

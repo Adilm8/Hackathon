@@ -7,8 +7,10 @@ import { Toggle } from '@/components/ui/Toggle';
 import { narrator, readingVoices, speakOnce, subscribeVoices } from '@/lib/speech/narrator';
 import { RATES, type RateName } from '@/lib/speech/voices';
 import { usePrefs } from '@/lib/store/prefs';
-import { ParentVoiceClone } from './ParentVoiceClone';
+import { familyVoiceId, ParentVoiceClone, type FamilyVoice } from './ParentVoiceClone';
 import { Segmented } from './Segmented';
+import { GoldNote } from '@/components/paywall/GoldNote';
+import { useGoldExtra } from '@/lib/store/hooks';
 
 const noop = () => () => {};
 const none: SpeechSynthesisVoice[] = [];
@@ -34,10 +36,15 @@ export function NarrationSettings() {
     void premiumVoices().then((v) => live && setCharacters(v));
     return () => { live = false; };
   }, []);
-  const [parentHas, setParentHas] = useState(false);
+  const [family, setFamily] = useState<FamilyVoice[]>([]);
+  const goldVoice = useGoldExtra('voice.premium');
+  const goldClone = useGoldExtra('voice.clone');
   const premium = characters.length > 0;
-  // The parent's cloned voice (demo) joins the characters once it is saved.
-  const all = parentHas ? [...characters, { id: 'parent', label: 'My voice' }] : characters;
+  // Gold voices (Moon Storyteller) are offered only with Gold (SPEC 10.1).
+  const offered = characters.filter((c) => goldVoice || !c.gold);
+  const lockedGold = characters.some((c) => c.gold) && !goldVoice;
+  // The family's cloned voices (demo) join the characters once saved.
+  const all = [...offered, ...(goldClone ? family.map((v) => ({ id: familyVoiceId(v), label: v.name })) : [])];
   const character = all.find((c) => c.id === characterVoice)?.id ?? all[0]?.id ?? '';
   const hearCharacter = (id: string) =>
     cloudNarrator.speak([SAMPLE], { voiceURI: id, rate: RATES[speechRate], onSentence: () => {}, onEnd: () => {} });
@@ -68,12 +75,18 @@ export function NarrationSettings() {
           </Button>
         </div>
       )}
-      {premium && storyVoice === 'premium' && (
+      {premium && storyVoice === 'premium' && (!goldClone || lockedGold) && (
+        <GoldNote what={lockedGold ? 'Moon Storyteller voice and the story read in your own voice.' : 'The story read in your own voice.'} />
+      )}
+      {premium && storyVoice === 'premium' && goldClone && (
         <ParentVoiceClone
-          onChange={(has) => {
-            setParentHas(has);
-            if (has) setVoice({ characterVoice: 'parent' });
-            else if (usePrefs.getState().characterVoice === 'parent') setVoice({ characterVoice: null });
+          onChange={(voices, added) => {
+            setFamily(voices);
+            const cur = usePrefs.getState().characterVoice;
+            if (added) setVoice({ characterVoice: familyVoiceId(added) });
+            // The first saved voice was called "parent" before there could be several (PR #32).
+            else if (cur === 'parent' && voices[0]) setVoice({ characterVoice: familyVoiceId(voices[0]) });
+            else if (cur?.startsWith('parent') && !voices.some((v) => familyVoiceId(v) === cur)) setVoice({ characterVoice: null });
           }}
         />
       )}

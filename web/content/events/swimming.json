@@ -141,6 +141,37 @@
         "First the changing room and the swimsuit, then a quick shower.",
         "Then you sit on the edge and the teacher helps you in."
       ]
+    },
+    {
+      "id": "goggles",
+      "text": "Can I wear goggles or a float?",
+      "topic": "safety",
+      "fallbackAnswer": [
+        "Yes. Goggles keep water out of your eyes, and floats help you feel steady. The teacher will show you how to use them.",
+        "You can try the goggles in the bath first."
+      ]
+    },
+    {
+      "id": "toilet",
+      "text": "What if I need the toilet?",
+      "topic": "body",
+      "fallbackAnswer": [
+        "Tell the teacher or [[GROWNUP]] any time. Every pool has toilets near the changing room.",
+        "It is a good idea to go before the lesson starts."
+      ]
+    },
+    {
+      "id": "not_good",
+      "text": "What if I am not good at it?",
+      "topic": "social",
+      "fallbackAnswer": [
+        "Everyone starts as a beginner, even the teacher once did. Learning to swim takes lots of small steps.",
+        "You get a little better each lesson."
+      ],
+      "ages": [
+        6,
+        12
+      ]
     }
   ],
   "techniques": [

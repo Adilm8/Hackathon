@@ -1,0 +1,2479 @@
+{
+  "type": "playdate",
+  "version": 1,
+  "label": "First playdate",
+  "countdownLabel": "the playdate",
+  "beats": {
+    "what_happens": {
+      "title": "What happens on a playdate",
+      "goals": [
+        "A friend comes to play, or we go to them",
+        "There is play, snack and tidy-up",
+        "It ends with goodbye"
+      ],
+      "parentSkill": "Tell your child how long the playdate lasts, using a marker like \"until snack and one more game\"."
+    },
+    "who_is_there": {
+      "title": "Who is at the playdate",
+      "goals": [
+        "The friend, and maybe the friend's grown-up",
+        "Grown-ups are nearby to help",
+        "Different homes have different rules"
+      ],
+      "parentSkill": "Tell your child the friend's name and the grown-up's name, and where you will be."
+    },
+    "what_i_do": {
+      "title": "What I do at the playdate",
+      "goals": [
+        "Take turns and share",
+        "Use words when there is a problem",
+        "Tidy up and say goodbye"
+      ],
+      "parentSkill": "Practise turn-taking with a timer or a \"you choose, I choose\" rule."
+    },
+    "if_scared": {
+      "title": "If it feels tricky",
+      "goals": [
+        "Feeling shy or cross is normal",
+        "Disagreements happen and can be fixed",
+        "Calm tools: words, a break, a grown-up"
+      ],
+      "parentSkill": "Coach, don't rescue: 'You both want the truck. What could you try?'"
+    },
+    "rehearsal": {
+      "title": "Let's practise the playdate",
+      "goals": [
+        "Practise hello and choosing games",
+        "Practise taking turns and using words",
+        "Choose snack and special toys to put away"
+      ],
+      "parentSkill": "Play a pretend playdate with toys, including a pretend disagreement solved with words."
+    }
+  },
+  "steps": [
+    "Choose a few games and put away special toys",
+    "The friend arrives, or we go to their home",
+    "Say hello and show the toys or the garden",
+    "Play together and take turns",
+    "Have a snack together",
+    "Tidy up together",
+    "Say goodbye and thank you"
+  ],
+  "sensory": [
+    "a friend's voice and laughter in my home",
+    "toys spread on the floor",
+    "a different house with different smells",
+    "snack crumbs",
+    "running and giggling",
+    "the doorbell ringing"
+  ],
+  "honestyNotes": "Playdates can include disagreements, sharing struggles and tears; never promise it will be perfect. It is okay to put away a few special toys. Children may want to stop early. Let the parent say whose home it is and how long it lasts.",
+  "questionButtons": [
+    {
+      "id": "share",
+      "text": "Do I have to share everything?",
+      "topic": "social",
+      "fallbackAnswer": [
+        "You can put away a few special toys first.",
+        "For the rest, taking turns helps everyone have fun."
+      ]
+    },
+    {
+      "id": "not_like",
+      "text": "What if my friend doesn't like my games?",
+      "topic": "social",
+      "fallbackAnswer": [
+        "You can ask, what do you want to play?",
+        "One game for you, one game for me."
+      ]
+    },
+    {
+      "id": "fight",
+      "text": "What if we fight?",
+      "topic": "safety",
+      "fallbackAnswer": [
+        "Friends disagree sometimes. Use words, and ask a grown-up for help.",
+        "Problems can be fixed."
+      ]
+    },
+    {
+      "id": "stay",
+      "text": "Will [[GROWNUP]] be there?",
+      "topic": "separation",
+      "fallbackAnswer": [
+        "[[GROWNUP]] will tell you if they stay, or when they come back.",
+        "A grown-up is always nearby."
+      ]
+    },
+    {
+      "id": "friend_home",
+      "text": "What is my friend's home like?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "Every home is a bit different, with its own rules and smells.",
+        "You can ask where the toilet is and what the rules are."
+      ]
+    },
+    {
+      "id": "grownup",
+      "text": "Who is my friend's grown-up?",
+      "topic": "strangers",
+      "fallbackAnswer": [
+        "[[GROWNUP]] will tell you their name.",
+        "They look after you both and can help you."
+      ]
+    },
+    {
+      "id": "shy",
+      "text": "What if I feel shy?",
+      "topic": "love",
+      "fallbackAnswer": [
+        "Feeling shy at first is normal.",
+        "You can show your friend one toy to start."
+      ]
+    },
+    {
+      "id": "snack",
+      "text": "What if I don't like their snack?",
+      "topic": "body",
+      "fallbackAnswer": [
+        "You can say, no thank you.",
+        "There will be something else."
+      ]
+    },
+    {
+      "id": "long",
+      "text": "How long is the playdate?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "[[GROWNUP]] will tell you, maybe until snack and one more game.",
+        "Then it is goodbye."
+      ]
+    },
+    {
+      "id": "loud",
+      "text": "What if it gets too loud?",
+      "topic": "sensory",
+      "fallbackAnswer": [
+        "Playdates can get noisy with running and giggling.",
+        "You can suggest a quiet game, like drawing."
+      ]
+    },
+    {
+      "id": "leave_out",
+      "text": "What if they play with someone else?",
+      "topic": "social",
+      "fallbackAnswer": [
+        "You can ask, can I join?",
+        "Or suggest a game for everyone."
+      ],
+      "ages": [
+        6,
+        12
+      ]
+    }
+  ],
+  "techniques": [
+    {
+      "id": "special_box",
+      "label": "A special toy box",
+      "how": "Put away a few special toys before the playdate.",
+      "topics": [
+        "social",
+        "safety"
+      ]
+    },
+    {
+      "id": "turn_timer",
+      "label": "A turn timer",
+      "how": "Use a timer or counting for turns.",
+      "topics": [
+        "social",
+        "safety"
+      ]
+    },
+    {
+      "id": "my_turn_your_turn",
+      "label": "You choose, I choose",
+      "how": "Take turns choosing games.",
+      "topics": [
+        "social"
+      ]
+    },
+    {
+      "id": "feeling_words",
+      "label": "Feeling words",
+      "how": "Practise: I don't like that, can I have a turn?",
+      "topics": [
+        "safety",
+        "social",
+        "love"
+      ]
+    },
+    {
+      "id": "activity_plan",
+      "label": "An activity plan",
+      "how": "Choose two or three activities ahead of time.",
+      "topics": [
+        "unknown"
+      ]
+    },
+    {
+      "id": "snack_break",
+      "label": "A snack break",
+      "how": "Plan a snack in the middle to reset.",
+      "topics": [
+        "body",
+        "sensory"
+      ]
+    },
+    {
+      "id": "house_rules",
+      "label": "Asking about house rules",
+      "how": "Ask the friend's grown-up about rules and the toilet.",
+      "topics": [
+        "strangers",
+        "unknown",
+        "body"
+      ]
+    },
+    {
+      "id": "end_signal",
+      "label": "A five-minute warning",
+      "how": "Give a five-minute warning before goodbye.",
+      "topics": [
+        "separation",
+        "unknown"
+      ]
+    },
+    {
+      "id": "deep_breaths",
+      "label": "Smell the flower, blow the candle",
+      "how": "Breathe in slowly through the nose and out like blowing a candle.",
+      "topics": [
+        "pain",
+        "sensory",
+        "safety"
+      ]
+    }
+  ],
+  "ritual": [
+    "Choose games and put special toys away",
+    "One for me, one for you",
+    "Tidy up and say thank you"
+  ],
+  "phrases": {
+    "pain": [
+      "If someone gets bumped, stop and check, and say sorry.",
+      "Tell a grown-up if something hurts."
+    ],
+    "body": [
+      "Snack time is a nice break.",
+      "You can say no thank you."
+    ],
+    "sensory": [
+      "It's getting loud. Want a quiet game?",
+      "New homes smell different. That is normal."
+    ],
+    "strangers": [
+      "That's Toby's mum. She'll look after you both.",
+      "You can ask her for help."
+    ],
+    "separation": [
+      "I'll be in the kitchen if you need me.",
+      "I will come back at the end."
+    ],
+    "unknown": [
+      "Hello, play, snack, tidy, goodbye.",
+      "Five more minutes, then goodbye."
+    ],
+    "safety": [
+      "Use your words: I don't like that.",
+      "Ask a grown-up if words don't work."
+    ],
+    "social": [
+      "One for you, one for me.",
+      "Ask your friend what they want to play."
+    ],
+    "love": [
+      "I'm proud of how you took turns.",
+      "I love seeing you play with friends."
+    ]
+  },
+  "topicWords": {
+    "pain": [
+      "hurt",
+      "hurts",
+      "bumped",
+      "splashed",
+      "ouch",
+      "sore"
+    ],
+    "body": [
+      "snack",
+      "crackers",
+      "toilet",
+      "water",
+      "eat"
+    ],
+    "sensory": [
+      "loud",
+      "noisy",
+      "giggling",
+      "doorbell",
+      "ding dong",
+      "smell",
+      "smells",
+      "knock"
+    ],
+    "strangers": [
+      "friend's grown-up",
+      "their grown-up",
+      "toby's mama",
+      "mama was",
+      "grown-up looks after"
+    ],
+    "separation": [
+      "come back",
+      "came back",
+      "nearby",
+      "stay",
+      "with me",
+      "kitchen",
+      "right there",
+      "close",
+      "with you",
+      "together",
+      "comes back",
+      "back",
+      "hand"
+    ],
+    "unknown": [
+      "first",
+      "then",
+      "next",
+      "after",
+      "last",
+      "plan",
+      "step",
+      "steps"
+    ],
+    "safety": [
+      "rules",
+      "rule",
+      "words",
+      "help",
+      "break",
+      "gently",
+      "safe",
+      "careful",
+      "stop"
+    ],
+    "social": [
+      "friend",
+      "friends",
+      "turn",
+      "turns",
+      "share",
+      "sharing",
+      "play",
+      "games",
+      "together",
+      "kids",
+      "children",
+      "people",
+      "everyone",
+      "others"
+    ],
+    "love": [
+      "love",
+      "hug",
+      "proud",
+      "cuddle"
+    ]
+  },
+  "backgrounds": [
+    "home-evening",
+    "outside",
+    "cosy-room"
+  ],
+  "fallbackPages": {
+    "story": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "Soon [[CHILD]] will have a playdate.",
+              "kind": "describe"
+            },
+            {
+              "text": "A playdate is when a friend comes to play, or when we visit a friend.",
+              "kind": "describe"
+            },
+            {
+              "text": "First [[CHILD]] chooses some games and puts away a few special toys.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the doorbell rings, ding dong.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can ask the friend, what do you want to play?",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "sensory",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Before bed, here is a story about a little otter called Olive.",
+              "kind": "describe"
+            },
+            {
+              "text": "Olive invited her friend Toby the turtle to play.",
+              "kind": "describe"
+            },
+            {
+              "text": "First Olive picked out her favourite games.",
+              "kind": "describe"
+            },
+            {
+              "text": "She put her special shell in a box, just for her.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then there was a knock at the den.",
+              "kind": "describe"
+            },
+            {
+              "text": "Hello, Toby, said Olive.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next they built a river of stones and floated leaf boats.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, they had fish crackers on the riverbank.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then they tidied up the stones together.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bye, Toby, said Olive, come again.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Next the friends say hello and choose what to play.",
+              "kind": "describe"
+            },
+            {
+              "text": "After a while, there is a snack together.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then a little more play, and tidy-up time.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, the friend says goodbye, and the playdate ends.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can ask the friend, what do you want to play?",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "separation",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Soon [[CHILD]] will have a playdate.",
+              "kind": "describe"
+            },
+            {
+              "text": "A playdate is when a friend comes to play, or when we visit a friend.",
+              "kind": "describe"
+            },
+            {
+              "text": "First [[CHILD]] chooses some games and puts away a few special toys.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the doorbell rings, ding dong.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next the friends say hello and choose what to play.",
+              "kind": "describe"
+            },
+            {
+              "text": "After a while, there is a snack together.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then a little more play, and tidy-up time.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, the friend says goodbye, and the playdate ends.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can ask the friend, what do you want to play?",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "At the playdate, there is the friend.",
+              "kind": "describe"
+            },
+            {
+              "text": "The friend's grown-up may stay for a bit or come back later.",
+              "kind": "describe"
+            },
+            {
+              "text": "At our home, our rules apply.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the friend's home, their grown-up looks after both kids and has their own rules.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say to the friend's grown-up, can you help us, please?",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "strangers",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Olive the otter visited Toby the turtle's home next time.",
+              "kind": "describe"
+            },
+            {
+              "text": "Toby's mama was a big, kind turtle with a slow smile.",
+              "kind": "describe"
+            },
+            {
+              "text": "Welcome, Olive, she said.",
+              "kind": "describe"
+            },
+            {
+              "text": "At Toby's home, everyone took off their muddy feet at the door.",
+              "kind": "describe"
+            },
+            {
+              "text": "That is our rule, said Toby.",
+              "kind": "describe"
+            },
+            {
+              "text": "Olive wiped her paws, too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Toby's little sister wanted to play.",
+              "kind": "describe"
+            },
+            {
+              "text": "Olive let her hold a leaf boat.",
+              "kind": "describe"
+            },
+            {
+              "text": "When Olive needed water, she asked Toby's mama.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama Otter came back at the end, just as she said.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Grown-ups are nearby to help if needed.",
+              "kind": "describe"
+            },
+            {
+              "text": "Brothers, sisters or pets may join in or watch.",
+              "kind": "describe"
+            },
+            {
+              "text": "Every friend likes different games.",
+              "kind": "describe"
+            },
+            {
+              "text": "Getting to know each other takes a little time.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say to the friend's grown-up, can you help us, please?",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "strangers",
+            "separation",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At the playdate, there is the friend.",
+              "kind": "describe"
+            },
+            {
+              "text": "The friend's grown-up may stay for a bit or come back later.",
+              "kind": "describe"
+            },
+            {
+              "text": "At our home, our rules apply.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the friend's home, their grown-up looks after both kids and has their own rules.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grown-ups are nearby to help if needed.",
+              "kind": "describe"
+            },
+            {
+              "text": "Brothers, sisters or pets may join in or watch.",
+              "kind": "describe"
+            },
+            {
+              "text": "Every friend likes different games.",
+              "kind": "describe"
+            },
+            {
+              "text": "Getting to know each other takes a little time.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say to the friend's grown-up, can you help us, please?",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "strangers",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "At the playdate, [[CHILD]] and the friend take turns choosing games.",
+              "kind": "describe"
+            },
+            {
+              "text": "One game for me, one game for you.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sharing toys can be tricky, so a timer helps with turns.",
+              "kind": "describe"
+            },
+            {
+              "text": "If there is a problem, use words: I don't like that, or can I have a turn?",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say, one for me, one for you.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Olive the otter and Toby the turtle both wanted the red leaf boat.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mine, said Olive, and Toby frowned.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then Olive remembered.",
+              "kind": "describe"
+            },
+            {
+              "text": "One turn for me, one turn for you, she said.",
+              "kind": "describe"
+            },
+            {
+              "text": "They counted to twenty for each turn.",
+              "kind": "describe"
+            },
+            {
+              "text": "Later, Toby splashed Olive too hard.",
+              "kind": "describe"
+            },
+            {
+              "text": "I don't like that, said Olive.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sorry, said Toby, and they played gently.",
+              "kind": "describe"
+            },
+            {
+              "text": "At snack time they shared fish crackers.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then they tidied up, and Toby said, thank you for having me.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "pain",
+            "body",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "If words do not work, ask a grown-up for help.",
+              "kind": "describe"
+            },
+            {
+              "text": "Snack time is a nice break.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the end, tidy up together.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then say goodbye and thank you for coming.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say, one for me, one for you.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At the playdate, [[CHILD]] and the friend take turns choosing games.",
+              "kind": "describe"
+            },
+            {
+              "text": "One game for me, one game for you.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sharing toys can be tricky, so a timer helps with turns.",
+              "kind": "describe"
+            },
+            {
+              "text": "If there is a problem, use words: I don't like that, or can I have a turn?",
+              "kind": "describe"
+            },
+            {
+              "text": "If words do not work, ask a grown-up for help.",
+              "kind": "describe"
+            },
+            {
+              "text": "Snack time is a nice break.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the end, tidy up together.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then say goodbye and thank you for coming.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say, one for me, one for you.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "Playdates can feel tricky sometimes.",
+              "kind": "describe"
+            },
+            {
+              "text": "At first, friends may feel shy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes friends both want the same toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes one friend wants a different game.",
+              "kind": "describe"
+            },
+            {
+              "text": "Feeling cross or sad is normal.",
+              "kind": "describe"
+            },
+            {
+              "text": "Problems can be fixed with words, turns or a new game.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can take slow breaths, smell the flower and blow the candle.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "worried",
+          "background": "home-evening",
+          "addresses": [
+            "sensory",
+            "unknown",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Olive the otter felt shy when Toby arrived.",
+              "kind": "describe"
+            },
+            {
+              "text": "She hid behind her mama.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then Toby wanted to play turtle tag, and Olive wanted boats.",
+              "kind": "describe"
+            },
+            {
+              "text": "Olive felt cross and wanted to cry.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama did not say, be nice and share everything.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama said, you both want different games, what could you try?",
+              "kind": "describe"
+            },
+            {
+              "text": "Olive took a slow breath, like smelling a flower.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then she said, turtle tag first, then boats?",
+              "kind": "describe"
+            },
+            {
+              "text": "Toby grinned, okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "They played both, and laughed.",
+              "kind": "describe"
+            },
+            {
+              "text": "Worried and brave can happen at the same time.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "sensory",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Taking a little break helps big feelings shrink.",
+              "kind": "describe"
+            },
+            {
+              "text": "Even good friends disagree.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can take slow breaths, smell the flower and blow the candle.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can say, I need a little break.",
+              "kind": "coach"
+            },
+            {
+              "text": "Step by step, it all gets a little easier.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is close by, and [[GROWNUP]] is proud.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "sensory",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Playdates can feel tricky sometimes.",
+              "kind": "describe"
+            },
+            {
+              "text": "At first, friends may feel shy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes friends both want the same toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sometimes one friend wants a different game.",
+              "kind": "describe"
+            },
+            {
+              "text": "Feeling cross or sad is normal.",
+              "kind": "describe"
+            },
+            {
+              "text": "Problems can be fixed with words, turns or a new game.",
+              "kind": "describe"
+            },
+            {
+              "text": "Taking a little break helps big feelings shrink.",
+              "kind": "describe"
+            },
+            {
+              "text": "Even good friends disagree.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can take slow breaths, smell the flower and blow the candle.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can say, I need a little break.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "sensory",
+            "unknown",
+            "safety",
+            "social"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "Tonight [[CHILD]] and [[GROWNUP]] can practise the playdate.",
+              "kind": "describe"
+            },
+            {
+              "text": "First they choose two or three games for the friend.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then they decide which special toys to put away.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next they play pretend playdate with toys.",
+              "kind": "describe"
+            },
+            {
+              "text": "The toy friends both want the same ball.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say: hello, play, take turns, snack, tidy, goodbye.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Olive the otter practised with Papa.",
+              "kind": "describe"
+            },
+            {
+              "text": "They chose games: stone river, leaf boats and hide and seek.",
+              "kind": "describe"
+            },
+            {
+              "text": "Olive put her special shell in the box.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then Papa played Toby, in a deep turtle voice.",
+              "kind": "describe"
+            },
+            {
+              "text": "Hello, Olive, want to play?",
+              "kind": "describe"
+            },
+            {
+              "text": "They both grabbed the same leaf boat, on purpose.",
+              "kind": "describe"
+            },
+            {
+              "text": "One for me, one for you, said Olive, laughing.",
+              "kind": "describe"
+            },
+            {
+              "text": "She chose fish crackers for snack.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then they practised, thank you for coming.",
+              "kind": "describe"
+            },
+            {
+              "text": "Olive was ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "And Olive slept well that night.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "[[CHILD]] helps them say, one for me, one for you.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, [[CHILD]] chooses the snack.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, they practise goodbye and thank you for coming.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say: hello, play, take turns, snack, tidy, goodbye.",
+              "kind": "coach"
+            },
+            {
+              "text": "Step by step, it all gets a little easier.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is close by, and [[GROWNUP]] is proud.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight [[CHILD]] and [[GROWNUP]] can practise the playdate.",
+              "kind": "describe"
+            },
+            {
+              "text": "First they choose two or three games for the friend.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then they decide which special toys to put away.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next they play pretend playdate with toys.",
+              "kind": "describe"
+            },
+            {
+              "text": "The toy friends both want the same ball.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] helps them say, one for me, one for you.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, [[CHILD]] chooses the snack.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, they practise goodbye and thank you for coming.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say: hello, play, take turns, snack, tidy, goodbye.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "unknown",
+            "safety",
+            "social"
+          ]
+        }
+      ]
+    },
+    "social": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "Soon I have a playdate.",
+              "kind": "describe"
+            },
+            {
+              "text": "A friend comes to play.",
+              "kind": "describe"
+            },
+            {
+              "text": "Or I go to a friend's home.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I choose some games.",
+              "kind": "describe"
+            },
+            {
+              "text": "I put away a few special toys.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the doorbell rings.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next we say hello.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask, what do you want to play?",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "sensory",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Soon I have a playdate.",
+              "kind": "describe"
+            },
+            {
+              "text": "A friend comes to play.",
+              "kind": "describe"
+            },
+            {
+              "text": "Or I go to a friend's home.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I choose some games.",
+              "kind": "describe"
+            },
+            {
+              "text": "I put away a few special toys.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the doorbell rings.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next we say hello.",
+              "kind": "describe"
+            },
+            {
+              "text": "We choose what to play.",
+              "kind": "describe"
+            },
+            {
+              "text": "After a while, we have a snack.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then we tidy up.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, we say goodbye.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "sensory",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "We choose what to play.",
+              "kind": "describe"
+            },
+            {
+              "text": "After a while, we have a snack.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then we tidy up.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, we say goodbye.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask, what do you want to play?",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "unknown",
+            "social",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Soon I have a playdate.",
+              "kind": "describe"
+            },
+            {
+              "text": "A friend comes to play.",
+              "kind": "describe"
+            },
+            {
+              "text": "Or I go to a friend's home.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I choose some games.",
+              "kind": "describe"
+            },
+            {
+              "text": "I put away a few special toys.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the doorbell rings.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next we say hello.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask, what do you want to play?",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "sensory",
+            "unknown",
+            "social",
+            "love"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "My friend comes to play.",
+              "kind": "describe"
+            },
+            {
+              "text": "My friend's grown-up may stay for a bit.",
+              "kind": "describe"
+            },
+            {
+              "text": "At my home, we have our rules.",
+              "kind": "describe"
+            },
+            {
+              "text": "At my friend's home, they have their rules.",
+              "kind": "describe"
+            },
+            {
+              "text": "Their grown-up looks after us.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grown-ups are nearby.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask a grown-up for help.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "strangers",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "My friend comes to play.",
+              "kind": "describe"
+            },
+            {
+              "text": "My friend's grown-up may stay for a bit.",
+              "kind": "describe"
+            },
+            {
+              "text": "At my home, we have our rules.",
+              "kind": "describe"
+            },
+            {
+              "text": "At my friend's home, they have their rules.",
+              "kind": "describe"
+            },
+            {
+              "text": "Their grown-up looks after us.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grown-ups are nearby.",
+              "kind": "describe"
+            },
+            {
+              "text": "Brothers, sisters or pets may join in.",
+              "kind": "describe"
+            },
+            {
+              "text": "Every friend likes different games.",
+              "kind": "describe"
+            },
+            {
+              "text": "Getting to know each other takes time.",
+              "kind": "describe"
+            },
+            {
+              "text": "That is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "strangers",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Brothers, sisters or pets may join in.",
+              "kind": "describe"
+            },
+            {
+              "text": "Every friend likes different games.",
+              "kind": "describe"
+            },
+            {
+              "text": "Getting to know each other takes time.",
+              "kind": "describe"
+            },
+            {
+              "text": "That is okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask a grown-up for help.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "safety",
+            "social",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "My friend comes to play.",
+              "kind": "describe"
+            },
+            {
+              "text": "My friend's grown-up may stay for a bit.",
+              "kind": "describe"
+            },
+            {
+              "text": "At my home, we have our rules.",
+              "kind": "describe"
+            },
+            {
+              "text": "At my friend's home, they have their rules.",
+              "kind": "describe"
+            },
+            {
+              "text": "Their grown-up looks after us.",
+              "kind": "describe"
+            },
+            {
+              "text": "Grown-ups are nearby.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can ask a grown-up for help.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "strangers",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "At the playdate, we take turns.",
+              "kind": "describe"
+            },
+            {
+              "text": "One game for me, one game for you.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sharing can be tricky.",
+              "kind": "describe"
+            },
+            {
+              "text": "A timer helps.",
+              "kind": "describe"
+            },
+            {
+              "text": "If there is a problem, I use words.",
+              "kind": "describe"
+            },
+            {
+              "text": "I say, I don't like that.",
+              "kind": "describe"
+            },
+            {
+              "text": "I say, can I have a turn?",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say, one for me, one for you.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At the playdate, we take turns.",
+              "kind": "describe"
+            },
+            {
+              "text": "One game for me, one game for you.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sharing can be tricky.",
+              "kind": "describe"
+            },
+            {
+              "text": "A timer helps.",
+              "kind": "describe"
+            },
+            {
+              "text": "If there is a problem, I use words.",
+              "kind": "describe"
+            },
+            {
+              "text": "I say, I don't like that.",
+              "kind": "describe"
+            },
+            {
+              "text": "I say, can I have a turn?",
+              "kind": "describe"
+            },
+            {
+              "text": "If words don't work, I ask a grown-up.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the end, we tidy up.",
+              "kind": "describe"
+            },
+            {
+              "text": "We say goodbye.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "safety",
+            "social",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "If words don't work, I ask a grown-up.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the end, we tidy up.",
+              "kind": "describe"
+            },
+            {
+              "text": "We say goodbye.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say, one for me, one for you.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "safety",
+            "social",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At the playdate, we take turns.",
+              "kind": "describe"
+            },
+            {
+              "text": "One game for me, one game for you.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sharing can be tricky.",
+              "kind": "describe"
+            },
+            {
+              "text": "A timer helps.",
+              "kind": "describe"
+            },
+            {
+              "text": "If there is a problem, I use words.",
+              "kind": "describe"
+            },
+            {
+              "text": "I say, I don't like that.",
+              "kind": "describe"
+            },
+            {
+              "text": "I say, can I have a turn?",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say, one for me, one for you.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "safety",
+            "social",
+            "love"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "Playdates can feel tricky.",
+              "kind": "describe"
+            },
+            {
+              "text": "At first, I may feel shy.",
+              "kind": "describe"
+            },
+            {
+              "text": "We may both want the same toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "My friend may want a different game.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel cross.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel sad.",
+              "kind": "describe"
+            },
+            {
+              "text": "That is normal.",
+              "kind": "describe"
+            },
+            {
+              "text": "Words can fix problems.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "worried",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Playdates can feel tricky.",
+              "kind": "describe"
+            },
+            {
+              "text": "At first, I may feel shy.",
+              "kind": "describe"
+            },
+            {
+              "text": "We may both want the same toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "My friend may want a different game.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel cross.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel sad.",
+              "kind": "describe"
+            },
+            {
+              "text": "That is normal.",
+              "kind": "describe"
+            },
+            {
+              "text": "Words can fix problems.",
+              "kind": "describe"
+            },
+            {
+              "text": "Turns can fix problems.",
+              "kind": "describe"
+            },
+            {
+              "text": "Even good friends disagree.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "Step by step, it gets a little easier.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "safety",
+            "social",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Turns can fix problems.",
+              "kind": "describe"
+            },
+            {
+              "text": "Even good friends disagree.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can say, I need a little break.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "safety",
+            "social",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Playdates can feel tricky.",
+              "kind": "describe"
+            },
+            {
+              "text": "At first, I may feel shy.",
+              "kind": "describe"
+            },
+            {
+              "text": "We may both want the same toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "My friend may want a different game.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel cross.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel sad.",
+              "kind": "describe"
+            },
+            {
+              "text": "That is normal.",
+              "kind": "describe"
+            },
+            {
+              "text": "Words can fix problems.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can say, I need a little break.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "home-evening",
+          "addresses": [
+            "unknown",
+            "safety",
+            "social",
+            "love"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "Tonight I practise my playdate.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I choose games.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I put away special toys.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next I play pretend with toys.",
+              "kind": "describe"
+            },
+            {
+              "text": "The toys want the same ball.",
+              "kind": "describe"
+            },
+            {
+              "text": "I say, one for me, one for you.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, I choose a snack.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: hello, play, take turns, snack, tidy, goodbye.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight I practise my playdate.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I choose games.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I put away special toys.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next I play pretend with toys.",
+              "kind": "describe"
+            },
+            {
+              "text": "The toys want the same ball.",
+              "kind": "describe"
+            },
+            {
+              "text": "I say, one for me, one for you.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, I choose a snack.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, I practise goodbye.",
+              "kind": "describe"
+            },
+            {
+              "text": "I say, thank you for coming.",
+              "kind": "describe"
+            },
+            {
+              "text": "I feel ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "unknown",
+            "social",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Last, I practise goodbye.",
+              "kind": "describe"
+            },
+            {
+              "text": "I say, thank you for coming.",
+              "kind": "describe"
+            },
+            {
+              "text": "I feel ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: hello, play, take turns, snack, tidy, goodbye.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "unknown",
+            "social",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight I practise my playdate.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I choose games.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I put away special toys.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next I play pretend with toys.",
+              "kind": "describe"
+            },
+            {
+              "text": "The toys want the same ball.",
+              "kind": "describe"
+            },
+            {
+              "text": "I say, one for me, one for you.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, I choose a snack.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: hello, play, take turns, snack, tidy, goodbye.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "home-evening",
+          "addresses": [
+            "body",
+            "unknown",
+            "social",
+            "love"
+          ]
+        }
+      ]
+    }
+  },
+  "badge": {
+    "id": "good_friend",
+    "label": "Good Friend"
+  },
+  "olderPages": {
+    "what_happens": {
+      "sentences": [
+        {
+          "text": "Hosting means helping a guest feel welcome, like offering a choice of games and a snack.",
+          "kind": "describe"
+        },
+        {
+          "text": "Visiting means following that home's rules, which may be different from yours.",
+          "kind": "describe"
+        },
+        {
+          "text": "Friendships grow through shared play and small kindnesses.",
+          "kind": "describe"
+        },
+        {
+          "text": "Short playdates often go better than long ones at first.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can plan two or three activity ideas in case of a quiet moment.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "home-evening",
+      "addresses": [
+        "body",
+        "unknown",
+        "safety",
+        "social"
+      ]
+    },
+    "who_is_there": {
+      "sentences": [
+        {
+          "text": "Being a good guest includes asking before using things and following the house rules.",
+          "kind": "describe"
+        },
+        {
+          "text": "Being a good host includes letting the guest choose sometimes.",
+          "kind": "describe"
+        },
+        {
+          "text": "Siblings joining in can be fun or tricky; a grown-up can help balance it.",
+          "kind": "describe"
+        },
+        {
+          "text": "Each family has different rules about screens, snacks and where to play.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can ask the friend about their favourite things to find common ground.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "home-evening",
+      "addresses": [
+        "body",
+        "safety",
+        "social"
+      ]
+    },
+    "what_i_do": {
+      "sentences": [
+        {
+          "text": "Compromise, finding a game both people like, is a key friendship skill.",
+          "kind": "describe"
+        },
+        {
+          "text": "Saying how you feel without blaming, like I felt left out, helps solve problems.",
+          "kind": "describe"
+        },
+        {
+          "text": "Taking a break when tempers rise prevents bigger fights.",
+          "kind": "describe"
+        },
+        {
+          "text": "Thanking the guest or the host is good manners and leaves a good memory.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can suggest a game that needs two people, like building or a board game.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "brave",
+      "background": "home-evening",
+      "addresses": [
+        "safety",
+        "social"
+      ]
+    },
+    "if_scared": {
+      "sentences": [
+        {
+          "text": "Friendship conflicts are normal and are how kids practise negotiation.",
+          "kind": "describe"
+        },
+        {
+          "text": "Feeling left out or bossed around is worth talking about afterwards.",
+          "kind": "describe"
+        },
+        {
+          "text": "If a friend is unkind repeatedly, a grown-up should know.",
+          "kind": "describe"
+        },
+        {
+          "text": "Ending a playdate early because it is not working is fine.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can think of what to try next time, like a different game or a shorter time.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "worried",
+      "background": "home-evening",
+      "addresses": [
+        "unknown",
+        "social"
+      ]
+    },
+    "rehearsal": {
+      "sentences": [
+        {
+          "text": "Planning a few activities means no awkward, what now, moments.",
+          "kind": "describe"
+        },
+        {
+          "text": "Thinking about what the friend likes shows care.",
+          "kind": "describe"
+        },
+        {
+          "text": "Agreeing a time to finish helps everyone end on a good note.",
+          "kind": "describe"
+        },
+        {
+          "text": "A quick chat afterwards about what went well builds social confidence.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can write or draw a small invitation for the friend.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "happy",
+      "background": "home-evening",
+      "addresses": [
+        "unknown",
+        "safety",
+        "social"
+      ]
+    }
+  }
+}

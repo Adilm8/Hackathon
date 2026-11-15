@@ -108,7 +108,7 @@ function BadgeScreen({ id }: { id: string }) {
       {ws === 'sample' && (
         <Card className="flex flex-col gap-2 text-center">
           <p className="font-bold">That&apos;s the whole product. Ready for your own big day?</p>
-          <Button variant="secondary" onClick={exitSample}>Exit sample</Button>
+          <Button variant="secondary" onClick={exitSample}>Back to my app</Button>
         </Card>
       )}
 

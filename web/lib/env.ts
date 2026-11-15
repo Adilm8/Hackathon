@@ -85,6 +85,17 @@ function load() {
       cacheDir: str('TTS_CACHE_DIR'),
       enabled: !!str('OPENROUTER_API_KEY') && !!str('TTS_MODEL'),
     },
+    /**
+     * Story frames in cartoon mode (lib/frames): a picture drawn for each page's words. Off until both
+     * OPENROUTER_API_KEY and FRAMES_MODEL are set. Its own daily cap, on top of the LLM one.
+     */
+    frames: {
+      model: str('FRAMES_MODEL'),
+      priceUsd: Number(str('FRAMES_PRICE_USD') || '0.02'),
+      budgetUsdPerDay: Number(str('FRAMES_BUDGET_USD_PER_DAY') || '0.2'),
+      cacheDir: str('FRAMES_CACHE_DIR'),
+      enabled: !!str('OPENROUTER_API_KEY') && !!str('FRAMES_MODEL'),
+    },
     /** Web push reminders; empty keys = push is off and the app shows in-app reminders only. */
     vapid: {
       publicKey: str('VAPID_PUBLIC_KEY'),

@@ -58,3 +58,19 @@ describe('colour palettes', () => {
     expect(SettingsSchema.safeParse({ textSize: 'm', nightMode: 'auto', palette: 'pink', schemaVersion: 1 }).success).toBe(false);
   });
 });
+
+describe('dark mode toggle', () => {
+  it('auto follows the device dark mode', async () => {
+    const { isNight } = await import('@/lib/theme');
+    expect(isNight('auto', 12, true)).toBe(true);
+    expect(isNight('off', 12, true)).toBe(false);
+  });
+  it('flips the mode on screen and returns to auto when that matches', async () => {
+    const { toggledNightMode } = await import('@/lib/theme');
+    expect(toggledNightMode('auto', 12, false)).toBe('on');
+    expect(toggledNightMode('on', 12, false)).toBe('auto');
+    expect(toggledNightMode('auto', 12, true)).toBe('off');
+    expect(toggledNightMode('off', 12, true)).toBe('auto');
+    expect(toggledNightMode('auto', 21, false)).toBe('off');
+  });
+});

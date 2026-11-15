@@ -1,10 +1,13 @@
 'use client';
+import { getWorkspace } from '@/lib/store/workspace';
 import { useParams, useRouter } from 'next/navigation';
 import { useMemo, useState } from 'react';
 import { Character } from '@/components/character';
 import { Face, RATING_LABEL } from '@/components/eventday/Faces';
 import { Button, ButtonLink } from '@/components/ui/Button';
 import { Chip } from '@/components/ui/Chip';
+import { Icon } from '@/components/icons';
+import { BRAVE_MOMENTS, MAX_BRAVE_PER_CHECKIN } from '@/lib/home/achievements';
 import { Field, TextInput } from '@/components/ui/Field';
 import { PlanNotFound } from '@/components/ui/NotFound';
 import { Screen } from '@/components/ui/Screen';
@@ -25,7 +28,8 @@ export default function CheckinPage() {
 function CheckinScreen({ id }: { id: string }) {
   const ctx = useEventCtx(id);
   if (!ctx) return <PlanNotFound />;
-  if (ctx.today < ctx.event.date)
+  // Demo (sample family): the check-in opens early so the jury can see it and the badge.
+  if (ctx.today < ctx.event.date && getWorkspace() !== 'sample')
     return (
       <div className="mx-auto flex max-w-md flex-col items-center gap-4 py-12 text-center">
         <Character character={ctx.child.character} mood="calm" size={120} decorative />
@@ -48,6 +52,7 @@ function Form({ ctx }: { ctx: EventCtx }) {
   const [helped, setHelped] = useState<string[]>(prev?.helped ?? []);
   const [didnt, setDidnt] = useState<string[]>(prev?.didntHelp ?? []);
   const [custom, setCustom] = useState(prev?.custom ?? '');
+  const [brave, setBrave] = useState<string[]>(prev?.brave ?? []);
   const [error, setError] = useState<string | null>(null);
 
   const flip = (list: string[], id: string) => (list.includes(id) ? list.filter((x) => x !== id) : [...list, id]);
@@ -57,7 +62,7 @@ function Form({ ctx }: { ctx: EventCtx }) {
       setError('Pick one face first.');
       return;
     }
-    const r = saveCheckin({ event, child, input: { rating, helped, didntHelp: didnt, custom: custom.trim() || undefined }, today, template });
+    const r = saveCheckin({ event, child, input: { rating, helped, didntHelp: didnt, custom: custom.trim() || undefined, brave }, today, template });
     setChild(r.child);
     updateEvent(event.id, () => r.event);
     router.push(`/event/${encodeURIComponent(event.id)}/badge`);
@@ -136,6 +141,25 @@ function Form({ ctx }: { ctx: EventCtx }) {
           ))}
         </div>
         <p className="text-xs text-ink-soft">Leave a box empty if you didn&apos;t try it. We may suggest it again.</p>
+      </section>
+
+      <section aria-labelledby="brave" className="flex flex-col gap-3">
+        <h2 id="brave" className="text-lg font-extrabold">Brave moments <span className="text-sm font-bold text-ink-soft">(optional, up to {MAX_BRAVE_PER_CHECKIN})</span></h2>
+        <p className="text-xs text-ink-soft">{child.name} gets a sticker for each moment you were proud of.</p>
+        <div className="flex flex-wrap gap-2">
+          {BRAVE_MOMENTS.map((m) => {
+            const on = brave.includes(m.id);
+            return (
+              <Chip
+                key={m.id}
+                selected={on}
+                onToggle={() => setBrave((l) => (on ? l.filter((x) => x !== m.id) : l.length >= MAX_BRAVE_PER_CHECKIN ? l : [...l, m.id]))}
+              >
+                <Icon name={m.icon} size={16} /> {m.label}
+              </Chip>
+            );
+          })}
+        </div>
       </section>
 
       {error && <p role="alert" className="text-sm font-bold text-danger">{error}</p>}

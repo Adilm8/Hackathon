@@ -40,12 +40,12 @@
 
 ### 6. Why parents pay and come back
 - **Ключевая мысль:** платят после того, как увидели ценность, и продукт сам зовёт к следующему событию.
-- **На слайде:** Free (chapter 1) → paywall → **Big Day Pass $9.99 once** / **Gold $49/yr or $7.99/mo** (median Education app: $44.99/yr, RevenueCat). "No subscription trap: one-time pack, 30-day renewal reminder." Цикл удержания стрелками: countdown → calendar reminders → check-in → badge → next event prefilled → memory of what works for this child. North Star: events completed to check-in.
+- **На слайде:** Free (chapter 1) → paywall → **Big Day Pass $9.99 once** / **Gold $49/yr or $7.99/mo** with painted pictures, Cartoon mode and premium voices (median Education app: $44.99/yr, RevenueCat). Three levels only. "No subscription trap: one-time pack, 30-day renewal reminder." Цикл удержания стрелками: countdown → calendar reminders → check-in → badge → next event prefilled → memory of what works for this child. North Star: events completed to check-in.
 - **Критерий:** Value & Retention (20%).
 
 ### 7. Market & path to $100M ARR
 - **Ключевая мысль:** большой рынок снизу, и честный путь к $100M слоями.
-- **На слайде:** слева воронка: TAM ≈ $830M (17M US families with a child 3–8 × $49), SAM ≈ $210M (anxiety/autism families on Gold + one big day on Pass), SOM ≈ $1M in year 3 (36k payers from SEO, clinics, communities). Справа столбик слоёв: US core $33M + Big Day Passes $15M + premium tiers $8.5M + print books $9M + ages 2–12 & Spanish $20M + UK/CA/AU $15M ≈ $100M. Подпись: "hypotheses; sizing sources in README". Мелко: Wonderbly sold 8M+ personalized books, acquired by Penguin Random House (2025).
+- **На слайде:** слева воронка: TAM ≈ $830M (17M US families with a child 3–8 × $49), SAM ≈ $210M (anxiety/autism families on Gold + one big day on Pass), SOM ≈ $1M in year 3 (36k payers from SEO, clinics, communities). Справа столбик слоёв: US core $33M + Big Day Passes $15M + Gold monthly $8M + print books $9M + ages 2–12 & Spanish $20M + UK/CA/AU $15M ≈ $100M. Подпись: "hypotheses; sizing sources in README". Мелко: Wonderbly sold 8M+ personalized books, acquired by Penguin Random House (2025).
 - **Критерий:** Business Potential (15%).
 
 ### 8. Unit economics
@@ -60,7 +60,7 @@
 
 ### 10. Team & next milestones
 - **Ключевая мысль:** кто мы и как поймём, что получилось.
-- **На слайде:** команда (имена и роли от Лиды). Milestones, не даты: Pilot (50–100 families, psychologist & COPPA review → 60% of events reach check-in) → Value (20 events, grandma link, print book → 35% second event) → Growth (SEO library, 5–10 pediatric dentists, Spanish → CAC below year-1 revenue) → Depth (character voice & illustrations in premium tiers → yearly renewals).
+- **На слайде:** команда (имена и роли от Лиды). Milestones, не даты: Pilot (50–100 families, psychologist & COPPA review → 60% of events reach check-in) → Value (20 events, grandma link, print book → 35% second event) → Growth (SEO library, 5–10 pediatric dentists, Spanish → CAC below year-1 revenue) → Depth (therapist mode, voice questions on every browser, richer Gold → yearly renewals).
 - **Критерий:** все; закрывает вопрос «что дальше».
 
 ---

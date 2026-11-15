@@ -140,6 +140,37 @@
         "After the big day, we go home and talk about it.",
         "Maybe we will do something cosy together."
       ]
+    },
+    {
+      "id": "cry",
+      "text": "What if I cry?",
+      "topic": "love",
+      "fallbackAnswer": [
+        "Crying is okay. It is one way to let a big feeling out, and [[GROWNUP]] is there to help.",
+        "Lots of people cry on a big day, and then feel better."
+      ]
+    },
+    {
+      "id": "stop",
+      "text": "Can I ask to stop?",
+      "topic": "safety",
+      "fallbackAnswer": [
+        "You can say, I need a break, please. Grown-ups listen and help you take a breath.",
+        "Sometimes the thing needs to finish, and a break helps you get ready."
+      ]
+    },
+    {
+      "id": "why",
+      "text": "Why do I have to do it?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "[[GROWNUP]] can tell you why this big day is important. Asking why is a good question.",
+        "Knowing the reason can make it feel less strange."
+      ],
+      "ages": [
+        5,
+        12
+      ]
     }
   ],
   "techniques": [

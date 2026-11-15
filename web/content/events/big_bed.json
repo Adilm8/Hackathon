@@ -1,0 +1,2475 @@
+{
+  "type": "big_bed",
+  "version": 1,
+  "label": "Big bed or own room",
+  "countdownLabel": "the first night in the big bed",
+  "beats": {
+    "what_happens": {
+      "title": "What happens with the big bed",
+      "goals": [
+        "Moving to a big bed or own room is a growing-up step",
+        "The bedtime routine stays the same",
+        "Morning comes, and we celebrate"
+      ],
+      "parentSkill": "Keep the bedtime routine exactly the same; only the bed changes."
+    },
+    "who_is_there": {
+      "title": "Who is close at night",
+      "goals": [
+        "[[GROWNUP]] is close by in the house",
+        "The cuddly toy keeps me company",
+        "Siblings or pets may be nearby"
+      ],
+      "parentSkill": "Show your child exactly where you sleep and walk the path from their bed to your room together."
+    },
+    "what_i_do": {
+      "title": "What I do in the big bed",
+      "goals": [
+        "Do the same bedtime steps",
+        "Stay in bed until the morning signal",
+        "Know the plan if I wake up"
+      ],
+      "parentSkill": "Use a simple morning signal, like a night light that changes colour, and agree the wake-up plan."
+    },
+    "if_scared": {
+      "title": "If I feel scared at night",
+      "goals": [
+        "The dark and night sounds can feel scary",
+        "Feeling lonely is normal at first",
+        "Calm tools: night light, toy, slow breaths, the plan"
+      ],
+      "parentSkill": "Name the night fears without dismissing them: 'The dark can feel scary. Your night light is on, and I'm close by.'"
+    },
+    "rehearsal": {
+      "title": "Let's practise the big bed",
+      "goals": [
+        "Try the bed for a nap or quiet time first",
+        "Practise the night plan",
+        "Set up the night light and toy"
+      ],
+      "parentSkill": "Do a daytime practice: quiet time in the new bed with a story, then a \"pretend morning\" celebration."
+    }
+  },
+  "steps": [
+    "Help set up the new bed or room",
+    "Choose the sheets, a night light and a cuddly toy",
+    "Do the usual bedtime: bath, pyjamas, teeth, story",
+    "Climb into the big bed and say goodnight",
+    "Stay in bed until the morning light or the clock says so",
+    "Call softly or walk to a grown-up if really needed",
+    "Wake up and celebrate the first night"
+  ],
+  "sensory": [
+    "a bigger bed that feels wide",
+    "new sheets with a fresh smell",
+    "a soft night light",
+    "house sounds in the night, like pipes or wind",
+    "a quiet, dark room",
+    "a cuddly toy to hug"
+  ],
+  "honestyNotes": "The first nights may include waking up, coming out of bed or feeling scared of the dark; never promise it will be easy or that the child will not feel lonely. Keep the bedtime routine the same. Never use the new bed as a punishment. Let the parent decide the rules about coming to their room.",
+  "questionButtons": [
+    {
+      "id": "dark",
+      "text": "What if it is dark?",
+      "topic": "sensory",
+      "fallbackAnswer": [
+        "Your night light will glow softly.",
+        "The door can stay a little open too."
+      ]
+    },
+    {
+      "id": "fall",
+      "text": "What if I fall out?",
+      "topic": "safety",
+      "fallbackAnswer": [
+        "Big beds can have a little rail, or a cushion on the floor.",
+        "Lots of kids roll around and stay safe."
+      ]
+    },
+    {
+      "id": "where_you",
+      "text": "Where will [[GROWNUP]] be?",
+      "topic": "separation",
+      "fallbackAnswer": [
+        "[[GROWNUP]] sleeps close by in the house.",
+        "We can walk the path to [[GROWNUP]]'s room together."
+      ]
+    },
+    {
+      "id": "wake",
+      "text": "What if I wake up?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "Take a slow breath, hug your toy and close your eyes.",
+        "If you really need [[GROWNUP]], call softly."
+      ]
+    },
+    {
+      "id": "noises",
+      "text": "What are those noises?",
+      "topic": "sensory",
+      "fallbackAnswer": [
+        "Houses make sounds at night, like pipes, wind or cars.",
+        "They are normal house sounds."
+      ]
+    },
+    {
+      "id": "lonely",
+      "text": "What if I feel lonely?",
+      "topic": "love",
+      "fallbackAnswer": [
+        "Feeling lonely at first is normal.",
+        "Your toy is right there, and [[GROWNUP]] loves you, even when asleep."
+      ]
+    },
+    {
+      "id": "monster",
+      "text": "Are there monsters?",
+      "topic": "safety",
+      "fallbackAnswer": [
+        "No. Monsters are pretend.",
+        "We can check the room together with the light on."
+      ]
+    },
+    {
+      "id": "toilet",
+      "text": "What if I need the toilet at night?",
+      "topic": "body",
+      "fallbackAnswer": [
+        "Go before bed, and a little light can show the way.",
+        "You can call [[GROWNUP]] to help."
+      ]
+    },
+    {
+      "id": "why",
+      "text": "Why do I need a big bed?",
+      "topic": "other",
+      "fallbackAnswer": [
+        "You are growing, and a big bed has more room.",
+        "[[GROWNUP]] will tell you why now is a good time."
+      ]
+    },
+    {
+      "id": "baby",
+      "text": "Who will use my old bed?",
+      "topic": "social",
+      "fallbackAnswer": [
+        "[[GROWNUP]] will tell you, maybe a baby brother or sister, or it gets stored.",
+        "Your big bed is all yours."
+      ],
+      "ages": [
+        2,
+        6
+      ]
+    }
+  ],
+  "techniques": [
+    {
+      "id": "same_routine",
+      "label": "The same routine",
+      "how": "Keep the bedtime steps exactly the same.",
+      "topics": [
+        "unknown",
+        "safety"
+      ]
+    },
+    {
+      "id": "night_light",
+      "label": "A night light",
+      "how": "Let your child choose a soft night light.",
+      "topics": [
+        "sensory",
+        "safety"
+      ]
+    },
+    {
+      "id": "comfort_toy",
+      "label": "A cuddly toy",
+      "how": "A favourite toy stays in the bed all night.",
+      "topics": [
+        "separation",
+        "love"
+      ]
+    },
+    {
+      "id": "path_walk",
+      "label": "Walking the path",
+      "how": "Walk the path from the bed to your room in the light.",
+      "topics": [
+        "separation",
+        "unknown"
+      ]
+    },
+    {
+      "id": "morning_light",
+      "label": "A morning signal",
+      "how": "Use a wake-up light or clock as the morning signal.",
+      "topics": [
+        "unknown",
+        "body"
+      ]
+    },
+    {
+      "id": "one_check_in",
+      "label": "One check-in",
+      "how": "Offer one quiet check-in after goodnight, and always do it.",
+      "topics": [
+        "separation",
+        "love"
+      ]
+    },
+    {
+      "id": "room_check",
+      "label": "A room check",
+      "how": "Check the room together with the light on.",
+      "topics": [
+        "safety",
+        "sensory"
+      ]
+    },
+    {
+      "id": "happy_place",
+      "label": "A happy place",
+      "how": "Picture a favourite place while falling asleep.",
+      "topics": [
+        "sensory",
+        "pain",
+        "social"
+      ]
+    },
+    {
+      "id": "deep_breaths",
+      "label": "Smell the flower, blow the candle",
+      "how": "Breathe in slowly through the nose and out like blowing a candle.",
+      "topics": [
+        "pain",
+        "sensory",
+        "safety",
+        "body",
+        "strangers"
+      ]
+    }
+  ],
+  "ritual": [
+    "Bath, pyjamas, teeth, story",
+    "Night light on, toy in my arms",
+    "Stay in bed until the morning light"
+  ],
+  "phrases": {
+    "pain": [
+      "If your tummy feels worried, take a slow breath.",
+      "Tell me if something hurts."
+    ],
+    "body": [
+      "Go to the toilet before bed.",
+      "Your body grows while you sleep."
+    ],
+    "sensory": [
+      "That is just the wind. Your night light is on.",
+      "Houses creak at night. That is normal."
+    ],
+    "strangers": [
+      "Only our family is in the house at night.",
+      "The front door is locked."
+    ],
+    "separation": [
+      "I'm just down the hall.",
+      "I will check on you once."
+    ],
+    "unknown": [
+      "Steps, bed, breath, toy, sleep, morning.",
+      "Stay in bed until the morning light."
+    ],
+    "safety": [
+      "You are safe in your big bed.",
+      "Monsters are pretend. Let's check with the light."
+    ],
+    "social": [
+      "Lots of kids your age sleep in big beds.",
+      "Your toy keeps you company."
+    ],
+    "love": [
+      "I love you, even while we sleep.",
+      "I'm proud of you for trying."
+    ]
+  },
+  "topicWords": {
+    "pain": [
+      "hurt",
+      "tummy",
+      "sore",
+      "worried"
+    ],
+    "body": [
+      "toilet",
+      "teeth",
+      "bath",
+      "body",
+      "sleep",
+      "asleep",
+      "eyes",
+      "tired"
+    ],
+    "sensory": [
+      "dark",
+      "night light",
+      "glow",
+      "glows",
+      "sounds",
+      "noises",
+      "creaked",
+      "wind",
+      "quiet",
+      "shadow",
+      "wide",
+      "smell"
+    ],
+    "strangers": [
+      "family",
+      "only our family",
+      "door is locked",
+      "rabbit family"
+    ],
+    "separation": [
+      "close by",
+      "check in",
+      "check on",
+      "down the hall",
+      "room",
+      "over there",
+      "close",
+      "right there",
+      "stay",
+      "with me",
+      "with you",
+      "together",
+      "comes back",
+      "back",
+      "hand",
+      "nearby"
+    ],
+    "unknown": [
+      "first",
+      "then",
+      "next",
+      "after",
+      "last",
+      "plan",
+      "steps",
+      "morning",
+      "step"
+    ],
+    "safety": [
+      "safe",
+      "rail",
+      "check",
+      "monsters",
+      "pretend",
+      "careful",
+      "break",
+      "stop",
+      "help"
+    ],
+    "social": [
+      "kids",
+      "siblings",
+      "brothers",
+      "sisters",
+      "pets",
+      "company",
+      "friend",
+      "friends",
+      "children",
+      "people",
+      "everyone",
+      "others"
+    ],
+    "love": [
+      "love",
+      "hug",
+      "proud",
+      "cuddly",
+      "snuggle",
+      "cuddle"
+    ]
+  },
+  "backgrounds": [
+    "cosy-room",
+    "home-evening",
+    "outside"
+  ],
+  "fallbackPages": {
+    "story": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "Soon [[CHILD]] will sleep in a big bed, maybe in a new room.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is a growing-up step that many kids take.",
+              "kind": "describe"
+            },
+            {
+              "text": "First [[CHILD]] helps set it up and chooses the sheets.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the bedtime routine stays the same: bath, pyjamas, teeth and a story.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Before bed, here is a story about a little fawn called Fern.",
+              "kind": "describe"
+            },
+            {
+              "text": "Fern used to sleep curled next to Mama Deer.",
+              "kind": "describe"
+            },
+            {
+              "text": "Now she was getting her own soft moss bed.",
+              "kind": "describe"
+            },
+            {
+              "text": "First Fern helped gather the softest moss.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then she chose a glow-worm as her night light.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next she did her bedtime steps: wash, cuddle, story.",
+              "kind": "describe"
+            },
+            {
+              "text": "Fern lay down in her new moss bed.",
+              "kind": "describe"
+            },
+            {
+              "text": "It felt big and a little strange.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama said, I am just over there, under the oak.",
+              "kind": "describe"
+            },
+            {
+              "text": "Fern hugged her toy acorn, and her eyes closed.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Next [[CHILD]] climbs into the big bed with a cuddly toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "A night light glows softly.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] says goodnight, and the door can stay a little open.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, in the morning, there is a big celebration.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can choose the night light and the cuddly toy.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "sensory",
+            "separation",
+            "unknown",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Soon [[CHILD]] will sleep in a big bed, maybe in a new room.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is a growing-up step that many kids take.",
+              "kind": "describe"
+            },
+            {
+              "text": "First [[CHILD]] helps set it up and chooses the sheets.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then the bedtime routine stays the same: bath, pyjamas, teeth and a story.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next [[CHILD]] climbs into the big bed with a cuddly toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "A night light glows softly.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] says goodnight, and the door can stay a little open.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, in the morning, there is a big celebration.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can choose the night light and the cuddly toy.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "At night, [[GROWNUP]] is close by in the house.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can see the path from the big bed to [[GROWNUP]]'s room.",
+              "kind": "describe"
+            },
+            {
+              "text": "The cuddly toy stays in the bed all night.",
+              "kind": "describe"
+            },
+            {
+              "text": "Brothers, sisters or pets may sleep nearby.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can whisper goodnight to the cuddly toy.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "separation",
+            "social",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Fern the fawn looked around in the dark.",
+              "kind": "describe"
+            },
+            {
+              "text": "There was Mama Deer, a few steps away under the oak.",
+              "kind": "describe"
+            },
+            {
+              "text": "There was Papa Deer, keeping watch at the edge of the meadow.",
+              "kind": "describe"
+            },
+            {
+              "text": "Her toy acorn was right by her nose.",
+              "kind": "describe"
+            },
+            {
+              "text": "A sleepy rabbit family snored softly nearby.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama came over once and said, I am checking on you.",
+              "kind": "describe"
+            },
+            {
+              "text": "Goodnight, little Fern.",
+              "kind": "describe"
+            },
+            {
+              "text": "Fern whispered, goodnight, acorn.",
+              "kind": "describe"
+            },
+            {
+              "text": "The stars twinkled over the meadow.",
+              "kind": "describe"
+            },
+            {
+              "text": "Fern knew morning would come.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "The house is the same safe home, just quieter at night.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] can check in once after goodnight.",
+              "kind": "describe"
+            },
+            {
+              "text": "A family photo by the bed helps too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Morning always comes.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can whisper goodnight to the cuddly toy.",
+              "kind": "coach"
+            },
+            {
+              "text": "Step by step, it all gets a little easier.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is close by, and [[GROWNUP]] is proud.",
+              "kind": "describe"
+            },
+            {
+              "text": "New things feel strange at first, and then they feel normal.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "cosy-room",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At night, [[GROWNUP]] is close by in the house.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can see the path from the big bed to [[GROWNUP]]'s room.",
+              "kind": "describe"
+            },
+            {
+              "text": "The cuddly toy stays in the bed all night.",
+              "kind": "describe"
+            },
+            {
+              "text": "Brothers, sisters or pets may sleep nearby.",
+              "kind": "describe"
+            },
+            {
+              "text": "The house is the same safe home, just quieter at night.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] can check in once after goodnight.",
+              "kind": "describe"
+            },
+            {
+              "text": "A family photo by the bed helps too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Morning always comes.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can whisper goodnight to the cuddly toy.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "At bedtime, [[CHILD]] does the same steps as always.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bath, pyjamas, teeth, toilet and a story.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then climb into the big bed and snuggle the toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "If [[CHILD]] wakes up in the night, take a slow breath and hug the toy.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "unknown",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Fern the fawn did her bedtime steps.",
+              "kind": "describe"
+            },
+            {
+              "text": "Wash, cuddle, story, and then into the moss bed.",
+              "kind": "describe"
+            },
+            {
+              "text": "In the night, Fern woke up.",
+              "kind": "describe"
+            },
+            {
+              "text": "An owl hooted, and the wind rustled the leaves.",
+              "kind": "describe"
+            },
+            {
+              "text": "Fern took a slow breath and hugged her acorn.",
+              "kind": "describe"
+            },
+            {
+              "text": "She remembered: stay in bed until the sun peeks up.",
+              "kind": "describe"
+            },
+            {
+              "text": "She hummed Mama's song very softly.",
+              "kind": "describe"
+            },
+            {
+              "text": "Her eyes got heavy again.",
+              "kind": "describe"
+            },
+            {
+              "text": "When she woke next, the sun was peeking over the hill.",
+              "kind": "describe"
+            },
+            {
+              "text": "Fern jumped up and ran to Mama, I did it!",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Try to fall back to sleep.",
+              "kind": "describe"
+            },
+            {
+              "text": "If really needed, call softly or walk to the grown-up's room, as agreed.",
+              "kind": "describe"
+            },
+            {
+              "text": "Stay in bed until the morning light or the clock says so.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then get up and celebrate.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say: I stay in my bed until the morning light.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At bedtime, [[CHILD]] does the same steps as always.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bath, pyjamas, teeth, toilet and a story.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then climb into the big bed and snuggle the toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "If [[CHILD]] wakes up in the night, take a slow breath and hug the toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Try to fall back to sleep.",
+              "kind": "describe"
+            },
+            {
+              "text": "If really needed, call softly or walk to the grown-up's room, as agreed.",
+              "kind": "describe"
+            },
+            {
+              "text": "Stay in bed until the morning light or the clock says so.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then get up and celebrate.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say: I stay in my bed until the morning light.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "separation",
+            "unknown",
+            "love"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "The first nights in a big bed can feel strange.",
+              "kind": "describe"
+            },
+            {
+              "text": "The bed feels wide, and the room may feel big.",
+              "kind": "describe"
+            },
+            {
+              "text": "The dark can feel scary.",
+              "kind": "describe"
+            },
+            {
+              "text": "The house makes sounds at night, like pipes, wind or cars.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "worried",
+          "background": "cosy-room",
+          "addresses": [
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Fern the fawn felt scared in the dark.",
+              "kind": "describe"
+            },
+            {
+              "text": "A branch creaked, and a shadow moved.",
+              "kind": "describe"
+            },
+            {
+              "text": "Fern called, Mama?",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama came and lay down for a moment.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama did not say, there is nothing there.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama said, that was the wind in the branches, and the shadow is the oak.",
+              "kind": "describe"
+            },
+            {
+              "text": "You are safe, and I am close.",
+              "kind": "describe"
+            },
+            {
+              "text": "Fern smelled a flower slowly, and blew a candle.",
+              "kind": "describe"
+            },
+            {
+              "text": "She thought of the sunny meadow where she loved to play.",
+              "kind": "describe"
+            },
+            {
+              "text": "Her eyes closed again.",
+              "kind": "describe"
+            },
+            {
+              "text": "Worried and brave can happen at the same time.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "pain",
+            "body",
+            "sensory",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Those sounds are normal house sounds.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids feel lonely or miss sleeping close to someone.",
+              "kind": "describe"
+            },
+            {
+              "text": "The night light helps, and the toy is right there.",
+              "kind": "describe"
+            },
+            {
+              "text": "Each night, it gets a little easier.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can take slow breaths, smell the flower and blow the candle.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can hug the toy and think of a happy place.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "The first nights in a big bed can feel strange.",
+              "kind": "describe"
+            },
+            {
+              "text": "The bed feels wide, and the room may feel big.",
+              "kind": "describe"
+            },
+            {
+              "text": "The dark can feel scary.",
+              "kind": "describe"
+            },
+            {
+              "text": "The house makes sounds at night, like pipes, wind or cars.",
+              "kind": "describe"
+            },
+            {
+              "text": "Those sounds are normal house sounds.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some kids feel lonely or miss sleeping close to someone.",
+              "kind": "describe"
+            },
+            {
+              "text": "The night light helps, and the toy is right there.",
+              "kind": "describe"
+            },
+            {
+              "text": "Each night, it gets a little easier.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can take slow breaths, smell the flower and blow the candle.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can hug the toy and think of a happy place.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "Tonight [[CHILD]] and [[GROWNUP]] can practise the big bed.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, a daytime try: lie in the bed and read a story.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then switch on the night light and see how it glows.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, practise the plan: wake up, breath, hug the toy, back to sleep.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Fern the fawn practised in the daytime.",
+              "kind": "describe"
+            },
+            {
+              "text": "She lay on her new moss bed while Papa told a story.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then she closed her eyes and pretended it was night.",
+              "kind": "describe"
+            },
+            {
+              "text": "Owl hoot, said Papa, and Fern practised her slow breath.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then she hugged her acorn.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, Papa said, sun is up, and Fern jumped up cheering.",
+              "kind": "describe"
+            },
+            {
+              "text": "They practised again and laughed.",
+              "kind": "describe"
+            },
+            {
+              "text": "Fern tucked her acorn in for the real night.",
+              "kind": "describe"
+            },
+            {
+              "text": "Papa said, you know the plan.",
+              "kind": "describe"
+            },
+            {
+              "text": "Fern felt ready.",
+              "kind": "describe"
+            },
+            {
+              "text": "And Fern slept well that night.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "[[CHILD]] practises walking the path to [[GROWNUP]]'s room in the light.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, a pretend morning: the light comes on, and hooray.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, tuck the toy in for the first real night.",
+              "kind": "describe"
+            },
+            {
+              "text": "Practising makes the night feel familiar.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say: steps, bed, breath, toy, sleep, morning.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight [[CHILD]] and [[GROWNUP]] can practise the big bed.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, a daytime try: lie in the bed and read a story.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then switch on the night light and see how it glows.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next, practise the plan: wake up, breath, hug the toy, back to sleep.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] practises walking the path to [[GROWNUP]]'s room in the light.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, a pretend morning: the light comes on, and hooray.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, tuck the toy in for the first real night.",
+              "kind": "describe"
+            },
+            {
+              "text": "Practising makes the night feel familiar.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say: steps, bed, breath, toy, sleep, morning.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        }
+      ]
+    },
+    "social": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "Soon I sleep in a big bed.",
+              "kind": "describe"
+            },
+            {
+              "text": "It may be in a new room.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is a growing-up step.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I help set it up.",
+              "kind": "describe"
+            },
+            {
+              "text": "I choose my sheets.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I do my bedtime steps.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bath, pyjamas, teeth and a story.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can choose my night light and my toy.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Soon I sleep in a big bed.",
+              "kind": "describe"
+            },
+            {
+              "text": "It may be in a new room.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is a growing-up step.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I help set it up.",
+              "kind": "describe"
+            },
+            {
+              "text": "I choose my sheets.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I do my bedtime steps.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bath, pyjamas, teeth and a story.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next I climb into my big bed.",
+              "kind": "describe"
+            },
+            {
+              "text": "My night light glows.",
+              "kind": "describe"
+            },
+            {
+              "text": "The door can stay a little open.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, in the morning, we celebrate.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Next I climb into my big bed.",
+              "kind": "describe"
+            },
+            {
+              "text": "My night light glows.",
+              "kind": "describe"
+            },
+            {
+              "text": "The door can stay a little open.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, in the morning, we celebrate.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can choose my night light and my toy.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "sensory",
+            "separation",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Soon I sleep in a big bed.",
+              "kind": "describe"
+            },
+            {
+              "text": "It may be in a new room.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is a growing-up step.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I help set it up.",
+              "kind": "describe"
+            },
+            {
+              "text": "I choose my sheets.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I do my bedtime steps.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bath, pyjamas, teeth and a story.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can choose my night light and my toy.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "At night, [[GROWNUP]] is close by.",
+              "kind": "describe"
+            },
+            {
+              "text": "I know the way to [[GROWNUP]]'s room.",
+              "kind": "describe"
+            },
+            {
+              "text": "My cuddly toy stays with me.",
+              "kind": "describe"
+            },
+            {
+              "text": "My family is in the house.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pets may be nearby too.",
+              "kind": "describe"
+            },
+            {
+              "text": "My home is the same safe home.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can whisper goodnight to my toy.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "strangers",
+            "separation",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At night, [[GROWNUP]] is close by.",
+              "kind": "describe"
+            },
+            {
+              "text": "I know the way to [[GROWNUP]]'s room.",
+              "kind": "describe"
+            },
+            {
+              "text": "My cuddly toy stays with me.",
+              "kind": "describe"
+            },
+            {
+              "text": "My family is in the house.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pets may be nearby too.",
+              "kind": "describe"
+            },
+            {
+              "text": "My home is the same safe home.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is just quieter at night.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] can check on me once.",
+              "kind": "describe"
+            },
+            {
+              "text": "A family photo is by my bed.",
+              "kind": "describe"
+            },
+            {
+              "text": "Morning always comes.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "It is just quieter at night.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] can check on me once.",
+              "kind": "describe"
+            },
+            {
+              "text": "A family photo is by my bed.",
+              "kind": "describe"
+            },
+            {
+              "text": "Morning always comes.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can whisper goodnight to my toy.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "cosy-room",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At night, [[GROWNUP]] is close by.",
+              "kind": "describe"
+            },
+            {
+              "text": "I know the way to [[GROWNUP]]'s room.",
+              "kind": "describe"
+            },
+            {
+              "text": "My cuddly toy stays with me.",
+              "kind": "describe"
+            },
+            {
+              "text": "My family is in the house.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pets may be nearby too.",
+              "kind": "describe"
+            },
+            {
+              "text": "My home is the same safe home.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can whisper goodnight to my toy.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "strangers",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "At bedtime, I do my steps.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bath, pyjamas, teeth and toilet.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then a story.",
+              "kind": "describe"
+            },
+            {
+              "text": "I climb into my big bed.",
+              "kind": "describe"
+            },
+            {
+              "text": "I snuggle my toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "If I wake up, I take a slow breath.",
+              "kind": "describe"
+            },
+            {
+              "text": "I hug my toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: I stay in bed until the morning light.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "separation",
+            "unknown",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At bedtime, I do my steps.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bath, pyjamas, teeth and toilet.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then a story.",
+              "kind": "describe"
+            },
+            {
+              "text": "I climb into my big bed.",
+              "kind": "describe"
+            },
+            {
+              "text": "I snuggle my toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "If I wake up, I take a slow breath.",
+              "kind": "describe"
+            },
+            {
+              "text": "I hug my toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "I try to fall back asleep.",
+              "kind": "describe"
+            },
+            {
+              "text": "If I really need, I call softly.",
+              "kind": "describe"
+            },
+            {
+              "text": "I stay in bed until the morning light.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "separation",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I try to fall back asleep.",
+              "kind": "describe"
+            },
+            {
+              "text": "If I really need, I call softly.",
+              "kind": "describe"
+            },
+            {
+              "text": "I stay in bed until the morning light.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: I stay in bed until the morning light.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "separation",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "At bedtime, I do my steps.",
+              "kind": "describe"
+            },
+            {
+              "text": "Bath, pyjamas, teeth and toilet.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then a story.",
+              "kind": "describe"
+            },
+            {
+              "text": "I climb into my big bed.",
+              "kind": "describe"
+            },
+            {
+              "text": "I snuggle my toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "If I wake up, I take a slow breath.",
+              "kind": "describe"
+            },
+            {
+              "text": "I hug my toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: I stay in bed until the morning light.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "separation",
+            "unknown",
+            "social"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "The first nights can feel strange.",
+              "kind": "describe"
+            },
+            {
+              "text": "My bed feels wide.",
+              "kind": "describe"
+            },
+            {
+              "text": "The dark can feel scary.",
+              "kind": "describe"
+            },
+            {
+              "text": "The house makes sounds at night.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pipes, wind or cars.",
+              "kind": "describe"
+            },
+            {
+              "text": "Those are normal sounds.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel lonely.",
+              "kind": "describe"
+            },
+            {
+              "text": "My night light helps.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "worried",
+          "background": "cosy-room",
+          "addresses": [
+            "sensory",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "The first nights can feel strange.",
+              "kind": "describe"
+            },
+            {
+              "text": "My bed feels wide.",
+              "kind": "describe"
+            },
+            {
+              "text": "The dark can feel scary.",
+              "kind": "describe"
+            },
+            {
+              "text": "The house makes sounds at night.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pipes, wind or cars.",
+              "kind": "describe"
+            },
+            {
+              "text": "Those are normal sounds.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel lonely.",
+              "kind": "describe"
+            },
+            {
+              "text": "My night light helps.",
+              "kind": "describe"
+            },
+            {
+              "text": "My toy is right there.",
+              "kind": "describe"
+            },
+            {
+              "text": "Each night gets easier.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "Step by step, it gets a little easier.",
+              "kind": "describe"
+            },
+            {
+              "text": "New things feel strange at first, and then they feel normal.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "sensory",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "My toy is right there.",
+              "kind": "describe"
+            },
+            {
+              "text": "Each night gets easier.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can think of a happy place.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "cosy-room",
+          "addresses": [
+            "separation",
+            "unknown",
+            "social",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "The first nights can feel strange.",
+              "kind": "describe"
+            },
+            {
+              "text": "My bed feels wide.",
+              "kind": "describe"
+            },
+            {
+              "text": "The dark can feel scary.",
+              "kind": "describe"
+            },
+            {
+              "text": "The house makes sounds at night.",
+              "kind": "describe"
+            },
+            {
+              "text": "Pipes, wind or cars.",
+              "kind": "describe"
+            },
+            {
+              "text": "Those are normal sounds.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may feel lonely.",
+              "kind": "describe"
+            },
+            {
+              "text": "My night light helps.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can think of a happy place.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "cosy-room",
+          "addresses": [
+            "sensory",
+            "unknown",
+            "safety",
+            "social"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "Tonight we practise.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I lie in my big bed.",
+              "kind": "describe"
+            },
+            {
+              "text": "We read a story.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I switch on my night light.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next I practise my plan.",
+              "kind": "describe"
+            },
+            {
+              "text": "Wake up, breath, hug my toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then back to sleep.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: steps, bed, breath, toy, sleep, morning.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight we practise.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I lie in my big bed.",
+              "kind": "describe"
+            },
+            {
+              "text": "We read a story.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I switch on my night light.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next I practise my plan.",
+              "kind": "describe"
+            },
+            {
+              "text": "Wake up, breath, hug my toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then back to sleep.",
+              "kind": "describe"
+            },
+            {
+              "text": "I walk the path to the grown-up room.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, a pretend morning.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, I tuck my toy in.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I walk the path to the grown-up room.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, a pretend morning.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, I tuck my toy in.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: steps, bed, breath, toy, sleep, morning.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight we practise.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I lie in my big bed.",
+              "kind": "describe"
+            },
+            {
+              "text": "We read a story.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I switch on my night light.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next I practise my plan.",
+              "kind": "describe"
+            },
+            {
+              "text": "Wake up, breath, hug my toy.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then back to sleep.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: steps, bed, breath, toy, sleep, morning.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        }
+      ]
+    }
+  },
+  "badge": {
+    "id": "own_bed_star",
+    "label": "Own Bed Star"
+  },
+  "olderPages": {
+    "what_happens": {
+      "sentences": [
+        {
+          "text": "Kids move to big beds or their own rooms at many different ages, and there is no right one.",
+          "kind": "describe"
+        },
+        {
+          "text": "Having your own space means you can choose how it looks and keep your things.",
+          "kind": "describe"
+        },
+        {
+          "text": "It takes most kids a week or two to sleep well in a new bed.",
+          "kind": "describe"
+        },
+        {
+          "text": "A consistent bedtime routine tells the brain it is time to sleep.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can design the room layout with [[GROWNUP]].",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "cosy-room",
+      "addresses": [
+        "body",
+        "separation",
+        "social"
+      ]
+    },
+    "who_is_there": {
+      "sentences": [
+        {
+          "text": "Knowing where everyone sleeps makes the house feel safe in the dark.",
+          "kind": "describe"
+        },
+        {
+          "text": "A quick check-in after lights out, done consistently, helps kids settle without needing to call out.",
+          "kind": "describe"
+        },
+        {
+          "text": "Some kids like a soft sound, like a fan or quiet music.",
+          "kind": "describe"
+        },
+        {
+          "text": "Pets in the room can be comforting, if the family allows it.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can agree a check-in time with [[GROWNUP]].",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "cosy-room",
+      "addresses": [
+        "body",
+        "sensory",
+        "strangers",
+        "separation"
+      ]
+    },
+    "what_i_do": {
+      "sentences": [
+        {
+          "text": "Everyone wakes up briefly several times a night; most people just do not remember.",
+          "kind": "describe"
+        },
+        {
+          "text": "Having a plan for waking up, like a breath, a sip of water and a change of position, helps you settle yourself.",
+          "kind": "describe"
+        },
+        {
+          "text": "Wake-up clocks that change colour make the rule easy to follow.",
+          "kind": "describe"
+        },
+        {
+          "text": "Using the toilet right before bed reduces night wakings.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can track good nights on a chart.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "brave",
+      "background": "cosy-room",
+      "addresses": [
+        "body",
+        "unknown",
+        "safety",
+        "social"
+      ]
+    },
+    "if_scared": {
+      "sentences": [
+        {
+          "text": "Fear of the dark is one of the most common fears in childhood and usually fades with time.",
+          "kind": "describe"
+        },
+        {
+          "text": "The brain is more alert to sounds at night because it is quieter.",
+          "kind": "describe"
+        },
+        {
+          "text": "Shadows can look like shapes; turning on the light to check can help once.",
+          "kind": "describe"
+        },
+        {
+          "text": "Listening to calm audio or practising slow breathing distracts the mind from worry loops.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can make a worry box and put worries in it before bed.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "worried",
+      "background": "cosy-room",
+      "addresses": [
+        "sensory",
+        "safety"
+      ]
+    },
+    "rehearsal": {
+      "sentences": [
+        {
+          "text": "Starting with naps or quiet time in the new bed makes the night less of a leap.",
+          "kind": "describe"
+        },
+        {
+          "text": "Choosing bedding, a lamp and decorations builds ownership.",
+          "kind": "describe"
+        },
+        {
+          "text": "A predictable morning reward, like choosing breakfast, motivates staying in bed.",
+          "kind": "describe"
+        },
+        {
+          "text": "Sticking to the plan for a week usually builds the habit.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can pick the first-night celebration.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "happy",
+      "background": "cosy-room",
+      "addresses": [
+        "sensory",
+        "separation",
+        "unknown",
+        "safety"
+      ]
+    }
+  }
+}

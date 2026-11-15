@@ -1,0 +1,2531 @@
+{
+  "type": "halloween",
+  "version": 1,
+  "label": "Halloween",
+  "countdownLabel": "the Halloween night",
+  "beats": {
+    "what_happens": {
+      "title": "What happens on Halloween",
+      "goals": [
+        "Halloween is a dress-up night",
+        "Kids walk with grown-ups and say trick or treat",
+        "Some things look spooky but are pretend"
+      ],
+      "parentSkill": "Walk the trick-or-treat route in daylight first so your child sees the decorations without the dark."
+    },
+    "who_is_there": {
+      "title": "Who I will see",
+      "goals": [
+        "Neighbours give treats",
+        "Other kids in costumes",
+        "Masks and costumes are people underneath"
+      ],
+      "parentSkill": "Show your child how a mask works by putting one on and taking it off a few times."
+    },
+    "what_i_do": {
+      "title": "What I do on Halloween",
+      "goals": [
+        "Stay with the grown-up and carry a light",
+        "Say trick or treat and thank you",
+        "Let a grown-up check the treats"
+      ],
+      "parentSkill": "Agree the rules: hold hands near roads, only lit houses, treats checked at home."
+    },
+    "if_scared": {
+      "title": "If it feels too spooky",
+      "goals": [
+        "Feeling scared on Halloween is normal",
+        "Spooky things are pretend",
+        "Calm tools: hold a hand, skip a house, go home early"
+      ],
+      "parentSkill": "Never laugh at the fear. Say: 'That looks scary. It's pretend, and we can skip it.'"
+    },
+    "rehearsal": {
+      "title": "Let's practise Halloween",
+      "goals": [
+        "Try on the costume and practise walking in it",
+        "Practise trick or treat and thank you at home",
+        "Practise putting on and taking off a mask"
+      ],
+      "parentSkill": "Do a home trick-or-treat: knock on a bedroom door, say the words, get a treat."
+    }
+  },
+  "steps": [
+    "Choose and try on a costume",
+    "Wait until it gets dark in the evening",
+    "Walk with a grown-up and a flashlight or glow stick",
+    "Knock or ring at houses with lights on and say, trick or treat",
+    "Say thank you and take a treat",
+    "See decorations, some silly and some spooky",
+    "Go home, check the treats with a grown-up and share the stories"
+  ],
+  "sensory": [
+    "dark streets lit by jack-o'-lanterns",
+    "costumes, masks and face paint",
+    "crunchy leaves underfoot",
+    "spooky sounds and laughter from decorations",
+    "a bag that gets heavier with candy",
+    "cool night air"
+  ],
+  "honestyNotes": "Some decorations and costumes are designed to look scary, and a child may be frightened; never say 'there is nothing to be scared of'. Masks are people underneath. Children can skip houses, leave early or stay home and hand out candy instead. Treats are checked by a grown-up first.",
+  "questionButtons": [
+    {
+      "id": "real",
+      "text": "Are the monsters real?",
+      "topic": "safety",
+      "fallbackAnswer": [
+        "No. Monsters, ghosts and skeletons on Halloween are costumes and decorations.",
+        "Every mask has a person underneath."
+      ]
+    },
+    {
+      "id": "scared",
+      "text": "What if I get scared?",
+      "topic": "love",
+      "fallbackAnswer": [
+        "Feeling scared is okay. You can hold a hand, skip a house or go home.",
+        "[[GROWNUP]] is with you the whole time."
+      ]
+    },
+    {
+      "id": "dark",
+      "text": "Why do we go out in the dark?",
+      "topic": "sensory",
+      "fallbackAnswer": [
+        "Halloween happens in the evening so the pumpkins and lights glow.",
+        "We bring a flashlight so we can see."
+      ]
+    },
+    {
+      "id": "stay",
+      "text": "Will [[GROWNUP]] stay with me?",
+      "topic": "separation",
+      "fallbackAnswer": [
+        "Yes, [[GROWNUP]] walks with you the whole time.",
+        "We stay together and hold hands near roads."
+      ]
+    },
+    {
+      "id": "who_door",
+      "text": "Who opens the door?",
+      "topic": "strangers",
+      "fallbackAnswer": [
+        "Neighbours who want to share treats.",
+        "We only visit houses with the lights on, and [[GROWNUP]] stays with you."
+      ]
+    },
+    {
+      "id": "candy",
+      "text": "When can I eat the candy?",
+      "topic": "body",
+      "fallbackAnswer": [
+        "After a grown-up checks it at home.",
+        "Then you can choose a few."
+      ]
+    },
+    {
+      "id": "costume",
+      "text": "What should I be?",
+      "topic": "other",
+      "fallbackAnswer": [
+        "Anything you like: an animal, a hero, a food or something you invent.",
+        "You can be silly or spooky."
+      ]
+    },
+    {
+      "id": "masks",
+      "text": "Why do people wear masks?",
+      "topic": "strangers",
+      "fallbackAnswer": [
+        "Masks are part of the costume and make dressing up fun.",
+        "You can ask someone to lift theirs, and you will see a person."
+      ]
+    },
+    {
+      "id": "what_say",
+      "text": "What do I say?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "Knock or ring, then say, trick or treat.",
+        "When you get a treat, say thank you."
+      ]
+    },
+    {
+      "id": "allergy",
+      "text": "What if I can't eat some candy?",
+      "topic": "body",
+      "fallbackAnswer": [
+        "We can swap it for something you can have.",
+        "Some houses give toys or stickers instead."
+      ],
+      "ages": [
+        4,
+        12
+      ]
+    },
+    {
+      "id": "too_old",
+      "text": "Am I too old for trick-or-treating?",
+      "topic": "social",
+      "fallbackAnswer": [
+        "Lots of older kids still dress up and go out.",
+        "You can also help little kids or hand out treats."
+      ],
+      "ages": [
+        9,
+        12
+      ]
+    }
+  ],
+  "techniques": [
+    {
+      "id": "daylight_walk",
+      "label": "A daylight walk",
+      "how": "Walk the route in daylight first to see the decorations.",
+      "topics": [
+        "unknown",
+        "sensory"
+      ]
+    },
+    {
+      "id": "mask_game",
+      "label": "Mask peek-a-boo",
+      "how": "Put a mask on and off at home to show it is a person.",
+      "topics": [
+        "strangers",
+        "safety"
+      ]
+    },
+    {
+      "id": "skip_house",
+      "label": "Skipping a house",
+      "how": "Let your child skip any house that feels too spooky.",
+      "topics": [
+        "safety",
+        "sensory"
+      ]
+    },
+    {
+      "id": "flashlight",
+      "label": "A flashlight or glow stick",
+      "how": "Let your child carry their own light.",
+      "topics": [
+        "sensory",
+        "safety"
+      ]
+    },
+    {
+      "id": "hold_hand",
+      "label": "Holding hands",
+      "how": "Hold hands near roads and in crowds.",
+      "topics": [
+        "separation",
+        "safety"
+      ]
+    },
+    {
+      "id": "treat_check",
+      "label": "Checking treats",
+      "how": "Check treats together at home before eating.",
+      "topics": [
+        "body",
+        "safety"
+      ]
+    },
+    {
+      "id": "home_trick",
+      "label": "Home trick-or-treat",
+      "how": "Practise knocking and saying the words at home.",
+      "topics": [
+        "unknown",
+        "social",
+        "strangers"
+      ]
+    },
+    {
+      "id": "hand_out",
+      "label": "Handing out treats",
+      "how": "Stay home and hand out treats if going out feels too much.",
+      "topics": [
+        "social",
+        "love",
+        "pain"
+      ]
+    },
+    {
+      "id": "deep_breaths",
+      "label": "Smell the flower, blow the candle",
+      "how": "Breathe in slowly through the nose and out like blowing a candle.",
+      "topics": [
+        "pain",
+        "sensory",
+        "safety"
+      ]
+    }
+  ],
+  "ritual": [
+    "Costume on, flashlight ready",
+    "Knock, trick or treat, thank you",
+    "Home, check treats, share stories"
+  ],
+  "phrases": {
+    "pain": [
+      "If your costume rubs or pinches, tell me and we will fix it.",
+      "Take a slow breath."
+    ],
+    "body": [
+      "Let me check the treats first, then you choose some.",
+      "Your costume should feel comfy."
+    ],
+    "sensory": [
+      "That looks scary. It is plastic and pretend.",
+      "The dark is just night. We have our flashlight."
+    ],
+    "strangers": [
+      "There is a person under every mask.",
+      "Neighbours like giving treats."
+    ],
+    "separation": [
+      "I'm right here, holding your hand.",
+      "We stay together the whole time."
+    ],
+    "unknown": [
+      "Knock, trick or treat, thank you.",
+      "We visit only houses with lights on."
+    ],
+    "safety": [
+      "We can skip any house you want.",
+      "We can go home any time."
+    ],
+    "social": [
+      "Lots of kids are out in costumes.",
+      "You might see friends from school."
+    ],
+    "love": [
+      "I love your costume.",
+      "I'm proud of you for trying."
+    ]
+  },
+  "topicWords": {
+    "pain": [
+      "hurt",
+      "rubs",
+      "pinches",
+      "sore",
+      "trip"
+    ],
+    "body": [
+      "treat",
+      "treats",
+      "candy",
+      "eat",
+      "berry",
+      "berries",
+      "allergies"
+    ],
+    "sensory": [
+      "dark",
+      "spooky",
+      "scary",
+      "sounds",
+      "glow",
+      "glowing",
+      "lights",
+      "flashlight",
+      "lantern",
+      "rattled"
+    ],
+    "strangers": [
+      "neighbours",
+      "neighbour",
+      "mask",
+      "masks",
+      "costume",
+      "costumes",
+      "people",
+      "person",
+      "owl",
+      "badger"
+    ],
+    "separation": [
+      "whole time",
+      "stay",
+      "together",
+      "with me",
+      "hold",
+      "walks with",
+      "right there",
+      "close",
+      "with you",
+      "comes back",
+      "back",
+      "hand",
+      "nearby"
+    ],
+    "unknown": [
+      "first",
+      "then",
+      "next",
+      "after",
+      "last",
+      "route",
+      "rules",
+      "step",
+      "steps"
+    ],
+    "safety": [
+      "skip",
+      "pretend",
+      "sidewalk",
+      "road",
+      "safe",
+      "check",
+      "checks",
+      "checked",
+      "careful",
+      "break",
+      "stop",
+      "help"
+    ],
+    "social": [
+      "kids",
+      "friends",
+      "everyone",
+      "school",
+      "friend",
+      "children",
+      "people",
+      "others"
+    ],
+    "love": [
+      "love",
+      "hug",
+      "proud",
+      "cuddle"
+    ]
+  },
+  "backgrounds": [
+    "outside",
+    "home-evening",
+    "cosy-room"
+  ],
+  "fallbackPages": {
+    "story": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "Soon it will be Halloween.",
+              "kind": "describe"
+            },
+            {
+              "text": "Halloween is a night when people dress up in costumes.",
+              "kind": "describe"
+            },
+            {
+              "text": "First [[CHILD]] puts on a costume, maybe a dragon, a superhero or a pumpkin.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then, when it gets dark, everyone walks with a grown-up and a flashlight.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Before bed, here is a story about a little bat called Benny.",
+              "kind": "describe"
+            },
+            {
+              "text": "In Bat Valley, there was a night called Glow Night.",
+              "kind": "describe"
+            },
+            {
+              "text": "Everyone dressed up, and Benny was a fluffy cloud.",
+              "kind": "describe"
+            },
+            {
+              "text": "First Benny's mother gave him a little glowing lantern.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then they flew to the houses with lights on.",
+              "kind": "describe"
+            },
+            {
+              "text": "Knock, knock, said Benny, glow and treat!",
+              "kind": "describe"
+            },
+            {
+              "text": "A kind owl gave him a juicy berry.",
+              "kind": "describe"
+            },
+            {
+              "text": "Thank you, said Benny.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some houses had silly paper spiders, and some had funny pumpkins.",
+              "kind": "describe"
+            },
+            {
+              "text": "Benny went home with a bag full of berries and a big smile.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Next they knock on doors with the lights on and say, trick or treat.",
+              "kind": "describe"
+            },
+            {
+              "text": "The people give a treat, and everyone says, thank you.",
+              "kind": "describe"
+            },
+            {
+              "text": "There are decorations, some funny and some spooky, and they are all pretend.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, it is home time, and a grown-up checks the treats.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can choose which houses to visit and which to skip.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Soon it will be Halloween.",
+              "kind": "describe"
+            },
+            {
+              "text": "Halloween is a night when people dress up in costumes.",
+              "kind": "describe"
+            },
+            {
+              "text": "First [[CHILD]] puts on a costume, maybe a dragon, a superhero or a pumpkin.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then, when it gets dark, everyone walks with a grown-up and a flashlight.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next they knock on doors with the lights on and say, trick or treat.",
+              "kind": "describe"
+            },
+            {
+              "text": "The people give a treat, and everyone says, thank you.",
+              "kind": "describe"
+            },
+            {
+              "text": "There are decorations, some funny and some spooky, and they are all pretend.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, it is home time, and a grown-up checks the treats.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can choose which houses to visit and which to skip.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "On Halloween, neighbours open their doors to give treats.",
+              "kind": "describe"
+            },
+            {
+              "text": "There are lots of other kids in costumes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some grown-ups dress up too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some costumes look silly, and some look spooky.",
+              "kind": "describe"
+            },
+            {
+              "text": "Every costume and mask has a person underneath.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say, is that a costume? and remember it is pretend.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Benny the bat saw lots of creatures.",
+              "kind": "describe"
+            },
+            {
+              "text": "A frog dressed as a knight hopped by.",
+              "kind": "describe"
+            },
+            {
+              "text": "Two mice were dressed as one big cheese.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then a tall shape with glowing eyes stepped out of the dark.",
+              "kind": "describe"
+            },
+            {
+              "text": "Benny squeaked and hid behind his mother.",
+              "kind": "describe"
+            },
+            {
+              "text": "The shape laughed and lifted its mask.",
+              "kind": "describe"
+            },
+            {
+              "text": "It was Mr Badger from the next tree.",
+              "kind": "describe"
+            },
+            {
+              "text": "Sorry, Benny, did I scare you, he said kindly.",
+              "kind": "describe"
+            },
+            {
+              "text": "Benny peeked out and giggled a little.",
+              "kind": "describe"
+            },
+            {
+              "text": "Everyone is someone underneath, said his mother.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "A spooky monster might be a dad or a big kid.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] walks with [[CHILD]] the whole time.",
+              "kind": "describe"
+            },
+            {
+              "text": "Friends from school may be out too.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say, is that a costume? and remember it is pretend.",
+              "kind": "coach"
+            },
+            {
+              "text": "Step by step, it all gets a little easier.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is close by, and [[GROWNUP]] is proud.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "outside",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "On Halloween, neighbours open their doors to give treats.",
+              "kind": "describe"
+            },
+            {
+              "text": "There are lots of other kids in costumes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some grown-ups dress up too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some costumes look silly, and some look spooky.",
+              "kind": "describe"
+            },
+            {
+              "text": "Every costume and mask has a person underneath.",
+              "kind": "describe"
+            },
+            {
+              "text": "A spooky monster might be a dad or a big kid.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] walks with [[CHILD]] the whole time.",
+              "kind": "describe"
+            },
+            {
+              "text": "Friends from school may be out too.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say, is that a costume? and remember it is pretend.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "On Halloween night, [[CHILD]] stays with [[GROWNUP]] the whole time.",
+              "kind": "describe"
+            },
+            {
+              "text": "A flashlight or glow stick helps everyone see.",
+              "kind": "describe"
+            },
+            {
+              "text": "Walk on the sidewalk and hold hands crossing the road.",
+              "kind": "describe"
+            },
+            {
+              "text": "Only visit houses with lights on.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the door, say, trick or treat, and then thank you.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say, let's skip that one, any time.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Benny the bat followed the Glow Night rules.",
+              "kind": "describe"
+            },
+            {
+              "text": "Stay with Mama, carry the lantern, visit only lit houses.",
+              "kind": "describe"
+            },
+            {
+              "text": "At each door, Benny said, glow and treat, then thank you.",
+              "kind": "describe"
+            },
+            {
+              "text": "He took one berry each time.",
+              "kind": "describe"
+            },
+            {
+              "text": "One house had a big hairy spider swinging on a web.",
+              "kind": "describe"
+            },
+            {
+              "text": "Let's skip that one, said Benny.",
+              "kind": "describe"
+            },
+            {
+              "text": "Good choice, said Mama, and they flew on.",
+              "kind": "describe"
+            },
+            {
+              "text": "At home, Mama checked every berry.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then Benny ate one, very slowly.",
+              "kind": "describe"
+            },
+            {
+              "text": "It was the sweetest berry ever.",
+              "kind": "describe"
+            },
+            {
+              "text": "Tomorrow evening, the story goes on.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Take one or two treats, not the whole bowl.",
+              "kind": "describe"
+            },
+            {
+              "text": "Do not eat treats until a grown-up checks them at home.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is fine to skip any house that looks too spooky.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say, let's skip that one, any time.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "On Halloween night, [[CHILD]] stays with [[GROWNUP]] the whole time.",
+              "kind": "describe"
+            },
+            {
+              "text": "A flashlight or glow stick helps everyone see.",
+              "kind": "describe"
+            },
+            {
+              "text": "Walk on the sidewalk and hold hands crossing the road.",
+              "kind": "describe"
+            },
+            {
+              "text": "Only visit houses with lights on.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the door, say, trick or treat, and then thank you.",
+              "kind": "describe"
+            },
+            {
+              "text": "Take one or two treats, not the whole bowl.",
+              "kind": "describe"
+            },
+            {
+              "text": "Do not eat treats until a grown-up checks them at home.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is fine to skip any house that looks too spooky.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say, let's skip that one, any time.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "Halloween can feel spooky.",
+              "kind": "describe"
+            },
+            {
+              "text": "The dark can feel big, and decorations can make strange sounds.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some masks look scary, with big teeth or glowing eyes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Feeling scared is normal, even for big kids.",
+              "kind": "describe"
+            },
+            {
+              "text": "All the spooky things are pretend, made of plastic, paper or cloth.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "worried",
+          "background": "outside",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Benny the bat got scared.",
+              "kind": "describe"
+            },
+            {
+              "text": "A house had a skeleton that rattled and laughed, ha ha ha.",
+              "kind": "describe"
+            },
+            {
+              "text": "Benny's wings shook.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama did not say, that is not scary.",
+              "kind": "describe"
+            },
+            {
+              "text": "Mama said, that looks scary, and it is a plastic toy that moves.",
+              "kind": "describe"
+            },
+            {
+              "text": "Do you want to skip it, she asked.",
+              "kind": "describe"
+            },
+            {
+              "text": "Benny nodded, and they flew away from that house.",
+              "kind": "describe"
+            },
+            {
+              "text": "Benny took a slow breath and held Mama's wing.",
+              "kind": "describe"
+            },
+            {
+              "text": "At the next house, a smiling pumpkin glowed orange.",
+              "kind": "describe"
+            },
+            {
+              "text": "That one is friendly, said Benny.",
+              "kind": "describe"
+            },
+            {
+              "text": "Worried and brave can happen at the same time.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "sensory",
+            "unknown",
+            "safety",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Holding a hand helps.",
+              "kind": "describe"
+            },
+            {
+              "text": "Skipping a house is always okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "Going home early, or handing out treats from home instead, is okay too.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can take slow breaths, smell the flower and blow the candle.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can say, I want to go home now.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "separation",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Halloween can feel spooky.",
+              "kind": "describe"
+            },
+            {
+              "text": "The dark can feel big, and decorations can make strange sounds.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some masks look scary, with big teeth or glowing eyes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Feeling scared is normal, even for big kids.",
+              "kind": "describe"
+            },
+            {
+              "text": "All the spooky things are pretend, made of plastic, paper or cloth.",
+              "kind": "describe"
+            },
+            {
+              "text": "Holding a hand helps.",
+              "kind": "describe"
+            },
+            {
+              "text": "Skipping a house is always okay.",
+              "kind": "describe"
+            },
+            {
+              "text": "Going home early, or handing out treats from home instead, is okay too.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can take slow breaths, smell the flower and blow the candle.",
+              "kind": "coach"
+            },
+            {
+              "text": "[[CHILD]] can say, I want to go home now.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "Tonight [[CHILD]] can practise Halloween at home.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, try on the costume and walk around the house.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[GROWNUP]] hides behind a door with a bowl of treats.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] knocks and says, trick or treat.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then, thank you.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say: knock, trick or treat, thank you.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "strangers",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "In the story, Benny the bat practised Glow Night at home.",
+              "kind": "describe"
+            },
+            {
+              "text": "He put on his fluffy cloud costume and flapped around the cave.",
+              "kind": "describe"
+            },
+            {
+              "text": "Papa hid behind a rock with a bowl of berries.",
+              "kind": "describe"
+            },
+            {
+              "text": "Knock, knock, said Benny, glow and treat.",
+              "kind": "describe"
+            },
+            {
+              "text": "Here you go, said Papa.",
+              "kind": "describe"
+            },
+            {
+              "text": "Thank you, said Benny.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then Papa put on a silly mask and took it off again.",
+              "kind": "describe"
+            },
+            {
+              "text": "Peek-a-boo, it is just me.",
+              "kind": "describe"
+            },
+            {
+              "text": "Benny tried it too and laughed.",
+              "kind": "describe"
+            },
+            {
+              "text": "He was ready for Glow Night.",
+              "kind": "describe"
+            },
+            {
+              "text": "And Benny slept well that night.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "cosy-room",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Next they play with a mask: on, peek-a-boo, off, it is just us.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, they walk around with a flashlight in a dark room.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, they make the rules together: stay close, lit houses, check treats.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say: knock, trick or treat, thank you.",
+              "kind": "coach"
+            },
+            {
+              "text": "Step by step, it all gets a little easier.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight [[CHILD]] can practise Halloween at home.",
+              "kind": "describe"
+            },
+            {
+              "text": "First, try on the costume and walk around the house.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[GROWNUP]] hides behind a door with a bowl of treats.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] knocks and says, trick or treat.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then, thank you.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next they play with a mask: on, peek-a-boo, off, it is just us.",
+              "kind": "describe"
+            },
+            {
+              "text": "After that, they walk around with a flashlight in a dark room.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, they make the rules together: stay close, lit houses, check treats.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[CHILD]] can say: knock, trick or treat, thank you.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        }
+      ]
+    },
+    "social": {
+      "what_happens": [
+        {
+          "sentences": [
+            {
+              "text": "Soon it will be Halloween.",
+              "kind": "describe"
+            },
+            {
+              "text": "People dress up in costumes.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I put on my costume.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then, when it is dark, we go out.",
+              "kind": "describe"
+            },
+            {
+              "text": "I walk with a grown-up.",
+              "kind": "describe"
+            },
+            {
+              "text": "We bring a flashlight.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next we knock on doors with lights on.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can choose which houses to visit.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Soon it will be Halloween.",
+              "kind": "describe"
+            },
+            {
+              "text": "People dress up in costumes.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I put on my costume.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then, when it is dark, we go out.",
+              "kind": "describe"
+            },
+            {
+              "text": "I walk with a grown-up.",
+              "kind": "describe"
+            },
+            {
+              "text": "We bring a flashlight.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next we knock on doors with lights on.",
+              "kind": "describe"
+            },
+            {
+              "text": "I say, trick or treat.",
+              "kind": "describe"
+            },
+            {
+              "text": "I say thank you for a treat.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some decorations are spooky.",
+              "kind": "describe"
+            },
+            {
+              "text": "They are all pretend.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I say, trick or treat.",
+              "kind": "describe"
+            },
+            {
+              "text": "I say thank you for a treat.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some decorations are spooky.",
+              "kind": "describe"
+            },
+            {
+              "text": "They are all pretend.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can choose which houses to visit.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Soon it will be Halloween.",
+              "kind": "describe"
+            },
+            {
+              "text": "People dress up in costumes.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I put on my costume.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then, when it is dark, we go out.",
+              "kind": "describe"
+            },
+            {
+              "text": "I walk with a grown-up.",
+              "kind": "describe"
+            },
+            {
+              "text": "We bring a flashlight.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next we knock on doors with lights on.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can choose which houses to visit.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "unknown",
+            "social"
+          ]
+        }
+      ],
+      "who_is_there": [
+        {
+          "sentences": [
+            {
+              "text": "Neighbours give treats.",
+              "kind": "describe"
+            },
+            {
+              "text": "There are lots of kids in costumes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some grown-ups dress up too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some costumes look silly.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some costumes look spooky.",
+              "kind": "describe"
+            },
+            {
+              "text": "Every costume has a person underneath.",
+              "kind": "describe"
+            },
+            {
+              "text": "A monster might be a neighbour.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] walks with me.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say, that is a costume, it is pretend.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Neighbours give treats.",
+              "kind": "describe"
+            },
+            {
+              "text": "There are lots of kids in costumes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some grown-ups dress up too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some costumes look silly.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some costumes look spooky.",
+              "kind": "describe"
+            },
+            {
+              "text": "Every costume has a person underneath.",
+              "kind": "describe"
+            },
+            {
+              "text": "A monster might be a neighbour.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] walks with me.",
+              "kind": "describe"
+            },
+            {
+              "text": "We stay together.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may see friends from school.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "Step by step, it gets a little easier.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "We stay together.",
+              "kind": "describe"
+            },
+            {
+              "text": "I may see friends from school.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say, that is a costume, it is pretend.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "outside",
+          "addresses": [
+            "strangers",
+            "separation",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Neighbours give treats.",
+              "kind": "describe"
+            },
+            {
+              "text": "There are lots of kids in costumes.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some grown-ups dress up too.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some costumes look silly.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some costumes look spooky.",
+              "kind": "describe"
+            },
+            {
+              "text": "Every costume has a person underneath.",
+              "kind": "describe"
+            },
+            {
+              "text": "A monster might be a neighbour.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] walks with me.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say, that is a costume, it is pretend.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "strangers",
+            "separation"
+          ]
+        }
+      ],
+      "what_i_do": [
+        {
+          "sentences": [
+            {
+              "text": "I stay with [[GROWNUP]] the whole time.",
+              "kind": "describe"
+            },
+            {
+              "text": "I carry a flashlight.",
+              "kind": "describe"
+            },
+            {
+              "text": "I walk on the sidewalk.",
+              "kind": "describe"
+            },
+            {
+              "text": "I hold hands to cross the road.",
+              "kind": "describe"
+            },
+            {
+              "text": "I visit houses with lights on.",
+              "kind": "describe"
+            },
+            {
+              "text": "I say, trick or treat.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I say thank you.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say, let's skip that one.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I stay with [[GROWNUP]] the whole time.",
+              "kind": "describe"
+            },
+            {
+              "text": "I carry a flashlight.",
+              "kind": "describe"
+            },
+            {
+              "text": "I walk on the sidewalk.",
+              "kind": "describe"
+            },
+            {
+              "text": "I hold hands to cross the road.",
+              "kind": "describe"
+            },
+            {
+              "text": "I visit houses with lights on.",
+              "kind": "describe"
+            },
+            {
+              "text": "I say, trick or treat.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I say thank you.",
+              "kind": "describe"
+            },
+            {
+              "text": "I wait to eat treats.",
+              "kind": "describe"
+            },
+            {
+              "text": "A grown-up checks them first.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can skip any spooky house.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "Step by step, it gets a little easier.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I wait to eat treats.",
+              "kind": "describe"
+            },
+            {
+              "text": "A grown-up checks them first.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can skip any spooky house.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say, let's skip that one.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "unknown",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I stay with [[GROWNUP]] the whole time.",
+              "kind": "describe"
+            },
+            {
+              "text": "I carry a flashlight.",
+              "kind": "describe"
+            },
+            {
+              "text": "I walk on the sidewalk.",
+              "kind": "describe"
+            },
+            {
+              "text": "I hold hands to cross the road.",
+              "kind": "describe"
+            },
+            {
+              "text": "I visit houses with lights on.",
+              "kind": "describe"
+            },
+            {
+              "text": "I say, trick or treat.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then I say thank you.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say, let's skip that one.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "sensory",
+            "separation",
+            "unknown"
+          ]
+        }
+      ],
+      "if_scared": [
+        {
+          "sentences": [
+            {
+              "text": "Halloween can feel spooky.",
+              "kind": "describe"
+            },
+            {
+              "text": "The dark feels big.",
+              "kind": "describe"
+            },
+            {
+              "text": "Decorations can make strange sounds.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some masks look scary.",
+              "kind": "describe"
+            },
+            {
+              "text": "Feeling scared is normal.",
+              "kind": "describe"
+            },
+            {
+              "text": "Spooky things are pretend.",
+              "kind": "describe"
+            },
+            {
+              "text": "They are plastic, paper or cloth.",
+              "kind": "describe"
+            },
+            {
+              "text": "Holding a hand helps.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can skip a house.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "worried",
+          "background": "outside",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "separation",
+            "safety"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Halloween can feel spooky.",
+              "kind": "describe"
+            },
+            {
+              "text": "The dark feels big.",
+              "kind": "describe"
+            },
+            {
+              "text": "Decorations can make strange sounds.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some masks look scary.",
+              "kind": "describe"
+            },
+            {
+              "text": "Feeling scared is normal.",
+              "kind": "describe"
+            },
+            {
+              "text": "Spooky things are pretend.",
+              "kind": "describe"
+            },
+            {
+              "text": "They are plastic, paper or cloth.",
+              "kind": "describe"
+            },
+            {
+              "text": "Holding a hand helps.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can skip a house.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can go home early.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "Step by step, it gets a little easier.",
+              "kind": "describe"
+            },
+            {
+              "text": "New things feel strange at first, and then they feel normal.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "I can go home early.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can say, I want to go home now.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "unknown",
+            "social",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Halloween can feel spooky.",
+              "kind": "describe"
+            },
+            {
+              "text": "The dark feels big.",
+              "kind": "describe"
+            },
+            {
+              "text": "Decorations can make strange sounds.",
+              "kind": "describe"
+            },
+            {
+              "text": "Some masks look scary.",
+              "kind": "describe"
+            },
+            {
+              "text": "Feeling scared is normal.",
+              "kind": "describe"
+            },
+            {
+              "text": "Spooky things are pretend.",
+              "kind": "describe"
+            },
+            {
+              "text": "They are plastic, paper or cloth.",
+              "kind": "describe"
+            },
+            {
+              "text": "Holding a hand helps.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can skip a house.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can take slow breaths.",
+              "kind": "coach"
+            },
+            {
+              "text": "I can say, I want to go home now.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "brave",
+          "background": "outside",
+          "addresses": [
+            "sensory",
+            "strangers",
+            "separation",
+            "unknown"
+          ]
+        }
+      ],
+      "rehearsal": [
+        {
+          "sentences": [
+            {
+              "text": "Tonight I practise Halloween.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I try on my costume.",
+              "kind": "describe"
+            },
+            {
+              "text": "I walk around the house.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[GROWNUP]] hides behind a door.",
+              "kind": "describe"
+            },
+            {
+              "text": "I knock.",
+              "kind": "describe"
+            },
+            {
+              "text": "I say, trick or treat.",
+              "kind": "describe"
+            },
+            {
+              "text": "I say thank you.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next we play with a mask.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: knock, trick or treat, thank you.",
+              "kind": "coach"
+            }
+          ],
+          "mood": "happy",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "strangers",
+            "unknown"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight I practise Halloween.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I try on my costume.",
+              "kind": "describe"
+            },
+            {
+              "text": "I walk around the house.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[GROWNUP]] hides behind a door.",
+              "kind": "describe"
+            },
+            {
+              "text": "I knock.",
+              "kind": "describe"
+            },
+            {
+              "text": "I say, trick or treat.",
+              "kind": "describe"
+            },
+            {
+              "text": "I say thank you.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next we play with a mask.",
+              "kind": "describe"
+            },
+            {
+              "text": "On, peek-a-boo, off.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is just us.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, we make our rules.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            },
+            {
+              "text": "Step by step, it gets a little easier.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "calm",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "strangers",
+            "unknown",
+            "social"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "On, peek-a-boo, off.",
+              "kind": "describe"
+            },
+            {
+              "text": "It is just us.",
+              "kind": "describe"
+            },
+            {
+              "text": "Last, we make our rules.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: knock, trick or treat, thank you.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "unknown",
+            "social",
+            "love"
+          ]
+        },
+        {
+          "sentences": [
+            {
+              "text": "Tonight I practise Halloween.",
+              "kind": "describe"
+            },
+            {
+              "text": "First I try on my costume.",
+              "kind": "describe"
+            },
+            {
+              "text": "I walk around the house.",
+              "kind": "describe"
+            },
+            {
+              "text": "Then [[GROWNUP]] hides behind a door.",
+              "kind": "describe"
+            },
+            {
+              "text": "I knock.",
+              "kind": "describe"
+            },
+            {
+              "text": "I say, trick or treat.",
+              "kind": "describe"
+            },
+            {
+              "text": "I say thank you.",
+              "kind": "describe"
+            },
+            {
+              "text": "Next we play with a mask.",
+              "kind": "describe"
+            },
+            {
+              "text": "I can say: knock, trick or treat, thank you.",
+              "kind": "coach"
+            },
+            {
+              "text": "It is okay to feel a little nervous, and lots of kids do.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] is proud of me for trying.",
+              "kind": "describe"
+            },
+            {
+              "text": "[[GROWNUP]] loves me, and then we have a big hug.",
+              "kind": "describe"
+            }
+          ],
+          "mood": "happy",
+          "background": "outside",
+          "addresses": [
+            "body",
+            "strangers",
+            "unknown",
+            "social"
+          ]
+        }
+      ]
+    }
+  },
+  "badge": {
+    "id": "spooky_brave",
+    "label": "Spooky Brave"
+  },
+  "olderPages": {
+    "what_happens": {
+      "sentences": [
+        {
+          "text": "Halloween comes from old autumn festivals where people dressed up and lit lanterns at the end of harvest.",
+          "kind": "describe"
+        },
+        {
+          "text": "Today it is mostly about costumes, decorations and sharing treats with neighbours.",
+          "kind": "describe"
+        },
+        {
+          "text": "Houses with a porch light on are usually the ones taking part.",
+          "kind": "describe"
+        },
+        {
+          "text": "Safety rules, like staying on sidewalks and carrying a light, matter on dark streets.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can plan a route with [[GROWNUP]] using a map.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "outside",
+      "addresses": [
+        "body",
+        "sensory",
+        "strangers",
+        "separation"
+      ]
+    },
+    "who_is_there": {
+      "sentences": [
+        {
+          "text": "Some people decorate to be as scary as possible, like a haunted house; that is a choice, and skipping it is fine.",
+          "kind": "describe"
+        },
+        {
+          "text": "Neighbours who hand out candy are part of a community tradition.",
+          "kind": "describe"
+        },
+        {
+          "text": "Some kids have allergies, so some houses offer non-food treats, often marked with a teal pumpkin.",
+          "kind": "describe"
+        },
+        {
+          "text": "Groups of older kids may trick-or-treat together with a grown-up nearby.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can say hi to neighbours they have not met before.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "outside",
+      "addresses": [
+        "body",
+        "sensory",
+        "strangers",
+        "separation"
+      ]
+    },
+    "what_i_do": {
+      "sentences": [
+        {
+          "text": "Reflective tape or glow sticks on costumes make kids visible to drivers.",
+          "kind": "describe"
+        },
+        {
+          "text": "Masks can block side vision, so face paint can be safer.",
+          "kind": "describe"
+        },
+        {
+          "text": "Checking treats is about spotting open wrappers or allergens, not something to worry about.",
+          "kind": "describe"
+        },
+        {
+          "text": "Sorting and trading candy afterwards is half the fun.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can agree a candy plan with [[GROWNUP]]: how much tonight, how much later.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "brave",
+      "background": "outside",
+      "addresses": [
+        "body",
+        "sensory",
+        "strangers",
+        "unknown"
+      ]
+    },
+    "if_scared": {
+      "sentences": [
+        {
+          "text": "Being scared by something you know is fake still triggers the body's alarm, which is why haunted houses work.",
+          "kind": "describe"
+        },
+        {
+          "text": "Some people enjoy that feeling, and some do not, and both are fine.",
+          "kind": "describe"
+        },
+        {
+          "text": "Jump scares are designed to surprise; knowing that helps.",
+          "kind": "describe"
+        },
+        {
+          "text": "If [[CHILD]] sees something upsetting, talking about it at home and how it was made helps the brain file it as pretend.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can be in charge of choosing the route.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "worried",
+      "background": "outside",
+      "addresses": [
+        "strangers",
+        "unknown",
+        "safety",
+        "social"
+      ]
+    },
+    "rehearsal": {
+      "sentences": [
+        {
+          "text": "Testing the costume ahead of time catches problems like tripping hems or masks that block vision.",
+          "kind": "describe"
+        },
+        {
+          "text": "Charging flashlights and packing a bag for treats saves time.",
+          "kind": "describe"
+        },
+        {
+          "text": "Planning a route with known neighbours makes the night feel safer.",
+          "kind": "describe"
+        },
+        {
+          "text": "Agreeing what to do if anyone gets separated is a smart family rule.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can help decorate the front door for the kids who visit.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "happy",
+      "background": "outside",
+      "addresses": [
+        "pain",
+        "body",
+        "sensory",
+        "strangers"
+      ]
+    }
+  }
+}

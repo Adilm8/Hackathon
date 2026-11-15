@@ -448,3 +448,27 @@ li {
 @media (prefers-reduced-motion: reduce) {
   .animate-cta-in { animation: none; }
 }
+
+/* Cartoon mode (components/reader/CartoonPlayer.tsx): slow camera moves, cross-fade, a breathing friend. */
+.cartoon-cam { animation: 16s ease-in-out both; will-change: transform; }
+.cartoon-cam-in-left { animation-name: cam-in-left; }
+.cartoon-cam-in-right { animation-name: cam-in-right; }
+.cartoon-cam-out-center { animation-name: cam-out-center; }
+.cartoon-cam-pan-right { animation-name: cam-pan-right; }
+.cartoon-cam-pan-left { animation-name: cam-pan-left; }
+@keyframes cam-in-left { from { transform: scale(1.04) translate(1.5%, 0); } to { transform: scale(1.18) translate(-2%, -1%); } }
+@keyframes cam-in-right { from { transform: scale(1.04) translate(-1.5%, 0); } to { transform: scale(1.18) translate(2%, -1%); } }
+@keyframes cam-out-center { from { transform: scale(1.2); } to { transform: scale(1.04); } }
+@keyframes cam-pan-right { from { transform: scale(1.14) translate(-3%, 0); } to { transform: scale(1.14) translate(3%, 0); } }
+@keyframes cam-pan-left { from { transform: scale(1.14) translate(3%, 0); } to { transform: scale(1.14) translate(-3%, 0); } }
+.cartoon-fade-in { animation: cartoon-fade 1.2s ease both; }
+@keyframes cartoon-fade { from { opacity: 0; } to { opacity: 1; } }
+.cartoon-friend { animation: friend-in 700ms var(--ease-soft) both, friend-bob 3.2s ease-in-out 700ms infinite; transform-origin: 50% 100%; }
+@keyframes friend-in { from { opacity: 0; transform: translate(-50%, 8%) scale(.96); } to { opacity: 1; transform: translate(-50%, 0) scale(1); } }
+@keyframes friend-bob { 0%, 100% { transform: translate(-50%, 0) scale(1, 1); } 50% { transform: translate(-50%, -1.2%) scale(1.01, .99); } }
+.cartoon-word-next { color: rgb(255 255 255 / .55); }
+.cartoon-word-read { color: #fff; }
+@media (prefers-reduced-motion: reduce) {
+  .cartoon-cam, .cartoon-friend, .cartoon-fade-in { animation: none; }
+  .cartoon-friend { transform: translateX(-50%); }
+}

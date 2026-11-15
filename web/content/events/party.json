@@ -117,10 +117,14 @@
     {
       "id": "present",
       "text": "Is the present for me?",
-      "topic": "other",
+      "topic": "love",
       "fallbackAnswer": [
         "The present is for the birthday child, because it is their day.",
         "On your birthday, it will be your turn."
+      ],
+      "ages": [
+        2,
+        6
       ]
     },
     {
@@ -139,6 +143,33 @@
       "fallbackAnswer": [
         "First hello and happy birthday, then games.",
         "Next, the song and cake, and last, goodbye."
+      ]
+    },
+    {
+      "id": "nobody",
+      "text": "What if I don't know anyone?",
+      "topic": "social",
+      "fallbackAnswer": [
+        "You know the birthday child, and that is a great start. You can say hi, I'm [[CHILD]], what's your name?",
+        "Games help kids get to know each other fast."
+      ]
+    },
+    {
+      "id": "lose",
+      "text": "What if I lose a game?",
+      "topic": "love",
+      "fallbackAnswer": [
+        "Losing a game can feel disappointing, and that is okay. Party games are just for fun, and there is always another round.",
+        "You can say, good game, and try again."
+      ]
+    },
+    {
+      "id": "food",
+      "text": "What if I don't like the food?",
+      "topic": "body",
+      "fallbackAnswer": [
+        "You can say no thank you and eat what you like. [[GROWNUP]] can give you a snack before the party, just in case.",
+        "Most parties have cake, and you can choose a small piece."
       ]
     }
   ],

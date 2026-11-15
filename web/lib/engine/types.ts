@@ -10,6 +10,27 @@ export type ISODate = string;
 export type EventType =
   | 'dentist' | 'school' | 'flight' | 'sibling' | 'haircut' | 'shot'
   | 'doctor' | 'blood_test' | 'hospital' | 'moving' | 'sleepover' | 'babysitter' | 'swimming' | 'party'
+  | 'tooth_loss'
+  | 'surgery'
+  | 'potty'
+  | 'daycare'
+  | 'new_school'
+  | 'camp'
+  | 'sports'
+  | 'performance'
+  | 'new_class'
+  | 'bike'
+  | 'road_trip'
+  | 'holiday'
+  | 'halloween'
+  | 'playdate'
+  | 'eye_exam'
+  | 'big_bed'
+  | 'test_day'
+  | 'two_homes'
+  | 'new_pet'
+  | 'pet_loss'
+  | 'parent_trip'
   | 'other';
 export type Beat = 'what_happens' | 'who_is_there' | 'what_i_do' | 'if_scared' | 'rehearsal';
 export type Topic =
@@ -163,6 +184,7 @@ export interface Checkin {
   helped: string[];               // technique ids
   didntHelp: string[];
   custom?: string;                // <= 60 chars
+  brave?: string[];               // brave-moment sticker ids the parent chose, <= 2 (lib/home/achievements.ts)
   savedOn: ISODate;
 }
 
@@ -277,6 +299,7 @@ export interface EventTemplate {
   questionButtons: {                  // exactly 3 are shown per page
     id: string; text: string; topic: Topic;
     fallbackAnswer: string[];         // 2–3 sentences written by the team
+    ages?: [number, number];          // shown only to children of these ages (inclusive); all ages when absent
   }[];
   techniques: { id: string; label: string; how: string; topics: Topic[] }[];
   ritual: [string, string, string];   // "first → then" steps for the day card

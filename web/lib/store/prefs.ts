@@ -36,6 +36,8 @@ export interface Prefs {
   characterVoice: string | null;
   /** Painted scene pictures in the reader (lib/illustrations) instead of the simple drawn scenes. */
   illustrated: boolean;
+  /** Quiet lullaby under cartoon mode (lib/fx/lullaby.ts). */
+  cartoonMusic: boolean;
 }
 
 interface PrefsState extends Prefs {
@@ -47,6 +49,7 @@ interface PrefsState extends Prefs {
   setReminderTimes(t: Partial<Pick<Prefs, 'reminderEvening' | 'quietStart' | 'quietEnd'>>): void;
   setVoice(t: Partial<Pick<Prefs, 'voiceURI' | 'speechRate' | 'readOn' | 'storyVoice' | 'characterVoice'>>): void;
   setIllustrated(v: boolean): void;
+  setCartoonMusic(v: boolean): void;
 }
 
 export const favKey = (eventId: string, chapter: number) => `${eventId}#${chapter}`;
@@ -69,6 +72,8 @@ export const usePrefs = create<PrefsState>()(
       characterVoice: null,
       illustrated: true,
       setIllustrated: (illustrated) => set({ illustrated }),
+      cartoonMusic: true,
+      setCartoonMusic: (cartoonMusic) => set({ cartoonMusic }),
       setVoice: (t) => set(t),
       setPush: (push) => set({ push }),
       setReminderTimes: (t) => set(t),
@@ -90,6 +95,7 @@ export const usePrefs = create<PrefsState>()(
         push: s.push, reminderEvening: s.reminderEvening, quietStart: s.quietStart, quietEnd: s.quietEnd,
         voiceURI: s.voiceURI, speechRate: s.speechRate, readOn: s.readOn, storyVoice: s.storyVoice, characterVoice: s.characterVoice,
         illustrated: s.illustrated,
+        cartoonMusic: s.cartoonMusic,
       }),
     },
   ),

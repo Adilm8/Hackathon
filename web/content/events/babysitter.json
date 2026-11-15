@@ -116,7 +116,7 @@
     {
       "id": "cry",
       "text": "What if I cry?",
-      "topic": "other",
+      "topic": "love",
       "fallbackAnswer": [
         "Crying is okay. The babysitter knows how to help.",
         "Lots of kids cry at goodbye and then feel better while they play."
@@ -138,6 +138,37 @@
       "fallbackAnswer": [
         "Sometimes worry feels like butterflies in the tummy.",
         "A slow breath and a hug can help the butterflies settle."
+      ]
+    },
+    {
+      "id": "hurt",
+      "text": "What if I get hurt?",
+      "topic": "safety",
+      "fallbackAnswer": [
+        "Babysitters know how to help with bumps and scrapes. They have [[GROWNUP]]'s phone number and can call any time.",
+        "You can always tell the babysitter if something hurts."
+      ]
+    },
+    {
+      "id": "late",
+      "text": "Can I stay up late?",
+      "topic": "unknown",
+      "fallbackAnswer": [
+        "Bedtime stays the same, even with a babysitter. [[GROWNUP]] tells the babysitter your bedtime steps.",
+        "You can choose the story for bedtime, though."
+      ]
+    },
+    {
+      "id": "phone",
+      "text": "Can I call [[GROWNUP]]?",
+      "topic": "separation",
+      "fallbackAnswer": [
+        "We will agree before [[GROWNUP]] goes out whether you can call or send a message. The babysitter knows the plan.",
+        "Most kids get busy playing and forget to call."
+      ],
+      "ages": [
+        5,
+        12
       ]
     }
   ],

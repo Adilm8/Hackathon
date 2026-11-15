@@ -113,6 +113,10 @@
       "fallbackAnswer": [
         "Yes, [[GROWNUP]] stays right there.",
         "You can see [[GROWNUP]] in the big mirror the whole time."
+      ],
+      "ages": [
+        2,
+        9
       ]
     },
     {
@@ -149,6 +153,32 @@
       "fallbackAnswer": [
         "A little different, a bit neater.",
         "You are still you, and your hair keeps growing."
+      ]
+    },
+    {
+      "id": "short",
+      "text": "Can I choose how short?",
+      "topic": "body",
+      "fallbackAnswer": [
+        "Yes. You can tell the hairdresser, or show a picture of a haircut you like.",
+        "Say, just a little bit, please, if you want it to stay long."
+      ],
+      "ages": [
+        4,
+        12
+      ]
+    },
+    {
+      "id": "wiggle",
+      "text": "What if I wiggle?",
+      "topic": "safety",
+      "fallbackAnswer": [
+        "The hairdresser waits when you wiggle, to keep you safe. You can ask for a break and wiggle all you want.",
+        "Then you sit still like a statue again."
+      ],
+      "ages": [
+        2,
+        7
       ]
     }
   ],
