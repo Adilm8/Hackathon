@@ -138,6 +138,14 @@ export function buildChapterPrompt(ctx: StoryContext, template: EventTemplate): 
       ? 'This is the last chapter before the day: rehearse the day step by step and end with what the hero does well.'
       : 'End the chapter calmly, looking forward to the next evening.',
   ];
+  // One chapter per evening and the last one is read the night before, so the big day is
+  // (total - index + 1) sleeps away. Without this the model guessed "tomorrow" in chapter 1.
+  const sleeps = ctx.chapter.total - ctx.chapter.index + 1;
+  lines.push(
+    sleeps <= 1
+      ? 'Timing: the big day is tomorrow.'
+      : `Timing: the big day is ${sleeps} sleeps away. Never say it is tomorrow or today; say "in ${sleeps} sleeps" or "soon".`,
+  );
   if (ctx.chapter.index === 1) {
     lines.push('Early in this chapter say plainly where the hero is going, when, who will be there and about how long it takes.');
   }
