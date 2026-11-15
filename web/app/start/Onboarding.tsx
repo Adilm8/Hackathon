@@ -301,7 +301,7 @@ export function Onboarding() {
 
         {step === 'name' && (
           <>
-            <Field id="name" label="First name or nickname" helper="A nickname works too. Please don't add a last name. The name stays on this device and in your family's private copy; it is never sent to an AI provider." error={touched ? nameErr : ''}>
+            <Field id="name" label="First name or nickname" helper="A nickname works too. Please don't add a last name. The name stays on this device and in your family's private copy; it is never sent to the AI that writes the story." error={touched ? nameErr : ''}>
               <TextInput id="name" autoComplete="off" autoCapitalize="words" maxLength={30} value={d.name} onChange={(e) => set({ name: e.target.value })} aria-invalid={touched && !!nameErr} aria-describedby={touched && nameErr ? 'name-err' : 'name-help'} />
             </Field>
             <Field id="pron" label="How is it pronounced? (optional)" helper="Write it the way it sounds, for the read-aloud voice.">
