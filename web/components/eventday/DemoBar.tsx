@@ -136,7 +136,7 @@ export function DemoBar({ workspace }: { workspace: Workspace }) {
   const canGrant = nextStep?.action === 'grant' && accessOn && !demo;
 
   return (
-    <div className="no-print sticky bottom-0 z-30 border-t-2 border-accent bg-surface text-ink shadow-pop" role="region" aria-label="Demo bar">
+    <div data-app-chrome className="no-print sticky bottom-0 z-30 border-t-2 border-accent bg-surface text-ink shadow-pop" role="region" aria-label="Demo bar">
       <div className="mx-auto max-w-5xl px-4 py-2">
         <div className="flex items-center gap-2">
           <button

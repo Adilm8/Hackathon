@@ -310,6 +310,15 @@ body {
   overscroll-behavior: contain;
 }
 
+/* Full-screen reading (lib/reader/immersive.ts): the app header and the Demo bar step aside. */
+html[data-immersive] [data-app-chrome] {
+  display: none;
+}
+html[data-immersive] main {
+  padding-top: max(0.75rem, env(safe-area-inset-top));
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}
+
 @media (prefers-reduced-motion: reduce) {
   .word-in {
     animation: none;

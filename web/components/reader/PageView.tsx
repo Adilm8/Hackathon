@@ -9,8 +9,8 @@ import { UpdatedChip } from './UpdatedChip';
 const SIZE: Record<Settings['textSize'], string> = { m: 'text-sentence-m', l: 'text-sentence-l', xl: 'text-sentence-xl' };
 
 /**
- * One story or answer page (4.7). The text leads: one sentence at a time, in large type, with a
- * small scene beside it (above it on phones). It fills the height it is given and never makes
+ * One story or answer page (4.7). The text leads: one sentence at a time, in large type, under a
+ * big scene picture (most of the height left after the text). It fills the height it is given and never makes
  * the page scroll.
  *
  * Read-along: each sentence floats in word by word when it appears. While the voice reads, the
@@ -34,7 +34,7 @@ export function PageView({
   return (
     <article className="flex h-full min-h-0 flex-col gap-3 lg:gap-4">
       <div className="flex min-h-0 flex-1 flex-col justify-center gap-4 lg:gap-5">
-      <div className="relative h-[30%] min-h-[76px] max-h-60 shrink-[4] overflow-hidden rounded-card border border-line bg-surface-2 max-[700px]:h-[22%] max-[700px]:min-h-[76px] lg:aspect-[16/10] lg:h-[38%] lg:max-h-72 lg:min-h-[140px] lg:w-auto lg:self-center">
+      <div className="scene-box relative h-[46%] min-h-[96px] max-h-[26rem] shrink-[4] overflow-hidden rounded-card border border-line bg-surface-2 max-[700px]:h-[34%] max-[700px]:min-h-[88px] lg:aspect-[16/10] lg:h-[58%] lg:max-h-[34rem] lg:min-h-[96px] lg:w-auto lg:self-center">
         <Scene id={page.background} night={night} />
         <div className="absolute bottom-0 left-1/2 h-[82%] -translate-x-1/2">
           <Character character={character} mood={page.mood} className="h-full w-auto" />
@@ -43,7 +43,7 @@ export function PageView({
           <span className="absolute left-3 top-3 rounded-pill bg-surface/95 px-3 py-1 text-xs font-bold text-ink">Answer</span>
         )}
       </div>
-      <div className="story-scroll flex min-h-0 flex-col gap-3 overflow-y-auto">
+      <div className="story-scroll flex min-h-[min(100%,8rem)] shrink-0 flex-col gap-3 overflow-y-auto">
         {updatedText && si === 0 && <UpdatedChip text={updatedText} />}
         <div className="flex flex-1 items-center lg:justify-center">
           {/* The key restarts the entrance animation for every new sentence. */}
