@@ -5,6 +5,7 @@ import { Button, ButtonLink } from '@/components/ui/Button';
 import type { Workspace } from '@/lib/engine/types';
 import { announceEntitlements, paymentsApi } from '@/lib/payments/client';
 import { PLANS, type CheckoutPlan } from '@/lib/payments/plans';
+import { planHref } from '@/lib/home/path';
 
 type State =
   | { kind: 'verifying' }
@@ -72,7 +73,7 @@ export function PaidScreen({ sessionId, workspace }: { sessionId: string | null;
   }
 
   const p = PLANS[state.plan];
-  const href = state.eventId ? `/event/${encodeURIComponent(state.eventId)}` : '/home';
+  const href = state.eventId ? planHref(state.eventId) : '/home';
   return (
     <div className="mx-auto flex max-w-md flex-col items-center gap-5 py-16 text-center">
       <span aria-hidden className="flex size-16 items-center justify-center rounded-pill bg-success text-success-ink">

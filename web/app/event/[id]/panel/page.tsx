@@ -12,6 +12,7 @@ import { PlanNotFound } from '@/components/ui/NotFound';
 import { Screen } from '@/components/ui/Screen';
 import { useEventCtx } from '@/lib/store/hooks';
 import { eventLabel, readProgress } from '@/lib/store/engine';
+import { planHref } from '@/lib/home/path';
 
 /** Parent panel (docs/SPEC.md 4.10), the dark parent room. */
 export default function PanelPage() {
@@ -60,12 +61,12 @@ function Panel({ id }: { id: string }) {
           <ButtonLink href={`/event/${id}/paywall`} size="l">{after ? 'Continue' : 'Unlock the full plan'}</ButtonLink>
         </section>
       ) : (
-        <ButtonLink href={`/event/${id}`} size="l">
+        <ButtonLink href={planHref(id)} size="l">
           <Icon name="book-open" size={20} /> Back to the plan
         </ButtonLink>
       )}
       {!hasAccess && p.total > 1 && (
-        <ButtonLink href={`/event/${id}`} variant="ghost">Back to the plan</ButtonLink>
+        <ButtonLink href={planHref(id)} variant="ghost">Back to the plan</ButtonLink>
       )}
     </div>
   );

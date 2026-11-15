@@ -8,9 +8,11 @@ import type { BigEvent } from '@/lib/engine/types';
 /**
  * The tools under the story path, grouped in one card instead of a wall of equal buttons:
  * reminders (one calendar button with a choice inside), then the parent's places as list rows.
+ * `panel={false}` where the screen already links the parent panel (the home page nav).
  */
-export function PlanTools({ event, label, prep }: { event: BigEvent; label: string; prep: boolean }) {
+export function PlanTools({ event, label, prep, panel = true }: { event: BigEvent; label: string; prep: boolean; panel?: boolean }) {
   const id = encodeURIComponent(event.id);
+  if (!prep && !panel) return null;
   return (
     <section aria-label="Plan tools" className="overflow-hidden rounded-card border-2 border-line bg-surface shadow-step">
       {prep && (
@@ -26,7 +28,7 @@ export function PlanTools({ event, label, prep }: { event: BigEvent; label: stri
         </div>
       )}
       <ul className={`divide-y divide-line ${prep ? 'border-t-2 border-line' : ''}`}>
-        <Row href={`/event/${id}/panel`} icon="hand-heart" title="Parent panel" text="What to say, your child's questions, how it's going" />
+        {panel && <Row href={`/event/${id}/panel`} icon="hand-heart" title="Parent panel" text="What to say, your child's questions, how it's going" />}
         {prep && <Row href={`/event/${id}/story`} icon="pencil" title="Story options" text="Genre, length, names and words to avoid" />}
       </ul>
     </section>
