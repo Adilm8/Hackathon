@@ -1,10 +1,13 @@
 'use client';
-import { useCallback, useEffect, useState, useSyncExternalStore, type CSSProperties } from 'react';
+import { useCallback, useEffect, useRef, useState, useSyncExternalStore, type CSSProperties } from 'react';
 import { backgroundForEvent, Character } from '@/components/character';
 import { IllustratedScene } from '@/components/character/IllustratedScene';
 import { Icon } from '@/components/icons';
 import type { Beat, ChildProfile, EventType, Page } from '@/lib/engine/types';
 import { beatForPage, illustrationKey, illustrationSrc } from '@/lib/illustrations';
+import { framesEnabled, prefetchFrames } from '@/lib/frames/client';
+import { Lullaby } from '@/lib/fx/lullaby';
+import { usePrefs } from '@/lib/store/prefs';
 import { narrator } from '@/lib/speech/narrator';
 import { splitWords } from '@/lib/speech/words';
 import { renderText } from '@/lib/store/engine';
@@ -44,6 +47,33 @@ export function CartoonPlayer({
   const voice = useSyncExternalStore(noop, () => narrator.available(), () => false);
   const page = pages[idx];
   const render = useCallback((t: string) => renderText(t, child), [child]);
+  // Story frames: pictures drawn for each page's words, from the current page on (lib/frames).
+  const [frames, setFrames] = useState<Record<string, string>>({});
+  useEffect(() => {
+    let live = true;
+    void framesEnabled().then((on) => {
+      if (!on || !live) return;
+      const order = [...pages.slice(idx), ...pages.slice(0, idx)];
+      void prefetchFrames(order.map((p) => ({ id: p.id, sentences: p.sentences.map((s) => s.text) })), eventType,
+        (id, url) => setFrames((f) => ({ ...f, [id]: url })), () => live);
+    });
+    return () => { live = false; };
+    // Only when the player opens: page turns must not restart the downloads.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pages, eventType]);
+  // A quiet lullaby, softer while the storyteller speaks.
+  const music = usePrefs((p) => p.cartoonMusic);
+  const setMusic = usePrefs((p) => p.setCartoonMusic);
+  const lullaby = useRef<Lullaby | null>(null);
+  useEffect(() => {
+    if (!music) return;
+    const l = new Lullaby();
+    lullaby.current = l;
+    l.start();
+    return () => { l.stop(); lullaby.current = null; };
+  }, [music]);
+  const speaking = position !== null;
+  useEffect(() => { lullaby.current?.duck(speaking); }, [speaking]);
 
   const go = useCallback((i: number, keepPlaying: boolean) => {
     if (i < 0) return;
@@ -98,6 +128,11 @@ export function CartoonPlayer({
       <div key={`${p.id}:${i}`} className={`absolute inset-0 overflow-hidden ${fresh ? 'cartoon-fade-in' : ''}`}>
         <div className={`cartoon-cam cartoon-cam-${MOVES[i % MOVES.length]} absolute inset-0`}>
           <IllustratedScene id={p.background} night={night} src={src} />
+          {frames[p.id] && (
+            // eslint-disable-next-line @next/next/no-img-element -- a picture drawn for this page (object URL)
+            <img src={frames[p.id]} alt="" aria-hidden draggable={false}
+              className={`cartoon-fade-in absolute inset-0 h-full w-full object-cover ${night ? 'brightness-[.62] saturate-[.8] hue-rotate-[12deg]' : ''}`} />
+          )}
         </div>
       </div>
     );
@@ -111,8 +146,12 @@ export function CartoonPlayer({
         <div key={`friend:${page.id}`} className="cartoon-friend absolute bottom-[4%] left-1/2 h-[58%] max-[700px]:h-[46%]">
           <Character character={child.character} mood={page.mood} className="h-full w-auto drop-shadow-[0_8px_16px_rgba(0,0,0,.25)]" />
         </div>
-        <div className="absolute inset-x-0 top-0 flex items-center justify-between gap-3 bg-gradient-to-b from-black/45 to-transparent p-3 sm:p-4">
+        <div className="absolute inset-x-0 top-0 flex items-center gap-3 bg-gradient-to-b from-black/45 to-transparent p-3 sm:p-4">
           <span className="rounded-pill bg-black/35 px-3 py-1 text-sm font-bold">{idx + 1} / {pages.length}</span>
+          <button type="button" onClick={() => setMusic(!music)} aria-pressed={music} aria-label={music ? 'Music off' : 'Music on'}
+            className={`ml-auto grid size-11 place-items-center rounded-full hover:bg-black/55 ${music ? 'bg-black/35' : 'bg-black/35 opacity-60'}`}>
+            <Icon name="music" size={20} />
+          </button>
           <button type="button" onClick={() => onClose(idx)} aria-label="Leave cartoon" className="grid size-11 place-items-center rounded-full bg-black/35 hover:bg-black/55">
             <Icon name="x" size={22} />
           </button>

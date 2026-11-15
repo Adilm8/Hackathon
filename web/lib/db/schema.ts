@@ -71,7 +71,7 @@ export const llmCalls = pgTable(
     id: bigserial('id', { mode: 'number' }).primaryKey(),
     familyId: uuid('family_id').references(() => families.id, { onDelete: 'set null' }),
     /** 'chapter' | 'answer' | 'rewrite' | 'ritual' | 'eval' | 'tts' */
-    route: text('route', { enum: ['chapter', 'answer', 'rewrite', 'ritual', 'eval', 'tts'] }).notNull(),
+    route: text('route', { enum: ['chapter', 'answer', 'rewrite', 'ritual', 'eval', 'tts', 'frame'] }).notNull(),
     provider: text('provider').notNull(),
     model: text('model').notNull(),
     inputTokens: integer('input_tokens').notNull().default(0),
