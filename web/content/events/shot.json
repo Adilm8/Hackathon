@@ -2095,5 +2095,186 @@
   "badge": {
     "id": "brave_arm",
     "label": "Brave Arm"
+  },
+  "olderPages": {
+    "what_happens": {
+      "sentences": [
+        {
+          "text": "A vaccine teaches the immune system, the body's defence team, to recognise a germ before it ever shows up.",
+          "kind": "describe"
+        },
+        {
+          "text": "The visit is short.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] sits with [[GROWNUP]], the nurse cleans a spot on the arm with a cool wipe, and then the shot takes about two seconds.",
+          "kind": "describe"
+        },
+        {
+          "text": "After that, a bandage goes on.",
+          "kind": "describe"
+        },
+        {
+          "text": "The arm may feel sore for a day or two, which means the body is busy learning.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can ask which germ this vaccine protects against.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "shot",
+      "addresses": [
+        "unknown",
+        "pain",
+        "strangers"
+      ]
+    },
+    "who_is_there": {
+      "sentences": [
+        {
+          "text": "Usually a nurse gives the shot.",
+          "kind": "describe"
+        },
+        {
+          "text": "Nurses give many vaccines every day and have smart ways to make them quicker and easier.",
+          "kind": "describe"
+        },
+        {
+          "text": "The doctor may come in to talk first.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[GROWNUP]] stays close the whole time and can hold [[CHILD]] in a side hug, which keeps the arm steady.",
+          "kind": "describe"
+        },
+        {
+          "text": "Some clinics have a numbing spray or cream, or a small buzzing device that makes the poke feel less sharp.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can ask if any of those are possible.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "shot",
+      "addresses": [
+        "strangers",
+        "pain",
+        "unknown"
+      ]
+    },
+    "what_i_do": {
+      "sentences": [
+        {
+          "text": "Here is what [[CHILD]] can do.",
+          "kind": "describe"
+        },
+        {
+          "text": "Choose which arm.",
+          "kind": "describe"
+        },
+        {
+          "text": "Let that arm hang loose like a floppy noodle, because a relaxed muscle feels the poke less.",
+          "kind": "describe"
+        },
+        {
+          "text": "Breathe out slowly during the shot, as if blowing up a balloon.",
+          "kind": "describe"
+        },
+        {
+          "text": "Some kids like to watch, and some prefer to look at a picture or count.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can decide ahead of time: watch, or look away.",
+          "kind": "coach"
+        },
+        {
+          "text": "Afterwards, moving the arm around a little helps the soreness pass sooner.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "brave",
+      "background": "shot",
+      "addresses": [
+        "body",
+        "pain",
+        "unknown"
+      ]
+    },
+    "if_scared": {
+      "sentences": [
+        {
+          "text": "Most people feel a bit scared of needles, so [[CHILD]] is in good company.",
+          "kind": "describe"
+        },
+        {
+          "text": "The poke is a quick sting, often described as a pinch, and then it is over.",
+          "kind": "describe"
+        },
+        {
+          "text": "Thinking about it beforehand is usually harder than the shot itself.",
+          "kind": "describe"
+        },
+        {
+          "text": "Being brave means doing something even while feeling nervous.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can tell the nurse, I feel nervous, can you count to three?",
+          "kind": "coach"
+        },
+        {
+          "text": "Squeezing [[GROWNUP]]'s hand with the other hand gives the worry somewhere to go.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "worried",
+      "background": "shot",
+      "addresses": [
+        "pain",
+        "unknown",
+        "strangers"
+      ]
+    },
+    "rehearsal": {
+      "sentences": [
+        {
+          "text": "Let's practise the plan.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] waits, goes into the room, and sits in a side hug with [[GROWNUP]].",
+          "kind": "describe"
+        },
+        {
+          "text": "The cool wipe cleans the spot.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] makes the arm floppy, breathes out long and slow, and either watches or looks at something fun.",
+          "kind": "describe"
+        },
+        {
+          "text": "One, two, three, a quick sting, and then a bandage.",
+          "kind": "describe"
+        },
+        {
+          "text": "Tonight, [[CHILD]] can practise the floppy arm and the long breath out together, three times.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "happy",
+      "background": "home-evening",
+      "addresses": [
+        "unknown",
+        "body",
+        "pain"
+      ]
+    }
   }
 }

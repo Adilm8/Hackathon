@@ -8,6 +8,7 @@ import { describeCharacter } from '../../engine/character';
 import { comfortLabel, EXPERIENCE_OPTIONS, GENRE_OPTIONS, INTEREST_OPTIONS } from '../../engine/storyPrefs';
 import type { EventTemplate, StoryContext, Topic } from '../../engine/types';
 import { dataBlock } from '../../safety/filters';
+import { readingLevel } from '../../engine/plan';
 import { findTechniqueAnywhere, pageTargets } from '../deps';
 import { allowedTechniques } from '../fallback';
 
@@ -91,6 +92,7 @@ export function storyOptionLines(ctx: StoryContext, template: EventTemplate): st
 
 export function buildSystemPrompt(ctx: StoryContext, template: EventTemplate): string {
   const { pages, minWords, maxWords } = pageTargets(ctx.child.age, ctx.story?.length);
+  const level = readingLevel(ctx.child.age);
   const minutes = { short: 'about 1 minute', standard: '2-3 minutes', long: '4-5 minutes' }[ctx.story?.length ?? 'standard'];
   const options = storyOptionLines(ctx, template);
   const c = ctx.child.character;
@@ -106,7 +108,7 @@ export function buildSystemPrompt(ctx: StoryContext, template: EventTemplate): s
     `An adult reads the story aloud. The hero is ${describeCharacter(c)}. The hero's name is written exactly as [[CHILD]]; never invent or guess a real name. ${pronounRule(ctx)}`,
     'Rules:',
     `1. Be honest. Never promise "it won't hurt" or "nothing bad will happen". Honesty notes: ${template.honestyNotes}`,
-    `2. Short sentences. ${pages} pages, ${minWords}-${maxWords} words each (8-14 sentences per page), so the chapter takes ${minutes} to read aloud. No scary imagery, villains or danger.`,
+    `2. ${level.style} ${pages} pages, ${minWords}-${maxWords} words each (${level.sentences} sentences per page), so the chapter takes ${minutes} to read aloud. No scary imagery, villains or danger.`,
     `3. This chapter covers: ${list(goals)}. It must address these worries: ${list(worries)}.`,
     `   Build on what really happens: ${list(steps)}. Use real sensory details: ${list(template.sensory)}.`,
     `4. Prefer techniques that helped before: ${list(ctx.helpedBefore.map((id) => techniqueLabel(template, id)))}. Never use: ${list(ctx.avoid.map((id) => techniqueLabel(template, id)))}.`,

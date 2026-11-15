@@ -33,7 +33,7 @@ describe('saved child profiles', () => {
     expect(parseProfiles('not json')).toEqual([]);
     expect(parseProfiles('{"a":1}')).toEqual([]);
     const good = toSaved(child('a', 'Maya'), 1);
-    const parsed = parseProfiles(JSON.stringify([good, { name: 'X' }, { ...good, childId: 'b', age: 12 }]));
+    const parsed = parseProfiles(JSON.stringify([good, { name: 'X' }, { ...good, childId: 'b', age: 13 }]));
     expect(parsed).toEqual([good]);
   });
 });

@@ -5,6 +5,7 @@
 import { pickDayTechnique } from './memory';
 import { storyPageId } from './state';
 import { topTopics } from './topics';
+import { fallbackPagesForAge } from './ageText';
 import { pageTargets } from './plan';
 import { pagesWithoutAvoided } from './storyPrefs';
 import type { Beat, BigEvent, Chapter, ChildProfile, EventTemplate, Page, RitualCard, Sentence, StoryPrefs, StyleMode, Topic } from './types';
@@ -35,7 +36,7 @@ export function fallbackPages(
   story?: Pick<StoryPrefs, 'length' | 'avoidWords'>,
 ): Page[] {
   const MAX_PAGES = pageTargets(age, story?.length).pages;
-  const lists = beats.map((b) => template.fallbackPages[styleMode][b]);
+  const lists = beats.map((b) => fallbackPagesForAge(template, b, styleMode, age));
   const picked: { beat: number; i: number }[] = [];
   const longest = Math.max(0, ...lists.map((l) => l.length));
   for (let i = 0; i < longest && picked.length < MAX_PAGES; i++)

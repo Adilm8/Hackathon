@@ -2089,5 +2089,162 @@
   "badge": {
     "id": "starry_night",
     "label": "Starry Night"
+  },
+  "olderPages": {
+    "what_happens": {
+      "sentences": [
+        {
+          "text": "A sleepover is a night at a friend's or a relative's home, following their house routine.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] arrives with a packed bag, plays and has dinner, then gets ready for bed with pyjamas and teeth brushing.",
+          "kind": "describe"
+        },
+        {
+          "text": "Bedtime might be later or earlier than at home, and the room may be different.",
+          "kind": "describe"
+        },
+        {
+          "text": "In the morning there is breakfast, and [[GROWNUP]] picks [[CHILD]] up at the agreed time.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can ask the host about the house rules on arrival.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "happy",
+      "background": "home-evening",
+      "addresses": [
+        "unknown",
+        "separation",
+        "strangers"
+      ]
+    },
+    "who_is_there": {
+      "sentences": [
+        {
+          "text": "The host grown-ups are in charge and are the people to ask for help at night.",
+          "kind": "describe"
+        },
+        {
+          "text": "The friend may have siblings or pets.",
+          "kind": "describe"
+        },
+        {
+          "text": "Everyone in the house has their own habits, like where shoes go or what time lights go out.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can ask, where's the bathroom, and where can I find you at night?",
+          "kind": "coach"
+        },
+        {
+          "text": "Knowing that answer early makes the night easier.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "calm",
+      "background": "home-evening",
+      "addresses": [
+        "strangers",
+        "sensory",
+        "safety"
+      ]
+    },
+    "what_i_do": {
+      "sentences": [
+        {
+          "text": "A good guest says please and thank you, helps tidy up and follows the house rules.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] also brings their own bedtime steps: brushing teeth, a book, a comfort item.",
+          "kind": "describe"
+        },
+        {
+          "text": "If [[CHILD]] wakes up at night, it's fine to go to the bathroom or find the host grown-up.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] and [[GROWNUP]] can agree on a call plan, like a quick goodnight call, or a code word if [[CHILD]] wants to come home.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "brave",
+      "background": "cosy-room",
+      "addresses": [
+        "body",
+        "strangers",
+        "separation"
+      ]
+    },
+    "if_scared": {
+      "sentences": [
+        {
+          "text": "Lots of kids feel homesick the first time they sleep away, even older kids.",
+          "kind": "describe"
+        },
+        {
+          "text": "A new room can sound different at night, with strange creaks or lights.",
+          "kind": "describe"
+        },
+        {
+          "text": "Feeling homesick does not mean the sleepover went wrong.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] can tell the host, I'm feeling homesick, can we talk?",
+          "kind": "coach"
+        },
+        {
+          "text": "Holding the comfort toy, reading a page of a book and breathing slowly usually helps sleep come.",
+          "kind": "coach"
+        }
+      ],
+      "mood": "worried",
+      "background": "cosy-room",
+      "addresses": [
+        "sensory",
+        "separation",
+        "unknown"
+      ]
+    },
+    "rehearsal": {
+      "sentences": [
+        {
+          "text": "Here is the night in order.",
+          "kind": "describe"
+        },
+        {
+          "text": "[[CHILD]] packs the bag: pyjamas, toothbrush, toy, book.",
+          "kind": "describe"
+        },
+        {
+          "text": "On arrival, [[CHILD]] says hello and asks about the bathroom and bedtime.",
+          "kind": "describe"
+        },
+        {
+          "text": "Play, dinner, then teeth, pyjamas and lights out with the comfort toy.",
+          "kind": "describe"
+        },
+        {
+          "text": "In the morning, breakfast, and [[GROWNUP]] picks [[CHILD]] up.",
+          "kind": "describe"
+        },
+        {
+          "text": "Tonight, [[CHILD]] can agree on the call plan with [[GROWNUP]].",
+          "kind": "coach"
+        }
+      ],
+      "mood": "happy",
+      "background": "home-evening",
+      "addresses": [
+        "unknown",
+        "separation",
+        "strangers"
+      ]
+    }
   }
 }
