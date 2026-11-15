@@ -353,3 +353,36 @@ body {
 .question-row::-webkit-scrollbar {
   display: none;
 }
+
+/* Celebrations (lib/fx/celebrate.ts): confetti dots falling across the screen. */
+.confetti-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 60;
+}
+.confetti-bit {
+  position: absolute;
+  top: -12px;
+  left: var(--x);
+  width: 10px;
+  height: 14px;
+  border-radius: 3px;
+  opacity: 0;
+  animation: confetti-fall var(--d) cubic-bezier(0.2, 0.6, 0.4, 1) var(--delay) forwards;
+}
+@keyframes confetti-fall {
+  0% { opacity: 1; transform: translate(0, 0) rotate(0); }
+  85% { opacity: 1; }
+  100% { opacity: 0; transform: translate(var(--dx), 105vh) rotate(var(--r)); }
+}
+
+/* Easy-read letters (Settings > Reading): a highly legible font with wider spacing. */
+html[data-font='easy'] {
+  --font-nunito: var(--font-easy);
+}
+html[data-font='easy'] body {
+  letter-spacing: 0.03em;
+  word-spacing: 0.12em;
+}
