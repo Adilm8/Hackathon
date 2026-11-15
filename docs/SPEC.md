@@ -466,6 +466,7 @@ export interface Character {
   headwear?: Headwear;       // default none (cap when accessory is the legacy 'cap')
   companion?: Companion;     // default none
   fur?: FurVariant;          // classic dusk dawn, default classic
+  size?: 's' | 'm' | 'l';    // how big the friend stands over the reader scene (62 / 82 / 100 % of its height), default m
 }
 // Story friend 2.0 fields are optional so profiles saved before keep working;
 // lib/engine/character.ts resolveCharacter() is the one place that fills and translates them.

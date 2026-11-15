@@ -7,6 +7,7 @@ import {
   ACCESSORY_NAME,
   ANIMAL_NAME,
   ANIMALS,
+  CHARACTER_SIZES,
   CHARACTER_COLORS,
   COLOR_NAME,
   COMPANION_NAME,
@@ -19,6 +20,8 @@ import {
   OUTFIT_NAME,
   OUTFITS,
   resolveCharacter,
+  SIZE_NAME,
+  SIZE_SCALE,
   type ResolvedCharacter,
 } from '@/lib/engine/character';
 import type { Character as CharacterT } from '@/lib/engine/types';
@@ -59,6 +62,7 @@ export function CharacterBuilder({ value, onChange }: { value: CharacterT; onCha
         headwear: pick(HEADWEAR),
         accessory: pick(ACCESSORIES),
         companion: pick(COMPANIONS),
+        size: r.size,
       }),
     );
 
@@ -74,9 +78,27 @@ export function CharacterBuilder({ value, onChange }: { value: CharacterT; onCha
             // eslint-disable-next-line @next/next/no-img-element -- small static WebP behind the preview
             <img src={BACKDROP} alt="" className="absolute inset-0 h-full w-full object-cover" draggable={false} loading="lazy" />
           )}
-          <Character character={value} mood="happy" className="relative h-full w-full" />
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 transition-[height] duration-base" style={{ height: `${SIZE_SCALE[r.size] * 100}%` }}>
+            <Character character={value} mood="happy" className="h-full w-auto" />
+          </div>
         </div>
         <p className="text-center text-sm font-bold">{ANIMAL_NAME[r.animal]}</p>
+        <div role="radiogroup" aria-label="Size in the story" className="flex gap-1 rounded-pill bg-surface-2 p-1">
+          {CHARACTER_SIZES.map((s) => (
+            <button
+              key={s}
+              type="button"
+              role="radio"
+              aria-checked={r.size === s}
+              aria-label={`${SIZE_NAME[s]} in the story`}
+              title={SIZE_NAME[s]}
+              onClick={() => set({ size: s })}
+              className={`min-h-tap min-w-tap rounded-pill px-3 text-sm font-extrabold ${r.size === s ? 'bg-primary text-primary-ink' : 'hover:bg-line'}`}
+            >
+              {s.toUpperCase()}
+            </button>
+          ))}
+        </div>
         <button
           type="button"
           onClick={surprise}

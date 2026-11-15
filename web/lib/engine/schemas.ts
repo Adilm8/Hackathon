@@ -38,6 +38,7 @@ export const CompanionEnum = z.enum([
   'none', 'firefly', 'cloud-puff', 'star-sprite', 'crystal-snail', 'ladybug', 'tiny-turtle', 'mushroom-sprout', 'pebble-chick',
 ]);
 export const FurVariantEnum = z.enum(['classic', 'dusk', 'dawn']);
+export const CharacterSizeEnum = z.enum(['s', 'm', 'l']);
 export const PronounEnum = z.enum(['he', 'she', 'they']);
 export const QuestionCategoryEnum = z.enum(['on_topic', 'off_topic', 'sensitive', 'unsafe']);
 export const StoredQuestionCategoryEnum = z.enum(['on_topic', 'off_topic', 'sensitive']);
@@ -66,6 +67,7 @@ export const CharacterSchema = z.strictObject({
   headwear: HeadwearEnum.optional(),
   companion: CompanionEnum.optional(),
   fur: FurVariantEnum.optional(),
+  size: CharacterSizeEnum.optional(),
 });
 
 export const ValuesProfileSchema = z.strictObject({
