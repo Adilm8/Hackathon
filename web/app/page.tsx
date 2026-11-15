@@ -97,7 +97,7 @@ export default function Landing() {
           ))}
         </ul>
         <p className="mt-6 text-center text-xs text-ink-soft">
-          Not therapy or medical advice. Your child&apos;s name is never sent to an AI provider.
+          Not therapy or medical advice. Your child&apos;s name is never sent to the AI that writes the story.
         </p>
       </section>
     </AppShell>

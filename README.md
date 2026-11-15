@@ -2,7 +2,7 @@
 
 **Bedtime stories that get a child ready for a big day, and show the parent what to say.**
 
-Short personalised stories for children aged 2 to 12 (core age 3 to 8) before a dentist visit, a first day at school, a flight or any of 15 big days. Each evening brings one chapter, the child's own questions are answered inside the story, and the parent sees what worries the child and the words that help.
+Short personalised stories for children aged 2 to 12 (core age 3 to 8) before a dentist visit, a first day at school, a flight or any of 36 big days. Each evening brings one chapter, the child's own questions are answered inside the story, and the parent sees what worries the child and the words that help.
 
 **Live app: [bigdaystories.up.railway.app](https://bigdaystories.up.railway.app)** · no sign-up needed · tap **Try a sample** for the 3-minute jury tour
 
@@ -55,7 +55,7 @@ Sarah's son Max is 4. On Friday he sees the dentist, and last time he screamed i
 ## Features
 
 **Story and reader**
-- **15 big-day scenarios**: dentist, shot, blood test, doctor check-up, hospital, haircut, first day at school, flight, moving house, new sibling, new babysitter, sleepover, party, swimming lessons, and a custom big day.
+- **36 big-day scenarios**: dentist, shot, blood test, doctor check-up, hospital, haircut, first day at school, flight, moving house, new sibling, new babysitter, sleepover, party, swimming lessons, and a custom big day.
 - **Sentence-by-sentence reader** with a progress bar, text sizes, easy-read letters, day and night colours, and a full-screen mode.
 - **The child's questions change the story**: three suggested questions per page plus "Ask your own" by typing or by voice; the next page answers it and shows "Updated because Max asked".
 - **Painted scene pictures** on every page and **Cartoon mode**: the chapter plays like a picture-book cartoon with gentle motion, a quiet lullaby and auto-turning pages.
@@ -85,7 +85,7 @@ Other apps give a child a story. Big Day Stories prepares the whole big day: a p
 
 | What the family gets | Big Day Stories | BooksGiant | TinyCoach | Storytime AI, Oscar Stories | Touch Autism, Special Stories | Printed books (Wonderbly) | ChatGPT, Gemini |
 |---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| A story about a specific big day | ✅ 15 big days | ✅ | ◐ | ◐ | manual | ◐ | prompt |
+| A story about a specific big day | ✅ 36 big days | ✅ | ◐ | ◐ | manual | ◐ | prompt |
 | A date, a countdown, one chapter every evening | ✅ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ |
 | The child's question changes the next page | ✅ | ✗ | ✗ | ✗ | ✗ | ✗ | manual |
 | Parent panel: what worries the child, words to say | ✅ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ |
@@ -202,7 +202,7 @@ Browser (parent's phone or laptop)        Server: one Next.js service on Railway
 
 **Principles**
 
-- **Code runs the product, the AI writes the words.** The plan, the story state, topics, memory, counters and paid access are computed by code. The model only writes text by rules and returns JSON that code validates against a schema. Product knowledge (what happens at the dentist, what helps, what to say) lives in 15 reviewed event templates.
+- **Code runs the product, the AI writes the words.** The plan, the story state, topics, memory, counters and paid access are computed by code. The model only writes text by rules and returns JSON that code validates against a schema. Product knowledge (what happens at the dentist, what helps, what to say) lives in 36 reviewed event templates.
 - **Every AI call has a deadline and a template fallback**, so the whole cycle also works with the model switched off (`LLM_PROVIDER=mock`).
 - **Local-first**: the browser keeps a working copy and the database keeps the durable copy. No login: a guest family is identified by a signed, httpOnly cookie.
 - **Paid access is a database row** written by the server only after it verifies the Stripe session.
@@ -293,7 +293,7 @@ Production runs on **Railway**: one web service from this repository with root d
 
 ## Tests
 
-- **255 unit and API tests** (Vitest) on the story engine, safety filters, AI fallbacks, payments, sync and API routes: `npm test`.
+- **871 unit and API tests** (Vitest) on the story engine, safety filters, AI fallbacks, payments, sync and API routes: `npm test`.
 - **Safety evaluation**: `npm run safety` (65 questions, written to [docs/safety-report.md](docs/safety-report.md)).
 - **Model evaluation**: `npm run eval` compares models on 16 story scenarios, 16 day cards and 16 safety questions ([docs/llm-evaluation.md](docs/llm-evaluation.md)).
 - TypeScript strict mode, ESLint, and a check that the zod schemas match the engine types.
@@ -308,7 +308,7 @@ Production runs on **Railway**: one web service from this repository with root d
 | `web/lib/llm/`, `web/lib/safety/` | AI calls with deadlines, fallbacks, circuit breaker, budget; the five safety levels |
 | `web/lib/payments/` | Stripe gateway, plans, access rows |
 | `web/lib/sync/`, `web/lib/store/` | Local-first sync and browser stores |
-| `web/content/events/` | The 15 event templates |
+| `web/content/events/` | The 36 event templates |
 | `web/tests/`, `web/evals/` | Unit and API tests; safety and model evaluations |
 | `docs/` | Specification, architecture, decisions, research, pitch materials, media |
 
