@@ -15,7 +15,7 @@ const shift = (k: number) => Math.round(Math.sin(k * 0.95) * 64);
  * badge. The current node is bigger, ringed, and carries the "Start" bubble; the child's
  * story friend stands beside it.
  */
-export function StoryPath({ nodes, child }: { nodes: PathNode[]; child: ChildProfile }) {
+export function StoryPath({ nodes, child, onLocked }: { nodes: PathNode[]; child: ChildProfile; onLocked?: (node: PathNode) => void }) {
   const cur = currentNodeIndex(nodes);
   return (
     <ol aria-label="Story path" className="relative mx-auto flex w-full max-w-sm flex-col items-center overflow-x-clip py-4">
@@ -31,7 +31,7 @@ export function StoryPath({ nodes, child }: { nodes: PathNode[]; child: ChildPro
             <div className="relative flex w-full justify-center" style={{ transform: `translateX(${x}px)` }}>
               <div className="relative z-10 flex flex-col items-center">
                 {isCur && <Bubble node={n} />}
-                <Node node={n} current={isCur} />
+                <Node node={n} current={isCur} onLocked={onLocked} />
                 <span className={`mt-1.5 text-xs font-bold ${n.state === 'locked' ? 'text-ink-soft' : 'text-ink'}`}>{n.title}</span>
               </div>
               {isCur && (
@@ -66,14 +66,14 @@ export function StoryPath({ nodes, child }: { nodes: PathNode[]; child: ChildPro
 function Bubble({ node }: { node: PathNode }) {
   const text = node.state === 'open' ? 'Start' : node.state === 'pay' ? 'Unlock' : node.hint;
   return (
-    <span className="relative mb-2 whitespace-nowrap rounded-card border-2 border-line bg-surface px-3 py-1.5 text-sm font-extrabold uppercase tracking-wide text-primary-text shadow-step">
+    <span className="relative mb-2 whitespace-nowrap rounded-card border-2 border-line bg-surface px-3 py-1.5 text-sm font-extrabold text-primary-text shadow-step">
       {text}
       <span aria-hidden className="absolute -bottom-[7px] left-1/2 size-3 -translate-x-1/2 rotate-45 border-b-2 border-r-2 border-line bg-surface" />
     </span>
   );
 }
 
-function Node({ node, current }: { node: PathNode; current: boolean }) {
+function Node({ node, current, onLocked }: { node: PathNode; current: boolean; onLocked?: (node: PathNode) => void }) {
   const size = current ? 'size-20' : 'size-16';
   const look =
     node.state === 'done'
@@ -88,6 +88,12 @@ function Node({ node, current }: { node: PathNode; current: boolean }) {
   const label = `${node.title}: ${node.hint}`;
   const ring = current ? 'ring-4 ring-primary/25 ring-offset-4 ring-offset-bg' : '';
   const cls = `flex ${size} items-center justify-center rounded-pill ${look} ${ring} transition-transform active:translate-y-[3px]`;
+  if (!node.href && onLocked && node.kind === 'chapter')
+    return (
+      <button type="button" aria-label={label} title={node.hint} onClick={() => onLocked(node)} className={cls}>
+        {inner}
+      </button>
+    );
   if (!node.href)
     return (
       <span role="img" aria-label={label} title={node.hint} className={`${cls} cursor-not-allowed`}>

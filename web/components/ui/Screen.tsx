@@ -4,7 +4,7 @@ import { bootApp } from '@/lib/store/boot';
 import { useChild } from '@/lib/store/child';
 import { useHydrated } from '@/lib/store/hydration';
 import { exitSample } from '@/lib/store/sample';
-import { getWorkspace } from '@/lib/store/workspace';
+import { getWorkspace, workspaceHasData } from '@/lib/store/workspace';
 import { DemoAccessBadge, DemoBar } from '@/components/eventday/DemoBar';
 import { AppShell } from './AppShell';
 import { HeaderCreateStory } from './CreateStoryButton';
@@ -17,7 +17,7 @@ import { Toaster } from './Toast';
  * (skeleton until then, docs/SPEC.md 6.2) and fills the AppShell header from the stores.
  */
 export function Screen({
-  children, room = 'child', bottomBar, wide = false, fit = false,
+  children, room = 'child', bottomBar, wide = false, fit = false, childMode = false,
 }: {
   children: ReactNode | (() => ReactNode);
   room?: 'child' | 'parent';
@@ -25,6 +25,8 @@ export function Screen({
   wide?: boolean;
   /** One screen without page scroll (see AppShell). */
   fit?: boolean;
+  /** The reader: header without settings or links out (see AppShell). */
+  childMode?: boolean;
 }) {
   useEffect(() => bootApp(), []);
   const ready = useHydrated();
@@ -38,7 +40,7 @@ export function Screen({
       headerExtra={ready ? (
         <>
           <DemoAccessBadge workspace={ws} />
-          <HeaderCreateStory workspace={ws} />
+          {!childMode && <HeaderCreateStory workspace={ws} />}
         </>
       ) : null}
       saveIndicator={ready ? <SaveIndicator /> : null}
@@ -60,6 +62,8 @@ export function Screen({
       }
       wide={wide}
       fit={fit}
+      childMode={childMode}
+      homeHref={ready && workspaceHasData(ws) ? '/home' : '/?landing=1'}
       onExitSample={exitSample}
     >
       {ready ? (typeof children === 'function' ? children() : children) : <ScreenSkeleton />}

@@ -387,6 +387,49 @@ html[data-font='easy'] body {
   word-spacing: 0.12em;
 }
 
+/*
+ * Browser surfaces carry the palette: selection, caret, native checkboxes and radios, scrollbars,
+ * link underlines and taps. Headings balance their lines; paragraphs avoid a lonely last word.
+ */
+::selection {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+html {
+  accent-color: var(--primary);
+  caret-color: var(--primary);
+  scrollbar-color: var(--line) transparent;
+  -webkit-tap-highlight-color: transparent;
+}
+a,
+button,
+label,
+summary,
+input,
+select,
+textarea,
+[role='button'] {
+  touch-action: manipulation;
+}
+a {
+  text-underline-offset: 0.22em;
+  text-decoration-thickness: 0.08em;
+}
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+p,
+li {
+  text-wrap: pretty;
+}
+@media (pointer: fine) {
+  html {
+    overscroll-behavior: none;
+  }
+}
+
 /* Onboarding: Continue appears once the parent box is ticked. */
 @keyframes cta-in {
   from { opacity: 0; transform: translateY(12px) scale(0.97); }

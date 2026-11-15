@@ -215,7 +215,7 @@ export function Onboarding() {
                   </Button>
                   {p.childId !== existing?.id && (
                     <Button variant="ghost" onClick={() => setKnown(withoutSaved(removeProfile(p.childId), existing))} aria-label={`Forget ${p.name} on this device`} className="!px-3">
-                      <span aria-hidden className="text-xl leading-none">×</span>
+                      <Icon name="x" size={20} />
                     </Button>
                   )}
                 </div>

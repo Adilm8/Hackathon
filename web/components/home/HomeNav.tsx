@@ -31,7 +31,7 @@ export function SideNav({ tab, panelHref, workspace }: { tab: HomeTab; panelHref
             key={it.key}
             href={it.href}
             aria-current={on ? 'page' : undefined}
-            className={`flex min-h-tap items-center gap-3 rounded-card border-2 px-3 py-2 text-sm font-extrabold uppercase tracking-wide
+            className={`flex min-h-tap items-center gap-3 rounded-card border-2 px-3 py-2 text-sm font-extrabold
               ${on ? 'border-primary bg-surface-2 text-primary-text' : 'border-transparent text-ink-soft hover:bg-surface-2'}`}
           >
             <Icon name={it.icon} size={24} /> {it.label}

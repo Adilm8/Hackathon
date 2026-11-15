@@ -67,7 +67,7 @@ export function PageView({
           {count > 1 ? (
             <div aria-label={`Sentence ${si + 1} of ${count}`} role="img" className="flex gap-1.5">
               {Array.from({ length: count }, (_, i) => (
-                <span key={i} className={`h-2 rounded-pill transition-all duration-base ${i === si ? 'w-6 bg-primary' : i < si ? 'w-2 bg-primary/50' : 'w-2 bg-line'}`} />
+                <span key={i} className={`h-2 rounded-pill transition-[width,background-color] duration-base ${i === si ? 'w-6 bg-primary' : i < si ? 'w-2 bg-primary/50' : 'w-2 bg-line'}`} />
               ))}
             </div>
           ) : <span />}

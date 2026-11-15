@@ -66,7 +66,7 @@ export function PlanTimeline({ plan, today }: { plan: CheckoutPlan; today: ISODa
               {i < steps.length - 1 && <span className="absolute top-8 h-[calc(100%+4px)] w-0.5 bg-line" />}
             </span>
             <span className="flex flex-col gap-0.5 pb-1">
-              <span className="text-xs font-bold uppercase tracking-wide text-ink-soft">{s.when}</span>
+              <span className="text-sm font-bold text-ink-soft">{s.when}</span>
               <span className="font-extrabold">{s.title}</span>
               <span className="text-sm text-ink-soft">{s.text}</span>
             </span>
