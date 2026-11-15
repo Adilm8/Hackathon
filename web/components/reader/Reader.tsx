@@ -30,6 +30,7 @@ import { isNight } from '@/lib/theme';
 import { useImmersive } from '@/lib/reader/immersive';
 import { ListenButton, type ReadPosition } from './ListenButton';
 import { RecordButton } from './RecordButton';
+import { VoicePicker } from './VoicePicker';
 import { PageView } from './PageView';
 import { AskGrownUp, ParentCheck } from './ParentCheck';
 import { useParentGate } from './ParentGate';
@@ -332,6 +333,7 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
           >
             <Icon name={immersive.on ? 'minimize' : 'maximize'} size={22} />
           </button>
+          {reading && <VoicePicker className={iconBtn} />}
           {isOn('parentVoice') && reading && !immersive.on && (
             <RecordButton compact recKey={recKey} has={recs.key === recKey && recs.has} onChange={() => setRecTick((n) => n + 1)} />
           )}
