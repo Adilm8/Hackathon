@@ -34,6 +34,8 @@ export interface Prefs {
   storyVoice: 'premium' | 'device';
   /** Character voice of the premium story voice (an id from /api/tts); null = the first one. */
   characterVoice: string | null;
+  /** Painted scene pictures in the reader (lib/illustrations) instead of the simple drawn scenes. */
+  illustrated: boolean;
 }
 
 interface PrefsState extends Prefs {
@@ -44,6 +46,7 @@ interface PrefsState extends Prefs {
   setPush(v: boolean): void;
   setReminderTimes(t: Partial<Pick<Prefs, 'reminderEvening' | 'quietStart' | 'quietEnd'>>): void;
   setVoice(t: Partial<Pick<Prefs, 'voiceURI' | 'speechRate' | 'readOn' | 'storyVoice' | 'characterVoice'>>): void;
+  setIllustrated(v: boolean): void;
 }
 
 export const favKey = (eventId: string, chapter: number) => `${eventId}#${chapter}`;
@@ -64,6 +67,8 @@ export const usePrefs = create<PrefsState>()(
       readOn: false,
       storyVoice: 'premium',
       characterVoice: null,
+      illustrated: true,
+      setIllustrated: (illustrated) => set({ illustrated }),
       setVoice: (t) => set(t),
       setPush: (push) => set({ push }),
       setReminderTimes: (t) => set(t),
@@ -84,6 +89,7 @@ export const usePrefs = create<PrefsState>()(
       partialize: (s) => ({ sound: s.sound, easyRead: s.easyRead, favorites: s.favorites, routineOff: s.routineOff,
         push: s.push, reminderEvening: s.reminderEvening, quietStart: s.quietStart, quietEnd: s.quietEnd,
         voiceURI: s.voiceURI, speechRate: s.speechRate, readOn: s.readOn, storyVoice: s.storyVoice, characterVoice: s.characterVoice,
+        illustrated: s.illustrated,
       }),
     },
   ),

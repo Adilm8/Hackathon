@@ -4,7 +4,8 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
-import { Character } from '@/components/character';
+import { backgroundForEvent, Character } from '@/components/character';
+import { beatForPage, illustrationKey, illustrationSrc } from '@/lib/illustrations';
 import { Icon } from '@/components/icons';
 import { PanelView } from '@/components/panel/PanelView';
 import { Button, ButtonLink } from '@/components/ui/Button';
@@ -62,6 +63,7 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
   // Read on: the voice turned the page, so the next page starts speaking by itself.
   const [autoListen, setAutoListen] = useState(false);
   const readOn = usePrefs((p) => p.readOn);
+  const illustrated = usePrefs((p) => p.illustrated) && isOn('illustratedScenes');
   const panel = usePanelOpen();
   // Full screen: only the story on screen (lib/reader/immersive.ts). Leaving it needs no grown-up;
   // leaving the reader still does (the door button).
@@ -136,6 +138,9 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
   const asked = questionsInChapter(event, index);
   const storyPages = pages.filter((p) => p.kind === 'story');
   const isLast = pageIdx >= pages.length - 1;
+  const illustration = illustrated && page
+    ? illustrationSrc(illustrationKey(event.type, page.background, backgroundForEvent(event.type), beatForPage(chapter.beats, pageIdx, pages.length)))
+    : null;
 
   const sentenceCount = page?.sentences.length ?? 1;
   const lastSentence = step >= sentenceCount - 1;
@@ -269,7 +274,7 @@ export function Reader({ eventId, index }: { eventId: string; index: number }) {
         <div className="min-h-0 flex-1">
           <PageView
             page={page} character={child.character} render={render} textSize={textSize} night={night}
-            step={step} position={position} updatedText={updatedText}
+            step={step} position={position} updatedText={updatedText} illustration={illustration}
             extra={photos ? <PagePhotos photos={event.photos} /> : undefined}
           />
         </div>
