@@ -4,6 +4,21 @@ Short personalised stories that prepare children aged 3-8 for a big day (the den
 
 Built for Business Cup 2.0 (Nov 14-15, 2026).
 
+## What the app does
+
+- **15 big-day scenarios**: the dentist, a shot, a first day at school, a flight, a haircut, moving house, a new sibling and more. Each one becomes a short plan of evening chapters before the day.
+- **Duolingo-style home**: one screen per child with the next step, streaks, badges, a story library and a bedtime routine.
+- **Sentence-by-sentence reader** with read-aloud, a fullscreen mode, and a choice of character voices for the narrator.
+- **The child can ask questions** by typing or by voice, and the next page of the story answers them.
+- **16 fantasy story friends** the child builds and dresses up; they appear in every story.
+- **Parent panel behind a parent lock**: what worries the child, what to say, and how the plan is going.
+- **Event day and after**: a "first, then" card with a printable A5 PDF, a calendar file, a check-in and a badge.
+- **Reminders and offline use**: installable as a PWA, with push and in-app reminders.
+- **Paywall** with Stripe in test mode, plus a demo mode for the jury.
+- **Privacy by design**: only a first name or nickname, no account needed, and story audio kept for at most 30 days.
+
+Stack: Next.js 16, React 19, TypeScript, PostgreSQL, Stripe, Web Push; deployed on Railway.
+
 ## Repository layout
 
 | Folder | What is inside |
